@@ -1,0 +1,332 @@
+/* Text over image*/
+
+.upg_image_container {
+    position: relative;
+    text-align: center;
+    color: red;
+}
+
+.upg_image_centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* badge */
+.upg_badge {
+  box-sizing: border-box;
+  margin: 1px 1px;
+  padding-top: .3em;
+  padding-right: .4em;
+  padding-left: .4em;
+  padding-bottom: .2em;
+  min-width: 1.5em; /* 1em + padding-top + padding-bottom */
+  min-height: 1em;
+  line-height: 1em;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border-radius: 1em;
+}
+
+/* Ribbon */
+	
+	.upg_box {
+
+   position:relative;
+   
+}
+
+
+	.upg_ribbon {
+   position: absolute;
+   right: -5px; top: -5px;
+   z-index: 1;
+   overflow: hidden;
+   width: 75px; height: 75px; 
+   text-align: right;
+}
+.upg_ribbon span {
+   font-size: 10px;
+   color: #fff; 
+   text-transform: uppercase; 
+   text-align: center;
+   font-weight: bold; line-height: 20px;
+   transform: rotate(45deg);
+   width: 100px; display: block;
+   background: #79A70A;
+   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+   position: absolute;
+   top: 19px; right: -21px;
+}
+.upg_ribbon span::before {
+   content: '';
+   position: absolute; 
+   left: 0px; top: 100%;
+   z-index: -1;
+   border-left: 3px solid #79A70A;
+   border-right: 3px solid transparent;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #79A70A;
+}
+.upg_ribbon span::after {
+   content: '';
+   position: absolute; 
+   right: 0%; top: 100%;
+   z-index: -1;
+   border-right: 3px solid #79A70A;
+   border-left: 3px solid transparent;
+   border-bottom: 3px solid transparent;
+   border-top: 3px solid #79A70A;
+}
+.upg_red span {background: linear-gradient(#F70505 0%, #8F0808 100%);}
+.upg_red span::before {border-left-color: #8F0808; border-top-color: #8F0808;}
+.upg_red span::after {border-right-color: #8F0808; border-top-color: #8F0808;}
+
+.upg_blue span {background: linear-gradient(#2989d8 0%, #1e5799 100%);}
+.upg_blue span::before {border-left-color: #1e5799; border-top-color: #1e5799;}
+.upg_blue span::after {border-right-color: #1e5799; border-top-color: #1e5799;}
+
+/* Tooltip container */
+.upg_tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.upg_tooltip .upg_tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    border-radius: 6px;
+	width: 120px;
+    bottom: 100%;
+    left: 50%; 
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.upg_tooltip:hover .upg_tooltiptext {
+    visibility: visible;
+}
+
+.upg_button_contain
+{
+	margin: 1px;
+}
+.obox_basic 
+{
+	margin: 1px;
+    padding: .1em .11em;
+    border: 1px solid #e2d8d8;
+   text-decoration: none;
+    border-radius: 3px;
+  
+
+}
+.obox {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  background: #fff;
+  obox-sizing: border-obox;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0px 5px 5px 0px;
+}
+.obox:hover {
+  border: 1px solid #5890FF;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  background: #fff;
+  obox-sizing: border-obox;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0px 5px 5px 0px;
+}
+.obox.blue {
+  border: 1px solid #5890FF;
+}
+.obox .header {
+  position: relative;
+  color: #9197a3;
+  font-size: 12px;
+  line-height: 1.38;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.obox .header a {
+  font-weight: bold;
+}
+.obox .header .date {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.obox .links {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.38;
+}
+.obox .links a {
+  color: #5890FF;
+  text-decoration: none;
+}
+.obox .links a:hover {
+  text-decoration: underline;
+}
+.obox .footer {
+  color: #444;
+  font-size: 12px;
+  line-height: 1.38;
+  border-top: 1px solid #ddd;
+  background: #F6F7F8;
+  padding: 5px 12px;
+  margin: 8px -12px -10px -12px;
+}
+
+.margin-box {
+            padding: 0.1em;
+        }
+
+		div.odude_img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+
+
+
+div.odude_img:hover {
+    border: 1px solid #777;
+}
+
+div.odude_img img {
+    width: 100%;
+    height: auto;
+}
+
+div.odude_desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Text over Image */
+
+.upg_text_over_image {
+  position: relative;
+
+}
+
+.upg_text_over_image p {
+  background-color: black;
+  top: 5%;
+  color: white;
+  font-family: Roboto;
+  font-size: 1.25em;
+  left: 0;
+  padding: 0.25em 0.75em;
+  position: absolute;
+}
+
+.upg_headline
+{
+color: #444;
+ margin: 0;
+ padding: 0px 0px 6px 0px;
+ font-size: 20px;
+ line-height: 16px;
+ font-weight: bold;
+}
+
+.upg_error {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+  margin-bottom: 15px;
+    padding: 4px 12px;
+}
+
+.upg_success {
+  background-color: #ddffdd;
+  border-left: 6px solid #4CAF50;
+  margin-bottom: 15px;
+    padding: 4px 12px;
+}
+
+.upg_info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+  margin-bottom: 15px;
+    padding: 4px 12px;
+}
+
+
+.upg_warning {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+  margin-bottom: 15px;
+    padding: 4px 12px;
+}
+
+/* Image Frame */
+.upg_image-frame{
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  text-decoration: none;
+}
+.upg_image-frame img{
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  
+}
+.upg_image-frame:before, .upg_image-frame::after{
+  -webkit-box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
+box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
+content: " ";
+display: table;
+width: 49%;
+height: 0;
+position: absolute;
+bottom: 6px;
+z-index: -2;
+
+}
+.upg_image-frame:before {
+left: 4px;
+-webkit-transform: rotate(-3deg);
+-moz-transform: rotate(-3deg);
+-o-transform: rotate(-3deg);
+-ms-transform: rotate(-3deg);
+transform: rotate(-3deg);
+}
+.upg_image-frame:after {
+right: 4px;
+-webkit-transform: rotate(3deg);
+-moz-transform: rotate(3deg);
+-o-transform: rotate(3deg);
+-ms-transform: rotate(3deg);
+transform: rotate(3deg);
+
+}

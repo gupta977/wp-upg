@@ -1,0 +1,133 @@
+.upg_tooltip{
+   			display: inline;
+    		position: relative;
+		}
+		
+		.upg_tooltip:hover:after{
+    		background: #333;
+    		background: rgba(0,0,0,.8);
+    		border-radius: 5px;
+    		bottom: 26px;
+    		color: #fff;
+    		content: attr(title);
+    		left: 20%;
+    		padding: 5px 15px;
+    		position: absolute;
+    		z-index: 98;
+    		width: 220px;
+		}
+		
+		.upg_tooltip:hover:before{
+    		border: solid;
+    		border-color: #333 transparent;
+    		border-width: 6px 6px 0 6px;
+    		bottom: 20px;
+    		content: "";
+    		left: 50%;
+    		position: absolute;
+    		z-index: 99;
+		}
+
+
+
+		.upg_module {
+			background: #eee;
+		  }
+		  .upg_module h2 {
+			line-height: 2;
+			padding: 0 0 0 10px;
+			background: #ccc;
+			font-size: 16px;
+		  }
+		  .upg_module h2 a {
+			float: right;
+			position: relative;
+			text-decoration: none;
+			color: #333;
+			padding: 0 10px;
+			border-left: 5px solid white;
+			transition: padding 0.1s linear;
+		  }
+		  .upg_module h2 a:hover, .upg_module h2 a:focus {
+			padding: 0 21px 0 14px;
+		  }
+		  .upg_module h2 a:active {
+			padding: 0 16px;
+		  }
+		  .upg_module h2 a:before, .upg_module h2 a:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 0;
+			height: 0;
+		  }
+		  .upg_module h2 a:before {
+			left: -12px;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-right: 8px solid white;
+			margin-top: -8px;
+		  }
+		  
+		  .upg_blue h2 a {
+			background: #a2d6eb;
+		  }
+		  .upg_blue h2 a:hover {
+			background: #c5f0ff;
+		  }
+		  .upg_blue h2 a:after {
+			left: -5px;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-right: 6px solid #a2d6eb;
+			margin-top: -6px;
+		  }
+		  .upg_blue h2 a:hover:after, .blue h2 a:focus:after {
+			border-right-color: #c5f0ff;
+		  }
+		  
+		  .upg_red h2 a {
+			background: #f0a5b5;
+		  }
+		  .upg_red h2 a:hover {
+			background: #ffc7d2;
+		  }
+		  .upg_red h2 a:after {
+			left: -5px;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-right: 6px solid #f0a5b5;
+			margin-top: -6px;
+		  }
+		  .upg_red h2 a:hover:after, .red h2 a:focus:after {
+			border-right-color: #ffc7d2;
+		  }
+		  
+		  .upg_green h2 a {
+			background: #9cf1a4;
+		  }
+		  .upg_green h2 a:hover {
+			background: #bbffcf;
+		  }
+		  .upg_green h2 a:after {
+			left: -5px;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			border-right: 6px solid #9cf1a4;
+			margin-top: -6px;
+		  }
+		  .upg_green h2 a:hover:after, .green h2 a:focus:after {
+			border-right-color: #bbffcf;
+		  }
+		  
+		  .upg_module {
+			width: 600px;
+			margin: 0 0 20px 0;
+		  }
+		  .upg_module .cnt {
+			padding: 0 10px 10px 10px;
+		  }
+		  .upg_module ul {
+			margin-left: 10px;
+			padding-left: 10px;
+		  }  

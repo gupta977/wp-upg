@@ -1,0 +1,716 @@
+# Copyright (C) 2016 User Photo Gallery
+# This file is distributed under the same license as the User Photo Gallery package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-upg\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
+"POT-Creation-Date: 2019-04-09 16:45+0545\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Navneet\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: addon.php:20
+msgid "UPG Plugins"
+msgstr ""
+
+#: addon.php:21
+msgid "UPG Help"
+msgstr ""
+
+#: addon.php:27
+msgid "Search"
+msgstr ""
+
+#: classes/upg_FormEntries.class.php:244 classes/upg_FormEntries.class.php:245
+msgid "Mark as publish"
+msgstr ""
+
+#: classes/upg_FormEntries.class.php:248 classes/upg_FormEntries.class.php:249
+msgid "Mark as draft"
+msgstr ""
+
+#: help.php:78 layout/form/basic/basic_post_form.php:118
+#: layout/form/simple/simple_edit_form.php:26
+msgid "Maximum upload file size limit:"
+msgstr ""
+
+#: layout/attach.php:85 layout/catalog.php:283
+msgid "Layout Not Found. Check UPG Settings."
+msgstr ""
+
+#: layout/attach.php:133 layout/form/basic/basic_post_form.php:163
+#: layout/form/photo/photo_post_form.php:73
+#: layout/form/simple/simple_edit_form.php:77
+#: layout/form/simple/simple_post_form.php:102
+msgid "Post"
+msgstr ""
+
+#: layout/attach.php:147
+msgid "This post button is only visible to you."
+msgstr ""
+
+#: layout/catalog.php:247
+msgid "You must login"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:4
+#: layout/form/basic/basic_post_form.php:23
+#: layout/form/photo/photo_post_form.php:6
+#: layout/form/simple/simple_edit_form.php:6
+#: layout/form/simple/simple_post_form.php:24 libs/custom_column.php:9
+msgid "Title"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:5
+#: layout/form/basic/basic_edit_youtube.php:5
+#: layout/form/basic/basic_post_form.php:24
+#: layout/form/basic/basic_post_youtube.php:25
+#: layout/form/photo/photo_post_form.php:7
+#: layout/form/photo/photo_post_youtube.php:6
+#: layout/form/simple/simple_edit_form.php:7
+#: layout/form/simple/simple_edit_youtube.php:8
+#: layout/form/simple/simple_post_form.php:25
+#: layout/form/simple/simple_post_youtube.php:25
+msgid "Post Title"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:41
+#: layout/form/basic/basic_post_form.php:61
+#: layout/form/photo/photo_post_form.php:109
+#: layout/form/shop/shop_edit_form.php:103
+#: layout/form/shop/shop_post_form.php:98
+msgid "Description"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:43
+#: layout/form/basic/basic_edit_youtube.php:44
+#: layout/form/basic/basic_post_form.php:63
+#: layout/form/basic/basic_post_youtube.php:64
+#: layout/form/photo/photo_post_form.php:110
+#: layout/form/photo/photo_post_youtube.php:44
+#: layout/form/shop/shop_edit_form.php:105
+#: layout/form/shop/shop_post_form.php:100
+msgid "Post Content"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:58
+#: layout/form/basic/basic_edit_youtube.php:59
+#: layout/form/basic/basic_post_form.php:78
+#: layout/form/basic/basic_post_youtube.php:79
+#: layout/form/photo/photo_post_form.php:10
+msgid "Select Album/Group"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:107
+#: layout/form/simple/simple_edit_form.php:17
+msgid "Select new image to replace"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:115
+#: layout/form/photo/photo_post_form.php:36
+msgid "Only picture files are allowed."
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:116
+#: layout/form/photo/photo_post_form.php:37
+#: layout/form/shop/shop_edit_form.php:145
+#: layout/form/shop/shop_post_form.php:145
+msgid "Maximum upload file size limit is"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:127
+msgid "Update Post"
+msgstr ""
+
+#: layout/form/basic/basic_edit_youtube.php:4
+#: layout/form/basic/basic_post_youtube.php:24
+#: layout/form/simple/simple_edit_youtube.php:7
+#: layout/form/simple/simple_post_youtube.php:24
+msgid "Video Title"
+msgstr ""
+
+#: layout/form/basic/basic_edit_youtube.php:42
+#: layout/form/basic/basic_post_youtube.php:62
+msgid "Video Description"
+msgstr ""
+
+#: layout/form/basic/basic_edit_youtube.php:103
+#: layout/form/basic/basic_post_youtube.php:84
+#: layout/form/simple/simple_edit_youtube.php:18
+#: layout/form/simple/simple_post_youtube.php:35
+msgid "Youtube/Vimeo URL"
+msgstr ""
+
+#: layout/form/basic/basic_edit_youtube.php:105
+#: layout/form/basic/basic_post_youtube.php:85
+#: layout/form/simple/simple_edit_youtube.php:19
+#: layout/form/simple/simple_post_youtube.php:36
+msgid "copy/paste Video URL"
+msgstr ""
+
+#: layout/form/basic/basic_edit_youtube.php:126
+#: layout/form/basic/basic_post_youtube.php:138
+#: layout/form/photo/photo_post_youtube.php:108
+#: layout/form/simple/simple_edit_youtube.php:73
+#: layout/form/simple/simple_post_youtube.php:85
+msgid "Submit URL"
+msgstr ""
+
+#: layout/form/basic/basic_post_form.php:93
+#: layout/form/photo/photo_post_form.php:18
+#: layout/form/shop/shop_edit_form.php:126
+#: layout/form/shop/shop_post_form.php:121
+#: layout/form/simple/simple_post_form.php:38
+msgid "Select Image"
+msgstr ""
+
+#: layout/form/basic/basic_post_form.php:117
+#: layout/form/simple/simple_edit_form.php:25
+msgid "Only picture files are allowed"
+msgstr ""
+
+#: layout/form/basic/basic_post_form.php:164
+#: layout/form/shop/shop_post_form.php:159
+#: layout/form/simple/simple_edit_form.php:76
+#: layout/form/simple/simple_post_form.php:103
+msgid "Reset"
+msgstr ""
+
+#: layout/form/basic/basic_post_youtube.php:87
+#: layout/form/simple/simple_edit_youtube.php:20
+#: layout/form/simple/simple_post_youtube.php:37
+msgid "Only URL from YouTube & Vimeo is allowed"
+msgstr ""
+
+#: layout/form/photo/photo_post_youtube.php:5
+msgid "Youtube Title"
+msgstr ""
+
+#: layout/form/photo/photo_post_youtube.php:42
+msgid "Youtube Description"
+msgstr ""
+
+#: layout/form/photo/photo_post_youtube.php:58
+msgid "Youtube URL"
+msgstr ""
+
+#: layout/form/photo/photo_post_youtube.php:59
+msgid "copy/paste Youtube URL"
+msgstr ""
+
+#: layout/form/post_edit_image.php:25
+msgid "Updating personal form EDIT layout. Refresh page again."
+msgstr ""
+
+#: layout/form/post_edit_image.php:46 layout/form/post_edit_youtube.php:49
+msgid "Edit Layout Not Found."
+msgstr ""
+
+#: layout/form/post_edit_image.php:74 layout/form/post_edit_youtube.php:71
+msgid "Successfully updated."
+msgstr ""
+
+#: layout/form/post_edit_image.php:119
+msgid "Error in Image file. Image not updated."
+msgstr ""
+
+#: layout/form/post_edit_image.php:131
+msgid "View"
+msgstr ""
+
+#: layout/form/post_edit_image.php:135
+msgid "Edit"
+msgstr ""
+
+#: layout/form/post_edit_youtube.php:28
+msgid "Updating personal edit form layout. Refresh page again."
+msgstr ""
+
+#: layout/form/post_edit_youtube.php:76
+msgid "Error in Video URL"
+msgstr ""
+
+#: layout/form/post_image.php:77 libs/functions.php:867
+msgid "Successfully posted."
+msgstr ""
+
+#: layout/form/post_image.php:82
+msgid "My Gallery"
+msgstr ""
+
+#: layout/form/post_image.php:87 libs/functions.php:872
+msgid "Your submission is under review."
+msgstr ""
+
+#: layout/form/post_image.php:109
+msgid "Invalid file"
+msgstr ""
+
+#: layout/form/post_image.php:113
+msgid "Error occurred"
+msgstr ""
+
+#: layout/form/post_image.php:139 layout/form/post_youtube.php:39
+msgid "Updating personal form layout. Refresh page again."
+msgstr ""
+
+#: layout/form/post_image.php:149 layout/form/post_youtube.php:48
+msgid "Layout Not Found. Check Settings and save update again."
+msgstr ""
+
+#: layout/form/post_youtube.php:107 libs/functions.php:789
+msgid "Video is successfully posted."
+msgstr ""
+
+#: layout/form/post_youtube.php:114
+msgid "Your video is under review"
+msgstr ""
+
+#: layout/form/shop/shop_edit_form.php:4 layout/form/shop/shop_post_form.php:4
+msgid "Item Title"
+msgstr ""
+
+#: layout/form/shop/shop_edit_form.php:19
+#: layout/form/shop/shop_post_form.php:19
+msgid "Select category"
+msgstr ""
+
+#: layout/form/shop/shop_edit_form.php:144
+#: layout/form/shop/shop_post_form.php:144
+msgid "Only picture file are allowed."
+msgstr ""
+
+#: layout/form/shop/shop_edit_form.php:157
+#: layout/form/shop/shop_post_form.php:157
+msgid "Post Product"
+msgstr ""
+
+#: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
+#: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
+#: layout/grid/shop/shop_down.php:3 layout/grid/slide/slide_down.php:3
+msgid "No record found"
+msgstr ""
+
+#: layout/grid/basic/basic_main.php:14 layout/grid/flat/flat_main.php:30
+#: layout/grid/list/list_main.php:31 layout/grid/shop/shop_main.php:41
+#: layout/media/basic/content.php:13 layout/media/shop/content.php:109
+msgid "Under review"
+msgstr ""
+
+#: layout/pick.php:48
+msgid "Pick Layout Not Found."
+msgstr ""
+
+#: layout/pick.php:53
+msgid "Not found"
+msgstr ""
+
+#: libs/custom_column.php:10
+msgid "Author"
+msgstr ""
+
+#: libs/custom_column.php:11
+msgid "Albums"
+msgstr ""
+
+#: libs/custom_column.php:12
+msgid "Layout Name"
+msgstr ""
+
+#: libs/custom_column.php:13
+msgid "Thumbnail"
+msgstr ""
+
+#: libs/custom_column.php:14
+msgid ""
+"<span class=\"vers\"><div title=\"Comments\" class=\"comment-grey-bubble"
+"\">Comments</div></span>"
+msgstr ""
+
+#: libs/custom_column.php:15
+msgid "Date"
+msgstr ""
+
+#: libs/functions.php:794
+msgid "Your video submission is under review."
+msgstr ""
+
+#: libs/functions.php:807 libs/functions.php:882
+msgid "Server error. Try again later"
+msgstr ""
+
+#: libs/install.php:203
+msgid "User Post Gallery"
+msgstr ""
+
+#: libs/install.php:204
+msgid "UPG Post"
+msgstr ""
+
+#: libs/install.php:205
+msgid "Add "
+msgstr ""
+
+#: libs/install.php:206 libs/install.php:257 libs/install.php:282
+msgid "Add New "
+msgstr ""
+
+#: libs/install.php:207 libs/install.php:255
+msgid "Edit "
+msgstr ""
+
+#: libs/install.php:208 libs/install.php:258
+msgid "New "
+msgstr ""
+
+#: libs/install.php:209
+msgid "View "
+msgstr ""
+
+#: libs/install.php:210 libs/install.php:251
+msgid "Search "
+msgstr ""
+
+#: libs/install.php:211 libs/install.php:212
+msgid "No "
+msgstr ""
+
+#: libs/install.php:214
+msgid "Featured Icon/Logo"
+msgstr ""
+
+#: libs/install.php:215
+msgid "Set featured Logo"
+msgstr ""
+
+#: libs/install.php:216
+msgid "Remove Logo"
+msgstr ""
+
+#: libs/install.php:249
+msgid " Albums"
+msgstr ""
+
+#: libs/install.php:250
+msgid " Album"
+msgstr ""
+
+#: libs/install.php:252
+msgid "All "
+msgstr ""
+
+#: libs/install.php:253 libs/install.php:254
+msgid "Parent "
+msgstr ""
+
+#: libs/install.php:256
+msgid "Update "
+msgstr ""
+
+#: libs/install.php:259
+msgid "  Albums"
+msgstr ""
+
+#: libs/install.php:274 libs/install.php:276 libs/install.php:284
+msgid " Tags"
+msgstr ""
+
+#: libs/install.php:275
+msgid " Tag"
+msgstr ""
+
+#: libs/install.php:277
+msgid " All Tags"
+msgstr ""
+
+#: libs/install.php:278
+msgid "Parent Tag"
+msgstr ""
+
+#: libs/install.php:279
+msgid "Parent Tag:"
+msgstr ""
+
+#: libs/install.php:280
+msgid "Edit Tag"
+msgstr ""
+
+#: libs/install.php:281
+msgid "Update Tag"
+msgstr ""
+
+#: libs/install.php:283
+msgid "New Tag Name"
+msgstr ""
+
+#: libs/metabox.php:8
+msgid "Main UPG media file"
+msgstr ""
+
+#: libs/metabox.php:10
+msgid "Post Preview Layout"
+msgstr ""
+
+#: libs/metabox.php:12
+msgid "Extra Custom Fields"
+msgstr ""
+
+#: libs/metabox.php:76 libs/metabox.php:80
+msgid "Attached to: "
+msgstr ""
+
+#: libs/metabox.php:77
+msgid "Primary UPG Gallery"
+msgstr ""
+
+#: libs/metabox.php:97
+msgid "Upload Image"
+msgstr ""
+
+#: libs/metabox.php:99
+msgid "Post Youtube/Vimeo URL"
+msgstr ""
+
+#: libs/taxonomy.php:7
+msgid "Hide at Front end during submission"
+msgstr ""
+
+#: libs/taxonomy.php:21
+msgid "Hide at Front End"
+msgstr ""
+
+#: libs/taxonomy.php:47
+msgid "Hide"
+msgstr ""
+
+#: setting.php:22 wp-upg.php:675
+msgid "Settings"
+msgstr ""
+
+#: setting.php:28
+msgid "Extra Settings"
+msgstr ""
+
+#: setting.php:36
+msgid "Grid/Gallery Layout Settings"
+msgstr ""
+
+#: setting.php:44
+msgid "Submission form Settings"
+msgstr ""
+
+#: setting.php:53
+msgid "Media/Preview Layout Settings"
+msgstr ""
+
+#: setting.php:70
+msgid "Form Fields & Shortcodes"
+msgstr ""
+
+#: setting.php:79
+msgid "Custom Extra Fields"
+msgstr ""
+
+#: setting.php:87
+msgid "Shortcode for Position 1st"
+msgstr ""
+
+#: setting.php:94
+msgid "Shortcode for Position 2nd"
+msgstr ""
+
+#: setting.php:107
+msgid "Social Profile Settings"
+msgstr ""
+
+#: setting.php:114
+msgid "Member Profile Tab"
+msgstr ""
+
+#: setting.php:126 setting.php:816
+msgid "Media Settings"
+msgstr ""
+
+#: setting.php:133
+msgid "Images sizes & Settings"
+msgstr ""
+
+#: setting.php:265
+msgid ""
+"Ultimate-Member is Wordpress membership plugin\n"
+"that offers a member profile page.<br>After enabling the UPG plugin, you can "
+"cause\n"
+"the Ultimate-Member profile page to have an extra tab and that tab can show "
+"the UPG post of your choice.<br><br>Basic settings applied to UPG-Post tab."
+msgstr ""
+
+#: setting.php:274
+msgid "UPG Media Settings"
+msgstr ""
+
+#: setting.php:276
+msgid ""
+"Note: When you change WordPress themes or change the sizes of your "
+"thumbnails, images that you have previously uploaded to you media library "
+"will be missing thumbnail files for those new image sizes. Use <a href="
+"\"https://wordpress.org/plugins/regenerate-thumbnails/\">this plugin tool</"
+"a> to create those missing thumbnail files for all images."
+msgstr ""
+
+#: setting.php:301
+msgid ""
+"Unpublished post are saved as draft. Admin must manually mark as published "
+"before it is visible to visitors."
+msgstr ""
+
+#: setting.php:304
+msgid ""
+"When not logged in user submit post the post must be assigned with username."
+msgstr ""
+
+#: setting.php:404 setting.php:562 setting.php:587 setting.php:610
+msgid "Important settings"
+msgstr ""
+
+#: setting.php:439
+msgid "wp-pagenavi plugin must be installed and active."
+msgstr ""
+
+#: setting.php:443
+msgid ""
+"Image will get enlarged at same page. There is no change in page hence no "
+"preview layout is used."
+msgstr ""
+
+#: setting.php:458
+msgid "Grid layout is where [upg-list] shortcode is used."
+msgstr ""
+
+#: setting.php:475
+msgid "This will check if the user is logged in or not."
+msgstr ""
+
+#: setting.php:482
+msgid ""
+"Post button displayed only to logged in user but who have capabilities to "
+"edit current post."
+msgstr ""
+
+#: setting.php:629 setting.php:635
+msgid "This settings doesn't get applied to personal layout."
+msgstr ""
+
+#: setting.php:639
+msgid ""
+"User at front-end don't require to post image compulsory but image upload "
+"field will be visible."
+msgstr ""
+
+#: setting.php:643
+msgid "Page doesn't get changed during form submission."
+msgstr ""
+
+#: setting.php:649
+msgid "Form layout is where [upg-post] shortcode is used."
+msgstr ""
+
+#: setting.php:727
+msgid ""
+"Sometime due to special theme, UPG will show two titles. You need to enable "
+"to make it one."
+msgstr ""
+
+#: setting.php:733
+msgid ""
+"Media layout is UPG system. Preview parameter in [upg-post] shortcode is for "
+"media layouts."
+msgstr ""
+
+#: setting.php:767
+msgid ""
+"Shortcode to display submission on front page is [upg-post type=\"image\"] & "
+"[upg-post type=\"youtube\"]"
+msgstr ""
+
+#: setting.php:810
+msgid "Basic Settings"
+msgstr ""
+
+#: setting.php:813
+msgid "Form Fields"
+msgstr ""
+
+#: setting.php:815
+msgid "Social Profile"
+msgstr ""
+
+#: widgets/categories.php:147 widgets/form.php:54
+msgid "New title"
+msgstr ""
+
+#: widgets/categories.php:150
+msgid "Title:"
+msgstr ""
+
+#: widgets/categories.php:154
+msgid "Select Parent:"
+msgstr ""
+
+#: widgets/categories.php:157
+msgid "Select Parent"
+msgstr ""
+
+#: widgets/categories.php:176
+msgid ""
+"Show only the immediate children of the selected category. Displays all the "
+"top level categories if no parent is selected."
+msgstr ""
+
+#: widgets/categories.php:181
+msgid "Hide Empty Categories"
+msgstr ""
+
+#: widgets/categories.php:186
+msgid "Show Listing Counts"
+msgstr ""
+
+#: widgets/form.php:61
+msgid "Widget Title:"
+msgstr ""
+
+#: widgets/form.php:65
+msgid "Select form type:"
+msgstr ""
+
+#: widgets/form.php:75
+msgid "Select form layout"
+msgstr ""
+
+#: widgets/form.php:86
+msgid "Select preview layout"
+msgstr ""
+
+#: widgets/form.php:94
+msgid "Preview layout is used if lightbox/popup is not enabled in grid layout."
+msgstr ""
+
+#: wp-upg.php:356
+msgid "You are not authorized to edit"
+msgstr ""
+
+#: wp-upg.php:362
+msgid "Login"
+msgstr ""
+
+#: wp-upg.php:674
+msgid "Docs"
+msgstr ""
