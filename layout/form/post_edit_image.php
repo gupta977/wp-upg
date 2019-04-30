@@ -38,7 +38,7 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 				}
 				else 
 				{
-					echo "Edit layout is available only to UPG Pro version.";
+					echo "Edit layout is available only to UPG Pro version. You can also hide this button at UPG Grid settings.";
 				}
 				
 			}

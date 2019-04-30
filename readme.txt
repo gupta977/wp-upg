@@ -129,6 +129,18 @@ Go to our site to read full updated documentations and features at UPG FAQ.
 * <a href="https://odude.com/demo/photo/" target="_blank">Photo Layout Demo</a>
 * <a href="http://odude.com/demo/upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
 
+= Development =
+
+* <a href="https://github.com/gupta977/wp-upg">Fork the plugin or report an issue on Github</a>
+
+= Language =
+
+* German - Deutsche (de_DE)
+* Spanish - Española (es_ES)
+* Hindi - हिंदी (hi_IN)
+* Italian - Italiana (it_IT)
+* Swedish - svenska (sv_SE)
+
 == Installation ==
 = Steps to Install =
 

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-02-25 15:52+0545\n"
-"PO-Revision-Date: 2019-02-25 15:53+0545\n"
+"POT-Creation-Date: 2019-04-28 17:59+0545\n"
+"PO-Revision-Date: 2019-04-28 18:00+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: de\n"
@@ -48,7 +48,7 @@ msgstr "Als Entwurf markieren"
 msgid "Maximum upload file size limit:"
 msgstr "Die maximale Größe für Upload-Dateien ist"
 
-#: layout/attach.php:85 layout/catalog.php:280
+#: layout/attach.php:85 layout/catalog.php:283
 #, fuzzy
 #| msgid "Layout Not Found. Check Settings and save update again."
 msgid "Layout Not Found. Check UPG Settings."
@@ -66,7 +66,7 @@ msgstr "UPG Beitrag"
 msgid "This post button is only visible to you."
 msgstr ""
 
-#: layout/catalog.php:244
+#: layout/catalog.php:247
 msgid "You must login"
 msgstr "Bitte logge Dich ein"
 
@@ -212,25 +212,25 @@ msgstr "Kopieren/Einfügen Youtube URL"
 msgid "Updating personal form EDIT layout. Refresh page again."
 msgstr ""
 
-#: layout/form/post_edit_image.php:46 layout/form/post_edit_youtube.php:49
+#: layout/form/post_edit_image.php:47 layout/form/post_edit_youtube.php:49
 msgid "Edit Layout Not Found."
 msgstr ""
 
-#: layout/form/post_edit_image.php:74 layout/form/post_edit_youtube.php:71
+#: layout/form/post_edit_image.php:75 layout/form/post_edit_youtube.php:71
 msgid "Successfully updated."
 msgstr "Erfolgreich übermittelt."
 
-#: layout/form/post_edit_image.php:119
+#: layout/form/post_edit_image.php:120
 msgid "Error in Image file. Image not updated."
 msgstr ""
 
-#: layout/form/post_edit_image.php:131
+#: layout/form/post_edit_image.php:132
 #, fuzzy
 #| msgid "View "
 msgid "View"
 msgstr "Ansicht "
 
-#: layout/form/post_edit_image.php:135
+#: layout/form/post_edit_image.php:136
 #, fuzzy
 #| msgid "Edit "
 msgid "Edit"
@@ -244,37 +244,39 @@ msgstr ""
 msgid "Error in Video URL"
 msgstr ""
 
-#: layout/form/post_image.php:77 libs/functions.php:867
+#: layout/form/post_image.php:81 libs/functions.php:868
 msgid "Successfully posted."
 msgstr "Erfolgreich übermittelt."
 
-#: layout/form/post_image.php:78
-msgid "Click here to view"
-msgstr "Zur Ansicht hier klicken"
+#: layout/form/post_image.php:86
+#, fuzzy
+#| msgid "UPG Post Gallery"
+msgid "My Gallery"
+msgstr "UPG Beitrags-Gallerie"
 
-#: layout/form/post_image.php:83 libs/functions.php:872
+#: layout/form/post_image.php:91 libs/functions.php:873
 msgid "Your submission is under review."
 msgstr "Ihre übermittelten Daten werden überprüft."
 
-#: layout/form/post_image.php:105
+#: layout/form/post_image.php:113
 msgid "Invalid file"
-msgstr ""
+msgstr "Nur Bilddateien sind erlaubt."
 
-#: layout/form/post_image.php:109
+#: layout/form/post_image.php:117
 msgid "Error occurred"
-msgstr ""
+msgstr "Fehler"
 
-#: layout/form/post_image.php:135 layout/form/post_youtube.php:39
+#: layout/form/post_image.php:143 layout/form/post_youtube.php:39
 msgid "Updating personal form layout. Refresh page again."
 msgstr ""
 
-#: layout/form/post_image.php:145 layout/form/post_youtube.php:48
+#: layout/form/post_image.php:153 layout/form/post_youtube.php:48
 msgid "Layout Not Found. Check Settings and save update again."
 msgstr ""
 "Layout nicht gefunden. Überprüfen Sie die Einstellungen und speichern Sie "
 "das Update erneut."
 
-#: layout/form/post_youtube.php:107 libs/functions.php:789
+#: layout/form/post_youtube.php:107 libs/functions.php:790
 msgid "Video is successfully posted."
 msgstr "Das YouTube Video wurde erfolgreich veröffentlicht."
 
@@ -298,7 +300,7 @@ msgstr "Nur Bilddateien sind erlaubt."
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
-#: layout/grid/shop/shop_down.php:3
+#: layout/grid/shop/shop_down.php:3 layout/grid/slide/slide_down.php:3
 msgid "No record found"
 msgstr "Beitrag nicht gefunden."
 
@@ -313,7 +315,9 @@ msgid "Pick Layout Not Found."
 msgstr "Abholen-Layout nicht gefunden."
 
 #: layout/pick.php:53
-msgid "Post Not found."
+#, fuzzy
+#| msgid "Post Not found."
+msgid "Not found"
 msgstr "Beitrag nicht gefunden."
 
 #: libs/custom_column.php:10
@@ -321,12 +325,14 @@ msgid "Author"
 msgstr "Autor"
 
 #: libs/custom_column.php:11
-msgid "Category"
-msgstr "Kategorie"
+#, fuzzy
+#| msgid " Albums"
+msgid "Albums"
+msgstr "Album"
 
 #: libs/custom_column.php:12
-msgid "Image Layout"
-msgstr "Bild Layout"
+msgid "Layout Name"
+msgstr ""
 
 #: libs/custom_column.php:13
 msgid "Thumbnail"
@@ -344,115 +350,115 @@ msgstr ""
 msgid "Date"
 msgstr "Datum"
 
-#: libs/functions.php:794
+#: libs/functions.php:795
 msgid "Your video submission is under review."
 msgstr "Ihre übermittelten Daten werden überprüft."
 
-#: libs/functions.php:807 libs/functions.php:882
+#: libs/functions.php:808 libs/functions.php:883
 msgid "Server error. Try again later"
 msgstr "Serverfehler. Bitte versuchen Sie es später wieder."
 
-#: libs/install.php:185
+#: libs/install.php:203
 msgid "User Post Gallery"
 msgstr "Galerie Benutzerbeitrag"
 
-#: libs/install.php:186
+#: libs/install.php:204
 msgid "UPG Post"
 msgstr "UPG Beitrag"
 
-#: libs/install.php:187
+#: libs/install.php:205
 msgid "Add "
 msgstr "Hinzufügen "
 
-#: libs/install.php:188 libs/install.php:239 libs/install.php:264
+#: libs/install.php:206 libs/install.php:257 libs/install.php:282
 msgid "Add New "
 msgstr "Neu hinzufügen "
 
-#: libs/install.php:189 libs/install.php:237
+#: libs/install.php:207 libs/install.php:255
 msgid "Edit "
 msgstr "Bearbeiten "
 
-#: libs/install.php:190 libs/install.php:240
+#: libs/install.php:208 libs/install.php:258
 msgid "New "
 msgstr "Neu "
 
-#: libs/install.php:191
+#: libs/install.php:209
 msgid "View "
 msgstr "Ansicht "
 
-#: libs/install.php:192 libs/install.php:233
+#: libs/install.php:210 libs/install.php:251
 msgid "Search "
 msgstr "Suche "
 
-#: libs/install.php:193 libs/install.php:194
+#: libs/install.php:211 libs/install.php:212
 msgid "No "
 msgstr "Nein "
 
-#: libs/install.php:196
+#: libs/install.php:214
 msgid "Featured Icon/Logo"
 msgstr "Gekennzeichnetes Icon/Logo"
 
-#: libs/install.php:197
+#: libs/install.php:215
 msgid "Set featured Logo"
 msgstr "Setze gekennzeichnete Logo"
 
-#: libs/install.php:198
+#: libs/install.php:216
 msgid "Remove Logo"
 msgstr "Entferne Logo"
 
-#: libs/install.php:231
+#: libs/install.php:249
 msgid " Albums"
 msgstr "Album"
 
-#: libs/install.php:232
+#: libs/install.php:250
 msgid " Album"
 msgstr " Album"
 
-#: libs/install.php:234
+#: libs/install.php:252
 msgid "All "
 msgstr "Alle "
 
-#: libs/install.php:235 libs/install.php:236
+#: libs/install.php:253 libs/install.php:254
 msgid "Parent "
 msgstr "Übergeordnet "
 
-#: libs/install.php:238
+#: libs/install.php:256
 msgid "Update "
 msgstr "Update "
 
-#: libs/install.php:241
+#: libs/install.php:259
 msgid "  Albums"
 msgstr "  Album"
 
-#: libs/install.php:256 libs/install.php:258 libs/install.php:266
+#: libs/install.php:274 libs/install.php:276 libs/install.php:284
 msgid " Tags"
 msgstr " Stichworte"
 
-#: libs/install.php:257
+#: libs/install.php:275
 msgid " Tag"
 msgstr " Stichwort"
 
-#: libs/install.php:259
+#: libs/install.php:277
 msgid " All Tags"
 msgstr " Alle Stichworte"
 
-#: libs/install.php:260
+#: libs/install.php:278
 msgid "Parent Tag"
 msgstr "Übergeordnete Stichworte"
 
-#: libs/install.php:261
+#: libs/install.php:279
 msgid "Parent Tag:"
 msgstr "Übergeordnetes Stichwort:"
 
-#: libs/install.php:262
+#: libs/install.php:280
 msgid "Edit Tag"
 msgstr "Bearbeite Stichwort"
 
-#: libs/install.php:263
+#: libs/install.php:281
 msgid "Update Tag"
 msgstr "Update Stichwort"
 
-#: libs/install.php:265
+#: libs/install.php:283
 msgid "New Tag Name"
 msgstr "Neuer Stichwort-Name"
 
@@ -500,16 +506,20 @@ msgstr "An der Benutzeroberfläche ausblenden"
 msgid "Hide"
 msgstr "Ausblenden"
 
-#: setting.php:22 wp-upg.php:662
+#: setting.php:22 wp-upg.php:676
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: setting.php:28
-msgid "Quick Settings"
-msgstr "Schnelleinstellungen"
+#, fuzzy
+#| msgid "Settings"
+msgid "Extra Settings"
+msgstr "Einstellungen"
 
 #: setting.php:36
-msgid "Grid Layout Settings"
+#, fuzzy
+#| msgid "Grid Layout Settings"
+msgid "Grid/Gallery Layout Settings"
 msgstr "UPG Beitrag Grid Layout"
 
 #: setting.php:44
@@ -517,8 +527,10 @@ msgid "Submission form Settings"
 msgstr ""
 
 #: setting.php:53
-msgid "Media Layout Settings"
-msgstr ""
+#, fuzzy
+#| msgid "UPG Post Preview Layout"
+msgid "Media/Preview Layout Settings"
+msgstr "UPG Beitrags-Vorschau-Layout"
 
 #: setting.php:70
 msgid "Form Fields & Shortcodes"
@@ -544,7 +556,7 @@ msgstr "Einstellungen für das soziale Profil"
 msgid "Member Profile Tab"
 msgstr ""
 
-#: setting.php:126 setting.php:775
+#: setting.php:126 setting.php:839
 msgid "Media Settings"
 msgstr "Medieneinstellungen"
 
@@ -574,90 +586,91 @@ msgid ""
 "a> to create those missing thumbnail files for all images."
 msgstr ""
 
-#: setting.php:293
+#: setting.php:301
 msgid ""
 "Unpublished post are saved as draft. Admin must manually mark as published "
 "before it is visible to visitors."
 msgstr ""
 
-#: setting.php:296
+#: setting.php:304
 msgid ""
 "When not logged in user submit post the post must be assigned with username."
 msgstr ""
 
-#: setting.php:363 setting.php:521 setting.php:546 setting.php:569
+#: setting.php:322 setting.php:396 setting.php:558 setting.php:583
+#: setting.php:606
 msgid "Important settings"
 msgstr "Wichtige Einstellungen"
 
-#: setting.php:398
+#: setting.php:431
 msgid "wp-pagenavi plugin must be installed and active."
 msgstr ""
 
-#: setting.php:402
+#: setting.php:435
 msgid ""
 "Image will get enlarged at same page. There is no change in page hence no "
 "preview layout is used."
 msgstr ""
 
-#: setting.php:417
+#: setting.php:450
 msgid "Grid layout is where [upg-list] shortcode is used."
 msgstr ""
 
-#: setting.php:434
+#: setting.php:467
 msgid "This will check if the user is logged in or not."
 msgstr ""
 
-#: setting.php:441
+#: setting.php:474
 msgid ""
 "Post button displayed only to logged in user but who have capabilities to "
 "edit current post."
 msgstr ""
 
-#: setting.php:588 setting.php:594
+#: setting.php:625 setting.php:631
 msgid "This settings doesn't get applied to personal layout."
 msgstr ""
 
-#: setting.php:598
+#: setting.php:635
 msgid ""
 "User at front-end don't require to post image compulsory but image upload "
 "field will be visible."
 msgstr ""
 
-#: setting.php:602
+#: setting.php:639
 msgid "Page doesn't get changed during form submission."
 msgstr "Während der Übermittlung an der Benutzeroberfläche ausblenden"
 
-#: setting.php:608
+#: setting.php:645
 msgid "Form layout is where [upg-post] shortcode is used."
 msgstr ""
 
-#: setting.php:686
+#: setting.php:723
 msgid ""
 "Sometime due to special theme, UPG will show two titles. You need to enable "
 "to make it one."
 msgstr ""
 
-#: setting.php:692
+#: setting.php:729
 msgid ""
 "Media layout is UPG system. Preview parameter in [upg-post] shortcode is for "
 "media layouts."
 msgstr ""
 
-#: setting.php:726
+#: setting.php:793
 msgid ""
 "Shortcode to display submission on front page is [upg-post type=\"image\"] & "
 "[upg-post type=\"youtube\"]"
 msgstr ""
 
-#: setting.php:769
+#: setting.php:833
 msgid "Basic Settings"
 msgstr "Schnelleinstellungen"
 
-#: setting.php:772
+#: setting.php:836
 msgid "Form Fields"
 msgstr "Beitragstitel"
 
-#: setting.php:774
+#: setting.php:838
 msgid "Social Profile"
 msgstr "Soziale Netzwerke"
 
@@ -713,17 +726,29 @@ msgstr "Beitrags-Vorschau-Layout"
 msgid "Preview layout is used if lightbox/popup is not enabled in grid layout."
 msgstr ""
 
-#: wp-upg.php:343
+#: wp-upg.php:357
 msgid "You are not authorized to edit"
-msgstr ""
+msgstr "Bearbeite Stichwort"
 
-#: wp-upg.php:349
+#: wp-upg.php:363
 msgid "Login"
 msgstr "Einloggen"
 
-#: wp-upg.php:661
+#: wp-upg.php:675
 msgid "Docs"
 msgstr "Doks"
+
+#~ msgid "Click here to view"
+#~ msgstr "Zur Ansicht hier klicken"
+
+#~ msgid "Category"
+#~ msgstr "Kategorie"
+
+#~ msgid "Image Layout"
+#~ msgstr "Bild Layout"
+
+#~ msgid "Quick Settings"
+#~ msgstr "Schnelleinstellungen"
 
 #~ msgid " error"
 #~ msgstr "Fehler"
@@ -748,11 +773,6 @@ msgstr "Doks"
 
 #~ msgid "Main Image/Youtube"
 #~ msgstr "Hauptbild/Youtube"
-
-#, fuzzy
-#~| msgid "UPG Post Preview Layout"
-#~ msgid "UPG's Preview Layout Settings"
-#~ msgstr "UPG Beitrags-Vorschau-Layout"
 
 #, fuzzy
 #~| msgid "Edit Tag"

@@ -151,7 +151,7 @@ class upg_category_Widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 			  <br>
 			  <br>
-			  <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Select Parent:' ); ?></label>
+			  <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Select Parent' ); ?></label>
 			<?php
     	wp_dropdown_categories( array(
         	'show_option_none'  => '-- '.__( 'Select Parent', 'wp-upg' ).' --',

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-02-25 15:53+0545\n"
-"PO-Revision-Date: 2019-02-25 15:53+0545\n"
+"POT-Creation-Date: 2019-04-28 18:02+0545\n"
+"PO-Revision-Date: 2019-04-28 18:03+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: it\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: addon.php:20
 msgid "UPG Plugins"
-msgstr ""
+msgstr "UPG Plugin"
 
 #: addon.php:21
 msgid "UPG Help"
-msgstr ""
+msgstr "UPG Aiuto"
 
 #: addon.php:27
 msgid "Search"
@@ -46,7 +46,7 @@ msgstr "attesa approvazione"
 msgid "Maximum upload file size limit:"
 msgstr "Il limite massimo di dimensioni del file di upload è"
 
-#: layout/attach.php:85 layout/catalog.php:280
+#: layout/attach.php:85 layout/catalog.php:283
 msgid "Layout Not Found. Check UPG Settings."
 msgstr "Layout non trovato. Controllare le impostazioni UPG."
 
@@ -61,7 +61,7 @@ msgstr "Inviare"
 msgid "This post button is only visible to you."
 msgstr ""
 
-#: layout/catalog.php:244
+#: layout/catalog.php:247
 msgid "You must login"
 msgstr "Devi effettuare il login"
 
@@ -232,25 +232,25 @@ msgstr ""
 "Aggiornamento del formato personale modifica layout. Aggiorna nuovamente la "
 "pagina."
 
-#: layout/form/post_edit_image.php:46 layout/form/post_edit_youtube.php:49
+#: layout/form/post_edit_image.php:47 layout/form/post_edit_youtube.php:49
 #, fuzzy
 #| msgid "Pick Layout Not Found."
 msgid "Edit Layout Not Found."
 msgstr "Scegli layout non funzionante."
 
-#: layout/form/post_edit_image.php:74 layout/form/post_edit_youtube.php:71
+#: layout/form/post_edit_image.php:75 layout/form/post_edit_youtube.php:71
 msgid "Successfully updated."
 msgstr "Aggiornamento riuscito."
 
-#: layout/form/post_edit_image.php:119
+#: layout/form/post_edit_image.php:120
 msgid "Error in Image file. Image not updated."
 msgstr "Errore nel file di immagine. Immagine non aggiornata."
 
-#: layout/form/post_edit_image.php:131
+#: layout/form/post_edit_image.php:132
 msgid "View"
 msgstr "Visualizza"
 
-#: layout/form/post_edit_image.php:135
+#: layout/form/post_edit_image.php:136
 msgid "Edit"
 msgstr "Modifica"
 
@@ -264,38 +264,38 @@ msgstr ""
 msgid "Error in Video URL"
 msgstr "Error in Video URL"
 
-#: layout/form/post_image.php:77 libs/functions.php:867
+#: layout/form/post_image.php:81 libs/functions.php:868
 msgid "Successfully posted."
 msgstr "Pubblicato con successo"
 
-#: layout/form/post_image.php:78
-msgid "Click here to view"
-msgstr "Clicca qui per vedere"
+#: layout/form/post_image.php:86
+msgid "My Gallery"
+msgstr ""
 
-#: layout/form/post_image.php:83 libs/functions.php:872
+#: layout/form/post_image.php:91 libs/functions.php:873
 msgid "Your submission is under review."
 msgstr "La tua presentazione è in corso di revisione."
 
-#: layout/form/post_image.php:105
+#: layout/form/post_image.php:113
 msgid "Invalid file"
 msgstr ""
 
-#: layout/form/post_image.php:109
+#: layout/form/post_image.php:117
 msgid "Error occurred"
-msgstr ""
+msgstr "Si è verificato un errore. Riprova"
 
-#: layout/form/post_image.php:135 layout/form/post_youtube.php:39
+#: layout/form/post_image.php:143 layout/form/post_youtube.php:39
 msgid "Updating personal form layout. Refresh page again."
 msgstr ""
 "Aggiornamento del layout del modulo personale. Aggiorna di nuovo la pagina."
 
-#: layout/form/post_image.php:145 layout/form/post_youtube.php:48
+#: layout/form/post_image.php:153 layout/form/post_youtube.php:48
 msgid "Layout Not Found. Check Settings and save update again."
 msgstr ""
 "Layout non trovato. Controlla le impostazioni e salva di nuovo "
 "l'aggiornamento."
 
-#: layout/form/post_youtube.php:107 libs/functions.php:789
+#: layout/form/post_youtube.php:107 libs/functions.php:790
 #, fuzzy
 #| msgid "YouTube Video is successfully posted."
 msgid "Video is successfully posted."
@@ -336,7 +336,7 @@ msgstr "Pubblica Anteprima Layout"
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
-#: layout/grid/shop/shop_down.php:3
+#: layout/grid/shop/shop_down.php:3 layout/grid/slide/slide_down.php:3
 msgid "No record found"
 msgstr "Nessun record trovato"
 
@@ -351,7 +351,9 @@ msgid "Pick Layout Not Found."
 msgstr "Scegli layout non funzionante."
 
 #: layout/pick.php:53
-msgid "Post Not found."
+#, fuzzy
+#| msgid "Post Not found."
+msgid "Not found"
 msgstr "Post non trovato."
 
 #: libs/custom_column.php:10
@@ -359,12 +361,14 @@ msgid "Author"
 msgstr "Autore"
 
 #: libs/custom_column.php:11
-msgid "Category"
-msgstr "Categoria"
+#, fuzzy
+#| msgid " Albums"
+msgid "Albums"
+msgstr " Albums"
 
 #: libs/custom_column.php:12
-msgid "Image Layout"
-msgstr "Immagine Layout "
+msgid "Layout Name"
+msgstr "Nome layout"
 
 #: libs/custom_column.php:13
 msgid "Thumbnail"
@@ -380,117 +384,117 @@ msgstr ""
 msgid "Date"
 msgstr "Data"
 
-#: libs/functions.php:794
+#: libs/functions.php:795
 #, fuzzy
 #| msgid "Your submission is under review."
 msgid "Your video submission is under review."
 msgstr "La tua presentazione è in corso di revisione."
 
-#: libs/functions.php:807 libs/functions.php:882
+#: libs/functions.php:808 libs/functions.php:883
 msgid "Server error. Try again later"
 msgstr ""
 
-#: libs/install.php:185
+#: libs/install.php:203
 msgid "User Post Gallery"
 msgstr ""
 
-#: libs/install.php:186
+#: libs/install.php:204
 msgid "UPG Post"
 msgstr ""
 
-#: libs/install.php:187
+#: libs/install.php:205
 msgid "Add "
 msgstr "Aggiungi"
 
-#: libs/install.php:188 libs/install.php:239 libs/install.php:264
+#: libs/install.php:206 libs/install.php:257 libs/install.php:282
 msgid "Add New "
 msgstr "Aggiungi Nuovo"
 
-#: libs/install.php:189 libs/install.php:237
+#: libs/install.php:207 libs/install.php:255
 msgid "Edit "
 msgstr "Modifica"
 
-#: libs/install.php:190 libs/install.php:240
+#: libs/install.php:208 libs/install.php:258
 msgid "New "
 msgstr "Nuovo"
 
-#: libs/install.php:191
+#: libs/install.php:209
 msgid "View "
 msgstr "Vedi"
 
-#: libs/install.php:192 libs/install.php:233
+#: libs/install.php:210 libs/install.php:251
 msgid "Search "
 msgstr "Cerca"
 
-#: libs/install.php:193 libs/install.php:194
+#: libs/install.php:211 libs/install.php:212
 msgid "No "
 msgstr "No"
 
-#: libs/install.php:196
+#: libs/install.php:214
 msgid "Featured Icon/Logo"
 msgstr "In primo piano  Icon/Logo"
 
-#: libs/install.php:197
+#: libs/install.php:215
 msgid "Set featured Logo"
 msgstr "Imposta il logo in primo piano"
 
-#: libs/install.php:198
+#: libs/install.php:216
 msgid "Remove Logo"
 msgstr "Rimuovi logo"
 
-#: libs/install.php:231
+#: libs/install.php:249
 msgid " Albums"
 msgstr " Albums"
 
-#: libs/install.php:232
+#: libs/install.php:250
 msgid " Album"
 msgstr " Album"
 
-#: libs/install.php:234
+#: libs/install.php:252
 msgid "All "
 msgstr "Tutti"
 
-#: libs/install.php:235 libs/install.php:236
+#: libs/install.php:253 libs/install.php:254
 msgid "Parent "
 msgstr "Genitore"
 
-#: libs/install.php:238
+#: libs/install.php:256
 msgid "Update "
 msgstr "Aggiornamento"
 
-#: libs/install.php:241
-msgid "  Albums"
-msgstr ""
-
-#: libs/install.php:256 libs/install.php:258 libs/install.php:266
-msgid " Tags"
-msgstr ""
-
-#: libs/install.php:257
-msgid " Tag"
-msgstr ""
-
 #: libs/install.php:259
+msgid "  Albums"
+msgstr "Album"
+
+#: libs/install.php:274 libs/install.php:276 libs/install.php:284
+msgid " Tags"
+msgstr " Tag"
+
+#: libs/install.php:275
+msgid " Tag"
+msgstr " Tag"
+
+#: libs/install.php:277
 msgid " All Tags"
-msgstr ""
+msgstr "Tutti i marcatori"
 
-#: libs/install.php:260
+#: libs/install.php:278
 msgid "Parent Tag"
-msgstr ""
+msgstr "Pagina genitore:"
 
-#: libs/install.php:261
+#: libs/install.php:279
 msgid "Parent Tag:"
-msgstr ""
+msgstr "Tag genitori:"
 
-#: libs/install.php:262
+#: libs/install.php:280
 msgid "Edit Tag"
 msgstr "Modifica tag"
 
-#: libs/install.php:263
+#: libs/install.php:281
 msgid "Update Tag"
 msgstr "Aggiorna tag"
 
-#: libs/install.php:265
+#: libs/install.php:283
 msgid "New Tag Name"
 msgstr "Nuovo nome tag"
 
@@ -534,18 +538,20 @@ msgstr "Nascondi al front-end"
 msgid "Hide"
 msgstr "Nascondi"
 
-#: setting.php:22 wp-upg.php:662
+#: setting.php:22 wp-upg.php:676
 msgid "Settings"
 msgstr "Impostazioni"
 
 #: setting.php:28
-msgid "Quick Settings"
-msgstr "Impostazioni rapide"
+#, fuzzy
+#| msgid "Settings"
+msgid "Extra Settings"
+msgstr "Impostazioni"
 
 #: setting.php:36
 #, fuzzy
 #| msgid "Post Preview Layout"
-msgid "Grid Layout Settings"
+msgid "Grid/Gallery Layout Settings"
 msgstr "Pubblica Anteprima Layout"
 
 #: setting.php:44
@@ -555,7 +561,7 @@ msgstr ""
 #: setting.php:53
 #, fuzzy
 #| msgid "Post Preview Layout"
-msgid "Media Layout Settings"
+msgid "Media/Preview Layout Settings"
 msgstr "Pubblica Anteprima Layout"
 
 #: setting.php:70
@@ -582,7 +588,7 @@ msgstr "Impostazioni del profilo social"
 msgid "Member Profile Tab"
 msgstr "Scheda Profilo membro"
 
-#: setting.php:126 setting.php:775
+#: setting.php:126 setting.php:839
 #, fuzzy
 #| msgid "Settings"
 msgid "Media Settings"
@@ -624,7 +630,7 @@ msgid ""
 "a> to create those missing thumbnail files for all images."
 msgstr ""
 
-#: setting.php:293
+#: setting.php:301
 #, fuzzy
 #| msgid ""
 #| "Unpublished post are saved as draft. Admint must manually mark as "
@@ -636,24 +642,25 @@ msgstr ""
 "I post non pubblicati vengono salvati come bozza. Admin deve contrassegnare "
 "manualmente come pubblicato prima che sia visibile ai visitatori."
 
-#: setting.php:296
+#: setting.php:304
 msgid ""
 "When not logged in user submit post the post must be assigned with username."
 msgstr ""
 "Quando non hai effettuato l'accesso, il post deve essere assegnato con nome "
 "utente."
 
-#: setting.php:363 setting.php:521 setting.php:546 setting.php:569
+#: setting.php:322 setting.php:396 setting.php:558 setting.php:583
+#: setting.php:606
 #, fuzzy
 #| msgid "Important Settings"
 msgid "Important settings"
 msgstr "Importa Impostazioni"
 
-#: setting.php:398
+#: setting.php:431
 msgid "wp-pagenavi plugin must be installed and active."
 msgstr "Il plugin wp-pagenavi deve essere installato e attivo."
 
-#: setting.php:402
+#: setting.php:435
 msgid ""
 "Image will get enlarged at same page. There is no change in page hence no "
 "preview layout is used."
@@ -661,13 +668,13 @@ msgstr ""
 "L'immagine verrà ingrandita nella stessa pagina. Non vi è alcun cambiamento "
 "nella pagina, quindi non viene utilizzato il layout di anteprima."
 
-#: setting.php:417
+#: setting.php:450
 msgid "Grid layout is where [upg-list] shortcode is used."
 msgstr ""
 "Il layout della griglia è il punto in cui viene utilizzato lo shortcode [upg-"
 "list]."
 
-#: setting.php:434
+#: setting.php:467
 #, fuzzy
 #| msgid ""
 #| "This will check if the user is logged in or not and display the buttons "
@@ -677,19 +684,19 @@ msgstr ""
 "Questo controllerà se l'utente è connesso o meno e visualizzerà i pulsanti "
 "in base ad esso."
 
-#: setting.php:441
+#: setting.php:474
 msgid ""
 "Post button displayed only to logged in user but who have capabilities to "
 "edit current post."
 msgstr ""
 
-#: setting.php:588 setting.php:594
+#: setting.php:625 setting.php:631
 #, fuzzy
 #| msgid "This settings does't get applied to personal layout."
 msgid "This settings doesn't get applied to personal layout."
 msgstr "Queste impostazioni non vengono applicate al layout personale."
 
-#: setting.php:598
+#: setting.php:635
 msgid ""
 "User at front-end don't require to post image compulsory but image upload "
 "field will be visible."
@@ -697,13 +704,13 @@ msgstr ""
 "L'utente al front-end non ha bisogno di postare l'immagine obbligatoria, ma  "
 "il campo di caricamento dell'immagine sarà visibile."
 
-#: setting.php:602
+#: setting.php:639
 #, fuzzy
 #| msgid "Hide at Front end during submission"
 msgid "Page doesn't get changed during form submission."
 msgstr "Nascondi al front end durante l'invio"
 
-#: setting.php:608
+#: setting.php:645
 #, fuzzy
 #| msgid "Grid layout is where [upg-list] shortcode is used."
 msgid "Form layout is where [upg-post] shortcode is used."
@@ -711,7 +718,7 @@ msgstr ""
 "Il layout della griglia è il punto in cui viene utilizzato lo shortcode [upg-"
 "list]."
 
-#: setting.php:686
+#: setting.php:723
 msgid ""
 "Sometime due to special theme, UPG will show two titles. You need to enable "
 "to make it one."
@@ -719,13 +726,13 @@ msgstr ""
 "A volte a causa di un tema speciale, UPG mostrerà due titoli. Va abilitato "
 "per renderlo uno."
 
-#: setting.php:692
+#: setting.php:729
 msgid ""
 "Media layout is UPG system. Preview parameter in [upg-post] shortcode is for "
 "media layouts."
 msgstr ""
 
-#: setting.php:726
+#: setting.php:793
 msgid ""
 "Shortcode to display submission on front page is [upg-post type=\"image\"] & "
 "[upg-post type=\"youtube\"]"
@@ -733,15 +740,15 @@ msgstr ""
 "Shortcode per visualizzare l'invio sulla prima pagina è [upg-post type = "
 "\"image\"] e [upg-post type = \"youtube\"]"
 
-#: setting.php:769
+#: setting.php:833
 msgid "Basic Settings"
 msgstr "Impostazioni di base"
 
-#: setting.php:772
+#: setting.php:836
 msgid "Form Fields"
 msgstr "I campi del modulo"
 
-#: setting.php:774
+#: setting.php:838
 msgid "Social Profile"
 msgstr "Profilo social"
 
@@ -805,17 +812,29 @@ msgstr "Pubblica Anteprima Layout"
 msgid "Preview layout is used if lightbox/popup is not enabled in grid layout."
 msgstr ""
 
-#: wp-upg.php:343
+#: wp-upg.php:357
 msgid "You are not authorized to edit"
 msgstr "Non sei autorizzato a modificare"
 
-#: wp-upg.php:349
+#: wp-upg.php:363
 msgid "Login"
 msgstr "Accedi al club del gelato"
 
-#: wp-upg.php:661
+#: wp-upg.php:675
 msgid "Docs"
-msgstr ""
+msgstr "Manuale"
+
+#~ msgid "Click here to view"
+#~ msgstr "Clicca qui per vedere"
+
+#~ msgid "Category"
+#~ msgstr "Categoria"
+
+#~ msgid "Image Layout"
+#~ msgstr "Immagine Layout "
+
+#~ msgid "Quick Settings"
+#~ msgstr "Impostazioni rapide"
 
 #, fuzzy
 #~| msgid "Edit Layout"

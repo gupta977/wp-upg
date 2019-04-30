@@ -341,7 +341,7 @@ function upg_media_section_callback()
 	</div>
 	 
 	<?php
-	do_action( "upg_setting_tab_basic_quick");
+	do_action( "upg_setting_tab_basic_extra");
 	echo "</div>"; 
  }
 
@@ -518,6 +518,10 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 	<code>[upg-list popup="on"]</code> : LightBox/Popup will be enabled. No preview page is used.<br>
 	
 	</div>
+	<?php
+	do_action( "upg_setting_tab_basic_grid");	
+	?>
+
 </div>
 	<?php
  }
@@ -645,7 +649,7 @@ $options = get_option('upg_settings');
 </td></tr></table>
 	
 <?php
-	do_action( "upg_setting_tab_basic_imp");	
+	do_action( "upg_setting_tab_basic_form");	
 	?>
 	</div>
 	<?php
@@ -734,7 +738,10 @@ function upg_primary_custom_field_settings()
 	<code>[upg-pick id='00' notice='SALE']</code><br>
 	layout & popup parameters are supported for upg-pick
 	
-	</div>
+	</div><br>
+	<?php
+	do_action( "upg_setting_tab_basic_media");	
+	?>
 	</div>
 	<?php
 	

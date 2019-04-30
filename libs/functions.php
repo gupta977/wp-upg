@@ -632,6 +632,7 @@ function upg_my_must_login() {
    die();
 }
 
+
 //Adds user icon in upg icon container. Links to user gallery page.
 function upg_add_extra_icon_grid_user($icon)
 {

@@ -276,7 +276,7 @@ function register_upg_taxonomies()
     'search_items' =>  __( $product.' Tags','wp-upg' ),
     'all_items' => __( $product.' All Tags','wp-upg' ),
     'parent_item' => __( 'Parent Tag','wp-upg' ),
-    'parent_item_colon' => __( 'Parent Tag:','wp-upg' ),
+    'parent_item_colon' => __( 'Parent Tag','wp-upg' ),
     'edit_item' => __( 'Edit Tag','wp-upg' ), 
     'update_item' => __( 'Update Tag','wp-upg' ),
     'add_new_item' => __( 'Add New '.$product.' Tag','wp-upg' ),
