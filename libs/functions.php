@@ -135,6 +135,10 @@ function upg_include_deps()
 function upg_check_images($files) 
 {
 	global $upg_options;
+
+					/* ob_start();
+            print_r($files);
+            error_log(ob_get_clean()); */
 	
 	$temp = false; $errr = false; $error = array();
 	
@@ -186,6 +190,9 @@ function upg_check_images($files)
 		$files = false;
 	}
 	$file_data = array('error' => $error, 'file_count' => $file_count);
+
+	//error_log("file count ".$file_count);
+
 	return $file_data;
 }		
 
@@ -354,21 +361,26 @@ function upg_submit($title, $files, $content, $category, $preview)
 		$file_count = $file_data['file_count'];
 		
 		//echo "<h1>$file_count</h1>";
+		//error_log("File count ".$file_count);
 		
 		$newPost['error'] = array_unique(array_merge($file_data['error'], $newPost['error']));
 	}
-		
+	
 	if ($category=='-1') $newPost['error'][] = 'required-category';
 	
 	foreach ($newPost['error'] as $e) 
 	{
+		
 		if (!empty($e)) 
 		{
+			//error_log("Error: ".$e);
 			unset($newPost['id']);
 			return $newPost;
 		}
 	}
 	
+	
+
 	$postData = upg_prepare_post($title, $content);
 	do_action('upg_insert_before', $postData);
 	upg_include_deps();

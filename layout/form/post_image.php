@@ -21,7 +21,6 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 
 	//Form not submitted yet.
 	
-	
 }
 else
 {

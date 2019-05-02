@@ -40,7 +40,7 @@ $url=sanitize_text_field($_POST['user-submitted-url']);
 				}
 				else 
 				{
-					echo "Edit layout is available only to UPG Pro version.";
+					echo "Edit layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>.";
 				}
 				
 			}

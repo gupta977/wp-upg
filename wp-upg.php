@@ -456,7 +456,7 @@ function upg_before_delete_post( $postid )
     if ( $post_type != 'upg' ) return;
 
     // My custom stuff for deleting my custom post type here
-	upg_log('Post Deleted with images-'.$postid);
+	//upg_log('Post Deleted with images-'.$postid);
 	upg_delete_post_media($postid);
 	//$ii=get_attached_media( 'image', $postid );
 	//upg_log('Attached id.'.$ii);
@@ -727,7 +727,8 @@ function upg_admin_notice_example_activation_hook() {
 
 add_action( 'admin_notices', 'upg_admin_notice_example_notice' );
 
-function upg_admin_notice_example_notice(){
+function upg_admin_notice_example_notice()
+{
 
     /* Check transient, if available display notice */
     if( get_transient( 'upg-admin-notice-example' ) ){

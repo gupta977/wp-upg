@@ -38,7 +38,7 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 				}
 				else 
 				{
-					echo "Edit layout is available only to UPG Pro version. You can also hide this button at UPG Grid settings.";
+					echo "Edit layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>.<br> You can hide this button at UPG Grid settings.";
 				}
 				
 			}
