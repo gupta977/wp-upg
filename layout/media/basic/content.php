@@ -27,10 +27,13 @@
 					 }
 					else
 					{
-							 
+						//Display image only if available
+						if (stripos($image,'spacer.png') == false) 
+						{	 
 						?>
 					 <div class="upg_image-frame"><img src="<?php echo $image; ?>"></div>
 					  <?php
+						}
 					}
 						 ?>
 	

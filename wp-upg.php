@@ -360,7 +360,7 @@ function upg_the_content($content)
 			else
 			{
 				//$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink($options['edit_upg_page']) ) );
-				echo __("Login","wp-upg");
+				upg_login_link();
 				//header('Location: ' . wp_login_url());
 			}
 	 

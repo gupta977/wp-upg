@@ -1,4 +1,26 @@
 <?php
+//Displays login link
+function upg_login_link()
+{
+	$options = get_option('upg_settings');
+	
+	if(isset($options['my_login']))
+		$login=$options['my_login'];
+	else
+		$login="0";
+
+		if($login!='0')
+		{
+			$linku=get_permalink($options['my_login']);
+			echo "<a href='".$linku."' class='pure-button'>".__("Login Please !","wp-upg")."</a>";
+		}
+		else
+		{
+			echo __("Login Please !","wp-upg");
+		}
+	
+}
+
 
 //Imports UPG's layout zip file. This is used at layout editor page. Files are uploaded into wordpress's upload /upg/ folder 
 function upg_upload_file( $file = array(),$path ) 

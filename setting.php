@@ -291,6 +291,9 @@ function upg_media_section_callback()
 
 		if(!isset($options['my_gallery']))
 		$options['my_gallery']="";
+
+		if(!isset($options['my_login']))
+		$options['my_login']="";
 	
 	?>
 	<button id='load_more_extra' type="button" style='margin:5px; font-size: 110%;'>Check Extra Settings</button>
@@ -334,8 +337,28 @@ function upg_media_section_callback()
         )
     );
 	echo '<br>Page must include [upg-list user="show_mine"] shortcode in content.';
+	?>
+	</div>
+	<br>
+	<br>
+
+<div style="border-style: outset;">
+<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?> 
+ <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
+	<?php
 	
-	
+	echo "<b>Select LOGIN <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>.</b>: ";
+    wp_dropdown_pages(
+        array(
+             'name' => 'upg_settings[my_login]',
+             'echo' => 1,
+             'show_option_none' => __( '&mdash; None &mdash;' ),
+             'option_none_value' => '0',
+             'selected' => $options['my_login']
+			 
+        )
+    );
+	echo '<br>Some area user need to login. Select proper login page.';
 	//**************
 	?>
 	</div>

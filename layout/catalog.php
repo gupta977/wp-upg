@@ -243,11 +243,14 @@ else
 //Empty array if not logged in
 if(!is_user_logged_in() & isset($params['user']) && $params['user']=="show_mine")
 {
-	echo "<b>";
-echo __("You must login","wp-upg");
-	echo "</b><br>";
-$args = array();	
+	upg_login_link();
+	
+	$args = array();	
 }
+
+//Do not run if array is blank
+if(!empty($args))
+{
 
 $query = new WP_Query($args); 
 
@@ -362,4 +365,9 @@ if(function_exists('wp_pagenavi'))
 $put=ob_get_clean (); 
 wp_reset_query();
 return $put;
+}
+else
+{
+	return "";
+}
 ?>

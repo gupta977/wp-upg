@@ -7,6 +7,7 @@
     if ( is_plugin_active( 'wp-upg-pro/wp-upg-pro.php' ) ) 
     {
         include_once( WP_PLUGIN_DIR. '/wp-upg-pro/bulk_upload_layout.php' );
+        
     }
     else
     {
@@ -27,6 +28,10 @@
    
       <input  id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
        <?php echo upg_droplist_category(); ?>
+       <?php
+		do_action( "upg_submit_form");
+		?>
+		
        <legend></legend>
       
 
