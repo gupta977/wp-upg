@@ -139,7 +139,7 @@ if($layout=="personal")
 	}
 	else
 	{
-		echo __('Updating personal form layout. Refresh page again.','wp-upg').": ".$layout;
+		echo __('Refresh Page','wp-upg').": ".$layout;
 		upg_auto_create_file('personal','form','personal_post_form');
 	}
 
@@ -149,7 +149,7 @@ else
 	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php"))
 		include(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php");
 	else
-		echo __('Layout Not Found. Check Settings and save update again.','wp-upg').": ".$layout;
+		echo __('Layout Not Found. Check settings.','wp-upg').": ".$layout;
 }
 	
 //ob_flush();	

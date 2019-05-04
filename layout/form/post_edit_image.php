@@ -22,7 +22,7 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 			}
 			else
 			{
-				echo __('Updating personal form EDIT layout. Refresh page again.','wp-upg').": ".$layout;
+				echo __('Refresh Page','wp-upg').": ".$layout;
 				upg_auto_create_file('personal','form','personal_edit_form');
 			}
 

@@ -23,7 +23,7 @@
     $resultUpload = upg_bulk_post_layout($upload_path,$preview,$form_name,$form_attach_id);
 ?>
 
-    <form method="POST" enctype="multipart/form-data" action="." class="dropzone pure-form">
+    <form method="POST" enctype="multipart/form-data" action=" " class="dropzone pure-form">
    
    
       <input  id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>

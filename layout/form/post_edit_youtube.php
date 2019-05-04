@@ -25,7 +25,7 @@ $url=sanitize_text_field($_POST['user-submitted-url']);
 			}
 			else
 			{
-				echo __('Updating personal edit form layout. Refresh page again.','wp-upg').": ".$layout;
+				echo __('Refresh Page','wp-upg').": ".$layout;
 				upg_auto_create_file('personal','form','personal_edit_youtube');
 			}
 		}

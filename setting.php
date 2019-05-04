@@ -76,7 +76,7 @@ function upg_settings_init(  )
 	
 	add_settings_field( 
 		'upg_primary_extra_field', 
-		__( 'Custom Extra Fields', 'wp-upg' ), 
+		__( 'Extra Form Fields', 'wp-upg' ), 
 		'upg_primary_custom_field_settings', 
 		'primary_images_setting_page', 
 		'upg_primary_image_section' 
@@ -262,9 +262,9 @@ function upg_media_setting_1_render()
 function upg_settings_section_ultimatemember_callback(  ) 
 { 
 
-	echo __( 'Ultimate-Member is Wordpress membership plugin
+	echo ( 'Ultimate-Member is Wordpress membership plugin
 that offers a member profile page.<br>After enabling the UPG plugin, you can cause
-the Ultimate-Member profile page to have an extra tab and that tab can show the UPG post of your choice.<br><br>Basic settings applied to UPG-Post tab.', 'wp-upg' );
+the Ultimate-Member profile page to have an extra tab and that tab can show the UPG post of your choice.<br><br>Basic settings applied to UPG-Post tab.');
 	
 	
 }
@@ -273,7 +273,7 @@ function upg_media_section_callback()
 {
 	echo __( 'UPG Media Settings','wp-upg' );
 	echo "<br>";
-	echo __('Note: When you change WordPress themes or change the sizes of your thumbnails, images that you have previously uploaded to you media library will be missing thumbnail files for those new image sizes. Use <a href="https://wordpress.org/plugins/regenerate-thumbnails/">this plugin tool</a> to create those missing thumbnail files for all images.','wp-upg');
+	echo ('Note: When you change WordPress themes or change the sizes of your thumbnails, images that you have previously uploaded to you media library will be missing thumbnail files for those new image sizes. Use <a href="https://wordpress.org/plugins/regenerate-thumbnails/">this plugin tool</a> to create those missing thumbnail files for all images.');
 }
 
 
@@ -301,10 +301,10 @@ function upg_media_section_callback()
 
 	<div id='upg_toggle_extra' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
 	
-	<a href="#" title="<?php echo __( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='1' <?php if($options['publish']=='1') echo 'checked="checked"'; ?> >
+	<a href="#" title="<?php echo ( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='1' <?php if($options['publish']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
 	
-	<a href="#" title="<?php echo __( 'When not logged in user submit post the post must be assigned with username.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Assign user for unregistered or not logged in users: </b><?php upg_droplist_user($options['guest_user']); ?> <br>It's better to <a href="<?php echo admin_url( 'user-new.php' );?>">create GUEST USER</a> with minimum access.
 	<br><br>
 	
@@ -451,11 +451,11 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
 	<option value="ID" <?php if($options['global_order']=="ID") echo 'selected="selected"'; ?>>Post ID</option>
 </select><br><br>
 	
-	<a href="#" title="<?php echo __( 'wp-pagenavi plugin must be installed and active.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'wp-pagenavi plugin must be installed and active.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	
 	<b>Enable Page Navigation :</b> <input type="checkbox" name='upg_settings[global_page]' value='on' <?php if($options['global_page']=='on') echo 'checked="checked"'; ?> ><br><br>
 	
-		<a href="#" title="<?php echo __( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+		<a href="#" title="<?php echo ( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 		
 		<b>Enable Lightbox Popup :</b> <input type="checkbox" name='upg_settings[global_popup]' value='on' <?php if($options['global_popup']=='on') echo 'checked="checked"'; ?> ><br><br>
 		
@@ -470,7 +470,7 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
  
  
  <table border="0"><tr><td>
- <a href="#" title="<?php echo __( 'Grid layout is where [upg-list] shortcode is used.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
+ <a href="#" title="<?php echo ( 'Grid layout is where [upg-list] shortcode is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
  <b>Default Grid Layout Name </b>:</td><td>
 
 <?php echo upg_grid_layout_list($options['global_layout'],"upg_settings[global_layout]","grid",true); ?>
@@ -487,14 +487,14 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 	<br><br>
 	
 	  
-	<a href="#" title="<?php echo __( 'This will check if the user is logged in or not.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'This will check if the user is logged in or not.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display post buttons only for logged-in users : </b>
 	<input type="checkbox" name='upg_settings[button_check_login]' value='1' <?php if($options['button_check_login']=='1') echo 'checked="checked"'; ?> ><br>
 	This will hide upload/post button from guest visitors.
 	<br>
 	<br>
 	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?>  
-	<a href="#" title="<?php echo __( 'Post button displayed only to logged in user but who have capabilities to edit current post.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'Post button displayed only to logged in user but who have capabilities to edit current post.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display post buttons only for logged-in users but with editing rights : </b>
 	<input type="checkbox" name='upg_settings[button_check_capability]' value='1' <?php if($options['button_check_capability']=='1') echo 'checked="checked"'; ?> ><br>
 	This will show post button only to user with editing capabilities of current post.  This works only to [upg-attach] shortcode.
@@ -645,27 +645,27 @@ $options = get_option('upg_settings');
 
 	//**************
 ?>
-<a href="#" title="<?php echo __( 'This settings doesn\'t get applied to personal layout.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+<a href="#" title="<?php echo ( 'This settings doesn\'t get applied to personal layout.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display description input field at post form:</b> <input type="checkbox" name='upg_settings[primary_show_formshow_desp]' value='1' <?php if($options['primary_show_formshow_desp']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
 	
 
 	
-	<a href="#" title="<?php echo __( 'This settings doesn\'t get applied to personal layout.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'This settings doesn\'t get applied to personal layout.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Enable GUI Editor (Bold,Italic,color) in description input field at post form:</b> <input type="checkbox" name='upg_settings[editor]' value='1' <?php if($options['editor']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
 	
-	<a href="#" title="<?php echo __( 'User at front-end don\'t require to post image compulsory but image upload field will be visible.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'User at front-end don\'t require to post image compulsory but image upload field will be visible.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Make image upload compulsory or required during post submission.:</b> <input type="checkbox" name='upg_settings[image_required]' value='1' <?php if($options['image_required']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
 	
-	<a href="#" title="<?php echo __( 'Page doesn\'t get changed during form submission.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'Page doesn\'t get changed during form submission.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>AJAX dynamic form submission:</b> <input type="checkbox" name='upg_settings[ajax_form]' value='1' <?php if(isset($options['ajax_form'])) if($options['ajax_form']=='1') echo 'checked="checked"'; ?> >
 	<br>Add parameter ajax="true" in [upg-post] shortcode to enable ajax.<br>
 	Note: Bulk upload will not work in ajax form<br><br>
 	
 	<table border="0"><tr><td>
-	<a href="#" title="<?php echo __( 'Form layout is where [upg-post] shortcode is used.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
+	<a href="#" title="<?php echo ( 'Form layout is where [upg-post] shortcode is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
  <b>Default Form Layout Name </b>:</td><td>
 
 <?php echo upg_grid_layout_list($options['global_form_layout'],"upg_settings[global_form_layout]","form",false); ?>
@@ -743,13 +743,13 @@ function upg_primary_custom_field_settings()
 	If LightBox or popup are enabled in grid layout. The media/preview page is not visible. Hence below settings are not required. This page doesn't require any shortcode. It is auto generated.
 	<hr>
 		
-<a href="#" title="<?php echo __( 'Sometime due to special theme, UPG will show two titles. You need to enable to make it one.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>
+<a href="#" title="<?php echo ( 'Sometime due to special theme, UPG will show two titles. You need to enable to make it one.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>
 	<b>Hide one UPG title if found double :</b> <input type="checkbox" name='upg_settings[hide_title]' value='1' <?php if($options['hide_title']=='1') echo 'checked="checked"'; ?> >
 	<br>
 	<br>
 
 	<table border="0"><tr><td>
-	<a href="#" title="<?php echo __( 'Media layout is UPG system. Preview parameter in [upg-post] shortcode is for media layouts.', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
+	<a href="#" title="<?php echo ( 'Media layout is UPG system. Preview parameter in [upg-post] shortcode is for media layouts.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
  <b>Default Media Layout Name </b>:</td><td>
 
 <?php echo upg_grid_layout_list($options['global_media_layout'],"upg_settings[global_media_layout]","media",false); ?>
@@ -813,7 +813,7 @@ The embed gallery will have own set of post. All post/images from different post
 function upg_primary_image_section_callback(  ) 
 { 
 echo '<b>';
-echo __( 'Shortcode to display submission on front page is [upg-post type="image"] & [upg-post type="youtube"]', 'wp-upg' );
+echo ( 'Shortcode to display submission on front page is [upg-post type="image"] & [upg-post type="youtube"]');
 echo '</b>';
 	
 }

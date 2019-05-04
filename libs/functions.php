@@ -821,12 +821,12 @@ function upg_ajax_post()
 			
 			//echo "<h2>".__('YouTube Video is successfully posted.','wp-upg')."</h2>";
 			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">Click here to view</a><br><br>";
-			$response['msg'] = "<div class='upg_success'>".__('Video is successfully posted.','wp-upg')."</div>";
+			$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
 
 			}
 			else
 			{
-				$response['msg'] = "<div class='upg_warning'>".__('Your video submission is under review.','wp-upg')."</div>";
+				$response['msg'] = "<div class='upg_warning'>".__('Your submission is under review.','wp-upg')."</div>";
 				//echo "<h2>".__('YouTube video is under review','wp-upg')."</h2>";
 				
 				

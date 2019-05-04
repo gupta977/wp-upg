@@ -9,7 +9,7 @@
 				
 				'upg-layout'=>array('title'=>__('Post Preview Layout',"wp-upg"),'callback'=>'upg_meta_box_layout','position'=>'side','priority'=>'core'),
 				
-				'upg-extra-fields'=>array('title'=>__('Extra Custom Fields',"wp-upg"),'callback'=>'upg_meta_box_extra_field','position'=>'side','priority'=>'core'),
+				'upg-extra-fields'=>array('title'=>__('Extra Form Fields',"wp-upg"),'callback'=>'upg_meta_box_extra_field','position'=>'side','priority'=>'core'),
 			);
 
 			

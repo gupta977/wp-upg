@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-04-29 12:16+0545\n"
-"PO-Revision-Date: 2019-04-29 12:17+0545\n"
+"POT-Creation-Date: 2019-05-04 15:41+0545\n"
+"PO-Revision-Date: 2019-05-04 15:43+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: es\n"
@@ -41,12 +41,13 @@ msgstr "Como borrador"
 #: help.php:78 layout/form/basic/basic_post_form.php:118
 #: layout/form/simple/simple_edit_form.php:26
 msgid "Maximum upload file size limit:"
-msgstr ""
+msgstr "Tamaño máximo de carga de archivos:"
 
-#: layout/attach.php:85 layout/catalog.php:283
+#: layout/attach.php:85 layout/catalog.php:286 layout/form/post_image.php:152
+#: layout/form/post_youtube.php:48
 #, fuzzy
 #| msgid "Layout Not Found. Check Settings and save update again."
-msgid "Layout Not Found. Check UPG Settings."
+msgid "Layout Not Found. Check settings."
 msgstr ""
 "Diseño no encontrado. Verifique la configuración y guarde la actualización "
 "nuevamente."
@@ -57,11 +58,7 @@ msgstr "Entrada"
 
 #: layout/attach.php:147
 msgid "This post button is only visible to you."
-msgstr ""
-
-#: layout/catalog.php:247
-msgid "You must login"
-msgstr "Usted debe iniciar sesión"
+msgstr "Este botón de publicación solo es visible para usted."
 
 #: layout/form/basic/basic_edit_form.php:4
 #: layout/form/basic/basic_post_form.php:23
@@ -75,6 +72,7 @@ msgstr "Título"
 #: layout/form/basic/basic_edit_youtube.php:5
 #: layout/form/basic/basic_post_form.php:24
 #: layout/form/basic/basic_post_youtube.php:25
+#: layout/form/bulk/bulk_post_form.php:29
 #: layout/form/photo/photo_post_form.php:7
 #: layout/form/photo/photo_post_youtube.php:6
 #: layout/form/simple/simple_edit_form.php:7
@@ -154,7 +152,7 @@ msgstr ""
 #: layout/form/simple/simple_edit_youtube.php:19
 #: layout/form/simple/simple_post_youtube.php:36
 msgid "copy/paste Video URL"
-msgstr ""
+msgstr "copiar / pegar URL de video"
 
 #: layout/form/basic/basic_post_form.php:93
 #: layout/form/photo/photo_post_form.php:18
@@ -167,13 +165,22 @@ msgstr "Seleccione imagen"
 #: layout/form/basic/basic_post_form.php:117
 #: layout/form/simple/simple_edit_form.php:25
 msgid "Only picture files are allowed"
-msgstr ""
+msgstr "Sólo se permiten archivos de imagen."
 
 #: layout/form/basic/basic_post_youtube.php:87
 #: layout/form/simple/simple_edit_youtube.php:20
 #: layout/form/simple/simple_post_youtube.php:37
 msgid "Only URL from YouTube & Vimeo is allowed"
 msgstr ""
+
+#: layout/form/bulk/bulk_post_form.php:51
+#, php-format
+msgid "Maximum upload file size: %s."
+msgstr "Tamaño máximo permitido: %s."
+
+#: layout/form/bulk/bulk_post_form.php:58 layout/form/post_image.php:85
+msgid "My Gallery"
+msgstr "Mi galería"
 
 #: layout/form/photo/photo_post_youtube.php:5
 #, fuzzy
@@ -197,9 +204,10 @@ msgstr "Título de la publicación"
 msgid "copy/paste Youtube URL"
 msgstr "como borrador"
 
-#: layout/form/post_edit_image.php:25
-msgid "Updating personal form EDIT layout. Refresh page again."
-msgstr ""
+#: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
+#: layout/form/post_image.php:142 layout/form/post_youtube.php:39
+msgid "Refresh Page"
+msgstr "Actualizar"
 
 #: layout/form/post_edit_image.php:47 layout/form/post_edit_youtube.php:49
 msgid "Edit Layout Not Found."
@@ -221,47 +229,26 @@ msgstr "Ver"
 msgid "Edit"
 msgstr "Editar"
 
-#: layout/form/post_edit_youtube.php:28
-msgid "Updating personal edit form layout. Refresh page again."
-msgstr ""
-
 #: layout/form/post_edit_youtube.php:76
 msgid "Error in Video URL"
 msgstr "Error en la URL del video"
 
-#: layout/form/post_image.php:81 libs/functions.php:868
+#: layout/form/post_image.php:80 layout/form/post_youtube.php:107
+#: libs/functions.php:824 libs/functions.php:902
 msgid "Successfully posted."
 msgstr "Publicado con éxito."
 
-#: layout/form/post_image.php:86
-msgid "My Gallery"
-msgstr "Mi galería"
-
-#: layout/form/post_image.php:91 libs/functions.php:873
+#: layout/form/post_image.php:90 libs/functions.php:829 libs/functions.php:907
 msgid "Your submission is under review."
 msgstr "Su presentación está bajo revisión."
 
-#: layout/form/post_image.php:113
+#: layout/form/post_image.php:112
 msgid "Invalid file"
 msgstr "Archivo no válido"
 
-#: layout/form/post_image.php:117
+#: layout/form/post_image.php:116
 msgid "Error occurred"
 msgstr "Se produjo un error"
-
-#: layout/form/post_image.php:143 layout/form/post_youtube.php:39
-msgid "Updating personal form layout. Refresh page again."
-msgstr ""
-
-#: layout/form/post_image.php:153 layout/form/post_youtube.php:48
-msgid "Layout Not Found. Check Settings and save update again."
-msgstr ""
-"Diseño no encontrado. Verifique la configuración y guarde la actualización "
-"nuevamente."
-
-#: layout/form/post_youtube.php:107 libs/functions.php:790
-msgid "Video is successfully posted."
-msgstr "Publicado con éxito."
 
 #: layout/form/post_youtube.php:114
 msgid "Your video is under review"
@@ -283,7 +270,7 @@ msgstr "Seleccione imagen"
 #: layout/form/shop/shop_edit_form.php:144
 #: layout/form/shop/shop_post_form.php:144
 msgid "Only picture file are allowed."
-msgstr ""
+msgstr "Sólo se permiten archivos de imagen."
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
@@ -331,11 +318,11 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: libs/functions.php:795
-msgid "Your video submission is under review."
-msgstr ""
+#: libs/functions.php:15 libs/functions.php:19
+msgid "Login Please !"
+msgstr "Ingresa, por favor !"
 
-#: libs/functions.php:808 libs/functions.php:883
+#: libs/functions.php:842 libs/functions.php:917
 msgid "Server error. Try again later"
 msgstr ""
 
@@ -447,9 +434,11 @@ msgstr ""
 msgid "Post Preview Layout"
 msgstr ""
 
-#: libs/metabox.php:12
-msgid "Extra Custom Fields"
-msgstr ""
+#: libs/metabox.php:12 setting.php:79
+#, fuzzy
+#| msgid "Post Title"
+msgid "Extra Form Fields"
+msgstr "Título de la publicación"
 
 #: libs/metabox.php:76 libs/metabox.php:80
 msgid "Attached to: "
@@ -509,10 +498,6 @@ msgstr "Configuración de Multimedia"
 msgid "Form Fields & Shortcodes"
 msgstr ""
 
-#: setting.php:79
-msgid "Custom Extra Fields"
-msgstr ""
-
 #: setting.php:87
 msgid "Shortcode for Position 1st"
 msgstr ""
@@ -529,7 +514,7 @@ msgstr "Configuraciones de perfil social"
 msgid "Member Profile Tab"
 msgstr ""
 
-#: setting.php:126 setting.php:839
+#: setting.php:126 setting.php:862
 msgid "Media Settings"
 msgstr "Configuración de Multimedia"
 
@@ -537,115 +522,30 @@ msgstr "Configuración de Multimedia"
 msgid "Images sizes & Settings"
 msgstr ""
 
-#: setting.php:265
-msgid ""
-"Ultimate-Member is Wordpress membership plugin\n"
-"that offers a member profile page.<br>After enabling the UPG plugin, you can "
-"cause\n"
-"the Ultimate-Member profile page to have an extra tab and that tab can show "
-"the UPG post of your choice.<br><br>Basic settings applied to UPG-Post tab."
-msgstr ""
-
 #: setting.php:274
 msgid "UPG Media Settings"
 msgstr ""
 
-#: setting.php:276
-msgid ""
-"Note: When you change WordPress themes or change the sizes of your "
-"thumbnails, images that you have previously uploaded to you media library "
-"will be missing thumbnail files for those new image sizes. Use <a href="
-"\"https://wordpress.org/plugins/regenerate-thumbnails/\">this plugin tool</"
-"a> to create those missing thumbnail files for all images."
-msgstr ""
-
-#: setting.php:301
-msgid ""
-"Unpublished post are saved as draft. Admin must manually mark as published "
-"before it is visible to visitors."
-msgstr ""
-
-#: setting.php:304
-msgid ""
-"When not logged in user submit post the post must be assigned with username."
-msgstr ""
-
-#: setting.php:322 setting.php:396 setting.php:558 setting.php:583
-#: setting.php:606
+#: setting.php:325 setting.php:347 setting.php:419 setting.php:581
+#: setting.php:606 setting.php:629
 msgid "Important settings"
 msgstr ""
 
-#: setting.php:431
-msgid "wp-pagenavi plugin must be installed and active."
+#: setting.php:355
+msgid "&mdash; None &mdash;"
 msgstr ""
 
-#: setting.php:435
-msgid ""
-"Image will get enlarged at same page. There is no change in page hence no "
-"preview layout is used."
-msgstr ""
-
-#: setting.php:450
-msgid "Grid layout is where [upg-list] shortcode is used."
-msgstr ""
-
-#: setting.php:467
-msgid "This will check if the user is logged in or not."
-msgstr ""
-
-#: setting.php:474
-msgid ""
-"Post button displayed only to logged in user but who have capabilities to "
-"edit current post."
-msgstr ""
-
-#: setting.php:625 setting.php:631
-msgid "This settings doesn't get applied to personal layout."
-msgstr ""
-
-#: setting.php:635
-msgid ""
-"User at front-end don't require to post image compulsory but image upload "
-"field will be visible."
-msgstr ""
-
-#: setting.php:639
-msgid "Page doesn't get changed during form submission."
-msgstr ""
-
-#: setting.php:645
-msgid "Form layout is where [upg-post] shortcode is used."
-msgstr ""
-
-#: setting.php:723
-msgid ""
-"Sometime due to special theme, UPG will show two titles. You need to enable "
-"to make it one."
-msgstr ""
-
-#: setting.php:729
-msgid ""
-"Media layout is UPG system. Preview parameter in [upg-post] shortcode is for "
-"media layouts."
-msgstr ""
-
-#: setting.php:793
-msgid ""
-"Shortcode to display submission on front page is [upg-post type=\"image\"] & "
-"[upg-post type=\"youtube\"]"
-msgstr ""
-
-#: setting.php:833
+#: setting.php:856
 msgid "Basic Settings"
 msgstr ""
 
-#: setting.php:836
+#: setting.php:859
 #, fuzzy
 #| msgid "Post Title"
 msgid "Form Fields"
 msgstr "Título de la publicación"
 
-#: setting.php:838
+#: setting.php:861
 msgid "Social Profile"
 msgstr "Perfil Social"
 
@@ -660,12 +560,6 @@ msgstr "Titulo:"
 #: widgets/categories.php:154 widgets/categories.php:157 widgets/form.php:67
 msgid "Select Parent"
 msgstr "Seleccionar raíz"
-
-#: widgets/categories.php:176
-msgid ""
-"Show only the immediate children of the selected category. Displays all the "
-"top level categories if no parent is selected."
-msgstr ""
 
 #: widgets/categories.php:181
 msgid "Hide Empty Categories"
@@ -691,21 +585,27 @@ msgstr ""
 msgid "Select preview layout"
 msgstr ""
 
-#: widgets/form.php:94
-msgid "Preview layout is used if lightbox/popup is not enabled in grid layout."
-msgstr ""
-
 #: wp-upg.php:357
 msgid "You are not authorized to edit"
 msgstr "No está autorizado a %0"
 
-#: wp-upg.php:363
-msgid "Login"
-msgstr "Iniciar Sesión"
-
 #: wp-upg.php:675
 msgid "Docs"
 msgstr "Documentación"
+
+#~ msgid "Layout Not Found. Check Settings and save update again."
+#~ msgstr ""
+#~ "Diseño no encontrado. Verifique la configuración y guarde la "
+#~ "actualización nuevamente."
+
+#~ msgid "Video is successfully posted."
+#~ msgstr "Publicado con éxito."
+
+#~ msgid "You must login"
+#~ msgstr "Usted debe iniciar sesión"
+
+#~ msgid "Login"
+#~ msgstr "Iniciar Sesión"
 
 #~ msgid "Click here to view"
 #~ msgstr "Haz clic aquí para ver"

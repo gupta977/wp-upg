@@ -36,7 +36,7 @@ if($layout=="personal")
 	}
 	else
 	{
-		echo __('Updating personal form layout. Refresh page again.','wp-upg').": ".$layout;
+		echo __('Refresh Page','wp-upg').": ".$layout;
 		upg_auto_create_file('personal','form','personal_post_youtube');
 	}
 }
@@ -45,7 +45,7 @@ else
 	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php"))
 		include(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_youtube.php");
 	else
-		echo __('Layout Not Found. Check Settings and save update again.','wp-upg').": ".$layout;
+		echo __('Layout Not Found. Check settings.','wp-upg').": ".$layout;
 }
 
 
@@ -104,7 +104,7 @@ else
 			if(isset($options['publish']) && $options['publish']=='1' )
 			{
 			
-			echo "<h2>".__('Video is successfully posted.','wp-upg')."</h2>";
+			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
 			echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">Click here to view</a><br><br>";
 			
 			}

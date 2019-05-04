@@ -283,7 +283,7 @@ else
 	if(file_exists(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_up.php"))
 		include(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_up.php");
 	else
-		echo __('Layout Not Found. Check UPG Settings.','wp-upg').": ".$layout;
+		echo __('Layout Not Found. Check settings.','wp-upg').": ".$layout;
 }
 $count=0;
 while($query->have_posts()) : $query->the_post();

@@ -220,6 +220,13 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.84 =
+* noimg.png hidden from basic layout (preview page).
+* Added bulk layout form (UPG PRO)
+* Updated language file
+* Selection of login page in UPG extra settings
+* 'My Gallery' only accessible to loggedin user
+
 = 1.83 =
 * Updated photo layout
 * Updated screenshots of layouts in settings

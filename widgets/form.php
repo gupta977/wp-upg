@@ -91,7 +91,7 @@ class upg_form_Widget extends WP_Widget {
     </tr>
     </table>
    
-	<?php _e( 'Preview layout is used if lightbox/popup is not enabled in grid layout.', 'wp-upg' ); ?>
+	<?php ( 'Preview layout is used if lightbox/popup is not enabled in grid layout.'); ?>
 	<br>
 	  </p>
 
