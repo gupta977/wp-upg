@@ -23,8 +23,7 @@ else
             <label for="name"><?php _e('Title', 'wp-upg'); ?></label>
             <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
         </div>
-
-              
+            
 		   
 		   <?php 
 		    if($options['primary_show_formshow_desp']=='1')

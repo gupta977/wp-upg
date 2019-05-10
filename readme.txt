@@ -9,12 +9,12 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Visitors submitted image, content & Youtube, Vimeo Gallery.
+Frontend/Guest submitted post, images, Youtube & Vimeo Gallery.
 
 == Description ==
 = UPG - User Post Gallery =
 
-User Post Gallery (UPG) is the easy way to allow visitors to post/edit images, article, YouTube, Vimeo videos without registration from the frontend. Submitted post can be shown inside BuddyPress, ultimate-member plugins in a user profile tab as a gallery.
+User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend. Submitted post can be shown inside BuddyPress, ultimate-member plugins in a user profile tab as a gallery.
 
 Using layout editor, you can re-design completely using PHP & CSS.
 
@@ -209,7 +209,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 == Screenshots ==
 1. UPG Basic Layout
-2. UPG Flat Layout
+2. Drag & Drop Image (Bulk Layout)
 3. UPG List Layout
 4. UPG Photo Layout
 5. [upg-attach] output

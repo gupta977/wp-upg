@@ -41,6 +41,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/addon/ultimatemember.php");
 	include(dirname(__FILE__)."/addon/buddypress.php");
 	include(dirname(__FILE__)."/classes/upg_FormEntries.class.php");
+	include(dirname(__FILE__).'/classes/html_form.class.php');
 	  
 	register_activation_hook(__FILE__,'upg_install');
 	register_uninstall_hook(__FILE__,'upg_drop');
@@ -307,6 +308,22 @@ function upg_the_content($content)
 		$options = get_option('upg_settings');  
 		$current_post_id=get_the_ID();
 		$abc=include(upg_BASE_DIR.'layout/attach.php');
+		return $abc;
+
+	}
+
+	//Generate UPG Magic Form. [upg-form]
+	function upg_magic_form($params, $content = null )
+	{
+		$options = get_option('upg_settings');  
+		$abc=include(upg_BASE_DIR.'layout/form/magic_form.php');
+		return $abc;
+
+	}
+	function upg_magic_form_tag($params)
+	{
+		$options = get_option('upg_settings');  
+		$abc=include(upg_BASE_DIR.'layout/form/magic_form_tag.php');
 		return $abc;
 
 	}

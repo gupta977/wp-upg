@@ -404,7 +404,7 @@ jQuery(document).ready(function () {
     })  
 })
 </script>
-<button id='load_more_grid' type="button" style='margin:5px; font-size: 110%;'>Check Grid Settings</button>
+<button id='load_more_grid' type="button" style='margin:5px; font-size: 110%;'>Check Grid Settings</button> [upg-list] & [upg-attach]
 	<hr>
 
 	<div id='upg_toggle_grid' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
@@ -488,7 +488,7 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 	
 	  
 	<a href="#" title="<?php echo ( 'This will check if the user is logged in or not.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
-	<b>Display post buttons only for logged-in users : </b>
+	<b>Display post buttons only for (Any User Role) logged-in users : </b>
 	<input type="checkbox" name='upg_settings[button_check_login]' value='1' <?php if($options['button_check_login']=='1') echo 'checked="checked"'; ?> ><br>
 	This will hide upload/post button from guest visitors.
 	<br>
@@ -568,7 +568,7 @@ $options = get_option('upg_settings');
 	
 	
 	?>
-	<button id='load_more_form' type="button" style='margin:5px; font-size: 110%;'>Check Form Settings</button>
+	<button id='load_more_form' type="button" style='margin:5px; font-size: 110%;'>Check Form Settings</button> [upg-post]
 	<hr>
 	<div id='upg_toggle_form' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
 	If you don't want user submission form, skip the settings below.<br> Submission form must have 	<code>[upg-post type="image"]</code> or 	<code>[upg-post type="youtube"]</code> as shortcode.<hr>
