@@ -32,7 +32,7 @@ else
 		   if ($editor) 
 		   { ?>
 				<div class="pure-controls">
-					<div class="usp_text-editor">
+					<div class="upg_text-editor">
 			<?php $settings = array(
 				    'wpautop'          => true,  // enable rich text editor
 				    'media_buttons'    => false,  // enable add media button
@@ -76,11 +76,7 @@ else
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
            <?php echo upg_droplist_category(); ?>
-		   
-		   
-		   
-
-		  
+		     
         </div>
 		
 		<div class="pure-control-group">

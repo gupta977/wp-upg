@@ -5,7 +5,7 @@
 	</div>
 	
    <div class='upg_response'></div>
-   </div>
+</div>
 <div id="upg_form">
 <?php
 if($upg_ajax)

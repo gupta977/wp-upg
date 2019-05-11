@@ -5,7 +5,8 @@ $attr = shortcode_atts( array(
     'title' => 'Submit',
     'preview' => $options['global_media_layout'],
     'name' => '',
-    'id' =>get_the_ID()
+    'id' =>get_the_ID(),
+    'post_type' => 'upg'
 ), $params );
 
 
@@ -13,14 +14,35 @@ $abc="";
 ob_start ();
 if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonce')) 
 {
-
-	echo "form not submitted";
-	
+    //Submit in USER POST GALLERY WP-UPG Plugin    
+    if($attr['post_type']=='upg')
+    {
+        echo "Submit into 'USER POST GALLERY' but something is wrong with your form. Please check your magic-form shortcode again.";
+        
+    }
+    	
 }
 else
 {
+    ?>
+    <div id="upg_ajax">
+    <!-- Image loader -->
+        <div id='upg_loader' style='display: none;'>
+            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+        </div>
+	
+        <div class='upg_response'></div>
+    </div>
     
-    echo '<form class="'.$attr['class'].'" method="post" enctype="multipart/form-data" action="">';
+    <?php
+    echo '<div id="upg_form">
+    <form 
+    id="upg-request-form" 
+    class="upg_ajax_post '.$attr['class'].'"
+    method="post" 
+    enctype="multipart/form-data"
+    action="'.admin_url("admin-ajax.php").'"
+    >';
     
     echo do_shortcode($content);
 
@@ -31,7 +53,7 @@ else
     echo '<input type="hidden" name="form_name" value="'.$attr['name'].'">';
     echo '<input type="hidden" name="form_attach" value="'.$attr['id'].'">';
 
-    echo '</form>';
+    echo '</form></div>';
     
 }
 

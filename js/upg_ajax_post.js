@@ -17,11 +17,12 @@ jQuery(document).ready(function () {
             contentType: false,
             data: formData,
             beforeSend: function () {
-                //alert("about to send");
+                console.log("Send to UPG");
                 jQuery("#upg_form").slideUp();
                 jQuery("#upg_loader").show();
             },
             success: function (response) {
+
                 if (response.type == "success") {
 
                     jQuery('.upg_response').empty();
@@ -30,13 +31,16 @@ jQuery(document).ready(function () {
                     //jQuery('.upg_response').append(response);
                     console.log(response);
 
+
                 }
                 else {
+                    console.log("Blank Response");
                     jQuery('.upg_response').append(response.msg);
                 }
             },
             complete: function (data) {
                 // Hide image container
+                console.log("Submission completed");
                 jQuery("#upg_loader").hide();
             }
         })

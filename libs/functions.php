@@ -759,15 +759,33 @@ function upg_ajax_post()
 	
 	$author = ''; $url = ''; $email = ''; $tags = ''; $captcha = ''; $verify = ''; $content = ''; $category = ''; 
 		
-	if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
-	if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+	//if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
+	//if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+
+	if(isset($_POST['cat']))
+		$category=intval($_POST['cat']);
+	else
+    $category=upg_get_term_id($options['global_album'],'term_id');
+
+		if (isset($_POST['user-submitted-content']))  
+		$content  = upg_sanitize_content($_POST['user-submitted-content']);
+		else
+		 $content ='';
 
 	$content=str_replace("[","[[",$content);
 	$content=str_replace("]","]]",$content);
 
-	$title=sanitize_text_field($_POST['user-submitted-title']);
+	//$title=sanitize_text_field($_POST['user-submitted-title']);
+	
+	if (isset($_POST['user-submitted-title']))
+        $title=sanitize_text_field($_POST['user-submitted-title']);
+  else
+        $title='';
 
-	if (isset($_POST['preview'])) $preview = upg_sanitize_content($_POST['preview']);
+	if (isset($_POST['preview'])) 
+			$preview = upg_sanitize_content($_POST['preview']);
+	else
+			$preview = $options['global_media_layout'];
 
 	if($_POST['upload_type']=="video_url")
 	{
