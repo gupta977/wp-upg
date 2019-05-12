@@ -837,7 +837,7 @@ function upg_ajax_post()
 			if(isset($options['publish']) && $options['publish']=='1' )
 			{
 			
-			//echo "<h2>".__('YouTube Video is successfully posted.','wp-upg')."</h2>";
+		
 			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">Click here to view</a><br><br>";
 			$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
 
@@ -845,14 +845,12 @@ function upg_ajax_post()
 			else
 			{
 				$response['msg'] = "<div class='upg_warning'>".__('Your submission is under review.','wp-upg')."</div>";
-				//echo "<h2>".__('YouTube video is under review','wp-upg')."</h2>";
+			
 				
 				
 			}
 			
 			
-			//echo "<h1 class=\"archive-title\">".$post->post_title."</h1>";
-			//echo "<img src='$image'>";
 		}
 		else
 		{
@@ -932,21 +930,27 @@ function upg_ajax_post()
 		}
 		else
 		{
-			$response['msg'] ="<div class='upg_error'>".__('Server error. Try again later','wp-upg')."</div>";
+			$err='';
+			for($x = 0; $x < count($result['error']); $x++) 
+			{
+				$err.=$result['error'][$x] ." | ";
+		}
+
+			if(in_array('file-type',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Check your file type.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else if(in_array('required-category',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else
+			$response['msg'] ="<div class='upg_error'>".__('Submission failed','wp-upg')."<br>".__('Error message: ').$err."</div>";
 		} 
-
-		
-		
-
-
 
 	}
     // ... Do some code here, like storing inputs to the database, but don't forget to properly sanitize input data!
  
     // Don't forget to exit at the end of processing
-	
-	$result = json_encode($response);
-	echo $result;
+	//upg_log($result['error']);
+	$data = json_encode($response);
+	echo $data;
 	die();
   
 }

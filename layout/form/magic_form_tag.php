@@ -24,14 +24,14 @@ $frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 
 $abc="";
 ob_start ();
-if($attr['type'] == 'title')
+if($attr['type'] == 'upg_title')
 {
     echo $frm->addLabelFor("user-submitted-title", $attr['title']);
     // arguments: type, name, value
     echo $frm->addInput('text', "user-submitted-title", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
 
 }
-else if($attr['type'] == 'album')
+else if($attr['type'] == 'upg_album')
 {
     echo $frm->addLabelFor('cat', $attr['title']);
     echo upg_droplist_category();
@@ -42,7 +42,7 @@ else if($attr['type'] == 'file')
     echo $frm->addLabelFor('user-submitted-image[]', $attr['title']);
     echo $frm->addInput('file', "user-submitted-image[]", '', array('id'=>'file','class'=>$attr['class'],'accept'=>'image/*','required'=>$attr['required']));
 }
-else if($attr['type'] == 'content')
+else if($attr['type'] == 'upg_content')
 {
     echo $frm->addLabelFor('user-submitted-content', $attr['title']);
 
@@ -104,10 +104,10 @@ else if($attr['type']=='radio' || $attr['type']=='checkbox')
         $caption = isset( $val[1] ) ? $val[1] : $val[0];
         
         if($attr['type']=="radio")
-        echo $frm->addInput('radio', $attr['name'], $val[0]).' '.$caption.' ';
+        echo $frm->addInput('radio', $attr['name'], $val[0],array('required'=>$attr['required'])).' '.$caption.' ';
         
         if($attr['type']=="checkbox")
-        echo $frm->addInput('checkbox', $val[0], $val[0]).' '.$caption.' ';
+        echo $frm->addInput('checkbox', $val[0], $caption,array('required'=>$attr['required'])).' '.$caption.' ';
 
     }
 }
@@ -133,9 +133,9 @@ else if($attr['type']=='select')
     */
     echo $frm->addLabelFor($attr['name'], $attr['title']);
     if($attr['placeholder']=='')
-    echo $frm->addSelectListArrays('month', $val, $label, '');
+    echo $frm->addSelectListArrays($attr['name'], $val, $label, '');
     else
-    echo $frm->addSelectListArrays('month', $val, $label, '', ' - '.$attr['placeholder'].' - ');
+    echo $frm->addSelectListArrays($attr['name'], $val, $label, '', ' - '.$attr['placeholder'].' - ',array('required'=>$attr['required']));
 }
 else if($attr['type']=='textarea')
 {
@@ -156,19 +156,22 @@ return $abc;
 /* [upg-form class="pure
 -form" title="Upload your media" name="my_form"] 
 
-[upg-form-tag type="title" title="Main Title" value="" placeholder="main title" required="true"]
+[upg-form-tag type="upg_title" title="Main Title" value="" placeholder="main title" required="true"]
 
-[upg-form-tag type="content" title="Main Desp"  placeholder="Content Plz" editor="true"]
+[upg-form-tag type="file" title="Select file"]
+[upg-form-tag type="upg_album" title="Select Album"]
 
-[upg-form-tag type="text" name="other_title" title="My other Title" value="" placeholder="my placeholder111"]
+[upg-form-tag type="upg_content" title="Main Desp"  placeholder="Content Plz" editor="true"]
 
-[upg-form-tag type="textarea" name="desp" title="Description" placeholder="tell me" rows="3" cols="20"]
+[upg-form-tag type="text" name="upg_custom_field_1" title="My other Title" value="" placeholder="my placeholder111"]
 
-[upg-form-tag type="select" name="month" title="Select Month" value="mon:Monday,feb:February" placeholder="Month"]
+[upg-form-tag type="textarea" name="upg_custom_field_2" title="Description" placeholder="tell me" rows="3" cols="20"]
 
-[upg-form-tag type="radio" name="fruits" title="Choose fruits" value="cherry:Cherry,banana:Banana"]
+[upg-form-tag type="select" name="upg_custom_field_3" title="Select Month" value="mon:Monday,feb:February" placeholder="Month"]
 
-[upg-form-tag type="checkbox" title="Which colors you like ?" value="blue:Blue,black:Black"]
+[upg-form-tag type="radio" name="upg_custom_field_4" title="Choose fruits" value="cherry:Cherry,banana:Banana"]
+
+[upg-form-tag type="checkbox" title="Which colors you like ?" value="upg_custom_field_5:Blue,upg_custom_field_6:Black"]
 
 [upg-form-tag type="submit" name="submit" value="Submit Now"]
 

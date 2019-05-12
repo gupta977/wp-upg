@@ -34,7 +34,7 @@ jQuery(document).ready(function () {
 
                 }
                 else {
-                    console.log("Blank Response");
+                    //console.log("Blank Response");
                     jQuery('.upg_response').append(response.msg);
                 }
             },
