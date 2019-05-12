@@ -791,7 +791,10 @@ function upg_ajax_post()
 	{
 		//$response['msg'] = "VIDEO URL";
 		
-		$url=sanitize_text_field($_POST['user-submitted-url']);
+		if(isset($_POST['user-submitted-url']))
+			$url=sanitize_text_field($_POST['user-submitted-url']);
+		else
+			$url="";
 
 		$result = upg_submit_url($title, $url, $content, $category,$preview);
 		if(isset($result['error'][1]['id']))
@@ -855,7 +858,17 @@ function upg_ajax_post()
 		else
 		{
 			
-			$response['msg'] = "<div class='upg_error'>".__('Server error. Try again later','wp-upg')."</div>";
+			$err='';
+			for($x = 0; $x < count($result['error']); $x++) 
+			{
+				$err.=$result['error'][$x] ." | ";
+		}
+
+			if(in_array('required-category',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else
+			$response['msg'] ="<div class='upg_error'>".__('Submission failed','wp-upg')."<br>".__('Error message: ').$err."</div>";
+
 			
 		} 
 		

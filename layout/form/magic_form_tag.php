@@ -31,6 +31,13 @@ if($attr['type'] == 'upg_title')
     echo $frm->addInput('text', "user-submitted-title", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
 
 }
+else if($attr['type'] == 'video_url')
+{
+    echo $frm->addLabelFor("user-submitted-url", $attr['title']);
+    // arguments: type, name, value
+    echo $frm->addInput('url', "user-submitted-url", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
+
+}
 else if($attr['type'] == 'upg_album')
 {
     echo $frm->addLabelFor('cat', $attr['title']);
@@ -157,6 +164,8 @@ return $abc;
 -form" title="Upload your media" name="my_form"] 
 
 [upg-form-tag type="upg_title" title="Main Title" value="" placeholder="main title" required="true"]
+
+[upg-form-tag type="video_url" title="Submit youtube/vimeo URL" placeholder="http://" required="true"]
 
 [upg-form-tag type="file" title="Select file"]
 [upg-form-tag type="upg_album" title="Select Album"]
