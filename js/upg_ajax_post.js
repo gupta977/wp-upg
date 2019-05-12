@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
             success: function (response) {
 
                 if (response.type == "success") {
-
+                    jQuery('.upg_response').show();
                     jQuery('.upg_response').empty();
                     jQuery('.upg_response').append(response.msg);
                     jQuery('#load_more_reset').click();
@@ -42,9 +42,19 @@ jQuery(document).ready(function () {
                 // Hide image container
                 console.log("Submission completed");
                 jQuery("#upg_loader").hide();
+                jQuery('#upg_after_response').show();
             }
         })
 
+    })
+
+    jQuery(".upg_send_again").click(function (e) {
+        e.preventDefault();
+        //alert("hello");
+        jQuery('#upg_after_response').hide();
+        jQuery("#upg_form").slideDown();
+        jQuery('.upg_response').empty();
+        //jQuery('.upg_response').hide();
     })
 
 })
