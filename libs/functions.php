@@ -108,7 +108,7 @@ function upg_sanitize_content($content)
 
 
 //Before posting, assigning required metadata to the post.
-function upg_prepare_post($title, $content) 
+function upg_prepare_post($title, $content, $post_type='upg') 
 {
 	$options = get_option('upg_settings');
 	
@@ -116,7 +116,13 @@ function upg_prepare_post($title, $content)
 	$postData['post_title']   = $title;
 	$postData['post_content'] = $content;
 	$postData['post_author']  = upg_get_author();
-	$postData['post_type']  = 'upg';
+	
+	if($post_type=='upg')
+		$postData['post_type']  = 'upg';
+	else if($post_type=='wp_post')
+		$postData['post_type']  = '';
+	else
+		$postData['post_type']  = $post_type;
 	
 	if(isset($options['publish']) && $options['publish']=='1' )
 	$postData['post_status'] = 'publish';
@@ -359,7 +365,7 @@ function upg_update_post($post_id,$title, $files, $content, $category)
 //$contet= Description 
 //category =Album name
 //$preview = layout name for post detail page. Not required if lightbox is enabled.
-function upg_submit($title, $files, $content, $category, $preview)
+function upg_submit($title, $files, $content, $category, $preview , $post_type='upg', $taxonomy='upg_cate')
 {
 	$options = get_option('upg_settings');
 	$newPost = array('id' => false, 'error' => false);
@@ -402,8 +408,7 @@ function upg_submit($title, $files, $content, $category, $preview)
 	}
 	
 	
-
-	$postData = upg_prepare_post($title, $content);
+	$postData = upg_prepare_post($title, $content,$post_type);
 	do_action('upg_insert_before', $postData);
 	upg_include_deps();
 		$i=0;
@@ -417,7 +422,13 @@ function upg_submit($title, $files, $content, $category, $preview)
 			{
 				//echo "Successfully added $x <hr>";
 				$post_id = $newPost['id'];
-				wp_set_object_terms($post_id, array($category),'upg_cate');
+
+			//if($post_type=='upg')
+					wp_set_object_terms($post_id, array($category),$taxonomy);
+			//	else if($post_type=='wp_post')
+			//		wp_set_object_terms($post_id, array($category),'category');
+			//	else
+			//		wp_set_object_terms($post_id, array($category),'upg_cate');
 				
 				$attach_ids = array();
 				if ($files && !empty($check_file_exist)) 
@@ -432,13 +443,25 @@ function upg_submit($title, $files, $content, $category, $preview)
 					$_FILES[$key]['size']     = $files['size'][$i];
 					
 					$attach_id = media_handle_upload($key, $post_id);
+					
+					
 					if (!is_wp_error($attach_id) && wp_attachment_is_image($attach_id)) 
 					{
+						if($post_type=='upg')
+						{
+							
 						$attach_ids[] = $attach_id;
 						add_post_meta($post_id, 'pic_name', $attach_id);
 						
 						//Assign preview layout
 						add_post_meta($post_id, 'upg_layout', $preview);
+						}
+						else
+						{
+							//Set it as featured image if other then UPG post
+							set_post_thumbnail( $post_id, $attach_id );
+							
+						}
 						
 					} 
 					else 
@@ -873,6 +896,69 @@ function upg_ajax_post()
 		} 
 		
 		
+	}
+	else if($_POST['upload_type']=="wp_post")
+	{
+		//Submit into wordpress post
+			$files = array();
+			if (isset($_FILES['user-submitted-image']))
+			{
+				$files = $_FILES['user-submitted-image'];
+				$response['srv_msg'] = "Image found ";
+			
+			}
+			else
+			{
+				$response['srv_msg'] = "Image not found";
+			}
+
+			$result = upg_submit($title, $files, $content, $category, $preview,'wp_post','category');
+			$post_id = false; 
+			if (isset($result['id'])) $post_id = $result['id'];
+			
+			$error = false;
+			if (isset($result['error'])) $error = array_filter(array_unique($result['error']));
+			
+			if ($post_id) 
+			{
+					
+				$post   = get_post( $post_id );
+				$image=upg_image_src('large',$post);
+				
+				do_action( "upg_submit_complete");
+				$response['type'] = "success";
+				
+				if(isset($options['publish']) && $options['publish']=='1' )
+				{
+					
+				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
+				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
+				$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
+				}
+			else
+			{
+				
+				$response['msg'] = "<div class='upg_warning'>".__('Your submission is under review.','wp-upg')."</div>";
+				
+			}
+		}
+		else
+		{
+			$err='';
+			for($x = 0; $x < count($result['error']); $x++) 
+			{
+				$err.=$result['error'][$x] ." | ";
+		}
+
+			if(in_array('file-type',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Check your file type.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else if(in_array('required-category',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else
+			$response['msg'] ="<div class='upg_error'>".__('Submission failed','wp-upg')."<br>".__('Error message: ').$err."</div>";
+		} 
+				
+
 	}
 	else
 	{
@@ -1338,6 +1424,56 @@ function upg_image_src($size,$post)
 			
 	}
 }
+
+function upg_droptlist_album($taxonomy='upg_cate',$selected_album="",$skip=array())
+{
+	
+
+	$args = array(
+		'show_option_all'    => '',
+		'show_option_none'   => '',
+		'option_none_value'  => '-1',
+		'orderby'            => 'ID',
+		'order'              => 'ASC',
+		'show_count'         => 1,
+		'hide_empty'         => 0,
+		'child_of'           => 0,
+		'exclude'            => $skip,
+		'include'            => '',
+		'echo'               => 1,
+		'selected'           => $selected_album,
+		'hierarchical'       => 1,
+		'name'               => 'cat',
+		'id'                 => '',
+		'class'              => 'postform',
+		'depth'              => 0,
+		'tab_index'          => 0,
+		'taxonomy'           => $taxonomy,
+		'hide_if_empty'      => false,
+		'value_field'	     => 'term_id',
+		
+	); 
+	
+	wp_dropdown_categories($args);
+
+}
+
+function upg_hidden_category(){
+$skip=array();
+$categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty' => 0 ) ); 
+foreach ( $categories as $category ) 
+	{
+		$upg_show_cate = get_term_meta( $category->term_id, 'upg_show_cate', true  );
+		
+		if($upg_show_cate=="1")
+		{
+			array_push($skip,$category->term_id);
+		}
+	}
+return $skip;
+}
+
+
 function upg_droplist_category($selected_album="")
 {
 	
@@ -1380,7 +1516,7 @@ function upg_droplist_category($selected_album="")
 	 $disp.='<select name="cat" id="cat">'; 
     
     
-    $categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty'         => 0 ) ); 
+    $categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty' => 0 ) ); 
 	
 	$i=0;
     foreach ( $categories as $category ) 

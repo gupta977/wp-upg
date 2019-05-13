@@ -16,7 +16,8 @@ $attr = shortcode_atts( array(
     'disabled' => '',
     'readonly' => '',
     'formnovalidate' => '',
-    'novalidate' => ''
+    'novalidate' => '',
+    'taxonomy' => 'upg_cate'
 
 
 ), $params );
@@ -38,10 +39,13 @@ else if($attr['type'] == 'video_url')
     echo $frm->addInput('url', "user-submitted-url", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
 
 }
-else if($attr['type'] == 'upg_album')
+else if($attr['type'] == 'category')
 {
     echo $frm->addLabelFor('cat', $attr['title']);
-    echo upg_droplist_category();
+    if($attr['taxonomy']=='upg_cate')
+        echo upg_droptlist_album('upg_cate','',upg_hidden_category());
+    else
+        echo upg_droptlist_album($attr['taxonomy'],'','');
 
 }
 else if($attr['type'] == 'file')
@@ -160,7 +164,12 @@ else
 $abc=ob_get_clean (); 
 return $abc;
 
-/* [upg-form class="pure
+/*
+[upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="video_url" taxonomy="upg_cate"] 
+
+[upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="wp_post" taxonomy="category"] 
+
+[upg-form class="pure
 -form" title="Upload your media" name="my_form"] 
 
 [upg-form-tag type="upg_title" title="Main Title" value="" placeholder="main title" required="true"]
@@ -168,7 +177,7 @@ return $abc;
 [upg-form-tag type="video_url" title="Submit youtube/vimeo URL" placeholder="http://" required="true"]
 
 [upg-form-tag type="file" title="Select file"]
-[upg-form-tag type="upg_album" title="Select Album"]
+[upg-form-tag type="category" title="Select category" taxonomy="category"]
 
 [upg-form-tag type="upg_content" title="Main Desp"  placeholder="Content Plz" editor="true"]
 

@@ -6,7 +6,8 @@ $attr = shortcode_atts( array(
     'preview' => $options['global_media_layout'],
     'name' => '',
     'id' =>get_the_ID(),
-    'post_type' => 'upg_post'
+    'post_type' => 'upg_post',
+    'taxonomy' => 'upg_cate' 
 ), $params );
 
 
@@ -51,6 +52,7 @@ else
     wp_nonce_field('upg-nonce', 'upg-nonce', false);
     echo '<input type="hidden" name="action" value="upg_ajax_post">';
     echo '<input type="hidden" name="upload_type" value="'.$attr['post_type'].'">';
+    echo '<input type="hidden" name="upload_taxonomy" value="'.$attr['taxonomy'].'">';
     echo '<input type="hidden" name="preview" value="'.$attr['preview'].'">';
     echo '<input type="hidden" name="form_name" value="'.$attr['name'].'">';
     echo '<input type="hidden" name="form_attach" value="'.$attr['id'].'">';
