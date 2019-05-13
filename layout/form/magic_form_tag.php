@@ -25,7 +25,7 @@ $frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 
 $abc="";
 ob_start ();
-if($attr['type'] == 'upg_title')
+if($attr['type'] == 'post_title')
 {
     echo $frm->addLabelFor("user-submitted-title", $attr['title']);
     // arguments: type, name, value
@@ -53,7 +53,7 @@ else if($attr['type'] == 'file')
     echo $frm->addLabelFor('user-submitted-image[]', $attr['title']);
     echo $frm->addInput('file', "user-submitted-image[]", '', array('id'=>'file','class'=>$attr['class'],'accept'=>'image/*','required'=>$attr['required']));
 }
-else if($attr['type'] == 'upg_content')
+else if($attr['type'] == 'article')
 {
     echo $frm->addLabelFor('user-submitted-content', $attr['title']);
 
@@ -169,17 +169,17 @@ return $abc;
 
 [upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="wp_post" taxonomy="category"] 
 
-[upg-form class="pure
--form" title="Upload your media" name="my_form"] 
+[upg-form class="pure-form" title="Upload your media" name="my_form"] 
 
-[upg-form-tag type="upg_title" title="Main Title" value="" placeholder="main title" required="true"]
+[upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title" required="true"]
 
 [upg-form-tag type="video_url" title="Submit youtube/vimeo URL" placeholder="http://" required="true"]
 
 [upg-form-tag type="file" title="Select file"]
+
 [upg-form-tag type="category" title="Select category" taxonomy="category"]
 
-[upg-form-tag type="upg_content" title="Main Desp"  placeholder="Content Plz" editor="true"]
+[upg-form-tag type="article" title="Main Desp"  placeholder="Content Plz" editor="true"]
 
 [upg-form-tag type="text" name="upg_custom_field_1" title="My other Title" value="" placeholder="my placeholder111"]
 

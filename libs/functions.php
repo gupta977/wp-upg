@@ -782,9 +782,7 @@ function upg_ajax_post()
 	
 	$author = ''; $url = ''; $email = ''; $tags = ''; $captcha = ''; $verify = ''; $content = ''; $category = ''; 
 		
-	//if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
-	//if (isset($_POST['cat'])) $category = intval($_POST['cat']);
-
+	
 	if(isset($_POST['cat']))
 		$category=intval($_POST['cat']);
 	else
@@ -794,6 +792,16 @@ function upg_ajax_post()
 		$content  = upg_sanitize_content($_POST['user-submitted-content']);
 		else
 		 $content ='';
+
+		 if(isset($_POST['upload_type']))
+				 $post_type=$_POST['upload_type'];
+			else
+				$post_type='upg_post';
+
+			if(isset($_POST['upload_taxonomy']))
+				 $post_taxonomy=$_POST['upload_taxonomy'];
+			else
+				$post_taxonomy='upg_cate';
 
 	$content=str_replace("[","[[",$content);
 	$content=str_replace("]","]]",$content);
@@ -810,7 +818,7 @@ function upg_ajax_post()
 	else
 			$preview = $options['global_media_layout'];
 
-	if($_POST['upload_type']=="video_url")
+	if($post_type=="video_url")
 	{
 		//$response['msg'] = "VIDEO URL";
 		
@@ -897,70 +905,7 @@ function upg_ajax_post()
 		
 		
 	}
-	else if($_POST['upload_type']=="wp_post")
-	{
-		//Submit into wordpress post
-			$files = array();
-			if (isset($_FILES['user-submitted-image']))
-			{
-				$files = $_FILES['user-submitted-image'];
-				$response['srv_msg'] = "Image found ";
-			
-			}
-			else
-			{
-				$response['srv_msg'] = "Image not found";
-			}
-
-			$result = upg_submit($title, $files, $content, $category, $preview,'wp_post','category');
-			$post_id = false; 
-			if (isset($result['id'])) $post_id = $result['id'];
-			
-			$error = false;
-			if (isset($result['error'])) $error = array_filter(array_unique($result['error']));
-			
-			if ($post_id) 
-			{
-					
-				$post   = get_post( $post_id );
-				$image=upg_image_src('large',$post);
-				
-				do_action( "upg_submit_complete");
-				$response['type'] = "success";
-				
-				if(isset($options['publish']) && $options['publish']=='1' )
-				{
-					
-				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
-				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
-				$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
-				}
-			else
-			{
-				
-				$response['msg'] = "<div class='upg_warning'>".__('Your submission is under review.','wp-upg')."</div>";
-				
-			}
-		}
-		else
-		{
-			$err='';
-			for($x = 0; $x < count($result['error']); $x++) 
-			{
-				$err.=$result['error'][$x] ." | ";
-		}
-
-			if(in_array('file-type',$result['error']))
-			$response['msg'] ="<div class='upg_error'>".__('Check your file type.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
-			else if(in_array('required-category',$result['error']))
-			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
-			else
-			$response['msg'] ="<div class='upg_error'>".__('Submission failed','wp-upg')."<br>".__('Error message: ').$err."</div>";
-		} 
-				
-
-	}
-	else
+	else if($post_type=="upg_post")
 	{
 		//Uploading Image
 
@@ -1044,6 +989,71 @@ function upg_ajax_post()
 		} 
 
 	}
+	else 
+	{
+		//Submit into wordpress post
+			$files = array();
+			if (isset($_FILES['user-submitted-image']))
+			{
+				$files = $_FILES['user-submitted-image'];
+				$response['srv_msg'] = "Image found ";
+			
+			}
+			else
+			{
+				$response['srv_msg'] = "Image not found";
+			}
+
+			
+			$result = upg_submit($title, $files, $content, $category, $preview,$post_type,$post_taxonomy);
+			$post_id = false; 
+			if (isset($result['id'])) $post_id = $result['id'];
+			
+			$error = false;
+			if (isset($result['error'])) $error = array_filter(array_unique($result['error']));
+			
+			if ($post_id) 
+			{
+					
+				$post   = get_post( $post_id );
+				$image=upg_image_src('large',$post);
+				
+				do_action( "upg_submit_complete");
+				$response['type'] = "success";
+				
+				if(isset($options['publish']) && $options['publish']=='1' )
+				{
+					
+				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
+				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
+				$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
+				}
+			else
+			{
+				
+				$response['msg'] = "<div class='upg_warning'>".__('Your submission is under review.','wp-upg')."</div>";
+				
+			}
+		}
+		else
+		{
+			$err='';
+			for($x = 0; $x < count($result['error']); $x++) 
+			{
+				$err.=$result['error'][$x] ." | ";
+		}
+
+			if(in_array('file-type',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Check your file type.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else if(in_array('required-category',$result['error']))
+			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";
+			else
+			$response['msg'] ="<div class='upg_error'>".__('Submission failed','wp-upg')."<br>".__('Error message: ').$err."</div>";
+		} 
+				
+
+	}
+
     // ... Do some code here, like storing inputs to the database, but don't forget to properly sanitize input data!
  
     // Don't forget to exit at the end of processing
