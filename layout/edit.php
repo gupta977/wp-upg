@@ -622,6 +622,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<br>
 
   <a href="http://odude.com/demo/faq/upg/shop-layout/" target="_blank" class="install-now button">Setup Guide</a>
+	<a href="https://odude.com/update/wordpress/upg_shop_184.zip" class="install-now button">Download Shop Layout</a>
 	</p>
   </div>
 </div>
@@ -636,6 +637,8 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<br>
 	<a href="http://odude.com/demo/faq/users-post-gallery/gallery/" target="_blank" class="install-now button">Demo</a>
   <a href="http://odude.com/demo/faq/upg/theme-faq-layout/" target="_blank" class="install-now button">Setup Guide</a>
+	<a href="https://odude.com/update/wordpress/upg_faq_184.zip" class="install-now button">Download FAQ Layout</a>
+
 	</p>
   </div>
 </div>

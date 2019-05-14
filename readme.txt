@@ -220,6 +220,13 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+
+= 1.85 =
+* Removed shop & FAQ layout from default. Both layout are available for download.
+* Basic & photo form layout now have better hierarchical category selection
+* After submission, VIEW button is removed. Added 'My Gallery' button.
+* EDIT page don't get edited by visitors. Bug fixed.
+
 = 1.84 =
 * noimg.png hidden from basic layout (preview page).
 * Added bulk layout form (UPG PRO)
@@ -242,57 +249,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 = 1.80 =
 * Options to enable/disable purecss.io, colorbox, fontawesome css file from frontend
-
-= 1.79 =
-* Added new 'Slide Layout'
-* Updated style.css file
-* Added settings to select 'my gallery' page.
-
-= 1.78 =
-* Fixes css issues in photo layout
-* Fixes ultimate member function at shop layout
-* removed wppost.php and upg-wp-post shortcode
-* updated upg-attach css page
-
-= 1.77 =
-* Changed skin of reset button
-* Bulk upload not supported by ajax
-* Fixed photo layout
-
-= 1.76 =
-* New premium layouts are free
-* UPG settings now toggle settings container
-
-= 1.75 =
-* Embed Photo Gallery for WordPress post & pages.
-* Updated screenshots
-
-= 1.74 =
-* UPG media settings for thumbnail or media sizes.
-* Admin notice after plugin activated
-
-= 1.73 =
-* Added default layout choice for form & media page in setting page.
-* At admin addon page, separate tab for UPG layout.
-* Updated language file.
-* Updated basic layout, removed file upload information at form layout.
-* Updated photo layout, masonry view at grid layout.
-
-= 1.72 =
-* Edit layout modify part is included with UPG PRO
-* Star icon for important settings indicator at setting page
-* Moved lib.php functions into functions.php
-* Post modify now checks if post requires review as on settings. 
-
-= 1.71 =
-* Multiple form on same page fixed
-* Updated language file
-
-
-= 1.70 =
-* Added ajax form submission
-* Added ajax form widgets
-* Added 'Simple' form layout (Only title & media field)
 
 == Upgrade Notice ==
 Backup your personal layout code before you upgrade. It may overwrite your layout with new one. If you got blank page, go to layout editor and choose layout to update automatically.

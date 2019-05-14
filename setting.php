@@ -437,7 +437,7 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
 	</div>
 	<br>
 	<br>
-	<b>Number of records per row :</b> <input type="text" name='upg_settings[global_perrow]' value='<?php echo $options['global_perrow']; ?>' maxlength="2" size="5" ><br><br>
+	<b>Number of column (perrow) :</b> <input type="text" name='upg_settings[global_perrow]' value='<?php echo $options['global_perrow']; ?>' maxlength="2" size="5" ><br><br>
 	
 	<b>Number of records per page :</b> <input type="text" name='upg_settings[global_perpage]' value='<?php echo $options['global_perpage']; ?>' maxlength="3" size="5" ><br><br>
 	

@@ -18,7 +18,7 @@ if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonc
     //Submit in USER POST GALLERY WP-UPG Plugin    
     //if($attr['post_type']=='upg_post')
     //{
-        echo "Submit into 'USER POST GALLERY' but something is wrong with your form. Please check if your browser support java-scripts.";
+        echo "Something is wrong with your submission. Please check if your browser support java-scripts.";
         
    // }
     	

@@ -337,42 +337,45 @@ function upg_the_content($content)
 				$post_id=$_REQUEST["upg_id"];
 			else
 				$post_id="0";
-		$post=get_post($post_id );
-		$options = get_option('upg_settings');
-		if(get_post_field( 'post_author', $post_id ) == get_current_user_id())
-		{
+					
+			//$post=get_post($post_id );
+			$options = get_option('upg_settings');
+			if(get_post_field( 'post_author', $post_id ) == get_current_user_id()  && isset($_REQUEST["upg_id"]))
+			{
+				
+				$post=get_post($post_id );
 
-		  if(upg_isVideo($post))
-		  {
-			  $type="youtube";
-		  }
-		  else
-		  {
-			$type="image";  
-		  }
-		  	
+					if(upg_isVideo($post))
+					{
+						$type="youtube";
+					}
+					else
+					{
+						$type="image";  
+					}
+						
 
-		if(isset($params['layout']))
-			$layout=trim($params['layout']);
-		else
-			$layout="basic";
+				if(isset($params['layout']))
+					$layout=trim($params['layout']);
+				else
+					$layout="basic";
 
-	if(isset($params['preview']))
-		$preview=$params['preview'];
-	else
-		$preview="basic";
-	
-	if($type=="youtube" || $type=="vimeo")
-		$abc=include(upg_BASE_DIR.'layout/form/post_edit_youtube.php');	
-	else
-		$abc=include(upg_BASE_DIR.'layout/form/post_edit_image.php');
-	
-	return $abc;
-		}
-		else
-		{
-			echo __("You are not authorized to edit","wp-upg");
-		}
+				if(isset($params['preview']))
+					$preview=$params['preview'];
+				else
+					$preview="basic";
+				
+				if($type=="youtube" || $type=="vimeo")
+					$abc=include(upg_BASE_DIR.'layout/form/post_edit_youtube.php');	
+				else
+					$abc=include(upg_BASE_DIR.'layout/form/post_edit_image.php');
+				
+				return $abc;
+			}
+			else
+				{
+					echo __("You are not authorized to edit","wp-upg");
+				}
 			}
 			else
 			{

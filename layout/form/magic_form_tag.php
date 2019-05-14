@@ -43,9 +43,9 @@ else if($attr['type'] == 'category')
 {
     echo $frm->addLabelFor('cat', $attr['title']);
     if($attr['taxonomy']=='upg_cate')
-        echo upg_droptlist_album('upg_cate','',upg_hidden_category());
+        echo upg_droplist_album('upg_cate','',upg_hidden_category());
     else
-        echo upg_droptlist_album($attr['taxonomy'],'','');
+        echo upg_droplist_album($attr['taxonomy'],'','');
 
 }
 else if($attr['type'] == 'file')

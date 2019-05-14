@@ -1435,7 +1435,7 @@ function upg_image_src($size,$post)
 	}
 }
 
-function upg_droptlist_album($taxonomy='upg_cate',$selected_album="",$skip=array())
+function upg_droplist_album($taxonomy='upg_cate',$selected_album="",$skip=array())
 {
 	
 
@@ -1445,7 +1445,7 @@ function upg_droptlist_album($taxonomy='upg_cate',$selected_album="",$skip=array
 		'option_none_value'  => '-1',
 		'orderby'            => 'ID',
 		'order'              => 'ASC',
-		'show_count'         => 1,
+		'show_count'         => 0,
 		'hide_empty'         => 0,
 		'child_of'           => 0,
 		'exclude'            => $skip,
@@ -1487,76 +1487,7 @@ return $skip;
 function upg_droplist_category($selected_album="")
 {
 	
-		$disp='';
-		$ptype='';
-		
-
-			$args = array(
-			'show_option_all'    => '',
-			'orderby'            => 'name',
-			'order'              => 'ASC',
-			'style'              => 'list',
-			'show_count'         => 0,
-			'hide_empty'         => 0,
-			'use_desc_for_title' => 1,
-			'feed'               => '',
-			'feed_type'          => '',
-			'feed_image'         => '',
-			'exclude'            => '',
-			'exclude_tree'       => '',
-			'include'            => '',
-			'hierarchical'       => 1,
-			
-			'number'             => null,
-			'echo'               => 0,
-			'depth'              => 0,
-			'current_category'   => 0,
-			'pad_counts'         => 0,
-			'taxonomy'           => 'upg_cate',
-			'walker'             => null,
-			'value_field'	     => 'term_id'
-			);
-
-			
-
-		
-
-	 //$disp.=wp_dropdown_categories( $args );
-	 
-	 $disp.='<select name="cat" id="cat">'; 
-    
-    
-    $categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty' => 0 ) ); 
-	
-	$i=0;
-    foreach ( $categories as $category ) 
-	{
-		$upg_show_cate = get_term_meta( $category->term_id, 'upg_show_cate', true  );
-		
-		if($upg_show_cate!="1")
-		{
-			
-			if(isset($_GET['album']) && $_GET['album']!="")
-			$selected_album = $_GET['album'];
-						
-			if($selected_album==$category->cat_name)
-			{
-			$disp.='<option value="'.$category->term_id.'" selected>'.$category->cat_name.'</option>'; 	
-			}
-			else
-			{
-			$disp.='<option value="'.$category->term_id.'">'.$category->cat_name.'</option>'; 
-			}
-			$i++;
-		}
-    }
-	if($i==0)
-		$disp.='<option value="0">Create Category - Admin</option>';
-    
-$disp.='</select>';
-				
-	
-return $disp;
+	echo upg_droplist_album('upg_cate',$selected_album,upg_hidden_category());
 
 }
 

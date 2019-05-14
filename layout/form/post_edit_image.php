@@ -38,7 +38,7 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 				}
 				else 
 				{
-					echo "Edit layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>.<br> You can hide this button at UPG Grid settings.";
+					echo "Edit option is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>.<br> You can hide this button at UPG Grid settings.";
 				}
 				
 			}
@@ -129,12 +129,17 @@ else
 					//error_log("No files to upload");
 				}
 			
-			echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('View','wp-upg')."</a> ";
+			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('View','wp-upg')."</a> ";
 					
 					$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink($options['edit_upg_page']) ) );
 					
 					echo "<a href='".$edit_link."' class=\"pure-button\">".__('Edit','wp-upg')."</a> ";
-			
+
+					if(isset($options['my_gallery']))
+					{
+    					echo "<a href='".esc_url( get_page_link( $options['my_gallery'] ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+					}
+								
 			
 		}
 		else
