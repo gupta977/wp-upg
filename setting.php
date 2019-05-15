@@ -313,11 +313,11 @@ function upg_media_section_callback()
 	<b>Include UPG post into archive page:</b> <input type="checkbox" name='upg_settings[archive]' value='1' <?php if($options['archive']=='1') echo 'checked="checked"'; ?> >
 	<br>
 	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?>  <b>Disable purecss.io grid (rows/column) from frontend environment:</b> <input type="checkbox" name='upg_settings[purecss]' value='1' <?php if($options['purecss']=='1') echo 'checked="checked"'; ?> ><br>
+	<b>Disable purecss.io grid (rows/column) from frontend environment:</b> <input type="checkbox" name='upg_settings[purecss]' value='1' <?php if($options['purecss']=='1') echo 'checked="checked"'; ?> ><br>
 	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?>  <b>Disable fontawesome CSS (fancy icons & buttons) from frontend environment:</b> <input type="checkbox" name='upg_settings[fontawesome]' value='1' <?php if($options['fontawesome']=='1') echo 'checked="checked"'; ?> ><br>
+	 <b>Disable fontawesome CSS (fancy icons & buttons) from frontend environment:</b> <input type="checkbox" name='upg_settings[fontawesome]' value='1' <?php if($options['fontawesome']=='1') echo 'checked="checked"'; ?> ><br>
 	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?>  <b>Disable colorbox CSS (popup/Lightbox) from frontend environment:</b> <input type="checkbox" name='upg_settings[colorbox]' value='1' <?php if($options['colorbox']=='1') echo 'checked="checked"'; ?> ><br>
+	<b>Disable colorbox CSS (popup/Lightbox) from frontend environment:</b> <input type="checkbox" name='upg_settings[colorbox]' value='1' <?php if($options['colorbox']=='1') echo 'checked="checked"'; ?> ><br>
 	
 
 	<br>
@@ -483,17 +483,17 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 	
 	
 	<b>Display Post Video URL Button:</b> <input type="checkbox" name='upg_settings[primary_show_youtube_button]' value='1' <?php if($options['primary_show_youtube_button']=='1') echo 'checked="checked"'; ?> ><br>
-	Submit Youtube Button will be displayed which is linked to page where [upg-post type=youtube] shortcode is used. Link page is at Global Settings tab.
+	Submit Youtube Button will be displayed which is linked to page where [upg-post type=youtube] shortcode is used. Link page is form settings.
 	<br><br>
 	
-	  
+	
 	<a href="#" title="<?php echo ( 'This will check if the user is logged in or not.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
-	<b>Display post buttons only for (Any User Role) logged-in users : </b>
+	<b>Display post buttons for logged-in users (Any User Role) : </b>
 	<input type="checkbox" name='upg_settings[button_check_login]' value='1' <?php if($options['button_check_login']=='1') echo 'checked="checked"'; ?> ><br>
 	This will hide upload/post button from guest visitors.
 	<br>
 	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?>  
+	
 	<a href="#" title="<?php echo ( 'Post button displayed only to logged in user but who have capabilities to edit current post.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display post buttons only for logged-in users but with editing rights : </b>
 	<input type="checkbox" name='upg_settings[button_check_capability]' value='1' <?php if($options['button_check_capability']=='1') echo 'checked="checked"'; ?> ><br>
@@ -645,6 +645,8 @@ $options = get_option('upg_settings');
 
 	//**************
 ?>
+
+
 <a href="#" title="<?php echo ( 'This settings doesn\'t get applied to personal layout.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display description input field at post form:</b> <input type="checkbox" name='upg_settings[primary_show_formshow_desp]' value='1' <?php if($options['primary_show_formshow_desp']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
@@ -801,9 +803,11 @@ $options = get_option('upg_settings');
 			}
 	?>
 	<div class="update-nag">
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?> <b>Embed Image gallery for Wordpress Post</b><br>
+	<b>Common shortcodes uses:</b><br>
 copy/paste <code>[upg-attach type="image"]</code>or <code>[upg-attach type="youtube"]</code> shortcode into wordpress post/page content area.<br>
 The embed gallery will have own set of post. All post/images from different post will be shown in primary gallery <code>[upg-list]</code>.
+<br>Use <code>[upg-post]</code> for submission form.<br>
+Check all important settings with start icon. <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a>
 	</div>
 	
 	<?php

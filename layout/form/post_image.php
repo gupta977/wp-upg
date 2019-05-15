@@ -13,6 +13,19 @@ $title='';
 
 $abc="";
 ob_start ();
+if(isset($params['login']))
+	$login_check=$params['login'];
+else
+	$login_check="false";
+
+if(!is_user_logged_in() && $login_check=='true')
+{
+	upg_login_link();
+	
+}
+else 
+{
+
 if (isset($_POST['user-submitted-title'], $_POST['upg-nonce']) && !empty($_POST['user-submitted-title']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonce')) 
 $title=sanitize_text_field($_POST['user-submitted-title']);
 
@@ -153,7 +166,7 @@ else
 }
 	
 //ob_flush();	
-
+}
 $abc=ob_get_clean (); 
 return $abc;
 ?>

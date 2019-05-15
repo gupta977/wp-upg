@@ -617,11 +617,12 @@ for (var i=0, len=sz.length; i<len; i++) {
   <h2>Shop Layout <a href="http://odude.com/demo/faq/upg/shop-layout/">Details</a></h2>
   <div class="cnt">
     <p>UPG can be customized for the product catalog and can be used as a framework of ecommerce site.  
-	<br>
-  <?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/shop/screenshot.png" width="250px"> '; ?>  
+	 
 	<br>
 
-  <a href="http://odude.com/demo/faq/upg/shop-layout/" target="_blank" class="install-now button">Setup Guide</a>
+  <a href="http://odude.com/demo/shop/users-post-gallery/" target="_blank" class="install-now button">Demo</a>
+	<a href="http://odude.com/demo/faq/upg/shop-layout/" target="_blank" class="install-now button">Setup Guide</a>
+	
 	<a href="https://odude.com/update/wordpress/upg_shop_184.zip" class="install-now button">Download Shop Layout</a>
 	</p>
   </div>
@@ -632,7 +633,7 @@ for (var i=0, len=sz.length; i<len; i++) {
   <div class="cnt">
     <p>
 	
-  <?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/faq/screenshot.png" width="250px"> '; ?>  
+  
 	<br>UPG Post contents with tabular format.
 	<br>
 	<a href="http://odude.com/demo/faq/users-post-gallery/gallery/" target="_blank" class="install-now button">Demo</a>

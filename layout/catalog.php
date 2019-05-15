@@ -4,6 +4,19 @@ global $wp_query;
 
 $options = get_option('upg_settings');
 
+if(isset($params['login']))
+	$login_check=$params['login'];
+else
+	$login_check="false";
+
+if(!is_user_logged_in() && $login_check=='true')
+{
+	upg_login_link();
+	return "";
+}
+else 
+{
+
 //Get tags
 $tag_slug = get_query_var( 'upg_tag' );
 $tag = get_term_by('slug', $tag_slug, 'upg_tag');
@@ -369,5 +382,7 @@ return $put;
 else
 {
 	return "";
+}
+
 }
 ?>
