@@ -1,8 +1,10 @@
 <?php
 function upg_add_admin_menu(  ) 
 { 
-
+	$options = get_option('upg_settings');
+	if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
 	add_submenu_page( 'edit.php?post_type=upg', 'User Post Gallery Settings', 'UPG Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
+	
 	add_submenu_page( 'edit.php?post_type=upg', 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
 	//add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'upg_quick_setting', 'upg_quick_setting' );
 	add_submenu_page( 'edit.php?post_type=upg', 'FREE and Premium plugins', 'UPG Addons / Help', 'manage_options', 'wp_upg_addon', 'upg_addon_page' );
@@ -282,6 +284,7 @@ function upg_media_section_callback()
 
  function upg_quick_settings()
  {
+	$frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 	 $options = get_option('upg_settings');
 		if(!isset($options['publish']))
 		$options['publish']="0";
@@ -300,11 +303,19 @@ function upg_media_section_callback()
 	<hr>
 
 	<div id='upg_toggle_extra' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
-	
+	<br>
+	<a href="#" title="<?php echo ( 'This will turn off all the advance settings.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<?php
+echo "<b>Switch setting mode to: </b>";
+echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '1',array('checked'=>'true')).' Advance ';
+echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic ';
+
+?>
+<br><br>
 	<a href="#" title="<?php echo ( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='1' <?php if($options['publish']=='1') echo 'checked="checked"'; ?> >
 	<br><br>
 	
-	<a href="#" title="<?php ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
+	<a href="#" title="<?php echo ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Assign user for unregistered or not logged in users: </b><?php upg_droplist_user($options['guest_user']); ?> <br>It's better to <a href="<?php echo admin_url( 'user-new.php' );?>">create GUEST USER</a> with minimum access.
 	<br><br>
 	
@@ -775,7 +786,6 @@ function upg_primary_custom_field_settings()
 
 function upg_settings_section_callback(  ) 
 { 
-
 	//echo __( 'Update or modify required settings.', 'upg' );
 	/**
  * Detect plugin. For use on Front End only.
@@ -803,18 +813,8 @@ $options = get_option('upg_settings');
 
 			}
 	?>
-	<div style="text-align:right">
-	<div class="update-nag">
-	<b>Turn off Advance settings:  </b>
- 
-  <label class="upg_switch">
-	<input type="checkbox" name='upg_settings[show_advance_setting]' value='1' <?php if(upg_get_option( 'show_advance_setting', 'upg_general', $default = '0' )=='1') echo 'checked="checked"'; ?>>
-  <span class="upg_toggle_slider"></span>
-</label>
-</div>
-</div>
-	<?php
 
+	<?php
 }
 
 function upg_primary_image_section_callback(  ) 

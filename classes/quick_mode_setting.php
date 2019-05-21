@@ -26,7 +26,10 @@ class upg_quick_setting {
     }
 
     function admin_menu() {
-        add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', '', array($this, 'plugin_page')  );
+        $options = get_option('upg_settings'); 
+
+        if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='0')
+        add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'wp_upg', array($this, 'plugin_page')  );
 	
        // add_options_page( 'edit.php?post_type=upg', 'Settings API', 'Settings API', 'delete_posts', 'settings_api_test', array($this, 'plugin_page') );
     }

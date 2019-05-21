@@ -776,4 +776,26 @@ function upg_admin_notice_example_notice()
         delete_transient( 'upg-admin-notice-example' );
     }
 }
+
+/**
+ * Hook into options page after save for advance setting page.
+ */
+function upg_hook_into_options_page_after_save( $old_value, $new_value ) 
+{
+	/* if ( $old_value['some_option'] != $new_value['some_option'] ) 
+	{
+		// This value has been changed. Insert code here.
+	} */
+
+	$options = get_option('upg_settings'); 
+
+	if( $options['show_advance_setting']=='0')
+	{
+		upg_set_option( 'show_advance_setting', 'upg_general', '0' );
+		
+	}
+	//upg_log($options['show_advance_setting']."----");
+}
+add_action( 'update_option_upg_settings', 'upg_hook_into_options_page_after_save', 10, 2 );
+
 ?>

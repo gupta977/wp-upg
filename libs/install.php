@@ -1,12 +1,12 @@
 <?php
 $options = get_option('upg_settings');
 
-/* if(!isset($options['show_advance_setting']))
+ /* if(!isset($options['show_advance_setting']))
 	{
 		$options['show_advance_setting']='0';
 		update_option( 'upg_settings', $options );	
-	}
- */
+	} */
+ 
 if(!isset($options['global_page']))
 	{
 		$options['global_page']='off';
