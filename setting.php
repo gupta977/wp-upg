@@ -4,7 +4,7 @@ function upg_add_admin_menu(  )
 
 	add_submenu_page( 'edit.php?post_type=upg', 'User Post Gallery Settings', 'UPG Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
 	add_submenu_page( 'edit.php?post_type=upg', 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
-	//add_submenu_page( 'edit.php?post_type=upg', 'User Post Gallery Help', 'Help / System Check', 'manage_options', 'wp_upg_help', 'upg_help_page' );
+	//add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'upg_quick_setting', 'upg_quick_setting' );
 	add_submenu_page( 'edit.php?post_type=upg', 'FREE and Premium plugins', 'UPG Addons / Help', 'manage_options', 'wp_upg_addon', 'upg_addon_page' );
 }
 
@@ -800,18 +800,21 @@ $options = get_option('upg_settings');
 				
 				
 				<?php
+
 			}
 	?>
+	<div style="text-align:right">
 	<div class="update-nag">
-	<b>Common shortcodes uses:</b><br>
-copy/paste <code>[upg-attach type="image"]</code>or <code>[upg-attach type="youtube"]</code> shortcode into wordpress post/page content area.<br>
-The embed gallery will have own set of post. All post/images from different post will be shown in primary gallery <code>[upg-list]</code>.
-<br>Use <code>[upg-post]</code> for submission form.<br>
-Check all important settings with start icon. <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a>
-	</div>
-	
+	<b>Turn off Advance settings:  </b>
+ 
+  <label class="upg_switch">
+	<input type="checkbox" name='upg_settings[show_advance_setting]' value='1' <?php if(upg_get_option( 'show_advance_setting', 'upg_general', $default = '0' )=='1') echo 'checked="checked"'; ?>>
+  <span class="upg_toggle_slider"></span>
+</label>
+</div>
+</div>
 	<?php
-	
+
 }
 
 function upg_primary_image_section_callback(  ) 
@@ -824,7 +827,7 @@ echo '</b>';
 
 function upg_options_page(  ) 
 { 
-
+	$options = get_option('upg_settings');  
 /**
  * Detect plugin. For use on Front End only.
  */
@@ -847,12 +850,8 @@ jQuery(document).ready(function($){
   </script>
   
 <div class="wrap">
-	
-
-
-
 	<form action='options.php' method='post'>
-		
+	
 		<h2>User Post Gallery (UPG) Settings</h2>
 		<div id="tabs">
 	<ul>

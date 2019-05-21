@@ -24,13 +24,16 @@ Domain Path: /languages
 	
     }
 	
+	include(dirname(__FILE__).'/classes/class.settings-api.php');
+	include(dirname(__FILE__)."/classes/class.FormEntries.php");
+	include(dirname(__FILE__).'/classes/class.html_form.php');
+	include(dirname(__FILE__)."/classes/quick_mode_setting.php");
 	include(dirname(__FILE__)."/libs/functions.php");
 	include(dirname(__FILE__)."/libs/load_more.php");
 	include(dirname(__FILE__)."/libs/install.php");
 	include(dirname(__FILE__)."/libs/hooks.php");
     include(dirname(__FILE__)."/libs/custom_column.php");
 	include(dirname(__FILE__)."/setting.php");
-	//include(dirname(__FILE__)."/help.php");
 	include(dirname(__FILE__)."/addon.php");
 	include(dirname(__FILE__)."/libs/metabox.php");
 	include(dirname(__FILE__)."/layout/edit.php");
@@ -40,8 +43,9 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/widgets/form.php");
 	include(dirname(__FILE__)."/addon/ultimatemember.php");
 	include(dirname(__FILE__)."/addon/buddypress.php");
-	include(dirname(__FILE__)."/classes/upg_FormEntries.class.php");
-	include(dirname(__FILE__).'/classes/html_form.class.php');
+	
+	
+
 	  
 	register_activation_hook(__FILE__,'upg_install');
 	register_uninstall_hook(__FILE__,'upg_drop');

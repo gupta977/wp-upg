@@ -17,7 +17,15 @@
 	
 	if($title=='')
 	{
-		
+?>
+		<div class="update-nag">
+		<b>Common shortcodes uses:</b><br>
+	copy/paste <code>[upg-attach type="image"]</code>or <code>[upg-attach type="youtube"]</code> shortcode into wordpress post/page content area.<br>
+	The embed gallery will have own set of post. All post/images from different post will be shown in primary gallery <code>[upg-list]</code>.
+	<br>Use <code>[upg-post]</code> for submission form.<br>
+	Check all important settings with start icon. <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a>
+		</div>
+	<?php	
 		echo "<h3>System Check</h3><ul>";
 		
 		$file_personal_up=upg_BASE_DIR."layout/grid/personal/".get_current_blog_id()."_personal_up.php";

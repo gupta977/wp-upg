@@ -1,4 +1,59 @@
 <?php
+/**
+ * Get the value of a settings field
+ *
+ * @param string $field_name settings field name
+ * @param string $section the section name this field belongs to
+ * @param string $default default text if it's not found
+ *
+ * @return mixed
+ */
+function upg_get_option( $field_name, $section='upg_settings', $default = '' ) 
+{
+
+	$options = get_option( $section );
+
+	if ( isset( $options[$field_name] ) ) 
+	{
+			return $options[$field_name];
+	}
+	else
+	{
+			if(is_array($options))
+			{
+			$options[$field_name]=$default;
+			update_option( $section, $options );	
+			}
+	}
+
+	return $default;
+}
+
+/**
+ * Set the value of a settings field
+ *
+ * @param string $field_name settings field name
+ * @param string $section the section name this field belongs to
+ * @param string $default default text if it's not found
+ *
+ * @return mixed
+ */
+function upg_set_option( $field_name, $section='upg_settings', $default = '' ) {
+
+	$options = get_option( $section );
+
+	if ( isset( $options[$field_name] ) ) 
+	{
+		if(is_array($options))
+			{
+			$options[$field_name]=$default;
+			update_option( $section, $options );	
+			}
+	}
+
+	return $default;
+}
+
 //Displays login link
 function upg_login_link()
 {
