@@ -1,8 +1,8 @@
 <?php
 function upg_add_admin_menu(  ) 
 { 
-	$options = get_option('upg_settings');
-	if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
+
+	//if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
 	add_submenu_page( 'edit.php?post_type=upg', 'User Post Gallery Settings', 'UPG Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
 	
 	add_submenu_page( 'edit.php?post_type=upg', 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
@@ -306,7 +306,7 @@ function upg_media_section_callback()
 	<br>
 	<a href="#" title="<?php echo ( 'This will turn off all the advance settings.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<?php
-echo "<b>Switch setting mode to: </b>";
+echo "<b>Switch setting mode to: </b> (Under Development)";
 echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '1',array('checked'=>'true')).' Advance ';
 echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic ';
 

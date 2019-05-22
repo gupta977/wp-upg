@@ -780,6 +780,8 @@ function upg_admin_notice_example_notice()
 /**
  * Hook into options page after save for advance setting page.
  */
+
+ 
 function upg_hook_into_options_page_after_save( $old_value, $new_value ) 
 {
 	/* if ( $old_value['some_option'] != $new_value['some_option'] ) 
@@ -796,6 +798,6 @@ function upg_hook_into_options_page_after_save( $old_value, $new_value )
 	}
 	//upg_log($options['show_advance_setting']."----");
 }
-add_action( 'update_option_upg_settings', 'upg_hook_into_options_page_after_save', 10, 2 );
+//add_action( 'update_option_upg_settings', 'upg_hook_into_options_page_after_save', 10, 2 );
 
 ?>
