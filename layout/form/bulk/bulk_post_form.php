@@ -27,7 +27,7 @@
    
    
       <input  id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
-       <?php echo upg_droplist_category(); ?>
+       <?php echo upg_droplist_category('','image'); ?>
        <?php
 		do_action( "upg_submit_form");
 		?>

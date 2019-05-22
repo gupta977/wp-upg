@@ -199,7 +199,6 @@ else
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 
 
-//to list of specific user
 
 //echo $album."----";
 if($album!="" && $keyword!="")
@@ -233,8 +232,9 @@ $args = array(
 								//'terms'    => array( 'mobile', 'sports' ),
 								),
 		
-						),
-			);
+						)
+				);
+	
 }
 else
 	
@@ -246,12 +246,39 @@ else
 	'posts_per_page' => $postsperpage,
 	'author_name' => $user,
 	'post_status' => $post_status,
+	
 );
 
 
 }
 
+//filter parameter
+if(isset($params['filter']))
+{
+	if($params['filter']=='image')
+		$filter='pic_name';
+	else if($params['filter']=='youtube' || $params['filter']=='video')
+		$filter='youtube_url';
+	else	
+		$filter=trim($params['filter']);
+}
+else
+{
+	$filter='';
+}
+
+if($filter!='')
+{
+	$args['meta_query'] = array(
+		array(
+			'key'     => $filter
+		),
+	);
+			
+}
+
 //print_r($args);
+//var_dump($args);
 
 //Empty array if not logged in
 if(!is_user_logged_in() & isset($params['user']) && $params['user']=="show_mine")

@@ -1,5 +1,22 @@
 <?php
 /**
+ * Return checked if value matches. It will work agains class.html_form.php
+ * $main the original value 
+ * $input value to compare
+ */
+function upg_checked_form($main,$input)
+{
+		if($main==$input)
+		{
+			return array('checked'=>'true');
+		}
+		else
+		{
+			return array();
+		}
+}
+
+/**
  * Get the value of a settings field
  *
  * @param string $field_name settings field name
@@ -1521,17 +1538,26 @@ function upg_droplist_album($taxonomy='upg_cate',$selected_album="",$skip=array(
 	
 	wp_dropdown_categories($args);
 
+//	var_dump($args);
+
 }
 
-function upg_hidden_category(){
+//displays drop down list album as submission form.
+function upg_hidden_category($show='')
+{
 $skip=array();
+
+
 $categories = get_categories( array( 'taxonomy'=> 'upg_cate','hide_empty' => 0 ) ); 
 foreach ( $categories as $category ) 
 	{
-		$upg_show_cate = get_term_meta( $category->term_id, 'upg_show_cate', true  );
+		$upg_show_cate = trim(get_term_meta( $category->term_id, 'upg_show_cate', true  ));
+		$upg_assign_cate = trim(get_term_meta( $category->term_id, 'upg_assign_cate', true  ));
 		
-		if($upg_show_cate=="1")
+		if($upg_show_cate=="1" || $upg_assign_cate!=$show)
 		{
+			//upg_log($category->term_id.'-'.$upg_assign_cate.'-'.$show);
+			if(($upg_assign_cate!='' && $upg_assign_cate!='all' && $show!='') || $upg_show_cate=="1")
 			array_push($skip,$category->term_id);
 		}
 	}
@@ -1539,10 +1565,10 @@ return $skip;
 }
 
 
-function upg_droplist_category($selected_album="")
+function upg_droplist_category($selected_album="",$show_album="")
 {
 	
-	echo upg_droplist_album('upg_cate',$selected_album,upg_hidden_category());
+	echo upg_droplist_album('upg_cate',$selected_album,upg_hidden_category($show_album));
 
 }
 

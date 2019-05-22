@@ -458,7 +458,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<b>Description Field</b>: name="user-submitted-content" <br><br>
 	
 	<b>Category/Album Field</b>: name='cat' value='2' <br>
-	The value field will have a ID of album. To generate dynamic category selection use php function as upg_droplist_category();<br><br>
+	The value field will have a ID of album. To generate dynamic category selection use php function as upg_droplist_category('','');<br><br>
 	
 	<b>For File field </b>: id="file" name="user-submitted-image[]" type="file"<br>
 	<br>
@@ -555,7 +555,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<b>Description Field</b>: name="user-submitted-content" <br><br>
 	
 	<b>Category/Album Field</b>: name='cat' value='2' <br>
-	The value field will have a ID of album. To generate dynamic category selection use php function as upg_droplist_category();<br><br>
+	The value field will have a ID of album. To generate dynamic category selection use php function as upg_droplist_category('','');<br><br>
 	
 	<b>File field </b>:File upload is not available at this form.<br>
 	<br>

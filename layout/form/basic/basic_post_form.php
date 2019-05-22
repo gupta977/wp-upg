@@ -75,7 +75,7 @@ else
       
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
-           <?php echo upg_droplist_category(); ?>
+           <?php echo upg_droplist_category('','image'); ?>
 		     
         </div>
 		

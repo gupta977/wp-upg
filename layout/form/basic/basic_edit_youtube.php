@@ -57,7 +57,7 @@
       
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
-           <?php echo upg_droplist_category(upg_get_album($post,'term_id')); ?>
+           <?php echo upg_droplist_category(upg_get_album($post,'term_id'),'youtube'); ?>
         </div>
 		<?php
 		//Display 5 custom fields loop
