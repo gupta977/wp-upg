@@ -1,8 +1,9 @@
 <?php
 /**
- * Return checked if value matches. It will work agains class.html_form.php
+ * Return checked if value matches. It will work against class.html_form.php
  * $main the original value 
  * $input value to compare
+ * Specially used for radio, checkbox 
  */
 function upg_checked_form($main,$input)
 {
@@ -59,14 +60,12 @@ function upg_set_option( $field_name, $section='upg_settings', $default = '' ) {
 
 	$options = get_option( $section );
 
-	if ( isset( $options[$field_name] ) ) 
-	{
 		if(is_array($options))
 			{
 			$options[$field_name]=$default;
 			update_option( $section, $options );	
 			}
-	}
+	
 
 	return $default;
 }

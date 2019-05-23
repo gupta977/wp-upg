@@ -759,15 +759,8 @@ function upg_admin_notice_example_notice()
         ?>
         <div class="updated notice is-dismissible">
 		<h3>Steps to install UPG :</h3>
-            <p>Some pages are auto created. Do not delete them even if not required.
-			<ul>
-			<li>1. <b>User’s Post Gallery</b>: Main UPG gallery page</li>
-			<li>2. <b>Post Image</b>: Submission page for images.</li>
-			<li>3. <b>Post Video URL</b>: Submission page for youtube/vimeo url</li>
-			<li>4. <b>Edit UPG Post</b>: Let users to modify/update own UPG post.</li>
-			<li>5. <b>My Gallery</b>: Registered user can see own submitted post.</li>
+            <p>Some pages are auto created. Do not delete them even if not required. Those pages are automatically assigned in settings.
 			
-			</ul>
 			</p>
 			<p>Go to UPG Settings and select those pages at appropriate location.</p>
         </div>

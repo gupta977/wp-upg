@@ -334,6 +334,8 @@ echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic 
 	<br>
 <div style="border-style: outset;">
 <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
+	
+	
 	<?php
 	
 	echo "<b>Select MY GALLERY <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>. Display gallery submitted by logged in user.</b>: ";
@@ -441,8 +443,6 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
         )
     );
 	echo "<br>Page cannot be static front page and it must include [upg-list] shortcode.";
-	
-	
 	//**************
 	?>
 	</div>
@@ -796,16 +796,9 @@ $options = get_option('upg_settings');
 		if($options['main_page']=='0' || $options['main_page']=='')
 			{ 
 				?>
-				<h3>Steps to install UPG:</h3>
-            <p>Some pages are auto created. Do not delete them even if not required.
-			<ul>
-			<li>1. <b>User’s Post Gallery</b>: Main UPG gallery page. <?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?> - Grid Settings)</li>
-			<li>2. <b>Post Image</b>: Submission page for images. <?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?> - Form Settings)</li> 
-			<li>3. <b>Post Video URL</b>: Submission page for YouTube/Vimeo URL. <?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?> - Form Settings)</li>
-			<li>4. <b>Edit UPG Post</b>: Let users to modify/update own UPG post. <?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?> - Form Settings)</li>
-			<li>5. <b>My Gallery</b>: Registered user can see own submitted post. <?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?> - Extra Settings) </li>
+				<h3>UPG Guide:</h3>
+            <p>Some pages are auto created. Do not delete them even if not required. Those pages are automatically assigned in settings.
 			
-			</ul>
 			</p>
 				
 				

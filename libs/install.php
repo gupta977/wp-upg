@@ -302,7 +302,6 @@ function register_upg_taxonomies()
 }
 function upg_install()
 {
-	
 	update_option('upg_plugin_version', '1.12');
 	
 	upg_post_types();
@@ -314,12 +313,22 @@ function upg_install()
 	if(!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list]%'"))
 	{
        
-	   wp_insert_post(array('post_title'=>'User\'s Post Gallery','post_content'=>'[upg-list]','post_type'=>'page','post_status'=>'publish'));
-        wp_insert_post(array('post_title'=>'Post Image','post_content'=>'[upg-post type="image"]','post_type'=>'page','post_status'=>'publish'));
-		 wp_insert_post(array('post_title'=>'Post Video URL','post_content'=>'[upg-post type="youtube"]','post_type'=>'page','post_status'=>'publish'));
-		  wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine"]','post_type'=>'page','post_status'=>'publish'));
-		  wp_insert_post(array('post_title'=>'Edit UPG Post','post_content'=>'[upg-edit]','post_type'=>'page','post_status'=>'publish'));
-    }
+	   $aid=wp_insert_post(array('post_title'=>'User\'s Post Gallery','post_content'=>'[upg-list]','post_type'=>'page','post_status'=>'publish'));
+		 upg_set_option( 'main_page','upg_settings', $aid );
+
+		 $bid=wp_insert_post(array('post_title'=>'Post Image','post_content'=>'[upg-post type="image"]','post_type'=>'page','post_status'=>'publish'));
+		 upg_set_option( 'post_image_page','upg_settings', $bid );
+
+		 $cid=wp_insert_post(array('post_title'=>'Post Video URL','post_content'=>'[upg-post type="youtube"]','post_type'=>'page','post_status'=>'publish'));
+		 upg_set_option( 'post_youtube_page','upg_settings', $cid );
+		 
+		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine"]','post_type'=>'page','post_status'=>'publish'));
+		 upg_set_option( 'my_gallery','upg_settings', $did );
+		 
+		 $eid=wp_insert_post(array('post_title'=>'Edit UPG Post','post_content'=>'[upg-edit]','post_type'=>'page','post_status'=>'publish'));
+		 upg_set_option( 'edit_upg_page','upg_settings', $eid );
+		 
+		}
 	
 	$parent_term = term_exists( '', 'upg_cate' ); // array is returned if taxonomy is given
 $parent_term_id = $parent_term['term_id']; // get numeric term id

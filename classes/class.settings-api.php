@@ -504,7 +504,7 @@ class upg_admin_Settings_API {
     }
 
     /**
-     * Show navigations as tab
+     * Show navigation as tab
      *
      * Shows all the settings section labels as tab
      */

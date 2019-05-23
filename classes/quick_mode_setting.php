@@ -2,6 +2,7 @@
 
 /**
  * ODude.com
+ * #### Quick Mode backend setting page ###
  */
 if ( !class_exists('upg_quick_setting' ) ):
 class upg_quick_setting {
@@ -28,8 +29,8 @@ class upg_quick_setting {
     function admin_menu() {
         $options = get_option('upg_settings'); 
 
-        //if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='0')
-     // add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'wp_upg', array($this, 'plugin_page')  );
+    //if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='0')
+      add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'wp_upg1', array($this, 'plugin_page')  );
 	
        // add_options_page( 'edit.php?post_type=upg', 'Settings API', 'Settings API', 'delete_posts', 'settings_api_test', array($this, 'plugin_page') );
     }
@@ -84,8 +85,8 @@ class upg_quick_setting {
                 ),
                 array(
                     'name'        => 'heading1',
-                    'label'             => __( 'My Heading', 'wp-upg' ),
-                    'desc'        => __( 'This is heading description' ),
+                    'label'             => __( 'Page setup', 'wp-upg' ),
+                    'desc'        => __( 'These pages need to be set so that UPG knows where to send users.' ),
                     'type'        => 'subheading'
                 ),
                 array(
@@ -101,19 +102,13 @@ class upg_quick_setting {
             ),
             'upg_gallery' => array(
                 array(
-                    'name'    => 'color',
-                    'label'   => __( 'Cat1', 'wp-upg' ),
-                    'desc'    => __( 'Color description', 'wp-upg' ),
-                    'type'    => 'color',
-                    'default' => ''
+                    'name'    => 'main_page',
+                    'label'   => __( 'UPG main page', 'wp-upg' ),
+                    'desc'    => __( 'Used for SEO & navigation', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'main_page','upg_settings', '0' ),
                 ),
-                array(
-                    'name'    => 'color2',
-                    'label'   => __( 'cat2', 'wp-upg' ),
-                    'desc'    => __( 'Color description', 'wp-upg' ),
-                    'type'    => 'color',
-                    'default' => ''
-                ),
+                
                /*  array(
                     'name'        => 'heading2',
                     'label'             => __( 'My Heading2', 'wp-upg' ),
@@ -143,23 +138,6 @@ class upg_quick_setting {
 
         
         echo '</div>';
-    }
-
-    /**
-     * Get all the pages
-     *
-     * @return array page names with key value pairs
-     */
-    function get_pages() {
-        $pages = get_pages();
-        $pages_options = array();
-        if ( $pages ) {
-            foreach ($pages as $page) {
-                $pages_options[$page->ID] = $page->post_title;
-            }
-        }
-
-        return $pages_options;
     }
 
 }

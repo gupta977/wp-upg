@@ -1,4 +1,7 @@
 <?php
+/*
+### Admin custom post type management ####
+*/
 class upg_FormEntries {
 
     public static function init() 
