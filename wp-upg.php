@@ -57,7 +57,12 @@ Domain Path: /languages
 			
 	if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
-			
+			$options = get_option( 'upg_settings','' );
+			if(isset($options['publish']) && $options['publish']=='1' )
+			{
+				$options['publish']="on";
+				update_option( 'upg_settings', $options );	
+			}
 			//if(get_option('upg_plugin_version')=='1.12')
 			//{
 				//Update Permalinks
@@ -775,7 +780,7 @@ function upg_admin_notice_example_notice()
  */
 
  
-function upg_hook_into_options_page_after_save( $old_value, $new_value ) 
+function upg_hook_advance_options_page_after_save( $old_value, $new_value ) 
 {
 	/* if ( $old_value['some_option'] != $new_value['some_option'] ) 
 	{
@@ -791,6 +796,5 @@ function upg_hook_into_options_page_after_save( $old_value, $new_value )
 	}
 	//upg_log($options['show_advance_setting']."----");
 }
-//add_action( 'update_option_upg_settings', 'upg_hook_into_options_page_after_save', 10, 2 );
-
+add_action( 'update_option_upg_settings', 'upg_hook_advance_options_page_after_save', 10, 2 );
 ?>

@@ -101,7 +101,7 @@ else
 			//Email Notification 
 			do_action( "upg_submit_complete");
 			
-			if(isset($options['publish']) && $options['publish']=='1' )
+			if(isset($options['publish']) && $options['publish']=='on' )
 			{
 			
 			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";

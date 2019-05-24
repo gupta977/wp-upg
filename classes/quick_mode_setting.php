@@ -73,38 +73,50 @@ class upg_quick_setting {
         $settings_fields = array(
             'upg_general' => array(
                 array(
+                    'name'  => 'publish',
+                    'label' => __( 'Auto approve post', 'wp-upg' ),
+                    'desc'  => __( 'Automatically publish Post as soon as user submit.', 'wp-upg' ),
+                    'type'  => 'checkbox',
+                    'default' => upg_get_option( 'publish','upg_settings', 'on' ),
+                ),
+                array(
+                    'name'    => 'my_gallery',
+                    'label'   => __( 'Members "My Gallery" page', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-list user="show_mine"] shortcode.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'my_gallery','upg_settings', '0' ),
+                ),
+                array(
+                    'name'    => 'my_login',
+                    'label'   => __( 'Select Login page', 'wp-upg' ),
+                    'desc'    => __( 'Login page where user enters username & passwords.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'my_login','upg_settings', '0' ),
+                ),
+                array(
+                    'name'        => 'heading1',
+                    'label'             => __( 'Setting Mode', 'wp-upg' ),
+                    'desc'        => __( 'If you like to go for advance settings like "layout editor", "layout selection", "UPG-PRO features" switch mode to advance. After switching you must make appropriate settings. Current settings will be discarded. ' ),
+                    'type'        => 'subheading'
+                ),
+                array(
                     'name' => 'show_advance_setting',
-                    'label' => __('Switch setting mode', 'wp-upg'),
-                    'desc' => __('If you are a expert user, switch to advanced mode for lots of UPG settings.', 'wp-upg'),
+                    'label' => __('Select mode', 'wp-upg'),
+                    'desc' => __('If you are a expert or UPG-PRO user, switch to advanced mode.', 'wp-upg'),
                     'type' => 'radio',
                     'default'=> '0',
                     'options' => array(
                         '1' => 'Advanced',
                         '0' => 'Quick'
                     )
-                ),
-                array(
-                    'name'        => 'heading1',
-                    'label'             => __( 'Page setup', 'wp-upg' ),
-                    'desc'        => __( 'These pages need to be set so that UPG knows where to send users.' ),
-                    'type'        => 'subheading'
-                ),
-                array(
-                    'name'              => 'text_val2',
-                    'label'             => __( 'Next', 'wp-upg' ),
-                    'desc'              => __( 'Text input description', 'wp-upg' ),
-                    'placeholder'       => __( 'Text Input placeholder', 'wp-upg' ),
-                    'type'              => 'text',
-                    'default'           => 'Title',
-                    'sanitize_callback' => 'sanitize_text_field'
-                ),
+                )
                 
             ),
             'upg_gallery' => array(
                 array(
                     'name'    => 'main_page',
                     'label'   => __( 'UPG main page', 'wp-upg' ),
-                    'desc'    => __( 'Used for SEO & navigation', 'wp-upg' ),
+                    'desc'    => __( 'Page cannot be static front page and it must include [upg-list] shortcode.', 'wp-upg' ),
                     'type'    => 'pages',
                     'default' => upg_get_option( 'main_page','upg_settings', '0' ),
                 ),
@@ -116,6 +128,40 @@ class upg_quick_setting {
                     'type'        => 'subheading'
                 ), */
                 
+            ),
+            'upg_form' => array(
+                array(
+                    'name'    => 'post_image_page',
+                    'label'   => __( 'Select submission form of Image page', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-post type="image"] shortcode.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'post_image_page','upg_settings', '0' ),
+                ),
+                array(
+                    'name'    => 'post_youtube_page',
+                    'label'   => __( 'Select submission form of Youtube/Vimeo page', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-post type="youtube"] shortcode.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'post_youtube_page','upg_settings', '0' ),
+                ),
+                array(
+                    'name'    => 'edit_upg_page',
+                    'label'   => __( 'Submission form Edit/Modify page', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-edit] shortcode.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'edit_upg_page','upg_settings', '0' ),
+                ),
+                
+               
+            ),
+            'upg_preview' => array(
+                array(
+                    'name'  => 'global_popup',
+                    'label' => __( 'Enable Lightbox Popup', 'wp-upg' ),
+                    'desc'  => __( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.', 'wp-upg' ),
+                    'type'  => 'checkbox',
+                    'default' => upg_get_option( 'global_popup','upg_preview', 'off' ),
+                )
             )
         );
 

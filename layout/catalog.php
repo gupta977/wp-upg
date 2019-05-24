@@ -78,7 +78,8 @@ $perrow = $options['global_perrow'];
 
 $orderby=$options['global_order'];
 $page=$options['global_page'];
-$popup=$options['global_popup'];
+//$popup=$options['global_popup'];
+$popup=upg_get_option( 'global_popup','upg_preview', 'off' );
 $album="";
 $post_id=get_the_ID();
 

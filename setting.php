@@ -287,7 +287,7 @@ function upg_media_section_callback()
 	$frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 	 $options = get_option('upg_settings');
 		if(!isset($options['publish']))
-		$options['publish']="0";
+		$options['publish']="off";
 	
 		if(!isset($options['guest_user']))
 		$options['guest_user']=0;
@@ -312,7 +312,7 @@ echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic 
 
 ?>
 <br><br>
-	<a href="#" title="<?php echo ( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='1' <?php if($options['publish']=='1') echo 'checked="checked"'; ?> >
+	<a href="#" title="<?php echo ( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='on' <?php if($options['publish']=='on') echo 'checked="checked"'; ?> >
 	<br><br>
 	
 	<a href="#" title="<?php echo ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
@@ -443,7 +443,7 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
         )
     );
 	echo "<br>Page cannot be static front page and it must include [upg-list] shortcode.";
-	//**************
+	echo upg_get_option( 'main_page', 'upg_settings', '0' ) ;
 	?>
 	</div>
 	<br>
@@ -841,11 +841,19 @@ jQuery(document).ready(function($){
        $("#tabs").tabs();
 });
   </script>
-  
+  <?php
+  echo upg_check_mode()." MODE <br>";
+	//echo upg_get_option( 'main_page', 'upg_settings','0' ) ."----".upg_get_option( 'main_page', 'upg_gallery','0' );
+echo upg_get_option( 'global_popup','upg_preview', 'off' )."----";
+
+?>
+
 <div class="wrap">
 	<form action='options.php' method='post'>
 	
 		<h2>User Post Gallery (UPG) Settings</h2>
+
+
 		<div id="tabs">
 	<ul>
 		

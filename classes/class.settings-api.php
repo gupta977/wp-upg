@@ -430,6 +430,7 @@ class upg_admin_Settings_API {
             'echo'     => 0
         );
         $html = wp_dropdown_pages( $dropdown_args );
+        $html  .= $this->get_field_description( $args );
         echo $html;
     }
 

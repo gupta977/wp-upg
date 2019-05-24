@@ -1,4 +1,17 @@
 <?php
+//Check if user is using quick or advance mode
+function upg_check_mode()
+{
+	$options = get_option('upg_settings');  
+
+	//upg_log($section."-".$section);
+
+	if($options['show_advance_setting']=='0')
+		return 'quick';
+	else
+		return 'advance';
+}
+
 /**
  * Return checked if value matches. It will work against class.html_form.php
  * $main the original value 
@@ -28,6 +41,11 @@ function upg_checked_form($main,$input)
  */
 function upg_get_option( $field_name, $section='upg_settings', $default = '' ) 
 {
+
+	if(upg_check_mode()=='advance')
+	{
+		$section='upg_settings';
+	}
 
 	$options = get_option( $section );
 
@@ -195,7 +213,7 @@ function upg_prepare_post($title, $content, $post_type='upg')
 	else
 		$postData['post_type']  = $post_type;
 	
-	if(isset($options['publish']) && $options['publish']=='1' )
+	if(isset($options['publish']) && $options['publish']=='on' )
 	$postData['post_status'] = 'publish';
 	
 	return apply_filters('upg_post_data', $postData);
@@ -365,7 +383,7 @@ function upg_update_post($post_id,$title, $files, $content, $category)
 	$updatePost['error'][]=apply_filters('upg_verify_submit', "");
 	$file_count=0;
 	
-	if(isset($options['publish']) && $options['publish']=='1' )
+	if(isset($options['publish']) && $options['publish']=='on' )
 	{
 		$new_post = array(
 			'ID'           => $post_id,
@@ -939,7 +957,7 @@ function upg_ajax_post()
 			do_action( "upg_submit_complete");
 			$response['type'] = "success";
 			
-			if(isset($options['publish']) && $options['publish']=='1' )
+			if(isset($options['publish']) && $options['publish']=='on' )
 			{
 			
 		
@@ -1025,7 +1043,7 @@ function upg_ajax_post()
 			do_action( "upg_submit_complete");
 			$response['type'] = "success";
 			
-			if(isset($options['publish']) && $options['publish']=='1' )
+			if(isset($options['publish']) && $options['publish']=='on' )
 			{
 				
 			//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
@@ -1092,7 +1110,7 @@ function upg_ajax_post()
 				do_action( "upg_submit_complete");
 				$response['type'] = "success";
 				
-				if(isset($options['publish']) && $options['publish']=='1' )
+				if(isset($options['publish']) && $options['publish']=='on' )
 				{
 					
 				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
