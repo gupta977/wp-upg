@@ -58,7 +58,7 @@ Domain Path: /languages
 	if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
 			$options = get_option( 'upg_settings','' );
-			if(isset($options['publish']) && $options['publish']=='1' )
+			if(upg_get_option( 'publish','upg_form', 'on' )=='1' )
 			{
 				$options['publish']="on";
 				update_option( 'upg_settings', $options );	
@@ -242,14 +242,7 @@ function upg_the_content($content)
 			}	   
 		    
 			
-			if($options['main_page']=='0' || $options['main_page']=='')
-			{
-				$edit_page=admin_url( 'edit.php?post_type=upg&page=wp_upg');
-				
-				return "<h2>Please first save <a href='".$edit_page."'>UPG important settings</a></h2>";
-			}
-			else
-			{
+			
 				$filename=dirname(__FILE__)."/layout/media/".$upg_layout."/".$upg_layout.".php";
 				
 				if( file_exists( $filename ) )
@@ -262,7 +255,7 @@ function upg_the_content($content)
 					require_once(dirname(__FILE__)."/layout/media/basic/basic.php");
 					return upg_product_content($post);
 				}
-			}
+			
 	   }
 	  
     }
@@ -288,16 +281,9 @@ function upg_the_content($content)
 	function upg_list($params)
 	{
 	 $options = get_option('upg_settings');  
-		if($options['main_page']=='0' || $options['main_page']=='')
-			{ 
-				$edit_page=admin_url( 'edit.php?post_type=upg&page=wp_upg');
-				return "<h2>Please first save <a href='".$edit_page."'>UPG important settings</a></h2>";
-				
-			}
-			else
-			{
+		
 				$frontpage_id = get_option( 'page_on_front' );
-				if($frontpage_id == $options['main_page'])
+				if($frontpage_id == upg_get_option( 'main_page','upg_gallery', '0' ))
 				{
 					return "<h2>UPG main page cannot be your homepage. Change it from <a href='".$edit_page."'>UPG important settings</a></h2>";
 				}
@@ -307,7 +293,7 @@ function upg_the_content($content)
 					$abc=include(upg_BASE_DIR.'layout/catalog.php');
 					return $abc;
 				}
-			}
+			
 	 
 	}
 
@@ -388,9 +374,9 @@ function upg_the_content($content)
 			}
 			else
 			{
-				//$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink($options['edit_upg_page']) ) );
+				
 				upg_login_link();
-				//header('Location: ' . wp_login_url());
+				
 			}
 	 
 	}
@@ -512,7 +498,7 @@ function upg_template_redirect()
 				//Converts system tag url to own url
 				$term = get_queried_object();
 				$page_settings = get_option( 'upg_settings' );
-				$link = get_permalink( $page_settings['main_page'] );
+				$link = get_permalink( upg_get_option( 'main_page','upg_gallery', '0' ) );
 				$link = add_query_arg( "upg_tag", $term->slug, $link );
 				
 				$redirect_url=$link;				
@@ -534,22 +520,22 @@ function upg_user_url()
 {
 	$options = get_option('upg_settings');
 	
-	if(isset($options['main_page']))
+	if(upg_get_option( 'main_page','upg_gallery', '0' )!='0')
 	{
 		//$main_page=get_permalink($options['main_page']);
-		$main_page=basename(get_permalink($options['main_page']));
+		$main_page=basename(get_permalink(upg_get_option( 'main_page','upg_gallery', '0' )));
 		
 		//Rewrite rules to browse by user
 		add_rewrite_rule(
 			'^'.$main_page.'/member/([^/]*)$',
-			'index.php?user=$matches[1]&page_id='.$options['main_page'],
+			'index.php?user=$matches[1]&page_id='.upg_get_option( 'main_page','upg_gallery', '0' ),
 			'top'
 		);
 		
 		
 		add_rewrite_rule(
 			'^'.$main_page.'/member/([^/]+)/page/([0-9]+)?$',
-			'index.php?user=$matches[1]&paged=$matches[2]&page_id='.$options['main_page'],
+			'index.php?user=$matches[1]&paged=$matches[2]&page_id='.upg_get_option( 'main_page','upg_gallery', '0' ),
 			'top'
 		);
 		
@@ -557,20 +543,20 @@ function upg_user_url()
 		
 		add_rewrite_rule(
 			'^'.$main_page.'/tag/([^/]*)$',
-			'index.php?page_id='.$options['main_page'].'&upg_tag=$matches[1]',
+			'index.php?page_id='.upg_get_option( 'main_page','upg_gallery', '0' ).'&upg_tag=$matches[1]',
 			'top'
 		);
 		
 		add_rewrite_rule(
 			'^'.$main_page.'/tag/([^/]+)/page/([0-9]+)?$',
-			'index.php?upg_tag=$matches[1]&paged=$matches[2]&page_id='.$options['main_page'],
+			'index.php?upg_tag=$matches[1]&paged=$matches[2]&page_id='.upg_get_option( 'main_page','upg_gallery', '0' ),
 			'top'
 		);
 		
 		//rewrite rules pagination to browse by album
 	 add_rewrite_rule(
 			'^'.$main_page.'/([^/]+)/page/([0-9]+)?$',
-			'index.php?upg_cate=$matches[1]&paged=$matches[2]&page_id='.$options['main_page'],
+			'index.php?upg_cate=$matches[1]&paged=$matches[2]&page_id='.upg_get_option( 'main_page','upg_gallery', '0' ),
 			'top' 
 			);
 		
@@ -578,7 +564,7 @@ function upg_user_url()
 		
 			add_rewrite_rule(
 			'^'.$main_page.'/([^/]*)$',
-			'index.php?upg_cate=$matches[1]&page_id='.$options['main_page'],
+			'index.php?upg_cate=$matches[1]&page_id='.upg_get_option( 'main_page','upg_gallery', '0' ),
 			'top'
 		);
 	}
@@ -608,7 +594,7 @@ function upg_filter_page_title($title)
 	$options = get_option('upg_settings');
 	$current_page_id=get_the_ID();
 	$album_name="";
-	$main_page_id = $options['main_page'];
+	$main_page_id = upg_get_option( 'main_page','upg_gallery', '0' );
 	if($main_page_id==$current_page_id && in_the_loop())
 	{
 		

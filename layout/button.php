@@ -36,27 +36,27 @@ function upg_show_button()
 		$image_button=$options['primary_show_image_button'];
 		
 		
-		if(isset($options['post_image_page']))
-		{
+		//if($options['post_image_page'])
+		//{
 			
 					
-			$post_7 = get_post($options['post_image_page'], ARRAY_A);
+			$post_7 = get_post(upg_get_option( 'post_image_page','upg_form', '0' ), ARRAY_A);
 			$page_title = $post_7['post_title'];
 			
 			$arg=get_the_title();
 			
 			if($album_name=="")
 			{
-				$linku=esc_url( get_permalink($options['post_image_page']) );
+				$linku=esc_url( get_permalink(upg_get_option( 'post_image_page','upg_form', '0' )) );
 			}
 			else
 			{
-				$linku=esc_url( add_query_arg( 'album', $arg, get_permalink($options['post_image_page']) ) );
+				$linku=esc_url( add_query_arg( 'album', $arg, get_permalink(upg_get_option( 'post_image_page','upg_form', '0' )) ) );
 			}
 			
 			if($image_button=="1")
 			echo "<a href='".$linku."' class='pure-button' style='font-size: 80%;' id='upg_button' style='margin:5px'>   <i class='fas fa-file-upload'></i> ".$page_title."</a> ";
-		}
+		//}
 		
 		
 	}
@@ -64,29 +64,29 @@ function upg_show_button()
 		if(isset($options['primary_show_youtube_button']) && $grant_access )
 	{
 		$image_button=$options['primary_show_youtube_button'];
-		if(isset($options['post_youtube_page']))
-		{
+		//if(isset($options['post_youtube_page']))
+		//{
 			
 			//$linku=esc_url( get_permalink($options['post_youtube_page']) );
 			
-			$post_7 = get_post($options['post_youtube_page'], ARRAY_A);
+			$post_7 = get_post(upg_get_option( 'post_youtube_page','upg_form', '0' ), ARRAY_A);
 			$page_title = $post_7['post_title'];
 			
 			$arg=get_the_title();
 			
 			if($album_name=="")
 			{
-				$linku=esc_url( get_permalink($options['post_youtube_page']) );
+				$linku=esc_url( get_permalink(upg_get_option( 'post_youtube_page','upg_form', '0' )) );
 			}
 			else
 			{
-			$linku=esc_url( add_query_arg( 'album', $arg, get_permalink($options['post_youtube_page']) ) );
+			$linku=esc_url( add_query_arg( 'album', $arg, get_permalink(upg_get_option( 'post_youtube_page','upg_form', '0' )) ) );
 			}
 			
 			
 			if($image_button=="1")
 			echo "<a href='".$linku."' class='pure-button' id='upg_button' style='margin:5px; font-size: 80%;'>   <i class='fab fa-youtube'></i> ".$page_title."</a>";
-		}
+		//}
 		
 	}
 	

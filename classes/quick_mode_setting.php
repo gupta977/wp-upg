@@ -30,7 +30,7 @@ class upg_quick_setting {
         $options = get_option('upg_settings'); 
 
     //if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='0')
-      add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'wp_upg1', array($this, 'plugin_page')  );
+      add_submenu_page( 'edit.php?post_type=upg', 'UPG Settings', 'UPG Settings', 'manage_options', 'wp_upg_quick', array($this, 'plugin_page')  );
 	
        // add_options_page( 'edit.php?post_type=upg', 'Settings API', 'Settings API', 'delete_posts', 'settings_api_test', array($this, 'plugin_page') );
     }
@@ -72,12 +72,23 @@ class upg_quick_setting {
     function get_settings_fields() {
         $settings_fields = array(
             'upg_general' => array(
+               
                 array(
-                    'name'  => 'publish',
-                    'label' => __( 'Auto approve post', 'wp-upg' ),
-                    'desc'  => __( 'Automatically publish Post as soon as user submit.', 'wp-upg' ),
-                    'type'  => 'checkbox',
-                    'default' => upg_get_option( 'publish','upg_settings', 'on' ),
+                    'name'    => 'my_login',
+                    'label'   => __( 'Select Login page', 'wp-upg' ),
+                    'desc'    => __( 'Login page where user enters username & passwords.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'my_login','upg_settings', '0' ),
+                )
+                
+            ),
+            'upg_gallery' => array(
+                array(
+                    'name'    => 'main_page',
+                    'label'   => 'UPG '.__( 'main page', 'wp-upg' ),
+                    'desc'    => __( 'Page cannot be static front page and it must include [upg-list] shortcode.', 'wp-upg' ),
+                    'type'    => 'pages',
+                    'default' => upg_get_option( 'main_page','upg_settings', '0' ),
                 ),
                 array(
                     'name'    => 'my_gallery',
@@ -85,40 +96,6 @@ class upg_quick_setting {
                     'desc'    => __( 'Page must contain [upg-list user="show_mine"] shortcode.', 'wp-upg' ),
                     'type'    => 'pages',
                     'default' => upg_get_option( 'my_gallery','upg_settings', '0' ),
-                ),
-                array(
-                    'name'    => 'my_login',
-                    'label'   => __( 'Select Login page', 'wp-upg' ),
-                    'desc'    => __( 'Login page where user enters username & passwords.', 'wp-upg' ),
-                    'type'    => 'pages',
-                    'default' => upg_get_option( 'my_login','upg_settings', '0' ),
-                ),
-                array(
-                    'name'        => 'heading1',
-                    'label'             => __( 'Setting Mode', 'wp-upg' ),
-                    'desc'        => __( 'If you like to go for advance settings like "layout editor", "layout selection", "UPG-PRO features" switch mode to advance. After switching you must make appropriate settings. Current settings will be discarded. ' ),
-                    'type'        => 'subheading'
-                ),
-                array(
-                    'name' => 'show_advance_setting',
-                    'label' => __('Select mode', 'wp-upg'),
-                    'desc' => __('If you are a expert or UPG-PRO user, switch to advanced mode.', 'wp-upg'),
-                    'type' => 'radio',
-                    'default'=> '0',
-                    'options' => array(
-                        '1' => 'Advanced',
-                        '0' => 'Quick'
-                    )
-                )
-                
-            ),
-            'upg_gallery' => array(
-                array(
-                    'name'    => 'main_page',
-                    'label'   => __( 'UPG main page', 'wp-upg' ),
-                    'desc'    => __( 'Page cannot be static front page and it must include [upg-list] shortcode.', 'wp-upg' ),
-                    'type'    => 'pages',
-                    'default' => upg_get_option( 'main_page','upg_settings', '0' ),
                 ),
                 
                /*  array(
@@ -130,6 +107,13 @@ class upg_quick_setting {
                 
             ),
             'upg_form' => array(
+                array(
+                    'name'  => 'publish',
+                    'label' => __( 'Auto approve post', 'wp-upg' ),
+                    'desc'  => __( 'Automatically publish Post as soon as user submit.', 'wp-upg' ),
+                    'type'  => 'checkbox',
+                    'default' => upg_get_option( 'publish','upg_settings', 'on' ),
+                ),
                 array(
                     'name'    => 'post_image_page',
                     'label'   => __( 'Select submission form of Image page', 'wp-upg' ),
@@ -177,6 +161,8 @@ class upg_quick_setting {
 
     function plugin_page() {
         echo '<div class="wrap">';
+        echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b>".__("Advance Settings","wp-upg")."</b></a>";
+
         settings_errors();
         $this->settings_api->show_navigation();
        

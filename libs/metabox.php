@@ -5,7 +5,7 @@
 		$prefix = 'upg_';
 
 		$meta_boxes = array(
-				'post_img'=>array('id'=> $prefix.'image','title'=>__('Main UPG media file','wp-upg'),'callback'=>'upg_meta_box_image','position'=>'advanced','priority'=>'high'),
+				'post_img'=>array('id'=> $prefix.'image','title'=>__('Main media file','wp-upg'),'callback'=>'upg_meta_box_image','position'=>'advanced','priority'=>'high'),
 				
 				'upg-layout'=>array('title'=>__('Post Preview Layout',"wp-upg"),'callback'=>'upg_meta_box_layout','position'=>'side','priority'=>'core'),
 				
@@ -74,7 +74,7 @@
 			if($all_upg_extra["form_attach"][0]=='0')
 			{
 				echo __("Attached to: ","wp-upg");
-				echo __("Primary UPG Gallery","wp-upg");
+				echo __("Primary Gallery","wp-upg");
 			}
 			else {
 				echo __("Attached to: ","wp-upg");

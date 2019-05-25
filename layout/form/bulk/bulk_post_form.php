@@ -52,10 +52,10 @@
 
 
 <?php
-if(isset($options['my_gallery']))
-{
+//if(isset($options['my_gallery']))
+//{
     //echo $options['my_gallery']."---";
-    echo "<a href='".esc_url( get_page_link( $options['my_gallery'] ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
-}
+    echo "<a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+//}
 
 ?>

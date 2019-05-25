@@ -1,17 +1,4 @@
 <?php
-//Check if user is using quick or advance mode
-function upg_check_mode()
-{
-	$options = get_option('upg_settings');  
-
-	//upg_log($section."-".$section);
-
-	if($options['show_advance_setting']=='0')
-		return 'quick';
-	else
-		return 'advance';
-}
-
 /**
  * Return checked if value matches. It will work against class.html_form.php
  * $main the original value 
@@ -41,11 +28,6 @@ function upg_checked_form($main,$input)
  */
 function upg_get_option( $field_name, $section='upg_settings', $default = '' ) 
 {
-
-	if(upg_check_mode()=='advance')
-	{
-		$section='upg_settings';
-	}
 
 	$options = get_option( $section );
 
@@ -93,14 +75,13 @@ function upg_login_link()
 {
 	$options = get_option('upg_settings');
 	
-	if(isset($options['my_login']))
-		$login=$options['my_login'];
-	else
-		$login="0";
+	
+		$login=upg_get_option( 'my_login','upg_general', '0' );
+	
 
 		if($login!='0')
 		{
-			$linku=get_permalink($options['my_login']);
+			$linku=get_permalink(upg_get_option( 'my_login','upg_general', '0' ));
 			echo "<a href='".$linku."' class='pure-button'>".__("Login Please !","wp-upg")."</a>";
 		}
 		else
@@ -147,7 +128,7 @@ function upg_list_tags($post)
 	{
 		
 				$page_settings = get_option( 'upg_settings' );
-				$link = get_permalink( $page_settings['main_page'] );
+				$link = get_permalink( upg_get_option( 'main_page','upg_gallery', '0' ) );
 				$link = add_query_arg( "upg_tag", $term_list[$x]->slug, $link );
 				
 				
@@ -168,8 +149,8 @@ function upg_get_category_page_link( $term, $taxonomy )
 	
 	$link = '/';
 	
-	if( $page_settings['main_page'] > 0 ) {
-		$link = get_permalink( $page_settings['main_page'] );
+	if( upg_get_option( 'main_page','upg_gallery', '0' ) > 0 ) {
+		$link = get_permalink( upg_get_option( 'main_page','upg_gallery', '0' ) );
 	
 		if( '' != get_option( 'permalink_structure' ) ) 
 		{
@@ -213,7 +194,7 @@ function upg_prepare_post($title, $content, $post_type='upg')
 	else
 		$postData['post_type']  = $post_type;
 	
-	if(isset($options['publish']) && $options['publish']=='on' )
+	if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 	$postData['post_status'] = 'publish';
 	
 	return apply_filters('upg_post_data', $postData);
@@ -383,7 +364,7 @@ function upg_update_post($post_id,$title, $files, $content, $category)
 	$updatePost['error'][]=apply_filters('upg_verify_submit', "");
 	$file_count=0;
 	
-	if(isset($options['publish']) && $options['publish']=='on' )
+	if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 	{
 		$new_post = array(
 			'ID'           => $post_id,
@@ -594,7 +575,7 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 function upg_author($author,$redirect=true)
 {
 	$options = get_option('upg_settings');
-	if(isset($options['main_page']))
+	if(upg_get_option( 'main_page','upg_gallery', '0' )!='0')
 	{
 		if(isset($options['upg_ultimatemember_enable']) && $options['upg_ultimatemember_enable']=='1' && function_exists( 'um_user_profile_url' ) && $redirect )
 		{
@@ -610,9 +591,9 @@ function upg_author($author,$redirect=true)
 		else
 		{
 		if ( get_option('permalink_structure') )
-		$linku=esc_url( get_permalink($options['main_page'])."member/".$author->user_nicename );
+		$linku=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."member/".$author->user_nicename );
 		else
-		$linku=esc_url( get_permalink($options['main_page'])."&user=".$author->user_nicename );
+		$linku=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."&user=".$author->user_nicename );
 		}
 	}
 	else
@@ -662,8 +643,8 @@ function upg_add_extra_icon_grid_edit($icon)
 	global $post; 
 	$options = get_option('upg_settings');
 		
-	if(isset($options['edit_upg_page']))
-	$edit_link=esc_url( add_query_arg( 'upg_id', $post->ID, get_permalink($options['edit_upg_page']) ) );
+	if(upg_get_option( 'edit_upg_page','upg_form', '0' )!='0')
+	$edit_link=esc_url( add_query_arg( 'upg_id', $post->ID, get_permalink(upg_get_option( 'edit_upg_page','upg_form', '0' )) ) );
 	else
 		$edit_link="#";
 	
@@ -786,13 +767,13 @@ function upg_add_extra_icon_grid_user($icon)
 	$extra_icon=array();
 	$options = get_option('upg_settings');
 	$author = get_user_by('id', get_the_author_meta( 'ID' ));
-	if(isset($options['main_page']))
+	if(upg_get_option( 'main_page','upg_gallery', '0' )!='0')
 	{
 		
 		if ( get_option('permalink_structure') )
-		$link=esc_url( get_permalink($options['main_page'])."member/".$author->user_nicename );
+		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."member/".$author->user_nicename );
 		else
-		$link=esc_url( get_permalink($options['main_page'])."&user=".$author->user_nicename );
+		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."&user=".$author->user_nicename );
 	}
 	else
 	{
@@ -957,7 +938,7 @@ function upg_ajax_post()
 			do_action( "upg_submit_complete");
 			$response['type'] = "success";
 			
-			if(isset($options['publish']) && $options['publish']=='on' )
+			if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 			{
 			
 		
@@ -1043,7 +1024,7 @@ function upg_ajax_post()
 			do_action( "upg_submit_complete");
 			$response['type'] = "success";
 			
-			if(isset($options['publish']) && $options['publish']=='on' )
+			if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 			{
 				
 			//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
@@ -1110,7 +1091,7 @@ function upg_ajax_post()
 				do_action( "upg_submit_complete");
 				$response['type'] = "success";
 				
-				if(isset($options['publish']) && $options['publish']=='on' )
+				if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 				{
 					
 				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
@@ -1436,9 +1417,9 @@ function upg_update_personal_layout()
 			if(!strpos($file, '.') && $file != "." && $file != "..")
 			{				
 				//Show preview link of layout
-				if(isset($options['main_page']) && $preview==true)
+				if(upg_get_option( 'main_page','upg_gallery', '0' )!='0' && $preview==true)
 				{
-					$main_page=get_permalink($options['main_page']);
+					$main_page=get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ));
 					
 					$filelist .= sprintf('<input type="radio" '.$checked.' name="'.$name.'" id="'.$name.'"  value="%s"/>%s layout '.upg_get_preview_link($main_page,$file).'<br>' . PHP_EOL, $file, $file );
 				}

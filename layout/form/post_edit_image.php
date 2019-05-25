@@ -131,13 +131,13 @@ else
 			
 			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('View','wp-upg')."</a> ";
 					
-					$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink($options['edit_upg_page']) ) );
+					$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink(upg_get_option( 'edit_upg_page','upg_form', '0' )) ) );
 					
 					echo "<a href='".$edit_link."' class=\"pure-button\">".__('Edit','wp-upg')."</a> ";
 
-					if(isset($options['my_gallery']))
+					if(upg_get_option( 'my_gallery','upg_gallery', '0' )!='0')
 					{
-    					echo "<a href='".esc_url( get_page_link( $options['my_gallery'] ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+    					echo "<a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
 					}
 								
 			

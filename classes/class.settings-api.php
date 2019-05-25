@@ -427,6 +427,8 @@ class upg_admin_Settings_API {
             'selected' => esc_attr($this->get_option($args['id'], $args['section'], $args['std'] ) ),
             'name'     => $args['section'] . '[' . $args['id'] . ']',
             'id'       => $args['section'] . '[' . $args['id'] . ']',
+            'show_option_none' => __( '&mdash; None &mdash;','wp-upg' ),
+            'option_none_value' => '0',
             'echo'     => 0
         );
         $html = wp_dropdown_pages( $dropdown_args );

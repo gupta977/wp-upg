@@ -207,7 +207,7 @@ $settings = maybe_unserialize(get_option('upg_settings'));
             
             'labels' => array(
                 'name' => __('User Post Gallery','wp-upg'),
-                'singular_name' => __('UPG Post','wp-upg'),
+                'singular_name' => 'UPG '.__('Post','wp-upg'),
                 'add_new' => __('Add '.$product,'wp-upg'),
                 'add_new_item' => __('Add New '.$product,'wp-upg'),
                 'edit_item' => __('Edit '.$product,'wp-upg'), 
@@ -314,19 +314,19 @@ function upg_install()
 	{
        
 	   $aid=wp_insert_post(array('post_title'=>'User\'s Post Gallery','post_content'=>'[upg-list]','post_type'=>'page','post_status'=>'publish'));
-		 upg_set_option( 'main_page','upg_settings', $aid );
+		 upg_set_option( 'main_page','upg_gallery', $aid );
 
 		 $bid=wp_insert_post(array('post_title'=>'Post Image','post_content'=>'[upg-post type="image"]','post_type'=>'page','post_status'=>'publish'));
-		 upg_set_option( 'post_image_page','upg_settings', $bid );
+		 upg_set_option( 'post_image_page','upg_form', $bid );
 
 		 $cid=wp_insert_post(array('post_title'=>'Post Video URL','post_content'=>'[upg-post type="youtube"]','post_type'=>'page','post_status'=>'publish'));
-		 upg_set_option( 'post_youtube_page','upg_settings', $cid );
+		 upg_set_option( 'post_youtube_page','upg_form', $cid );
 		 
 		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine"]','post_type'=>'page','post_status'=>'publish'));
-		 upg_set_option( 'my_gallery','upg_settings', $did );
+		 upg_set_option( 'my_gallery','upg_gallery', $did );
 		 
 		 $eid=wp_insert_post(array('post_title'=>'Edit UPG Post','post_content'=>'[upg-edit]','post_type'=>'page','post_status'=>'publish'));
-		 upg_set_option( 'edit_upg_page','upg_settings', $eid );
+		 upg_set_option( 'edit_upg_page','upg_form', $eid );
 		 
 		}
 	

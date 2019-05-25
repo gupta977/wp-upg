@@ -87,7 +87,7 @@ else
 			
 			do_action( "upg_submit_complete");
 			
-			if(isset($options['publish']) && $options['publish']=='on' )
+			if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 			{
 				
 			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";

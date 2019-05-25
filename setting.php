@@ -3,7 +3,7 @@ function upg_add_admin_menu(  )
 { 
 
 	//if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
-	add_submenu_page( 'edit.php?post_type=upg', 'User Post Gallery Settings', 'UPG Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
+	add_submenu_page( null, 'User Post Gallery Settings', 'UPG Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
 	
 	add_submenu_page( 'edit.php?post_type=upg', 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
 	//add_submenu_page( 'edit.php?post_type=upg', 'Quick Mode Setting', 'Quick Settings', 'manage_options', 'upg_quick_setting', 'upg_quick_setting' );
@@ -286,17 +286,11 @@ function upg_media_section_callback()
  {
 	$frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 	 $options = get_option('upg_settings');
-		if(!isset($options['publish']))
-		$options['publish']="off";
+		
 	
 		if(!isset($options['guest_user']))
 		$options['guest_user']=0;
 
-		if(!isset($options['my_gallery']))
-		$options['my_gallery']="";
-
-		if(!isset($options['my_login']))
-		$options['my_login']="";
 	
 	?>
 	<button id='load_more_extra' type="button" style='margin:5px; font-size: 110%;'>Check Extra Settings</button>
@@ -312,8 +306,7 @@ echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic 
 
 ?>
 <br><br>
-	<a href="#" title="<?php echo ( 'Unpublished post are saved as draft. Admin must manually mark as published before it is visible to visitors.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> <b>Automatically publish UPG Post as soon as user upload/submit:</b> <input type="checkbox" name='upg_settings[publish]' value='on' <?php if($options['publish']=='on') echo 'checked="checked"'; ?> >
-	<br><br>
+	<br>
 	
 	<a href="#" title="<?php echo ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Assign user for unregistered or not logged in users: </b><?php upg_droplist_user($options['guest_user']); ?> <br>It's better to <a href="<?php echo admin_url( 'user-new.php' );?>">create GUEST USER</a> with minimum access.
@@ -331,50 +324,9 @@ echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic 
 	<b>Disable colorbox CSS (popup/Lightbox) from frontend environment:</b> <input type="checkbox" name='upg_settings[colorbox]' value='1' <?php if($options['colorbox']=='1') echo 'checked="checked"'; ?> ><br>
 	
 
-	<br>
-<div style="border-style: outset;">
-<a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
 	
-	
-	<?php
-	
-	echo "<b>Select MY GALLERY <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>. Display gallery submitted by logged in user.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[my_gallery]',
-             'echo' => 1,
-             //'show_option_none' => __( '&mdash; Select &mdash;' ),
-             //'option_none_value' => '0',
-             'selected' => $options['my_gallery']
-			 
-        )
-    );
-	echo '<br>Page must include [upg-list user="show_mine"] shortcode in content.';
-	?>
-	</div>
-	<br>
 	<br>
 
-<div style="border-style: outset;">
-<?php echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?> 
- <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
-	<?php
-	
-	echo "<b>Select LOGIN <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[my_login]',
-             'echo' => 1,
-             'show_option_none' => __( '&mdash; None &mdash;' ),
-             'option_none_value' => '0',
-             'selected' => $options['my_login']
-			 
-        )
-    );
-	echo '<br>Some area user need to login. Select proper login page.';
-	//**************
-	?>
-	</div>
 	 
 	<?php
 	do_action( "upg_setting_tab_basic_extra");
@@ -386,9 +338,7 @@ echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic 
 	$options = get_option('upg_settings');
 	?>
 	<?php
-	if(!isset($options['main_page']))
-		$options['main_page']="";
-
+	
 		if(!isset($options['button_check_capability']))
 		$options['button_check_capability']=0;
 
@@ -428,24 +378,7 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
 
 <hr>
 
-<div style="border-style: outset;">
-<a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
-<?php
-	echo "<b>Select USER POST GALLERY main <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>. It is used for SEO.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[main_page]',
-             'echo' => 1,
-             //'show_option_none' => __( '&mdash; Select &mdash;' ),
-             //'option_none_value' => '0',
-             'selected' => $options['main_page']
-			 
-        )
-    );
-	echo "<br>Page cannot be static front page and it must include [upg-list] shortcode.";
-	echo upg_get_option( 'main_page', 'upg_settings', '0' ) ;
-	?>
-	</div>
+
 	<br>
 	<br>
 	<b>Number of column (perrow) :</b> <input type="text" name='upg_settings[global_perrow]' value='<?php echo $options['global_perrow']; ?>' maxlength="2" size="5" ><br><br>
@@ -574,9 +507,6 @@ $options = get_option('upg_settings');
 
 		if(!isset($options['editor']))
 		$options['editor']="0";
-
-	
-	
 	
 	?>
 	<button id='load_more_form' type="button" style='margin:5px; font-size: 110%;'>Check Form Settings</button> [upg-post]
@@ -584,79 +514,8 @@ $options = get_option('upg_settings');
 	<div id='upg_toggle_form' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
 	If you don't want user submission form, skip the settings below.<br> Submission form must have 	<code>[upg-post type="image"]</code> or 	<code>[upg-post type="youtube"]</code> as shortcode.<hr>
 	
-	<?php
-	if(!isset($options['post_image_page']))
-		$options['post_image_page']="";
-?>
-<div style="border-style: outset;">
-<a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
-<?php
-	echo "<b>Select POST IMAGE <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[post_image_page]',
-             'echo' => 1,
-             //'show_option_none' => __( '&mdash; Select &mdash;' ),
-             //'option_none_value' => '0',
-             'selected' => $options['post_image_page']
-			 
-        )
-    );
-	echo "<br>It is the page to upload/post image/post. Page must contain [upg-post type=\"image\"] shortcode.";
+<br><br>
 	
-	//**************
-	?>
-	</div><br><br>
-	
-	<?php
-	if(!isset($options['post_youtube_page']))
-		$options['post_youtube_page']="";
-
-	?>
-	<div style="border-style: outset;">
-<a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
-	<?php
-		echo "<b>Select POST VIDEO URL <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[post_youtube_page]',
-             'echo' => 1,
-             //'show_option_none' => __( '&mdash; Select &mdash;' ),
-             //'option_none_value' => '0',
-             'selected' => $options['post_youtube_page']
-			 
-        )
-    );
-	echo "<br>It is the page to upload/post image/post. Page must contain [upg-post type=\"youtube\"] shortcode.";
-	
-	echo "</div><br><br>";
-	
-	
- 	if(!isset($options['edit_upg_page']))
-		$options['edit_upg_page']="";
-
-	?>
-	<div style="border-style: outset;">
-<a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a> 
-	<?php
-		echo "<b>Select UPG Edit <a href='".admin_url( 'edit.php?post_type=page' )."'>page</a>.</b>: ";
-    wp_dropdown_pages(
-        array(
-             'name' => 'upg_settings[edit_upg_page]',
-             'echo' => 1,
-             //'show_option_none' => __( '&mdash; Select &mdash;' ),
-             //'option_none_value' => '0',
-             'selected' => $options['edit_upg_page']
-			 
-        )
-    );
-	echo "<br>It is the page to edit/modify submitted post by user. Page must contain [upg-edit] shortcode."; 
-	
-	echo "</div><br><br>";
-
-	//**************
-?>
-
 
 <a href="#" title="<?php echo ( 'This settings doesn\'t get applied to personal layout.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	<b>Display description input field at post form:</b> <input type="checkbox" name='upg_settings[primary_show_formshow_desp]' value='1' <?php if($options['primary_show_formshow_desp']=='1') echo 'checked="checked"'; ?> >
@@ -793,7 +652,7 @@ function upg_settings_section_callback(  )
  //include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
  
 $options = get_option('upg_settings');  
-		if($options['main_page']=='0' || $options['main_page']=='')
+		if(upg_get_option( 'main_page','upg_gallery', '0' )=='0')
 			{ 
 				?>
 				<h3>UPG Guide:</h3>
@@ -841,17 +700,11 @@ jQuery(document).ready(function($){
        $("#tabs").tabs();
 });
   </script>
-  <?php
-  echo upg_check_mode()." MODE <br>";
-	//echo upg_get_option( 'main_page', 'upg_settings','0' ) ."----".upg_get_option( 'main_page', 'upg_gallery','0' );
-echo upg_get_option( 'global_popup','upg_preview', 'off' )."----";
-
-?>
-
+  
 <div class="wrap">
 	<form action='options.php' method='post'>
 	
-		<h2>User Post Gallery (UPG) Settings</h2>
+		<h2><?php echo "UPG ".__('Advance Settings','wp-upg'); ?></h2>
 
 
 		<div id="tabs">
