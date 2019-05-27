@@ -297,15 +297,7 @@ function upg_media_section_callback()
 	<hr>
 
 	<div id='upg_toggle_extra' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
-	<br>
-	<a href="#" title="<?php echo ( 'This will turn off all the advance settings.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
-	<?php
-echo "<b>Switch setting mode to: </b> (Under Development)";
-echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '1',array('checked'=>'true')).' Advance ';
-echo $frm->addInput('radio', 'upg_settings[show_advance_setting]', '0').' Basic ';
 
-?>
-<br><br>
 	<br>
 	
 	<a href="#" title="<?php echo ( 'When not logged in user submit post the post must be assigned with username.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
@@ -655,8 +647,9 @@ $options = get_option('upg_settings');
 		if(upg_get_option( 'main_page','upg_gallery', '0' )=='0')
 			{ 
 				?>
-				<h3>UPG Guide:</h3>
-            <p>Some pages are auto created. Do not delete them even if not required. Those pages are automatically assigned in settings.
+				<h3>UPG Guide for startup:</h3>
+				<b>Basic UPG setting is not yet saved. Save it before continue.</b><br>
+         <p>Some pages are auto created. Do not delete them even if not required.
 			
 			</p>
 				

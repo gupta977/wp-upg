@@ -161,8 +161,8 @@ class upg_quick_setting {
 
     function plugin_page() {
         echo '<div class="wrap">';
-        echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b>".__("Advance Settings","wp-upg")."</b></a>";
-
+        echo "<div style='text-align:right'><a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a></div>";
+        echo "<h3>UPG ".__('Quick Settings','wp-upg')."</h3>";
         settings_errors();
         $this->settings_api->show_navigation();
        

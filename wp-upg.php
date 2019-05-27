@@ -282,19 +282,9 @@ function upg_the_content($content)
 	{
 	 $options = get_option('upg_settings');  
 		
-				$frontpage_id = get_option( 'page_on_front' );
-				if($frontpage_id == upg_get_option( 'main_page','upg_gallery', '0' ))
-				{
-					return "<h2>UPG main page cannot be your homepage. Change it from <a href='".$edit_page."'>UPG important settings</a></h2>";
-				}
-				else
-				{
-								
-					$abc=include(upg_BASE_DIR.'layout/catalog.php');
-					return $abc;
-				}
-			
-	 
+		$abc=include(upg_BASE_DIR.'layout/catalog.php');
+		return $abc;
+			 
 	}
 
 	//Attach gallery to post. [upg-attach]
@@ -688,7 +678,8 @@ add_filter('post_class', 'wpb_hidetitle_class');
 		 */
 		function upg_plugin_links( $links ) {
 			$more_links[] = '<a href="http://odude.com/demo/faq/">' . __( 'Docs', 'wp-upg' ) . '</a>';
-			$more_links[] = '<a href="'.admin_url().'edit.php?post_type=upg&page=wp_upg">' . __( 'Settings', 'wp-upg' ) . '</a>';
+			$more_links[] = '<a href="'.admin_url().'edit.php?post_type=upg&page=wp_upg_quick">' . __( 'Quick Settings', 'wp-upg' ) . '</a>';
+			$more_links[] = '<a href="'.admin_url().'edit.php?post_type=upg&page=wp_upg">' . __( 'Advance Settings', 'wp-upg' ) . '</a>';
 
 			$links = $more_links + $links;
 			return $links;
@@ -744,21 +735,33 @@ add_action( 'admin_notices', 'upg_admin_notice_example_notice' );
 
 function upg_admin_notice_example_notice()
 {
-
+	$options = get_option('upg_settings'); 
     /* Check transient, if available display notice */
-    if( get_transient( 'upg-admin-notice-example' ) ){
+	if( get_transient( 'upg-admin-notice-example' ) )
+	{
         ?>
         <div class="updated notice is-dismissible">
-		<h3>Steps to install UPG :</h3>
-            <p>Some pages are auto created. Do not delete them even if not required. Those pages are automatically assigned in settings.
-			
-			</p>
+		<h3>UPG Notes:</h3>
+            <p>Some pages are auto created. Do not delete them even if not required.</p>
 			<p>Go to UPG Settings and select those pages at appropriate location.</p>
         </div>
         <?php
         /* Delete transient, only display this notice once. */
         delete_transient( 'upg-admin-notice-example' );
-    }
+	}
+	
+	 
+		if(upg_get_option( 'main_page','upg_gallery', '0' )=='0')
+			{ 
+			?>
+			<div class="updated notice is-dismissible">
+			 
+			 <p>Review the pages selected at UPG settings and save it before continue. All pages must be selected.</p>
+			
+        </div>
+			<?php
+			}
+
 }
 
 /**
@@ -766,12 +769,12 @@ function upg_admin_notice_example_notice()
  */
 
  
-function upg_hook_advance_options_page_after_save( $old_value, $new_value ) 
+/* function upg_hook_advance_options_page_after_save( $old_value, $new_value ) 
 {
-	/* if ( $old_value['some_option'] != $new_value['some_option'] ) 
-	{
+	// if ( $old_value['some_option'] != $new_value['some_option'] ) 
+	//{
 		// This value has been changed. Insert code here.
-	} */
+	//} 
 
 	$options = get_option('upg_settings'); 
 
@@ -782,5 +785,5 @@ function upg_hook_advance_options_page_after_save( $old_value, $new_value )
 	}
 	//upg_log($options['show_advance_setting']."----");
 }
-add_action( 'update_option_upg_settings', 'upg_hook_advance_options_page_after_save', 10, 2 );
+add_action( 'update_option_upg_settings', 'upg_hook_advance_options_page_after_save', 10, 2 ) */;
 ?>

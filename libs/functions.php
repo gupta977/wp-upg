@@ -60,13 +60,9 @@ function upg_set_option( $field_name, $section='upg_settings', $default = '' ) {
 
 	$options = get_option( $section );
 
-		if(is_array($options))
-			{
 			$options[$field_name]=$default;
 			update_option( $section, $options );	
-			}
 	
-
 	return $default;
 }
 
