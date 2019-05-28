@@ -144,7 +144,7 @@ class upg_quick_setting {
                     'label' => __( 'Enable Lightbox Popup', 'wp-upg' ),
                     'desc'  => __( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.', 'wp-upg' ),
                     'type'  => 'checkbox',
-                    'default' => upg_get_option( 'global_popup','upg_preview', 'off' ),
+                    'default' => upg_get_option( 'global_popup','upg_preview', 'on' ),
                 )
             )
         );

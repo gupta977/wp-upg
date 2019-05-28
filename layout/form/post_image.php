@@ -92,10 +92,9 @@ else
 				
 			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
 			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
-				if(isset($options['my_gallery']))
+			if(upg_get_option( 'my_gallery','upg_gallery', '0' )!='0')
 				{
-					//echo $options['my_gallery']."---";
-					echo "<br><a href='".esc_url( get_page_link( $options['my_gallery'] ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+					echo "<br><a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
 				}
 			}
 		else

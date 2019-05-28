@@ -390,10 +390,6 @@ Use the shortcode <code>[upg-attach]</code> to embed gallery to particular WordP
 	<a href="#" title="<?php echo ( 'wp-pagenavi plugin must be installed and active.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
 	
 	<b>Enable Page Navigation :</b> <input type="checkbox" name='upg_settings[global_page]' value='on' <?php if($options['global_page']=='on') echo 'checked="checked"'; ?> ><br><br>
-	
-		<a href="#" title="<?php echo ( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a> 
-		
-		<b>Enable Lightbox Popup :</b> <input type="checkbox" name='upg_settings[global_popup]' value='on' <?php if($options['global_popup']=='on') echo 'checked="checked"'; ?> ><br><br>
 		
 		
 	<b>Default UPG Post Album: </b> 
@@ -458,7 +454,6 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 	orderby="<?php echo $options['global_order']; ?>" 
 	page="<?php echo $options['global_page']; ?>" 
 	layout="<?php echo $options['global_layout']; ?>" 
-	popup="<?php echo $options['global_popup']; ?>"
 	album="<?php echo $options['global_album']; ?>" 
 	<?php
 	if(isset($options['primary_show_image_button']) || isset($options['primary_show_youtube_button']))

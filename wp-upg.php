@@ -670,21 +670,40 @@ return $classes;
 add_filter('post_class', 'wpb_hidetitle_class');
 
 		/**
-		 * Add any custom links to plugin page
+		 * Add any custom links to plugin list page
 		 *
 		 * @param array $links
 		 *
 		 * @return array
 		 */
-		function upg_plugin_links( $links ) {
-			$more_links[] = '<a href="http://odude.com/demo/faq/">' . __( 'Docs', 'wp-upg' ) . '</a>';
+		function upg_plugin_links( $links ) 
+		{
+			
 			$more_links[] = '<a href="'.admin_url().'edit.php?post_type=upg&page=wp_upg_quick">' . __( 'Quick Settings', 'wp-upg' ) . '</a>';
 			$more_links[] = '<a href="'.admin_url().'edit.php?post_type=upg&page=wp_upg">' . __( 'Advance Settings', 'wp-upg' ) . '</a>';
 
 			$links = $more_links + $links;
 			return $links;
 		}
-		
+
+
+		/*
+		List extra links on plugin list page
+		*/
+		function upg_plugin_links_extra($links, $file)
+		{
+			if ($file !== plugin_basename(__FILE__)) 
+			{
+				return $links;
+			  }
+
+			$more_links[] = '<a href="http://odude.com/demo/faq/">' . __( 'Documentation', 'wp-upg' ) . '</a>';
+			$more_links[] = '<a target="_blank" href="https://wordpress.org/support/plugin/wp-upg/reviews/?rate=5#new-post" title="' . __('Rate the plugin', 'wp-reset') . '">' . __('Rate the plugin', 'wp-upg') . ' ★★★★★</a>';
+			
+			$links = $more_links + $links;
+			return $links;
+		}
+		add_filter('plugin_row_meta', 'upg_plugin_links_extra',10,2);
 
 $prefix = is_network_admin() ? 'network_admin_' : '';
 add_filter( "{$prefix}plugin_action_links_" . plugin_basename( __FILE__ ) , 'upg_plugin_links' );
@@ -744,6 +763,8 @@ function upg_admin_notice_example_notice()
 		<h3>UPG Notes:</h3>
             <p>Some pages are auto created. Do not delete them even if not required.</p>
 			<p>Go to UPG Settings and select those pages at appropriate location.</p>
+			<br>
+			View <a href='<?php echo esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) )); ?>'>UPG Main Page</a> with default configuration.
         </div>
         <?php
         /* Delete transient, only display this notice once. */

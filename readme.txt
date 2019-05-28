@@ -51,6 +51,7 @@ It has lots of shortcode parameters to filter & change layouts.
 * Bulk image upload. (upg-pro)
 * With the help of personal layout form, user can create own advanced personalized form with the help of PHP.
 * Options to display submission button only to logged in users.  
+* Separate album selection for images & video
 
 
 == Admin Post Management ==
@@ -220,6 +221,14 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+
+= 1.86 =
+* UPG Settings selection between Quick & Advance.
+* filter upg-list by image & youtube Eg. [upg-list filter="youtube"]
+* Force user to login to view gallery Eg. [upg-list login="true"]
+* Now separate album can be created for images & video
+* Submission form have different album based on type.
+
 
 = 1.85 =
 * Removed shop & FAQ layout from default. Both layout are available for download.

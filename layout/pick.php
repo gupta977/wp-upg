@@ -3,7 +3,7 @@ $options = get_option('upg_settings');
 
 //$popup=$options['global_popup'];
 //if(isset($params['popup'])) $popup = $params['popup'];
-$popup=upg_get_option( 'global_popup','upg_preview', 'off' );
+$popup=upg_get_option( 'global_popup','upg_preview', 'on' );
 
 
 if(isset($params['layout']))
