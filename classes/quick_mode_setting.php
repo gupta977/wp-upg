@@ -161,13 +161,17 @@ class upg_quick_setting {
 
     function plugin_page() {
         echo '<div class="wrap">';
-        echo "<div style='text-align:right'><a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a></div>";
+        echo "<div style='text-align:right'>";
+        echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a>";
+        echo " <a href='".esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) ))."' class='button' target='_blank'>Live UPG Page</a>";
+        echo '</div>';
         echo "<h3>UPG ".__('Quick Settings','wp-upg')."</h3>";
+        
         settings_errors();
         $this->settings_api->show_navigation();
        
         $this->settings_api->show_forms();
-
+        flush_rewrite_rules();
         
         echo '</div>';
     }

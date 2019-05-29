@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.85
+Version: 1.86
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.85');
+	define('UPG_PLUGIN_VERSION', '1.86');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -764,7 +764,7 @@ function upg_admin_notice_example_notice()
             <p>Some pages are auto created. Do not delete them even if not required.</p>
 			<p>Go to UPG Settings and select those pages at appropriate location.</p>
 			<br>
-			View <a href='<?php echo esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) )); ?>'>UPG Main Page</a> with default configuration.
+			<a href='<?php echo esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) )); ?>' class='button button-primary'>UPG Main Page</a> with default configuration.
         </div>
         <?php
         /* Delete transient, only display this notice once. */

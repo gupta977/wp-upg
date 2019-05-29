@@ -228,6 +228,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Force user to login to view gallery Eg. [upg-list login="true"]
 * Now separate album can be created for images & video
 * Submission form have different album based on type.
+* After update, user must go to settings and update page location.
 
 
 = 1.85 =

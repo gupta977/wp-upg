@@ -120,22 +120,6 @@ The album marked hidden will not be listed.
 	<a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a></p>
   </div>
 </div>
-<hr>
-<div class="upg_module upg_green">
-  <h2>Page Restrict <a href="<?php echo admin_url("plugin-install.php?tab=plugin-information&plugin=pagerestrict"); ?>">FREE Plugin</a></h2>
-  <div class="cnt">
-    <p><b>Restrict certain pages or posts to logged in users.</b>
-	<br><ul>
-	<li>
-	* Stop unknown, unregistered users from posting images from your frontend.</li>
-	<li>* Restrict your gallery page to be shown only for logged-in users.</li>
-	</ul>
-	<br>
-	
-	<br><br>
-	<a href="https://wordpress.org/plugins/pagerestrict/" target="_blank" class="install-now button">View Details</a></p>
-  </div>
-</div>
 
 	
 </div>
