@@ -173,7 +173,7 @@ class upg_category_Widget extends WP_Widget {
 	?>
 	<br><br>
 	<input <?php checked( $check_imm_child_only ); ?> id="<?php echo $this->get_field_id( 'imm_child_only' ); ?>" name="<?php echo $this->get_field_name( 'imm_child_only' ); ?>" type="checkbox" />
-	<?php ( 'Show only the immediate children of the selected category. Displays all the top level categories if no parent is selected.' ); ?>
+	<label for="<?php echo $this->get_field_id( 'imm_child_only' ); ?>"><?php _e( 'Show only the immediate children of the selected category.', 'wp-upg' ); ?></label>
 	<br>
 	  </p>
 	  <p>

@@ -54,15 +54,21 @@ Domain Path: /languages
 	
 	function upg_plugin_check_version() 
 	{
-			
-	if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
+		$options = get_option( 'upg_settings','' );
+
+		if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
-			$options = get_option( 'upg_settings','' );
-			if(upg_get_option( 'publish','upg_form', 'on' )=='1' )
+			if(isset($options['post_image_page']) && $options['post_image_page']!='xxx')
 			{
-				$options['publish']="on";
-				update_option( 'upg_settings', $options );	
+			//upg_log("old main page ".$options['main_page']);
+			upg_set_option( 'main_page','upg_gallery', $options['main_page'] );
+			upg_set_option( 'my_gallery','upg_gallery', $options['my_gallery'] );
+			upg_set_option( 'post_image_page','upg_form', $options['post_image_page'] );
+			upg_set_option( 'post_youtube_page','upg_form', $options['post_youtube_page'] );
+			upg_set_option( 'edit_upg_page','upg_form', $options['edit_upg_page'] );
+			upg_get_option( 'global_popup','upg_preview', $options['global_popup'] );
 			}
+			
 			//if(get_option('upg_plugin_version')=='1.12')
 			//{
 				//Update Permalinks
