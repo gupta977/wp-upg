@@ -33,9 +33,9 @@ function upg_product_content($post)
 		if(isset($options['odudecard_select_pickup_field']))
 		{
 			if($ecard_layout)
-			require_once(WP_PLUGIN_DIR."/odude-ecard/layout/media/".$ecard_layout."/".$ecard_layout.".php");
+			include(WP_PLUGIN_DIR."/odude-ecard/layout/media/".$ecard_layout."/".$ecard_layout.".php");
 			else
-			require_once(WP_PLUGIN_DIR."/odude-ecard/layout/media/basic/basic.php");
+			include(WP_PLUGIN_DIR."/odude-ecard/layout/media/basic/basic.php");
 		}
 		else
 		{

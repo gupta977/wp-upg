@@ -221,6 +221,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.87 =
+* Page selection fixes
+* Fixes empty title in widgets
 
 = 1.86 =
 * UPG Settings selection between Quick & Advance.

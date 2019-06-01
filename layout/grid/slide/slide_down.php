@@ -1,6 +1,6 @@
 <?php
 if($count==0)
-echo '<div>'.__('No record found','wp-upg').'</div>';
+echo '<div>'.__('No records were found matching your selection','wp-upg').'</div>';
 ?>
 </div>
 
