@@ -35,7 +35,7 @@ function upg_shortcode()
     <ul>
     <li>Do not use it in post page & widgets, if navigation required.</li>
     <li>You can use it in front page, but page shouldn't be selected as 'main UPG page' in settings.</li>
-    <li>Parameters are case sansetive. Write all in lowercase.</li>
+    <li>Parameters are case sensitive. Write all in lowercase.</li>
     </ul>
    
 
@@ -52,7 +52,7 @@ They have been split into sections for primary function for ease of navigation, 
     <li> <code>perrow</code> = "No. of Rows/column" -  Number of post to be displayed per row/horizontally.</li>
     <li> <code>page</code> = "on | off" -  Display page navigation if value is on. Only visible if <code>perpage</code> value is less then the total number of post.</li>
     <li> <code>orderby</code> = "date | title | modified | ID | rand" -  5 different ways the gallery can be sorted.
-    <li> <code>layout</code> = "Layout name" -  Each gallery can have their own type of layout. There are several default layouts available (i.e. list, flat , personal, etc.).</li>
+    <li> <code>layout</code> = "Gallery Layout name" -  Each gallery can have their own type of layout. There are several default layouts available (i.e. list, flat , personal, etc.).</li>
     <li> <code>popup</code> = "on | off" -  The post when clicked will have a popup box instead going to another page. (Another page we call it as 'preview page')</li>
     <li> <code>button</code> = "on | off" -  The parameter is used to show a submission button at the gallery page. The submission button selected at UPG settings is displayed. If the shortcode parameter value is off , the buttons are not displayed even if it is set to show at UPG settings.</li>
     <li> <code>author</code> = "on | off" -  The parameter is used to show a author profile avatar at the top of gallery page.</li>
@@ -70,7 +70,7 @@ They have been split into sections for primary function for ease of navigation, 
 <h4>Scenario 3 – I want to show gallery of current logged in user</h4>
 <code>[upg-list user="show_mine"]</code>
 
-<h4>Scenario 4 – I want to show latest uploded gallery in 'slide' layout with popup enabled.</h4>
+<h4>Scenario 4 – I want to show latest uploaded gallery in 'slide' layout with popup enabled.</h4>
 <code>[upg-list layout="slide" popup="on" orderby="modified"]</code>
 </div>
 
@@ -78,19 +78,113 @@ They have been split into sections for primary function for ease of navigation, 
 
      </div>
      <div id="tab-2">
-     xxxx
+     <h3>Attached Gallery</h3>
+        <h4> [upg-attach]</h4>
+        This will display gallery with form to the specific page/post where this shortcode is inserted.<br>
+        Picture/Video submitted at this page will not be visible at other post. 
+    <hr>
+    <b>Notes:</b>
+    <ul>
+    <li>This shortcode will use ajax. It cannot be altered. </li>
+    <li>'Load More' Button is available only to this. No page navigation is required.</li>
+    <li>Gallery layout is based on the UPG settings. It cannot be altered by shortcode.</li>
+    <li>If you want to display all gallery <code>[upg-attach]</code> in one place, use <code>[upg-list]</code> shortcode. </li>
+    <li>Parameters are case sensitive. Write all in lowercase.</li>
+    </ul>
+    <h4>Available Attributes:</h4>
+The following attributes are available to use in conjunction with the <code>[upg-attach]</code> shortcode.
+They have been split into sections for primary function for ease of navigation, with examples below.
+<br>
+
+            <div class="update-nag">
+            <ul>
+                <li> <code>type="image"</code> -  image is default type &  it will display submission form for image only.</li>
+                <li> <code>type="youtube"</code> - It will  display form to submit youtube & vimeo URL.</li>
+                <li> <code>layout</code> = "Form Layout name" -  Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
+                <li> <code>preview</code> = "Preview Layout name " -  When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
+            </ul>
+            </div>
      </div>
+
+
+
+
+
      <div id="tab-3">
-     xxxx
+     <h3>Built in Submission Form</h3>
+        <h4> [upg-post]</h4>
+        The front End submission form for image/video url is created as soon as you activate UPG plugin.
+        You can make your own submission form by inserting the shortcode below into content area of a page or post.
+    <hr>
+    <b>Notes:</b>
+    <ul>
+        <li>If only <code>[upg-post]</code> is used, it will use UPG settings.</li>
+        <li>Some form are ready to use, and it continuously compatible with latest version. </li>
+        <li>You can create your own form using 'layout editor'. The concept used is, editing the existing form to generate own 'personal layout'.</li>
+        <li>If you created your own form, use form layout as 'personal'.</li>
+        <li>Even after update, the created form won't be lost. It is copied at wordpress default upload folder. </li>
+        <li>You can add more custom fields, which needs to get enabled at 'UPG Advance Settings'.</li>
+    </ul>
+    <h4>Available Attributes:</h4>
+The following attributes are available to use in conjunction with the <code>[upg-post]</code> shortcode.
+They have been split into sections for primary function for ease of navigation, with examples below.
+<br>
+
+            <div class="update-nag">
+            <ul>
+                <li> <code>type="image"</code> -  It will display submission form for image only.</li>
+                <li> <code>type="youtube"</code> -  It will display submission form for YouTube & Vimeo URL only.</li>
+                <li> <code>layout</code> = "Form Layout Name" -  It will change the design/layout for the submission form. Use <code>layout="personal"</code> if you have created your own form layout.</li>
+                <li> <code>preview</code> = "Preview Layout Name" - When image/post/video are clicked, a page is opened which is called 'preview layout'. <br>This layout is not activated if popup is enabled in <code>[upg-list] or [upg-attach]</code>.</li>
+                <li> <code>form_name</code> = "any_form_name" -  Sometime when there are multiple form on same page, the form may not work properly. <br>So it's better to differentiate form with their name.</li>
+                <li> <code>ajax</code> = "true | false" -  If true , it will convert current form into ajax form. No page is changed after form submitted.</li>
+                <li> <code>login</code> = "true | false" - If true, only logged in user can view the submission form.</li>
+            
+            </ul>
+            </div>
      </div>
      <div id="tab-4">
-     xxxx
+      Under Development (You can create your own form with the help of shortcodes.)
      </div>
      <div id="tab-5">
-     xxxx
+     <h3>Modify/Edit Submitted Post</h3>
+        <h4> [upg-edit]</h4>
+        If you want, a regular visitor and wanted to edit the submitted post then use shortcode <code> [upg-edit]</code> on a page.<br>
+         Don't forget to select that edit page in your UPG settings.
+    <hr>
+    <b>Notes:</b>
+        <ul>
+        <li>It is only accessible to loggedin users.</li>
+        <li>If in settings, edit button is enabled, user can edit the post.</li>
+        <li>Ajax modification is not available on this form.</li>
+        <li>You can have submission form different then edit form. This way you can add/remove some fields.</li>
+        </ul>
+       
+        <h4>Scenario 1 – Display 'Edit Form' with 'simple form layout'</h4>
+        <code>[upg-edit layout="simple"]</code>
      </div>
      <div id="tab-6">
-     xxxx
+     <h3>Pick a Post</h3>
+        <h4> [upg-pick]</h4>
+        With the help of this shortcode, you can select any one UPG post and display it anywhere you like sidebar.
+        <b>Notes:</b>
+        <ul>
+        <li>It is still under development. </li>
+        </ul>
+
+        <h4>Available Attributes:</h4>
+        <div class="update-nag">
+            <ul>
+                <li> <code>id</code> =  "UPG's Post ID" -  Numeric post id of the UPG POST. This you can get from UPG list page looking at it's URL. POST={ID}</li>
+                <li><code>notice</code> = "Any text" - You can keep any extra text with image. Eg. Sale, Featured</li>
+                <li><code>layout</code>= "Gallery Layout Name" -It's a same as on <code>[upg-list]</code> layout.</li>
+                <li><code>popup</code>= "on | off" - If on, it will popup the post ignoring the 'preview layout'</li>
+              </ul>
+        </div>
+    <hr>
+    <h4>Scenario 1 – Display UPG POST whose id is '44' and display as 'SALE'</h4>
+        <code>[upg-pick id='44' notice='SALE']</code>
+
      </div>
 
     </div>
