@@ -21,6 +21,7 @@ function upg_shortcode()
      <li><a href="#tab-4"><?php echo __("[upg-form]","wp-upg");?></a></li>
 	 <li><a href="#tab-5"><?php echo __("[upg-edit]","wp-upg");?></a></li>
      <li><a href="#tab-6"><?php echo __("[upg-pick]","wp-upg");?></a></li>
+     <li><a href="#tab-7"><?php echo __("[upg-search]","wp-upg");?></a></li>
 	       
     </ul>
 
@@ -32,11 +33,11 @@ function upg_shortcode()
         But we can overwrite the settings with parameters into it. 
     <hr>
     <b>Notes:</b>
-    <ul>
+    <ol>
     <li>Do not use it in post page & widgets, if navigation required.</li>
     <li>You can use it in front page, but page shouldn't be selected as 'main UPG page' in settings.</li>
     <li>Parameters are case sensitive. Write all in lowercase.</li>
-    </ul>
+    </ol>
    
 
 
@@ -84,13 +85,13 @@ They have been split into sections for primary function for ease of navigation, 
         Picture/Video submitted at this page will not be visible at other post. 
     <hr>
     <b>Notes:</b>
-    <ul>
+    <ol>
     <li>This shortcode will use ajax. It cannot be altered. </li>
     <li>'Load More' Button is available only to this. No page navigation is required.</li>
     <li>Gallery layout is based on the UPG settings. It cannot be altered by shortcode.</li>
     <li>If you want to display all gallery <code>[upg-attach]</code> in one place, use <code>[upg-list]</code> shortcode. </li>
     <li>Parameters are case sensitive. Write all in lowercase.</li>
-    </ul>
+    </ol>
     <h4>Available Attributes:</h4>
 The following attributes are available to use in conjunction with the <code>[upg-attach]</code> shortcode.
 They have been split into sections for primary function for ease of navigation, with examples below.
@@ -117,14 +118,14 @@ They have been split into sections for primary function for ease of navigation, 
         You can make your own submission form by inserting the shortcode below into content area of a page or post.
     <hr>
     <b>Notes:</b>
-    <ul>
+    <ol>
         <li>If only <code>[upg-post]</code> is used, it will use UPG settings.</li>
         <li>Some form are ready to use, and it continuously compatible with latest version. </li>
         <li>You can create your own form using 'layout editor'. The concept used is, editing the existing form to generate own 'personal layout'.</li>
         <li>If you created your own form, use form layout as 'personal'.</li>
         <li>Even after update, the created form won't be lost. It is copied at wordpress default upload folder. </li>
         <li>You can add more custom fields, which needs to get enabled at 'UPG Advance Settings'.</li>
-    </ul>
+    </ol>
     <h4>Available Attributes:</h4>
 The following attributes are available to use in conjunction with the <code>[upg-post]</code> shortcode.
 They have been split into sections for primary function for ease of navigation, with examples below.
@@ -144,7 +145,32 @@ They have been split into sections for primary function for ease of navigation, 
             </div>
      </div>
      <div id="tab-4">
-      Under Development (You can create your own form with the help of shortcodes.)
+     <h3>Create form with help of Shortcodes</h3>
+        <h4> [upg-form] (Under Development)</h4>
+        You can generate your own form with the help of shortcode. 
+        <code>[upg-post]</code> will use ready layouts whereas with this you can make your own.
+        It is best suited for them, who don't have good php knowledge. 
+        If you are good at php/css, I recommend you to use <code>[upg-post]</code> with 'personal layout'.
+        <br><br>
+        <b>Notes:</b>
+        <ol>
+            <li class="page_item">It is still under development, and change in shortcode may happen.</li>
+            <li class="page_item">This form cannot be used as layout in other shortcode parameters. But it can be used in UPG form settings.</li>
+            <li>This form is generated with the help of two shortcodes <code>[upg-form] & [upg-form-tag]</code></li>
+            <li><code>[upg-form-tag]</code> should always be between <code>[upg-form] .... [/upg-form]</code></li>
+      </ol>
+      <h4>Scenario 1 – Display form only with title field.</h4>
+       
+       <code>
+       [upg-form class="pure-form" title="Upload your media" name="my_form"] 
+       <br>
+       [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title" required="true"]
+       <br>
+       [upg-form-tag type="submit" name="submit" value="Submit Now"]
+       <br>
+       [/upg-form]
+       
+       </code>
      </div>
      <div id="tab-5">
      <h3>Modify/Edit Submitted Post</h3>
@@ -153,12 +179,12 @@ They have been split into sections for primary function for ease of navigation, 
          Don't forget to select that edit page in your UPG settings.
     <hr>
     <b>Notes:</b>
-        <ul>
+        <ol>
         <li>It is only accessible to loggedin users.</li>
         <li>If in settings, edit button is enabled, user can edit the post.</li>
         <li>Ajax modification is not available on this form.</li>
         <li>You can have submission form different then edit form. This way you can add/remove some fields.</li>
-        </ul>
+        </ol>
        
         <h4>Scenario 1 – Display 'Edit Form' with 'simple form layout'</h4>
         <code>[upg-edit layout="simple"]</code>
@@ -168,9 +194,9 @@ They have been split into sections for primary function for ease of navigation, 
         <h4> [upg-pick]</h4>
         With the help of this shortcode, you can select any one UPG post and display it anywhere you like sidebar.
         <b>Notes:</b>
-        <ul>
-        <li>It is still under development. </li>
-        </ul>
+        <ol>
+        <li>More attributes will come soon. It is still under development.</li>
+        </ol>
 
         <h4>Available Attributes:</h4>
         <div class="update-nag">
@@ -185,6 +211,25 @@ They have been split into sections for primary function for ease of navigation, 
     <h4>Scenario 1 – Display UPG POST whose id is '44' and display as 'SALE'</h4>
         <code>[upg-pick id='44' notice='SALE']</code>
 
+     </div>
+     <div id="tab-7">
+     <h3>Search UPG Post</h3>
+        <h4> [upg-search]</h4>
+        With this shortcode, user can search through the gallery. <br><br>
+        <b>Notes:</b>
+        <ol>
+        <li>It is available only to UPG-PRO version.</li>
+        <li>It will not work for <code>[upg-attach]</code> page.</li>
+        <li>UPG main page is used for search which is indicated at setting page.<br>
+         All parameters (layout, popup, etc.) applied on main page <code>[up-list]</code>is used. </li>
+        <li>Redesign search bar is not available. It is wrapped between div class "upg_search_bar".<br>
+        Using "pure-form" class in form tag.</li>
+        </ol>
+
+        <hr>
+    <h4>Scenario 1 – Display search bar above gallery</h4>
+    Just insert a shortcode before gallery shortcode.<br>
+    <div class="update-nag"><code>[upg-search]<br>[upg-list]</code></div>
      </div>
 
     </div>
