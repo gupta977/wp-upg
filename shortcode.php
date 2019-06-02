@@ -189,7 +189,7 @@ They have been split into sections for primary function for ease of navigation, 
         <h4>Scenario 1 – Display 'Edit Form' with 'simple form layout'</h4>
         <code>[upg-edit layout="simple"]</code>
      </div>
-     <div id="tab-6">
+     <div id="tab-6"></div>
      <h3>Pick a Post</h3>
         <h4> [upg-pick]</h4>
         With the help of this shortcode, you can select any one UPG post and display it anywhere you like sidebar.
