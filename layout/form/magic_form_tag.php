@@ -17,7 +17,8 @@ $attr = shortcode_atts( array(
     'readonly' => '',
     'formnovalidate' => '',
     'novalidate' => '',
-    'taxonomy' => 'upg_cate'
+    'taxonomy' => 'upg_cate',
+    'filter' => ''
 
 
 ), $params );
@@ -43,10 +44,15 @@ else if($attr['type'] == 'category')
 {
     echo $frm->addLabelFor('cat', $attr['title']);
     if($attr['taxonomy']=='upg_cate')
-        echo upg_droplist_album('upg_cate','',upg_hidden_category());
-    else
-        echo upg_droplist_album($attr['taxonomy'],'','');
+    {
+       // echo upg_droplist_album('upg_cate','',upg_hidden_category());
+       upg_droplist_category('',$attr['filter']);
 
+    }
+    else
+    {
+        echo upg_droplist_album($attr['taxonomy'],'','');
+    }
 }
 else if($attr['type'] == 'file')
 {
@@ -177,7 +183,7 @@ return $abc;
 
 [upg-form-tag type="file" title="Select file"]
 
-[upg-form-tag type="category" title="Select category" taxonomy="category"]
+[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
 
 [upg-form-tag type="article" title="Main Desp"  placeholder="Content Plz" editor="true"]
 
