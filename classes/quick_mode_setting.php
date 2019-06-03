@@ -31,7 +31,7 @@ class upg_quick_setting {
 
     //if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='0')
       add_submenu_page( 'edit.php?post_type=upg', 'UPG Settings', 'UPG Settings', 'manage_options', 'wp_upg_quick', array($this, 'plugin_page')  );
-	
+      
        // add_options_page( 'edit.php?post_type=upg', 'Settings API', 'Settings API', 'delete_posts', 'settings_api_test', array($this, 'plugin_page') );
     }
 
@@ -164,12 +164,8 @@ class upg_quick_setting {
         settings_errors();
 
         echo '<div class="wrap">';
-        echo "<div style='text-align:right'>";
-        echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a>";
-        echo " <a href='".esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) ))."' class='button' target='_blank'>Live UPG Page</a>";
-        echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button'>Shortcode Guide</a>";
-        echo '</div>';
-        echo "<h3>UPG ".__('Quick Settings','wp-upg')."</h3>";
+        do_action( "upg_admin_top_menu");
+        echo "<h3>UPG ".__('Basic Settings','wp-upg')."</h3>";
         
         
         $this->settings_api->show_navigation();

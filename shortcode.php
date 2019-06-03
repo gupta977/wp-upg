@@ -4,6 +4,11 @@ function upg_shortcode()
 {
     ?>
     <div class="wrap">
+
+    <?php
+		do_action( "upg_admin_top_menu");
+		?>
+
     <h2>Shortcodes included with UPG</h2>
     <h4>UPG comes with several shortcodes that can be used to insert content inside posts and pages.</h4>
 

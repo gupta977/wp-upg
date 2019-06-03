@@ -7,8 +7,8 @@ function upg_add_admin_menu(  )
 
 	//if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
 	add_submenu_page( null, 'UPG Advance Settings', 'UPG Advance Settings', 'manage_options', 'wp_upg', 'upg_options_page' );
-	add_submenu_page( 'edit.php?post_type=upg', 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
-	add_submenu_page( 'edit.php?post_type=upg', 'FREE and Premium plugins', 'UPG Addons / Help', 'manage_options', 'wp_upg_addon', 'upg_addon_page' );
+	add_submenu_page( null, 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page' );
+	add_submenu_page( null, 'FREE and Premium plugins', 'UPG Addons / Help', 'manage_options', 'wp_upg_addon', 'upg_addon_page' );
 	add_submenu_page( null, 'Shortcode', 'Shortcode', 'manage_options', 'upg_shortcode', 'upg_shortcode' );
 }
 

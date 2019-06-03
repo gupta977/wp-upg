@@ -792,6 +792,20 @@ function upg_admin_notice_example_notice()
 
 }
 
+//Add menu hook to top of admin pages
+function upg_admin_top_menu()
+{
+	echo "<div style='text-align:right'>";
+	echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_quick')."'><b class='button button-primary'>".__("Basic Settings","wp-upg")."</b></a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a>";
+	echo " <a href='".esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) ))."' class='button' target='_blank'>Live UPG Page</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_layout')."' class='button'>Layout Editor</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_addon')."' class='button'>Addons & Help</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button'>Shortcode Guide</a>";
+	echo '</div>';
+}
+add_action( 'upg_admin_top_menu', 'upg_admin_top_menu', 10 , 2);
+
 /**
  * Hook into options page after save for advance setting page.
  */

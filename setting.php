@@ -678,6 +678,9 @@ jQuery(document).ready(function($){
   </script>
   
 <div class="wrap">
+<?php
+		do_action( "upg_admin_top_menu");
+		?>
 	<form action='options.php' method='post'>
 	
 		<h2><?php echo "UPG ".__('Advance Settings','wp-upg'); ?></h2>

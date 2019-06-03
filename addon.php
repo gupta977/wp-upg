@@ -5,6 +5,9 @@ function upg_addon_page()
 {
 	?>
 	<div class="wrap">
+  <?php
+		do_action( "upg_admin_top_menu");
+		?>
 	<h2>UPG (User Post Gallery) Free & Premium Extensions</h2>
 	
 <script>

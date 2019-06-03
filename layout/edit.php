@@ -46,7 +46,9 @@ function upg_layout_page()
 	
 	?>
 <div class="wrap">
-	
+<?php
+		do_action( "upg_admin_top_menu");
+		?>
 	<h2>Layout Editor</h2>	 
 	<b>Notes:</b><br>
 	# This is your personal Layout which is designed only for you. Use it only if you are good at html/php script. <br>
