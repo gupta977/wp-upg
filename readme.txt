@@ -53,6 +53,10 @@ It has lots of shortcode parameters to filter & change layouts.
 * Options to display submission button only to logged in users.  
 * Separate album selection for images & video
 
+== Submission form [upg-form] ==
+* This shortcode will build form with help of shortcodes. No more html tags required.
+* Under Development.
+
 
 == Admin Post Management ==
 * Administrator can show or hide particular categories/albums from the frontend.
@@ -221,11 +225,14 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.88 = 
+* UPG settings, have sub admin menus
+* Shortcode button added in admin for proper guide
+* upg-form shortcode introduced. 
+
 = 1.87 =
 * Page selection fixes
 * Fixes empty title in widgets
-
-= 1.86 =
 * UPG Settings selection between Quick & Advance.
 * filter upg-list by image & youtube Eg. [upg-list filter="youtube"]
 * Force user to login to view gallery Eg. [upg-list login="true"]
@@ -233,6 +240,8 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Submission form have different album based on type.
 * After update, user must go to settings and update page location.
 
+= 1.86 =
+* Deleted this tag due to bug
 
 = 1.85 =
 * Removed shop & FAQ layout from default. Both layout are available for download.
