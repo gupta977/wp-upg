@@ -109,13 +109,13 @@ if(!isset($options['global_page']))
 	
 		if(!isset($options['primary_show_image_button']))
 	{
-		$options['primary_show_image_button']='1';
+		$options['primary_show_image_button']='0';
 		update_option( 'upg_settings', $options );	
 	}
 	
 	if(!isset($options['primary_show_youtube_button']))
 	{
-		$options['primary_show_youtube_button']='1';
+		$options['primary_show_youtube_button']='0';
 		update_option( 'upg_settings', $options );	
 	}
 	if(!isset($options['button_check_login']))

@@ -316,6 +316,7 @@ function upg_media_section_callback()
  function upg_grid_settings()
  {
 	$options = get_option('upg_settings');
+	$frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
 	?>
 	<?php
 	
@@ -395,15 +396,26 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
 
 <?php echo upg_grid_layout_list($options['global_layout'],"upg_settings[global_layout]","grid",true); ?>
 </td></tr></table>
+<?php
 
+echo '<b>'.$frm->addLabelFor('upg_settings[primary_show_image_button]', __('Display Image Upload Button: ','wp-upg')).'</b>';
+echo $frm->addInput('radio', 'upg_settings[primary_show_image_button]', '1',upg_checked_form('1',$options['primary_show_image_button'])).' On ';
+echo $frm->addInput('radio', 'upg_settings[primary_show_image_button]', '0', upg_checked_form('0',$options['primary_show_image_button'])).' Off ';
 
-	<b>Display Image Upload Button :</b> <input type="checkbox" name='upg_settings[primary_show_image_button]' value='1' <?php if($options['primary_show_image_button']=='1') echo 'checked="checked"'; ?> ><br>
-	Submit Button will be displayed which is linked to page where [upg-post type=image] shortcode is used. Link page is at Global Settings tab.
+?>
+<br>
+	Submit image button will be displayed on top of gallery page.
 	<br><br>
+	<?php
+
+echo '<b>'.$frm->addLabelFor('upg_settings[primary_show_youtube_button]', __('Display Post Video URL Button: ','wp-upg')).'</b>';
+echo $frm->addInput('radio', 'upg_settings[primary_show_youtube_button]', '1',upg_checked_form('1',$options['primary_show_youtube_button'])).' On ';
+echo $frm->addInput('radio', 'upg_settings[primary_show_youtube_button]', '0', upg_checked_form('0',$options['primary_show_youtube_button'])).' Off ';
+
+?>
+<br>
+Submit Youtube Button will be displayed on top of gallery page.
 	
-	
-	<b>Display Post Video URL Button:</b> <input type="checkbox" name='upg_settings[primary_show_youtube_button]' value='1' <?php if($options['primary_show_youtube_button']=='1') echo 'checked="checked"'; ?> ><br>
-	Submit Youtube Button will be displayed which is linked to page where [upg-post type=youtube] shortcode is used. Link page is form settings.
 	<br><br>
 	
 	
@@ -689,7 +701,7 @@ jQuery(document).ready(function($){
 		<div id="tabs">
 	<ul>
 		
-        <li><a href="#tab-1"><?php echo __("Basic Settings","wp-upg");?></a></li>
+        <li><a href="#tab-1"><?php echo __("Common Settings","wp-upg");?></a></li>
        
 		
 		<li><a href="#tab-3"><?php echo __("Form Fields","wp-upg");?></a></li> 
