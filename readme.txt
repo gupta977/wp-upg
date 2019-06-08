@@ -225,6 +225,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.89 =
+* Fixed admin menu selection 
+* Fixed button on/off in gallery page.
+
 = 1.88 = 
 * UPG settings, have sub admin menus
 * Shortcode button added in admin for proper guide

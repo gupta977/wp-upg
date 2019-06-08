@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.88
+Version: 1.89
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.88');
+	define('UPG_PLUGIN_VERSION', '1.89');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -44,10 +44,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/widgets/form.php");
 	include(dirname(__FILE__)."/addon/ultimatemember.php");
 	include(dirname(__FILE__)."/addon/buddypress.php");
-	
-	
-
-	  
+		  
 	register_activation_hook(__FILE__,'upg_install');
 	register_uninstall_hook(__FILE__,'upg_drop');
 	
@@ -59,16 +56,16 @@ Domain Path: /languages
 
 		if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
-			if(isset($options['post_image_page']) && $options['post_image_page']!='xxx')
+			/* if(isset($options['post_image_page']) && $options['post_image_page']!='xxx')
 			{
-			//upg_log("old main page ".$options['main_page']);
+			
 			upg_set_option( 'main_page','upg_gallery', $options['main_page'] );
 			upg_set_option( 'my_gallery','upg_gallery', $options['my_gallery'] );
 			upg_set_option( 'post_image_page','upg_form', $options['post_image_page'] );
 			upg_set_option( 'post_youtube_page','upg_form', $options['post_youtube_page'] );
 			upg_set_option( 'edit_upg_page','upg_form', $options['edit_upg_page'] );
 			upg_get_option( 'global_popup','upg_preview', $options['global_popup'] );
-			}
+			} */
 			
 			//if(get_option('upg_plugin_version')=='1.12')
 			//{
@@ -85,7 +82,8 @@ Domain Path: /languages
 			//}
 			
 		update_option('upg_plugin_version', UPG_PLUGIN_VERSION);
-		
+		//upg_log(UPG_PLUGIN_VERSION);
+		//upg_log("old main page ".$options['main_page']);
 	}
 		
 		/* 	$file_personal_post_form=upg_BASE_DIR."layout/form/personal/".get_current_blog_id()."_personal_post_form.php";
@@ -795,23 +793,30 @@ function upg_admin_notice_example_notice()
 //Add menu hook to top of admin pages
 function upg_admin_top_menu()
 {
-	
+	if (  is_admin() ) 
+	{
+		$page_name='wp_upg_quick';
+
+		if(isset($_GET['page']))
+		{
+			$page_name = $_GET['page'];
+		}
+
 	echo "<div style='text-align:right'>";
-	echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_quick')."'><b class='button button-primary'>".__("Basic Settings","wp-upg")."</b></a>";
-	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button button-primary'>".__("Advance Settings","wp-upg")."</b></a>";
+	echo "<a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_quick')."'><b class='button ".(($page_name=='wp_upg_quick')?'button-primary':'')." '>".__("Basic Settings","wp-upg")."</b></a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg')."'><b class='button  ".(($page_name=='wp_upg')?'button-primary':'')." '>".__("Advance Settings","wp-upg")."</b></a>";
 	
 	$main_page_url='#'.upg_get_option( 'main_page','upg_gallery', '0' );
 	
 	if(upg_get_option( 'main_page','upg_gallery', '0' )!='0' && upg_get_option( 'main_page','upg_gallery', '0' )!='xxx' )
 		$main_page_url=esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) ));
 	
-		
-
 	echo " <a href='".$main_page_url."' class='button' target='_blank'>Live UPG Page</a>";
-	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_layout')."' class='button'>Layout Editor</a>";
-	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_addon')."' class='button'>Addons & Help</a>";
-	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button'>Shortcode Guide</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_layout')."' class='button ".(($page_name=='wp_upg_layout')?'button-primary':'')." '>Layout Editor</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_addon')."' class='button ".(($page_name=='wp_upg_addon')?'button-primary':'')." '>Addons & Help</a>";
+	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button ".(($page_name=='upg_shortcode')?'button-primary':'')." '>Shortcode Guide</a>";
 	echo '</div>';
+	}
 }
 add_action( 'upg_admin_top_menu', 'upg_admin_top_menu', 10 , 2);
 

@@ -12,6 +12,12 @@ if(!isset($options['global_page']))
 		$options['global_page']='off';
 		update_option( 'upg_settings', $options );	
 	}
+
+	if(!isset($options['global_popup']))
+	{
+		$options['global_popup']='off';
+		update_option( 'upg_settings', $options );	
+	}
 	
 	if(!isset($options['global_perrow']))
 	{
@@ -109,13 +115,13 @@ if(!isset($options['global_page']))
 	
 		if(!isset($options['primary_show_image_button']))
 	{
-		$options['primary_show_image_button']='0';
+		$options['primary_show_image_button']='1';
 		update_option( 'upg_settings', $options );	
 	}
 	
 	if(!isset($options['primary_show_youtube_button']))
 	{
-		$options['primary_show_youtube_button']='0';
+		$options['primary_show_youtube_button']='1';
 		update_option( 'upg_settings', $options );	
 	}
 	if(!isset($options['button_check_login']))
