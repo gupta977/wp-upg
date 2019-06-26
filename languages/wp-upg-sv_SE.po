@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-05-04 15:47+0545\n"
-"PO-Revision-Date: 2019-05-04 15:47+0545\n"
+"POT-Creation-Date: 2019-06-26 15:31+0545\n"
+"PO-Revision-Date: 2019-06-26 15:35+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: sv_SE\n"
@@ -18,45 +18,149 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: addon.php:20
-#, fuzzy
+#: addon.php:23
 #| msgid "UPG Post"
 msgid "UPG Plugins"
-msgstr "UPG post"
+msgstr "UPG Plugins"
 
-#: addon.php:21
+#: addon.php:24
 msgid "UPG Help"
 msgstr "UPG Hjälp"
 
-#: addon.php:27
+#: addon.php:30
 #, fuzzy
 #| msgid "Search "
 msgid "Search"
 msgstr "Sök"
 
-#: classes/upg_FormEntries.class.php:244 classes/upg_FormEntries.class.php:245
+#: classes/class.FormEntries.php:247 classes/class.FormEntries.php:248
 msgid "Mark as publish"
 msgstr "Markera som publicering"
 
-#: classes/upg_FormEntries.class.php:248 classes/upg_FormEntries.class.php:249
+#: classes/class.FormEntries.php:251 classes/class.FormEntries.php:252
 msgid "Mark as draft"
 msgstr "Markera som publicering"
 
-#: help.php:78 layout/form/basic/basic_post_form.php:118
+#: classes/class.settings-api.php:377
+msgid "Choose File"
+msgstr "Välj en fil"
+
+#: classes/class.settings-api.php:430
+msgid "&mdash; None &mdash;"
+msgstr "— Inget —"
+
+#: classes/quick_mode_setting.php:42
+msgid "General Settings"
+msgstr "Allmänna nställningar"
+
+#: classes/quick_mode_setting.php:46
+msgid "Gallery Settings"
+msgstr "Galleriinställningar"
+
+#: classes/quick_mode_setting.php:50
+msgid "Form Settings"
+msgstr "Inställningar formulär"
+
+#: classes/quick_mode_setting.php:54
+msgid "Preview Settings"
+msgstr "InstÃ¤llningar fÃ¶r fÃ¶rhandsgranskning"
+
+#: classes/quick_mode_setting.php:78
+msgid "Select Login page"
+msgstr "Välj Login sida"
+
+#: classes/quick_mode_setting.php:79
+msgid "Login page where user enters username & passwords."
+msgstr ""
+
+#: classes/quick_mode_setting.php:88
+msgid "main page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:89
+msgid ""
+"Page cannot be static front page and it must include [upg-list] shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:95
+msgid "Members \"My Gallery\" page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:96
+msgid "Page must contain [upg-list user=\"show_mine\"] shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:112
+msgid "Auto approve post"
+msgstr ""
+
+#: classes/quick_mode_setting.php:113
+msgid "Automatically publish Post as soon as user submit."
+msgstr ""
+
+#: classes/quick_mode_setting.php:119
+msgid "Select submission form of Image page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:120
+msgid "Page must contain [upg-post type=\"image\"] shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:126
+msgid "Select submission form of Youtube/Vimeo page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:127
+msgid "Page must contain [upg-post type=\"youtube\"] shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:133
+msgid "Submission form Edit/Modify page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:134
+msgid "Page must contain [upg-edit] shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:144
+msgid "Enable Lightbox Popup"
+msgstr ""
+
+#: classes/quick_mode_setting.php:145
+msgid ""
+"Image will get enlarged at same page. There is no change in page hence no "
+"preview layout is used."
+msgstr ""
+"Bild kommer att förstoras på samma sida. Sidan förändras inte därför används "
+"ingen förhandsgransknings-layout. "
+
+#: classes/quick_mode_setting.php:168 wp-upg.php:803
+#, fuzzy
+#| msgid "Quick Settings"
+msgid "Basic Settings"
+msgstr "Snabbinställningar"
+
+#: help.php:26
+#, fuzzy
+#| msgid "Important Settings"
+msgid "Important settings"
+msgstr "Viktiga inställningar"
+
+#: help.php:86 layout/form/basic/basic_post_form.php:113
 #: layout/form/simple/simple_edit_form.php:26
 #, fuzzy
 #| msgid "Maximum upload file size limit is"
 msgid "Maximum upload file size limit:"
 msgstr "Maximum uppladdningsstorlek på filen är"
 
-#: layout/attach.php:85 layout/catalog.php:286 layout/form/post_image.php:152
+#: layout/attach.php:85 layout/catalog.php:327 layout/form/post_image.php:164
 #: layout/form/post_youtube.php:48
 #, fuzzy
 #| msgid "Layout Not Found. Check Settings and save update again."
 msgid "Layout Not Found. Check settings."
 msgstr "Kunde inte hitta layout. Kolla inställningarna och spara igen"
 
-#: layout/attach.php:133
+#: layout/attach.php:133 libs/install.php:200
 #, fuzzy
 #| msgid "UPG Post"
 msgid "Post"
@@ -89,48 +193,42 @@ msgid "Post Title"
 msgstr "Skicka titel"
 
 #: layout/form/basic/basic_edit_form.php:41
-#: layout/form/basic/basic_post_form.php:61
+#: layout/form/basic/basic_post_form.php:60
 #: layout/form/photo/photo_post_form.php:109
-#: layout/form/shop/shop_edit_form.php:103
-#: layout/form/shop/shop_post_form.php:98
 msgid "Description"
 msgstr "Beskrivning"
 
 #: layout/form/basic/basic_edit_form.php:43
 #: layout/form/basic/basic_edit_youtube.php:44
-#: layout/form/basic/basic_post_form.php:63
+#: layout/form/basic/basic_post_form.php:62
 #: layout/form/basic/basic_post_youtube.php:64
 #: layout/form/photo/photo_post_form.php:110
 #: layout/form/photo/photo_post_youtube.php:44
-#: layout/form/shop/shop_edit_form.php:105
-#: layout/form/shop/shop_post_form.php:100
 msgid "Post Content"
 msgstr "Post innehåll"
 
 #: layout/form/basic/basic_edit_form.php:58
 #: layout/form/basic/basic_edit_youtube.php:59
-#: layout/form/basic/basic_post_form.php:78
+#: layout/form/basic/basic_post_form.php:77
 #: layout/form/basic/basic_post_youtube.php:79
 #: layout/form/photo/photo_post_form.php:10
 msgid "Select Album/Group"
 msgstr "Välj album/grupp"
 
-#: layout/form/basic/basic_edit_form.php:107
+#: layout/form/basic/basic_edit_form.php:108
 #: layout/form/simple/simple_edit_form.php:17
 msgid "Select new image to replace"
 msgstr "Välj ny bild som ska ersättas"
 
-#: layout/form/basic/basic_edit_form.php:115
+#: layout/form/basic/basic_edit_form.php:116
 #: layout/form/photo/photo_post_form.php:36
 #, fuzzy
 #| msgid "Only picture files are allowed."
 msgid "Only picture files are allowed."
 msgstr "Bara bildfiler är tillåtna"
 
-#: layout/form/basic/basic_edit_form.php:116
+#: layout/form/basic/basic_edit_form.php:117
 #: layout/form/photo/photo_post_form.php:37
-#: layout/form/shop/shop_edit_form.php:145
-#: layout/form/shop/shop_post_form.php:145
 #, fuzzy
 #| msgid "Maximum upload file size limit is"
 msgid "Maximum upload file size limit is"
@@ -170,15 +268,13 @@ msgstr "Youtube URL"
 msgid "copy/paste Video URL"
 msgstr "kopiera/klistra in Youtube URL"
 
-#: layout/form/basic/basic_post_form.php:93
+#: layout/form/basic/basic_post_form.php:88
 #: layout/form/photo/photo_post_form.php:18
-#: layout/form/shop/shop_edit_form.php:126
-#: layout/form/shop/shop_post_form.php:121
 #: layout/form/simple/simple_post_form.php:38
 msgid "Select Image"
 msgstr "Välj bild"
 
-#: layout/form/basic/basic_post_form.php:117
+#: layout/form/basic/basic_post_form.php:112
 #: layout/form/simple/simple_edit_form.php:25
 #, fuzzy
 #| msgid "Only picture files are allowed."
@@ -197,11 +293,18 @@ msgstr ""
 msgid "Maximum upload file size: %s."
 msgstr "Maximum uppladdningsstorlek på filen är"
 
-#: layout/form/bulk/bulk_post_form.php:58 layout/form/post_image.php:85
+#: layout/form/bulk/bulk_post_form.php:58 layout/form/post_edit_image.php:140
+#: layout/form/post_image.php:97
 #, fuzzy
 #| msgid "UPG Post Gallery"
 msgid "My Gallery"
 msgstr "UPG galleripost"
+
+#: layout/form/magic_form.php:36
+#, fuzzy
+#| msgid "Post Title"
+msgid "Post again"
+msgstr "Skicka titel"
 
 #: layout/form/photo/photo_post_youtube.php:5
 msgid "Youtube Title"
@@ -224,7 +327,7 @@ msgid "copy/paste Youtube URL"
 msgstr "kopiera/klistra in Youtube URL"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
-#: layout/form/post_image.php:142 layout/form/post_youtube.php:39
+#: layout/form/post_image.php:154 layout/form/post_youtube.php:39
 msgid "Refresh Page"
 msgstr "Uppdatera sidan"
 
@@ -244,12 +347,6 @@ msgstr "Uppladdningen lyckades"
 msgid "Error in Image file. Image not updated."
 msgstr ""
 
-#: layout/form/post_edit_image.php:132
-#, fuzzy
-#| msgid "View "
-msgid "View"
-msgstr "Klicka här för att granska"
-
 #: layout/form/post_edit_image.php:136
 #, fuzzy
 #| msgid "Edit "
@@ -260,20 +357,21 @@ msgstr "Redigera"
 msgid "Error in Video URL"
 msgstr ""
 
-#: layout/form/post_image.php:80 layout/form/post_youtube.php:107
-#: libs/functions.php:824 libs/functions.php:902
+#: layout/form/post_image.php:93 layout/form/post_youtube.php:107
+#: libs/functions.php:966 libs/functions.php:1052 libs/functions.php:1119
 msgid "Successfully posted."
 msgstr "Uppladdningen lyckades"
 
-#: layout/form/post_image.php:90 libs/functions.php:829 libs/functions.php:907
+#: layout/form/post_image.php:102 libs/functions.php:971
+#: libs/functions.php:1057 libs/functions.php:1124
 msgid "Your submission is under review."
 msgstr "Ditt bidrag granskas"
 
-#: layout/form/post_image.php:112
+#: layout/form/post_image.php:124
 msgid "Invalid file"
 msgstr ""
 
-#: layout/form/post_image.php:116
+#: layout/form/post_image.php:128
 msgid "Error occurred"
 msgstr ""
 
@@ -283,45 +381,24 @@ msgstr ""
 msgid "Your video is under review"
 msgstr "Youtube videon granskas"
 
-#: layout/form/shop/shop_edit_form.php:4 layout/form/shop/shop_post_form.php:4
-#, fuzzy
-#| msgid "Post Title"
-msgid "Item Title"
-msgstr "Skicka titel"
-
-#: layout/form/shop/shop_edit_form.php:19
-#: layout/form/shop/shop_post_form.php:19
-#, fuzzy
-#| msgid "Select Image"
-msgid "Select category"
-msgstr "Välj bild"
-
-#: layout/form/shop/shop_edit_form.php:144
-#: layout/form/shop/shop_post_form.php:144
-#, fuzzy
-#| msgid "Only picture files are allowed."
-msgid "Only picture file are allowed."
-msgstr "Bara bildfiler är tillåtna"
-
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
-#: layout/grid/shop/shop_down.php:3 layout/grid/slide/slide_down.php:3
+#: layout/grid/slide/slide_down.php:3
 #, fuzzy
 #| msgid "Post Not found."
-msgid "No record found"
+msgid "No records"
 msgstr "Posten kan inte hittas"
 
 #: layout/grid/basic/basic_main.php:14 layout/grid/flat/flat_main.php:30
-#: layout/grid/list/list_main.php:31 layout/grid/shop/shop_main.php:41
-#: layout/media/basic/content.php:13 layout/media/shop/content.php:109
+#: layout/grid/list/list_main.php:31 layout/media/basic/content.php:13
 msgid "Under review"
 msgstr ""
 
-#: layout/pick.php:48
+#: layout/pick.php:49
 msgid "Pick Layout Not Found."
 msgstr "Kan inte hitta layout"
 
-#: layout/pick.php:53
+#: layout/pick.php:54
 #, fuzzy
 #| msgid "Post Not found."
 msgid "Not found"
@@ -355,123 +432,133 @@ msgstr ""
 msgid "Date"
 msgstr "Datum"
 
-#: libs/functions.php:15 libs/functions.php:19
+#: libs/functions.php:105 libs/functions.php:109
 msgid "Login Please !"
 msgstr "Logga in var god!"
 
-#: libs/functions.php:842 libs/functions.php:917
-msgid "Server error. Try again later"
+#: libs/functions.php:989 libs/functions.php:1076 libs/functions.php:1139
+msgid "Category is not specified."
 msgstr ""
 
-#: libs/install.php:203
+#: libs/functions.php:989 libs/functions.php:991 libs/functions.php:1074
+#: libs/functions.php:1076 libs/functions.php:1078 libs/functions.php:1137
+#: libs/functions.php:1139 libs/functions.php:1141
+msgid "Submission failed"
+msgstr ""
+
+#: libs/functions.php:991 libs/functions.php:1078 libs/functions.php:1141
+msgid "Error message: "
+msgstr ""
+
+#: libs/functions.php:1074 libs/functions.php:1137
+msgid "Check your file type."
+msgstr ""
+
+#: libs/install.php:199
 msgid "User Post Gallery"
 msgstr "User Post Gallery"
 
-#: libs/install.php:204
-msgid "UPG Post"
-msgstr "UPG post"
-
-#: libs/install.php:205
+#: libs/install.php:201
 msgid "Add "
 msgstr "Lägg till"
 
-#: libs/install.php:206 libs/install.php:257 libs/install.php:282
+#: libs/install.php:202 libs/install.php:253 libs/install.php:278
 msgid "Add New "
 msgstr "Lägg till ny"
 
-#: libs/install.php:207 libs/install.php:255
+#: libs/install.php:203 libs/install.php:251
 msgid "Edit "
 msgstr "Redigera"
 
-#: libs/install.php:208 libs/install.php:258
+#: libs/install.php:204 libs/install.php:254
 msgid "New "
 msgstr "Lägg till ny"
 
-#: libs/install.php:209
+#: libs/install.php:205
 msgid "View "
 msgstr "Klicka här för att granska"
 
-#: libs/install.php:210 libs/install.php:251
+#: libs/install.php:206 libs/install.php:247
 msgid "Search "
 msgstr "Sök"
 
-#: libs/install.php:211 libs/install.php:212
+#: libs/install.php:207 libs/install.php:208
 msgid "No "
 msgstr "Nej"
 
-#: libs/install.php:214
+#: libs/install.php:210
 msgid "Featured Icon/Logo"
 msgstr "Icon/logo som kännetecken"
 
-#: libs/install.php:215
+#: libs/install.php:211
 msgid "Set featured Logo"
 msgstr "Ange logo"
 
-#: libs/install.php:216
+#: libs/install.php:212
 msgid "Remove Logo"
 msgstr "Ta bort logo"
 
-#: libs/install.php:249
+#: libs/install.php:245
 msgid " Albums"
 msgstr "Album"
 
-#: libs/install.php:250
+#: libs/install.php:246
 msgid " Album"
 msgstr "Album"
 
-#: libs/install.php:252
+#: libs/install.php:248
 msgid "All "
 msgstr "Allt"
 
-#: libs/install.php:253 libs/install.php:254
+#: libs/install.php:249 libs/install.php:250
 msgid "Parent "
 msgstr "Överordnad"
 
-#: libs/install.php:256
+#: libs/install.php:252
 msgid "Update "
 msgstr "Uppdatera"
 
-#: libs/install.php:259
+#: libs/install.php:255
 msgid "  Albums"
 msgstr "Album"
 
-#: libs/install.php:274 libs/install.php:276 libs/install.php:284
+#: libs/install.php:270 libs/install.php:272 libs/install.php:280
 msgid " Tags"
 msgstr "Nyckelord"
 
-#: libs/install.php:275
+#: libs/install.php:271
 msgid " Tag"
 msgstr "Nyckelord"
 
-#: libs/install.php:277
+#: libs/install.php:273
 msgid " All Tags"
 msgstr "Alla nyckelord"
 
-#: libs/install.php:278 libs/install.php:279
+#: libs/install.php:274 libs/install.php:275
 msgid "Parent Tag"
 msgstr "Överordnat nyckelord"
 
-#: libs/install.php:280
+#: libs/install.php:276
 msgid "Edit Tag"
 msgstr "Redigera nyckelord"
 
-#: libs/install.php:281
+#: libs/install.php:277
 msgid "Update Tag"
 msgstr "Uppdatera nyckelord"
 
-#: libs/install.php:283
+#: libs/install.php:279
 msgid "New Tag Name"
 msgstr "Nytt nyckelord"
 
 #: libs/metabox.php:8
-msgid "Main UPG media file"
+msgid "Main media file"
 msgstr ""
 
 #: libs/metabox.php:10
 msgid "Post Preview Layout"
 msgstr "Förhandsgranskning post layout"
 
-#: libs/metabox.php:12 setting.php:79
+#: libs/metabox.php:12 setting.php:69
 #, fuzzy
 #| msgid "Extra Custom Fields"
 msgid "Extra Form Fields"
@@ -484,7 +571,7 @@ msgstr ""
 #: libs/metabox.php:77
 #, fuzzy
 #| msgid "UPG Post Gallery"
-msgid "Primary UPG Gallery"
+msgid "Primary Gallery"
 msgstr "UPG galleripost"
 
 #: libs/metabox.php:97
@@ -497,110 +584,153 @@ msgstr "Ladda upp bild"
 msgid "Post Youtube/Vimeo URL"
 msgstr "Youtube URL"
 
-#: libs/taxonomy.php:7
-msgid "Hide at Front end during submission"
-msgstr "Dölj på framsidan under uppladdning"
+#: libs/taxonomy.php:6 libs/taxonomy.php:40
+msgid "Album for: "
+msgstr "Album"
 
-#: libs/taxonomy.php:21
+#: libs/taxonomy.php:12
+#, fuzzy
+#| msgid "Hide at Front End"
+msgid "Hide album from frontend"
+msgstr "Dölj på framsidan"
+
+#: libs/taxonomy.php:29
 msgid "Hide at Front End"
 msgstr "Dölj på framsidan"
 
-#: libs/taxonomy.php:47
+#: libs/taxonomy.php:77
 msgid "Hide"
 msgstr "Dölj"
 
-#: setting.php:22 wp-upg.php:676
+#: libs/taxonomy.php:78
+#, fuzzy
+#| msgid " Albums"
+msgid "Album for"
+msgstr "Album"
+
+#: setting.php:12
 msgid "Settings"
 msgstr "Inställningar"
 
-#: setting.php:28
+#: setting.php:18
 #, fuzzy
 #| msgid "Settings"
 msgid "Extra Settings"
 msgstr "Inställningar"
 
-#: setting.php:36
+#: setting.php:26
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "Grid/Gallery Layout Settings"
 msgstr "Förhandsgranskning post layout"
 
-#: setting.php:44
+#: setting.php:34
 msgid "Submission form Settings"
 msgstr ""
 
-#: setting.php:53
+#: setting.php:43
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "Media/Preview Layout Settings"
 msgstr "Förhandsgranskning post layout"
 
-#: setting.php:70
+#: setting.php:60
 #, fuzzy
 #| msgid "3rd Party Shortcode"
 msgid "Form Fields & Shortcodes"
 msgstr "Tredjeparts kortkod"
 
-#: setting.php:87
+#: setting.php:77
 msgid "Shortcode for Position 1st"
 msgstr "Kortkod för första position"
 
-#: setting.php:94
+#: setting.php:84
 msgid "Shortcode for Position 2nd"
 msgstr "Kortkod för andra position"
 
-#: setting.php:107
+#: setting.php:97
 msgid "Social Profile Settings"
 msgstr "Inställningar för sociala profiler"
 
-#: setting.php:114
+#: setting.php:104
 msgid "Member Profile Tab"
 msgstr ""
 
-#: setting.php:126 setting.php:862
+#: setting.php:116 setting.php:710
 #, fuzzy
 #| msgid "Settings"
 msgid "Media Settings"
 msgstr "Inställningar"
 
-#: setting.php:133
+#: setting.php:123
 #, fuzzy
 #| msgid "Quick Settings"
 msgid "Images sizes & Settings"
 msgstr "Snabbinställningar"
 
-#: setting.php:274
+#: setting.php:264
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "UPG Media Settings"
 msgstr "Förhandsgranskning post layout"
 
-#: setting.php:325 setting.php:347 setting.php:419 setting.php:581
-#: setting.php:606 setting.php:629
-#, fuzzy
-#| msgid "Important Settings"
-msgid "Important settings"
-msgstr "Viktiga inställningar"
-
-#: setting.php:355
-msgid "&mdash; None &mdash;"
+#: setting.php:401
+msgid "Display Image Upload Button: "
 msgstr ""
 
-#: setting.php:856
-#, fuzzy
-#| msgid "Quick Settings"
-msgid "Basic Settings"
-msgstr "Snabbinställningar"
+#: setting.php:411
+msgid "Display Post Video URL Button: "
+msgstr ""
 
-#: setting.php:859
+#: setting.php:698 wp-upg.php:685 wp-upg.php:804
+#, fuzzy
+#| msgid "Settings"
+msgid "Advance Settings"
+msgstr "Inställningar"
+
+#: setting.php:704
+#, fuzzy
+#| msgid "Settings"
+msgid "Common Settings"
+msgstr "Inställningar"
+
+#: setting.php:707
 #, fuzzy
 #| msgid "Post Form File"
 msgid "Form Fields"
 msgstr "Skicka forumfil"
 
-#: setting.php:861
+#: setting.php:709
 msgid "Social Profile"
 msgstr "Social profil"
+
+#: shortcode.php:23
+msgid "[upg-list]"
+msgstr "[upg-list]"
+
+#: shortcode.php:24
+msgid "[upg-attach]"
+msgstr "[upg-attach]"
+
+#: shortcode.php:25
+msgid "[upg-post]"
+msgstr "[upg-post]"
+
+#: shortcode.php:26
+msgid "[upg-form]"
+msgstr "[upg-form]"
+
+#: shortcode.php:27
+msgid "[upg-edit]"
+msgstr "[upg-edit]"
+
+#: shortcode.php:28
+msgid "[upg-pick]"
+msgstr "[upg-pick]"
+
+#: shortcode.php:29
+msgid "[upg-search]"
+msgstr "[upg-search]"
 
 #: widgets/categories.php:147 widgets/form.php:54
 msgid "New title"
@@ -613,6 +743,16 @@ msgstr "Titel:"
 #: widgets/categories.php:154 widgets/categories.php:157 widgets/form.php:67
 msgid "Select Parent"
 msgstr "Välj överordnad"
+
+#: widgets/categories.php:176
+#, fuzzy
+#| msgid ""
+#| "Show only the immediate children of the selected category. Displays all "
+#| "the top level categories if no parent is selected."
+msgid "Show only the immediate children of the selected category."
+msgstr ""
+"Visa bara omedelbara underordnade i den valda kategorin. Visar alla topp-"
+"nivåer av kategorier om ingen överordnad är vald."
 
 #: widgets/categories.php:181
 msgid "Hide Empty Categories"
@@ -646,13 +786,46 @@ msgstr "Välj bild"
 msgid "Select preview layout"
 msgstr "Förhandsgranskning post layout"
 
-#: wp-upg.php:357
-msgid "You are not authorized to edit"
-msgstr ""
+#: wp-upg.php:684
+msgid "Quick Settings"
+msgstr "Snabbinställningar"
 
-#: wp-upg.php:675
-msgid "Docs"
-msgstr "Dok"
+#: wp-upg.php:702
+msgid "Documentation"
+msgstr "Dokumentation för tillägget"
+
+#: wp-upg.php:703
+msgid "Rate the plugin"
+msgstr "Betygsätt tillägget"
+
+#, fuzzy
+#~| msgid "View "
+#~ msgid "View"
+#~ msgstr "Klicka här för att granska"
+
+#, fuzzy
+#~| msgid "Post Title"
+#~ msgid "Item Title"
+#~ msgstr "Skicka titel"
+
+#, fuzzy
+#~| msgid "Select Image"
+#~ msgid "Select category"
+#~ msgstr "Välj bild"
+
+#, fuzzy
+#~| msgid "Only picture files are allowed."
+#~ msgid "Only picture file are allowed."
+#~ msgstr "Bara bildfiler är tillåtna"
+
+#~ msgid "UPG Post"
+#~ msgstr "UPG post"
+
+#~ msgid "Hide at Front end during submission"
+#~ msgstr "Dölj på framsidan under uppladdning"
+
+#~ msgid "Docs"
+#~ msgstr "Dok"
 
 #~ msgid "You must login"
 #~ msgstr "Du måste logga in"
@@ -720,13 +893,6 @@ msgstr "Dok"
 #~ msgid "wp-pagenavi plugin must be installed and active."
 #~ msgstr "wp-pagenavi- tillägg måste vara installerat och aktivt."
 
-#~ msgid ""
-#~ "Image will get enlarged at same page. There is no change in page hence no "
-#~ "preview layout is used."
-#~ msgstr ""
-#~ "Bild kommer att förstoras på samma sida. Sidan förändras inte därför "
-#~ "används ingen förhandsgransknings-layout. "
-
 #~ msgid "Grid layout is where [upg-list] shortcode is used."
 #~ msgstr "I grid-layout används kortkoden  [upg-list]"
 
@@ -755,13 +921,6 @@ msgstr "Dok"
 #~ msgid "Select Parent:"
 #~ msgstr "Välj överordnad:"
 
-#~ msgid ""
-#~ "Show only the immediate children of the selected category. Displays all "
-#~ "the top level categories if no parent is selected."
-#~ msgstr ""
-#~ "Visa bara omedelbara underordnade i den valda kategorin. Visar alla topp-"
-#~ "nivåer av kategorier om ingen överordnad är vald."
-
 #~ msgid "Login"
 #~ msgstr "Logga in"
 
@@ -773,9 +932,6 @@ msgstr "Dok"
 
 #~ msgid "Image Layout"
 #~ msgstr "Bild-layout"
-
-#~ msgid "Quick Settings"
-#~ msgstr "Snabbinställningar"
 
 #, fuzzy
 #~| msgid "Edit Tag"

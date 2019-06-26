@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-05-29 12:37+0545\n"
+"POT-Creation-Date: 2019-06-26 15:26+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,15 +18,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: addon.php:20
+#: addon.php:23
 msgid "UPG Plugins"
 msgstr ""
 
-#: addon.php:21
+#: addon.php:24
 msgid "UPG Help"
 msgstr ""
 
-#: addon.php:27
+#: addon.php:30
 msgid "Search"
 msgstr ""
 
@@ -129,12 +129,8 @@ msgid ""
 "preview layout is used."
 msgstr ""
 
-#: classes/quick_mode_setting.php:165 setting.php:695 wp-upg.php:683
-msgid "Advance Settings"
-msgstr ""
-
-#: classes/quick_mode_setting.php:168 wp-upg.php:682
-msgid "Quick Settings"
+#: classes/quick_mode_setting.php:168 wp-upg.php:803
+msgid "Basic Settings"
 msgstr ""
 
 #: help.php:26
@@ -154,7 +150,7 @@ msgstr ""
 #: layout/attach.php:133 layout/form/basic/basic_post_form.php:158
 #: layout/form/photo/photo_post_form.php:73
 #: layout/form/simple/simple_edit_form.php:77
-#: layout/form/simple/simple_post_form.php:102 libs/install.php:194
+#: layout/form/simple/simple_post_form.php:102 libs/install.php:200
 msgid "Post"
 msgstr ""
 
@@ -339,12 +335,12 @@ msgid "Error in Video URL"
 msgstr ""
 
 #: layout/form/post_image.php:93 layout/form/post_youtube.php:107
-#: libs/functions.php:942 libs/functions.php:1028 libs/functions.php:1095
+#: libs/functions.php:966 libs/functions.php:1052 libs/functions.php:1119
 msgid "Successfully posted."
 msgstr ""
 
-#: layout/form/post_image.php:102 libs/functions.php:947
-#: libs/functions.php:1033 libs/functions.php:1100
+#: layout/form/post_image.php:102 libs/functions.php:971
+#: libs/functions.php:1057 libs/functions.php:1124
 msgid "Your submission is under review."
 msgstr ""
 
@@ -363,7 +359,7 @@ msgstr ""
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
 #: layout/grid/slide/slide_down.php:3
-msgid "No record found"
+msgid "No records"
 msgstr ""
 
 #: layout/grid/basic/basic_main.php:14 layout/grid/flat/flat_main.php:30
@@ -405,121 +401,121 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: libs/functions.php:81 libs/functions.php:85
+#: libs/functions.php:105 libs/functions.php:109
 msgid "Login Please !"
 msgstr ""
 
-#: libs/functions.php:965 libs/functions.php:1052 libs/functions.php:1115
+#: libs/functions.php:989 libs/functions.php:1076 libs/functions.php:1139
 msgid "Category is not specified."
 msgstr ""
 
-#: libs/functions.php:965 libs/functions.php:967 libs/functions.php:1050
-#: libs/functions.php:1052 libs/functions.php:1054 libs/functions.php:1113
-#: libs/functions.php:1115 libs/functions.php:1117
+#: libs/functions.php:989 libs/functions.php:991 libs/functions.php:1074
+#: libs/functions.php:1076 libs/functions.php:1078 libs/functions.php:1137
+#: libs/functions.php:1139 libs/functions.php:1141
 msgid "Submission failed"
 msgstr ""
 
-#: libs/functions.php:967 libs/functions.php:1054 libs/functions.php:1117
+#: libs/functions.php:991 libs/functions.php:1078 libs/functions.php:1141
 msgid "Error message: "
 msgstr ""
 
-#: libs/functions.php:1050 libs/functions.php:1113
+#: libs/functions.php:1074 libs/functions.php:1137
 msgid "Check your file type."
 msgstr ""
 
-#: libs/install.php:193
+#: libs/install.php:199
 msgid "User Post Gallery"
 msgstr ""
 
-#: libs/install.php:195
+#: libs/install.php:201
 msgid "Add "
 msgstr ""
 
-#: libs/install.php:196 libs/install.php:247 libs/install.php:272
+#: libs/install.php:202 libs/install.php:253 libs/install.php:278
 msgid "Add New "
 msgstr ""
 
-#: libs/install.php:197 libs/install.php:245
+#: libs/install.php:203 libs/install.php:251
 msgid "Edit "
 msgstr ""
 
-#: libs/install.php:198 libs/install.php:248
+#: libs/install.php:204 libs/install.php:254
 msgid "New "
 msgstr ""
 
-#: libs/install.php:199
+#: libs/install.php:205
 msgid "View "
 msgstr ""
 
-#: libs/install.php:200 libs/install.php:241
+#: libs/install.php:206 libs/install.php:247
 msgid "Search "
 msgstr ""
 
-#: libs/install.php:201 libs/install.php:202
+#: libs/install.php:207 libs/install.php:208
 msgid "No "
 msgstr ""
 
-#: libs/install.php:204
+#: libs/install.php:210
 msgid "Featured Icon/Logo"
 msgstr ""
 
-#: libs/install.php:205
+#: libs/install.php:211
 msgid "Set featured Logo"
 msgstr ""
 
-#: libs/install.php:206
+#: libs/install.php:212
 msgid "Remove Logo"
 msgstr ""
 
-#: libs/install.php:239
+#: libs/install.php:245
 msgid " Albums"
 msgstr ""
 
-#: libs/install.php:240
+#: libs/install.php:246
 msgid " Album"
 msgstr ""
 
-#: libs/install.php:242
+#: libs/install.php:248
 msgid "All "
 msgstr ""
 
-#: libs/install.php:243 libs/install.php:244
+#: libs/install.php:249 libs/install.php:250
 msgid "Parent "
 msgstr ""
 
-#: libs/install.php:246
+#: libs/install.php:252
 msgid "Update "
 msgstr ""
 
-#: libs/install.php:249
+#: libs/install.php:255
 msgid "  Albums"
 msgstr ""
 
-#: libs/install.php:264 libs/install.php:266 libs/install.php:274
+#: libs/install.php:270 libs/install.php:272 libs/install.php:280
 msgid " Tags"
 msgstr ""
 
-#: libs/install.php:265
+#: libs/install.php:271
 msgid " Tag"
 msgstr ""
 
-#: libs/install.php:267
+#: libs/install.php:273
 msgid " All Tags"
 msgstr ""
 
-#: libs/install.php:268 libs/install.php:269
+#: libs/install.php:274 libs/install.php:275
 msgid "Parent Tag"
 msgstr ""
 
-#: libs/install.php:270
+#: libs/install.php:276
 msgid "Edit Tag"
 msgstr ""
 
-#: libs/install.php:271
+#: libs/install.php:277
 msgid "Update Tag"
 msgstr ""
 
-#: libs/install.php:273
+#: libs/install.php:279
 msgid "New Tag Name"
 msgstr ""
 
@@ -531,7 +527,7 @@ msgstr ""
 msgid "Post Preview Layout"
 msgstr ""
 
-#: libs/metabox.php:12 setting.php:81
+#: libs/metabox.php:12 setting.php:69
 msgid "Extra Form Fields"
 msgstr ""
 
@@ -571,68 +567,108 @@ msgstr ""
 msgid "Album for"
 msgstr ""
 
-#: setting.php:24
+#: setting.php:12
 msgid "Settings"
 msgstr ""
 
-#: setting.php:30
+#: setting.php:18
 msgid "Extra Settings"
 msgstr ""
 
-#: setting.php:38
+#: setting.php:26
 msgid "Grid/Gallery Layout Settings"
 msgstr ""
 
-#: setting.php:46
+#: setting.php:34
 msgid "Submission form Settings"
 msgstr ""
 
-#: setting.php:55
+#: setting.php:43
 msgid "Media/Preview Layout Settings"
 msgstr ""
 
-#: setting.php:72
+#: setting.php:60
 msgid "Form Fields & Shortcodes"
 msgstr ""
 
-#: setting.php:89
+#: setting.php:77
 msgid "Shortcode for Position 1st"
 msgstr ""
 
-#: setting.php:96
+#: setting.php:84
 msgid "Shortcode for Position 2nd"
 msgstr ""
 
-#: setting.php:109
+#: setting.php:97
 msgid "Social Profile Settings"
 msgstr ""
 
-#: setting.php:116
+#: setting.php:104
 msgid "Member Profile Tab"
 msgstr ""
 
-#: setting.php:128 setting.php:707
+#: setting.php:116 setting.php:710
 msgid "Media Settings"
 msgstr ""
 
-#: setting.php:135
+#: setting.php:123
 msgid "Images sizes & Settings"
 msgstr ""
 
-#: setting.php:276
+#: setting.php:264
 msgid "UPG Media Settings"
 msgstr ""
 
-#: setting.php:701
-msgid "Basic Settings"
+#: setting.php:401
+msgid "Display Image Upload Button: "
+msgstr ""
+
+#: setting.php:411
+msgid "Display Post Video URL Button: "
+msgstr ""
+
+#: setting.php:698 wp-upg.php:685 wp-upg.php:804
+msgid "Advance Settings"
 msgstr ""
 
 #: setting.php:704
+msgid "Common Settings"
+msgstr ""
+
+#: setting.php:707
 msgid "Form Fields"
 msgstr ""
 
-#: setting.php:706
+#: setting.php:709
 msgid "Social Profile"
+msgstr ""
+
+#: shortcode.php:23
+msgid "[upg-list]"
+msgstr ""
+
+#: shortcode.php:24
+msgid "[upg-attach]"
+msgstr ""
+
+#: shortcode.php:25
+msgid "[upg-post]"
+msgstr ""
+
+#: shortcode.php:26
+msgid "[upg-form]"
+msgstr ""
+
+#: shortcode.php:27
+msgid "[upg-edit]"
+msgstr ""
+
+#: shortcode.php:28
+msgid "[upg-pick]"
+msgstr ""
+
+#: shortcode.php:29
+msgid "[upg-search]"
 msgstr ""
 
 #: widgets/categories.php:147 widgets/form.php:54
@@ -645,6 +681,10 @@ msgstr ""
 
 #: widgets/categories.php:154 widgets/categories.php:157 widgets/form.php:67
 msgid "Select Parent"
+msgstr ""
+
+#: widgets/categories.php:176
+msgid "Show only the immediate children of the selected category."
 msgstr ""
 
 #: widgets/categories.php:181
@@ -671,14 +711,14 @@ msgstr ""
 msgid "Select preview layout"
 msgstr ""
 
-#: wp-upg.php:362
-msgid "You are not authorized to edit"
+#: wp-upg.php:684
+msgid "Quick Settings"
 msgstr ""
 
-#: wp-upg.php:700
+#: wp-upg.php:702
 msgid "Documentation"
 msgstr ""
 
-#: wp-upg.php:701
+#: wp-upg.php:703
 msgid "Rate the plugin"
 msgstr ""
