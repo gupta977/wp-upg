@@ -3,42 +3,40 @@ Contributors: odude
 Tags: guest post, user post, anonymous post, frontend post, guest author,  frontend content, frontend post, frontend upload, generated content, guest blog, guest blogging, guest publish, guest upload, post sharing, post submission, public post, share posts, submit post, user generated, user submit, user submitted post, visitor post
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
-Tested up to: 5.1.1
+Tested up to: 5.2.2
 Requires PHP: 5.5
 Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Frontend/Guest submitted post, images, Youtube & Vimeo Gallery.
+Visitors submitted content Gallery. Easy user generated content.
 
 == Description ==
 = UPG - User Post Gallery =
 
-User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend. Submitted post can be shown inside BuddyPress, ultimate-member plugins in a user profile tab as a gallery.
+User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend.
+Submitted post can be shown inside BuddyPress, ultimate-member plugins in a user profile tab as a gallery.
 
-Using layout editor, you can re-design completely using PHP & CSS.
+UPG form can be used as frontend uploader for wordpress post and other custom post type. 
 
 That's all there is to it! Your site now can accept user generated content. Everything is super easy to customize via Plugin Settings page.
 
-The pages like submission form, gallery page are auto created as soon as plugin is activated. 
+Power of <a href="https://odude.com/upg-user-post-gallery/upg-layouts/">layouts</a> will let you to design/work of your choice. 
 
-== Independent Gallery ==
+== Gallery ==
 There are 2 types of UPG Gallery. 
 
-* Embed gallery : [upg-attach] shortcode can be used in any wordpress post/pages. The images/video submitted at this page will have own set of gallery specific to embed page.
-* Primary gallery : [upg-list] shortcode must be used in wordpress page. It will combine gallery of all the images/video posted on different post.  
-
-== Embed Gallery ==
-To embed gallery for WordPress post use shortcode [upg-attach] into the content area where ever required.
+= 1. Embed Gallery =
+Embed gallery for WordPress post use shortcode [upg-attach] into the content area where ever required.
 The image/video url posted on this post will not be visible on other post. 
 It is full of ajax, hence no page refresh is required during submission and page navigation.
-Lazy Load more button is available and images can be previewed in lightbox. 
+Lazy Load more button is available and images can be previewed in lightbox/popup 
 Optimized pre loading of images
 
-== Primary Gallery ==
+= 2. Primary Gallery =
 It is independent gallery. All the UPG post submitted on different post can be visible at [upg-list].
 It also works as the main page of UPG gallery.
-It has lots of shortcode parameters to filter & change layouts.
+It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gallery/">shortcode</a> parameters to filter & change layouts.
 
 == Submission Form [upg-post] ==
 * Registered & visitors can post images/article/youtube video url from the front end.
@@ -54,8 +52,10 @@ It has lots of shortcode parameters to filter & change layouts.
 * Separate album selection for images & video
 
 == Submission form [upg-form] ==
-* This shortcode will build form with help of shortcodes. No more html tags required.
-* Under Development.
+* With this shortcode user can submit content to wordpress post or other post types.
+* It can be used as frontend uploded for other plugins.
+* Special shortocde to generate html input fields.
+* Check <a href="https://odude.com/upg-user-post-gallery/upg-form/">this url</a> for detail explanation 
 
 
 == Admin Post Management ==
@@ -108,6 +108,7 @@ It has lots of shortcode parameters to filter & change layouts.
 * Full featured greetings card site can be created with user submission.
 
 == Other features ==
+* User can use UPG form to submit post to wordpress or other custom post types
 * Options to include posts into archive pages
 * Widgets to list categories & tags.
 * Widgets of submission form powered with ajax. 
@@ -126,10 +127,10 @@ Basic installation video
 = Support =
 
 For further questions feel free to drop a line at navneet@odude.com.
-or
-Go to our site to read full updated documentations and features at UPG FAQ. 
+
 
 = Live Demo & Documents =
+* <a href="https://odude.com/upg-user-post-gallery/" target="_blank">UPG Homepage</a>
 * <a href="http://odude.com/demo/faq/" target="_blank">Documents & FAQ</a>
 * <a href="https://odude.com/demo/photo/" target="_blank">Photo Layout Demo</a>
 * <a href="http://odude.com/demo/upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
@@ -146,8 +147,9 @@ Go to our site to read full updated documentations and features at UPG FAQ.
 * Italian - Italiana (it_IT)
 * Swedish - svenska (sv_SE)
 
-== Installation ==
-= Steps to Install =
+== Frequently Asked Questions ==
+
+= 1. How to install =
 
 Some pages are auto created. Do not delete them even if not required.
 
@@ -157,22 +159,10 @@ Some pages are auto created. Do not delete them even if not required.
 * 4. Edit UPG Post: Let users to modify/update own UPG post.
 * 5. My Gallery: Registered user can see own submitted post.
 	
-Go to UPG Settings and select those pages at appropriate location.
-
-= Shortcodes =
-
-* Use shortcode [upg-attach type="image"]or [upg-attach type="youtube"] to create gallery on specific page/post
-* Use shortcode [upg-list] to display UPG post from all the places
-
-= Steps to Download =
-* Go to your Plugins page inside your Wordpress installation and search `wp-upg` by keyword. Then choose User Post Gallery and click install. It will be installed in a few seconds.
-* Activate the plugin from `Plugins` menu after installation
-* Submission form and gallery and other pages are auto created. Select those pages at UPG settings.
+Go to UPG Settings and select those pages at appropriate location before use.
 
 
-== Frequently Asked Questions ==
-
-= 1. How to display gallery =
+= 2. How to display gallery =
 
 Copy paste shortcode to post/page where you like to display gallery.
 [upg-attach type="image"] or [upg-attach type="youtube"]
@@ -180,17 +170,17 @@ Copy paste shortcode to post/page where you like to display gallery.
 To display gallery based on album, tags, date, or more.. use shortcode
 [upg-list]
 
-= 2. What type of images does WP-UPG support? =
+= 3. What type of images does WP-UPG support? =
 
 UPG supports the following types of image files: JPG, JPEG, PNG, GIF, YouTube URL, Vimeo URL
 
-= 3. Create submission form =
+= 4. Create submission form =
 Submission page are auto created when plugin activated. 
 Or manually create page & insert the shortcode 
-[upg-post type=image] 
+[upg-post type=image] or <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a>
 in the description area. Link this page at your upg settings.
 
-= 4. Show images from specific album/category =
+= 5. Show images from specific album/category =
 
 Insert this shortcode in the textarea for a page and link that page to your menu.
 [upg-list album="slug_name_of_your_upg_album"]
@@ -199,14 +189,14 @@ Insert this shortcode in the textarea for a page and link that page to your menu
 
 Leave album blank to show all UPG posts. 
 
-= 5. What happen, if I update plugin =
+= 6. What happen, if I update plugin =
 When plugins are updated, the plugin/wp-upg folder is deleted and new one is created.
 But this will not delete any uploaded post/media. 
 If you are using 'personal layout'. Your UPG post may be blank page for 1st time. After refresh it will reappear. 
 It copies files from upload folder to layout folder. 
 But we advice to take backup before update.
 
-= 6 . How 'personal layout' is different from other layout =
+= 7 . How 'personal layout' is different from other layout =
 'personal layout' is a layout which is created by you. It is blank at the beginning. 
 Whenever you use UPG 'layout editor', it copies the code from other layout to personal layout with the changes you have done.
 It creates the physical file placed at wp-content\uploads\ folder. 
@@ -225,6 +215,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.90 =
+* [upg-form] shortcode is in action.
+
 = 1.89 =
 * Fixed admin menu selection 
 * Fixed button on/off in gallery page.
@@ -259,22 +252,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Updated language file
 * Selection of login page in UPG extra settings
 * 'My Gallery' only accessible to loggedin user
-
-= 1.83 =
-* Updated photo layout
-* Updated screenshots of layouts in settings
-
-= 1.82 =
-* Fixed debug error for 1.81 at setting.php page
-* Sorry for trouble
-* Fixed VIEW POST 404 error from UPG dashboard
-* Updated settings page for easy view
-
-= 1.81 =
-* Deleted tag
-
-= 1.80 =
-* Options to enable/disable purecss.io, colorbox, fontawesome css file from frontend
 
 == Upgrade Notice ==
 Backup your personal layout code before you upgrade. It may overwrite your layout with new one. If you got blank page, go to layout editor and choose layout to update automatically.

@@ -141,7 +141,7 @@ function upg_settings_init(  )
 		else
 		$output="";
 	?>
-	You can include any other plugin shortcode or message. Eg. social share, buttons, notices<br>It will appear at media preview page only only if lightbox is off.<br>
+	You can include any other plugin shortcode or message. Eg. social share, buttons, notices<br>It will appear at media preview, only only if lightbox/popup is off.<br>
 	<textarea cols='60' rows='3' name='upg_settings[upg_textarea_shortcode_1]'><?php echo $output; ?></textarea>
 	<?php
 

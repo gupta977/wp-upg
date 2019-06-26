@@ -162,16 +162,18 @@ function upg_shortcode()
 
      <div id="tab-4">
             <h3>Create form with help of Shortcodes</h3>
-                <h4> [upg-form] (Under Development)</h4>
+                <h4> [upg-form] </h4>
                 You can generate your own form with the help of shortcode. 
                 <code>[upg-post]</code> will use ready layouts whereas with this you can make your own.
                 It is best suited for them, who don't have good php knowledge. 
                 If you are good at php/css, I recommend you to use <code>[upg-post]</code> with 'personal layout'.
                 <br><br>
+                The explanation and scope is very huge. Hence <b><a href="https://odude.com/upg-user-post-gallery/upg-form/" target="_blank" class="install-now button">Click here</a></b> for more details.
+                <br><br>
                 <b>Notes:</b>
                 <ol>
-                    <li class="page_item">It is still under development, and change in shortcode may happen.</li>
-                    <li class="page_item">This form cannot be used as layout in other shortcode parameters. But it can be used in UPG form settings.</li>
+                    
+                    <li class="page_item">This form cannot be used as 'form layout'.</li>
                     <li>This form is generated with the help of two shortcodes <code>[upg-form] & [upg-form-tag]</code></li>
                     <li><code>[upg-form-tag]</code> should always be between <code>[upg-form] .... [/upg-form]</code></li>
                     <li>This form is only for submit, it cannot be used for edit/modify form. </li>
@@ -189,6 +191,8 @@ function upg_shortcode()
             [/upg-form]
             
             </code>
+<br>
+            
      </div>
 
 
