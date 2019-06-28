@@ -23,7 +23,7 @@
 wp-upg div img:hover { 
   width: 100%; 
   height: auto;
-  box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.9);
+  box-shadow: 0.5px 0.5px 2px 0.5px rgba(0,0,0,0.9);
 	cursor: pointer;  
     
 }

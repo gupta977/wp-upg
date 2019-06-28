@@ -142,7 +142,7 @@ function upg_list_tags($post)
 	//var_dump($term_list);
 	
 	if(count($term_list)>0)
-	echo '<div class="meta-tags clearfix"><ul>';
+	echo '<ul class="upg_tags">';
 
 	for($x = 0; $x < count($term_list); $x++) 
 	{
@@ -156,7 +156,7 @@ function upg_list_tags($post)
 	}
 	
 	if(count($term_list)>0)
-		echo '</ul></div>';
+		echo '</ul>';
 	
 }
 
@@ -1786,4 +1786,20 @@ function upg_get_term_id($slug,$return='term_id')
 	}
 	
 }
+//display taxonomy terms without links: separated with commas
+function upg_get_taxonony_raw($post_id, $taxonomy_name) 
+{
+	$terms = wp_get_post_terms($post_id, $taxonomy_name);
+	$count = count($terms);
+	$data='';
+	if ( $count > 0 ) 
+	{
+		foreach ( $terms as $term ) 
+		{
+			$data.=$term->slug . ",";
+		}
+	}
+	return rtrim($data,',');
+	}
+
 ?>

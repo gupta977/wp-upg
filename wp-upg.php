@@ -121,7 +121,7 @@ Domain Path: /languages
 			{
 				wp_enqueue_style('upg-fontawesome','https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 			}
-		
+			wp_enqueue_script( 'upg_tags', plugins_url() .'/'. upg_FOLDER.'/js/filter-tags.js' );
 		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' );
 		 wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jquery.zoom.js' );
 		  wp_enqueue_script( 'upg_delete', plugins_url() .'/'. upg_FOLDER.'/js/upg_delete.js' );

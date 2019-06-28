@@ -295,6 +295,18 @@ if(!empty($args))
 
 $query = new WP_Query($args); 
 
+//Get the tags only
+$tags_array = array();
+while ( $query->have_posts() ) : $query->the_post();
+ foreach(wp_get_post_terms($post->ID, 'upg_tag') as $t)
+  $tags_array[$t->slug] = $t->name; // this adds to the array in the form ['slug']=>'name'
+endwhile; 
+// de-dupe
+$tags_array = array_unique($tags_array);
+natcasesort($tags_array);
+//print_r($tags_array);
+
+
 $put="";
 ob_start ();
 if(file_exists(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_config.php"))
@@ -335,6 +347,7 @@ $theauthor=get_the_author();
 $image=upg_image_src('odude-thumb',$post);
 $image_large=upg_image_src('odude-large',$post);
 $image_medium=upg_image_src('odude-medium',$post);
+$tags=upg_get_taxonony_raw($post->ID, 'upg_tag');
 
 $post_status=get_post_status();
 

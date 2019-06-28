@@ -142,7 +142,7 @@ echo "Date Edited: ".$exif['IFD0']['DateTime']."<br>";
 	
 	</div>
 	
-	<div class="pure-u-1"> <?php echo upg_position2(); ?></div>	
+	<div class="pure-u-1"> <?php upg_list_tags($post); ?> <br> <?php echo upg_position2(); ?></div>	
 	
 </div>	
 </div>
