@@ -60,9 +60,9 @@ echo upg_author($author)."<br>";
 
 //var_dump($tags_array);
 if(isset($params['tags']) && $params['tags']=="on")
-echo upg_generate_tags($tags_array,'upg_tags','filter_tag');
+echo upg_generate_tags($tags_array,'upg_tags','filter_tag')."<br>";
 ?>
-<br>
+
  <div class="upg_classic_wrap">
  <div class="jquery-script-clear"></div>
 

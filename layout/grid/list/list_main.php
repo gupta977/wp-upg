@@ -1,4 +1,5 @@
 <div class="pure-u-1 pure-u-md-1-<?php echo $perrow; ?>" id="upg_<?php echo get_the_ID(); ?>">
+<section data-tags="<?php echo $tags; ?>">
 <div  class="obox">
 <div class="pure-g">
     <div class="pure-u-1 pure-u-md-1-5" style="text-align:center;"> 
@@ -70,4 +71,5 @@
 	</div>
 </div>
 </div>
+	</section>
 </div>

@@ -38,7 +38,9 @@ wp-upg div img:hover {
 if($author_show)
 if($user!="")
 echo upg_author($author)."<br>";
-
+if(isset($params['tags']) && $params['tags']=="on")
+echo upg_generate_tags($tags_array,'upg_tags','filter_tag')."<br>";
 ?>
+<div id="upg_gallery">
   <wp-upg>
 <div class='upg_masonry'>
