@@ -27,19 +27,17 @@ jQuery(function ($) {
 
     if (pos == 'show_all') {
       //alert("show all");
-      $(this)                                      // Get the clicked on button
-        .addClass('active')                        // Add the class of active
-        .siblings()                                // Get its siblings
-        .removeClass('active');                    // Remove active from siblings
+      $(".active").removeClass("active");
+      $(this).addClass('active');
       $imgs.hide().fadeIn(500);
     }
     else {
 
+      $(".active").removeClass("active");
+      $(this).addClass('active');                      // Make clicked item active
 
-      $(this)                                    // The button clicked on
-        .addClass('active')                      // Make clicked item active
-        .siblings()                              // Get its siblings
-        .removeClass('active');                  // Remove active from siblings
+
+
       $imgs                                      // With all of the images
         .hide()                                  // Hide them
         .filter(tagged[pos])                 // Find ones with this tag

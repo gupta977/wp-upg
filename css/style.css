@@ -59,6 +59,7 @@
 	box-shadow:-1px -1px 2px #004977;
 }
 
+
 .upg_tags a:hover {
   background:#555;
   color:#fff;
@@ -67,6 +68,16 @@
 .upg_tags a:hover:before {
 	border-color:transparent #555 transparent transparent;
 }
+
+.upg_tags a.active {
+  background:#555;
+  color:#fff;
+}
+.upg_tags a.active:before {
+  border-color:transparent #555 transparent transparent;
+}
+
+
 
 /* Text over image*/
 

@@ -1802,4 +1802,20 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 	return rtrim($data,',');
 	}
 
+	//Generate tags link
+	function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='filter_tag')
+	{
+		$taglink='<ul class="'.$upg_tag_class.'">';
+	if(count($tags_array)>1)
+	$taglink.='<li><a href="javascript:void(0)" id="show_all" class="'.$filter_class.'">Show All</a></li>';
+	if(count($tags_array)>2)
+	foreach($tags_array as $tags => $value)
+	{
+		$taglink.='<li><a href="javascript:void(0)" id="'.$tags.'" class="'.$filter_class.'">'.$value.'</a></li>';
+	}
+	$taglink.='</ul>';
+
+	return $taglink;
+	}
+
 ?>

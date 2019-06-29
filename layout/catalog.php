@@ -307,6 +307,7 @@ natcasesort($tags_array);
 //print_r($tags_array);
 
 
+
 $put="";
 ob_start ();
 if(file_exists(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_config.php"))

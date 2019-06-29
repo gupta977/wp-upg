@@ -59,20 +59,11 @@ if($user!="")
 echo upg_author($author)."<br>";
 
 //var_dump($tags_array);
-
-$taglink='<ul class="upg_tags">';
-$taglink.='<li><a href="javascript:void(0)" id="show_all" class="filter_tag">Show All</a></li>';
-foreach($tags_array as $tags => $value)
-{
-    $taglink.='<li><a href="javascript:void(0)" id="'.$tags.'" class="filter_tag">'.$value.'</a></li>';
-}
-$taglink.='</ul>';
-
-echo $taglink;
+if(isset($params['tags']) && $params['tags']=="on")
+echo upg_generate_tags($tags_array,'upg_tags','filter_tag');
 ?>
 <br>
  <div class="upg_classic_wrap">
  <div class="jquery-script-clear"></div>
 
  <div id="upg_gallery">
-    
