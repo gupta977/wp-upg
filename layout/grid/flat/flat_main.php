@@ -1,5 +1,4 @@
-<div class="pure-u-1-2 pure-u-md-1-<?php echo $perrow; ?>" id="upg_<?php echo get_the_ID(); ?>">
-<section data-tags="<?php echo $tags; ?>">
+<div class="pure-u-1-2 pure-u-md-1-<?php echo $perrow; ?> upg_gallery_child" id="upg_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
 <div class="margin-box" >
 <figure class="cap-left">
 <center>
@@ -34,5 +33,5 @@ if($post_status=="draft")
 			</center>
 			</figure>
 			</div>
-	</section>
+
   </div>

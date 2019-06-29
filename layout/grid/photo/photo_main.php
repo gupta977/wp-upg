@@ -1,4 +1,4 @@
-<section data-tags="<?php echo $tags; ?>">
+<div class='upg_gallery_child' data-tags="<?php echo $tags; ?>">
 <?php
 if($permalink=="0")
 			{
@@ -19,4 +19,4 @@ if($permalink=="0")
 			}
 		}
 ?>
-</section>
+</div>

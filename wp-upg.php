@@ -298,6 +298,7 @@ function upg_the_content($content)
 		$options = get_option('upg_settings');  
 		$current_post_id=get_the_ID();
 		$abc=include(upg_BASE_DIR.'layout/attach.php');
+
 		return $abc;
 
 	}

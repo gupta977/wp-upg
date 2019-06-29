@@ -47,7 +47,7 @@ $args = array(
 		 ),
 	),
 );
-
+//echo $post_id;
 
 $query = new WP_Query($args); 
 
@@ -67,9 +67,9 @@ $image=upg_image_src('odude-thumb',$post);
 //echo $post_id;
 $image_large=upg_image_src('odude-large',$post);
 $image_medium=upg_image_src('odude-medium',$post);
-
+$tags=upg_get_taxonony_raw($post->ID, 'upg_tag');
 $post_status=get_post_status();
-
+$image_size='thumb';
 $text=wpautop( stripslashes ($post->post_content));
 $text_excerpt=wpautop( stripslashes ($post->post_excerpt));
 

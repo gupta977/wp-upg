@@ -1,5 +1,4 @@
-<section data-tags="<?php echo $tags; ?>">
-<div class="upg_classic_responsive">
+<div class="upg_classic_responsive upg_gallery_child" data-tags="<?php echo $tags; ?>">
   <div class="upg_classic_gallery">
 	  
 	<?php
@@ -35,4 +34,3 @@
   </div>
 
   </div>
-  </section>

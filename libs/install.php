@@ -222,7 +222,7 @@ $settings = maybe_unserialize(get_option('upg_settings'));
             'hierarchical' => true,
             'menu_icon' =>upg_PLUGIN_URL.'/images/odude.png',
 			//'supports' => array('title','editor','author','excerpt','thumbnail','ptype','comments'/*,'custom-fields'*/) ,            
-            'supports' => array('title','editor','upg_cate','comments','thumbnail','author'/*,'custom-fields'*/) ,
+            'supports' => array('title','editor','upg_cate','upg_tag','comments','thumbnail','author'/*,'custom-fields'*/) ,
             'taxonomies' => array('upg_cate'),
 			'taxonomies' => array('upg_tag')
              

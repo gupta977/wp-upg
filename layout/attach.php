@@ -28,7 +28,13 @@ $postsperpage = $options['global_perpage'];
  	else
 		 $type = 'image';
 
-	
+		 if(isset($params['list_name']))
+		$list_name=$params['list_name'];
+	else
+		$list_name="";
+
+		$perrow = $options['global_perrow'];
+		if(isset($params['perrow'])&&$params['perrow']>0) $perrow = $params['perrow'];	
 		 
 $args = array(
 	'post_type' => 'upg',
@@ -50,7 +56,18 @@ if($query->have_posts())
 else
 	$count=0;
 
-
+//Get the tags only 
+$tags_array = array();
+while ( $query->have_posts() ) : $query->the_post();
+ foreach(wp_get_post_terms($post->ID, 'upg_tag') as $t)
+  $tags_array[$t->slug] = $t->name; // this adds to the array in the form ['slug']=>'name'
+endwhile; 
+// de-dupe
+$tags_array = array_unique($tags_array);
+natcasesort($tags_array);
+//print_r($tags_array);
+wp_reset_query();
+//	echo get_the_ID();		
 $put="";
 $layout=$options['global_layout'];
 ob_start ();

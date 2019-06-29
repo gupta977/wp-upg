@@ -3,7 +3,7 @@ jQuery(function ($) {
   jQuery(".filter_tag").click(function () {
 
 
-    var $imgs = $('#upg_gallery section');   // Store all images
+    var $imgs = $('#upg_gallery div.upg_gallery_child');   // Store all images
     var tagged = {};                                // Create tagged object
 
     $imgs.each(function () {                         // Loop through images and
