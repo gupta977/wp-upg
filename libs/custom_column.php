@@ -9,6 +9,7 @@ function add_new_upg_columns($upg_columns)
     $new_columns['title'] = __('Title', 'wp-upg');
     $new_columns['author'] = __('Author','wp-upg');
     $new_columns['upg_cate'] = __('Albums','wp-upg');
+    $new_columns['upg_tag'] = __('Tags','wp-upg');
     $new_columns['card_layout'] = __('Layout Name','wp-upg');
     $new_columns['Thumbnail'] = __('Thumbnail','wp-upg');
 	$new_columns['comments'] = __('<span class="vers"><div title="Comments" class="comment-grey-bubble">Comments</div></span>','wp-upg');
@@ -72,7 +73,33 @@ function manage_upg_columns($column_name, $id)
         }
 
         break;
-        
+        case 'upg_tag':
+        global $post;
+        $terms = get_the_terms( $id, 'upg_tag' );
+        /* If terms were found. */
+        if ( !empty( $terms ) ) {
+
+                $out = array();
+
+                /* Loop through each term, linking to the 'edit posts' page for the specific term. */
+                foreach ( $terms as $term ) {
+                        $out[] = sprintf( '<a href="%s">%s</a>',
+                                esc_url( add_query_arg( array( 'post_type' => $post->post_type, 'upg_tag' => $term->slug ), 'edit.php' ) ),
+                                esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, 'upg_tag', 'display' ) )
+                        );
+                }
+
+                /* Join the terms, separating them with a comma. */
+                echo join( ', ', $out );
+        }
+
+        /* If no terms were found, output a default message. */
+        else {
+                //_e( '--' , 'wp-upg');
+                echo "--";
+        }
+
+        break;
     
     default:
         break;
