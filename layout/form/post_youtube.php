@@ -57,12 +57,14 @@ else
 				
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+		if (isset($_POST['tags'])) $tags = $_POST['tags'];
+		
 		
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
 		
-		$result = upg_submit_url($title, $url, $content, $category,$preview);
+		$result = upg_submit_url($title, $url, $content, $category,$preview,'upg','upg_cate',$tags,'upg_tag');
 		
 		//var_dump($result);
 		

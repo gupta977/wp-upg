@@ -79,6 +79,11 @@ else
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
            <?php echo upg_droplist_category('','youtube'); ?>
         </div>
+		<div class="pure-control-group">
+            <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
+			<input name='tags' placeholder='write some tags' value=''>
+		     
+        </div>
 		
 		     <div class="pure-control-group">
             <label for="url"><?php _e('Youtube/Vimeo URL', 'wp-upg'); ?></label>

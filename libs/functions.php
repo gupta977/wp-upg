@@ -321,7 +321,7 @@ function upg_check_images($files)
 //$content: description 
 //$category: UPG album slug name
 //$preview: assign preview layout for current post.
-function upg_submit_url($title, $url, $content, $category,$preview)
+function upg_submit_url($title, $url, $content, $category,$preview, $post_type='upg', $taxonomy='upg_cate',$tags='',$tag_taxonomy='upg_tag')
 {
 	$newPost = array('id' => false, 'error' => false);
 	$newPost['error'][] ="";
@@ -360,7 +360,11 @@ function upg_submit_url($title, $url, $content, $category,$preview)
 		//if($category>0)
 		wp_set_object_terms($post_id, array($category),'upg_cate');
 
-		
+		//Set TAGS
+		if($tags!='')
+		wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+	
+
 		add_post_meta($post_id, 'youtube_url', $url);
 		
 		//Assign preview layout
@@ -455,7 +459,7 @@ function upg_update_post($post_id,$title, $files, $content, $category)
 //$contet= Description 
 //category =Album name
 //$preview = layout name for post detail page. Not required if lightbox is enabled.
-function upg_submit($title, $files, $content, $category, $preview , $post_type='upg', $taxonomy='upg_cate')
+function upg_submit($title, $files, $content, $category, $preview , $post_type='upg', $taxonomy='upg_cate',$tags='',$tag_taxonomy='upg_tag')
 {
 	$options = get_option('upg_settings');
 	$newPost = array('id' => false, 'error' => false);
@@ -519,7 +523,11 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 			//		wp_set_object_terms($post_id, array($category),'category');
 			//	else
 			//		wp_set_object_terms($post_id, array($category),'upg_cate');
-				
+
+			//Set TAGS
+			if($tags!='')
+			wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+		
 				$attach_ids = array();
 				if ($files && !empty($check_file_exist)) 
 				{
@@ -878,6 +886,8 @@ function upg_ajax_post()
 	else
     $category=upg_get_term_id($options['global_album'],'term_id');
 
+	if (isset($_POST['tags'])) $tags = $_POST['tags'];
+
 		if (isset($_POST['user-submitted-content']))  
 		$content  = upg_sanitize_content($_POST['user-submitted-content']);
 		else
@@ -917,7 +927,7 @@ function upg_ajax_post()
 		else
 			$url="";
 
-		$result = upg_submit_url($title, $url, $content, $category,$preview);
+		$result = upg_submit_url($title, $url, $content, $category,$preview, 'upg', 'upg_cate',$tags,'upg_tag');
 		if(isset($result['error'][1]['id']))
 		{
 			//echo "it is set";
@@ -1011,7 +1021,7 @@ function upg_ajax_post()
 			$response['srv_msg'] = "Image not found";
 		}
 
-		$result = upg_submit($title, $files, $content, $category, $preview);
+		$result = upg_submit($title, $files, $content, $category, $preview, 'upg', 'upg_cate',$tags,'upg_tag');
 
 		$post_id = false; 
 		if (isset($result['id'])) $post_id = $result['id'];

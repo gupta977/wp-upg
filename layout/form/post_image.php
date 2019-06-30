@@ -58,11 +58,14 @@ else
 		
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+		if (isset($_POST['tags'])) $tags = $_POST['tags'];
+		
 		
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
-		$result = upg_submit($title, $files, $content, $category, $preview);
+		$result = upg_submit($title, $files, $content, $category, $preview,'upg','upg_cate',$tags,'upg_tag');
+		
 		
 		$post_id = false; 
 		if (isset($result['id'])) $post_id = $result['id'];
