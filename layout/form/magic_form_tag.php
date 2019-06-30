@@ -18,6 +18,7 @@ $attr = shortcode_atts( array(
     'formnovalidate' => '',
     'novalidate' => '',
     'taxonomy' => 'upg_cate',
+    'tag_taxonomy' => 'upg_tag',
     'filter' => ''
 
 
@@ -53,6 +54,13 @@ else if($attr['type'] == 'category')
     {
         echo upg_droplist_album($attr['taxonomy'],'','');
     }
+}
+else if($attr['type'] == 'tag')
+{
+    echo $frm->addLabelFor("tags", $attr['title']);
+    // arguments: type, name, value
+    echo $frm->addInput('text', "tags", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
+
 }
 else if($attr['type'] == 'file')
 {
@@ -173,7 +181,7 @@ return $abc;
 /*
 [upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="video_url" taxonomy="upg_cate"] 
 
-[upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="wp_post" taxonomy="category"] 
+[upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="wp_post" taxonomy="category" tag_taxonomy="post_tag"] 
 
 [upg-form class="pure-form" title="Upload your media" name="my_form"] 
 
@@ -184,6 +192,8 @@ return $abc;
 [upg-form-tag type="file" title="Select file"]
 
 [upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
+
+[upg-form-tag type="tag" title="Enter tags" value="" placeholder="Tags separated by commas"]
 
 [upg-form-tag type="article" title="Main Desp"  placeholder="Content Plz" editor="true"]
 

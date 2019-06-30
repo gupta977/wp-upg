@@ -7,7 +7,8 @@ $attr = shortcode_atts( array(
     'name' => '',
     'id' =>get_the_ID(),
     'post_type' => 'upg_post',
-    'taxonomy' => 'upg_cate' 
+    'taxonomy' => 'upg_cate' ,
+    'tag_taxonomy' => 'upg_tag'
 ), $params );
 
 
@@ -53,6 +54,7 @@ else
     echo '<input type="hidden" name="action" value="upg_ajax_post">';
     echo '<input type="hidden" name="upload_type" value="'.$attr['post_type'].'">';
     echo '<input type="hidden" name="upload_taxonomy" value="'.$attr['taxonomy'].'">';
+    echo '<input type="hidden" name="tag_taxonomy" value="'.$attr['tag_taxonomy'].'">';
     echo '<input type="hidden" name="preview" value="'.$attr['preview'].'">';
     echo '<input type="hidden" name="form_name" value="'.$attr['name'].'">';
     echo '<input type="hidden" name="form_attach" value="'.$attr['id'].'">';

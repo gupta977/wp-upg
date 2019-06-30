@@ -81,7 +81,7 @@ else
         </div>
 		<div class="pure-control-group">
             <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
-			<input name='tags' placeholder='write some tags' value=''>
+			<input name='tags' placeholder='<?php _e('Tags separated by commas', 'wp-upg'); ?>' value=''>
 		     
         </div>
 		

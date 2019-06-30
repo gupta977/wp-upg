@@ -847,6 +847,7 @@ dashicons-visibility"></span></a>';
 	return $link;
 }
 
+//This is for [upg-form] form post submission only
 
 add_action("wp_ajax_upg_ajax_post", "upg_ajax_post");
 add_action("wp_ajax_nopriv_upg_ajax_post", "upg_ajax_post");
@@ -902,6 +903,11 @@ function upg_ajax_post()
 				 $post_taxonomy=$_POST['upload_taxonomy'];
 			else
 				$post_taxonomy='upg_cate';
+
+				if(isset($_POST['tag_taxonomy']))
+				$tag_taxonomy=$_POST['tag_taxonomy'];
+		   else
+			   $tag_taxonomy='upg_tag';
 
 	$content=str_replace("[","[[",$content);
 	$content=str_replace("]","]]",$content);
@@ -1105,7 +1111,7 @@ function upg_ajax_post()
 			}
 
 			
-			$result = upg_submit($title, $files, $content, $category, $preview,$post_type,$post_taxonomy);
+			$result = upg_submit($title, $files, $content, $category, $preview,$post_type,$post_taxonomy,$tags,$tag_taxonomy);
 			$post_id = false; 
 			if (isset($result['id'])) $post_id = $result['id'];
 			
@@ -1816,7 +1822,7 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 	function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='filter_tag')
 	{
 		$taglink='';
-		if(count($tags_array)>1)
+		if(count($tags_array)>2)
 		{
 			$taglink.='<ul class="'.$upg_tag_class.'">';
 			
