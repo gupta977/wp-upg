@@ -58,9 +58,9 @@ else
     echo '<input type="hidden" name="preview" value="'.$attr['preview'].'">';
     echo '<input type="hidden" name="form_name" value="'.$attr['name'].'">';
     echo '<input type="hidden" name="form_attach" value="'.$attr['id'].'">';
-
+   
     echo '</form></div>';
-    
+ 
 }
 
 $abc=ob_get_clean (); 

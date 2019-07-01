@@ -59,8 +59,16 @@ else if($attr['type'] == 'tag')
 {
     echo $frm->addLabelFor("tags", $attr['title']);
     // arguments: type, name, value
-    echo $frm->addInput('text', "tags", $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
-
+   echo $frm->addInput('', "tags", $attr['value'], array('id'=>'tags','placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
+   echo " <script>
+        jQuery(document).ready(function () 
+        {
+            
+            jQuery('#tags').tagsInput();
+        });
+        </script>";
+ 
+   
 }
 else if($attr['type'] == 'file')
 {

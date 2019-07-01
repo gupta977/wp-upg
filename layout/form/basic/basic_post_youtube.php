@@ -81,7 +81,7 @@ else
         </div>
 		<div class="pure-control-group">
             <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
-			<input name='tags' placeholder='<?php _e('Tags separated by commas', 'wp-upg'); ?>' value=''>
+			<input name='tags' id="tags" placeholder='<?php _e('Tags separated by commas', 'wp-upg'); ?>' value=''>
 		     
         </div>
 		
@@ -151,3 +151,10 @@ else
 </fieldset>
 </form>	
 </div>
+<script>
+jQuery(document).ready(function () 
+{
+	
+	jQuery('#tags').tagsInput();
+});
+</script>

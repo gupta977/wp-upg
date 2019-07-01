@@ -58,6 +58,11 @@
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
            <?php echo upg_droplist_category(upg_get_album($post,'term_id'),'youtube'); ?>
+		</div>
+		<div class="pure-control-group">
+            <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
+			<input name='tags' id="tags" placeholder='<?php _e('Tags separated by commas', 'wp-upg'); ?>' value='<?php echo upg_get_taxonony_raw($post->ID, 'upg_tag') ; ?>'>
+		     
         </div>
 		<?php
 		//Display 5 custom fields loop
@@ -128,3 +133,10 @@
 		</div>
 </fieldset>
 </form>	
+<script>
+jQuery(document).ready(function () 
+{
+	
+	jQuery('#tags').tagsInput();
+});
+</script>

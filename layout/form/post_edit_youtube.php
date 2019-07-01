@@ -59,12 +59,13 @@ else
 				
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+		if (isset($_POST['tags'])) $tags = $_POST['tags'];
 		
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
 		
-		$result = upg_update_post($post_id,$title, '', $content, $category);
+		$result = upg_update_post($post_id,$title, '', $content, $category,$tags);
 		
 		if($result)
 		{
@@ -79,6 +80,16 @@ else
 			{
 				update_post_meta($post_id, 'youtube_url', $url);
 			}
+
+			$edit_link=esc_url( add_query_arg( 'upg_id', $post_id, get_permalink(upg_get_option( 'edit_upg_page','upg_form', '0' )) ) );
+					
+					echo "<a href='".$edit_link."' class=\"pure-button\">".__('Edit','wp-upg')."</a> ";
+
+					if(upg_get_option( 'my_gallery','upg_gallery', '0' )!='0')
+					{
+    					echo "<a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+					}
+					
 		}
 		else
 		{

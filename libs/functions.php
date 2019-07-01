@@ -379,7 +379,7 @@ function upg_submit_url($title, $url, $content, $category,$preview, $post_type='
 
 
 //Update/edit the post with reference of post ID
-function upg_update_post($post_id,$title, $files, $content, $category)
+function upg_update_post($post_id,$title, $files, $content, $category,$tags='')
 {
 	$options = get_option('upg_settings');
 	$updatePost['error'][] ="";
@@ -434,6 +434,10 @@ function upg_update_post($post_id,$title, $files, $content, $category)
 		//Set category
 		if ($category=='-1') $updatePost['error'][] = 'required-category';
 		wp_set_object_terms($post_id, array($category),'upg_cate');
+
+		//Set TAGS
+		if($tags!='')
+		wp_set_post_terms( $post_id, $tags, 'upg_tag');
 	
 			foreach ($updatePost['error'] as $e) 
 			{
@@ -1816,11 +1820,11 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 		}
 	}
 	return rtrim($data,',');
-	}
+}
 
 	//Generate tags link
-	function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='filter_tag')
-	{
+function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='filter_tag')
+{
 		$taglink='';
 		if(count($tags_array)>2)
 		{
@@ -1836,6 +1840,6 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 		}
 
 	return $taglink;
-	}
+}
 
 ?>

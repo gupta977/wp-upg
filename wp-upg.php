@@ -108,7 +108,7 @@ Domain Path: /languages
 		 if(!isset($options['colorbox']) || $options['colorbox']=='0')
 		 {
 		 	wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/colorbox.css','', '1', 'all');
-		 	wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.colorbox-min.js' ,array( 'jquery' ), '1', true );
+		 	wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.colorbox-min.js' ,array( 'jquery' ), null, true );
 		 }
 		
 		if(!isset($options['purecss']) || $options['purecss']=='0')
@@ -121,6 +121,8 @@ Domain Path: /languages
 			{
 				wp_enqueue_style('upg-fontawesome','https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 			}
+			wp_enqueue_script( 'upg_input_tags', plugins_url() .'/'. upg_FOLDER.'/js/jquery.tagsinput.js');
+			//wp_enqueue_script('jquery');
 			wp_enqueue_script( 'upg_tags', plugins_url() .'/'. upg_FOLDER.'/js/filter-tags.js' );
 		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' );
 		 wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jquery.zoom.js' );

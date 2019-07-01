@@ -122,3 +122,10 @@
 </div>
 </fieldset>
 </form>
+<script>
+jQuery(document).ready(function () 
+{
+	
+	jQuery('#tags').tagsInput();
+});
+</script>

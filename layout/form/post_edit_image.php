@@ -64,11 +64,12 @@ else
 		
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+		if (isset($_POST['tags'])) $tags = $_POST['tags'];
 		
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
-		$result = upg_update_post($post_id,$title, $files, $content, $category);
+		$result = upg_update_post($post_id,$title, $files, $content, $category,$tags);
 		
 		if($result)
 		{
