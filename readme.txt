@@ -9,15 +9,19 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Visitors submitted content Gallery. Easy user generated content.
+Guests can submit post, images, videos and convert them into gallery.
 
 == Description ==
 = UPG - User Post Gallery =
 
-User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend.
-Submitted post can be shown inside BuddyPress, ultimate-member plugins in a user profile tab as a gallery.
+User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend/backend.
 
-UPG form can be used as frontend uploader for wordpress post and other custom post type. 
+<a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a> can be used as frontend uploader for wordpress post and other custom post type. 
+
+Generate full responsive gallery based on categories, tags, username and many more. 
+Let user select album, generate tags, upload pictures,video from frontend.
+
+Submitted post can be also be shown inside BuddyPress, ultimate-member plugins in a user profile tab.
 
 That's all there is to it! Your site now can accept user generated content. Everything is super easy to customize via Plugin Settings page.
 
@@ -40,6 +44,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 
 == Submission Form [upg-post] ==
 * Registered & visitors can post images/article/youtube video url from the front end.
+* Create own tags from frontend.
 * Ajax powered submission form. Form submitted on same place. No more form redirection. 
 * Options of static page form submission. Best fit if javascript is not required.
 * Redirect to selected page after form is submitted. (upg-pro)
@@ -53,13 +58,15 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 
 == Submission form [upg-form] ==
 * With this shortcode user can submit content to wordpress post or other post types.
-* It can be used as frontend uploded for other plugins.
+* It can be used as frontend uploader for other plugins.
+* User can select existing album and generate own tags from frontend.
 * Special shortocde to generate html input fields.
 * Check <a href="https://odude.com/upg-user-post-gallery/upg-form/">this url</a> for detail explanation 
 
 
 == Admin Post Management ==
 * Administrator can show or hide particular categories/albums from the frontend.
+* Completely stop frontend submission and post it from backend by Administrator.
 * Controls over custom fields to be displayed at backend & frontend.
 * Options to set as approval of post/images before it is displayed at the frontend.
 * Ability to approve/draft post in bulk
@@ -77,6 +84,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 == Display submitted post ==
 * Responsive article/image/YouTube/Vimeo gallery for mobile & tablets.
 * Automatically & manually display all submitted content on the frontend.
+* Generate gallery inside BuddyPress, ultimate-member plugins in a user profile tab.
 * Content & images can also be posted from the backend with additional options.
 * External plugins shortcodes can be added near UPG post.
 * Options for both lightbox and static page (Preview Page).

@@ -521,13 +521,9 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 				//echo "Successfully added $x <hr>";
 				$post_id = $newPost['id'];
 
-			//if($post_type=='upg')
+			
 					wp_set_object_terms($post_id, array($category),$taxonomy);
-			//	else if($post_type=='wp_post')
-			//		wp_set_object_terms($post_id, array($category),'category');
-			//	else
-			//		wp_set_object_terms($post_id, array($category),'upg_cate');
-
+			
 			//Set TAGS
 			if($tags!='')
 			wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
@@ -1101,7 +1097,7 @@ function upg_ajax_post()
 	}
 	else 
 	{
-		//Submit into wordpress post
+		//Submit into wordpress post or custom post type
 			$files = array();
 			if (isset($_FILES['user-submitted-image']))
 			{
@@ -1133,10 +1129,36 @@ function upg_ajax_post()
 				
 				if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 				{
+					unset($_POST['user-submitted-title']);
+					unset($_POST['user-submitted-content']);
+					unset($_POST['cat']);
+					unset($_POST['tags']);
+					unset($_POST['upg-nonce']);
+					unset($_POST['action']);
+					unset($_POST['upload_type']);
+					unset($_POST['upload_taxonomy']);
+					unset($_POST['tag_taxonomy']);
+					unset($_POST['preview']);
+					unset($_POST['form_name']);
+					unset($_POST['form_attach']);
+
+
+					 ob_start();
+					var_dump($_POST);
+					$result = ob_get_clean();
+					upg_log($result); 
+					
+					foreach ($_POST as $key => $value) 
+					{
+
+						//echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+					
+						add_post_meta($post_id, $key, $value);
+					}
 					
 				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
 				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
-				$response['msg'] = "<div class='upg_success'>".__('Successfully posted.','wp-upg')."</div>";
+				$response['msg'] = "<div class='upg_success'>".__('Successfully posted....','wp-upg')."</div>";
 				}
 			else
 			{

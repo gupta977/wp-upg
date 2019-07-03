@@ -179,17 +179,44 @@ function upg_shortcode()
                     <li>This form is only for submit, it cannot be used for edit/modify form. </li>
                     <li>Form will always use Ajax. It will not redirect the page.</li>
             </ol>
-            <h4>Scenario 1 – Display form only with title field.</h4>
+            <h4>Scenario 1 – Form to submit into UPG</h4>
             
             <code>
-            [upg-form class="pure-form" title="Upload your media" name="my_form"] 
+            [upg-form class="pure-form" title="Submit to UPG" name="my_form" taxonomy="upg_cate" tag_taxonomy="upg_tag"] 
             <br>
-            [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title" required="true"]
+            [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
+            <br>
+            [upg-form-tag type="category" title="Select category" taxonomy="upg_cate" ]
+            <br>
+            [upg-form-tag type="tag" title="Insert tag"]
+            <br>
+            [upg-form-tag type="article" title="Description"  placeholder="Content Plz"]
+            <br>
+            [upg-form-tag type="file" title="Select file"]
             <br>
             [upg-form-tag type="submit" name="submit" value="Submit Now"]
             <br>
             [/upg-form]
             
+            </code>
+
+            <h4>Scenario 2 - Form to submit post into WordPress. </h4>
+            <code>
+            [upg-form class="pure-form pure-form-stacked" title="Submit to Wordpress" name="my_form" post_type="wp_post" taxonomy="category" tag_taxonomy="post_tag"] 
+            <br>
+            [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
+            <br>
+            [upg-form-tag type="category" title="Select category" taxonomy="category" ]
+            <br>
+            [upg-form-tag type="tag" title="Insert tag"]
+            <br>
+            [upg-form-tag type="article" title="Description"  placeholder="Content Plz"]
+            <br>
+            [upg-form-tag type="file" title="Select file"]
+            <br>
+            [upg-form-tag type="submit" name="submit" value="Submit Now"]
+            <br>
+            [/upg-form]
             </code>
 <br>
             
