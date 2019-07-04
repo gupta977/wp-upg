@@ -14,7 +14,7 @@ Guests can submit post, images, videos and convert them into gallery.
 == Description ==
 = UPG - User Post Gallery =
 
-User Post Gallery (UPG) is the easy way to allow visitors/guest to post/edit images, article, YouTube, Vimeo videos without registration from the frontend/backend.
+User Post Gallery (UPG) is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo , woocommerce product without registration from the frontend/backend.
 
 <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a> can be used as frontend uploader for wordpress post and other custom post type. 
 

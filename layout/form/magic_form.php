@@ -62,7 +62,22 @@ else
     echo '</form></div>';
  
 }
+//to update price of woocommerce
+/* function wpufe_update_post_price( $post_id ) 
+{
 
+    $regular_price = get_post_meta( $post_id, ‘_regular_price’, true );
+    $sale_price = get_post_meta( $post_id, ‘_sale_price’, true );
+
+    update_post_meta( $post_id, ‘_price’, $regular_price );
+
+    if ( !empty( $sale_price ) ) {
+
+        update_post_meta( $post_id, ‘_price’, $sale_price );
+
+    }
+
+} */
 $abc=ob_get_clean (); 
 return $abc;
 ?>

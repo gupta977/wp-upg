@@ -206,6 +206,8 @@ function upg_prepare_post($title, $content, $post_type='upg')
 	$postData['post_title']   = $title;
 	$postData['post_content'] = $content;
 	$postData['post_author']  = upg_get_author();
+
+	
 	
 	if($post_type=='upg')
 		$postData['post_type']  = 'upg';
@@ -213,6 +215,8 @@ function upg_prepare_post($title, $content, $post_type='upg')
 		$postData['post_type']  = '';
 	else
 		$postData['post_type']  = $post_type;
+
+		//upg_log($content."---".$post_type);
 	
 	if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
 	$postData['post_status'] = 'publish';
@@ -1126,10 +1130,8 @@ function upg_ajax_post()
 				
 				do_action( "upg_submit_complete");
 				$response['type'] = "success";
-				
-				if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
-				{
-					unset($_POST['user-submitted-title']);
+
+				unset($_POST['user-submitted-title']);
 					unset($_POST['user-submitted-content']);
 					unset($_POST['cat']);
 					unset($_POST['tags']);
@@ -1143,11 +1145,11 @@ function upg_ajax_post()
 					unset($_POST['form_attach']);
 
 
-					 ob_start();
+					/*  ob_start();
 					var_dump($_POST);
 					$result = ob_get_clean();
-					upg_log($result); 
-					
+					upg_log($result);  
+					 */
 					foreach ($_POST as $key => $value) 
 					{
 
@@ -1155,8 +1157,10 @@ function upg_ajax_post()
 					
 						add_post_meta($post_id, $key, $value);
 					}
-					
-				//echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
+
+				if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
+				{
+				
 				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
 				$response['msg'] = "<div class='upg_success'>".__('Successfully posted....','wp-upg')."</div>";
 				}

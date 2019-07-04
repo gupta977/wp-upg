@@ -1,6 +1,7 @@
 <?php
 $attr = shortcode_atts( array(
     'type' => 'text',
+    'new_type' => 'number',
     'class' => '',
     'title' => '',
     'name' => '',
@@ -120,6 +121,14 @@ else if($attr['type'] == 'text')
     echo $frm->addLabelFor($attr['name'], $attr['title']);
     // arguments: type, name, value
     echo $frm->addInput('text', $attr['name'], $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
+}
+else if($attr['type'] == 'other')
+{
+    //if($attr['placeholder']=='')
+    // arguments: for (id of associated form element), text
+    echo $frm->addLabelFor($attr['name'], $attr['title']);
+    // arguments: type, name, value
+    echo $frm->addInput($attr['new_type'], $attr['name'], $attr['value'], array('placeholder'=>$attr['placeholder'],'class'=>$attr['class'],'required'=>$attr['required']));
 }
 else if($attr['type']=='submit')
 {
