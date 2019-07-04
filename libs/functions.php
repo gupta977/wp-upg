@@ -365,8 +365,11 @@ function upg_submit_url($title, $url, $content, $category,$preview, $post_type='
 		wp_set_object_terms($post_id, array($category),'upg_cate');
 
 		//Set TAGS
-		if($tags!='')
-		wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+		if ( taxonomy_exists( $tag_taxonomy ) ) 
+		{
+			if($tags!='')
+			wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+		}
 	
 
 		add_post_meta($post_id, 'youtube_url', $url);
@@ -528,9 +531,12 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 			
 					wp_set_object_terms($post_id, array($category),$taxonomy);
 			
-			//Set TAGS
-			if($tags!='')
-			wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+			if ( taxonomy_exists( $tag_taxonomy ) ) 
+			{
+				//Set TAGS
+				if($tags!='')
+				wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
+			}
 		
 				$attach_ids = array();
 				if ($files && !empty($check_file_exist)) 
@@ -901,7 +907,7 @@ function upg_ajax_post()
 		 if(isset($_POST['upload_type']))
 				 $post_type=$_POST['upload_type'];
 			else
-				$post_type='upg_post';
+				$post_type='upg';
 
 			if(isset($_POST['upload_taxonomy']))
 				 $post_taxonomy=$_POST['upload_taxonomy'];
@@ -1015,7 +1021,7 @@ function upg_ajax_post()
 		
 		
 	}
-	else if($post_type=="upg_post")
+	else if($post_type=="upg")
 	{
 		//Uploading Image
 

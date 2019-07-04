@@ -6,7 +6,7 @@ $attr = shortcode_atts( array(
     'preview' => $options['global_media_layout'],
     'name' => '',
     'id' =>get_the_ID(),
-    'post_type' => 'upg_post',
+    'post_type' => 'upg',
     'taxonomy' => 'upg_cate' ,
     'tag_taxonomy' => 'upg_tag'
 ), $params );
@@ -14,6 +14,8 @@ $attr = shortcode_atts( array(
 
 $abc="";
 ob_start ();
+if ( post_type_exists( $attr['post_type'] ) ) 
+{
 if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonce')) 
 {
     //Submit in USER POST GALLERY WP-UPG Plugin    
@@ -61,6 +63,11 @@ else
    
     echo '</form></div>';
  
+}
+}
+else
+{
+    echo $attr['post_type']." post_type specified does not exists.";
 }
 //to update price of woocommerce
 /* function wpufe_update_post_price( $post_id ) 

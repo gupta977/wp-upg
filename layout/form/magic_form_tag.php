@@ -44,16 +44,19 @@ else if($attr['type'] == 'video_url')
 }
 else if($attr['type'] == 'category')
 {
-    echo $frm->addLabelFor('cat', $attr['title']);
-    if($attr['taxonomy']=='upg_cate')
+    if(taxonomy_exists( 'category' ))
     {
-       // echo upg_droplist_album('upg_cate','',upg_hidden_category());
-       upg_droplist_category('',$attr['filter']);
+        echo $frm->addLabelFor('cat', $attr['title']);
+        if($attr['taxonomy']=='upg_cate')
+        {
+        // echo upg_droplist_album('upg_cate','',upg_hidden_category());
+        upg_droplist_category('',$attr['filter']);
 
-    }
-    else
-    {
-        echo upg_droplist_album($attr['taxonomy'],'','');
+        }
+        else
+        {
+            echo upg_droplist_album($attr['taxonomy'],'','');
+        }
     }
 }
 else if($attr['type'] == 'tag')
