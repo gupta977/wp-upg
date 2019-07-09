@@ -97,6 +97,13 @@ class upg_quick_setting {
                     'type'    => 'pages',
                     'default' => upg_get_option( 'my_gallery','upg_settings', '0' ),
                 ),
+                array(
+                    'name'  => 'gallery_tags',
+                    'label' => __( 'Enable Gallery Tags', 'wp-upg' ),
+                    'desc'  => __( 'It will show tags assigned above the gallery. [upg-list tag_show="on"]', 'wp-upg' ),
+                    'type'  => 'checkbox',
+                    'default' => upg_get_option( 'gallery_tags','upg_settings', 'off' ),
+                ),
                 
                /*  array(
                     'name'        => 'heading2',
@@ -117,14 +124,14 @@ class upg_quick_setting {
                 array(
                     'name'    => 'post_image_page',
                     'label'   => __( 'Select submission form of Image page', 'wp-upg' ),
-                    'desc'    => __( 'Page must contain [upg-post type="image"] shortcode.', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-post type="image"] or full [upg-form] shortcode.', 'wp-upg' ),
                     'type'    => 'pages',
                     'default' => upg_get_option( 'post_image_page','upg_settings', '0' ),
                 ),
                 array(
                     'name'    => 'post_youtube_page',
                     'label'   => __( 'Select submission form of Youtube/Vimeo page', 'wp-upg' ),
-                    'desc'    => __( 'Page must contain [upg-post type="youtube"] shortcode.', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-post type="youtube"] or full [upg-form] shortcode.', 'wp-upg' ),
                     'type'    => 'pages',
                     'default' => upg_get_option( 'post_youtube_page','upg_settings', '0' ),
                 ),

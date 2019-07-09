@@ -45,7 +45,7 @@ echo upg_author($author)."<br>";
 ?>
 <?php
     do_action( "upg_grip_top");
-    if(isset($params['tags']) && $params['tags']=="on")
+    if($show_tag=="on")
 echo upg_generate_tags($tags_array,'upg_tags','filter_tag')."<br>";
 ?>
 <div id="upg_gallery">

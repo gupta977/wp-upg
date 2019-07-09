@@ -59,7 +59,7 @@ if($user!="")
 echo upg_author($author)."<br>";
 
 //var_dump($tags_array);
-if(isset($params['tags']) && $params['tags']=="on")
+if($show_tag=="on")
 echo upg_generate_tags($tags_array,'upg_tags','filter_tag')."<br>";
 ?>
 

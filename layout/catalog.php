@@ -80,6 +80,7 @@ $orderby=$options['global_order'];
 $page=$options['global_page'];
 //$popup=$options['global_popup'];
 $popup=upg_get_option( 'global_popup','upg_preview', 'on' );
+$show_tag=upg_get_option( 'gallery_tags','upg_gallery', 'off' );
 $album="";
 $post_id=get_the_ID();
 
@@ -164,11 +165,11 @@ else
 	//echo "default from global";
 	}
 
-
+	
 if(isset($params['orderby'])) $orderby = $params['orderby'];
 if(isset($params['page'])) $page = $params['page'];
 if(isset($params['popup'])) $popup = $params['popup'];
-
+if(isset($params['tag_show'])) $show_tag = $params['tag_show'];
 
 
 //If upg_layout is mentioned in url, it will ignore currently set layout.

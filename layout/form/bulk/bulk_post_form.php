@@ -15,7 +15,7 @@
         {
             //Empty function for free UPG version.
         }
-        echo "Bulk layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>. <hr><b>Image droped here will not get updated. It is only for demo propose. </b>";
+        echo "Bulk layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>. <hr><b>Image dropped here will not get uploaded. </b>";
     }
 
     $upload_dir = wp_upload_dir();

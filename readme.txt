@@ -9,12 +9,12 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Guests can submit post, images, videos and convert them into gallery.
+Guests can submit article, images, videos, products into gallery.
 
 == Description ==
 = UPG - User Post Gallery =
 
-User Post Gallery (UPG) is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo , woocommerce product without registration from the frontend/backend.
+UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo , woocommerce product without registration from the frontend/backend.
 
 <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a> can be used as frontend uploader for wordpress post and other custom post type. 
 
@@ -31,11 +31,11 @@ Power of <a href="https://odude.com/upg-user-post-gallery/upg-layouts/">layouts<
 There are 2 types of UPG Gallery. 
 
 = 1. Embed Gallery =
-Embed gallery for WordPress post use shortcode [upg-attach] into the content area where ever required.
-The image/video url posted on this post will not be visible on other post. 
-It is full of ajax, hence no page refresh is required during submission and page navigation.
-Lazy Load more button is available and images can be previewed in lightbox/popup 
-Optimized pre loading of images
+Embed gallery for WordPress post uses shortcode [upg-attach] into the content area where ever required.
+The image/video url posted on this post will not be visible on other places.
+It is full of ajax, hence no page refresh occurred during submission and page navigation.
+'Lazy Load more' button is available and images can be previewed in lightbox/popup 
+Optimized for pre loading of images
 
 = 2. Primary Gallery =
 It is independent gallery. All the UPG post submitted on different post can be visible at [upg-list].
@@ -223,6 +223,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.91 =
+* Full of tags in form, gallery & preview pages.
+* updated [upg-form] to support woocommerce products
+
 = 1.90 =
 * [upg-form] shortcode is in action.
 
