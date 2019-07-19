@@ -1,4 +1,5 @@
 <?php
+//[upg-post] include file for youtube
 global $post; 
 $options = get_option('upg_settings');
 

@@ -1168,7 +1168,7 @@ function upg_ajax_post()
 				{
 				
 				//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
-				$response['msg'] = "<div class='upg_success'>".__('Successfully posted....','wp-upg')."</div>";
+				$response['msg'] = "<div class='upg_success'>".__('Successfully posted','wp-upg').".."."</div>";
 				}
 			else
 			{

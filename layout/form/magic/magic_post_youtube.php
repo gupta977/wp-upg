@@ -3,8 +3,9 @@
 	<div id='upg_loader' style='display: none;'>
 		<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
 	</div>
-	
-   <div class='upg_response'></div>
+	<div class='upg_response'></div>
+<!-- Image loader -->
+</div>
 <div id="upg_form">
 <?php
 if($upg_ajax)
@@ -20,19 +21,20 @@ else
 
 <fieldset>
         <div class="pure-control-group">
-            <label for="name"><?php _e('Title', 'wp-upg'); ?></label>
+            <label for="name"><?php _e('Video Title', 'wp-upg'); ?></label>
             <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
         </div>
-            
+
+           
+           
 		   
 		   <?php 
-		    if($options['primary_show_formshow_desp']=='1')
+		   if($options['primary_show_formshow_desp']=='1')
 			{
-				
 		   if ($editor) 
 		   { ?>
 				<div class="pure-controls">
-					<div class="upg_text-editor">
+					<div class="usp_text-editor">
 			<?php $settings = array(
 				    'wpautop'          => true,  // enable rich text editor
 				    'media_buttons'    => false,  // enable add media button
@@ -57,68 +59,42 @@ else
 			{ 
 		?>
 		  <div class="pure-control-group">
-				 <label for="desp"><?php _e('Description', 'wp-upg'); ?></label>
+				 <label for="desp"><?php _e('Video Description', 'wp-upg'); ?></label>
 			
-			<textarea class="pure-input-1 pure-input-rounded" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'wp-upg'); ?>" required></textarea>
+			<textarea class="pure-input-1 pure-input-rounded" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'usp'); ?>" required></textarea>
 			  </div>
 			<?php 
+			} 
 			}
-
-				}
 			else
 			{
 				echo "<input type='hidden' name='user-submitted-content' value='No Information'> ";
 			}
-						?>
-		  
-		 
-		 
-		
+			
+			?>
+		   
+		   
+      
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
-           <?php echo upg_droplist_category('','image'); ?>
-		     
+           <?php echo upg_droplist_category('','youtube'); ?>
         </div>
 		<div class="pure-control-group">
             <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
 			<input name='tags' id="tags" placeholder='<?php _e('Tags separated by commas', 'wp-upg'); ?>' value=''>
 		     
         </div>
-
-		<div class="pure-control-group">
 		
-            <?php
-			$put="";
-			ob_start ();
-				?>
-					<label for="file"><?php _e('Select Image', 'wp-upg'); ?></label>
-				  <input class="pure-input-1-2 pure-input-rounded" accept="image/*" id="file" name="user-submitted-image[]" type="file" size="25" 
-				  <?php
-					if($options['image_required']=='1')
-					{
-						echo "required";
-					}
-					?>>
-				
-				<?php
-			$put=ob_get_clean (); 
-			//Bulk upload will not work if ajax submit is enabled.
-			if(!$upg_ajax)
-				echo apply_filters('upg_bulk_limit_submit_form',$put);
-			else 
-				echo $put;
+		     <div class="pure-control-group">
+            <label for="url"><?php _e('Youtube/Vimeo URL', 'wp-upg'); ?></label>
+            <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="" placeholder="<?php _e('copy/paste Video URL', 'wp-upg'); ?>" required>
+<ul>
+		  <li><?php echo __('Only URL from YouTube & Vimeo is allowed','wp-upg'); ?><br> Eg. <i>https://www.youtube.com/watch?v=QU_V52Ou04Q <br>
+		 &nbsp; &nbsp;&nbsp;&nbsp; https://vimeo.com/channels/staffpicks/261025185?autoplay=1</i></li>
+		  
+		  </ul>       
+	   </div>
 		
-
-			?>
-			
-		
-		</div>
-	
-		  <ul>
-		  <li><?php echo _e('Only picture files are allowed','wp-upg') ?></li>
-		  <li><?php echo _e('Maximum upload file size limit:','wp-upg') ?> <b><?php //echo ini_get('post_max_size'); ?> <?php echo size_format( wp_max_upload_size() ); ?></b></li>
-		  </ul>
-        
 		
 		<?php
 		//Display 5 custom fields loop
@@ -156,25 +132,23 @@ else
 		?>
 		
 		
-			<?php
+		
+		<?php
 		do_action( "upg_submit_form");
 		?>
 		
+		
 		 <div class="pure-controls">
-		 <button type="submit" name="SN" class="pure-button pure-button-primary"><i class="fas fa-file-upload"></i> <?php esc_html_e( 'Post', 'wp-upg' ); ?></button>
-			<button type="reset" value="<?php esc_html_e( 'Reset', 'wp-upg' ); ?>" class="pure-button"><?php esc_html_e( 'Reset', 'wp-upg' ); ?></button>
-			
+		  <input type="reset">
+			<button type="submit" name="SN" class="pure-button pure-button-primary"><i class="fab fa-youtube"></i> <?php esc_html_e( 'Submit URL', 'wp-upg' ); ?></button>
 			<?php wp_nonce_field('upg-nonce', 'upg-nonce', false); ?>
 			<input type="hidden" name="action" value="upg_ajax_post">
-			<input type="hidden" name="upload_type" value="upg">
+			<input type="hidden" name="upload_type" value="video_url">
 			<input type="hidden" name="preview" value="<?php echo $preview; ?>">
 			<input type="hidden" name="form_name" value="<?php echo $form_name; ?>">
 			<input type="hidden" name="form_attach" value="<?php echo $form_attach_id; ?>">
-			
-	
 		</div>
 </fieldset>
-
 </form>	
 </div>
 <script>

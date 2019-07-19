@@ -104,7 +104,7 @@ else
 	
 			<?php wp_nonce_field('upg-nonce', 'upg-nonce', false); ?>
 			<input type="hidden" name="action" value="upg_ajax_post">
-			<input type="hidden" name="upload_type" value="upg_post">
+			<input type="hidden" name="upload_type" value="upg">
 			<input type="hidden" name="preview" value="<?php echo $preview; ?>">
 			<input type="hidden" name="form_name" value="<?php echo $form_name; ?>">
 			<input type="hidden" name="form_attach" value="<?php echo $form_attach_id; ?>">

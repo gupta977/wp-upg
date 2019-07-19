@@ -1,4 +1,5 @@
 <?php
+//[upg-post] include file for image submission
 global $post; 
 $options = get_option('upg_settings');
 
@@ -134,10 +135,7 @@ else
 			
 		} 
 		
-	?>
-
-	<?php
-}
+	}
 }
 
 
@@ -161,11 +159,30 @@ if($layout=="personal")
 }
 else
 {
-	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php"))
-		include(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php");
+	
+	//echo do_shortcode($shor);
+	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php";
+	if(file_exists($inc_file))
+	{
+		if( strpos(file_get_contents($inc_file),'[upg-form') !== false)
+		{
+			
+			$file_shortcode = file_get_contents($inc_file, true);
+			echo do_shortcode($file_shortcode);
+		
+	   } 
+	   else
+	   {
+			include($inc_file);
+	   }
+		
+	}
 	else
+	{
 		echo __('Layout Not Found. Check settings.','wp-upg').": ".$layout;
-}
+	}
+		
+	}
 	
 //ob_flush();	
 }

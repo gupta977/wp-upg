@@ -320,6 +320,15 @@ function upg_the_content($content)
 		return $abc;
 
 	}
+
+	//Generate UPG classic form [upg-post-form]
+	function upg_post_form($params, $content = null )
+	{
+		$options = get_option('upg_settings');  
+		$abc=include(upg_BASE_DIR.'layout/form/magic_form.php');
+		return $abc;
+
+	}
 	
 		//Front end User Edit Post
 	function upg_user_edit_form($params)
@@ -377,7 +386,7 @@ function upg_the_content($content)
 	}
 	
 	
-	//Front end User Post
+	//Front end User Post [upg-post]
 	function upg_user_post_form($params)
 	{
 		$options = get_option('upg_settings');

@@ -8,7 +8,8 @@ $attr = shortcode_atts( array(
     'id' =>get_the_ID(),
     'post_type' => 'upg',
     'taxonomy' => 'upg_cate' ,
-    'tag_taxonomy' => 'upg_tag'
+    'tag_taxonomy' => 'upg_tag',
+    'ajax' => 'true'
 ), $params );
 
 
@@ -19,11 +20,108 @@ if ( post_type_exists( $attr['post_type'] ) )
 if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonce')) 
 {
     //Submit in USER POST GALLERY WP-UPG Plugin    
-    //if($attr['post_type']=='upg_post')
-    //{
-        echo "Something is wrong with your submission. Please check if your browser support java-scripts.";
-        
-   // }
+    if($attr['post_type']=='upg')
+    {
+        //**************/
+       $title=''; $author = ''; $url = ''; $email = ''; $tags = ''; $captcha = ''; $verify = ''; $content = ''; $category = ''; 
+	
+		$files = array();
+		if (isset($_FILES['user-submitted-image']))
+		{
+			$files = $_FILES['user-submitted-image'];
+		
+		}
+		
+		$preview=$attr['preview'];
+		$title=sanitize_text_field($_POST['user-submitted-title']);
+		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
+		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
+		if (isset($_POST['tags'])) $tags = $_POST['tags'];
+		
+		
+		$content=str_replace("[","[[",$content);
+		$content=str_replace("]","]]",$content);
+		
+		$result = upg_submit($title, $files, $content, $category, $preview,'upg','upg_cate',$tags,'upg_tag');
+		
+		
+		$post_id = false; 
+		if (isset($result['id'])) $post_id = $result['id'];
+		
+		$error = false;
+		if (isset($result['error'])) $error = array_filter(array_unique($result['error']));
+		
+		 if ($post_id) 
+		{
+			//Submit extra fields data
+			for ($x = 1; $x <= 10; $x++) 
+			{
+				if (isset($_POST['upg_custom_field_'.$x]))
+				add_post_meta($post_id, 'upg_custom_field_'.$x, $_POST['upg_custom_field_'.$x]);
+				
+			}
+			//Ended to submit extra fields
+			
+						
+			$post   = get_post( $post_id );
+			$image=upg_image_src('large',$post);
+			
+			do_action( "upg_submit_complete");
+			
+			if(upg_get_option( 'publish','upg_form', 'on' )=='on' )
+			{
+				
+			echo "<h2>".__('Successfully posted.','wp-upg')."</h2>";
+			//echo "<br><br><a href='".esc_url( get_permalink($post_id) )."' class=\"pure-button\">".__('Click here to view','wp-upg')."</a><br><br>";
+			if(upg_get_option( 'my_gallery','upg_gallery', '0' )!='0')
+				{
+					echo "<br><a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' class=\"pure-button\">".__('My Gallery','wp-upg')."</a><br><br>";
+				}
+			}
+		else
+		{
+			echo "<h2>".__('Your submission is under review.','wp-upg')."</h2>";
+			
+		}
+			
+			
+			//echo "<h1 class=\"archive-title\">".$post->post_title."</h1>";
+			//echo "<img src='$image'>";
+		}
+		else
+		{
+			if ($error) 
+			{
+				$e = implode(',', $error);
+				$e = trim($e, ',');
+			} 
+			else 
+			{
+				$e = 'error';
+			}
+
+			if($e=='file-type')
+			{
+				echo "<h1>".__('Invalid file','wp-upg')."</h1>";
+			}
+			else
+			{
+				echo "<h1>".__('Error occurred','wp-upg')."</h1>";
+			}
+			
+			
+		} 
+
+        //**************/
+    }
+    else
+    {
+        echo "Something is wrong with your submission. Please check if your browser support java-scripts";
+        if($attr['ajax']=='false')
+        {
+            echo "<br><b>ajax parameter cannot be false if post_type is not upg.</b>";
+        }
+    }
     	
 }
 else
@@ -41,14 +139,23 @@ else
     </div>
     
     <?php
-    echo '<div id="upg_form">
-    <form 
-    id="upg-request-form" 
-    class="upg_ajax_post '.$attr['class'].'"
-    method="post" 
-    enctype="multipart/form-data"
-    action="'.admin_url("admin-ajax.php").'"
-    >';
+    if($attr['ajax']=='false')
+    {
+        echo '<form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">';
+	
+    }
+    else {
+            echo '<div id="upg_form">
+        <form 
+        id="upg-request-form" 
+        class="upg_ajax_post '.$attr['class'].'"
+        method="post" 
+        enctype="multipart/form-data"
+        action="'.admin_url("admin-ajax.php").'"
+        >';
+    }
+    
+    	
     
     echo do_shortcode($content);
 
