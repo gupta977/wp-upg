@@ -136,6 +136,7 @@ class upg_admin_Settings_API {
                     'min'               => isset( $option['min'] ) ? $option['min'] : '',
                     'max'               => isset( $option['max'] ) ? $option['max'] : '',
                     'step'              => isset( $option['step'] ) ? $option['step'] : '',
+                    'param1'              => isset( $option['param1'] ) ? $option['param1'] : '',
                 );
 
                 add_settings_field( "{$section}[{$name}]", $label, $callback, $section, $section, $args );
@@ -435,6 +436,32 @@ class upg_admin_Settings_API {
         $html  .= $this->get_field_description( $args );
         echo $html;
     }
+
+
+    /**
+     * Displays a radio select for layouts
+     * @param array   $args settings field args
+     */
+    function callback_layout( $args ) {
+
+        $value = $this->get_option( $args['id'], $args['section'], $args['std'] );
+        //print_r($args);
+        $html  = '<fieldset>';
+        $field_name=$args['section'].'['.$args['std'].']';
+        $html.= upg_grid_layout_list($args['std'],$args['label_for'],$args['param1'],false);
+/*
+        foreach ( $args['options'] as $key => $label ) {
+            $html .= sprintf( '<label for="wpuf-%1$s[%2$s][%3$s]">',  $args['section'], $args['id'], $key );
+            $html .= sprintf( '<input type="radio" class="radio" id="wpuf-%1$s[%2$s][%3$s]" name="%1$s[%2$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked( $value, $key, false ) );
+            $html .= sprintf( '%1$s</label><br>', $label );
+        }
+*/
+        $html .= $this->get_field_description( $args );
+        $html .= '</fieldset>';
+
+        echo $html;
+    }
+    //echo upg_grid_layout_list($options['global_form_layout'],"upg_settings[global_form_layout]","form",false);
 
     /**
      * Sanitize callback for Settings API

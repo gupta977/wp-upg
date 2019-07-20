@@ -3,7 +3,7 @@ $options = get_option('upg_settings');
 $attr = shortcode_atts( array(
     'class' => 'pure-form',
     'title' => 'Submit',
-    'preview' => $options['global_media_layout'],
+    'preview' => upg_get_option( 'global_media_layout','upg_preview', 'basic' ),
     'name' => '',
     'id' =>get_the_ID(),
     'post_type' => 'upg',
@@ -12,7 +12,7 @@ $attr = shortcode_atts( array(
     'ajax' => 'true'
 ), $params );
 
-
+//var_dump($attr);
 $abc="";
 ob_start ();
 if ( post_type_exists( $attr['post_type'] ) ) 
@@ -32,7 +32,8 @@ if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonc
 		
 		}
 		
-		$preview=$attr['preview'];
+        $preview=$attr['preview'];
+       
 		$title=sanitize_text_field($_POST['user-submitted-title']);
 		if (isset($_POST['user-submitted-content']))  $content  = upg_sanitize_content($_POST['user-submitted-content']);
 		if (isset($_POST['cat'])) $category = intval($_POST['cat']);
@@ -139,6 +140,7 @@ else
     </div>
     
     <?php
+ 
     if($attr['ajax']=='false')
     {
         echo '<form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">';

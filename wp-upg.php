@@ -56,16 +56,26 @@ Domain Path: /languages
 
 		if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
-			/* if(isset($options['post_image_page']) && $options['post_image_page']!='xxx')
+			upg_log('I will be executed as soon as version do not match');
+
+			if(UPG_PLUGIN_VERSION =='1.92')
 			{
+				//upg_log("1.92 -- Current value: ".upg_get_option( 'global_form_layout','upg_form', 'basic' ));
+
+				//if(upg_get_option( 'global_form_layout','upg_form', 'basic' )=='basic')
+				//{
+					if(isset($options['global_form_layout']))
+					{
+					upg_set_option( 'global_form_layout','upg_form', $options['global_form_layout'] );
+					upg_set_option( 'global_layout','upg_gallery', $options['global_layout'] );
+					upg_set_option( 'global_media_layout','upg_preview', $options['global_media_layout'] );
+					//upg_log('Value Updated to : '.$options['global_form_layout']);
+					}
+				//}
+				
+				//upg_log("Real value: ".upg_get_option( 'global_form_layout','upg_form', 'basic' ));
+			}
 			
-			upg_set_option( 'main_page','upg_gallery', $options['main_page'] );
-			upg_set_option( 'my_gallery','upg_gallery', $options['my_gallery'] );
-			upg_set_option( 'post_image_page','upg_form', $options['post_image_page'] );
-			upg_set_option( 'post_youtube_page','upg_form', $options['post_youtube_page'] );
-			upg_set_option( 'edit_upg_page','upg_form', $options['edit_upg_page'] );
-			upg_get_option( 'global_popup','upg_preview', $options['global_popup'] );
-			} */
 			
 			//if(get_option('upg_plugin_version')=='1.12')
 			//{
@@ -399,7 +409,7 @@ function upg_the_content($content)
 	if(isset($params['preview']))
 		$preview=$params['preview'];
 	else
-		$preview=$options['global_media_layout'];
+		$preview=upg_get_option( 'global_media_layout','upg_preview', 'basic' );
 
 		
 	if(isset($options['ajax_form']) && $options['ajax_form']=='1' )

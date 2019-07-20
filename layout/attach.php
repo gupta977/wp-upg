@@ -20,8 +20,7 @@ $postsperpage = $options['global_perpage'];
 	if(isset($params['preview']))
 		$preview_layout = $params['preview'];
  	else
-	 	$preview_layout=$options['global_media_layout'];
-
+	 	$preview_layout=upg_get_option( 'global_media_layout','upg_preview', 'basic' );
 
 	if(isset($params['type']))
  		$type = $params['type'];

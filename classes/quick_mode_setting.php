@@ -104,6 +104,14 @@ class upg_quick_setting {
                     'type'  => 'checkbox',
                     'default' => upg_get_option( 'gallery_tags','upg_settings', 'off' ),
                 ),
+                array(
+                    'name'    => 'global_layout',
+                    'label'   => __( 'Select Gallery/Grid Layout', 'wp-upg' ),
+                    'desc'    => __( 'It is applied if "layout" parameter in shortcode is not specified.', 'wp-upg' ),
+                    'type'    => 'layout',
+                    'param1' => 'grid',
+                    'default' => upg_get_option( 'global_layout','upg_gallery', 'flat' ),
+                ),
                 
                /*  array(
                     'name'        => 'heading2',
@@ -143,7 +151,14 @@ class upg_quick_setting {
                     'default' => upg_get_option( 'edit_upg_page','upg_settings', '0' ),
                 ),
                 
-               
+                array(
+                    'name'    => 'global_form_layout',
+                    'label'   => __( 'Select Form Layout', 'wp-upg' ),
+                    'desc'    => __( 'It is applied if "layout" parameter in shortcode is not specified.', 'wp-upg' ),
+                    'type'    => 'layout',
+                    'param1' => 'form',
+                    'default' => upg_get_option( 'global_form_layout','upg_form', 'basic' ),
+                ),
             ),
             'upg_preview' => array(
                 array(
@@ -152,7 +167,15 @@ class upg_quick_setting {
                     'desc'  => __( 'Image will get enlarged at same page. There is no change in page hence no preview layout is used.', 'wp-upg' ),
                     'type'  => 'checkbox',
                     'default' => upg_get_option( 'global_popup','upg_preview', 'on' ),
-                )
+                ),
+                array(
+                    'name'    => 'global_media_layout',
+                    'label'   => __( 'Select Preview/Media Layout', 'wp-upg' ),
+                    'desc'    => __( 'If lightbox/popup is enabled, this layout has no use. It is applied only to newly submitted post.', 'wp-upg' ),
+                    'type'    => 'layout',
+                    'param1' => 'media',
+                    'default' => upg_get_option( 'global_media_layout','upg_preview', 'basic' ),
+                ),
             )
         );
 
@@ -173,7 +196,7 @@ class upg_quick_setting {
         echo '<div class="wrap">';
         do_action( "upg_admin_top_menu");
         echo "<h3>UPG ".__('Basic Settings','wp-upg')."</h3>";
-        
+        //echo upg_get_option( 'global_form_layout','upg_form', 'basic' )."-----";
         
         $this->settings_api->show_navigation();
        

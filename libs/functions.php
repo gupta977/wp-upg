@@ -538,6 +538,9 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 				wp_set_post_terms( $post_id, $tags, $tag_taxonomy);
 			}
 		
+			//Assign preview layout
+			add_post_meta($post_id, 'upg_layout', $preview);
+
 				$attach_ids = array();
 				if ($files && !empty($check_file_exist)) 
 				{
@@ -551,8 +554,7 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 					$_FILES[$key]['size']     = $files['size'][$i];
 					
 					$attach_id = media_handle_upload($key, $post_id);
-					
-					
+
 					if (!is_wp_error($attach_id) && wp_attachment_is_image($attach_id)) 
 					{
 						if($post_type=='upg')
@@ -561,8 +563,7 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 						$attach_ids[] = $attach_id;
 						add_post_meta($post_id, 'pic_name', $attach_id);
 						
-						//Assign preview layout
-						add_post_meta($post_id, 'upg_layout', $preview);
+					
 						}
 						else
 						{
@@ -932,7 +933,7 @@ function upg_ajax_post()
 	if (isset($_POST['preview'])) 
 			$preview = upg_sanitize_content($_POST['preview']);
 	else
-			$preview = $options['global_media_layout'];
+			$preview = upg_get_option( 'global_media_layout','upg_preview', 'basic' );
 
 	if($post_type=="video_url")
 	{

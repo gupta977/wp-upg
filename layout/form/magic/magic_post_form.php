@@ -1,4 +1,4 @@
-[upg-form class="pure-form" title="Submit to UPG" name="my_form" ajax="false"] 
+[upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true"] 
 
 	[upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
 	

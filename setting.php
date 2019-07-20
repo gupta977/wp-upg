@@ -523,12 +523,7 @@ $options = get_option('upg_settings');
 	<br>Add parameter ajax="true" in [upg-post] shortcode to enable ajax.<br>
 	Note: Bulk upload will not work in ajax form<br><br>
 	
-	<table border="0"><tr><td>
-	<a href="#" title="<?php echo ( 'Form layout is where [upg-post] shortcode is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
- <b>Default Form Layout Name </b>:</td><td>
 
-<?php echo upg_grid_layout_list($options['global_form_layout'],"upg_settings[global_form_layout]","form",false); ?>
-</td></tr></table>
 	
 <?php
 	do_action( "upg_setting_tab_basic_form");	
@@ -607,12 +602,6 @@ function upg_primary_custom_field_settings()
 	<br>
 	<br>
 
-	<table border="0"><tr><td>
-	<a href="#" title="<?php echo ( 'Media layout is UPG system. Preview parameter in [upg-post] shortcode is for media layouts.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
- <b>Default Media Layout Name </b>:</td><td>
-
-<?php echo upg_grid_layout_list($options['global_media_layout'],"upg_settings[global_media_layout]","media",false); ?>
-</td></tr></table>
 
 	<hr>
 	<div class="update-nag">

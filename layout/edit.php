@@ -452,8 +452,9 @@ for (var i=0, len=sz.length; i<len; i++) {
 	?>
 	
 	</td>
-	<td valign='top' style="background-color:#eeeeee ;">
-	
+	<td valign='top' style="background-color:#eeeeee ;"><br>
+	<a class='button' href='https://odude.com/upg-user-post-gallery/upg-form/' target='_blank'>Generate form with shortcode</a>
+	<hr>
 	<b>HTML id & name parameters are important part in form creation. Some name are reserved by default.</b><hr>
 	
 	<b>Title Field </b>: id="name" name="user-submitted-title" <br><br>

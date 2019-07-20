@@ -10,7 +10,7 @@ function add_new_upg_columns($upg_columns)
     $new_columns['author'] = __('Author','wp-upg');
     $new_columns['upg_cate'] = __('Albums','wp-upg');
     $new_columns['upg_tag'] = __('Tags','wp-upg');
-    $new_columns['card_layout'] = __('Layout Name','wp-upg');
+    $new_columns['card_layout'] = __('Preview Layout','wp-upg');
     $new_columns['Thumbnail'] = __('Thumbnail','wp-upg');
 	$new_columns['comments'] = __('<span class="vers"><div title="Comments" class="comment-grey-bubble">Comments</div></span>','wp-upg');
     $new_columns['date'] = __('Date', 'wp-upg');
