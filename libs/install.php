@@ -36,19 +36,7 @@ if(!isset($options['global_page']))
 		update_option( 'upg_settings', $options );	
 	}
 	
-		if(!isset($options['global_layout']))
-	{
-		$options['global_layout']='flat';
-		update_option( 'upg_settings', $options );	
-	}
-	
-	if(!isset($options['global_form_layout']))
-	{
-		$options['global_form_layout']='basic';
-		update_option( 'upg_settings', $options );	
-	}
-
-		
+				
 		if(!isset($options['global_album']))
 	{
 		$options['global_album']='';

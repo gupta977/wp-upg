@@ -14,7 +14,7 @@ $postsperpage = $options['global_perpage'];
 	if(isset($params['layout']))
 		$form_layout  = $params['layout'];
  	else
-	 	$form_layout = $options['global_form_layout'];
+	 	$form_layout = upg_get_option( 'global_form_layout','upg_form', 'basic' );
 
 
 	if(isset($params['preview']))
@@ -68,7 +68,7 @@ natcasesort($tags_array);
 wp_reset_query();
 //	echo get_the_ID();		
 $put="";
-$layout=$options['global_layout'];
+$layout=upg_get_option( 'global_layout','upg_gallery', 'flat' );
 ob_start ();
 
 if(file_exists(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_config.php"))

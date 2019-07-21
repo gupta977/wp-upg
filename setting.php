@@ -388,14 +388,7 @@ wp_dropdown_categories( 'show_count=1&hierarchical=1&taxonomy=upg_cate&value_fie
  <br>
  <br>
  
- 
- 
- <table border="0"><tr><td>
- <a href="#" title="<?php echo ( 'Grid layout is where [upg-list] shortcode is used.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>  
- <b>Default Grid Layout Name </b>:</td><td>
 
-<?php echo upg_grid_layout_list($options['global_layout'],"upg_settings[global_layout]","grid",true); ?>
-</td></tr></table>
 <?php
 
 echo '<b>'.$frm->addLabelFor('upg_settings[primary_show_image_button]', __('Display Image Upload Button: ','wp-upg')).'</b>';
@@ -453,7 +446,7 @@ Submit Youtube Button will be displayed on top of gallery page.
 	perpage="<?php echo $options['global_perpage']; ?>" 
 	orderby="<?php echo $options['global_order']; ?>" 
 	page="<?php echo $options['global_page']; ?>" 
-	layout="<?php echo $options['global_layout']; ?>" 
+	layout="<?php echo upg_get_option( 'global_layout','upg_gallery', 'flat' ); ?>" 
 	album="<?php echo $options['global_album']; ?>" 
 	<?php
 	if(isset($options['primary_show_image_button']) || isset($options['primary_show_youtube_button']))

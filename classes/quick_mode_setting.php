@@ -176,7 +176,7 @@ class upg_quick_setting {
                     'param1' => 'media',
                     'default' => upg_get_option( 'global_media_layout','upg_preview', 'basic' ),
                 ),
-            )
+            ),
         );
 
         if(has_filter('upg_setting_add_field')) 

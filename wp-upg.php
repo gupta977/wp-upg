@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.91
+Version: 1.92
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.91');
+	define('UPG_PLUGIN_VERSION', '1.92');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -56,11 +56,11 @@ Domain Path: /languages
 
 		if (UPG_PLUGIN_VERSION !== get_option('upg_plugin_version'))
 		{
-			upg_log('I will be executed as soon as version do not match');
+			//upg_log('I will be executed as soon as version do not match');
 
 			if(UPG_PLUGIN_VERSION =='1.92')
 			{
-				//upg_log("1.92 -- Current value: ".upg_get_option( 'global_form_layout','upg_form', 'basic' ));
+				//upg_log("1.92  Current value: ".upg_get_option( 'global_media_layout','upg_preview', 'basic' ));
 
 				//if(upg_get_option( 'global_form_layout','upg_form', 'basic' )=='basic')
 				//{
@@ -69,7 +69,7 @@ Domain Path: /languages
 					upg_set_option( 'global_form_layout','upg_form', $options['global_form_layout'] );
 					upg_set_option( 'global_layout','upg_gallery', $options['global_layout'] );
 					upg_set_option( 'global_media_layout','upg_preview', $options['global_media_layout'] );
-					//upg_log('Value Updated to : '.$options['global_form_layout']);
+					//upg_log('Value Updated to : '.$options['global_media_layout']);
 					}
 				//}
 				

@@ -142,7 +142,7 @@ else
 if(isset($params['layout']))
 	$layout=trim($params['layout']);
 else
-	$layout=$options['global_form_layout'];
+	$layout=upg_get_option( 'global_form_layout','upg_form', 'basic' );
 
 if($layout=="personal")
 {

@@ -71,12 +71,13 @@ function upg_get_option( $field_name, $section='upg_settings', $default = '' )
  */
 function upg_set_option( $field_name, $section='upg_settings', $default = '' ) {
 
-	$options = get_option( $section );
+	$options = (array) get_option( $section );
 
 			$options[$field_name]=$default;
 			update_option( $section, $options );	
 
 			//update old upg settings to xxx, and apply new quick_settings
+			/*
 			$old_options = get_option( 'upg_settings' );
 			if(isset($old_options[$field_name]))
 			{
@@ -86,6 +87,7 @@ function upg_set_option( $field_name, $section='upg_settings', $default = '' ) {
 				update_option( 'upg_settings', $old_options );
 				//upg_log($old_options[$field_name]." old settings lost for ".$field_name)	;
 			}
+			*/
 	
 	return $default;
 }

@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Guests can submit article, images, videos, products into gallery.
+Guests can submit article, images, videos, products into own created layouts.
 
 == Description ==
 = UPG - User Post Gallery =
@@ -223,6 +223,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.92 =
+* Added magic form layout, now you can use [upg-form] inside form layout
+* Layout out selection settings now as basic settings.
+* removed several unused codes
+
 = 1.91 =
 * Full of tags in form, gallery & preview pages.
 * updated [upg-form] to support woocommerce products
