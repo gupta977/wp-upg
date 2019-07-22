@@ -3,19 +3,20 @@
 
 
 <?php
+ function upg_bulk_post_layout($upload_path,$preview,$form_name,$form_attach_id) 
+ {
+     //Empty function for free UPG version.
+ }
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
     if ( is_plugin_active( 'wp-upg-pro/wp-upg-pro.php' ) ) 
     {
-        include_once( WP_PLUGIN_DIR. '/wp-upg-pro/bulk_upload_layout.php' );
+        //include_once( WP_PLUGIN_DIR. '/wp-upg-pro/bulk_upload_layout.php' );
         
     }
     else
     {
-        function upg_bulk_post_layout($upload_path,$preview,$form_name,$form_attach_id) 
-        {
-            //Empty function for free UPG version.
-        }
-        echo "Bulk layout is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro version</a>. <hr><b>Image dropped here will not get uploaded. </b>";
+       
+        echo "'Bulk layout' is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro</a>. <hr></b>";
     }
 
     $upload_dir = wp_upload_dir();

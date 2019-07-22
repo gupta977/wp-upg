@@ -203,7 +203,7 @@ return $abc;
 
 [upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form" post_type="wp_post" taxonomy="category" tag_taxonomy="post_tag"] 
 
-[upg-form class="pure-form" title="Upload your media" name="my_form"] 
+[upg-form class="pure-form pure-form-stacked" title="Upload your media" name="my_form"] 
 
 [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title" required="true"]
 

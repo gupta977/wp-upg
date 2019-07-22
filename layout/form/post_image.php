@@ -146,9 +146,21 @@ else
 
 if($layout=="personal")
 {
-	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_form.php"))
+	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_form.php";
+
+	if(file_exists($inc_file))
 	{
-		include(upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_form.php");
+		if( strpos(file_get_contents($inc_file),'[upg-form') !== false)
+		{
+			
+			$file_shortcode = file_get_contents($inc_file, true);
+			echo do_shortcode($file_shortcode);
+		
+	   } 
+	   else
+	   {
+			include($inc_file);
+	   }
 	}
 	else
 	{

@@ -15,7 +15,7 @@ $attr = shortcode_atts( array(
 //var_dump($attr);
 $abc="";
 ob_start ();
-if ( post_type_exists( $attr['post_type'] ) ) 
+if ( post_type_exists( $attr['post_type'] ) || $attr['post_type']=="video_url" ) 
 {
 if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonce')) 
 {

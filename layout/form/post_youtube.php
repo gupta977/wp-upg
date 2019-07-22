@@ -26,14 +26,26 @@ $url=sanitize_text_field($_POST['user-submitted-url']);
 	if(isset($params['layout']))
 	$layout=trim($params['layout']);
 else
-	$layout="basic";
+	$layout=upg_get_option( 'global_form_layout','upg_form', 'basic' );
 
 
 if($layout=="personal")
 {
-	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_youtube.php"))
+	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_youtube.php";
+
+	if(file_exists($inc_file))
 	{
-		include(upg_BASE_DIR."/layout/form/".$layout."/".get_current_blog_id()."_".$layout."_post_youtube.php");
+		if( strpos(file_get_contents($inc_file),'[upg-form') !== false)
+		{
+			
+			$file_shortcode = file_get_contents($inc_file, true);
+			echo do_shortcode($file_shortcode);
+		
+	   } 
+	   else
+	   {
+			include($inc_file);
+	   }
 	}
 	else
 	{
@@ -43,10 +55,25 @@ if($layout=="personal")
 }
 else
 {
-	if(file_exists(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php"))
-		include(upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_youtube.php");
-	else
+	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php";
+	if(file_exists($inc_file))
+	{
+		if( strpos(file_get_contents($inc_file),'[upg-form') !== false)
+		{
+			
+			$file_shortcode = file_get_contents($inc_file, true);
+			echo do_shortcode($file_shortcode);
+		
+	   } 
+	   else
+	   {
+			include($inc_file);
+	   }
+	}
+		else
+		{
 		echo __('Layout Not Found. Check settings.','wp-upg').": ".$layout;
+		}
 }
 
 
