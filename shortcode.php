@@ -52,6 +52,8 @@ function upg_shortcode()
         <div class="update-nag">
                 <ul style="list-style-type:circle;">
                     <li> <code>album</code> = "Slug name of album" -  Displays gallery of specific UPG-Post album/category.</li>
+                    <li> <code>tag</code> = "Slug name of tag" -  To display gallery of specific UPG-Post tags.</li>
+                    <li><code>tag_show</code>= "on/off" - To display related tags just above the gallery.</li>
                     <li> <code>perpage</code> = "No. of total post" -  Number of total post to be displayed per page.</li>
                     <li> <code>perrow</code> = "No. of Rows/column" -  Number of post to be displayed per row/horizontally.</li>
                     <li> <code>page</code> = "on | off" -  Display page navigation if value is on. Only visible if <code>perpage</code> value is less then the total number of post.</li>

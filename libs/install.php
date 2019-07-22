@@ -295,7 +295,7 @@ function upg_install()
 		 $cid=wp_insert_post(array('post_title'=>'Post Video URL','post_content'=>'[upg-post type="youtube"]','post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'post_youtube_page','upg_form', $cid );
 		 
-		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine"]','post_type'=>'page','post_status'=>'publish'));
+		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine" layout="basic"]','post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'my_gallery','upg_gallery', $did );
 		 
 		 $eid=wp_insert_post(array('post_title'=>'Edit UPG Post','post_content'=>'[upg-edit]','post_type'=>'page','post_status'=>'publish'));

@@ -1,4 +1,3 @@
-
 <div id="upg_form">
 <form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">
 
