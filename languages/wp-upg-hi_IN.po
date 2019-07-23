@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-05-29 12:38+0545\n"
-"PO-Revision-Date: 2019-05-29 12:50+0545\n"
+"POT-Creation-Date: 2019-07-23 12:38+0545\n"
+"PO-Revision-Date: 2019-07-23 12:40+0545\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hi_IN\n"
@@ -17,15 +17,15 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: addon.php:20
+#: addon.php:23
 msgid "UPG Plugins"
 msgstr "UPG प्लगइन्स"
 
-#: addon.php:21
+#: addon.php:24
 msgid "UPG Help"
 msgstr "UPG मदद"
 
-#: addon.php:27
+#: addon.php:30
 msgid "Search"
 msgstr "खोजें"
 
@@ -37,11 +37,11 @@ msgstr "सार्वजनिक करे"
 msgid "Mark as draft"
 msgstr "किसी को नहीं देखेगा"
 
-#: classes/class.settings-api.php:377
+#: classes/class.settings-api.php:378
 msgid "Choose File"
 msgstr "फाइल चुनें"
 
-#: classes/class.settings-api.php:430
+#: classes/class.settings-api.php:431
 msgid "&mdash; None &mdash;"
 msgstr "&mdash; कुछ भी नहीं &mdash;"
 
@@ -85,191 +85,271 @@ msgstr "सदस्य \"मेरी गैलरी\" पृष्ठ"
 msgid "Page must contain [upg-list user=\"show_mine\"] shortcode."
 msgstr " [upg-list user=\"show_mine\"] shortcode होना चाहिए "
 
-#: classes/quick_mode_setting.php:112
+#: classes/quick_mode_setting.php:102
+msgid "Enable Gallery Tags"
+msgstr ""
+
+#: classes/quick_mode_setting.php:103
+msgid "It will show tags assigned above the gallery. [upg-list tag_show=\"on\"]"
+msgstr ""
+
+#: classes/quick_mode_setting.php:109
+#, fuzzy
+#| msgid "Select preview layout"
+msgid "Select Gallery/Grid Layout"
+msgstr "preview लेआउट चुने."
+
+#: classes/quick_mode_setting.php:110 classes/quick_mode_setting.php:157
+msgid "It is applied if \"layout\" parameter in shortcode is not specified."
+msgstr ""
+
+#: classes/quick_mode_setting.php:127
 msgid "Auto approve post"
 msgstr "ऑटो स्वीकृत पोस्ट"
 
-#: classes/quick_mode_setting.php:113
+#: classes/quick_mode_setting.php:128
 msgid "Automatically publish Post as soon as user submit."
 msgstr "पोस्ट करते ही प्रकाशित हो जायेगा "
 
-#: classes/quick_mode_setting.php:119
+#: classes/quick_mode_setting.php:134
 msgid "Select submission form of Image page"
 msgstr "प्रकाशित करने वाला फॉर्म का सेटिंग्स"
 
-#: classes/quick_mode_setting.php:120
-msgid "Page must contain [upg-post type=\"image\"] shortcode."
+#: classes/quick_mode_setting.php:135
+#, fuzzy
+#| msgid "Page must contain [upg-post type=\"image\"] shortcode."
+msgid "Page must contain [upg-post type=\"image\"] or full [upg-form] shortcode."
 msgstr "[upg-post type=\"image\"] shortcode मौजूत हो |"
 
-#: classes/quick_mode_setting.php:126
+#: classes/quick_mode_setting.php:141
 msgid "Select submission form of Youtube/Vimeo page"
 msgstr "Youtube/Vimeo पोस्ट करने वाला पेज चुने "
 
-#: classes/quick_mode_setting.php:127
-msgid "Page must contain [upg-post type=\"youtube\"] shortcode."
+#: classes/quick_mode_setting.php:142
+#, fuzzy
+#| msgid "Page must contain [upg-post type=\"youtube\"] shortcode."
+msgid "Page must contain [upg-post type=\"youtube\"] or full [upg-form] shortcode."
 msgstr " [upg-post type=\"youtube\"] shortcode होना चाहिए "
 
-#: classes/quick_mode_setting.php:133
+#: classes/quick_mode_setting.php:148
 msgid "Submission form Edit/Modify page"
 msgstr "प्रकाशित करने वाला फॉर्म का सेटिंग्स"
 
-#: classes/quick_mode_setting.php:134
+#: classes/quick_mode_setting.php:149
 msgid "Page must contain [upg-edit] shortcode."
 msgstr " [upg-edit] shortcode होना चाहिए "
 
-#: classes/quick_mode_setting.php:144
+#: classes/quick_mode_setting.php:156
+#, fuzzy
+#| msgid "Select form layout"
+msgid "Select Form Layout"
+msgstr "फॉर्म का लेआउट चुने"
+
+#: classes/quick_mode_setting.php:166
 msgid "Enable Lightbox Popup"
 msgstr "लाइट बॉक्स या पॉपअप सुरु करे "
 
-#: classes/quick_mode_setting.php:145
+#: classes/quick_mode_setting.php:167
 msgid ""
 "Image will get enlarged at same page. There is no change in page hence no preview "
 "layout is used."
 msgstr "चित्र इसी पेज मे बड़ा होगा | पेज नहीं बदला, तो कोई Preview लेआउट का उपोयोग नहीं हुवा है |"
 
-#: classes/quick_mode_setting.php:165 setting.php:695 wp-upg.php:683
-msgid "Advance Settings"
-msgstr "अधिक सेटिंग्स"
+#: classes/quick_mode_setting.php:173
+#, fuzzy
+#| msgid "Select preview layout"
+msgid "Select Preview/Media Layout"
+msgstr "preview लेआउट चुने."
 
-#: classes/quick_mode_setting.php:168 wp-upg.php:682
-msgid "Quick Settings"
+#: classes/quick_mode_setting.php:174
+msgid ""
+"If lightbox/popup is enabled, this layout has no use. It is applied only to newly "
+"submitted post."
+msgstr ""
+
+#: classes/quick_mode_setting.php:198 wp-upg.php:825
+msgid "Basic Settings"
 msgstr "शीग्र सेटिंग्स"
 
 #: help.php:26
 msgid "Important settings"
 msgstr "महत्वपूर्ण सेटिंग्स"
 
-#: help.php:86 layout/form/basic/basic_post_form.php:113
+#: help.php:86 layout/form/basic/basic_post_form.php:119
 #: layout/form/simple/simple_edit_form.php:26
 msgid "Maximum upload file size limit:"
 msgstr "फाइलका साइज़ की सीमा:"
 
-#: layout/attach.php:85 layout/catalog.php:327 layout/form/post_image.php:164
-#: layout/form/post_youtube.php:48
+#: layout/attach.php:101 layout/catalog.php:341 layout/form/post_image.php:194
+#: layout/form/post_youtube.php:75
 msgid "Layout Not Found. Check settings."
 msgstr "लेआउट नहीं मिला। सेटिंग्स की जाँच करे ."
 
-#: layout/attach.php:133 layout/form/basic/basic_post_form.php:158
+#: layout/attach.php:149 layout/form/basic/basic_post_form.php:164
 #: layout/form/photo/photo_post_form.php:73 layout/form/simple/simple_edit_form.php:77
-#: layout/form/simple/simple_post_form.php:102 libs/install.php:194
+#: layout/form/simple/simple_post_form.php:102 libs/install.php:183
 msgid "Post"
 msgstr "भेजें"
 
-#: layout/attach.php:147
+#: layout/attach.php:163
 msgid "This post button is only visible to you."
 msgstr "ये बटन बस आपको दिखरहा है ."
 
 #: layout/form/basic/basic_edit_form.php:4 layout/form/basic/basic_post_form.php:23
-#: layout/form/photo/photo_post_form.php:6 layout/form/simple/simple_edit_form.php:6
-#: layout/form/simple/simple_post_form.php:24 libs/custom_column.php:9
+#: layout/form/magic/magic_edit_form.php:4 layout/form/photo/photo_post_form.php:6
+#: layout/form/simple/simple_edit_form.php:6 layout/form/simple/simple_post_form.php:24
+#: libs/custom_column.php:9
 msgid "Title"
 msgstr "पोस्ट शीर्शक"
 
 #: layout/form/basic/basic_edit_form.php:5 layout/form/basic/basic_edit_youtube.php:5
 #: layout/form/basic/basic_post_form.php:24 layout/form/basic/basic_post_youtube.php:25
-#: layout/form/bulk/bulk_post_form.php:29 layout/form/photo/photo_post_form.php:7
+#: layout/form/bulk/bulk_post_form.php:30 layout/form/magic/magic_edit_form.php:5
+#: layout/form/magic/magic_edit_youtube.php:5 layout/form/photo/photo_post_form.php:7
 #: layout/form/photo/photo_post_youtube.php:6 layout/form/simple/simple_edit_form.php:7
-#: layout/form/simple/simple_edit_youtube.php:8 layout/form/simple/simple_post_form.php:25
+#: layout/form/simple/simple_edit_youtube.php:7 layout/form/simple/simple_post_form.php:25
 #: layout/form/simple/simple_post_youtube.php:25
 msgid "Post Title"
 msgstr "पोस्ट शीर्शक"
 
 #: layout/form/basic/basic_edit_form.php:41 layout/form/basic/basic_post_form.php:60
-#: layout/form/photo/photo_post_form.php:109
+#: layout/form/magic/magic_edit_form.php:41 layout/form/photo/photo_post_form.php:109
 msgid "Description"
 msgstr "विवरण"
 
 #: layout/form/basic/basic_edit_form.php:43 layout/form/basic/basic_edit_youtube.php:44
 #: layout/form/basic/basic_post_form.php:62 layout/form/basic/basic_post_youtube.php:64
+#: layout/form/magic/magic_edit_form.php:43 layout/form/magic/magic_edit_youtube.php:44
 #: layout/form/photo/photo_post_form.php:110 layout/form/photo/photo_post_youtube.php:44
 msgid "Post Content"
 msgstr "पोस्ट सामग्री"
 
 #: layout/form/basic/basic_edit_form.php:58 layout/form/basic/basic_edit_youtube.php:59
-#: layout/form/basic/basic_post_form.php:77 layout/form/basic/basic_post_youtube.php:79
+#: layout/form/basic/basic_post_form.php:78 layout/form/basic/basic_post_youtube.php:79
+#: layout/form/magic/magic_edit_form.php:58 layout/form/magic/magic_edit_youtube.php:59
 #: layout/form/photo/photo_post_form.php:10
 msgid "Select Album/Group"
 msgstr "एल्बम चयन करें"
 
-#: layout/form/basic/basic_edit_form.php:108 layout/form/simple/simple_edit_form.php:17
+#: layout/form/basic/basic_edit_form.php:64 layout/form/basic/basic_edit_youtube.php:63
+#: layout/form/basic/basic_post_form.php:83 layout/form/basic/basic_post_youtube.php:83
+#: layout/form/magic/magic_edit_form.php:64 layout/form/magic/magic_edit_youtube.php:63
+#, fuzzy
+#| msgid " Tags"
+msgid "Enter Tags"
+msgstr "टैग्स"
+
+#: layout/form/basic/basic_edit_form.php:65 layout/form/basic/basic_edit_youtube.php:64
+#: layout/form/basic/basic_post_form.php:84 layout/form/basic/basic_post_youtube.php:84
+#: layout/form/magic/magic_edit_form.php:65 layout/form/magic/magic_edit_youtube.php:64
+msgid "Tags separated by commas"
+msgstr ""
+
+#: layout/form/basic/basic_edit_form.php:113 layout/form/magic/magic_edit_form.php:113
+#: layout/form/simple/simple_edit_form.php:17
 msgid "Select new image to replace"
 msgstr "नया चित्र चुने"
 
-#: layout/form/basic/basic_edit_form.php:116 layout/form/photo/photo_post_form.php:36
+#: layout/form/basic/basic_edit_form.php:121 layout/form/magic/magic_edit_form.php:121
+#: layout/form/photo/photo_post_form.php:36
 msgid "Only picture files are allowed."
 msgstr "केवल चित्रही भेज सकते है"
 
-#: layout/form/basic/basic_edit_form.php:117 layout/form/photo/photo_post_form.php:37
+#: layout/form/basic/basic_edit_form.php:122 layout/form/magic/magic_edit_form.php:122
+#: layout/form/photo/photo_post_form.php:37
 msgid "Maximum upload file size limit is"
 msgstr "अधिकतम अपलोड फ़ाइल साइज़ की सीमा"
 
-#: layout/form/basic/basic_edit_form.php:128
+#: layout/form/basic/basic_edit_form.php:133 layout/form/magic/magic_edit_form.php:133
 msgid "Update Post"
 msgstr "पोस्टको नया से बदले"
 
 #: layout/form/basic/basic_edit_youtube.php:4 layout/form/basic/basic_post_youtube.php:24
-#: layout/form/simple/simple_edit_youtube.php:7
+#: layout/form/magic/magic_edit_youtube.php:4 layout/form/simple/simple_edit_youtube.php:6
 #: layout/form/simple/simple_post_youtube.php:24
 msgid "Video Title"
 msgstr "विडियो शिर्सक"
 
 #: layout/form/basic/basic_edit_youtube.php:42 layout/form/basic/basic_post_youtube.php:62
+#: layout/form/magic/magic_edit_youtube.php:42
 msgid "Video Description"
 msgstr "विडियो विवरण"
 
-#: layout/form/basic/basic_edit_youtube.php:103
-#: layout/form/basic/basic_post_youtube.php:84
-#: layout/form/simple/simple_edit_youtube.php:18
+#: layout/form/basic/basic_edit_youtube.php:108
+#: layout/form/basic/basic_post_youtube.php:89
+#: layout/form/magic/magic_edit_youtube.php:108
+#: layout/form/simple/simple_edit_youtube.php:17
 #: layout/form/simple/simple_post_youtube.php:35
 msgid "Youtube/Vimeo URL"
 msgstr "Youtube और Vimeo का लिंक"
 
-#: layout/form/basic/basic_edit_youtube.php:105
-#: layout/form/basic/basic_post_youtube.php:85
-#: layout/form/simple/simple_edit_youtube.php:19
+#: layout/form/basic/basic_edit_youtube.php:110
+#: layout/form/basic/basic_post_youtube.php:90
+#: layout/form/magic/magic_edit_youtube.php:110
+#: layout/form/simple/simple_edit_youtube.php:18
 #: layout/form/simple/simple_post_youtube.php:36
 msgid "copy/paste Video URL"
 msgstr "Youtube विडियो का लिंक डाले"
 
-#: layout/form/basic/basic_edit_youtube.php:126
-#: layout/form/basic/basic_post_youtube.php:138
+#: layout/form/basic/basic_edit_youtube.php:131
+#: layout/form/basic/basic_post_youtube.php:143
+#: layout/form/magic/magic_edit_youtube.php:131
 #: layout/form/photo/photo_post_youtube.php:108
-#: layout/form/simple/simple_edit_youtube.php:73
+#: layout/form/simple/simple_edit_youtube.php:72
 #: layout/form/simple/simple_post_youtube.php:85
 msgid "Submit URL"
 msgstr "लिंक भेजे"
 
-#: layout/form/basic/basic_post_form.php:88 layout/form/photo/photo_post_form.php:18
+#: layout/form/basic/basic_post_form.php:94 layout/form/photo/photo_post_form.php:18
 #: layout/form/simple/simple_post_form.php:38
 msgid "Select Image"
 msgstr "चित्र चुनें"
 
-#: layout/form/basic/basic_post_form.php:112 layout/form/simple/simple_edit_form.php:25
+#: layout/form/basic/basic_post_form.php:118 layout/form/simple/simple_edit_form.php:25
 msgid "Only picture files are allowed"
 msgstr "केवल तस्वीर फाइल की अनुमति है"
 
-#: layout/form/basic/basic_post_form.php:159 layout/form/simple/simple_edit_form.php:76
+#: layout/form/basic/basic_post_form.php:165 layout/form/simple/simple_edit_form.php:76
 #: layout/form/simple/simple_post_form.php:103
 msgid "Reset"
 msgstr "सब मिटाए"
 
-#: layout/form/basic/basic_post_youtube.php:87
-#: layout/form/simple/simple_edit_youtube.php:20
+#: layout/form/basic/basic_post_youtube.php:92
+#: layout/form/simple/simple_edit_youtube.php:19
 #: layout/form/simple/simple_post_youtube.php:37
 msgid "Only URL from YouTube & Vimeo is allowed"
 msgstr "सिर्फ Youtube औरे Vimeo का लिंक रखे"
 
-#: layout/form/bulk/bulk_post_form.php:51
+#: layout/form/bulk/bulk_post_form.php:52
 #, php-format
 msgid "Maximum upload file size: %s."
 msgstr "अधिकतम अपलोड फ़ाइल साइज़ की सीमा %s ."
 
-#: layout/form/bulk/bulk_post_form.php:58 layout/form/post_edit_image.php:140
-#: layout/form/post_image.php:97
+#: layout/form/bulk/bulk_post_form.php:59 layout/form/magic_form.php:79
+#: layout/form/post_edit_image.php:141 layout/form/post_edit_youtube.php:90
+#: layout/form/post_image.php:101
 msgid "My Gallery"
 msgstr "मेरा गैलरी"
 
-#: layout/form/magic_form.php:36
+#: layout/form/magic_form.php:75 layout/form/post_image.php:97
+#: layout/form/post_youtube.php:137 libs/functions.php:995 libs/functions.php:1081
+msgid "Successfully posted."
+msgstr "सफलतापूर्वक पोस्ट की गई |"
+
+#: layout/form/magic_form.php:84 layout/form/post_image.php:106 libs/functions.php:1000
+#: libs/functions.php:1086 libs/functions.php:1179
+msgid "Your submission is under review."
+msgstr "आपकी छवि की समीक्षा के तहत है ।"
+
+#: layout/form/magic_form.php:106 layout/form/post_image.php:128
+msgid "Invalid file"
+msgstr "फाइल गलत है"
+
+#: layout/form/magic_form.php:110 layout/form/post_image.php:132
+msgid "Error occurred"
+msgstr "कुछ समस्या आई है |"
+
+#: layout/form/magic_form.php:138
 msgid "Post again"
 msgstr "फिर से पोस्ट करें"
 
@@ -290,7 +370,7 @@ msgid "copy/paste Youtube URL"
 msgstr "यूट्यूब वीडियो का लिंक पोस्ट करें"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
-#: layout/form/post_image.php:154 layout/form/post_youtube.php:39
+#: layout/form/post_image.php:167 layout/form/post_youtube.php:52
 msgid "Refresh Page"
 msgstr "ये पेज को फिरसे खोले"
 
@@ -298,52 +378,35 @@ msgstr "ये पेज को फिरसे खोले"
 msgid "Edit Layout Not Found."
 msgstr "Edit लेआउट नहीं मिला"
 
-#: layout/form/post_edit_image.php:75 layout/form/post_edit_youtube.php:71
+#: layout/form/post_edit_image.php:76 layout/form/post_edit_youtube.php:72
 msgid "Successfully updated."
 msgstr "सफलतापूर्वक पोस्ट की गई |"
 
-#: layout/form/post_edit_image.php:120
+#: layout/form/post_edit_image.php:121
 msgid "Error in Image file. Image not updated."
 msgstr "चित्रमे कोई समस्या है. चित्र नहीं बदला है | "
 
-#: layout/form/post_edit_image.php:136
+#: layout/form/post_edit_image.php:137 layout/form/post_edit_youtube.php:86
 msgid "Edit"
 msgstr "बदले"
 
-#: layout/form/post_edit_youtube.php:76
+#: layout/form/post_edit_youtube.php:77
 msgid "Error in Video URL"
 msgstr "विडियो की लिंकमै कोई गलती है"
 
-#: layout/form/post_image.php:93 layout/form/post_youtube.php:107 libs/functions.php:942
-#: libs/functions.php:1028 libs/functions.php:1095
-msgid "Successfully posted."
-msgstr "सफलतापूर्वक पोस्ट की गई |"
-
-#: layout/form/post_image.php:102 libs/functions.php:947 libs/functions.php:1033
-#: libs/functions.php:1100
-msgid "Your submission is under review."
-msgstr "आपकी छवि की समीक्षा के तहत है ।"
-
-#: layout/form/post_image.php:124
-msgid "Invalid file"
-msgstr "फाइल गलत है"
-
-#: layout/form/post_image.php:128
-msgid "Error occurred"
-msgstr "कुछ समस्या आई है |"
-
-#: layout/form/post_youtube.php:114
+#: layout/form/post_youtube.php:144
 msgid "Your video is under review"
 msgstr "यूट्यूब वीडियो समीक्षाधीन है"
 
-#: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
-#: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
-#: layout/grid/slide/slide_down.php:3
-msgid "No record found"
+#: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:3
+#: layout/grid/flat/flat_down.php:3 layout/grid/list/list_down.php:3
+#: layout/grid/photo/photo_down.php:3 layout/grid/slide/slide_down.php:3
+msgid "No records"
 msgstr "कुछ भी नहीं है"
 
-#: layout/grid/basic/basic_main.php:14 layout/grid/flat/flat_main.php:30
-#: layout/grid/list/list_main.php:31 layout/media/basic/content.php:13
+#: layout/grid/basic/basic_main.php:14 layout/grid/classic/classic_main.php:13
+#: layout/grid/flat/flat_main.php:30 layout/grid/list/list_main.php:31
+#: layout/media/basic/content.php:13
 msgid "Under review"
 msgstr "अभी आपका पोस्ट प्रकाशित  नहीं हुवा है. सम्पादक जाच करेंगे "
 
@@ -364,14 +427,18 @@ msgid "Albums"
 msgstr "एल्बम"
 
 #: libs/custom_column.php:12
-msgid "Layout Name"
-msgstr "लेआउटका नाम"
+msgid "Tags"
+msgstr "टैग्स"
 
 #: libs/custom_column.php:13
+msgid "Preview Layout"
+msgstr "पोस्टका Preview लेआउट"
+
+#: libs/custom_column.php:14
 msgid "Thumbnail"
 msgstr "छोटा चित्र"
 
-#: libs/custom_column.php:14
+#: libs/custom_column.php:15
 msgid ""
 "<span class=\"vers\"><div title=\"Comments\" class=\"comment-grey-bubble\">Comments</"
 "div></span>"
@@ -379,125 +446,133 @@ msgstr ""
 "<span class=\"vers\"><div title=\"Comments\" class=\"comment-grey-bubble\">कममेंट</div></"
 "span>"
 
-#: libs/custom_column.php:15
+#: libs/custom_column.php:16
 msgid "Date"
 msgstr "मिति"
 
-#: libs/functions.php:81 libs/functions.php:85
+#: libs/functions.php:107 libs/functions.php:111
 msgid "Login Please !"
 msgstr "कृपया लॉग इन करें!"
 
-#: libs/functions.php:965 libs/functions.php:1052 libs/functions.php:1115
+#: libs/functions.php:1018 libs/functions.php:1105 libs/functions.php:1194
 msgid "Category is not specified."
 msgstr "वर्ग चुने"
 
-#: libs/functions.php:965 libs/functions.php:967 libs/functions.php:1050
-#: libs/functions.php:1052 libs/functions.php:1054 libs/functions.php:1113
-#: libs/functions.php:1115 libs/functions.php:1117
+#: libs/functions.php:1018 libs/functions.php:1020 libs/functions.php:1103
+#: libs/functions.php:1105 libs/functions.php:1107 libs/functions.php:1192
+#: libs/functions.php:1194 libs/functions.php:1196
 msgid "Submission failed"
 msgstr "पोस्ट नहीं हुवा "
 
-#: libs/functions.php:967 libs/functions.php:1054 libs/functions.php:1117
+#: libs/functions.php:1020 libs/functions.php:1107 libs/functions.php:1196
 msgid "Error message: "
 msgstr "त्रुटि संदेश"
 
-#: libs/functions.php:1050 libs/functions.php:1113
+#: libs/functions.php:1103 libs/functions.php:1192
 msgid "Check your file type."
 msgstr "अपने फ़ाइल प्रकार की जाँच करें।"
 
-#: libs/install.php:193
+#: libs/functions.php:1174
+msgid "Successfully posted"
+msgstr "सफलतापूर्वक पोस्ट की गई |"
+
+#: libs/functions.php:1868
+msgid "Show All"
+msgstr ""
+
+#: libs/install.php:182
 msgid "User Post Gallery"
 msgstr "यूजर पोस्ट गैलरी"
 
-#: libs/install.php:195
+#: libs/install.php:184
 msgid "Add "
 msgstr "नया रखे"
 
-#: libs/install.php:196 libs/install.php:247 libs/install.php:272
+#: libs/install.php:185 libs/install.php:236 libs/install.php:261
 msgid "Add New "
 msgstr "नया जोड़ें"
 
-#: libs/install.php:197 libs/install.php:245
+#: libs/install.php:186 libs/install.php:234
 msgid "Edit "
 msgstr "बदले"
 
-#: libs/install.php:198 libs/install.php:248
+#: libs/install.php:187 libs/install.php:237
 msgid "New "
 msgstr "नया"
 
-#: libs/install.php:199
+#: libs/install.php:188
 msgid "View "
 msgstr "देखें"
 
-#: libs/install.php:200 libs/install.php:241
+#: libs/install.php:189 libs/install.php:230
 msgid "Search "
 msgstr "खोजें"
 
-#: libs/install.php:201 libs/install.php:202
+#: libs/install.php:190 libs/install.php:191
 msgid "No "
 msgstr "नहीं"
 
-#: libs/install.php:204
+#: libs/install.php:193
 msgid "Featured Icon/Logo"
 msgstr "मुख्या चित्र"
 
-#: libs/install.php:205
+#: libs/install.php:194
 msgid "Set featured Logo"
 msgstr "मुख्या चित्र में बदले"
 
-#: libs/install.php:206
+#: libs/install.php:195
 msgid "Remove Logo"
 msgstr "लोगो निकालें"
 
-#: libs/install.php:239
+#: libs/install.php:228
 msgid " Albums"
 msgstr " सभी एल्बम"
 
-#: libs/install.php:240
+#: libs/install.php:229
 msgid " Album"
 msgstr " एल्बमः"
 
-#: libs/install.php:242
+#: libs/install.php:231
 msgid "All "
 msgstr " सभी"
 
-#: libs/install.php:243 libs/install.php:244
+#: libs/install.php:232 libs/install.php:233
 msgid "Parent "
 msgstr "मुख्या "
 
-#: libs/install.php:246
+#: libs/install.php:235
 msgid "Update "
 msgstr "बदले "
 
-#: libs/install.php:249
+#: libs/install.php:238
 msgid "  Albums"
 msgstr "एल्बम"
 
-#: libs/install.php:264 libs/install.php:266 libs/install.php:274
+#: libs/install.php:253 libs/install.php:255 libs/install.php:263
 msgid " Tags"
 msgstr "टैग्स"
 
-#: libs/install.php:265
+#: libs/install.php:254
 msgid " Tag"
 msgstr "टैग"
 
-#: libs/install.php:267
+#: libs/install.php:256
 msgid " All Tags"
 msgstr "सभी टैग्स"
 
-#: libs/install.php:268 libs/install.php:269
+#: libs/install.php:257 libs/install.php:258
 msgid "Parent Tag"
 msgstr "मुख्या टैग"
 
-#: libs/install.php:270
+#: libs/install.php:259
 msgid "Edit Tag"
 msgstr "टैग बदले"
 
-#: libs/install.php:271
+#: libs/install.php:260
 msgid "Update Tag"
 msgstr "टैग बदले"
 
-#: libs/install.php:273
+#: libs/install.php:262
 msgid "New Tag Name"
 msgstr "टैग का नया नाम"
 
@@ -509,7 +584,7 @@ msgstr "UPG का मुख्या फाइल"
 msgid "Post Preview Layout"
 msgstr "पोस्टका Preview लेआउट"
 
-#: libs/metabox.php:12 setting.php:81
+#: libs/metabox.php:12 setting.php:69
 msgid "Extra Form Fields"
 msgstr "आपना बनाया हुवा फॉर्म fileds"
 
@@ -549,69 +624,109 @@ msgstr "छुपाये"
 msgid "Album for"
 msgstr "एल्बम"
 
-#: setting.php:24
+#: setting.php:12
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: setting.php:30
+#: setting.php:18
 msgid "Extra Settings"
 msgstr "Extra सेटिंग्स"
 
-#: setting.php:38
+#: setting.php:26
 msgid "Grid/Gallery Layout Settings"
 msgstr "Grid/Gallery लेआउट सेटिंग्स"
 
-#: setting.php:46
+#: setting.php:34
 msgid "Submission form Settings"
 msgstr "प्रकाशित करने वाला फॉर्म का सेटिंग्स"
 
-#: setting.php:55
+#: setting.php:43
 msgid "Media/Preview Layout Settings"
 msgstr "Media/Preview लेआउट सेटिंग्स"
 
-#: setting.php:72
+#: setting.php:60
 msgid "Form Fields & Shortcodes"
 msgstr "फॉर्म का फ़ील्ड्स औरे shortcode"
 
-#: setting.php:89
+#: setting.php:77
 msgid "Shortcode for Position 1st"
 msgstr "पहला Shortcode"
 
-#: setting.php:96
+#: setting.php:84
 msgid "Shortcode for Position 2nd"
 msgstr "दूसरा Shortcode"
 
-#: setting.php:109
+#: setting.php:97
 msgid "Social Profile Settings"
 msgstr "सामाजिक संजाल का सेटिंग्स"
 
-#: setting.php:116
+#: setting.php:104
 msgid "Member Profile Tab"
 msgstr "सदस्य बिबरण टैब"
 
-#: setting.php:128 setting.php:707
+#: setting.php:116 setting.php:692
 msgid "Media Settings"
 msgstr "चित्रका सेटिंग्स"
 
-#: setting.php:135
+#: setting.php:123
 msgid "Images sizes & Settings"
 msgstr "चित्राका आकर और उसका सेटिंग "
 
-#: setting.php:276
+#: setting.php:264
 msgid "UPG Media Settings"
 msgstr "UPG चित्राका सेटिंग्स"
 
-#: setting.php:701
-msgid "Basic Settings"
-msgstr "शीग्र सेटिंग्स"
+#: setting.php:394
+msgid "Display Image Upload Button: "
+msgstr ""
 
-#: setting.php:704
+#: setting.php:404
+msgid "Display Post Video URL Button: "
+msgstr ""
+
+#: setting.php:680 wp-upg.php:707 wp-upg.php:826
+msgid "Advance Settings"
+msgstr "अधिक सेटिंग्स"
+
+#: setting.php:686
+msgid "Common Settings"
+msgstr "जनरल सेटिंग्स"
+
+#: setting.php:689
 msgid "Form Fields"
 msgstr "फॉर्म का फ़ील्ड्स"
 
-#: setting.php:706
+#: setting.php:691
 msgid "Social Profile"
 msgstr "सामाजिक संजाल"
+
+#: shortcode.php:23
+msgid "[upg-list]"
+msgstr "[upg-list]"
+
+#: shortcode.php:24
+msgid "[upg-attach]"
+msgstr "[upg-attach]"
+
+#: shortcode.php:25
+msgid "[upg-post]"
+msgstr "[upg-post]"
+
+#: shortcode.php:26
+msgid "[upg-form]"
+msgstr "[upg-form]"
+
+#: shortcode.php:27
+msgid "[upg-edit]"
+msgstr "[upg-edit]"
+
+#: shortcode.php:28
+msgid "[upg-pick]"
+msgstr "[upg-pick]"
+
+#: shortcode.php:29
+msgid "[upg-search]"
+msgstr "[upg-search]"
 
 #: widgets/categories.php:147 widgets/form.php:54
 msgid "New title"
@@ -624,6 +739,10 @@ msgstr "शीर्षक:"
 #: widgets/categories.php:154 widgets/categories.php:157 widgets/form.php:67
 msgid "Select Parent"
 msgstr "पैरेंट का चयन करें"
+
+#: widgets/categories.php:176
+msgid "Show only the immediate children of the selected category."
+msgstr "सहायक एल्बम दिखाए, जब मुख्या एल्बम नाचुना हुवा हो."
 
 #: widgets/categories.php:181
 msgid "Hide Empty Categories"
@@ -649,17 +768,23 @@ msgstr "फॉर्म का लेआउट चुने"
 msgid "Select preview layout"
 msgstr "preview लेआउट चुने."
 
-#: wp-upg.php:362
-msgid "You are not authorized to edit"
-msgstr "आप को ये बदलनेका अनुमति नहीं है"
+#: wp-upg.php:706
+msgid "Quick Settings"
+msgstr "शीग्र सेटिंग्स"
 
-#: wp-upg.php:700
+#: wp-upg.php:724
 msgid "Documentation"
 msgstr "प्रलेखन"
 
-#: wp-upg.php:701
+#: wp-upg.php:725
 msgid "Rate the plugin"
 msgstr "प्लगइन दर"
+
+#~ msgid "Layout Name"
+#~ msgstr "लेआउटका नाम"
+
+#~ msgid "You are not authorized to edit"
+#~ msgstr "आप को ये बदलनेका अनुमति नहीं है"
 
 #~ msgid "View"
 #~ msgstr "देखें"
@@ -781,11 +906,6 @@ msgstr "प्लगइन दर"
 #~ msgstr ""
 #~ "फॉर्म देखने के लिए  [upg-post type=\"image\"]  [upg-post type=\"youtube\"] shortcode का "
 #~ "प्रयोग करे "
-
-#~ msgid ""
-#~ "Show only the immediate children of the selected category. Displays all the top "
-#~ "level categories if no parent is selected."
-#~ msgstr "सहायक एल्बम दिखाए, जब मुख्या एल्बम नाचुना हुवा हो."
 
 #~ msgid "Preview layout is used if lightbox/popup is not enabled in grid layout."
 #~ msgstr "Preview लेआउट तभी काम करेगा जब lightbox/popup Grid लेआउटमे बंद हो."

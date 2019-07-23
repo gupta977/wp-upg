@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
 "POT-Creation-Date: 2019-06-26 15:30+0545\n"
-"PO-Revision-Date: 2019-06-26 15:31+0545\n"
+"PO-Revision-Date: 2019-07-23 12:37+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: it\n"
@@ -48,34 +48,24 @@ msgid "&mdash; None &mdash;"
 msgstr "&mdash; None &mdash;"
 
 #: classes/quick_mode_setting.php:42
-#, fuzzy
-#| msgid "Settings"
 msgid "General Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni Generali"
 
 #: classes/quick_mode_setting.php:46
-#, fuzzy
-#| msgid "Post Preview Layout"
 msgid "Gallery Settings"
-msgstr "Pubblica Anteprima Layout"
+msgstr "Impostazioni Generali"
 
 #: classes/quick_mode_setting.php:50
-#, fuzzy
-#| msgid "Settings"
 msgid "Form Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni portale"
 
 #: classes/quick_mode_setting.php:54
-#, fuzzy
-#| msgid "Settings"
 msgid "Preview Settings"
-msgstr "Impostazioni"
+msgstr "Anteprima impostazioni"
 
 #: classes/quick_mode_setting.php:78
-#, fuzzy
-#| msgid "Select Image"
 msgid "Select Login page"
-msgstr "Seleziona immagine"
+msgstr "Seleziona Pagina Accesso"
 
 #: classes/quick_mode_setting.php:79
 msgid "Login page where user enters username & passwords."
@@ -91,8 +81,9 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:95
+#, fuzzy
 msgid "Members \"My Gallery\" page"
-msgstr ""
+msgstr "La mia galleria"
 
 #: classes/quick_mode_setting.php:96
 msgid "Page must contain [upg-list user=\"show_mine\"] shortcode."
@@ -100,7 +91,7 @@ msgstr ""
 
 #: classes/quick_mode_setting.php:112
 msgid "Auto approve post"
-msgstr ""
+msgstr "Approvazione automatica"
 
 #: classes/quick_mode_setting.php:113
 msgid "Automatically publish Post as soon as user submit."
@@ -147,15 +138,11 @@ msgid "Basic Settings"
 msgstr "Impostazioni di base"
 
 #: help.php:26
-#, fuzzy
-#| msgid "Important Settings"
 msgid "Important settings"
 msgstr "Importa Impostazioni"
 
 #: help.php:86 layout/form/basic/basic_post_form.php:113
 #: layout/form/simple/simple_edit_form.php:26
-#, fuzzy
-#| msgid "Maximum upload file size limit is"
 msgid "Maximum upload file size limit:"
 msgstr "Il limite massimo di dimensioni del file di upload è"
 
@@ -164,7 +151,9 @@ msgstr "Il limite massimo di dimensioni del file di upload è"
 #, fuzzy
 #| msgid "Layout Not Found. Check UPG Settings."
 msgid "Layout Not Found. Check settings."
-msgstr "Layout non trovato. Controllare le impostazioni UPG."
+msgstr ""
+"Modifica layout video non trovato. Controlla le impostazioni e salva di "
+"nuovo l'aggiornamento."
 
 #: layout/attach.php:133 layout/form/basic/basic_post_form.php:158
 #: layout/form/photo/photo_post_form.php:73
@@ -229,23 +218,17 @@ msgstr "Seleziona una nuova immagine da sostituire"
 
 #: layout/form/basic/basic_edit_form.php:116
 #: layout/form/photo/photo_post_form.php:36
-#, fuzzy
-#| msgid "Only picture files are allowed."
 msgid "Only picture files are allowed."
 msgstr "Sono ammessi solo file di immagini."
 
 #: layout/form/basic/basic_edit_form.php:117
 #: layout/form/photo/photo_post_form.php:37
-#, fuzzy
-#| msgid "Maximum upload file size limit is"
 msgid "Maximum upload file size limit is"
 msgstr "Il limite massimo di dimensioni del file di upload è"
 
 #: layout/form/basic/basic_edit_form.php:128
-#, fuzzy
-#| msgid "Update "
 msgid "Update Post"
-msgstr "Aggiornamento"
+msgstr "Aggiorna Post"
 
 #: layout/form/basic/basic_edit_youtube.php:4
 #: layout/form/basic/basic_post_youtube.php:24
@@ -318,10 +301,8 @@ msgid "My Gallery"
 msgstr "La mia galleria"
 
 #: layout/form/magic_form.php:36
-#, fuzzy
-#| msgid "Post Title"
 msgid "Post again"
-msgstr "Titolo Articolo"
+msgstr "Pubblica di nuovo"
 
 #: layout/form/photo/photo_post_youtube.php:5
 #, fuzzy
@@ -356,7 +337,9 @@ msgstr "Aggiorna pagina"
 #, fuzzy
 #| msgid "Pick Layout Not Found."
 msgid "Edit Layout Not Found."
-msgstr "Scegli layout non funzionante."
+msgstr ""
+"Modifica layout non trovato. Acquista \"modifica layout\" o crea il tuo "
+"layout di modifica personale."
 
 #: layout/form/post_edit_image.php:75 layout/form/post_edit_youtube.php:71
 msgid "Successfully updated."
@@ -396,7 +379,7 @@ msgstr "Si è verificato un errore. Riprova"
 #, fuzzy
 #| msgid "YouTube video is under review"
 msgid "Your video is under review"
-msgstr "Il video di YouTube è in fase di revisione"
+msgstr "La tua presentazione è in corso di revisione."
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/flat/flat_down.php:3
 #: layout/grid/list/list_down.php:3 layout/grid/photo/photo_down.php:3
@@ -452,8 +435,9 @@ msgid "Login Please !"
 msgstr "Esegui il login qui sotto"
 
 #: libs/functions.php:989 libs/functions.php:1076 libs/functions.php:1139
+#, fuzzy
 msgid "Category is not specified."
-msgstr ""
+msgstr "Categoria"
 
 #: libs/functions.php:989 libs/functions.php:991 libs/functions.php:1074
 #: libs/functions.php:1076 libs/functions.php:1078 libs/functions.php:1137
@@ -566,8 +550,9 @@ msgid "New Tag Name"
 msgstr "Nuovo nome tag"
 
 #: libs/metabox.php:8
+#, fuzzy
 msgid "Main media file"
-msgstr ""
+msgstr "Principale Immagine / Youtube"
 
 #: libs/metabox.php:10
 msgid "Post Preview Layout"
@@ -587,7 +572,7 @@ msgstr "Allegato a"
 #, fuzzy
 #| msgid "My Gallery"
 msgid "Primary Gallery"
-msgstr "La mia galleria"
+msgstr "Impostazioni Generali"
 
 #: libs/metabox.php:97
 msgid "Upload Image"
@@ -598,8 +583,9 @@ msgid "Post Youtube/Vimeo URL"
 msgstr "Pubblica YouTube/Vimeo URL"
 
 #: libs/taxonomy.php:6 libs/taxonomy.php:40
+#, fuzzy
 msgid "Album for: "
-msgstr ""
+msgstr " Album"
 
 #: libs/taxonomy.php:12
 #, fuzzy
@@ -619,7 +605,7 @@ msgstr "Nascondi"
 #, fuzzy
 #| msgid " Albums"
 msgid "Album for"
-msgstr " Albums"
+msgstr " Album"
 
 #: setting.php:12
 msgid "Settings"
@@ -629,13 +615,13 @@ msgstr "Impostazioni"
 #, fuzzy
 #| msgid "Settings"
 msgid "Extra Settings"
-msgstr "Impostazioni"
+msgstr "Campi personalizzati extra"
 
 #: setting.php:26
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "Grid/Gallery Layout Settings"
-msgstr "Pubblica Anteprima Layout"
+msgstr "Impostazioni Generali"
 
 #: setting.php:34
 msgid "Submission form Settings"
@@ -648,8 +634,9 @@ msgid "Media/Preview Layout Settings"
 msgstr "Pubblica Anteprima Layout"
 
 #: setting.php:60
+#, fuzzy
 msgid "Form Fields & Shortcodes"
-msgstr ""
+msgstr "I campi del modulo"
 
 #: setting.php:77
 msgid "Shortcode for Position 1st"
@@ -677,17 +664,18 @@ msgstr "Impostazioni"
 #, fuzzy
 #| msgid "Basic Settings"
 msgid "Images sizes & Settings"
-msgstr "Impostazioni di base"
+msgstr "Impostazioni Generali"
 
 #: setting.php:264
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "UPG Media Settings"
-msgstr "Pubblica Anteprima Layout"
+msgstr "Layout non trovato. Controllare le impostazioni UPG."
 
 #: setting.php:401
+#, fuzzy
 msgid "Display Image Upload Button: "
-msgstr ""
+msgstr "Carica immagine"
 
 #: setting.php:411
 msgid "Display Post Video URL Button: "
@@ -697,13 +685,13 @@ msgstr ""
 #, fuzzy
 #| msgid "Settings"
 msgid "Advance Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni Generali"
 
 #: setting.php:704
 #, fuzzy
 #| msgid "Settings"
 msgid "Common Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni Generali"
 
 #: setting.php:707
 msgid "Form Fields"
@@ -715,31 +703,31 @@ msgstr "Profilo social"
 
 #: shortcode.php:23
 msgid "[upg-list]"
-msgstr ""
+msgstr "[upg-list]"
 
 #: shortcode.php:24
 msgid "[upg-attach]"
-msgstr ""
+msgstr "[upg-attach]"
 
 #: shortcode.php:25
 msgid "[upg-post]"
-msgstr ""
+msgstr "[upg-post]"
 
 #: shortcode.php:26
 msgid "[upg-form]"
-msgstr ""
+msgstr "[upg-form]"
 
 #: shortcode.php:27
 msgid "[upg-edit]"
-msgstr ""
+msgstr "[upg-edit]"
 
 #: shortcode.php:28
 msgid "[upg-pick]"
-msgstr ""
+msgstr "[upg-pick]"
 
 #: shortcode.php:29
 msgid "[upg-search]"
-msgstr ""
+msgstr "[upg-search]"
 
 #: widgets/categories.php:147 widgets/form.php:54
 msgid "New title"
@@ -775,19 +763,19 @@ msgstr "Mostra la lista contatti"
 #, fuzzy
 #| msgid "Video Title"
 msgid "Widget Title:"
-msgstr "Titolo del video"
+msgstr "Titolo Articolo"
 
 #: widgets/form.php:65
 #, fuzzy
 #| msgid "Select Parent:"
 msgid "Select form type:"
-msgstr "Seleziona genitore:"
+msgstr "Impostazioni portale"
 
 #: widgets/form.php:75
 #, fuzzy
 #| msgid "Select Image"
 msgid "Select form layout"
-msgstr "Seleziona immagine"
+msgstr "Impostazioni portale"
 
 #: widgets/form.php:86
 #, fuzzy
