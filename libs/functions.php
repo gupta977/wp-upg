@@ -1854,7 +1854,7 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 			$data.=$term->slug . ",";
 		}
 	}
-	return rtrim($data,',');
+	return rtrim($data,',').',';
 }
 
 	//Generate tags link

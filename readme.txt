@@ -1,6 +1,6 @@
 === User Post Gallery - UPG ===
 Contributors: odude
-Tags: guest post, user post, anonymous post, frontend post, guest author,  frontend content, frontend post, frontend upload, generated content, guest blog, guest blogging, guest publish, guest upload, post sharing, post submission, public post, share posts, submit post, user generated, user submit, user submitted post, visitor post
+Tags: user generated, photo gallery, anonymous post, youtube gallery, video gallery
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
 Tested up to: 5.2.2
@@ -126,12 +126,6 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * REST-API with UPG custom fields
 
 
-
-Basic installation video
-[youtube https://youtu.be/Mu_-MD4dXYQ]
-
-
-
 = Support =
 
 For further questions feel free to drop a line at navneet@odude.com.
@@ -223,6 +217,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.93 =
+* Fixed video submit form layout
+* Fixed issues with tags javascript
+
+
 = 1.92 =
 * Added magic form layout, now you can use [upg-form] inside form layout
 * Layout out selection settings now as basic settings.

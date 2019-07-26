@@ -55,7 +55,7 @@ if($layout=="personal")
 }
 else
 {
-	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_form.php";
+	$inc_file=upg_BASE_DIR."/layout/form/".$layout."/".$layout."_post_youtube.php";
 	if(file_exists($inc_file))
 	{
 		if( strpos(file_get_contents($inc_file),'[upg-form') !== false)

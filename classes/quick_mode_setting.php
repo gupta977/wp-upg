@@ -100,7 +100,7 @@ class upg_quick_setting {
                 array(
                     'name'  => 'gallery_tags',
                     'label' => __( 'Enable Gallery Tags', 'wp-upg' ),
-                    'desc'  => __( 'It will show tags assigned above the gallery. [upg-list tag_show="on"]', 'wp-upg' ),
+                    'desc'  => __( 'Shows tags above the gallery, if few tag presets. [upg-list tag_show="on"]', 'wp-upg' ),
                     'type'  => 'checkbox',
                     'default' => upg_get_option( 'gallery_tags','upg_settings', 'off' ),
                 ),
