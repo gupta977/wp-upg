@@ -2,7 +2,7 @@
 
 	[upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
 	
-	[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" ]
+	[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
 	
 	[upg-form-tag type="tag" title="Insert tag"]
 	

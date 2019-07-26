@@ -2,7 +2,7 @@
 
 	[upg-form-tag type="post_title" title="Video Title" value="" placeholder="main title"]
 	
-	[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" ]
+	[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="youtube" ]
 	
 	[upg-form-tag type="tag" title="Insert tag"]
 	
