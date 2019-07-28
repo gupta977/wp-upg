@@ -337,7 +337,7 @@ function upg_submit_url($title, $url, $content, $category,$preview, $post_type='
 	//if (empty($content))  $newPost['error'][] = 'required-description';
 	if (empty($url))  $newPost['error'][] = 'required-url';
 	if ($category=='-1') $newPost['error'][] = 'required-category';
-	if(upg_getid_youtube($url)=='') $newPost['error'][] = 'wrong-video-url';
+	if(upg_getid_video_url($url)=='') $newPost['error'][] = 'wrong-video-url';
 		
 	$newPost['error'][]=apply_filters('upg_verify_submit', "");
 		//var_dump($newPost);
@@ -1571,7 +1571,7 @@ function upg_image_src($size,$post)
 				if(empty($youtube_url))
 					return plugins_url( '../images/noimg.png', __FILE__ );
 				else if(trim($youtube_url)!="")
-					return upg_getimg_youtube($youtube_url);
+					return upg_getimg_video_url($youtube_url);
 				else
 					return plugins_url( '../images/noimg.png', __FILE__ );
 			}
@@ -1712,7 +1712,7 @@ function upg_delete_post_media( $post_id ) {
 	}
 }
 
-function upg_getid_youtube($url)
+function upg_getid_video_url($url)
 {
 	//echo $url;
 	if (strpos($url, 'vimeo') > 0) 
@@ -1728,25 +1728,10 @@ function upg_getid_youtube($url)
 	else
 	{
 		
-		$url=str_replace("m.youtube","www.youtube",$url);
+		//$url=str_replace("m.youtube","www.youtube",$url);
 
-		$pattern = 
-                '%^# Match any youtube URL
-                (?:https?://)?  # Optional scheme. Either http or https
-                (?:www\.)?      # Optional www subdomain
-				(?:m\.)?      # Optional mobile subdomain
-                (?:             # Group host alternatives
-                  youtu\.be/    # Either youtu.be,
-                | youtube\.com  # or youtube.com
-                  (?:           # Group path alternatives
-                    /embed/     # Either /embed/
-                  | /v/         # or /v/
-                  | /watch\?v=  # or /watch\?v=
-                  )             # End path alternatives.
-                )               # End host alternatives.
-                ([\w-]{10,12})  # Allow 10-12 for 11 char youtube id.
-                $%x'
-                ;
+		$pattern = '%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i';
+		
             $result = preg_match($pattern, $url, $matches);
             if ($result) {
                 return $matches[1];
@@ -1756,19 +1741,20 @@ function upg_getid_youtube($url)
 
 }
 
-function upg_getimg_youtube($url)
+
+function upg_getimg_video_url($url)
 {
-	$youtube_id=upg_getid_youtube($url);
+	$video_id=upg_getid_video_url($url);
 	if (strpos($url, 'vimeo') > 0) 
 	{
-		$data = file_get_contents("http://vimeo.com/api/v2/video/$youtube_id.json");
+		$data = file_get_contents("http://vimeo.com/api/v2/video/$video_id.json");
 		$data = json_decode($data);
 		return $data[0]->thumbnail_large;
 	}
 	else
 	{
 	
-	return 'https://img.youtube.com/vi/'.$youtube_id.'/mqdefault.jpg';
+	return 'https://img.youtube.com/vi/'.$video_id.'/mqdefault.jpg';
 	}
 }
 
@@ -1791,7 +1777,7 @@ function upg_isVideo($post)
 
 function upg_video_preview_url($url)
 {
-	$youtube_id=upg_getid_youtube($url);
+	$youtube_id=upg_getid_video_url($url);
 	
 	if (strpos($url, 'vimeo') > 0) 
 	{

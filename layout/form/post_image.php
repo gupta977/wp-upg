@@ -32,9 +32,8 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 
 	if($title=='')
 {
-
 	//Form not submitted yet.
-	
+		
 }
 else
 {
@@ -195,7 +194,7 @@ else
 	}
 		
 	}
-	
+
 //ob_flush();	
 }
 $abc=ob_get_clean (); 

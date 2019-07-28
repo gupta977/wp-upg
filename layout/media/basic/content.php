@@ -24,6 +24,7 @@
 						);
 	
 						echo wp_video_shortcode( $attr );
+						//echo wp_oembed_get($attr['src']);
 					 }
 					else
 					{

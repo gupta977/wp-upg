@@ -94,17 +94,17 @@
 	<div id="tabs">
 	<ul>
 		
-        <li><a href="#tab-1"><?php echo __("Upload Image","odudeshop");?></a></li>
+        <li><a href="#tab-1"><?php echo __("Upload Image","wp-upg");?></a></li>
        
-		<li><a href="#tab-2"><?php echo __("Post Youtube/Vimeo URL","odudeshop");?></a></li> 
+		<li><a href="#tab-2"><?php echo __("Submit Video URL","wp-upg");?></a></li> 
 		
 				
 	</ul>
 	 <div id="tab-1">
-		<?php include(dirname(__FILE__).'/post_img.php'); ?>
+		<?php include(dirname(__FILE__).'/admin_post_img.php'); ?>
 	 </div>
 	 <div id="tab-2">
-		<?php include(dirname(__FILE__).'/youtube_url.php'); ?>
+		<?php include(dirname(__FILE__).'/admin_video_url.php'); ?>
 	 </div>
 	 </div>
 	 

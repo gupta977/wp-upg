@@ -72,7 +72,7 @@ else
 			echo "<h2>".__('Successfully updated.','wp-upg')."</h2>";
 			
 			//update video url
-			if(upg_getid_youtube($url)=='')
+			if(upg_getid_video_url($url)=='')
 			{
 				echo __('Error in Video URL','wp-upg');
 			}
