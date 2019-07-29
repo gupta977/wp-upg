@@ -9,7 +9,6 @@ if(isset($options['editor']) && $options['editor']=='1' )
 else
 	$editor=false;	
 
-
 $title='';
 
 $abc="";
@@ -33,7 +32,51 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 	if($title=='')
 {
 	//Form not submitted yet.
-		
+	/*
+	$url = 'https://www.dailymotion.com/video/x6ngh5u';
+	$url = esc_url_raw( $url );
+
+	require_once(ABSPATH.'wp-includes/class-oembed.php');
+	$oembed= new WP_oEmbed;
+	
+
+	$raw_provider = parse_url($oembed->get_provider($url));
+	if (isset($raw_provider['host'])) 
+	{
+			$provider = $oembed->discover($url);
+			$video = $oembed->fetch($provider, $url);
+			if (isset($video) && $video != false)
+			{
+				var_dump($video);
+				echo "<hr>";
+				echo $video->title;
+				//echo $video->html;
+				$thumb = $video->thumbnail_url;
+				echo '<hr><img src="'.$thumb.'">';
+			}
+			else
+			{
+				echo "ERROR";
+			}
+	}
+	else 
+	{
+		echo "provider not found";
+	}
+	//As noted in the comments below, you can auto-detect the video provider with the following
+	
+	//$title = $video->title;
+	//$html = $video->html;
+	//$thumb = $video->thumbnail_url;
+	//echo '<img src="'.$thumb.'">';
+	//echo $title;
+	//echo $html;
+	echo wp_oembed_get($url);
+
+	//Helps to cache 
+	//global $wp_embed;
+	//echo $wp_embed->shortcode( array(), $url );	
+	*/
 }
 else
 {

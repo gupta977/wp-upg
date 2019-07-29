@@ -1547,11 +1547,7 @@ function upg_image_src($size,$post)
 	
 	
 	$all_upg_extra= get_post_custom($post->ID);
-			if(isset($all_upg_extra["youtube_url"][0]))
-			$youtube_url=trim($all_upg_extra["youtube_url"][0]);
-			else	
-			$youtube_url="";
-		
+			
 			
 	foreach ( $field_names as $name ) 
 	{
@@ -1568,10 +1564,13 @@ function upg_image_src($size,$post)
 			}
 			else
 			{
-				if(empty($youtube_url))
-					return plugins_url( '../images/noimg.png', __FILE__ );
-				else if(trim($youtube_url)!="")
-					return upg_getimg_video_url($youtube_url);
+				if(isset($all_upg_extra["youtube_url"][0]))
+					$video_url=trim($all_upg_extra["youtube_url"][0]);
+				else	
+					$video_url="";
+		
+				if(trim($video_url)!="")
+					return upg_getimg_video_url($video_url,$post);
 				else
 					return plugins_url( '../images/noimg.png', __FILE__ );
 			}
@@ -1715,7 +1714,28 @@ function upg_delete_post_media( $post_id ) {
 function upg_getid_video_url($url)
 {
 	//echo $url;
-	if (strpos($url, 'vimeo') > 0) 
+	if(strpos($url,'dailymotion')>0)
+	{
+		if (preg_match('!^.+dailymotion\.com/(video|hub)/([^_]+)[^#]*(#video=([^_&]+))?|(dai\.ly/([^_]+))!', $url, $m)) {
+			if (isset($m[6])) {
+				return $m[6];
+			}
+			if (isset($m[4])) {
+				return $m[4];
+			}
+			return $m[2];
+		}
+		return '';
+	}
+	else if(strpos($url,'facebook')>0)
+	{
+		$result= preg_match("~(?:t\.\d+/)?(\d+)~i", $url, $output_array);
+		if($result)
+			return $output_array[1];
+		else
+			return '';
+	}
+	else if (strpos($url, 'vimeo') > 0) 
 	{
 		$video = $url;
 		$result = preg_match("/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/", $url, $output_array);
@@ -1742,8 +1762,75 @@ function upg_getid_video_url($url)
 }
 
 
-function upg_getimg_video_url($url)
+function upg_getimg_video_url($url,$post="")
 {
+	$all_upg_extra= get_post_custom($post->ID);
+			
+	if(isset($all_upg_extra["thumbnail_url"][0]))
+	{
+		return $all_upg_extra["thumbnail_url"][0];
+	}
+	require_once(ABSPATH.'wp-includes/class-oembed.php');
+	$oembed= new WP_oEmbed;
+
+	$raw_provider = parse_url($oembed->get_provider($url));
+	if (isset($raw_provider['host'])) 
+	{
+			$provider = $oembed->discover($url);
+			$video = $oembed->fetch($provider, $url);
+			if (isset($video) && $video != false)
+			{
+				//var_dump($video);
+				//echo "<hr>";
+				//echo $video->title;
+				//upg_log($video->title);
+				//echo $video->html;
+				if(isset($video->thumbnail_url))
+				{
+					add_post_meta($post->ID, 'thumbnail_url', $video->thumbnail_url);
+					return $video->thumbnail_url;
+				}
+				else
+				{
+					$video_id=upg_getid_video_url($url);
+					if (strpos($url, 'facebook') > 0) 
+					{
+						$thumb_url="https://graph.facebook.com/".$video_id."/picture";
+						add_post_meta($post->ID, 'thumbnail_url', $thumb_url);
+						return $thumb_url;
+					}
+					else
+					{
+						return plugins_url( '../images/noimg.png', __FILE__ );
+					}
+
+				}
+				//upg_log("set the new thumbnail ".$thumb);
+				
+				//echo '<hr><img src="'.$thumb.'">';
+			}
+			else
+			{
+				//upg_log('Am here');
+				$video_id=upg_getid_video_url($url);
+				if (strpos($url, 'dailymotion') > 0) 
+				{
+					$data = file_get_contents('https://api.dailymotion.com/video/'.$video_id.'?fields=thumbnail_large_url');
+					$data = json_decode($data, TRUE);
+					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_large_url']);
+					return $data['thumbnail_large_url'];
+				}
+				else
+				{
+					return plugins_url( '../images/noimg.png', __FILE__ );
+				}
+			}
+	}
+	else 
+	{
+		return plugins_url( '../images/noimg.png', __FILE__ );
+	}
+	/*
 	$video_id=upg_getid_video_url($url);
 	if (strpos($url, 'vimeo') > 0) 
 	{
@@ -1756,6 +1843,7 @@ function upg_getimg_video_url($url)
 	
 	return 'https://img.youtube.com/vi/'.$video_id.'/mqdefault.jpg';
 	}
+	*/
 }
 
 
