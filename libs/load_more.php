@@ -75,7 +75,7 @@ $text_excerpt=wpautop( stripslashes ($post->post_excerpt));
 
 	if(upg_isVideo($post))
 	{
-		$preview_large=upg_video_preview_url(upg_isVideo($post));
+		$preview_large=upg_video_preview_url(upg_isVideo($post),$post);
 		$preview_type='youtube';
 	}
 	else

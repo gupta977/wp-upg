@@ -337,7 +337,7 @@ function upg_submit_url($title, $url, $content, $category,$preview, $post_type='
 	//if (empty($content))  $newPost['error'][] = 'required-description';
 	if (empty($url))  $newPost['error'][] = 'required-url';
 	if ($category=='-1') $newPost['error'][] = 'required-category';
-	if(upg_getid_video_url($url)=='') $newPost['error'][] = 'wrong-video-url';
+	if(upg_allowed_embed_url($url)=='') $newPost['error'][] = 'invalid-url';
 		
 	$newPost['error'][]=apply_filters('upg_verify_submit', "");
 		//var_dump($newPost);
@@ -1761,6 +1761,17 @@ function upg_getid_video_url($url)
 
 }
 
+function upg_allowed_embed_url($url)
+{
+	require_once(ABSPATH.'wp-includes/class-oembed.php');
+	$oembed= new WP_oEmbed;
+	$raw_provider = parse_url($oembed->get_provider($url));
+	if (isset($raw_provider['host'])) 
+	{
+		return true;
+	}
+	return false;
+}
 
 function upg_getimg_video_url($url,$post="")
 {
@@ -1852,18 +1863,15 @@ function upg_isVideo($post)
 	$all_upg_extra= get_post_custom($post->ID);
 			
 			if(isset($all_upg_extra["youtube_url"][0]))
-			$youtube_url=$all_upg_extra["youtube_url"][0];
+			return $all_upg_extra["youtube_url"][0];
 			else	
-			$youtube_url="";
+			return "";
 		
-		if($youtube_url=="")
-			return '';
-		else
-			return $youtube_url;
-	
+		
 }
 
-function upg_video_preview_url($url)
+//**   */Deprecated 
+function upg_video_preview_url($url,$post="")
 {
 	$youtube_id=upg_getid_video_url($url);
 	
@@ -1871,10 +1879,14 @@ function upg_video_preview_url($url)
 	{
 		return "http://player.vimeo.com/video/".$youtube_id;
 	}
-	else
+	else if (strpos($url, 'yout') > 0) 
 	{
 		
 		return 'https://www.youtube.com/embed/'.$youtube_id.'?rel=0&amp;wmode=transparent';
+	}
+	else
+	{
+		return upg_isVideo($post);
 	}
 }
 
@@ -1951,4 +1963,16 @@ function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='
 	return $taglink;
 }
 
+add_action("wp_ajax_upg_oembed", "upg_oembed");
+add_action("wp_ajax_nopriv_upg_oembed", "upg_my_must_login");
+
+function upg_oembed()
+{
+	if ( !wp_verify_nonce( $_REQUEST['nonce'], "upg_oembed")) {
+		exit("No naughty business please");
+	 }   
+	 $oembed_url=$_REQUEST["oembed_url"];
+	 echo wp_oembed_get($oembed_url);
+	die();
+}
 ?>

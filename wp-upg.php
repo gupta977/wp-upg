@@ -117,8 +117,10 @@ Domain Path: /languages
 		 
 		 if(!isset($options['colorbox']) || $options['colorbox']=='0')
 		 {
-		 	wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/colorbox.css','', '1', 'all');
-		 	wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.colorbox-min.js' ,array( 'jquery' ), null, true );
+		 	//wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/colorbox.css','', '1', 'all');
+			// wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.colorbox-min.js' ,array( 'jquery' ), null, true );
+			 wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
+		 	wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
 		 }
 		
 		if(!isset($options['purecss']) || $options['purecss']=='0')
@@ -137,10 +139,12 @@ Domain Path: /languages
 		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' );
 		 wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jquery.zoom.js' );
 		  wp_enqueue_script( 'upg_delete', plugins_url() .'/'. upg_FOLDER.'/js/upg_delete.js' );
+		  wp_enqueue_script( 'upg_oembed', plugins_url() .'/'. upg_FOLDER.'/js/upg_oembed.js' );
 		  wp_enqueue_script( 'upg_load_more', plugins_url() .'/'. upg_FOLDER.'/js/upg_load_more.js' );
 		  wp_enqueue_script( 'upg_ajax_post', plugins_url() .'/'. upg_FOLDER.'/js/upg_ajax_post.js' );
 		  
 		  wp_localize_script( 'upg_delete', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+		  wp_localize_script( 'upg_oembed', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 		  wp_localize_script( 'upg_load_more', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
    
     }

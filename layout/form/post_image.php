@@ -31,6 +31,13 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 
 	if($title=='')
 {
+	$nonce = wp_create_nonce("upg_oembed");
+	$oembed_url=admin_url('admin-ajax.php?action=upg_oembed&oembed_url=https://www.dailymotion.com/video/x6ngh5u&nonce='.$nonce);
+	?>
+	
+<a data-fancybox="" data-type="ajax" href="<?php echo $oembed_url; ?>" title="flickr" border="0">hello</a>
+
+<?php
 	//Form not submitted yet.
 	/*
 	$url = 'https://www.dailymotion.com/video/x6ngh5u';

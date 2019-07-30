@@ -34,7 +34,7 @@ if($post_id)
 	
 	if(upg_isVideo($post_id))
 	{
-		$preview_large=upg_video_preview_url(upg_isVideo($post_id));
+		$preview_large=upg_video_preview_url(upg_isVideo($post_id),$post_id);
 		$preview_type='youtube';
 	}
 	else

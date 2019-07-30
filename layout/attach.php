@@ -8,7 +8,7 @@ global $wp_query;
 $post_status=array('publish');
 $author_show=false;
 $postsperpage = $options['global_perpage'];
-
+$show_tag=upg_get_option( 'gallery_tags','upg_gallery', 'off' );
 
 
 	if(isset($params['layout']))
