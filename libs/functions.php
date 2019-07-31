@@ -1787,10 +1787,13 @@ function upg_getimg_video_url($url,$post="")
 	$raw_provider = parse_url($oembed->get_provider($url));
 	if (isset($raw_provider['host'])) 
 	{
+		
 			$provider = $oembed->discover($url);
 			$video = $oembed->fetch($provider, $url);
+			
 			if (isset($video) && $video != false)
 			{
+				
 				//var_dump($video);
 				//echo "<hr>";
 				//echo $video->title;
@@ -1798,11 +1801,13 @@ function upg_getimg_video_url($url,$post="")
 				//echo $video->html;
 				if(isset($video->thumbnail_url))
 				{
+					
 					add_post_meta($post->ID, 'thumbnail_url', $video->thumbnail_url);
 					return $video->thumbnail_url;
 				}
 				else
 				{
+					
 					$video_id=upg_getid_video_url($url);
 					if (strpos($url, 'facebook') > 0) 
 					{
@@ -1822,7 +1827,7 @@ function upg_getimg_video_url($url,$post="")
 			}
 			else
 			{
-				//upg_log('Am here');
+				//upg_log('Am here.....');
 				$video_id=upg_getid_video_url($url);
 				if (strpos($url, 'dailymotion') > 0) 
 				{
@@ -1830,6 +1835,13 @@ function upg_getimg_video_url($url,$post="")
 					$data = json_decode($data, TRUE);
 					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_large_url']);
 					return $data['thumbnail_large_url'];
+				}
+				else if (strpos($url, 'instagram') > 0) 
+				{
+					$data = file_get_contents('https://api.instagram.com/oembed/?url='.$url);
+					$data = json_decode($data, TRUE);
+					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_url']);
+					return $data['thumbnail_url'];
 				}
 				else
 				{
@@ -1968,11 +1980,14 @@ add_action("wp_ajax_nopriv_upg_oembed", "upg_my_must_login");
 
 function upg_oembed()
 {
-	if ( !wp_verify_nonce( $_REQUEST['nonce'], "upg_oembed")) {
-		exit("No naughty business please");
-	 }   
-	 $oembed_url=$_REQUEST["oembed_url"];
-	 echo wp_oembed_get($oembed_url);
+	if(isset($_REQUEST['nonce']))
+	{
+		if ( !wp_verify_nonce( $_REQUEST['nonce'], "upg_oembed")) {
+			exit("No naughty business please");
+		}   
+		$oembed_url=$_REQUEST["oembed_url"];
+		echo '<div style="text-align:center">'.wp_oembed_get($oembed_url).'</div>';
+	}
 	die();
 }
 ?>

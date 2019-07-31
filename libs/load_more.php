@@ -73,16 +73,42 @@ $image_size='thumb';
 $text=wpautop( stripslashes ($post->post_content));
 $text_excerpt=wpautop( stripslashes ($post->post_excerpt));
 
-	if(upg_isVideo($post))
+if(upg_isVideo($post))
+{
+	$nonce = wp_create_nonce("upg_oembed");
+	$oembed_url=upg_video_preview_url(upg_isVideo($post),$post);
+	$extra_param="";
+	$preview_type='';
+
+	if (strpos($oembed_url, 'vimeo') > 0) 
 	{
-		$preview_large=upg_video_preview_url(upg_isVideo($post),$post);
-		$preview_type='youtube';
+		$preview_large=$oembed_url;
+	}
+	else if (strpos($oembed_url, 'yout') > 0) 
+	{
+		
+		$preview_large=$oembed_url;
+	}
+	else if (strpos($oembed_url, 'facebook') > 0) 
+	{
+		
+		$preview_large=admin_url('admin-ajax.php?action=upg_oembed&oembed_url='.$oembed_url.'&nonce='.$nonce);
+		
+		$extra_param='data-type="iframe"';
 	}
 	else
 	{
-		$preview_large=$image_large;
-		$preview_type='wp-upg';
+		$preview_large=admin_url('admin-ajax.php?action=upg_oembed&oembed_url='.$oembed_url.'&nonce='.$nonce);
+		$extra_param='data-type="ajax"';
 	}
+	
+}
+else
+{
+	$preview_large=$image_large;
+	$preview_type='images';
+	$extra_param="";
+}
 
 	
 	if($layout=="personal")
@@ -104,23 +130,6 @@ $text_excerpt=wpautop( stripslashes ($post->post_excerpt));
 
 
 endwhile;
-
-?>
-<script>
-jQuery(function( $ )
-{
-	
- jQuery('a.wp-upg').colorbox({scalePhotos: true,  innerWidth:"80%", innerHeight:"80%",rel:'wp-upg'});
- jQuery(".inline").colorbox({inline:true, width:"50%", rel:'wp-upg'});
- jQuery(".youtube").colorbox({iframe:true, innerWidth:"80%", innerHeight:"80%",rel:'wp-upg'});
-  jQuery(".vimeo").colorbox({iframe:true, innerWidth:"80%", innerHeight:"80%",rel:'wp-upg'});
- 
-});
-
-</script>
-
-<?php
-
 	
 	$put=ob_get_clean(); 
 	//$response['msg'] = "hii";

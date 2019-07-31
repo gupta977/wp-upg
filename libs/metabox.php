@@ -96,7 +96,7 @@
 		
         <li><a href="#tab-1"><?php echo __("Upload Image","wp-upg");?></a></li>
        
-		<li><a href="#tab-2"><?php echo __("Submit Video URL","wp-upg");?></a></li> 
+		<li><a href="#tab-2"><?php echo __("Embed URL","wp-upg");?></a></li> 
 		
 				
 	</ul>

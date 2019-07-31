@@ -207,7 +207,7 @@ return $abc;
 
 [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title" required="true"]
 
-[upg-form-tag type="video_url" title="Submit youtube/vimeo URL" placeholder="http://" required="true"]
+[upg-form-tag type="video_url" title="Submit embed URL" placeholder="http://" required="true"]
 
 [upg-form-tag type="file" title="Select file"]
 

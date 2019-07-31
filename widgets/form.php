@@ -66,7 +66,7 @@ class upg_form_Widget extends WP_Widget {
               <select id="<?php echo $this->get_field_id( 'form_type' ); ?>" name="<?php echo $this->get_field_name( 'form_type' ); ?>" class="widefat">
 	<option value="image">— <?php _e( 'Select Parent' ); ?> —</option>
 	<option class="level-0" <?php if($form_type=='image') echo 'selected="selected"'; ?> value="image">Meida Form</option>
-	<option class="level-0" <?php if($form_type=='youtube') echo 'selected="selected"'; ?> value="youtube">Youtube/Vimeo URL</option>
+	<option class="level-0" <?php if($form_type=='embed') echo 'selected="selected"'; ?> value="embed">Embed URL</option>
   
 </select>
 	<br><br>

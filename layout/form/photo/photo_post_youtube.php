@@ -58,7 +58,7 @@
             <label for="url"><?php _e('Youtube URL', 'wp-upg'); ?></label>
             <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="" placeholder="<?php _e('copy/paste Youtube URL', 'wp-upg'); ?>" required>
 <ul>
-		  <li>Only URL from youtube is allowed. Eg.<i>https://www.youtube.com/watch?v=QU_V52Ou04Q </i></li>
+		  <li>Only embed URL is allowed. Eg.<i>https://www.youtube.com/watch?v=QU_V52Ou04Q </i></li>
 		  
 		  </ul>       
 	   </div>

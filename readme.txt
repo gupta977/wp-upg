@@ -167,7 +167,7 @@ Go to UPG Settings and select those pages at appropriate location before use.
 = 2. How to display gallery =
 
 Copy paste shortcode to post/page where you like to display gallery.
-[upg-attach type="image"] or [upg-attach type="youtube"]
+[upg-attach type="image"] or [upg-attach type="embed"]
 
 To display gallery based on album, tags, date, or more.. use shortcode
 [upg-list]
@@ -247,7 +247,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Page selection fixes
 * Fixes empty title in widgets
 * UPG Settings selection between Quick & Advance.
-* filter upg-list by image & youtube Eg. [upg-list filter="youtube"]
+* filter upg-list by image & youtube Eg. [upg-list filter="embed"]
 * Force user to login to view gallery Eg. [upg-list login="true"]
 * Now separate album can be created for images & video
 * Submission form have different album based on type.

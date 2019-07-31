@@ -77,7 +77,7 @@ jQuery(document).ready(function($){
 		 <li><a href="#tab-1"><?php echo "Preview File";?></a></li>
 		<li><a href="#tab-3"><?php echo "Pick File";?></a></li>
 		<li><a href="#tab-4"><?php echo "Post Form File";?></a></li>
-		<li><a href="#tab-5"><?php echo "Post YouTube File";?></a></li>
+		<li><a href="#tab-5"><?php echo "Post Embed URL File";?></a></li>
 		
        </ul>
 	 <div id="tab-1">
@@ -256,7 +256,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<b>$thetitle</b> = Title of the image <br>
 	
 	<b>$popup </b>= Returns popup is on/off<br>
-	<b>$preview_type</b> = Returns preview as image/youtube <br>
+	<b>$preview_type</b> = Returns preview as image/embed <br>
 	<b>$perrow </b>= Returns number of row to display. Used in loops.<br>
 	<b><?php //echo '<img src="'.upg_PLUGIN_URL.'/images/new.png"> '; ?> $post_status</b>= Return draft (Under review) or published<br>
 	<b>$count</b> = Displays total number of post found.
@@ -363,7 +363,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<b>$thetitle</b> = Title of the image <br>
 	<br>
 	<b>$popup </b>= Returns popup is on/off<br>
-	<b>$preview_type</b> = Returns preview as image/youtube <br>
+	<b>$preview_type</b> = Returns preview as image/embed <br>
 	
 	
 	<br>
@@ -513,9 +513,9 @@ for (var i=0, len=sz.length; i<len; i++) {
 	   
 	   <form  id="listpressYoutube">
 	 <table border="0" width="100%"><tr><td width="50%">
-	 <b>UPG Post Youtube Form: </b><h2><?php echo $form_layout;?> layout</h2>
-	Shortcode: [upg-post type="youtube" layout="<?php echo $form_layout;?>"] <br>
-	This layout is used to show submission form for the YouTube video only. It cannot be combined with file upload.
+	 <b>UPG Post Embed Form: </b><h2><?php echo $form_layout;?> layout</h2>
+	Shortcode: [upg-post type="embed" layout="<?php echo $form_layout;?>"] <br>
+	This layout is used to show submission form for embed url only. It cannot be combined with file upload.
 	<br>
 	<font color="red">Due to html <b>form</b> tag, the submission may not work in chrome browser.</font>
 	 </td><td align="right"><b>Copy code from </b>: </td><td>

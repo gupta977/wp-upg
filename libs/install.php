@@ -89,9 +89,9 @@ if(!isset($options['global_page']))
 		update_option( 'upg_settings', $options );	
 	}
 
-	if(!isset($options['colorbox']))
+	if(!isset($options['fancybox']))
 	{
-		$options['colorbox']='0';
+		$options['fancybox']='0';
 		update_option( 'upg_settings', $options );	
 	}
 	
@@ -292,7 +292,7 @@ function upg_install()
 		 $bid=wp_insert_post(array('post_title'=>'Post Image','post_content'=>'[upg-post type="image"]','post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'post_image_page','upg_form', $bid );
 
-		 $cid=wp_insert_post(array('post_title'=>'Post Video URL','post_content'=>'[upg-post type="youtube"]','post_type'=>'page','post_status'=>'publish'));
+		 $cid=wp_insert_post(array('post_title'=>'oEmbed URL','post_content'=>'[upg-post type="embed"]','post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'post_youtube_page','upg_form', $cid );
 		 
 		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine" layout="basic"]','post_type'=>'page','post_status'=>'publish'));

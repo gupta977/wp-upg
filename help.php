@@ -20,7 +20,7 @@
 ?>
 		<div class="update-nag">
 		<b>Common shortcodes uses:</b><br>
-	copy/paste <code>[upg-attach type="image"]</code>or <code>[upg-attach type="youtube"]</code> shortcode into wordpress post/page content area.<br>
+	copy/paste <code>[upg-attach type="image"]</code>or <code>[upg-attach type="embed"]</code> shortcode into wordpress post/page content area.<br>
 	The embed gallery will have own set of post. All post/images from different post will be shown in primary gallery <code>[upg-list]</code>.
 	<br>Use <code>[upg-post]</code> for submission form.<br>
 	Check all important settings with start icon. <a href="#" title="<?php echo __( 'Important settings', 'wp-upg' ); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/star.png">'; ?></a>
@@ -91,7 +91,7 @@ flush_rewrite_rules();
 	
 	echo "<h3>Tips</h3><ul>";
 	
-	echo '<li><b>To create Frontend Image Upload Page:</b> Create a page and add it to menu. The Content should be <br>For Image [upg-post type="image"] <br> For Youtube or vimeo [upg-post type="youtube"]</li>';
+	echo '<li><b>To create Frontend Image Upload Page:</b> Create a page and add it to menu. The Content should be <br>For Image [upg-post type="image"] <br> For Youtube, vimeo and others [upg-post type="embed"]</li>';
 	
 	?>
 		 
@@ -99,7 +99,7 @@ flush_rewrite_rules();
 		
 			echo '<li><b>To change layout of form to your personal layout.</b> Eg. [upg-post type="image" preview="personal" layout="personal"]</li>';
 		
-	echo '<li><b>To post image directly to given media/preview layout,</b> At post form add parameter with the layout name. Eg. [upg-post type="youtube" preview="personal"]</li>';
+	echo '<li><b>To post image directly to given media/preview layout,</b> At post form add parameter with the layout name. Eg. [upg-post type="embed" preview="personal"]</li>';
 	
 	echo "<li>Click <b><a href='http://odude.com/demo/faq/' target='_blank'>this link</a> </b>for more basic installation questions and available features. </li>";
 	echo "</ul>";

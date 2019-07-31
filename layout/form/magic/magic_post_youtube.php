@@ -8,7 +8,7 @@
 	
 	[upg-form-tag type="article" title="Description"  placeholder="Content Plz"]
 	
-	[upg-form-tag type="video_url" title="Submit youtube/vimeo URL" placeholder="http://" required="true"]
+	[upg-form-tag type="video_url" title="Submit embed URL" placeholder="http://" required="true"]
 	
 	[upg-form-tag type="submit" name="submit" value="Submit Video"]
 	

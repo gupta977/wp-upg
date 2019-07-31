@@ -74,7 +74,7 @@ else
 			//update video url
 			if(upg_getid_video_url($url)=='')
 			{
-				echo __('Error in Video URL','wp-upg');
+				echo __('Error in oEmbed URL','wp-upg');
 			}
 			else
 			{

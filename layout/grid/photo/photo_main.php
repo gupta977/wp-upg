@@ -9,7 +9,7 @@ if($permalink=="0")
 			if($popup=="on")
 			{
 			
-			echo '<a href="'.$preview_large.'" title="'.$thetitle.'" class="'.$preview_type.'" border=0><img src="'.$image_medium.'"></a>';
+			echo '<a data-fancybox="'.$preview_type.'" '.$extra_param.' href="'.$preview_large.'" title="'.$thetitle.'" data-caption="'.$thetitle.'" border=0><img src="'.$image_medium.'"></a>';
 			
 			
 			}

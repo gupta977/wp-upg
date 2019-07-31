@@ -4,7 +4,7 @@
 		if($popup=="on")
 			{
 			
-			echo '<div class="upg_image-frame"><a href="'.$preview_large.'" title="'.$thetitle.'" class="'.$preview_type.'" border=0><img src="'.upg_image_src('odude-'.$image_size,$post).'"></a></div>';
+			echo '<div class="upg_image-frame"><a data-fancybox="'.$preview_type.'" '.$extra_param.' href="'.$preview_large.'" title="'.$thetitle.'" data-caption="'.$thetitle.'" border=0><img src="'.upg_image_src('odude-'.$image_size,$post).'"></a></div>';
 			}
 			else
 			{

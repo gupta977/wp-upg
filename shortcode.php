@@ -116,7 +116,7 @@ function upg_shortcode()
             <div class="update-nag">
             <ul>
                 <li> <code>type="image"</code> -  image is default type &  it will display submission form for image only.</li>
-                <li> <code>type="youtube"</code> - It will  display form to submit youtube & vimeo URL.</li>
+                <li> <code>type="embed"</code> - It will  display form to submit youtube, vimeo, facebook, dailymotion and other URL.</li>
                 <li> <code>layout</code> = "Form Layout name" -  Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
                 <li> <code>preview</code> = "Preview Layout name " -  When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
             </ul>
@@ -150,7 +150,7 @@ function upg_shortcode()
             <div class="update-nag">
             <ul>
                 <li> <code>type="image"</code> -  It will display submission form for image only.</li>
-                <li> <code>type="youtube"</code> -  It will display submission form for YouTube & Vimeo URL only.</li>
+                <li> <code>type="embed"</code> -  It will display submission form for oEmbed URL only.</li>
                 <li> <code>layout</code> = "Form Layout Name" -  It will change the design/layout for the submission form. Use <code>layout="personal"</code> if you have created your own form layout.</li>
                 <li> <code>preview</code> = "Preview Layout Name" - When image/post/video are clicked, a page is opened which is called 'preview layout'. <br>This layout is not activated if popup is enabled in <code>[upg-list] or [upg-attach]</code>.</li>
                 <li> <code>form_name</code> = "any_form_name" -  Sometime when there are multiple form on same page, the form may not work properly. <br>So it's better to differentiate form with their name.</li>

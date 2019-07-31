@@ -259,7 +259,7 @@ if(isset($params['filter']))
 {
 	if($params['filter']=='image')
 		$filter='pic_name';
-	else if($params['filter']=='youtube' || $params['filter']=='video')
+	else if($params['filter']=='youtube' || $params['filter']=='video' || $params['filter']=='embed')
 		$filter='youtube_url';
 	else	
 		$filter=trim($params['filter']);
@@ -358,13 +358,39 @@ $text_excerpt=wpautop( stripslashes ($post->post_excerpt));
 
 	if(upg_isVideo($post))
 	{
-		$preview_large=upg_video_preview_url(upg_isVideo($post),$post);
-		$preview_type='youtube';
+		$nonce = wp_create_nonce("upg_oembed");
+		$oembed_url=upg_video_preview_url(upg_isVideo($post),$post);
+		$extra_param="";
+		$preview_type='';
+
+		if (strpos($oembed_url, 'vimeo') > 0) 
+		{
+			$preview_large=$oembed_url;
+		}
+		else if (strpos($oembed_url, 'yout') > 0) 
+		{
+			
+			$preview_large=$oembed_url;
+		}
+		else if (strpos($oembed_url, 'facebook') > 0) 
+		{
+			
+			$preview_large=admin_url('admin-ajax.php?action=upg_oembed&oembed_url='.$oembed_url.'&nonce='.$nonce);
+			
+			$extra_param='data-type="iframe"';
+		}
+		else
+		{
+			$preview_large=admin_url('admin-ajax.php?action=upg_oembed&oembed_url='.$oembed_url.'&nonce='.$nonce);
+			$extra_param='data-type="ajax"';
+		}
+		
 	}
 	else
 	{
 		$preview_large=$image_large;
-		$preview_type='wp-upg';
+		$preview_type='images';
+		$extra_param="";
 	}
 
 	

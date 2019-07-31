@@ -19,9 +19,7 @@
 			if($popup=="on")
 			{
 			
-			echo '<a data-fancybox="images" href="'.$preview_large.'" title="'.$thetitle.'" class="'.$preview_type.'" border=0><img src="'.$image.'" style="margin:auto;"></a>';
-			
-			
+			echo '<a data-fancybox="'.$preview_type.'" '.$extra_param.' href="'.$preview_large.'" data-caption="'.$thetitle.'" title="'.$thetitle.'" border=0><img src="'.$image.'" style="margin:auto;"></a>';
 			}
 			else
 			{

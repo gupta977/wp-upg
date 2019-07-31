@@ -57,7 +57,7 @@
       
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
-           <?php echo upg_droplist_category(upg_get_album($post,'term_id'),'youtube'); ?>
+           <?php echo upg_droplist_category(upg_get_album($post,'term_id'),'embed'); ?>
 		</div>
 		<div class="pure-control-group">
             <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
@@ -105,12 +105,12 @@
 		?>
 		
 		     <div class="pure-control-group">
-            <label for="url"><?php _e('Youtube/Vimeo URL', 'wp-upg'); ?></label>
+            <label for="url"><?php _e('Embed URL', 'wp-upg'); ?></label>
 			
             <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="<?php echo esc_url( upg_isVideo($post)); ?>" placeholder="<?php _e('copy/paste Video URL', 'wp-upg'); ?>" required>
 
 <ul>
-		  <li>Only URL from youtube & Vimeo is allowed.<br> Eg. <i>https://www.youtube.com/watch?v=QU_V52Ou04Q <br>
+		  <li>Only oEmbed URL is allowed.<br> Eg. <i>https://www.youtube.com/watch?v=QU_V52Ou04Q <br>
 		 &nbsp; &nbsp;&nbsp;&nbsp; https://vimeo.com/channels/staffpicks/261025185?autoplay=1</i></li>
 		  
 		  </ul> 

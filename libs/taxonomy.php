@@ -6,7 +6,7 @@ function upg_cate_add_meta_fields( $taxonomy )
     echo $frm->addLabelFor('upg_assign_cate', __('Album for: ','wp-upg'));
     echo $frm->addInput('radio', 'upg_assign_cate', 'all',array('checked'=>'true')).' All ';
     echo $frm->addInput('radio', 'upg_assign_cate', 'image').' Images ';
-    echo $frm->addInput('radio', 'upg_assign_cate', 'youtube').' Youtube/Vimeo ';
+    echo $frm->addInput('radio', 'upg_assign_cate', 'embed').' Embed URL ';
     ?>
     <div class="form-field term-group">
         <label for="upg_show_cate"><?php _e( 'Hide album from frontend', 'wp-upg' ); ?></label>
@@ -42,7 +42,7 @@ function upg_cate_edit_meta_fields( $term, $taxonomy )
         <?php
                 echo $frm->addInput('radio', 'upg_assign_cate', 'all',upg_checked_form('all',$upg_assign_cate)).' All ';
                 echo $frm->addInput('radio', 'upg_assign_cate', 'image',upg_checked_form('image',$upg_assign_cate)).' Images ';
-                echo $frm->addInput('radio', 'upg_assign_cate', 'youtube',upg_checked_form('youtube',$upg_assign_cate)).' Youtube/Vimeo ';
+                echo $frm->addInput('radio', 'upg_assign_cate', 'embed',upg_checked_form('embed',$upg_assign_cate)).' Embed URL ';
         ?>
         </td>
     </tr>

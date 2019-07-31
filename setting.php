@@ -301,7 +301,7 @@ function upg_media_section_callback()
 	<br>
 	 <b>Disable fontawesome CSS (fancy icons & buttons) from frontend environment:</b> <input type="checkbox" name='upg_settings[fontawesome]' value='1' <?php if($options['fontawesome']=='1') echo 'checked="checked"'; ?> ><br>
 	<br>
-	<b>Disable colorbox CSS (popup/Lightbox) from frontend environment:</b> <input type="checkbox" name='upg_settings[colorbox]' value='1' <?php if($options['colorbox']=='1') echo 'checked="checked"'; ?> ><br>
+	<b>Disable fancybox CSS (popup/Lightbox) from frontend environment:</b> <input type="checkbox" name='upg_settings[fancybox]' value='1' <?php if($options['fancybox']=='1') echo 'checked="checked"'; ?> ><br>
 	
 
 	
@@ -401,7 +401,7 @@ echo $frm->addInput('radio', 'upg_settings[primary_show_image_button]', '0', upg
 	<br><br>
 	<?php
 
-echo '<b>'.$frm->addLabelFor('upg_settings[primary_show_youtube_button]', __('Display Post Video URL Button: ','wp-upg')).'</b>';
+echo '<b>'.$frm->addLabelFor('upg_settings[primary_show_youtube_button]', __('Display Embed URL Button: ','wp-upg')).'</b>';
 echo $frm->addInput('radio', 'upg_settings[primary_show_youtube_button]', '1',upg_checked_form('1',$options['primary_show_youtube_button'])).' On ';
 echo $frm->addInput('radio', 'upg_settings[primary_show_youtube_button]', '0', upg_checked_form('0',$options['primary_show_youtube_button'])).' Off ';
 
@@ -492,7 +492,7 @@ $options = get_option('upg_settings');
 	<button id='load_more_form' type="button" style='margin:5px; font-size: 110%;'>Check Form Settings</button> [upg-post]
 	<hr>
 	<div id='upg_toggle_form' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>
-	If you don't want user submission form, skip the settings below.<br> Submission form must have 	<code>[upg-post type="image"]</code> or 	<code>[upg-post type="youtube"]</code> as shortcode.<hr>
+	If you don't want user submission form, skip the settings below.<br> Submission form must have 	<code>[upg-post type="image"]</code> or 	<code>[upg-post type="embed"]</code> as shortcode.<hr>
 	
 <br><br>
 	
@@ -642,7 +642,7 @@ $options = get_option('upg_settings');
 function upg_primary_image_section_callback(  ) 
 { 
 echo '<b>';
-echo ( 'Shortcode to display submission on front page is [upg-post type="image"] & [upg-post type="youtube"]');
+echo ( 'Shortcode to display submission on front page is [upg-post type="image"] & [upg-post type="embed"]');
 echo '</b>';
 	
 }

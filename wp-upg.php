@@ -115,12 +115,10 @@ Domain Path: /languages
 		
 		 wp_enqueue_style('upg-style', plugins_url() .'/'. upg_FOLDER.'/css/style.css');
 		 
-		 if(!isset($options['colorbox']) || $options['colorbox']=='0')
+		 if(!isset($options['fancybox']) || $options['fancybox']=='0')
 		 {
-		 	//wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/colorbox.css','', '1', 'all');
-			// wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.colorbox-min.js' ,array( 'jquery' ), null, true );
-			 wp_enqueue_style('colorbox', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
-		 	wp_enqueue_script( 'colorbox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
+		 	wp_enqueue_style('fancybox', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
+		 	wp_enqueue_script( 'fancybox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
 		 }
 		
 		if(!isset($options['purecss']) || $options['purecss']=='0')
@@ -363,7 +361,7 @@ function upg_the_content($content)
 
 					if(upg_isVideo($post))
 					{
-						$type="youtube";
+						$type="embed";
 					}
 					else
 					{
@@ -381,7 +379,7 @@ function upg_the_content($content)
 				else
 					$preview="basic";
 				
-				if($type=="youtube" || $type=="vimeo")
+				if($type=="youtube" || $type=="vimeo" || $type=="embed")
 					$abc=include(upg_BASE_DIR.'layout/form/post_edit_youtube.php');	
 				else
 					$abc=include(upg_BASE_DIR.'layout/form/post_edit_image.php');
@@ -438,7 +436,7 @@ function upg_the_content($content)
 		$form_attach_id="0";
 	
 	
-	if($type=="youtube" || $type=="vimeo")
+	if($type=="youtube" || $type=="vimeo" || $type=="embed")
 		$abc=include(upg_BASE_DIR.'layout/form/post_youtube.php');	
 	else
 		$abc=include(upg_BASE_DIR.'layout/form/post_image.php');

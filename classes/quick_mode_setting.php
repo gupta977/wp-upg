@@ -138,8 +138,8 @@ class upg_quick_setting {
                 ),
                 array(
                     'name'    => 'post_youtube_page',
-                    'label'   => __( 'Select submission form of Youtube/Vimeo page', 'wp-upg' ),
-                    'desc'    => __( 'Page must contain [upg-post type="youtube"] or full [upg-form] shortcode.', 'wp-upg' ),
+                    'label'   => __( 'Select submission form for embed page', 'wp-upg' ),
+                    'desc'    => __( 'Page must contain [upg-post type="embed"] or full [upg-form] shortcode.', 'wp-upg' ),
                     'type'    => 'pages',
                     'default' => upg_get_option( 'post_youtube_page','upg_settings', '0' ),
                 ),

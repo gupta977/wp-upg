@@ -21,7 +21,7 @@ else
 
 <fieldset>
         <div class="pure-control-group">
-            <label for="name"><?php _e('Video Title', 'wp-upg'); ?></label>
+            <label for="name"><?php _e('Title', 'wp-upg'); ?></label>
             <input class="pure-input-1 pure-input-rounded" id="name" name="user-submitted-title" type="text" value="" placeholder="<?php _e('Post Title', 'wp-upg'); ?>" required>
         </div>
 
@@ -56,15 +56,15 @@ else
 			<?php 
 			} 
 			else 
-			{ 
-		?>
-		  <div class="pure-control-group">
-				 <label for="desp"><?php _e('Video Description', 'wp-upg'); ?></label>
-			
-			<textarea class="pure-input-1 pure-input-rounded" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'usp'); ?>" required></textarea>
-			  </div>
-			<?php 
-			} 
+				{ 
+			?>
+			<div class="pure-control-group">
+					<label for="desp"><?php _e('Description', 'wp-upg'); ?></label>
+				
+				<textarea class="pure-input-1 pure-input-rounded" id="desp"  name="user-submitted-content" rows="5" placeholder="<?php _e('Post Content', 'usp'); ?>" required></textarea>
+				</div>
+				<?php 
+				} 
 			}
 			else
 			{
@@ -72,12 +72,10 @@ else
 			}
 			
 			?>
-		   
-		   
       
 		<div class="pure-control-group">
             <label for="cat"><?php _e('Select Album/Group', 'wp-upg'); ?></label>
-           <?php echo upg_droplist_category('','youtube'); ?>
+           <?php echo upg_droplist_category('','embed'); ?>
         </div>
 		<div class="pure-control-group">
             <label for="tags"><?php _e('Enter Tags', 'wp-upg'); ?></label>
@@ -85,15 +83,10 @@ else
 		     
         </div>
 		
-		     <div class="pure-control-group">
-            <label for="url"><?php _e('Youtube/Vimeo URL', 'wp-upg'); ?></label>
-            <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="" placeholder="<?php _e('copy/paste Video URL', 'wp-upg'); ?>" required>
-<ul>
-		  <li><?php echo __('Only URL from YouTube & Vimeo is allowed','wp-upg'); ?><br> Eg. <i>https://www.youtube.com/watch?v=QU_V52Ou04Q <br>
-		 &nbsp; &nbsp;&nbsp;&nbsp; https://vimeo.com/channels/staffpicks/261025185?autoplay=1</i></li>
-		  
-		  </ul>       
-	   </div>
+		 <div class="pure-control-group">
+            <label for="url"><?php _e('Embed video, tweets, images, audio URL', 'wp-upg'); ?></label>
+            <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="" placeholder="<?php _e('copy/paste public embed URL', 'wp-upg'); ?>" required>
+		  </div>
 		
 		
 		<?php
