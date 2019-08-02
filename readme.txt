@@ -1,6 +1,6 @@
 === User Post Gallery - UPG ===
 Contributors: odude
-Tags: user generated, photo gallery, anonymous post, youtube gallery, video gallery
+Tags: user generated, photo gallery, anonymous post, youtube gallery, embed
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
 Tested up to: 5.2.2
@@ -9,12 +9,12 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Guests can submit article, images, videos, products into own created layouts.
+Guests can submit article, images, videos, products, oEmbed into own created layouts.
 
 == Description ==
 = UPG - User Post Gallery =
 
-UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo , woocommerce product without registration from the frontend/backend.
+UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
 <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a> can be used as frontend uploader for wordpress post and other custom post type. 
 
@@ -57,7 +57,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Separate album selection for images & video
 
 == Submission form [upg-form] ==
-* With this shortcode user can submit content to wordpress post or other post types.
+* With this shortcode user can submit content to wordpress post or other custom post types.
 * It can be used as frontend uploader for other plugins.
 * User can select existing album and generate own tags from frontend.
 * Special shortocde to generate html input fields.
@@ -101,11 +101,11 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Gallery tab is created on profile page.
 * Gallery profile avatar will link to social profile page
 
-= YouTube & Vimeo URL submission =
-* User can submit video url with title
-* Static thumbnail image is created automatically based on video
-* Video can be shown in popup or link to different page.
-* Video and Image gallery can be on same page. 
+= YouTube, Vimeo, Facebook Video & 30+ URL submission =
+* User can submit/embed url with title & own descriptions
+* Static thumbnail image is created automatically based on url submitted
+* Embed URL can be shown in popup or link to different page. No change in site.
+* All Embed URL & Image gallery can be on same page. 
 
 = <a href="https://wordpress.org/plugins/listpress/">ListPress </a> Plugin =
 * Popup contact/query/feedback button can be placed on preview page
@@ -122,7 +122,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Widgets of submission form powered with ajax. 
 * Multisite compatible
 * Bulk Image Upload with options to limit number of image to upload. (upg-pro) 
-* Other plugin shortcode can be displayed near image in preview layout. 
+* Other plugin shortcode can be displayed near image in preview layout. Eg. Social share, rating
 * REST-API with UPG custom fields
 
 
@@ -217,6 +217,15 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.94 =
+* Video submission is changed to embed url
+* Supports instagram, vimeo, youtube, facebook, twitter and many more 
+* Tag will display, only if tags are more then one.
+* Colorbox popup is replaced with fancyapp javascript
+* Update issue in tags, has been fixed
+* At album, video is renamed to embed. Update album/categories if selected for video.
+* Added version information at plugin list
+
 = 1.93 =
 * Fixed video submit form layout
 * Fixed issues with tags javascript

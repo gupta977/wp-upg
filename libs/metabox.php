@@ -7,7 +7,7 @@
 		$meta_boxes = array(
 				'post_img'=>array('id'=> $prefix.'image','title'=>__('Main media file','wp-upg'),'callback'=>'upg_meta_box_image','position'=>'advanced','priority'=>'high'),
 				
-				'upg-layout'=>array('title'=>__('Post Preview Layout',"wp-upg"),'callback'=>'upg_meta_box_layout','position'=>'side','priority'=>'core'),
+				'upg-layout'=>array('title'=>__('Preview Layout',"wp-upg"),'callback'=>'upg_meta_box_layout','position'=>'side','priority'=>'core'),
 				
 				'upg-extra-fields'=>array('title'=>__('Extra Form Fields',"wp-upg"),'callback'=>'upg_meta_box_extra_field','position'=>'side','priority'=>'core'),
 			);

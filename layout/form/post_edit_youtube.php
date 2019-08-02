@@ -64,7 +64,7 @@ else
 		$content=str_replace("[","[[",$content);
 		$content=str_replace("]","]]",$content);
 		
-		
+		//upg_log($tags);
 		$result = upg_update_post($post_id,$title, '', $content, $category,$tags);
 		
 		if($result)
@@ -72,9 +72,9 @@ else
 			echo "<h2>".__('Successfully updated.','wp-upg')."</h2>";
 			
 			//update video url
-			if(upg_getid_video_url($url)=='')
+			if(upg_allowed_embed_url($url)=='')
 			{
-				echo __('Error in oEmbed URL','wp-upg');
+				echo "<h2>".__('Error in oEmbed URL','wp-upg')."</h2>";
 			}
 			else
 			{

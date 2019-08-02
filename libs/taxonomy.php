@@ -11,7 +11,7 @@ function upg_cate_add_meta_fields( $taxonomy )
     <div class="form-field term-group">
         <label for="upg_show_cate"><?php _e( 'Hide album from frontend', 'wp-upg' ); ?></label>
 		<input type="checkbox" name="upg_show_cate" value="1" id="upg_show_cate">
-     
+        <?php echo __("Use album only for administration. Invisible for users.","wp-upg"); ?>
     </div>
     <?php
 }
@@ -27,11 +27,12 @@ function upg_cate_edit_meta_fields( $term, $taxonomy )
     <tr class="form-field term-group-wrap">
         <th scope="row">
             <label for="upg_show_cate"><?php _e( 'Hide at Front End', 'wp-upg' ); ?></label>
+            
         </th>
         <td>
 		
 		<input type="checkbox" name="upg_show_cate" value="1" id="upg_show_cate" <?php if($upg_show_cate=="1") echo "checked" ?>>
-         
+        <?php echo __("Use album only for administration. Invisible for users.","wp-upg"); ?>
         </td>
     
     </tr>

@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.93
+Version: 1.94
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.93');
+	define('UPG_PLUGIN_VERSION', '1.94');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -722,8 +722,8 @@ add_filter('post_class', 'wpb_hidetitle_class');
 			{
 				return $links;
 			  }
-
-			$more_links[] = '<a href="http://odude.com/demo/faq/">' . __( 'Documentation', 'wp-upg' ) . '</a>';
+			
+			$more_links[] = __('Version','wp-upg').' '.UPG_PLUGIN_VERSION.' | <a href="http://odude.com/demo/faq/">' . __( 'Documentation', 'wp-upg' ) . '</a>';
 			$more_links[] = '<a target="_blank" href="https://wordpress.org/support/plugin/wp-upg/reviews/?rate=5#new-post" title="' . __('Rate the plugin', 'wp-reset') . '">' . __('Rate the plugin', 'wp-upg') . ' ★★★★★</a>';
 			
 			$links = $more_links + $links;

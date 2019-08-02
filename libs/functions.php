@@ -445,7 +445,7 @@ function upg_update_post($post_id,$title, $files, $content, $category,$tags='')
 		wp_set_object_terms($post_id, array($category),'upg_cate');
 
 		//Set TAGS
-		if($tags!='')
+		//if($tags!='')
 		wp_set_post_terms( $post_id, $tags, 'upg_tag');
 	
 			foreach ($updatePost['error'] as $e) 
@@ -1959,12 +1959,12 @@ function upg_get_taxonony_raw($post_id, $taxonomy_name)
 function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='filter_tag')
 {
 		$taglink='';
-		if(count($tags_array)>2)
+		if(count($tags_array)>1)
 		{
 			$taglink.='<ul class="'.$upg_tag_class.'">';
 			
 			$taglink.='<li><a href="javascript:void(0)" id="show_all" class="'.$filter_class.' active">'.__('Show All','wp-upg').'</a></li>';
-			if(count($tags_array)>2)
+			if(count($tags_array)>1)
 			foreach($tags_array as $tags => $value)
 			{
 				$taglink.='<li><a href="javascript:void(0)" id="'.$tags.'" class="'.$filter_class.'">'.$value.'</a></li>';
