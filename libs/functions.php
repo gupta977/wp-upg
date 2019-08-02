@@ -1976,7 +1976,7 @@ function upg_generate_tags($tags_array,$upg_tag_class='upg_tags',$filter_class='
 }
 
 add_action("wp_ajax_upg_oembed", "upg_oembed");
-add_action("wp_ajax_nopriv_upg_oembed", "upg_my_must_login");
+add_action("wp_ajax_nopriv_upg_oembed", "upg_oembed");
 
 function upg_oembed()
 {
@@ -1988,6 +1988,7 @@ function upg_oembed()
 		$oembed_url=$_REQUEST["oembed_url"];
 		echo '<div style="text-align:center">'.wp_oembed_get($oembed_url).'</div>';
 	}
+	echo "Error";
 	die();
 }
 ?>

@@ -348,7 +348,7 @@ jQuery(document).ready(function () {
     })  
 })
 </script>
-<button id='load_more_grid' type="button" style='margin:5px; font-size: 110%;'>Check Grid Settings</button> [upg-list] & [upg-attach]
+<button id='load_more_grid' type="button" style='margin:5px; font-size: 110%;'>Check Gallery/Grid Settings</button> [upg-list] & [upg-attach]
 	<hr>
 
 	<div id='upg_toggle_grid' style='display: none;background-color: #F0F0F0;border-style: inset;padding: 20px;'>

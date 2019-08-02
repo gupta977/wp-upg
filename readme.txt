@@ -220,7 +220,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 = 1.94 =
 * Video submission is changed to embed url
 * Supports instagram, vimeo, youtube, facebook, twitter and many more 
-* Tag will display, only if tags are more then one.
+* Tag will display, only if tags count more then one.
 * Colorbox popup is replaced with fancyapp javascript
 * Update issue in tags, has been fixed
 * At album, video is renamed to embed. Update album/categories if selected for video.
