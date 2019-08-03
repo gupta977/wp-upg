@@ -497,7 +497,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	
 	if(isset($_POST['personal_post_youtube']))
 	{
-		echo "<h2>Update Youtube Form File</h2>";
+		echo "<h2>Update Embed Form File</h2>";
 				
 		echo upg_save_layout_code(wp_unslash($_POST['personal_post_youtube']),'personal','form','personal_post_youtube')."<hr>";
 		
@@ -562,7 +562,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	
 	<b>File field </b>:File upload is not available at this form.<br>
 	<br>
-	<b>For Youtube URL Field</b>: id="url" name="user-submitted-url" type="url" <br><br>
+	<b>For Embed URL Field</b>: id="url" name="user-submitted-url" type="url" <br><br>
 	<b>Custom Fields</b>: name="upg_custom_field_1" <br>
 	There are 5 custom fields (i.e. upg_custom_field_1, upg_custom_field_2, upg_custom_field_3, upg_custom_field_4, upg_custom_field_5)<br>
 	You can assign any label name and type but form name should be equals to above. 

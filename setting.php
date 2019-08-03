@@ -407,7 +407,7 @@ echo $frm->addInput('radio', 'upg_settings[primary_show_youtube_button]', '0', u
 
 ?>
 <br>
-Submit Youtube Button will be displayed on top of gallery page.
+Submit Embed Button will be displayed on top of gallery page.
 	
 	<br><br>
 	

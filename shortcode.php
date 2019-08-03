@@ -186,7 +186,7 @@ function upg_shortcode()
             <code>
             [upg-form class="pure-form" title="Submit to UPG" name="my_form" taxonomy="upg_cate" tag_taxonomy="upg_tag"] 
             <br>
-            [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
+            [upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
             <br>
             [upg-form-tag type="category" title="Select category" taxonomy="upg_cate" ]
             <br>
@@ -206,7 +206,7 @@ function upg_shortcode()
             <code>
             [upg-form class="pure-form pure-form-stacked" title="Submit to Wordpress" name="my_form" post_type="wp_post" taxonomy="category" tag_taxonomy="post_tag"] 
             <br>
-            [upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
+            [upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
             <br>
             [upg-form-tag type="category" title="Select category" taxonomy="category" ]
             <br>

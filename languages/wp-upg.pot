@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-08-02 18:30+0545\n"
+"POT-Creation-Date: 2019-08-03 13:29+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -210,7 +210,6 @@ msgstr ""
 #: layout/form/magic/magic_edit_form.php:5
 #: layout/form/magic/magic_edit_youtube.php:5
 #: layout/form/photo/photo_post_form.php:7
-#: layout/form/photo/photo_post_youtube.php:6
 #: layout/form/simple/simple_edit_form.php:7
 #: layout/form/simple/simple_edit_youtube.php:7
 #: layout/form/simple/simple_post_form.php:25
@@ -233,7 +232,6 @@ msgstr ""
 #: layout/form/magic/magic_edit_form.php:43
 #: layout/form/magic/magic_edit_youtube.php:44
 #: layout/form/photo/photo_post_form.php:110
-#: layout/form/photo/photo_post_youtube.php:44
 msgid "Post Content"
 msgstr ""
 
@@ -302,6 +300,7 @@ msgstr ""
 
 #: layout/form/basic/basic_edit_youtube.php:108
 #: layout/form/magic/magic_edit_youtube.php:108
+#: layout/form/simple/simple_edit_youtube.php:17
 #: layout/form/simple/simple_post_youtube.php:35 libs/metabox.php:99
 msgid "Embed URL"
 msgstr ""
@@ -316,7 +315,6 @@ msgstr ""
 #: layout/form/basic/basic_edit_youtube.php:131
 #: layout/form/basic/basic_post_youtube.php:136
 #: layout/form/magic/magic_edit_youtube.php:131
-#: layout/form/photo/photo_post_youtube.php:108
 #: layout/form/simple/simple_edit_youtube.php:72
 #: layout/form/simple/simple_post_youtube.php:85
 msgid "Submit URL"
@@ -381,22 +379,6 @@ msgstr ""
 msgid "Post again"
 msgstr ""
 
-#: layout/form/photo/photo_post_youtube.php:5
-msgid "Youtube Title"
-msgstr ""
-
-#: layout/form/photo/photo_post_youtube.php:42
-msgid "Youtube Description"
-msgstr ""
-
-#: layout/form/photo/photo_post_youtube.php:58
-msgid "Youtube URL"
-msgstr ""
-
-#: layout/form/photo/photo_post_youtube.php:59
-msgid "copy/paste Youtube URL"
-msgstr ""
-
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
 #: layout/form/post_image.php:164 layout/form/post_youtube.php:52
 msgid "Refresh Page"
@@ -426,12 +408,7 @@ msgstr ""
 msgid "Your video is under review"
 msgstr ""
 
-#: layout/form/simple/simple_edit_youtube.php:17
-msgid "Youtube/Vimeo URL"
-msgstr ""
-
 #: layout/form/simple/simple_edit_youtube.php:19
-#: layout/form/simple/simple_post_youtube.php:37
 msgid "Only URL from YouTube & Vimeo is allowed"
 msgstr ""
 

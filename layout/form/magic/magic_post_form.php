@@ -1,6 +1,6 @@
 [upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true"] 
 
-	[upg-form-tag type="post_title" title="Main Title" value="" placeholder="main title"]
+	[upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
 	
 	[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
 	

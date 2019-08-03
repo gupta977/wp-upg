@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-08-02 18:30+0545\n"
-"PO-Revision-Date: 2019-08-02 18:34+0545\n"
+"POT-Creation-Date: 2019-08-03 13:29+0545\n"
+"PO-Revision-Date: 2019-08-03 13:31+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: de\n"
@@ -98,10 +98,8 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:109
-#, fuzzy
-#| msgid "Select preview layout"
 msgid "Select Gallery/Grid Layout"
-msgstr "Beitrags-Vorschau-Layout"
+msgstr "Wählen Sie Gallery / Grid Layout"
 
 #: classes/quick_mode_setting.php:110 classes/quick_mode_setting.php:157
 msgid "It is applied if \"layout\" parameter in shortcode is not specified."
@@ -116,10 +114,8 @@ msgid "Automatically publish Post as soon as user submit."
 msgstr ""
 
 #: classes/quick_mode_setting.php:134
-#, fuzzy
-#| msgid "Submission form Settings"
 msgid "Select submission form of Image page"
-msgstr "Einreichungsformular Einstellungen"
+msgstr "Wählen Sie das Anmeldeformular der Bildseite"
 
 #: classes/quick_mode_setting.php:135
 msgid ""
@@ -127,10 +123,8 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:141
-#, fuzzy
-#| msgid "Submission form Settings"
 msgid "Select submission form for embed page"
-msgstr "Einreichungsformular Einstellungen"
+msgstr "Wählen Sie das Anmeldeformular für die eingebettete Seite"
 
 #: classes/quick_mode_setting.php:142
 msgid ""
@@ -138,18 +132,14 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:148
-#, fuzzy
-#| msgid "Submission form Settings"
 msgid "Submission form Edit/Modify page"
-msgstr "Einreichungsformular Einstellungen"
+msgstr "Anmeldeformular Seite bearbeiten / ändern"
 
 #: classes/quick_mode_setting.php:149
 msgid "Page must contain [upg-edit] shortcode."
 msgstr ""
 
 #: classes/quick_mode_setting.php:156
-#, fuzzy
-#| msgid "Select form layout"
 msgid "Select Form Layout"
 msgstr "Wähle Bild"
 
@@ -164,10 +154,8 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:173
-#, fuzzy
-#| msgid "Select preview layout"
 msgid "Select Preview/Media Layout"
-msgstr "Beitrags-Vorschau-Layout"
+msgstr "Wählen Sie Vorschau / Medienlayout"
 
 #: classes/quick_mode_setting.php:174
 msgid ""
@@ -219,7 +207,6 @@ msgstr "Titel"
 #: layout/form/magic/magic_edit_form.php:5
 #: layout/form/magic/magic_edit_youtube.php:5
 #: layout/form/photo/photo_post_form.php:7
-#: layout/form/photo/photo_post_youtube.php:6
 #: layout/form/simple/simple_edit_form.php:7
 #: layout/form/simple/simple_edit_youtube.php:7
 #: layout/form/simple/simple_post_form.php:25
@@ -242,7 +229,6 @@ msgstr "Beschreibung"
 #: layout/form/magic/magic_edit_form.php:43
 #: layout/form/magic/magic_edit_youtube.php:44
 #: layout/form/photo/photo_post_form.php:110
-#: layout/form/photo/photo_post_youtube.php:44
 msgid "Post Content"
 msgstr "Inhalte veröffentlichen"
 
@@ -272,7 +258,7 @@ msgstr "Suchbegriffe eintragen..."
 #: layout/form/magic/magic_edit_form.php:65
 #: layout/form/magic/magic_edit_youtube.php:64
 msgid "Tags separated by commas"
-msgstr ""
+msgstr "Durch Kommas getrennt"
 
 #: layout/form/basic/basic_edit_form.php:113
 #: layout/form/magic/magic_edit_form.php:113
@@ -306,11 +292,10 @@ msgstr "Videobeschreibung"
 
 #: layout/form/basic/basic_edit_youtube.php:108
 #: layout/form/magic/magic_edit_youtube.php:108
+#: layout/form/simple/simple_edit_youtube.php:17
 #: layout/form/simple/simple_post_youtube.php:35 libs/metabox.php:99
-#, fuzzy
-#| msgid "Youtube URL"
 msgid "Embed URL"
-msgstr "Youtube URL"
+msgstr "Ursprungs-URL"
 
 #: layout/form/basic/basic_edit_youtube.php:110
 #: layout/form/magic/magic_edit_youtube.php:110
@@ -332,7 +317,7 @@ msgstr "Nur Bilddateien sind erlaubt"
 
 #: layout/form/basic/basic_post_youtube.php:87
 msgid "Embed video, tweets, images, audio URL"
-msgstr ""
+msgstr "Betten Sie Videos, Tweets, Bilder und Audio-URLs ein"
 
 #: layout/form/basic/basic_post_youtube.php:88
 #, fuzzy
@@ -371,26 +356,8 @@ msgid "Error occurred"
 msgstr "Fehler"
 
 #: layout/form/magic_form.php:138
-#, fuzzy
-#| msgid "Post Title"
 msgid "Post again"
-msgstr "Beitragstitel"
-
-#: layout/form/photo/photo_post_youtube.php:5
-msgid "Youtube Title"
-msgstr "Youtube Titel"
-
-#: layout/form/photo/photo_post_youtube.php:42
-msgid "Youtube Description"
-msgstr "Youtube Beschreibung"
-
-#: layout/form/photo/photo_post_youtube.php:58
-msgid "Youtube URL"
-msgstr "Youtube URL"
-
-#: layout/form/photo/photo_post_youtube.php:59
-msgid "copy/paste Youtube URL"
-msgstr "kopieren / einfügen Youtube-URL"
+msgstr "Poste nochmal"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
 #: layout/form/post_image.php:164 layout/form/post_youtube.php:52
@@ -414,21 +381,14 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: layout/form/post_edit_youtube.php:77
-#, fuzzy
-#| msgid "Error in Video URL"
 msgid "Error in oEmbed URL"
-msgstr "Fehler in der Video-URL"
+msgstr "Fehler in der eingebetteten URL"
 
 #: layout/form/post_youtube.php:144
 msgid "Your video is under review"
 msgstr "Das YouTube-Video wird überprüft"
 
-#: layout/form/simple/simple_edit_youtube.php:17
-msgid "Youtube/Vimeo URL"
-msgstr "Youtube URL"
-
 #: layout/form/simple/simple_edit_youtube.php:19
-#: layout/form/simple/simple_post_youtube.php:37
 msgid "Only URL from YouTube & Vimeo is allowed"
 msgstr "Es ist nur eine URL von YouTube & Vimeo zulässig"
 
@@ -465,10 +425,8 @@ msgid "Tags"
 msgstr "Schlagworte"
 
 #: libs/custom_column.php:13 libs/metabox.php:10
-#, fuzzy
-#| msgid "Post Preview Layout"
 msgid "Preview Layout"
-msgstr "Beitrags-Vorschau-Layout"
+msgstr "Layout vorchauen"
 
 #: libs/custom_column.php:14
 msgid "Thumbnail"
@@ -492,7 +450,7 @@ msgstr "Bitte einloggen !"
 
 #: libs/functions.php:1018 libs/functions.php:1105 libs/functions.php:1194
 msgid "Category is not specified."
-msgstr ""
+msgstr "Kategorie ist nicht angegeben."
 
 #: libs/functions.php:1018 libs/functions.php:1020 libs/functions.php:1103
 #: libs/functions.php:1105 libs/functions.php:1107 libs/functions.php:1192
@@ -645,10 +603,8 @@ msgid "Album for: "
 msgstr "Album für:"
 
 #: libs/taxonomy.php:12
-#, fuzzy
-#| msgid "Hide at Front End"
 msgid "Hide album from frontend"
-msgstr "An der Benutzeroberfläche ausblenden"
+msgstr "Album vom Frontend verstecken"
 
 #: libs/taxonomy.php:14 libs/taxonomy.php:35
 msgid "Use album only for administration. Invisible for users."
@@ -831,6 +787,21 @@ msgstr "Dokumentation"
 #: wp-upg.php:727
 msgid "Rate the plugin"
 msgstr "Plugin bewerten"
+
+#~ msgid "Youtube Title"
+#~ msgstr "Youtube Titel"
+
+#~ msgid "Youtube Description"
+#~ msgstr "Youtube Beschreibung"
+
+#~ msgid "Youtube URL"
+#~ msgstr "Youtube URL"
+
+#~ msgid "copy/paste Youtube URL"
+#~ msgstr "kopieren / einfügen Youtube-URL"
+
+#~ msgid "Youtube/Vimeo URL"
+#~ msgstr "Youtube URL"
 
 #~ msgid "Post Preview Layout"
 #~ msgstr "Beitrags-Vorschau-Layout"

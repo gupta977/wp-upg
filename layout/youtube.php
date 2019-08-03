@@ -10,7 +10,7 @@ ob_start ();
 
 if($url=="")
 {
-	echo "Invalid Youtube URL";
+	echo "Invalid Embed URL";
 }
 else
 {

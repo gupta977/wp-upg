@@ -333,5 +333,4 @@ function upg_drop()
 	//Function during uninstall
 		
 }
-
 ?>

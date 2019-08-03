@@ -34,7 +34,7 @@ else
 		     <div class="pure-control-group">
             <label for="url"><?php _e('Embed URL', 'wp-upg'); ?></label>
             <input class="pure-input-1 pure-input-rounded" id="url" name="user-submitted-url" type="url" value="" placeholder="<?php _e('copy/paste Video URL', 'wp-upg'); ?>" required>
-			<?php echo __('Only URL from YouTube & Vimeo is allowed','wp-upg'); ?>       
+	    
 	   </div>
 		
 		
