@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-07-23 12:26+0545\n"
-"PO-Revision-Date: 2019-07-23 12:26+0545\n"
+"POT-Creation-Date: 2019-08-02 18:30+0545\n"
+"PO-Revision-Date: 2019-08-02 18:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: de\n"
@@ -94,7 +94,7 @@ msgstr "Galerie aktivieren"
 
 #: classes/quick_mode_setting.php:103
 msgid ""
-"It will show tags assigned above the gallery. [upg-list tag_show=\"on\"]"
+"Shows tags above the gallery, if few tag presets. [upg-list tag_show=\"on\"]"
 msgstr ""
 
 #: classes/quick_mode_setting.php:109
@@ -127,12 +127,14 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:141
-msgid "Select submission form of Youtube/Vimeo page"
-msgstr ""
+#, fuzzy
+#| msgid "Submission form Settings"
+msgid "Select submission form for embed page"
+msgstr "Einreichungsformular Einstellungen"
 
 #: classes/quick_mode_setting.php:142
 msgid ""
-"Page must contain [upg-post type=\"youtube\"] or full [upg-form] shortcode."
+"Page must contain [upg-post type=\"embed\"] or full [upg-form] shortcode."
 msgstr ""
 
 #: classes/quick_mode_setting.php:148
@@ -173,7 +175,7 @@ msgid ""
 "newly submitted post."
 msgstr ""
 
-#: classes/quick_mode_setting.php:198 wp-upg.php:825
+#: classes/quick_mode_setting.php:198 wp-upg.php:827
 msgid "Basic Settings"
 msgstr "Schnelleinstellungen"
 
@@ -186,7 +188,7 @@ msgstr "Wichtige Einstellungen"
 msgid "Maximum upload file size limit:"
 msgstr "Die maximale Größe für Upload-Dateien ist:"
 
-#: layout/attach.php:101 layout/catalog.php:341 layout/form/post_image.php:194
+#: layout/attach.php:101 layout/catalog.php:341 layout/form/post_image.php:191
 #: layout/form/post_youtube.php:75
 msgid "Layout Not Found. Check settings."
 msgstr "Layout nicht gefunden Überprüfen Sie die Einstellungen."
@@ -201,6 +203,7 @@ msgstr "Dieser Post-Button ist nur für Sie sichtbar."
 
 #: layout/form/basic/basic_edit_form.php:4
 #: layout/form/basic/basic_post_form.php:23
+#: layout/form/basic/basic_post_youtube.php:24
 #: layout/form/magic/magic_edit_form.php:4
 #: layout/form/photo/photo_post_form.php:6
 #: layout/form/simple/simple_edit_form.php:6
@@ -226,6 +229,7 @@ msgstr "Beitragstitel"
 
 #: layout/form/basic/basic_edit_form.php:41
 #: layout/form/basic/basic_post_form.php:60
+#: layout/form/basic/basic_post_youtube.php:62
 #: layout/form/magic/magic_edit_form.php:41
 #: layout/form/photo/photo_post_form.php:109
 msgid "Description"
@@ -245,7 +249,7 @@ msgstr "Inhalte veröffentlichen"
 #: layout/form/basic/basic_edit_form.php:58
 #: layout/form/basic/basic_edit_youtube.php:59
 #: layout/form/basic/basic_post_form.php:78
-#: layout/form/basic/basic_post_youtube.php:79
+#: layout/form/basic/basic_post_youtube.php:77
 #: layout/form/magic/magic_edit_form.php:58
 #: layout/form/magic/magic_edit_youtube.php:59
 #: layout/form/photo/photo_post_form.php:10
@@ -255,7 +259,7 @@ msgstr "Wähle Album/Gruppe"
 #: layout/form/basic/basic_edit_form.php:64
 #: layout/form/basic/basic_edit_youtube.php:63
 #: layout/form/basic/basic_post_form.php:83
-#: layout/form/basic/basic_post_youtube.php:83
+#: layout/form/basic/basic_post_youtube.php:81
 #: layout/form/magic/magic_edit_form.php:64
 #: layout/form/magic/magic_edit_youtube.php:63
 msgid "Enter Tags"
@@ -264,7 +268,7 @@ msgstr "Suchbegriffe eintragen..."
 #: layout/form/basic/basic_edit_form.php:65
 #: layout/form/basic/basic_edit_youtube.php:64
 #: layout/form/basic/basic_post_form.php:84
-#: layout/form/basic/basic_post_youtube.php:84
+#: layout/form/basic/basic_post_youtube.php:82
 #: layout/form/magic/magic_edit_form.php:65
 #: layout/form/magic/magic_edit_youtube.php:64
 msgid "Tags separated by commas"
@@ -289,7 +293,6 @@ msgid "Maximum upload file size limit is"
 msgstr "Die maximale Größe für Upload-Dateien ist"
 
 #: layout/form/basic/basic_edit_youtube.php:4
-#: layout/form/basic/basic_post_youtube.php:24
 #: layout/form/magic/magic_edit_youtube.php:4
 #: layout/form/simple/simple_edit_youtube.php:6
 #: layout/form/simple/simple_post_youtube.php:24
@@ -297,21 +300,19 @@ msgid "Video Title"
 msgstr "Videotitel"
 
 #: layout/form/basic/basic_edit_youtube.php:42
-#: layout/form/basic/basic_post_youtube.php:62
 #: layout/form/magic/magic_edit_youtube.php:42
 msgid "Video Description"
 msgstr "Videobeschreibung"
 
 #: layout/form/basic/basic_edit_youtube.php:108
-#: layout/form/basic/basic_post_youtube.php:89
 #: layout/form/magic/magic_edit_youtube.php:108
-#: layout/form/simple/simple_edit_youtube.php:17
-#: layout/form/simple/simple_post_youtube.php:35
-msgid "Youtube/Vimeo URL"
+#: layout/form/simple/simple_post_youtube.php:35 libs/metabox.php:99
+#, fuzzy
+#| msgid "Youtube URL"
+msgid "Embed URL"
 msgstr "Youtube URL"
 
 #: layout/form/basic/basic_edit_youtube.php:110
-#: layout/form/basic/basic_post_youtube.php:90
 #: layout/form/magic/magic_edit_youtube.php:110
 #: layout/form/simple/simple_edit_youtube.php:18
 #: layout/form/simple/simple_post_youtube.php:36
@@ -329,11 +330,15 @@ msgstr "Wähle Bild"
 msgid "Only picture files are allowed"
 msgstr "Nur Bilddateien sind erlaubt"
 
-#: layout/form/basic/basic_post_youtube.php:92
-#: layout/form/simple/simple_edit_youtube.php:19
-#: layout/form/simple/simple_post_youtube.php:37
-msgid "Only URL from YouTube & Vimeo is allowed"
-msgstr "Es ist nur eine URL von YouTube & Vimeo zulässig"
+#: layout/form/basic/basic_post_youtube.php:87
+msgid "Embed video, tweets, images, audio URL"
+msgstr ""
+
+#: layout/form/basic/basic_post_youtube.php:88
+#, fuzzy
+#| msgid "copy/paste Youtube URL"
+msgid "copy/paste public embed URL"
+msgstr "kopieren / einfügen Youtube-URL"
 
 #: layout/form/bulk/bulk_post_form.php:52
 #, php-format
@@ -342,26 +347,26 @@ msgstr "Die maximale Größe für Upload-Dateien ist: %s."
 
 #: layout/form/bulk/bulk_post_form.php:59 layout/form/magic_form.php:79
 #: layout/form/post_edit_image.php:141 layout/form/post_edit_youtube.php:90
-#: layout/form/post_image.php:101
+#: layout/form/post_image.php:98
 msgid "My Gallery"
 msgstr "Meine Gallerie"
 
-#: layout/form/magic_form.php:75 layout/form/post_image.php:97
+#: layout/form/magic_form.php:75 layout/form/post_image.php:94
 #: layout/form/post_youtube.php:137 libs/functions.php:995
 #: libs/functions.php:1081
 msgid "Successfully posted."
 msgstr "Erfolgreich übermittelt."
 
-#: layout/form/magic_form.php:84 layout/form/post_image.php:106
+#: layout/form/magic_form.php:84 layout/form/post_image.php:103
 #: libs/functions.php:1000 libs/functions.php:1086 libs/functions.php:1179
 msgid "Your submission is under review."
 msgstr "Ihre übermittelten Daten werden überprüft."
 
-#: layout/form/magic_form.php:106 layout/form/post_image.php:128
+#: layout/form/magic_form.php:106 layout/form/post_image.php:125
 msgid "Invalid file"
 msgstr "Nur Bilddateien sind erlaubt"
 
-#: layout/form/magic_form.php:110 layout/form/post_image.php:132
+#: layout/form/magic_form.php:110 layout/form/post_image.php:129
 msgid "Error occurred"
 msgstr "Fehler"
 
@@ -388,7 +393,7 @@ msgid "copy/paste Youtube URL"
 msgstr "kopieren / einfügen Youtube-URL"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
-#: layout/form/post_image.php:167 layout/form/post_youtube.php:52
+#: layout/form/post_image.php:164 layout/form/post_youtube.php:52
 msgid "Refresh Page"
 msgstr "Aktualisiere Seite"
 
@@ -409,12 +414,23 @@ msgid "Edit"
 msgstr "Bearbeiten"
 
 #: layout/form/post_edit_youtube.php:77
-msgid "Error in Video URL"
+#, fuzzy
+#| msgid "Error in Video URL"
+msgid "Error in oEmbed URL"
 msgstr "Fehler in der Video-URL"
 
 #: layout/form/post_youtube.php:144
 msgid "Your video is under review"
 msgstr "Das YouTube-Video wird überprüft"
+
+#: layout/form/simple/simple_edit_youtube.php:17
+msgid "Youtube/Vimeo URL"
+msgstr "Youtube URL"
+
+#: layout/form/simple/simple_edit_youtube.php:19
+#: layout/form/simple/simple_post_youtube.php:37
+msgid "Only URL from YouTube & Vimeo is allowed"
+msgstr "Es ist nur eine URL von YouTube & Vimeo zulässig"
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:3
 #: layout/grid/flat/flat_down.php:3 layout/grid/list/list_down.php:3
@@ -448,7 +464,7 @@ msgstr "Kategorien"
 msgid "Tags"
 msgstr "Schlagworte"
 
-#: libs/custom_column.php:13
+#: libs/custom_column.php:13 libs/metabox.php:10
 #, fuzzy
 #| msgid "Post Preview Layout"
 msgid "Preview Layout"
@@ -496,9 +512,13 @@ msgstr "Überprüfen Sie Ihren Dateityp."
 msgid "Successfully posted"
 msgstr "Erfolgreich übermittelt."
 
-#: libs/functions.php:1868
+#: libs/functions.php:1966
 msgid "Show All"
 msgstr "Alles anzeigen"
+
+#: libs/functions.php:1991
+msgid "Loading"
+msgstr "Laden…"
 
 #: libs/install.php:182
 msgid "User Post Gallery"
@@ -602,10 +622,6 @@ msgstr "Neuer Stichwort-Name"
 msgid "Main media file"
 msgstr "UPG Hauptdatei"
 
-#: libs/metabox.php:10
-msgid "Post Preview Layout"
-msgstr "Beitrags-Vorschau-Layout"
-
 #: libs/metabox.php:12 setting.php:69
 msgid "Extra Form Fields"
 msgstr "Zusätzliche Formularfelder"
@@ -624,11 +640,7 @@ msgstr "UPG BHauptgalerie"
 msgid "Upload Image"
 msgstr "Bild hochladen"
 
-#: libs/metabox.php:99
-msgid "Post Youtube/Vimeo URL"
-msgstr "Posten Sie Youtube / Vimeo URL"
-
-#: libs/taxonomy.php:6 libs/taxonomy.php:40
+#: libs/taxonomy.php:6 libs/taxonomy.php:41
 msgid "Album for: "
 msgstr "Album für:"
 
@@ -638,19 +650,21 @@ msgstr "Album für:"
 msgid "Hide album from frontend"
 msgstr "An der Benutzeroberfläche ausblenden"
 
+#: libs/taxonomy.php:14 libs/taxonomy.php:35
+msgid "Use album only for administration. Invisible for users."
+msgstr ""
+
 #: libs/taxonomy.php:29
 msgid "Hide at Front End"
 msgstr "An der Benutzeroberfläche ausblenden"
 
-#: libs/taxonomy.php:77
+#: libs/taxonomy.php:78
 msgid "Hide"
 msgstr "Ausblenden"
 
-#: libs/taxonomy.php:78
-#, fuzzy
-#| msgid "Albums"
+#: libs/taxonomy.php:79
 msgid "Album for"
-msgstr "Kategorien"
+msgstr "Album für:"
 
 #: setting.php:12
 msgid "Settings"
@@ -709,10 +723,10 @@ msgid "Display Image Upload Button: "
 msgstr ""
 
 #: setting.php:404
-msgid "Display Post Video URL Button: "
+msgid "Display Embed URL Button: "
 msgstr ""
 
-#: setting.php:680 wp-upg.php:707 wp-upg.php:826
+#: setting.php:680 wp-upg.php:709 wp-upg.php:828
 msgid "Advance Settings"
 msgstr "Erweiterte Einstellungen"
 
@@ -802,17 +816,27 @@ msgstr "Wähle Bild"
 msgid "Select preview layout"
 msgstr "Beitrags-Vorschau-Layout"
 
-#: wp-upg.php:706
+#: wp-upg.php:708
 msgid "Quick Settings"
 msgstr "Schnelleinstellungen"
 
-#: wp-upg.php:724
+#: wp-upg.php:726
+msgid "Version"
+msgstr "Versiyon"
+
+#: wp-upg.php:726
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: wp-upg.php:725
+#: wp-upg.php:727
 msgid "Rate the plugin"
 msgstr "Plugin bewerten"
+
+#~ msgid "Post Preview Layout"
+#~ msgstr "Beitrags-Vorschau-Layout"
+
+#~ msgid "Post Youtube/Vimeo URL"
+#~ msgstr "Posten Sie Youtube / Vimeo URL"
 
 #~ msgid "Layout Name"
 #~ msgstr "Layout Name"

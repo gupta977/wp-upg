@@ -1988,7 +1988,7 @@ function upg_oembed()
 		$oembed_url=$_REQUEST["oembed_url"];
 		echo '<div style="text-align:center">'.wp_oembed_get($oembed_url).'</div>';
 	}
-	echo "Error";
+	echo __("Loading","wp-upg").'...';
 	die();
 }
 ?>
