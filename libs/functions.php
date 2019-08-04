@@ -1614,7 +1614,7 @@ function upg_droplist_album($taxonomy='upg_cate',$selected_album="",$skip=array(
 
 }
 
-//displays drop down list album as submission form.
+//displays drop down list album as submission form. $show is (image or embed)
 function upg_hidden_category($show='')
 {
 $skip=array();
@@ -1637,6 +1637,7 @@ return $skip;
 }
 
 
+//* $show_album = (image or embed) *//
 function upg_droplist_category($selected_album="",$show_album="")
 {
 	

@@ -6,6 +6,7 @@ add_filter("the_content", "upg_the_content");
 add_shortcode("upg-pick", "upg_pick");
 add_shortcode("upg-list", "upg_list");
 add_shortcode("upg-attach", "upg_attach");
+add_shortcode("upg-album", "upg_album");
 
 //Shortocde for magic form
 add_shortcode("upg-form", "upg_magic_form");

@@ -28,6 +28,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/classes/class.FormEntries.php");
 	include(dirname(__FILE__).'/classes/class.html_form.php');
 	include(dirname(__FILE__)."/classes/quick_mode_setting.php");
+	include(dirname(__FILE__)."/classes/class.AlbumThumbnail.php");
 	include(dirname(__FILE__)."/libs/functions.php");
 	include(dirname(__FILE__)."/libs/load_more.php");
 	include(dirname(__FILE__)."/libs/install.php");
@@ -316,6 +317,17 @@ function upg_the_content($content)
 		return $abc;
 
 	}
+
+	//List album [upg-album]
+	function upg_album($params)
+	{
+		$options = get_option('upg_settings');  
+		$abc=include(upg_BASE_DIR.'layout/album.php');
+
+		return $abc;
+
+	}
+
 
 	//Generate UPG Magic Form. [upg-form]
 	function upg_magic_form($params, $content = null )
