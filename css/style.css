@@ -1,63 +1,27 @@
 /* Album list */
-.upg_album_list {
 
-  margin: 15px auto; 
-  overflow: auto; 
-   display: flex;
-  
-  }
-  
-  .upg_album_thumbnail {
+.upg_album_container {
   position: relative;
   text-align: center;
-  padding: 0;
-  border-radius:50%; 
-  overflow:hidden; 
-  }
+  color: white;
+  margin:2px;
+}
+
+.upg_album_title {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 100;
+  line-height: 4rem;
+  height: 4rem;
+  padding: 0 1rem;
+  font-family: sans-serif;
+  color: white;
+  background-color: hsla(200, 50%, 50%, 0.8);
+  margin: -5rem 1rem 2rem 1rem;
   
-  
-  
-  .upg_album_thumbnail A:before{  
-    content: '';
-    display: inline-block;
-    height: 48%; 
-    /* 
-    vertical-align:middle; 
-    height: 100%;*/
-    
-   
-    }
-  
-  
-  .upg_album_thumbnail a {
-    transition: all 1s ease-out;
-    background: rgba(88, 88, 88, 0.7);
-     border-radius:50%; vertical-align:middle;
-    padding:5%; 
-    color: #FFFFFF;
-    position:absolute;
-    font-size: 1.0em; 
-    font-weight: 700; 
-    top: 0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    display:inline-block;
-    text-decoration: none;
-  }
-  
-  .upg_album_thumbnail A:hover {
-    background: none;
-    border: none; 
-    opacity:0;
-  }
-  .upg_album_thumbnail img{width:100%; height:auto; display:block}
-  
-  .upg_album_thumbnail-container {
-  max-width: 200px;
-   margin: 10px auto; 
-  }
+}
+
+
 
 
 /* TAGS input */
