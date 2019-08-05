@@ -48,9 +48,9 @@ else
 
 ob_start ();
 
-echo "Selected category: ".$album_name."<hr>";
+//echo "Selected category: ".$album_name."<hr>";
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-    echo '<ul>';
+    echo '<div class="upg_album_list">';
     foreach ( $terms as $term ) 
     {   
         $upg_cate_thumb_id = get_term_meta( $term->term_id, 'category-image-id', true  );
@@ -60,19 +60,14 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
         }
         else
         {
-            $cate_thumb_pic='x';
+            $cate_thumb_pic=plugins_url( '../images/pattern.png', __FILE__ );
         }
 
-        if($count)
-        {
-            echo '<li>' . $term->name . ' ('.$term->count.')</li>';
-        }
-        else 
-        {
-            echo '<li>' . $term->name.' '.$cate_thumb_pic.'</li>';
-        }
+        
+            echo ' <div class="upg_album_thumbnail-container"><div class="upg_album_thumbnail"><a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '">' . $term->name.'</a><img src="'.$cate_thumb_pic.'"/></div></div>';
+        
     }
-    echo '</ul>';
+    echo '</div>';
 }
 
 $put=ob_get_clean (); 
