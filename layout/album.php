@@ -1,5 +1,5 @@
 <?php
-//List album [upg-album]
+//List album [upg-album filter="image/embed" class="css_class_name"]
 $put="";
 $term_slug = get_query_var( 'upg_cate' );
 $term = get_term_by('slug', $term_slug, 'upg_cate');
@@ -7,15 +7,15 @@ $perrow = $options['global_perrow'];
 
 if(isset($params['perrow'])&&$params['perrow']>0) $perrow = $params['perrow'];
 
-if(isset($params['type']))
-	$type=trim($params['type']);
+if(isset($params['filter']))
+	$type=trim($params['filter']);
 else
     $type='';
 
 if(isset($params['class']))
 	$class=trim($params['class']);
 else
-    $class='';
+    $class='upg_album_container';
 
 
     
@@ -67,7 +67,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
         }
 
         
-            echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="upg_album_container"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="upg_album_title">' . $term->name.'</div></a></div></div>';
+            echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.'</div></a></div></div>';
         
     }
     echo '</div>';
