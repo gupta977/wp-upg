@@ -27,7 +27,7 @@ function upg_shortcode()
 	 <li><a href="#tab-5"><?php echo __("[upg-edit]","wp-upg");?></a></li>
      <li><a href="#tab-6"><?php echo __("[upg-pick]","wp-upg");?></a></li>
      <li><a href="#tab-7"><?php echo __("[upg-search]","wp-upg");?></a></li>
-	       
+     <li><a href="#tab-8"><?php echo __("[upg-album]","wp-upg");?></a></li>     
     </ul>
 
 	 <div id="tab-1">
@@ -74,6 +74,7 @@ function upg_shortcode()
                     <li> <code>user</code> = "user's username" -  The parameter is used to show a post gallery submitted by a particular username.<br>
                                                                 show_mine user is reserved username of UPG.</li>
                     <li> <code>login</code> = "true" -  Forces only logged in user can view the gallery.</li>
+                    <li> <code>filter</code> = "image | embed" -  If filter not specified it will show all upg post. </li>
                 
                 </ul>
         <h4>Scenario 1 – I want to display gallery where each column 3, total number of record each page is 6 from album 'fruits'</h4>
@@ -220,7 +221,7 @@ function upg_shortcode()
             <br>
             [/upg-form]
             </code>
-<br>
+
             
      </div>
 
@@ -289,7 +290,38 @@ function upg_shortcode()
             <h4>Scenario 1 – Display search bar above gallery</h4>
             Just insert a shortcode before gallery shortcode.<br>
             <div class="update-nag"><code>[upg-search]<br>[upg-list]</code></div>
-            </div>
+     </div>
+     <div id="tab-8">
+
+            <h3>List Album</h3>
+                <h4> [upg-album]</h4>
+                With this shortcode, you can list album/categories just above the gallery [upg-list] <br><br>
+                <b>Notes:</b>
+                <ol>
+                <li>It should be placed at the 'main upg page'.</li>
+                <li>It will work on other pages but will not list the post.</li>
+                <li>Try to match the parameter assigned in [upg-list]</li>
+                </ol>
+
+                <h4>Available Attributes:</h4>
+        The following attributes are available to use in conjunction with the [upg-album] shortcode.
+        They have been split into sections for primary function for ease of navigation.
+        <br>
+
+        <div class="update-nag">
+                <ul style="list-style-type:circle;">
+                    <li> <code>filter</code> = "image or embed" -  It will filter the categories based on the selection of album settings.</li>
+                    <li> <code>class</code> = "css class name" - It will change the default class name used. ie. upg_album_container.</li>
+                    <li> <code>perrow</code> = "number of column" - Number of column the album to display. It is by default to 1, if open in mobile browser.</li>
+                    <li><code>root </code> = "show | hide " - If set to [upg-album root="hide"] at upg main page, it will hide the starting root categories. Specially used if [upg-album] is in different page. </li> 
+             </ul>
+         </div>    
+
+                <hr>
+            <h4>Scenario 1 – Display album just above gallery</h4>
+            Just insert a shortcode [upg-album] in main UPG page assigned in settings.<br>
+            <div class="update-nag"><code>[upg-album]<br>[upg-list]</code></div>
+     </div>
 
     </div>
     <?php

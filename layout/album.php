@@ -29,6 +29,19 @@ else
         $album_name="";
         $term_id=0;
     }
+
+    $root='show'; //Default to show album at beginning
+    
+
+    if(isset($params['root']) && $params['root']=='hide' && $album_name=="")
+    {
+        $root='hide';
+    }
+    else
+    {
+        $root='show';
+    }
+    
     //Hide hidden category
     $skip=array();
     $skip=upg_hidden_category($type);
@@ -51,6 +64,8 @@ else
 
 ob_start ();
 
+if($root=='show')
+    {
 //echo "Selected category: ".$album_name."<hr>";
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
     echo '<div class="pure-g">';
@@ -72,6 +87,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
     }
     echo '</div>';
 }
+    }
 
 $put=ob_get_clean (); 
 return $put;

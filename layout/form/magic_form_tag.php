@@ -227,6 +227,8 @@ return $abc;
 
 [upg-form-tag type="checkbox" title="Which colors you like ?" value="upg_custom_field_5:Blue,upg_custom_field_6:Black"]
 
+[upg-form-tag type="other" new_type="hidden" name="user-submitted-title" value="blank"]
+
 [upg-form-tag type="submit" name="submit" value="Submit Now"]
 
 [/upg-form] */
