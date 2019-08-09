@@ -225,6 +225,7 @@ $args = array(
 								'field'    => 'slug',
 								'terms'    => explode(',',$album),
 								//'terms'    => array( 'mobile', 'sports' ),
+								'include_children' => 0 //It will not include post of sub categories
 								),
 							
 							array(
@@ -248,11 +249,15 @@ else
 	'posts_per_page' => $postsperpage,
 	'author_name' => $user,
 	'post_status' => $post_status,
+	'orderby' => $orderby,
+	'order'   => 'DESC',
 	
 );
 
 
 }
+
+//var_dump($args);
 
 //filter parameter
 if(isset($params['filter']))

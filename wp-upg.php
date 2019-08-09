@@ -118,8 +118,8 @@ Domain Path: /languages
 		 
 		 if(!isset($options['fancybox']) || $options['fancybox']=='0')
 		 {
-		 	wp_enqueue_style('fancybox', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
-		 	wp_enqueue_script( 'fancybox-min', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
+		 	wp_enqueue_style('upg_fancybox_css', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
+		 	wp_enqueue_script( 'upg_fancybox_js', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
 		 }
 		
 		if(!isset($options['purecss']) || $options['purecss']=='0')
