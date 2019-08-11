@@ -10,7 +10,7 @@ class upg_category_Widget extends WP_Widget {
      */
     public function __construct() {
         $widget_ops = array(
-            'classname' => 'upg_category_widget',
+            'classname' => 'widget_categories',
             'description' => 'Lists the album/categories which are not hidden.',
         );
 
@@ -50,13 +50,13 @@ class upg_category_Widget extends WP_Widget {
 		
 	if( $query_args['imm_child_only'] ) {
 		
-			$term_slug = get_query_var( 'acadp_category' );
+			$term_slug = get_query_var( 'upg_cate' );
 			
 			if( '' != $term_slug ) {		
-				$term = get_term_by( 'slug', $term_slug, 'acadp_categories' );
+				$term = get_term_by( 'slug', $term_slug, 'upg_cate' );
         		$query_args['active_term_id'] = $term->term_id;
 			
-				$query_args['ancestors'] = get_ancestors( $query_args['active_term_id'], 'acadp_categories' );
+				$query_args['ancestors'] = get_ancestors( $query_args['active_term_id'], 'upg_cate' );
 				$query_args['ancestors'][] = $query_args['active_term_id'];
 				$query_args['ancestors'] = array_unique( $query_args['ancestors'] );
 			}
@@ -73,8 +73,10 @@ class upg_category_Widget extends WP_Widget {
     }
 	
 	// HTML code that contain categories list.
-	public function list_categories( $settings ) {
-
+	public function list_categories( $settings )
+	{
+	$term_slug = get_query_var( 'upg_cate' );
+	
 		if( $settings['imm_child_only'] ) {
 		
 			if( $settings['term_id'] > $settings['parent'] && ! in_array( $settings['term_id'], $settings['ancestors'] ) ) {
@@ -97,7 +99,7 @@ class upg_category_Widget extends WP_Widget {
 					
 		if( count( $terms ) > 0 ) {	
 
-			$html .= '<ul>';
+			$html .= '<ul class="widget_categories">';
 							
 			foreach( $terms as $term ) 
 			{
@@ -114,7 +116,11 @@ class upg_category_Widget extends WP_Widget {
 					if( ! empty( $settings['hide_empty'] ) && 0 == $count ) continue;
 				}
 			
-				$html .= '<li>'; 
+				if($term_slug==$term->slug)
+					$html .= '<li class="cat-item cat-item-'.$term->term_id.' current-cat">'; 
+				else
+					$html .= '<li class="cat-item cat-item-'.$term->term_id.'">'; 
+				
 				$html .= '<a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '">';
 				$html .= $term->name;
 				if( ! empty( $settings['show_count'] ) ) {

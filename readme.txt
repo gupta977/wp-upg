@@ -217,6 +217,16 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.95 =
+* Removed magic form layout
+* [upg-form] can be used on any regular page
+* Added [upg-album] to list albums
+* Shortcode guide page updated
+* Added thumbnail support for albums
+* fancyapp wp_enqueue_script name updated
+* widget categories now supports icon
+
+
 = 1.94 =
 * Video submission is changed to embed url
 * Supports instagram, vimeo, youtube, facebook, twitter and many more 

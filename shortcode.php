@@ -313,6 +313,7 @@ function upg_shortcode()
                     <li> <code>filter</code> = "image or embed" -  It will filter the categories based on the selection of album settings.</li>
                     <li> <code>class</code> = "css class name" - It will change the default class name used. ie. upg_album_container.</li>
                     <li> <code>perrow</code> = "number of column" - Number of column the album to display. It is by default to 1, if open in mobile browser.</li>
+                    <li> <code>count</code> = "show | hide" - If show, counts number of post into album</li>
                     <li><code>root </code> = "show | hide " - If set to [upg-album root="hide"] at upg main page, it will hide the starting root categories. Specially used if [upg-album] is in different page. </li> 
              </ul>
          </div>    
@@ -321,6 +322,10 @@ function upg_shortcode()
             <h4>Scenario 1 – Display album just above gallery</h4>
             Just insert a shortcode [upg-album] in main UPG page assigned in settings.<br>
             <div class="update-nag"><code>[upg-album]<br>[upg-list]</code></div>
+
+            <h4>Scenario 2 – Display albums assigned for embed only</h4>
+            Create new new page, insert a shortcode <code>[upg-album filter="embed"]</code><br>
+           
      </div>
 
     </div>

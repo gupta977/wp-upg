@@ -57,7 +57,7 @@ else
     
     $terms = get_terms( 'upg_cate', $args );
 
-    if(isset($params['count']) && $params['count']=='true')
+    if(isset($params['count']) && $params['count']=='show')
 	$count=true;
 else    
       $count=false;
@@ -81,9 +81,15 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             $cate_thumb_pic=plugins_url( '../images/pattern.png', __FILE__ );
         }
 
-        
+            if($count)
+            {
+                echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.' ('.$term->count.')</div></a></div></div>';
+            }
+            else {
+                
+            
             echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.'</div></a></div></div>';
-        
+            }
     }
     echo '</div>';
 }

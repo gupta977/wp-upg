@@ -1,7 +1,7 @@
 <?php
 $options = get_option('upg_settings');
 $attr = shortcode_atts( array(
-    'class' => 'pure-form',
+    'class' => 'pure-form pure-form-stacked',
     'title' => 'Submit',
     'preview' => upg_get_option( 'global_media_layout','upg_preview', 'basic' ),
     'name' => '',
@@ -143,7 +143,7 @@ else
  
     if($attr['ajax']=='false')
     {
-        echo '<form class="pure-form pure-form-stacked" method="post" enctype="multipart/form-data" action="">';
+        echo '<form class="'.$attr['class'].'" method="post" enctype="multipart/form-data" action="">';
 	
     }
     else {

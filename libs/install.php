@@ -289,10 +289,48 @@ function upg_install()
 	   $aid=wp_insert_post(array('post_title'=>'User\'s Post Gallery','post_content'=>'[upg-list]','post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'main_page','upg_gallery', $aid );
 
-		 $bid=wp_insert_post(array('post_title'=>'Post Image','post_content'=>'[upg-post type="image"]','post_type'=>'page','post_status'=>'publish'));
+		$str_post_image='
+		[upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true"]
+			
+		[upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
+
+		[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
+
+		[upg-form-tag type="tag" title="Insert tag"]
+
+		[upg-form-tag type="article" title="Description"  placeholder="Content"]
+
+		[upg-form-tag type="file" title="Select file"]
+
+		[upg-form-tag type="submit" name="submit" value="Submit Now"]
+		
+		[/upg-form]
+		';
+
+		 $bid=wp_insert_post(array('post_title'=>'Post Image','post_content'=>$str_post_image,'post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'post_image_page','upg_form', $bid );
 
-		 $cid=wp_insert_post(array('post_title'=>'oEmbed URL','post_content'=>'[upg-post type="embed"]','post_type'=>'page','post_status'=>'publish'));
+		$str_post_embed='
+		[upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true" post_type="video_url"] 
+
+			[upg-form-tag type="post_title" title="Video Title" value="" placeholder="main title"]
+			
+			[upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="embed" ]
+			
+			[upg-form-tag type="tag" title="Insert tag"]
+			
+			[upg-form-tag type="article" title="Description"  placeholder="Content"]
+			
+			[upg-form-tag type="video_url" title="Submit public embed URL" placeholder="http://" required="true"]
+			
+			[upg-form-tag type="submit" name="submit" value="Submit URL"]
+			
+	[/upg-form]
+		';
+
+
+
+		 $cid=wp_insert_post(array('post_title'=>'oEmbed URL','post_content'=>$str_post_embed,'post_type'=>'page','post_status'=>'publish'));
 		 upg_set_option( 'post_youtube_page','upg_form', $cid );
 		 
 		 $did=wp_insert_post(array('post_title'=>'My Gallery','post_content'=>'[upg-list user="show_mine" layout="basic"]','post_type'=>'page','post_status'=>'publish'));

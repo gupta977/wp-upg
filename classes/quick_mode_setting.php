@@ -153,7 +153,7 @@ class upg_quick_setting {
                 
                 array(
                     'name'    => 'global_form_layout',
-                    'label'   => __( 'Select Form Layout', 'wp-upg' ),
+                    'label'   => __( 'Select Form Layout [upg-post]', 'wp-upg' ),
                     'desc'    => __( 'It is applied if "layout" parameter in shortcode is not specified.', 'wp-upg' ),
                     'type'    => 'layout',
                     'param1' => 'form',
