@@ -1992,4 +1992,18 @@ function upg_oembed()
 	echo __("Loading","wp-upg").'...';
 	die();
 }
+
+//Remove empty <br> & <p> tags from shortcode which are auto inserted
+function upg_cleanup_shortcode_fix($content) {   
+	$array = array (
+	  '<p>[' => '[', 
+	  ']</p>' => ']', 
+	  ']<br />' => ']',
+	  ']<br>' => ']'
+	);
+	$content = strtr($content, $array);
+	  return $content;
+  }
+  add_filter('the_content', 'upg_cleanup_shortcode_fix',10);
+
 ?>

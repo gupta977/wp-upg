@@ -127,6 +127,7 @@ if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonc
 }
 else
 {
+    
     ?>
     <div id="upg_ajax">
     <!-- Image loader -->
@@ -156,7 +157,7 @@ else
         action="'.admin_url("admin-ajax.php").'"
         >';
     }
-    
+   
     	
     
     echo do_shortcode($content);
