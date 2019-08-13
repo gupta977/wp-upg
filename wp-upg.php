@@ -132,15 +132,15 @@ Domain Path: /languages
 			{
 				wp_enqueue_style('upg-fontawesome','https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 			}
-			wp_enqueue_script( 'upg_input_tags', plugins_url() .'/'. upg_FOLDER.'/js/jquery.tagsinput.js');
+			wp_enqueue_script( 'upg_input_tags', plugins_url() .'/'. upg_FOLDER.'/js/jquery.tagsinput.js','',UPG_PLUGIN_VERSION,'');
 			//wp_enqueue_script('jquery');
-			wp_enqueue_script( 'upg_tags', plugins_url() .'/'. upg_FOLDER.'/js/filter-tags.js' );
-		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' );
+			wp_enqueue_script( 'upg_tags', plugins_url() .'/'. upg_FOLDER.'/js/filter-tags.js','',UPG_PLUGIN_VERSION,'' );
+		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' ,'',UPG_PLUGIN_VERSION,'');
 		 wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jquery.zoom.js' );
-		  wp_enqueue_script( 'upg_delete', plugins_url() .'/'. upg_FOLDER.'/js/upg_delete.js' );
-		  wp_enqueue_script( 'upg_oembed', plugins_url() .'/'. upg_FOLDER.'/js/upg_oembed.js' );
-		  wp_enqueue_script( 'upg_load_more', plugins_url() .'/'. upg_FOLDER.'/js/upg_load_more.js' );
-		  wp_enqueue_script( 'upg_ajax_post', plugins_url() .'/'. upg_FOLDER.'/js/upg_ajax_post.js' );
+		  wp_enqueue_script( 'upg_delete', plugins_url() .'/'. upg_FOLDER.'/js/upg_delete.js','',UPG_PLUGIN_VERSION,'' );
+		  wp_enqueue_script( 'upg_oembed', plugins_url() .'/'. upg_FOLDER.'/js/upg_oembed.js','',UPG_PLUGIN_VERSION,'' );
+		  wp_enqueue_script( 'upg_load_more', plugins_url() .'/'. upg_FOLDER.'/js/upg_load_more.js','',UPG_PLUGIN_VERSION,'' );
+		  wp_enqueue_script( 'upg_ajax_post', plugins_url() .'/'. upg_FOLDER.'/js/upg_ajax_post.js','',UPG_PLUGIN_VERSION,'' );
 		  
 		  wp_localize_script( 'upg_delete', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 		  wp_localize_script( 'upg_oembed', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
