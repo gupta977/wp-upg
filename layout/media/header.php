@@ -17,16 +17,6 @@ function upg_position2()
  }	
  
  $options = get_option('upg_settings');
- 
- 
-  if(isset($options['hide_title']) && $options['hide_title']=="1")
-	  $post_title="";
-  else
-	  $post_title=$post->post_title;
+ $post_title=$post->post_title;
 	?>
-	<style>
-	.upg_hide_title .entry-title { 
-display:none;
-}
-
-	</style>
+	

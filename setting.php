@@ -578,9 +578,6 @@ function upg_primary_custom_field_settings()
  function upg_preview_layout_settings() 
  {
 	$options = get_option('upg_settings');
-
-	if(!isset($options['hide_title']))
-	$options['hide_title']="0";
 		
 	?>
 	<button id='load_more_media' type="button" style='margin:5px; font-size: 110%;'>Check Media/Preview Settings</button>
@@ -589,14 +586,7 @@ function upg_primary_custom_field_settings()
 	
 	If LightBox or popup are enabled in grid layout. The media/preview page is not visible. Hence below settings are not required. This page doesn't require any shortcode. It is auto generated.
 	<hr>
-		
-<a href="#" title="<?php echo ( 'Sometime due to special theme, UPG will show two titles. You need to enable to make it one.'); ?>" class="upg_tooltip"><?php echo '<img src="'.upg_PLUGIN_URL.'/images/info.png">'; ?></a>
-	<b>Hide one UPG title if found double :</b> <input type="checkbox" name='upg_settings[hide_title]' value='1' <?php if($options['hide_title']=='1') echo 'checked="checked"'; ?> >
-	<br>
-	<br>
 
-
-	<hr>
 	<div class="update-nag">
 	<b>To display single UPG post by ID : BETA version</b><br>
 	<code>[upg-pick id='00' notice='SALE']</code><br>

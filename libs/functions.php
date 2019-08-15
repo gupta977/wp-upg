@@ -767,9 +767,15 @@ function upg_delete()
 	$post_author_id = get_post_field( 'post_author', $post_id );
    
    if(get_current_user_id() == $post_author_id)
+   {
+		upg_delete_post_media( $post_id );	
 		$data = wp_delete_post( $post_id, true );
-	else
+		
+   }
+		else
+		{
 		$data=false;
+		}
 
    if($data === false) 
    {
@@ -1560,7 +1566,7 @@ function upg_image_src($size,$post)
 			//wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array('220','220'), true );
 			if ( $image_attributes )
 			{
-			return $image_attributes[0];
+				return $image_attributes[0];
 			}
 			else
 			{
@@ -2006,4 +2012,56 @@ function upg_cleanup_shortcode_fix($content) {
   }
   add_filter('the_content', 'upg_cleanup_shortcode_fix',10);
 
+
+  //Hide featured image at media preview page
+  function upg_remove_post_thumbnail_html( $html ) {
+    global $post;
+    $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+	if($post->post_type=='upg' && is_singular() )
+	{
+        return '';
+	} 
+	else 
+	{
+        return $html;
+    }
+}
+add_filter( 'post_thumbnail_html', 'upg_remove_post_thumbnail_html' );
+
+
+//Update featured image for upg post
+function upg_set_featured_image($post,$image_url,$image_title)
+{
+	$current_post_thumbnail = get_post_thumbnail_id( $post->ID );
+    if ( '' !== $current_post_thumbnail ) {
+        return;
+	}
+	
+	$attach_id=attachment_url_to_postid($image_url);
+	if($attach_id!=0)
+	{
+		
+		set_post_thumbnail( $post->ID, $attach_id);
+		upg_log("seetin thumb ".$post->ID."--".$attach_id);
+		
+	}
+	else
+	{
+	require_once(ABSPATH . 'wp-admin/includes/media.php');
+	require_once(ABSPATH . 'wp-admin/includes/file.php');
+	require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+    $image = media_sideload_image( $image_url, $post->ID, $image_title,'id' );
+	if ( is_wp_error($image) )
+	{
+		return '';
+	}
+	else
+	{
+		upg_log("remote url ID ".$image);
+		set_post_thumbnail( $post->ID, $image );
+	}
+	}
+	
+}
 ?>

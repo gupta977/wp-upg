@@ -119,7 +119,7 @@ Domain Path: /languages
 		 if(!isset($options['fancybox']) || $options['fancybox']=='0')
 		 {
 		 	wp_enqueue_style('upg_fancybox_css', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
-		 	wp_enqueue_script( 'upg_fancybox_js', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, true );
+		 	wp_enqueue_script( 'upg_fancybox_js', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, false );
 		 }
 		
 		if(!isset($options['purecss']) || $options['purecss']=='0')
@@ -692,20 +692,6 @@ if($options['archive']=='1')
 	
 }
 
-//removes title only from UPG preview page
-function wpb_hidetitle_class($classes) 
-{
-	global $post;
-	
-	if ( $post && $post->post_type == 'upg' ) 
-	{
-		$classes[] = 'upg_hide_title';
-		return $classes;
-	}
-
-return $classes;
-}
-add_filter('post_class', 'wpb_hidetitle_class');
 
 		/**
 		 * Add any custom links to plugin list page
@@ -801,8 +787,7 @@ function upg_admin_notice_example_notice()
 		<h3>UPG Notes:</h3>
             <p>Some pages are auto created. Do not delete them even if not required.</p>
 			<p>Go to UPG Settings and select those pages at appropriate location.</p>
-			<br>
-			<a href='<?php echo esc_url( get_page_link( upg_get_option( 'main_page','upg_gallery', '0' ) )); ?>' class='button button-primary'>UPG Main Page</a> with default configuration.
+			<p>It is advisable to update Wordpress "Settings > Permalinks", after page update.</p>
         </div>
         <?php
         /* Delete transient, only display this notice once. */

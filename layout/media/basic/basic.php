@@ -1,14 +1,5 @@
 <style>
-.upg_basic_title{
-	font-family: 'Francois One', Tahoma, Verdana, Arial;
-	line-height: 1.4em;
-	word-wrap: break-word;
-	font-size: 2.0em;
-	text-decoration: none;
-	letter-spacing: 0.05em;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-	
-}
+
 .upg-desp{
 	color:#070342;
 	font-size:1.0em;
