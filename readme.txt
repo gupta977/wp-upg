@@ -1,6 +1,6 @@
 === User Post Gallery - UPG ===
 Contributors: odude
-Tags: user generated, photo gallery, anonymous post, youtube gallery, embed
+Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
 Tested up to: 5.2.2
@@ -54,15 +54,21 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Bulk image upload. (upg-pro)
 * With the help of personal layout form, user can create own advanced personalized form with the help of PHP.
 * Options to display submission button only to logged in users.  
-* Separate album selection for images & video
+* Separate album selection for images & embed video
 
-== Submission form [upg-form] ==
+== Submission form [upg-form] & [upg-post] ==
 * With this shortcode user can submit content to wordpress post or other custom post types.
 * It can be used as frontend uploader for other plugins.
 * User can select existing album and generate own tags from frontend.
 * Special shortocde to generate html input fields.
 * Check <a href="https://odude.com/upg-user-post-gallery/upg-form/">this url</a> for detail explanation 
 
+
+== List Album [upg-album] ==
+* List album/folder/categories via shortcode & widgets
+* Album supports personal thumbnail
+* List album filtered by image & embed
+* options to hide album from visitors
 
 == Admin Post Management ==
 * Administrator can show or hide particular categories/albums from the frontend.
@@ -77,7 +83,8 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 
 == User Post Management ==
 * Loggedin users can delete own uploaded post with ajax system.
-* 'My Gallery' page for loggedin users. 
+* Unlike other plugins, it also deletes all the media file associated with it.
+* 'My Gallery' private page for loggedin users. 
 * User can edit & delete own post.
 * Notification via email when someone submits form. (UPG-PRO)
 
@@ -104,6 +111,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 = YouTube, Vimeo, Facebook Video & 30+ URL submission =
 * User can submit/embed url with title & own descriptions
 * Static thumbnail image is created automatically based on url submitted
+* Auto assigned thumbnail as featured image
 * Embed URL can be shown in popup or link to different page. No change in site.
 * All Embed URL & Image gallery can be on same page. 
 
@@ -139,7 +147,7 @@ For further questions feel free to drop a line at navneet@odude.com.
 
 = Development =
 
-* <a href="https://github.com/gupta977/wp-upg">Fork the plugin or report an issue on Github</a>
+* <a href="https://github.com/gupta977/wp-upg/tree/beta">Fork the plugin or help on Github</a>
 
 = Language =
 
@@ -181,6 +189,7 @@ Submission page are auto created when plugin activated.
 Or manually create page & insert the shortcode 
 [upg-post type=image] or <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a>
 in the description area. Link this page at your upg settings.
+You can also use [upg-form].
 
 = 5. Show images from specific album/category =
 

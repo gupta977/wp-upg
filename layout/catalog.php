@@ -358,8 +358,9 @@ $tags=upg_get_taxonony_raw($post->ID, 'upg_tag');
 
 //Set featured image if not available
 if (strpos($image_large, 'noimg.png') == false)
-upg_set_featured_image($post,$image_large,$post->post_title);
-
+{
+	upg_set_featured_image($post,$image_large,$post->post_title);
+}
 $post_status=get_post_status();
 
 $text=wpautop( stripslashes ($post->post_content));

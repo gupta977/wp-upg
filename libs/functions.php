@@ -1550,15 +1550,9 @@ function upg_image_src($size,$post)
 	// global $post;
 	wp_enqueue_media();
 	$field_names = array( 'pic_name');
-	
-	
-	$all_upg_extra= get_post_custom($post->ID);
-			
-			
+	$all_upg_extra= get_post_custom($post->ID);		
 	foreach ( $field_names as $name ) 
 	{
-	
-
 			$value = $rawvalue = get_post_meta( $post->ID, $name, true );
 		//	$image_attributes = wp_get_attachment_image_src( $rawvalue,'odude-thumb' );
 			//var_dump($image_attributes);
@@ -1782,6 +1776,7 @@ function upg_allowed_embed_url($url)
 
 function upg_getimg_video_url($url,$post="")
 {
+	//upg_log("getting video url");
 	$all_upg_extra= get_post_custom($post->ID);
 			
 	if(isset($all_upg_extra["thumbnail_url"][0]))
@@ -1838,17 +1833,30 @@ function upg_getimg_video_url($url,$post="")
 				$video_id=upg_getid_video_url($url);
 				if (strpos($url, 'dailymotion') > 0) 
 				{
-					$data = file_get_contents('https://api.dailymotion.com/video/'.$video_id.'?fields=thumbnail_large_url');
+					//upg_log("geting for dailymotion");
+					$data = @file_get_contents('https://api.dailymotion.com/video/'.$video_id.'?fields=thumbnail_1080_url');
+					if($data!=false)
+					{
 					$data = json_decode($data, TRUE);
-					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_large_url']);
-					return $data['thumbnail_large_url'];
+					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_1080_url']);
+					return $data['thumbnail_1080_url'];
+					}
+					else {
+						return plugins_url( '../images/noimg.png', __FILE__ );
+					}
 				}
 				else if (strpos($url, 'instagram') > 0) 
 				{
 					$data = file_get_contents('https://api.instagram.com/oembed/?url='.$url);
+					if($data!=false)
+					{
 					$data = json_decode($data, TRUE);
 					add_post_meta($post->ID, 'thumbnail_url', $data['thumbnail_url']);
 					return $data['thumbnail_url'];
+					}
+					else {
+						return plugins_url( '../images/noimg.png', __FILE__ );
+					}
 				}
 				else
 				{
@@ -2033,16 +2041,19 @@ add_filter( 'post_thumbnail_html', 'upg_remove_post_thumbnail_html' );
 function upg_set_featured_image($post,$image_url,$image_title)
 {
 	$current_post_thumbnail = get_post_thumbnail_id( $post->ID );
-    if ( '' !== $current_post_thumbnail ) {
+	if ( '' !== $current_post_thumbnail ) 
+	{
+		//upg_log($post->ID ."- Already set featured image");
         return;
 	}
 	
+	//upg_log($image_url."-".$post->ID."<hr>");
 	$attach_id=attachment_url_to_postid($image_url);
 	if($attach_id!=0)
 	{
 		
 		set_post_thumbnail( $post->ID, $attach_id);
-		upg_log("seetin thumb ".$post->ID."--".$attach_id);
+		//upg_log("seeting thumb ".$post->ID."--".$attach_id);
 		
 	}
 	else
@@ -2054,11 +2065,12 @@ function upg_set_featured_image($post,$image_url,$image_title)
     $image = media_sideload_image( $image_url, $post->ID, $image_title,'id' );
 	if ( is_wp_error($image) )
 	{
+		//upg_log("error in image ".$image_url);
 		return '';
 	}
 	else
 	{
-		upg_log("remote url ID ".$image);
+		//upg_log("remote url ID ".$image_url);
 		set_post_thumbnail( $post->ID, $image );
 	}
 	}

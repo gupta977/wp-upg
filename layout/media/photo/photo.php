@@ -1,6 +1,7 @@
 <?php
 function upg_product_content($post)
 {
+	$options = get_option('upg_settings');
 	$text=wpautop( stripslashes ($post->post_content));
 	
 	require_once(upg_BASE_DIR."layout/media/header.php");
