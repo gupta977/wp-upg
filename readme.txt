@@ -226,6 +226,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.96 =
+* Sorry, Some files were missing in last update.
+
 = 1.95 =
 * Removed magic form layout
 * [upg-form] can be used on any regular page
