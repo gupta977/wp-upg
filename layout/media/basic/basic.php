@@ -1,14 +1,5 @@
 <style>
-.upg_basic_title{
-	font-family: 'Francois One', Tahoma, Verdana, Arial;
-	line-height: 1.4em;
-	word-wrap: break-word;
-	font-size: 2.0em;
-	text-decoration: none;
-	letter-spacing: 0.05em;
-	text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
-	
-}
+
 .upg-desp{
 	color:#070342;
 	font-size:1.0em;
@@ -32,13 +23,14 @@ border-radius: 50%;
 
 function upg_product_content($post)
 {
+	$options = get_option('upg_settings');
 	$text=wpautop( stripslashes ($post->post_content));
 	
 	require_once(upg_BASE_DIR."layout/media/header.php");
 	$abc="";
 	 $home = home_url('/');
 	ob_start ();
-	$image=upg_image_src('large',$post);
+	$image=upg_image_src('odude-large',$post);
 
 	//Make image blank, if noimg.png is found in url.
 	if (stripos($image,'noimg.png') !== false) 
