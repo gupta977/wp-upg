@@ -53,15 +53,20 @@ else
         'hide_empty'   => 0, 
         'exclude'            => $skip,
         'parent' =>$term_id,
+        
       );
     
     $terms = get_terms( 'upg_cate', $args );
 
     if(isset($params['count']) && $params['count']=='show')
-	$count=true;
-else    
+    {
+    $count=true;
+    
+    }
+    else 
+    {   
       $count=false;
-
+    }
 ob_start ();
 
 if($root=='show')
@@ -83,7 +88,8 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
 
             if($count)
             {
-                echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.' ('.$term->count.')</div></a></div></div>';
+                $count_result = upg_get_listings_count_by_category( $term->term_id, true );
+                echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.' ('.$count_result.')</div></a></div></div>';
             }
             else {
                 

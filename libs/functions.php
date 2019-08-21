@@ -2076,4 +2076,20 @@ function upg_set_featured_image($post,$image_url,$image_title)
 	}
 	
 }
+
+//Checks if current theme page is of upg
+function is_upg() {
+    return apply_filters( 'is_upg', is_upg_gallery());
+}
+
+function is_upg_gallery()
+{
+	$main_page=upg_get_option( 'main_page','upg_gallery', '0' );
+	if(is_page() && is_page($main_page))
+	{
+		//upg_log("upg page");
+		return true;
+	}
+	return false;
+}
 ?>

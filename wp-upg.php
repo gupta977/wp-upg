@@ -38,6 +38,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/addon.php");
 	include(dirname(__FILE__)."/shortcode.php");
 	include(dirname(__FILE__)."/libs/metabox.php");
+	include(dirname(__FILE__)."/libs/breadcrumb.php");
 	include(dirname(__FILE__)."/layout/edit.php");
 	include(dirname(__FILE__)."/layout/button.php");
 	include(dirname(__FILE__)."/libs/taxonomy.php");

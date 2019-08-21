@@ -143,7 +143,7 @@ For further questions feel free to drop a line at navneet@odude.com.
 * <a href="https://odude.com/upg-user-post-gallery/" target="_blank">UPG Homepage</a>
 * <a href="http://odude.com/demo/faq/" target="_blank">Documents & FAQ</a>
 * <a href="https://odude.com/demo/photo/" target="_blank">Photo Layout Demo</a>
-* <a href="http://odude.com/demo/upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
+* <a href="http://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
 
 = Development =
 
