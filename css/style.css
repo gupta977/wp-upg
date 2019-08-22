@@ -42,6 +42,10 @@ div.tagsinput div { display:block; float: left; }
 	list-style:none;
 }
 
+.upg_tags ul {
+  list-style: none;
+}
+
 .upg_tags li, .upg_tags a{
 	float:left;
 	height:24px;
