@@ -2076,33 +2076,4 @@ function upg_set_featured_image($post,$image_url,$image_title)
 	}
 	
 }
-
-//Checks if current theme page is of upg
-function is_upg() {
-    return apply_filters( 'is_upg', is_upg_gallery() || is_upg_preview());
-}
-
-function is_upg_gallery()
-{
-	$main_page=upg_get_option( 'main_page','upg_gallery', '0' );
-	if(is_page() && is_page($main_page))
-	{
-		//upg_log("upg page");
-		return true;
-	}
-	return false;
-}
-
-function is_upg_preview()
-{
-	global $post;      
-	if($post->post_type!='upg')
-	return false;     
-     	
-       if( is_singular() && is_main_query() ) 
-	   {
-			return true;
-	   }
-	return false;
-}
 ?>

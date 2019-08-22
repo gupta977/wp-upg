@@ -28,6 +28,7 @@ function upg_shortcode()
      <li><a href="#tab-6"><?php echo __("[upg-pick]","wp-upg");?></a></li>
      <li><a href="#tab-7"><?php echo __("[upg-search]","wp-upg");?></a></li>
      <li><a href="#tab-8"><?php echo __("[upg-album]","wp-upg");?></a></li>     
+     <li><a href="#tab-9"><?php echo __("[upg-breadcrumb]","wp-upg");?></a></li> 
     </ul>
 
 	 <div id="tab-1">
@@ -278,7 +279,7 @@ function upg_shortcode()
                 With this shortcode, user can search through the gallery. <br><br>
                 <b>Notes:</b>
                 <ol>
-                <li>It is available only to UPG-PRO version.</li>
+                <li><b>It is available only to UPG-PRO version.</b></li>
                 <li>It will not work for <code>[upg-attach]</code> page.</li>
                 <li>UPG main page is used for search which is indicated at setting page.<br>
                 All parameters (layout, popup, etc.) applied on main page <code>[up-list]</code>is used. </li>
@@ -326,6 +327,24 @@ function upg_shortcode()
             <h4>Scenario 2 – Display albums assigned for embed only</h4>
             Create new new page, insert a shortcode <code>[upg-album filter="embed"]</code><br>
            
+     </div>
+     <div id="tab-9">
+     <h3>Display breadcrumb navigation at UPG page</h3>
+                <h4> [upg-breadcrumb]</h4>
+                With this shortcode, user can see breadcrumb navigation above gallery <br><br>
+                <b>Notes:</b>
+                <ol>
+                <li><b>It is available only to UPG-PRO version.</b></li>
+                <li>It will not work for <code>[upg-list]</code> page.</li>
+                <li>UPG main page is used as primary.</li>
+                <li>Redesign search bar is not available yet. </li>
+                <li>Developer can use special upg_show_breadcrumb() and pass css arguments to maintain look and feel.</li>
+                </ol>
+
+                <hr>
+            <h4>Scenario 1 – Display navigation bar above gallery</h4>
+            Just insert a shortcode before gallery shortcode.<br>
+            <div class="update-nag"><code>[upg-breadcrumb]<br>[upg-list]</code></div>
      </div>
 
     </div>

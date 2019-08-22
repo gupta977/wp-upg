@@ -34,7 +34,7 @@ border-radius: 50%;
 	
 		 <div class=" pure-u-1-2 pure-u-md-1-3">
 		 <?php 
-		 echo upg_author($author)."<br>"; 
+		 echo upg_author($author,false)."<br>"; 
 		
 		 ?>
 		 

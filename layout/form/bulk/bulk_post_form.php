@@ -1,23 +1,12 @@
 <script src="<?php echo plugins_url() .'/'. upg_FOLDER.'/layout/form/bulk/dropzone.js'; ?>"></script>
 <link rel="stylesheet" href="<?php echo plugins_url() .'/'. upg_FOLDER.'/layout/form/bulk/dropzone.css'; ?>">
-
-
 <?php
- function upg_bulk_post_layout($upload_path,$preview,$form_name,$form_attach_id) 
- {
-     //Empty function for free UPG version.
- }
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-    if ( is_plugin_active( 'wp-upg-pro/wp-upg-pro.php' ) ) 
+
+    if ( is_upg_pro() ) 
     {
-        //include_once( WP_PLUGIN_DIR. '/wp-upg-pro/bulk_upload_layout.php' );
+        include_once( WP_PLUGIN_DIR. '/wp-upg-pro/bulk_upload_layout.php' );
         
-    }
-    else
-    {
-       
-        echo "'Bulk layout' is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro</a>. <hr></b>";
-    }
+   
 
     $upload_dir = wp_upload_dir();
     $upload_path = $upload_dir['path'] . DIRECTORY_SEPARATOR;
@@ -53,6 +42,14 @@
 
 
 <?php
+
+}
+else
+{
+   
+    echo "'Bulk layout' is available only to <a href='https://odude.com/product/wp-upg-pro/'>UPG Pro</a>. <hr></b>";
+}
+
 //if(isset($options['my_gallery']))
 //{
     //echo $options['my_gallery']."---";

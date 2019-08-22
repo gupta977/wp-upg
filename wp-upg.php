@@ -30,6 +30,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/classes/quick_mode_setting.php");
 	include(dirname(__FILE__)."/classes/class.AlbumThumbnail.php");
 	include(dirname(__FILE__)."/libs/functions.php");
+	include(dirname(__FILE__)."/libs/functions-boolean.php");
 	include(dirname(__FILE__)."/libs/load_more.php");
 	include(dirname(__FILE__)."/libs/install.php");
 	include(dirname(__FILE__)."/libs/hooks.php");

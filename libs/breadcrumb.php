@@ -40,11 +40,11 @@ function upg_show_breadcrumb($term_slug,$type,$args = array(),$link=false)
   
     if ($list || $link) 
     {
-      echo $args['before']."<a href='$home'>".__('Home','wp-upg')."</a>".$args['after']."".$gallery_show."".$list;
+      echo $args['before']."<a href='$home'>".__('Home','wp-upg')."</a>".$args['after']."".$args['delimiter']."".$gallery_show."".$list;
     }
     else 
     {
-      echo $args['before']."<a href='$home'>".__('Home','wp-upg')."</a>".$args['before']."".$gallery_title."".$args['after'];
+      echo $args['before']."<a href='$home'>".__('Home','wp-upg')."</a>".$args['after']."".$args['delimiter']."".$args['before']."".$gallery_title."".$args['after'];
     }
 }
 
@@ -52,7 +52,7 @@ function upg_show_breadcrumb($term_slug,$type,$args = array(),$link=false)
 //Display breadcrumb
 function upg_breadcrumb($args = array())
 {
-    echo "1ooo";
+    //echo "1ooo";
     $args = wp_parse_args(
         $args,
         apply_filters(
@@ -76,12 +76,12 @@ function upg_breadcrumb($args = array())
         if(isset($wp_query->query_vars['user']))
         {
           upg_show_breadcrumb('',"upg_cate",$args,true);
-          echo $args['before']."".$wp_query->query_vars['user']."".$args['after'];
+          echo $args['delimiter']."".$args['before']."".$wp_query->query_vars['user']."".$args['after'];
         }
         else if(isset($wp_query->query_vars['upg_tag']))
         {
           upg_show_breadcrumb('',"upg_cate",$args,true);
-          echo $args['before']."".$wp_query->query_vars['upg_tag']."".$args['after'];
+          echo $args['delimiter']."".$args['before']."".$wp_query->query_vars['upg_tag']."".$args['after'];
         }
         else 
         {
