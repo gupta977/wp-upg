@@ -231,6 +231,8 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Updated photo form layout
 * updated photo preview layout
 * Bulk form layout now only available to upg-pro
+* Updated album css with counter
+* Addon remote images added to local folder
 
 
 = 1.96 =

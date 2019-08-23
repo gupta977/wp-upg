@@ -68,6 +68,33 @@ else
       $count=false;
     }
 ob_start ();
+?>
+<style>
+
+div.wrapper1{
+	float:left; /* important */
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+	/* styling bellow */
+	background-color:black;
+	color:white;
+	opacity:0.6; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
+}
+p.description_content{
+	padding:10px;
+	margin:0px;
+	font-size: 30px;
+}
+
+</style>
+
+<?php
 
 if($root=='show')
     {
@@ -86,16 +113,44 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             $cate_thumb_pic=plugins_url( '../images/pattern.png', __FILE__ );
         }
 
-            if($count)
-            {
-                $count_result = upg_get_listings_count_by_category( $term->term_id, true );
-                echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.' ('.$count_result.')</div></a></div></div>';
-            }
-            else {
-                
-            
-            echo '<div class="pure-u-1 pure-u-md-1-'.$perrow.'"><div class="'.$class.'"> <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> <img src="'.$cate_thumb_pic.'"/> <div class="'.$class.'_title">' . $term->name.'</div></a></div></div>';
-            }
+       
+            $count_result = upg_get_listings_count_by_category( $term->term_id, true );
+          
+
+              
+                echo '
+                <div class="pure-u-1 pure-u-md-1-'.$perrow.'">
+                '.($count?'<div class="upg_badge" style="position: absolute;z-index:1;">'.$count_result.'</div>':'').'
+                <div class="'.$class.'"> 
+                <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> 
+                    <img src="'.$cate_thumb_pic.'"/> 
+                    <!-- description div -->
+                    
+	                    <div class="'.$class.'_levelA">
+                            <!-- description content -->
+                            
+                            <p class="'.$class.'_levelB">'.$term->name.'</p>
+                            
+		                    <!-- end description content -->
+	                    </div> 
+                    <!-- end description div -->
+                    </a>
+                   
+                </div>
+               
+                </div>
+                ';
+                /*
+                echo '
+                <div class="pure-u-1 pure-u-md-1-'.$perrow.'">
+                <div class="'.$class.'"> 
+                <a href="' .upg_get_category_page_link( $term, 'upg_cate' ) . '"> 
+                <img src="'.$cate_thumb_pic.'"/> 
+                <div class="'.$class.'_title">' . $term->name.' ('.$count_result.')</div>
+                </a>
+                </div></div>';
+                */
+          
     }
     echo '</div>';
 }

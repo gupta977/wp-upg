@@ -835,6 +835,10 @@ function upg_admin_top_menu()
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_layout')."' class='button ".(($page_name=='wp_upg_layout')?'button-primary':'')." '>Layout Editor</a>";
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_addon')."' class='button ".(($page_name=='wp_upg_addon')?'button-primary':'')." '>Addons & Help</a>";
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button ".(($page_name=='upg_shortcode')?'button-primary':'')." '>Shortcode Guide</a>";
+	if(is_upg_pro())
+	{
+		echo " <a href='http://odude.com/product/wp-upg-pro/' class='button button-secondary'>Purchase UPG PRO</a>";	
+	}
 	echo '</div>';
 	}
 }

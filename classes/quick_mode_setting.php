@@ -194,10 +194,12 @@ class upg_quick_setting {
         settings_errors();
 
         echo '<div class="wrap">';
+        
         do_action( "upg_admin_top_menu");
-        echo "<h3>UPG ".__('Basic Settings','wp-upg')."</h3>";
+       
         //echo upg_get_option( 'global_form_layout','upg_form', 'basic' )."-----";
         
+        echo "<h3>UPG ".__('Basic Settings','wp-upg')."</h3>";
         $this->settings_api->show_navigation();
        
         $this->settings_api->show_forms();
