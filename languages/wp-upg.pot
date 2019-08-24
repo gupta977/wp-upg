@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-08-18 18:17+0545\n"
+"POT-Creation-Date: 2019-08-24 15:26+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +26,11 @@ msgstr ""
 msgid "UPG Help"
 msgstr ""
 
-#: addon.php:30
+#: addon.php:29
+msgid "Breadcrumb"
+msgstr ""
+
+#: addon.php:38
 msgid "Search"
 msgstr ""
 
@@ -175,7 +179,7 @@ msgid ""
 "to newly submitted post."
 msgstr ""
 
-#: classes/quick_mode_setting.php:198 wp-upg.php:824
+#: classes/quick_mode_setting.php:202 wp-upg.php:825
 msgid "Basic Settings"
 msgstr ""
 
@@ -217,7 +221,7 @@ msgstr ""
 #: layout/form/basic/basic_edit_youtube.php:5
 #: layout/form/basic/basic_post_form.php:24
 #: layout/form/basic/basic_post_youtube.php:25
-#: layout/form/bulk/bulk_post_form.php:30
+#: layout/form/bulk/bulk_post_form.php:19
 #: layout/form/photo/photo_post_form.php:7
 #: layout/form/simple/simple_edit_form.php:7
 #: layout/form/simple/simple_edit_youtube.php:7
@@ -336,12 +340,12 @@ msgstr ""
 msgid "copy/paste public embed URL"
 msgstr ""
 
-#: layout/form/bulk/bulk_post_form.php:52
+#: layout/form/bulk/bulk_post_form.php:41
 #, php-format
 msgid "Maximum upload file size: %s."
 msgstr ""
 
-#: layout/form/bulk/bulk_post_form.php:59 layout/form/magic_form.php:79
+#: layout/form/bulk/bulk_post_form.php:56 layout/form/magic_form.php:79
 #: layout/form/post_edit_image.php:141 layout/form/post_edit_youtube.php:90
 #: layout/form/post_image.php:98
 msgid "My Gallery"
@@ -421,6 +425,10 @@ msgstr ""
 
 #: layout/pick.php:54
 msgid "Not found"
+msgstr ""
+
+#: libs/breadcrumb.php:43 libs/breadcrumb.php:47
+msgid "Home"
 msgstr ""
 
 #: libs/custom_column.php:10
@@ -687,7 +695,7 @@ msgstr ""
 msgid "Display Embed URL Button: "
 msgstr ""
 
-#: setting.php:670 wp-upg.php:707 wp-upg.php:825
+#: setting.php:670 wp-upg.php:708 wp-upg.php:826
 msgid "Advance Settings"
 msgstr ""
 
@@ -735,6 +743,10 @@ msgstr ""
 msgid "[upg-album]"
 msgstr ""
 
+#: shortcode.php:31
+msgid "[upg-breadcrumb]"
+msgstr ""
+
 #: widgets/categories.php:153 widgets/form.php:54
 msgid "New title"
 msgstr ""
@@ -775,18 +787,18 @@ msgstr ""
 msgid "Select preview layout"
 msgstr ""
 
-#: wp-upg.php:706
+#: wp-upg.php:707
 msgid "Quick Settings"
 msgstr ""
 
-#: wp-upg.php:724
+#: wp-upg.php:725
 msgid "Version"
 msgstr ""
 
-#: wp-upg.php:724
+#: wp-upg.php:725
 msgid "Documentation"
 msgstr ""
 
-#: wp-upg.php:725
+#: wp-upg.php:726
 msgid "Rate the plugin"
 msgstr ""

@@ -14,7 +14,7 @@
 	/* styling bellow */
 	background-color:black;
 	color:white;
-	opacity:0.6; /* transparency */
+	opacity:0.8; /* transparency */
 	filter:alpha(opacity=60); /* IE transparency */
   
 }

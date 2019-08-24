@@ -38,6 +38,7 @@ function upg_product_content($post)
 		$image=upg_PLUGIN_URL.'/images/spacer.png';
 	}
 	
+	
 	$author = get_user_by('id', get_the_author_meta( 'ID' ));
 	//echo $author->first_name;
 	//echo $author->user_nicename;

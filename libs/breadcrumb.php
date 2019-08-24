@@ -100,7 +100,7 @@ function upg_breadcrumb($args = array())
            upg_show_breadcrumb($asso_cate_name,"upg_cate",$args,true);
            
         }
-        echo $args['before']."".$post->post_title."".$args['after'];
+        echo $args['delimiter']."".$args['before']."".$post->post_title."".$args['after'];
       }
       
       echo $args['wrap_after'];
