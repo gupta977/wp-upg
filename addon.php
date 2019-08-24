@@ -25,14 +25,20 @@ jQuery(document).ready(function($){
 	       </ul>
 	 <div id="tab-1">
  
-
+	 <div class="upg_module upg_red">
+  <h2> <?php _e('Breadcrumb', 'wp-upg'); ?>  <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
+  <div class="cnt">
+    <p>You can include breadcrumb navigation bar above gallery using shortcode. <br>Use shortcode as [upg-breadcrumb] just above [upg-list] of main upg page.<br>It will will automatically appear above gallery.<br>
+	<br><?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/breadcrumb.png"> '; ?>
+	
+	</p>
+  </div>
+</div>
 <div class="upg_module upg_red">
   <h2> <?php _e('Search', 'wp-upg'); ?>  <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
   <div class="cnt">
     <p>You can include search bar above gallery using shortcode. <br>Use shortcode as [upg-search] at widgets or anywhere.<br>It will serach and search bar will automatically appear above gallery.<br>
-	<img src="http://odude.com/wp-content/uploads/2018/05/search.png">
-	<br>
-	<a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a>
+	<br><?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/search.png"> '; ?>
 	</p>
   </div>
 </div>
@@ -55,11 +61,7 @@ jQuery(document).ready(function($){
   <div class="cnt">
     <p>Page can be redirect to the desired page after the form is submitted by user. 
 	<br> <br>
-
-	<img src="http://odude.com/demo/faq/wp-content/uploads/sites/2/2018/03/redirect.png" width="500">
-	
-	<br>
-	<a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a>
+	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/redirect.png" width="500"> '; ?>
 	
 	</p>
   </div>
@@ -91,8 +93,8 @@ The album marked hidden will not be listed.
   <div class="cnt">
     <p>Page navigation for Image, Youtube, Vimeo, Post Gallery. It is displayed if the number of images per-page is exceeded. 
 	<br> <br>
-	<img src="https://ps.w.org/wp-pagenavi/assets/screenshot-1.png?rev=1206758" width="500">
-	<br><br>
+	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/pagenavi.png" width="500"> '; ?>
+	<br>
 	<a href="<?php echo "https://wordpress.org/plugins/wp-pagenavi/"; ?>" target="_blank" class="install-now button">View Details</a></p>
   </div>
 </div>
@@ -104,8 +106,7 @@ The album marked hidden will not be listed.
   
     Captcha: <b>Google reCaptcha V2 </b> so that spammers need to pass security check before posting images & Videos to wp-upg plugins. 
 	<br> <br>
-	<img src="http://odude.com/wp-content/uploads/2017/04/wp-upg-pro-captcha-300x274.png" width="300">
-	
+	<?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/captcha.png" > '; ?>
 	<br><br>
 	<a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a></p>
   </div>
@@ -118,10 +119,8 @@ The album marked hidden will not be listed.
   Enables Email notification when content,image,youtube,vimeo video is uploaded
  
 <br>
-		<img src="http://odude.com/wp-content/uploads/2017/04/email_notify.png" width="400">
-	<br><br>
-	<a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a></p>
-  </div>
+<?php echo '<img src="'.upg_PLUGIN_URL.'/images/extra/email_notify.png" > '; ?>
+ </div>
 </div>
 
 	

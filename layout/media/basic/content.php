@@ -1,5 +1,5 @@
 <div class="pure-g">
-		
+	<div class="pure-u-1-1"></div>	
 	 <div class="pure-u-1-1" style="text-align:center;"><?php echo upg_position1(); ?></div>
 	
 	<div class="pure-u-1-1" > 

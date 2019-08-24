@@ -111,7 +111,7 @@ class upg_category_Widget extends WP_Widget {
 				
 				$count = 0;
 				if( ! empty( $settings['hide_empty'] ) || ! empty( $settings['show_count'] ) ) {
-					$count = upg_get_listings_count_by_category( $term->term_id, $settings['pad_counts'] );
+					$count = upg_get_listings_count_by_category( $term->term_id, true );
 					
 					if( ! empty( $settings['hide_empty'] ) && 0 == $count ) continue;
 				}

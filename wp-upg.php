@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.96
+Version: 1.97
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.96');
+	define('UPG_PLUGIN_VERSION', '1.97');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -30,6 +30,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/classes/quick_mode_setting.php");
 	include(dirname(__FILE__)."/classes/class.AlbumThumbnail.php");
 	include(dirname(__FILE__)."/libs/functions.php");
+	include(dirname(__FILE__)."/libs/functions-boolean.php");
 	include(dirname(__FILE__)."/libs/load_more.php");
 	include(dirname(__FILE__)."/libs/install.php");
 	include(dirname(__FILE__)."/libs/hooks.php");
@@ -38,6 +39,7 @@ Domain Path: /languages
 	include(dirname(__FILE__)."/addon.php");
 	include(dirname(__FILE__)."/shortcode.php");
 	include(dirname(__FILE__)."/libs/metabox.php");
+	include(dirname(__FILE__)."/libs/breadcrumb.php");
 	include(dirname(__FILE__)."/layout/edit.php");
 	include(dirname(__FILE__)."/layout/button.php");
 	include(dirname(__FILE__)."/libs/taxonomy.php");
@@ -244,8 +246,7 @@ function upg_the_content($content)
 	   {
 		   //Receiving all the custom post values
 			$all_upg_fields= get_post_custom($post->ID);
-			
-			
+					
 			//If upg_layout is mentioned in url, it will ignore currently set layout.
 			if(isset($_GET['upg_layout']))
 			{
@@ -833,6 +834,10 @@ function upg_admin_top_menu()
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_layout')."' class='button ".(($page_name=='wp_upg_layout')?'button-primary':'')." '>Layout Editor</a>";
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=wp_upg_addon')."' class='button ".(($page_name=='wp_upg_addon')?'button-primary':'')." '>Addons & Help</a>";
 	echo " <a href='".admin_url( 'edit.php?post_type=upg&page=upg_shortcode')."' class='button ".(($page_name=='upg_shortcode')?'button-primary':'')." '>Shortcode Guide</a>";
+	if(!is_upg_pro())
+	{
+		echo " <a href='http://odude.com/product/wp-upg-pro/' class='button button-secondary'>Purchase UPG PRO</a>";	
+	}
 	echo '</div>';
 	}
 }

@@ -1,24 +1,27 @@
 /* Album list */
 
 .upg_album_container {
-  position: relative;
-  text-align: center;
-  color: white;
-  margin:2px;
+  float:left; /* important */
+  position:relative; /* important(so we can absolutely position the description div */
 }
 
-.upg_album_container_title {
-  position: absolute;
-  font-size: 1.5rem;
-  font-weight: 100;
-  line-height: 4rem;
-  height: 4rem;
-  padding: 0 1rem;
-  font-family: sans-serif;
-  color: white;
-  background-color: hsla(200, 50%, 50%, 0.8);
-  margin: -5rem 1rem 2rem 1rem;
+.upg_album_container_levelA {
+  border-radius: 10px 10px 0px 0px;
+  position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	width:100%;
+	/* styling bellow */
+	background-color:black;
+	color:white;
+	opacity:0.8; /* transparency */
+	filter:alpha(opacity=60); /* IE transparency */
   
+}
+p.upg_album_container_levelB{
+	padding:5px;
+	margin:0px;
+	font-size: 20px;
 }
 
 
@@ -26,7 +29,7 @@
 
 /* TAGS input */
 div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
-div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
+div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
 div.tagsinput span.tag a { font-weight: bold; color: #82ad2b; text-decoration:none; font-size: 11px;  } 
 div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
 div.tagsinput div { display:block; float: left; } 
@@ -40,6 +43,10 @@ div.tagsinput div { display:block; float: left; }
 	margin-bottom:30px;
 	padding-bottom: 0px;
 	list-style:none;
+}
+
+.upg_tags ul {
+  list-style: none;
 }
 
 .upg_tags li, .upg_tags a{
@@ -258,7 +265,6 @@ div.tagsinput div { display:block; float: left; }
   padding: 10px 12px;
   margin-bottom: 15px;
   background: #fff;
-  obox-sizing: border-obox;
   border-radius: 3px;
   overflow: hidden;
   margin: 0px 5px 5px 0px;
@@ -268,7 +274,6 @@ div.tagsinput div { display:block; float: left; }
   padding: 10px 12px;
   margin-bottom: 15px;
   background: #fff;
-  obox-sizing: border-obox;
   border-radius: 3px;
   overflow: hidden;
   margin: 0px 5px 5px 0px;
@@ -382,13 +387,6 @@ color: #444;
 .upg_success {
   background-color: #ddffdd;
   border-left: 6px solid #4CAF50;
-  margin-bottom: 15px;
-    padding: 4px 12px;
-}
-
-.upg_info {
-  background-color: #e7f3fe;
-  border-left: 6px solid #2196F3;
   margin-bottom: 15px;
     padding: 4px 12px;
 }

@@ -2,8 +2,6 @@
 .upg-desp{
 	color:#999;
 	font-size:1.2em;
-	
-	
 }
 .upg-profile-name{
 	color:#999;
@@ -36,36 +34,22 @@ border-radius: 50%;
 	
 		 <div class=" pure-u-1-2 pure-u-md-1-3">
 		 <?php 
-		 if(upg_get_value('upg_custom_field_1')=="upg_custom_field_1_checked")
-		 echo upg_author($author)."<br>"; 
-		 
+		 echo upg_author($author,false)."<br>"; 
+		
 		 ?>
 		 
 		 </div>
 		 
 		 	<div class=" pure-u-1-2 pure-u-md-1-3" > 
-	<b><?php echo upg_get_filed_label('upg_custom_field_3'); ?></b><br>
-	<div class="upg-desp"><?php echo upg_get_value('upg_custom_field_3'); ?></div>
+&nbsp;
 	</div>
 	
 	
     <div class="pure-u-1 pure-u-md-1-3" style="text-align:right"> 
-	<?php
-if(upg_get_value('upg_custom_field_2')=="upg_custom_field_2_checked")
-{
-?>
+	
  <a class="button-success pure-button" href="<?php echo $image_full; ?>"  download="<?php echo get_the_title(); ?>"> 
-    <i class="fa fa-download fa-lg "></i> Download </a><br>&nbsp;
-<?php
-}
-else
-{
-	?>
-	<button class="button-warning">Commercial</button>
-	<?php
-}
-?>	
-	</div>
+    <i class="fa fa-download fa-lg "></i> Download original size</a><br>&nbsp;
+</div>
 	
 	<div class="pure-u-1"> 
 	<div style="font-size:12px">Camera information are automatically extracted from image file.<br>No information will be available if it is graphically edited.</div>
@@ -73,7 +57,7 @@ else
 //echo $image_server_path."---";
 
 $exif = @exif_read_data($image_server_path, 0, true);
-if($exif)
+if(isset($exif['IFD0']['Make']))
 {
 	
 //echo "<hr>";

@@ -143,7 +143,7 @@ For further questions feel free to drop a line at navneet@odude.com.
 * <a href="https://odude.com/upg-user-post-gallery/" target="_blank">UPG Homepage</a>
 * <a href="http://odude.com/demo/faq/" target="_blank">Documents & FAQ</a>
 * <a href="https://odude.com/demo/photo/" target="_blank">Photo Layout Demo</a>
-* <a href="http://odude.com/demo/upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
+* <a href="http://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
 
 = Development =
 
@@ -226,10 +226,17 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.97 = 
+* Added breadcrumb features with theme & shortcode support
+* Updated photo form layout
+* updated photo preview layout
+* Bulk form layout now only available to upg-pro
+* Updated album css with counter
+* Addon remote images added to local folder
+
+
 = 1.96 =
 * Sorry, Some files were missing in last update.
-
-= 1.95 =
 * Removed magic form layout
 * [upg-form] can be used on any regular page
 * Added [upg-album] to list albums
@@ -240,6 +247,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Uploaded images are also assigned as featured image.
 * Removed auto generated title from preview page. It now used them default. 
 * Media is also deleted permanently if deleted from frontend
+
+= 1.95 =
+* Deleted tag
 
 
 

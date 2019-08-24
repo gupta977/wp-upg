@@ -595,7 +595,7 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/slide/screenshot.png" width="250px"> '; ?>  
 
 	<br>
-	<a href="https://odude.com/demo/upg/slide-layout/" target="_blank" class="install-now button">Demo</a>
+	<a href="https://odude.com/demo/wp-upg/slide-layout/" target="_blank" class="install-now button">Demo</a>
   <a href="https://odude.com/demo/faq/upg/theme-slide-layout/" target="_blank" class="install-now button">Setup Docs</a>
 	</p>
   </div>
@@ -655,7 +655,7 @@ for (var i=0, len=sz.length; i<len; i++) {
     <p>UPG Post with basic grid layout.
 	<br>
  
-	<a href="https://odude.com/demo/upg/sample-page/basic-layout/" target="_blank" class="install-now button">Demo</a>
+	<a href="https://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank" class="install-now button">Demo</a>
   <a href="http://odude.com/demo/faq/upg/basic-layout-for-gallery/" target="_blank" class="install-now button">Setup Guide</a>
 	</p>
   </div>
@@ -670,7 +670,7 @@ for (var i=0, len=sz.length; i<len; i++) {
     <p>UPG Post withtout title. Shows title on hover of image.
 	<br>
  
-	<a href="https://odude.com/demo/upg/sample-page/flat-layout/" target="_blank" class="install-now button">Demo</a>
+	<a href="https://odude.com/demo/wp-upg/sample-page/flat-layout/" target="_blank" class="install-now button">Demo</a>
   <a href="http://odude.com/demo/faq/upg/theme-flat-layout/" target="_blank" class="install-now button">Setup Guide</a>
 	</p>
   </div>
@@ -684,7 +684,7 @@ for (var i=0, len=sz.length; i<len; i++) {
     <p>UPG Post with title and short description.
 	<br>
  
-	<a href="https://odude.com/demo/upg/sample-page/list-layout/" target="_blank" class="install-now button">Demo</a>
+	<a href="https://odude.com/demo/wp-upg/sample-page/list-layout/" target="_blank" class="install-now button">Demo</a>
   <a href="http://odude.com/demo/faq/upg/theme-list-layout/" target="_blank" class="install-now button">Setup Guide</a>
 	</p>
   </div>
