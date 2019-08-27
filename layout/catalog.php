@@ -184,7 +184,7 @@ else
 	if(isset($params['layout']))
 		$layout=trim($params['layout']);
 	else
-		$layout=upg_get_option( 'global_layout','upg_gallery', 'flat' );
+		$layout=upg_get_option( 'global_layout','upg_gallery', 'photo' );
 }
 
 //It will add search term if found in url

@@ -68,7 +68,7 @@ natcasesort($tags_array);
 wp_reset_query();
 //	echo get_the_ID();		
 $put="";
-$layout=upg_get_option( 'global_layout','upg_gallery', 'flat' );
+$layout=upg_get_option( 'global_layout','upg_gallery', 'photo' );
 ob_start ();
 
 if(file_exists(upg_BASE_DIR."/layout/grid/".$layout."/".$layout."_config.php"))

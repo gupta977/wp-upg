@@ -28,7 +28,7 @@ $orderby=$options['global_order'];
 $page=$options['global_page'];
 //$popup=$options['global_popup'];
 $popup=upg_get_option( 'global_popup','upg_preview', 'on' );
-$layout=upg_get_option( 'global_layout','upg_gallery', 'flat' );
+$layout=upg_get_option( 'global_layout','upg_gallery', 'photo' );
 $post_status=array('publish');
 $author_show=false;
 

@@ -141,8 +141,8 @@ function upg_settings_init(  )
 		else
 		$output="";
 	?>
-	You can include any other plugin shortcode or message. Eg. social share, buttons, notices<br>It will appear at media preview, only only if lightbox/popup is off.<br>
-	<textarea cols='60' rows='3' name='upg_settings[upg_textarea_shortcode_1]'><?php echo $output; ?></textarea>
+	Deprecated: Use 'basic settings'-> 'preview settings' tab<br>
+	<textarea cols='60' rows='3' name='upg_settings[upg_textarea_shortcode_1]' disabled><?php echo $output; ?></textarea>
 	<?php
 
 } 
@@ -155,7 +155,8 @@ function upg_settings_init(  )
 		else
 		$output="";
 	?>
-	<textarea cols='60' rows='3' name='upg_settings[upg_textarea_shortcode_2]'><?php echo $output; ?></textarea>
+	Deprecated: Use 'basic settings'-> 'preview settings' tab<br>
+	<textarea cols='60' rows='3' name='upg_settings[upg_textarea_shortcode_2]' disabled><?php echo $output; ?></textarea>
 	<?php
 
 } 
@@ -446,7 +447,7 @@ Submit Embed Button will be displayed on top of gallery page.
 	perpage="<?php echo $options['global_perpage']; ?>" 
 	orderby="<?php echo $options['global_order']; ?>" 
 	page="<?php echo $options['global_page']; ?>" 
-	layout="<?php echo upg_get_option( 'global_layout','upg_gallery', 'flat' ); ?>" 
+	layout="<?php echo upg_get_option( 'global_layout','upg_gallery', 'photo' ); ?>" 
 	album="<?php echo $options['global_album']; ?>" 
 	<?php
 	if(isset($options['primary_show_image_button']) || isset($options['primary_show_youtube_button']))

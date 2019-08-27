@@ -136,7 +136,18 @@ else
         </div>
 	
         <div class='upg_response'></div>
-        <div id="upg_after_response" style='display: none;'><a href='<?php echo admin_url('admin-ajax.php?action=upg_send_again&post_id='.get_the_ID()); ?>' class='upg_send_again'><?php echo __('Post again','wp-upg'); ?></a></div>
+        <div id="upg_after_response" style='display: none;'>
+        <a href='<?php echo admin_url('admin-ajax.php?action=upg_send_again&post_id='.get_the_ID()); ?>' class='upg_send_again'>
+        <?php echo __('Post again','wp-upg'); ?>
+        </a> | 
+        <?php
+            if(upg_get_option( 'my_gallery','upg_gallery', '0' )!='0')
+				{
+					echo "<a href='".esc_url( get_page_link( upg_get_option( 'my_gallery','upg_gallery', '0' ) ) )."' >".__('My Gallery','wp-upg')."</a>";
+				}
+			
+        ?>
+        </div>
         
     </div>
     

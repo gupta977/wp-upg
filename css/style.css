@@ -3,6 +3,7 @@
 .upg_album_container {
   float:left; /* important */
   position:relative; /* important(so we can absolutely position the description div */
+  margin: 5px;
 }
 
 .upg_album_container_levelA {

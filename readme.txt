@@ -60,7 +60,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * With this shortcode user can submit content to wordpress post or other custom post types.
 * It can be used as frontend uploader for other plugins.
 * User can select existing album and generate own tags from frontend.
-* Special shortocde to generate html input fields.
+* Special shortcode to generate html input fields.
 * Check <a href="https://odude.com/upg-user-post-gallery/upg-form/">this url</a> for detail explanation 
 
 
@@ -142,7 +142,7 @@ For further questions feel free to drop a line at navneet@odude.com.
 = Live Demo & Documents =
 * <a href="https://odude.com/upg-user-post-gallery/" target="_blank">UPG Homepage</a>
 * <a href="http://odude.com/demo/faq/" target="_blank">Documents & FAQ</a>
-* <a href="https://odude.com/demo/photo/" target="_blank">Photo Layout Demo</a>
+* <a href="https://odude.com/demo" target="_blank">Embed Gallery Demo</a>
 * <a href="http://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
 
 = Development =
@@ -226,6 +226,12 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 1.98 =
+* Fixes css issues with form basic layout
+* Improved breadcrumb navigation
+* New demo site https://odude.com/demo
+* Shortcode position 1 & 2 moved to 'basic setting' - > 'preview settings'
+
 = 1.97 = 
 * Added breadcrumb features with theme & shortcode support
 * Updated photo form layout
@@ -250,8 +256,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 = 1.95 =
 * Deleted tag
-
-
 
 = 1.94 =
 * Video submission is changed to embed url

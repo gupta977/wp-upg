@@ -631,10 +631,8 @@ function upg_author($author,$redirect=true)
 		}
 		else
 		{
-		if ( get_option('permalink_structure') )
-		$linku=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."member/".$author->user_nicename );
-		else
-		$linku=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."&user=".$author->user_nicename );
+			$linku =upg_get_profile_gallery_link($author);
+
 		}
 	}
 	else
@@ -806,6 +804,17 @@ function upg_my_must_login() {
    die();
 }
 
+function upg_get_profile_gallery_link($author)
+{
+	if ( get_option('permalink_structure') )
+		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."member/".$author->user_nicename );
+	else
+		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."&user=".$author->user_nicename );
+
+	return $link;
+}
+
+
 
 //Adds user icon in upg icon container. Links to user gallery page.
 function upg_add_extra_icon_grid_user($icon)
@@ -817,10 +826,7 @@ function upg_add_extra_icon_grid_user($icon)
 	if(upg_get_option( 'main_page','upg_gallery', '0' )!='0')
 	{
 		
-		if ( get_option('permalink_structure') )
-		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."member/".$author->user_nicename );
-		else
-		$link=esc_url( get_permalink(upg_get_option( 'main_page','upg_gallery', '0' ))."&user=".$author->user_nicename );
+		$link =upg_get_profile_gallery_link($author);
 	}
 	else
 	{
