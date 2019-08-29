@@ -76,7 +76,7 @@ add_action( 'edited_upg_cate', 'upg_cate_save_taxonomy_meta', 10, 2 );
 
 function upg_cate_add_field_columns( $columns ) {
     $columns['upg_show_cate'] = __( 'Hide', 'wp-upg' );
-    $columns['upg_assign_cate'] = __( 'Album for', 'wp-upg' );
+    $columns['upg_assign_cate'] = __( 'Album for:', 'wp-upg' );
 
     return $columns;
 }

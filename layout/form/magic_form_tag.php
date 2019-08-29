@@ -74,6 +74,18 @@ else if($attr['type'] == 'tag')
  
    
 }
+else if($attr['type'] == 'captcha')
+{
+    
+    if (function_exists('upg_submit_form_action'))
+    {
+        upg_submit_form_action($attr['title']);
+    }
+    else {
+        echo "<br>UPG-PRO not activated.<br>";
+    }
+
+}
 else if($attr['type'] == 'file')
 {
     echo $frm->addLabelFor('user-submitted-image[]', $attr['title']);
@@ -228,6 +240,8 @@ return $abc;
 [upg-form-tag type="checkbox" title="Which colors you like ?" value="upg_custom_field_5:Blue,upg_custom_field_6:Black"]
 
 [upg-form-tag type="other" new_type="hidden" name="user-submitted-title" value="blank"]
+
+[upg-form-tag type="captcha" title="Security Check"]
 
 [upg-form-tag type="submit" name="submit" value="Submit Now"]
 

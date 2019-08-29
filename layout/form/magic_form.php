@@ -173,6 +173,7 @@ else
     
     echo do_shortcode($content);
 
+    
     wp_nonce_field('upg-nonce', 'upg-nonce', false);
     echo '<input type="hidden" name="action" value="upg_ajax_post">';
     echo '<input type="hidden" name="upload_type" value="'.$attr['post_type'].'">';

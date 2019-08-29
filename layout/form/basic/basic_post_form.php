@@ -91,7 +91,7 @@ if ($upg_ajax) {
 
                 <?php
             $put=ob_get_clean();
-            //Bulk upload will not work if ajax submit is enabled.
+            //Bulk upload may not work on some theme, if ajax submit is enabled.
             if (!$upg_ajax) {
                 echo apply_filters('upg_bulk_limit_submit_form', $put);
             } else {

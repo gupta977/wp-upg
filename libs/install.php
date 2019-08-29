@@ -235,7 +235,7 @@ function register_upg_taxonomies()
     'update_item' => __( 'Update '.$product.' Album','wp-upg' ),
     'add_new_item' => __( 'Add New '.$product.' Album','wp-upg' ),
     'new_item_name' => __( 'New '.$product.' Album Name','wp-upg' ),
-    'menu_name' => __( $product.'  Albums','wp-upg' ),
+    'menu_name' => __( $product.' Albums','wp-upg' ),
   );     
 
   register_taxonomy('upg_cate',array('upg'), array(
