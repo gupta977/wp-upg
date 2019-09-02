@@ -108,7 +108,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Gallery tab is created on profile page.
 * Gallery profile avatar will link to social profile page
 
-= YouTube, Vimeo, Facebook Video & 30+ URL submission =
+= YouTube, Vimeo Video & 30+ URL submission =
 * User can submit/embed url with title & own descriptions
 * Static thumbnail image is created automatically based on url submitted
 * Auto assigned thumbnail as featured image
@@ -134,19 +134,33 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * REST-API with UPG custom fields
 
 
-= Support =
+= Submission Form Demo =
+* Bulk select form [upg-form-tag]  <a href="https://odude.com/demo/add-image/" target="_blank">Demo</a>
+* Bulk select form [upg-post] <a href="https://odude.com/demo/wp-upg/post-image/bulk-layout-form/" target="_blank">Demo</a>
+* Youtube, Vimeo, 30+ submit URL form <a href="https://odude.com/demo/embed-share-url/" target="_blank">Demo</a>
+* Submit regular wordpress post by visitors
+* Submit woocommerce product by visitors
+* Submit to custom post types
 
-For further questions feel free to drop a line at navneet@odude.com.
+= Gallery Demo =
+* Photo or masonry layout  <a href="https://odude.com/demo/gallery/" target="_blank">Demo</a>
+* Flat layout  <a href="https://odude.com/demo/wp-upg/sample-page/flat-layout/" target="_blank">Demo</a>
+* List layout  <a href="https://odude.com/demo/wp-upg/sample-page/list-layout/" target="_blank">Demo</a>
+* Slide layout  <a href="https://odude.com/demo/wp-upg/sample-page/slide-layout/" target="_blank">Demo</a>
+* Shop , FAQ, Personal, Ecard, layouts available.
+* Single-Page Attach gallery with Load-More buttons [upg-attach] <a href="https://odude.com/demo/wp-upg/hello-world-2/" target="_blank">Demo</a>
+* Create your own gallery layout with 'personal layout'
 
+= Preview / Media Demo =
+* Ecard or Greetings Card layout (upg ecard) <a href="https://odude.com/demo/ecard/upg/happy-birthday/" target="_blank">Demo</a>
+* Photo preview layout <a href="https://odude.com/demo/upg/other-flower-2/" target="_blank">Demo</a>
+* Shop Layout <a href="http://odude.com/demo/shop/upg/mens-tshirt/" target="_blank">Demo</a>
+* Basic, FAQ, personal layouts available
+* Create your own layout with 'personal layout'
 
-= Live Demo & Documents =
+= Reference & Documents =
 * <a href="https://odude.com/upg-user-post-gallery/" target="_blank">UPG Homepage</a>
 * <a href="http://odude.com/demo/faq/" target="_blank">Documents & FAQ</a>
-* <a href="https://odude.com/demo" target="_blank">Embed Gallery Demo</a>
-* <a href="http://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank">All in One Demo</a>
-
-= Development =
-
 * <a href="https://github.com/gupta977/wp-upg/tree/beta">Fork the plugin or help on Github</a>
 
 = Language =
@@ -157,6 +171,9 @@ For further questions feel free to drop a line at navneet@odude.com.
 * Italian - Italiana (it_IT)
 * Swedish - svenska (sv_SE)
 
+= Support =
+For further questions feel free to drop a line at navneet@odude.com.
+
 == Frequently Asked Questions ==
 
 = 1. How to install =
@@ -165,7 +182,7 @@ Some pages are auto created. Do not delete them even if not required.
 
 * 1. User’s Post Gallery: Main UPG gallery page.
 * 2. Post Image: Submission page for images.
-* 3. Post Video URL: Submission page for youtube/vimeo url.
+* 3. Post Video URL: Submission page for youtube/vimeo/30+ url.
 * 4. Edit UPG Post: Let users to modify/update own UPG post.
 * 5. My Gallery: Registered user can see own submitted post.
 	
@@ -229,7 +246,8 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 = 1.99 = 
 * Notice: Next version 2.0 the UPG-PRO price will be increased
 * Added captcha field in [upg-form-tag]
-* Updated langauge file
+* Updated language file
+* Added drag & drop image in [upg-form]
 
 = 1.98 =
 * Fixes css issues with form basic layout
@@ -245,7 +263,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Updated album css with counter
 * Addon remote images added to local folder
 
-
 = 1.96 =
 * Sorry, Some files were missing in last update.
 * Removed magic form layout
@@ -258,9 +275,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Uploaded images are also assigned as featured image.
 * Removed auto generated title from preview page. It now used them default. 
 * Media is also deleted permanently if deleted from frontend
-
-= 1.95 =
-* Deleted tag
 
 = 1.94 =
 * Video submission is changed to embed url
@@ -275,7 +289,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Fixed video submit form layout
 * Fixed issues with tags javascript
 
-
 = 1.92 =
 * Added magic form layout, now you can use [upg-form] inside form layout
 * Layout out selection settings now as basic settings.
@@ -287,25 +300,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 = 1.90 =
 * [upg-form] shortcode is in action.
-
-= 1.89 =
-* Fixed admin menu selection 
-* Fixed button on/off in gallery page.
-
-= 1.88 = 
-* UPG settings, have sub admin menus
-* Shortcode button added in admin for proper guide
-* upg-form shortcode introduced. 
-
-= 1.87 =
-* Page selection fixes
-* Fixes empty title in widgets
-* UPG Settings selection between Quick & Advance.
-* filter upg-list by image & youtube Eg. [upg-list filter="embed"]
-* Force user to login to view gallery Eg. [upg-list login="true"]
-* Now separate album can be created for images & video
-* Submission form have different album based on type.
-* After update, user must go to settings and update page location.
 
 == Upgrade Notice ==
 Backup your personal layout code before you upgrade. It may overwrite your layout with new one. If you got blank page, go to layout editor and choose layout to update automatically.

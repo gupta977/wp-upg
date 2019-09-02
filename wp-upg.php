@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 1.98
+Version: 1.99
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-	define('UPG_PLUGIN_VERSION', '1.98');
+	define('UPG_PLUGIN_VERSION', '1.99');
    	define('upg_ROOT_URL', plugin_dir_url( __FILE__ ) );
 	define('upg_FOLDER',dirname(plugin_basename( __FILE__ )));
 	define('upg_BASE_DIR',WP_CONTENT_DIR.'/plugins/'.upg_FOLDER.'/');
@@ -116,11 +116,11 @@ Domain Path: /languages
         global $upg_plugin,$current_screen;
 		$options = get_option( 'upg_settings','' );
 		
-		 wp_enqueue_style('upg-style', plugins_url() .'/'. upg_FOLDER.'/css/style.css');
+		 wp_enqueue_style('upg-style', plugins_url() .'/'. upg_FOLDER.'/css/style.css','', UPG_PLUGIN_VERSION, 'all');
 		 
 		 if(!isset($options['fancybox']) || $options['fancybox']=='0')
 		 {
-		 	wp_enqueue_style('upg_fancybox_css', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', '1', 'all');
+		 	wp_enqueue_style('upg_fancybox_css', plugins_url() .'/'. upg_FOLDER.'/css/jquery.fancybox.min.css','', UPG_PLUGIN_VERSION, 'all');
 		 	wp_enqueue_script( 'upg_fancybox_js', plugins_url() .'/'. upg_FOLDER.'/js/jquery.fancybox.min.js' ,array( 'jquery' ), null, false );
 		 }
 		

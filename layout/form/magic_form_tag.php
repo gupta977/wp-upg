@@ -20,7 +20,8 @@ $attr = shortcode_atts( array(
     'novalidate' => '',
     'taxonomy' => 'upg_cate',
     'tag_taxonomy' => 'upg_tag',
-    'filter' => ''
+    'filter' => '',
+    'multiple' => ''
 
 
 ), $params );
@@ -82,7 +83,7 @@ else if($attr['type'] == 'captcha')
         upg_submit_form_action($attr['title']);
     }
     else {
-        echo "<br>UPG-PRO not activated.<br>";
+        echo "<br>reCaptcha spam block is only avalilable in UPG-PRO<br>";
     }
 
 }
@@ -90,6 +91,30 @@ else if($attr['type'] == 'file')
 {
     echo $frm->addLabelFor('user-submitted-image[]', $attr['title']);
     echo $frm->addInput('file', "user-submitted-image[]", '', array('id'=>'file','class'=>$attr['class'],'accept'=>'image/*','required'=>$attr['required']));
+}
+else if($attr['type'] == 'file_multiple')
+{
+    if (is_upg_pro())
+    {
+    echo $frm->startTag('div',array('class'=>$attr['class']));
+    echo $frm->addInput('file', "user-submitted-image[]", '', array('id'=>'file','class'=>$attr['class'].'_hide','accept'=>'image/*','required'=>$attr['required'],'multiple'=>$attr['multiple']));
+    echo "<p>".$attr['title']."</p>";
+    echo $frm->endTag('div');
+    echo '
+    <script>
+    jQuery(document).ready(function(){
+        jQuery("form input").change(function () {
+            jQuery("form p").text(this.files.length + " file(s) selected");
+        });
+      });
+    </script>
+    ';
+    }
+    else 
+    {
+    echo "<br>Multiple upload is only available in UPG-PRO<br>";
+    }
+
 }
 else if($attr['type'] == 'article')
 {
@@ -222,6 +247,8 @@ return $abc;
 [upg-form-tag type="video_url" title="Submit embed URL" placeholder="http://" required="true"]
 
 [upg-form-tag type="file" title="Select file"]
+
+[upg-form-tag type="file_multiple" title="Drag & Drop multiple files" class="upg_drag_file" multiple="true"]
 
 [upg-form-tag type="category" title="Select category" taxonomy="upg_cate" filter="image"]
 

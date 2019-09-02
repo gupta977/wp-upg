@@ -1,3 +1,25 @@
+/* Multi file drag drop */
+.upg_drag_file{
+  background: #eaefee;
+  border: 4px dashed #fff;
+  width: 100%;
+  height: 150px;
+  }
+  
+  .upg_drag_file p{
+  width: 100%;
+   height: 100%;
+   text-align: center;
+   line-height: 170px;
+  }
+  .upg_drag_file_hide{
+  position: absolute;
+   outline: none;
+   opacity: 0;
+   width: 90%;
+   height: 130px;
+  }
+
 /* Album list */
 
 .upg_album_container {
