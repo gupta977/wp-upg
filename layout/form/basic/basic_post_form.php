@@ -2,6 +2,17 @@
     <!-- Image loader -->
     <div id='upg_loader' style='display: none;'>
         <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+        <br>
+			<?php echo __("Uploading","wp-upg"); ?> 
+            <div class="upg_progress-bar">
+				<span id="upg_progress" class="upg_progress-bar-load" style="width: 0%;text-align: center;"></span>
+            </div>
+			<br>
+			<?php echo __("Processing","wp-upg"); ?> 
+			<div class="upg_progress-bar">
+				<span id="upg_progress_process" class="upg_progress-bar-process" style="width: 0%;text-align: center;"></span>
+            </div>
+
     </div>
 
     <div class='upg_response'></div>

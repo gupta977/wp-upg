@@ -139,6 +139,7 @@ Domain Path: /languages
 			wp_enqueue_script( 'upg_tags', plugins_url() .'/'. upg_FOLDER.'/js/filter-tags.js','',UPG_PLUGIN_VERSION,'' );
 		 wp_enqueue_script( 'upg_common', plugins_url() .'/'. upg_FOLDER.'/js/common.js' ,'',UPG_PLUGIN_VERSION,'');
 		 wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jquery.zoom.js' );
+		// wp_enqueue_script( 'jquery.zoom', plugins_url() .'/'. upg_FOLDER.'/js/jq-ajax-progress.js' );
 		  wp_enqueue_script( 'upg_delete', plugins_url() .'/'. upg_FOLDER.'/js/upg_delete.js','',UPG_PLUGIN_VERSION,'' );
 		  wp_enqueue_script( 'upg_oembed', plugins_url() .'/'. upg_FOLDER.'/js/upg_oembed.js','',UPG_PLUGIN_VERSION,'' );
 		  wp_enqueue_script( 'upg_load_more', plugins_url() .'/'. upg_FOLDER.'/js/upg_load_more.js','',UPG_PLUGIN_VERSION,'' );

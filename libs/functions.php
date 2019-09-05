@@ -1024,7 +1024,7 @@ function upg_ajax_post()
 			for($x = 0; $x < count($result['error']); $x++) 
 			{
 				$err.=$result['error'][$x] ." | ";
-		}
+			}
 
 			if(in_array('required-category',$result['error']))
 			$response['msg'] ="<div class='upg_error'>".__('Category is not specified.','wp-upg')." ".__('Submission failed','wp-upg')."</div>";

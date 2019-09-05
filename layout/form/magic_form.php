@@ -91,6 +91,7 @@ if (isset($_POST['upg-nonce']) && wp_verify_nonce($_POST['upg-nonce'], 'upg-nonc
 		}
 		else
 		{
+			upg_log("a, here");
 			if ($error) 
 			{
 				$e = implode(',', $error);
@@ -129,11 +130,26 @@ else
 {
     
     ?>
+   
     <div id="upg_ajax">
+  
     <!-- Image loader -->
         <div id='upg_loader' style='display: none;'>
-            <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+            
+		<br>
+			<?php echo __("Uploading","wp-upg"); ?> 
+            <div class="upg_progress-bar">
+				<span id="upg_progress" class="upg_progress-bar-load" style="width: 0%;text-align: center;"></span>
+            </div>
+			<br>
+			<?php echo __("Processing","wp-upg"); ?> 
+			<div class="upg_progress-bar">
+				<span id="upg_progress_process" class="upg_progress-bar-process" style="width: 0%;text-align: center;"></span>
+            </div>
+
+	
         </div>
+       
 	
         <div class='upg_response'></div>
         <div id="upg_after_response" style='display: none;'>

@@ -102,9 +102,15 @@ else if($attr['type'] == 'file_multiple')
     echo $frm->endTag('div');
     echo '
     <script>
-    jQuery(document).ready(function(){
-        jQuery("form input").change(function () {
-            jQuery("form p").text(this.files.length + " file(s) selected");
+    jQuery(document).ready(function()
+    {
+        jQuery("form input").change(function () 
+        {
+            if(this.files && this.files.length)
+            {
+                jQuery("form p").text(this.files.length + " file(s) selected");
+            }
+            
         });
       });
     </script>

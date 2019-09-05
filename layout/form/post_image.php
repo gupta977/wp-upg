@@ -32,9 +32,11 @@ $title=sanitize_text_field($_POST['user-submitted-title']);
 	if($title=='')
 {
 	//Form not submitted yet.
+	
 }
 else
 {
+	
 	if(isset($_POST['form_name']))
 		$frname=sanitize_text_field($_POST['form_name']);
 	else
@@ -110,6 +112,7 @@ else
 		}
 		else
 		{
+			
 			if ($error) 
 			{
 				$e = implode(',', $error);

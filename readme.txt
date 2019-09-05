@@ -243,8 +243,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.0 =
+* Added upload & progress bar on ajax form submission
+
 = 1.99 = 
-* Notice: Next version 2.0 the UPG-PRO price will be increased
 * Added captcha field in [upg-form-tag]
 * Updated language file
 * Added drag & drop image in [upg-form]

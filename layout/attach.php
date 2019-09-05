@@ -106,6 +106,17 @@ else
 <div id="upg_main_loop" style="width:100%"></div>
 <div id='upg_loader' style='display: none;text-align:center;' class="pure-u-1-1">
 		<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+		<br>
+			<?php echo __("Uploading","wp-upg"); ?> 
+            <div class="upg_progress-bar">
+				<span id="upg_progress" class="upg_progress-bar-load" style="width: 0%;text-align: center;"></span>
+            </div>
+			<br>
+			<?php echo __("Processing","wp-upg"); ?> 
+			<div class="upg_progress-bar">
+				<span id="upg_progress_process" class="upg_progress-bar-process" style="width: 0%;text-align: center;"></span>
+            </div>
+
 	</div>
 
 <?php
