@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-08-29 14:07+0545\n"
-"PO-Revision-Date: 2019-08-29 14:10+0545\n"
+"POT-Creation-Date: 2019-09-07 15:29+0545\n"
+"PO-Revision-Date: 2019-09-07 15:30+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: de\n"
@@ -208,7 +208,7 @@ msgstr "Shortcode Position 2"
 msgid "Shortcode Eg. social share, buttons, notices"
 msgstr "Shortcode zB. soziale Freigabe, Schaltflächen, Hinweise"
 
-#: classes/quick_mode_setting.php:219 wp-upg.php:825
+#: classes/quick_mode_setting.php:219 wp-upg.php:826
 msgid "Basic Settings"
 msgstr "Schnelleinstellungen"
 
@@ -216,48 +216,58 @@ msgstr "Schnelleinstellungen"
 msgid "Important settings"
 msgstr "Wichtige Einstellungen"
 
-#: help.php:86 layout/form/basic/basic_post_form.php:109
+#: help.php:86 layout/form/basic/basic_post_form.php:120
 #: layout/form/simple/simple_edit_form.php:26
 msgid "Maximum upload file size limit:"
 msgstr "Die maximale Größe für Upload-Dateien ist:"
 
-#: layout/attach.php:101 layout/catalog.php:346 layout/form/post_image.php:191
+#: layout/attach.php:101 layout/catalog.php:346 layout/form/post_image.php:194
 #: layout/form/post_youtube.php:75
 msgid "Layout Not Found. Check settings."
 msgstr "Layout nicht gefunden Überprüfen Sie die Einstellungen."
 
-#: layout/attach.php:149 libs/install.php:183
+#: layout/attach.php:110 layout/form/basic/basic_post_form.php:6
+#: layout/form/magic_form.php:140 layout/form/simple/simple_post_form.php:6
+msgid "Uploading"
+msgstr "Lade hoch ..."
+
+#: layout/attach.php:115 layout/form/basic/basic_post_form.php:11
+#: layout/form/magic_form.php:145 layout/form/simple/simple_post_form.php:11
+msgid "Processing"
+msgstr "In Bearbeitung"
+
+#: layout/attach.php:160 libs/install.php:183
 msgid "Post"
 msgstr "Beitrag"
 
-#: layout/attach.php:163
+#: layout/attach.php:174
 msgid "This post button is only visible to you."
 msgstr "Dieser Post-Button ist nur für Sie sichtbar."
 
 #: layout/form/basic/basic_edit_form.php:4
-#: layout/form/basic/basic_post_form.php:19
+#: layout/form/basic/basic_post_form.php:30
 #: layout/form/basic/basic_post_youtube.php:24
 #: layout/form/photo/photo_post_form.php:6
 #: layout/form/simple/simple_edit_form.php:6
-#: layout/form/simple/simple_post_form.php:24 libs/custom_column.php:9
+#: layout/form/simple/simple_post_form.php:35 libs/custom_column.php:9
 msgid "Title"
 msgstr "Titel"
 
 #: layout/form/basic/basic_edit_form.php:5
 #: layout/form/basic/basic_edit_youtube.php:5
-#: layout/form/basic/basic_post_form.php:21
+#: layout/form/basic/basic_post_form.php:32
 #: layout/form/basic/basic_post_youtube.php:25
 #: layout/form/bulk/bulk_post_form.php:19
 #: layout/form/photo/photo_post_form.php:7
 #: layout/form/simple/simple_edit_form.php:7
 #: layout/form/simple/simple_edit_youtube.php:7
-#: layout/form/simple/simple_post_form.php:25
+#: layout/form/simple/simple_post_form.php:36
 #: layout/form/simple/simple_post_youtube.php:25
 msgid "Post Title"
 msgstr "Beitragstitel"
 
 #: layout/form/basic/basic_edit_form.php:41
-#: layout/form/basic/basic_post_form.php:52
+#: layout/form/basic/basic_post_form.php:63
 #: layout/form/basic/basic_post_youtube.php:62
 #: layout/form/photo/photo_post_form.php:109
 msgid "Description"
@@ -265,7 +275,7 @@ msgstr "Beschreibung"
 
 #: layout/form/basic/basic_edit_form.php:43
 #: layout/form/basic/basic_edit_youtube.php:44
-#: layout/form/basic/basic_post_form.php:55
+#: layout/form/basic/basic_post_form.php:66
 #: layout/form/basic/basic_post_youtube.php:64
 #: layout/form/photo/photo_post_form.php:110
 msgid "Post Content"
@@ -273,7 +283,7 @@ msgstr "Inhalte veröffentlichen"
 
 #: layout/form/basic/basic_edit_form.php:58
 #: layout/form/basic/basic_edit_youtube.php:59
-#: layout/form/basic/basic_post_form.php:68
+#: layout/form/basic/basic_post_form.php:79
 #: layout/form/basic/basic_post_youtube.php:77
 #: layout/form/photo/photo_post_form.php:10
 msgid "Select Album/Group"
@@ -281,14 +291,14 @@ msgstr "Wähle Album/Gruppe"
 
 #: layout/form/basic/basic_edit_form.php:64
 #: layout/form/basic/basic_edit_youtube.php:63
-#: layout/form/basic/basic_post_form.php:73
+#: layout/form/basic/basic_post_form.php:84
 #: layout/form/basic/basic_post_youtube.php:81
 msgid "Enter Tags"
 msgstr "Tags eingeben"
 
 #: layout/form/basic/basic_edit_form.php:65
 #: layout/form/basic/basic_edit_youtube.php:64
-#: layout/form/basic/basic_post_form.php:74
+#: layout/form/basic/basic_post_form.php:85
 #: layout/form/basic/basic_post_youtube.php:82
 msgid "Tags separated by commas"
 msgstr "Durch Kommas getrennt"
@@ -330,13 +340,13 @@ msgstr "Ursprungs-URL"
 msgid "copy/paste Video URL"
 msgstr "kopieren / einfügen Video-URL"
 
-#: layout/form/basic/basic_post_form.php:84
+#: layout/form/basic/basic_post_form.php:95
 #: layout/form/photo/photo_post_form.php:18
-#: layout/form/simple/simple_post_form.php:38
+#: layout/form/simple/simple_post_form.php:49
 msgid "Select Image"
 msgstr "Wähle Bild"
 
-#: layout/form/basic/basic_post_form.php:108
+#: layout/form/basic/basic_post_form.php:119
 #: layout/form/simple/simple_edit_form.php:25
 msgid "Only picture files are allowed"
 msgstr "Nur Bilddateien sind erlaubt"
@@ -355,36 +365,36 @@ msgid "Maximum upload file size: %s."
 msgstr "Die maximale Größe für Upload-Dateien ist: %s."
 
 #: layout/form/bulk/bulk_post_form.php:56 layout/form/magic_form.php:79
-#: layout/form/magic_form.php:146 layout/form/post_edit_image.php:141
-#: layout/form/post_edit_youtube.php:90 layout/form/post_image.php:98
+#: layout/form/magic_form.php:162 layout/form/post_edit_image.php:141
+#: layout/form/post_edit_youtube.php:90 layout/form/post_image.php:100
 msgid "My Gallery"
 msgstr "Meine Gallerie"
 
-#: layout/form/magic_form.php:75 layout/form/post_image.php:94
+#: layout/form/magic_form.php:75 layout/form/post_image.php:96
 #: layout/form/post_youtube.php:137 libs/functions.php:1007
 #: libs/functions.php:1093
 msgid "Successfully posted."
 msgstr "Erfolgreich übermittelt."
 
-#: layout/form/magic_form.php:84 layout/form/post_image.php:103
+#: layout/form/magic_form.php:84 layout/form/post_image.php:105
 #: libs/functions.php:1012 libs/functions.php:1098 libs/functions.php:1191
 msgid "Your submission is under review."
 msgstr "Ihre übermittelten Daten werden überprüft."
 
-#: layout/form/magic_form.php:106 layout/form/post_image.php:125
+#: layout/form/magic_form.php:107 layout/form/post_image.php:128
 msgid "Invalid file"
 msgstr "Nur Bilddateien sind erlaubt"
 
-#: layout/form/magic_form.php:110 layout/form/post_image.php:129
+#: layout/form/magic_form.php:111 layout/form/post_image.php:132
 msgid "Error occurred"
 msgstr "Fehler"
 
-#: layout/form/magic_form.php:141
+#: layout/form/magic_form.php:157
 msgid "Post again"
 msgstr "Poste nochmal"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
-#: layout/form/post_image.php:164 layout/form/post_youtube.php:52
+#: layout/form/post_image.php:167 layout/form/post_youtube.php:52
 msgid "Refresh Page"
 msgstr "Aktualisiere Seite"
 
@@ -550,7 +560,7 @@ msgstr "Empfohlenes Bild festlegen"
 msgid "Remove featured Image"
 msgstr "Beitragsbild entfernen"
 
-#: libs/install.php:228
+#: libs/install.php:228 libs/install.php:238
 msgid " Albums"
 msgstr " Album"
 
@@ -569,10 +579,6 @@ msgstr "Übergeordnet "
 #: libs/install.php:235
 msgid "Update "
 msgstr "Update "
-
-#: libs/install.php:238
-msgid "  Albums"
-msgstr "  Album"
 
 #: libs/install.php:253 libs/install.php:255 libs/install.php:263
 msgid " Tags"
@@ -706,7 +712,7 @@ msgstr "Schaltfläche zum Hochladen von Bildern anzeigen: "
 msgid "Display Embed URL Button: "
 msgstr "Schaltfläche \"URL einbetten\" anzeigen: "
 
-#: setting.php:671 wp-upg.php:708 wp-upg.php:826
+#: setting.php:671 wp-upg.php:709 wp-upg.php:827
 msgid "Advance Settings"
 msgstr "Erweiterte Einstellungen"
 
@@ -798,21 +804,24 @@ msgstr "Wähle Bild"
 msgid "Select preview layout"
 msgstr "Beitrags-Vorschau-Layout"
 
-#: wp-upg.php:707
+#: wp-upg.php:708
 msgid "Quick Settings"
 msgstr "Schnelleinstellungen"
 
-#: wp-upg.php:725
+#: wp-upg.php:726
 msgid "Version"
 msgstr "Versiyon"
 
-#: wp-upg.php:725
+#: wp-upg.php:726
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: wp-upg.php:726
+#: wp-upg.php:727
 msgid "Rate the plugin"
 msgstr "Plugin bewerten"
+
+#~ msgid "  Albums"
+#~ msgstr "  Album"
 
 #~ msgid "Album for"
 #~ msgstr "Album für:"
