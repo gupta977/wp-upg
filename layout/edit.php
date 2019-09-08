@@ -262,9 +262,9 @@ for (var i=0, len=sz.length; i<len; i++) {
 	<b>$count</b> = Displays total number of post found.
 	<br><br>
 	<br> 
-	<b>upg_get_album($post'name')</b>= Returns album name <br>
-	<b>upg_get_album($post'url')</b>= Returns album link url <br>
-	<b>upg_get_album($post'slug')</b>= Returns album slug <br>
+	<b>upg_get_album($post,'name')</b>= Returns album name <br>
+	<b>upg_get_album($post,'url')</b>= Returns album link url <br>
+	<b>upg_get_album($post,'slug')</b>= Returns album slug <br>
 	
 	<br>
 	<b>$post->post_title;</b>= Returns UPG post title <br>

@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Guests can submit article, images, videos, products, oEmbed into own created layouts.
+Visitor & admin can create gallery of images, videos, products, oEmbed urls into dynamic layouts.
 
 == Description ==
 = UPG - User Post Gallery =
