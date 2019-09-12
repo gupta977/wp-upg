@@ -557,6 +557,10 @@ function upg_submit($title, $files, $content, $category, $preview , $post_type='
 					
 					$attach_id = media_handle_upload($key, $post_id);
 
+					//$my_image_alt = preg_replace( ‘%[^0-9a-z]+%i’, ‘ ‘, $title );
+					//$my_image_alt = preg_replace( ‘%[\s]+%’, ‘ ‘, $my_image_alt );
+					//update_post_meta( $attach_id, '_wp_attachment_image_alt', $my_image_alt );
+
 					if (!is_wp_error($attach_id) && wp_attachment_is_image($attach_id)) 
 					{
 						if($post_type=='upg')
@@ -1485,8 +1489,10 @@ function upg_update_personal_layout()
  
  
 	//Detail Layout List
+	//parameters 'selected layout',"input field name","form | media | grid",'show eye icon true | false'
 	 function upg_grid_layout_list($param,$name,$type,$preview)
 	{
+
         $options = get_option('upg_settings');
 		$upg_layout=$param;
 		

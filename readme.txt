@@ -142,7 +142,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Submit woocommerce product by visitors
 * Submit to custom post types
 
-= Gallery Demo =
+= Gallery / Grid Demo =
 * Photo or masonry layout  <a href="https://odude.com/demo/gallery/" target="_blank">Demo</a>
 * Flat layout  <a href="https://odude.com/demo/wp-upg/sample-page/flat-layout/" target="_blank">Demo</a>
 * List layout  <a href="https://odude.com/demo/wp-upg/sample-page/list-layout/" target="_blank">Demo</a>
@@ -243,6 +243,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.1 =
+* Added options in 'bulk edit' upg post to change 'preview layout'
+* 'Layout' is renamed as 'Template'
+
 = 2.0 =
 * Added upload & progress bar on ajax form submission
 

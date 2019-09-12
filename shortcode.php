@@ -68,7 +68,7 @@ function upg_shortcode()
                         <li>rand - List random post.</li>
                         </ul>
                     </li>
-                    <li> <code>layout</code> = "Gallery Layout name" -  Each gallery can have their own type of layout. There are several default layouts available (i.e. list, flat , personal, etc.).</li>
+                    <li> <code>layout</code> = "Gallery template name" -  Each gallery can have their own type of layout. There are several default layouts available (i.e. list, flat , personal, etc.).</li>
                     <li> <code>popup</code> = "on | off" -  The post when clicked will have a popup box instead going to another page. (Another page we call it as 'preview page')</li>
                     <li> <code>button</code> = "on | off" -  The parameter is used to show a submission button at the gallery page. The submission button selected at UPG settings is displayed. If the shortcode parameter value is off , the buttons are not displayed even if it is set to show at UPG settings.</li>
                     <li> <code>author</code> = "on | off" -  The parameter is used to show a author profile avatar at the top of gallery page.</li>
@@ -119,8 +119,8 @@ function upg_shortcode()
             <ul>
                 <li> <code>type="image"</code> -  image is default type &  it will display submission form for image only.</li>
                 <li> <code>type="embed"</code> - It will  display form to submit youtube, vimeo, facebook, dailymotion and other URL.</li>
-                <li> <code>layout</code> = "Form Layout name" -  Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
-                <li> <code>preview</code> = "Preview Layout name " -  When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
+                <li> <code>layout</code> = "Form template name" -  Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
+                <li> <code>preview</code> = "Preview template name " -  When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
             </ul>
             </div>
      </div>
@@ -153,8 +153,8 @@ function upg_shortcode()
             <ul>
                 <li> <code>type="image"</code> -  It will display submission form for image only.</li>
                 <li> <code>type="embed"</code> -  It will display submission form for oEmbed URL only.</li>
-                <li> <code>layout</code> = "Form Layout Name" -  It will change the design/layout for the submission form. Use <code>layout="personal"</code> if you have created your own form layout.</li>
-                <li> <code>preview</code> = "Preview Layout Name" - When image/post/video are clicked, a page is opened which is called 'preview layout'. <br>This layout is not activated if popup is enabled in <code>[upg-list] or [upg-attach]</code>.</li>
+                <li> <code>layout</code> = "Form template name" -  It will change the design/layout for the submission form. Use <code>layout="personal"</code> if you have created your own form layout.</li>
+                <li> <code>preview</code> = "Preview template name" - When image/post/video are clicked, a page is opened which is called 'preview layout'. <br>This layout is not activated if popup is enabled in <code>[upg-list] or [upg-attach]</code>.</li>
                 <li> <code>form_name</code> = "any_form_name" -  Sometime when there are multiple form on same page, the form may not work properly. <br>So it's better to differentiate form with their name.</li>
                 <li> <code>ajax</code> = "true | false" -  If true , it will convert current form into ajax form. No page is changed after form submitted.</li>
                 <li> <code>login</code> = "true | false" - If true, only logged in user can view the submission form.</li>
@@ -261,7 +261,7 @@ function upg_shortcode()
                     <ul>
                         <li> <code>id</code> =  "UPG's Post ID" -  Numeric post id of the UPG POST. This you can get from UPG list page looking at it's URL. POST={ID}</li>
                         <li><code>notice</code> = "Any text" - You can keep any extra text with image. Eg. Sale, Featured</li>
-                        <li><code>layout</code>= "Gallery Layout Name" -It's a same as on <code>[upg-list]</code> layout.</li>
+                        <li><code>layout</code>= "Gallery template Name" -It's a same as on <code>[upg-list]</code> layout.</li>
                         <li><code>popup</code>= "on | off" - If on, it will popup the post ignoring the 'preview layout'</li>
                     </ul>
                 </div>

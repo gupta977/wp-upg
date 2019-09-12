@@ -23,7 +23,7 @@ function upg_settings_init(  )
 
 	add_settings_field( 
 		'upg_grid_settings_field', 
-		__( 'Grid/Gallery Layout Settings', 'wp-upg' ), 
+		__( 'Grid/Gallery template settings', 'wp-upg' ), 
 		'upg_grid_settings', 
 		'ImageSettingPage', 
 		'upg_ImageSettingPage_section' 
@@ -40,7 +40,7 @@ function upg_settings_init(  )
 	
 	add_settings_field( 
 		'upg_primary_global_field', 
-		__( 'Media/Preview Layout Settings', 'wp-upg' ), 
+		__( 'Media/Preview Template Settings', 'wp-upg' ), 
 		'upg_preview_layout_settings', 
 		'ImageSettingPage', 
 		'upg_ImageSettingPage_section' 

@@ -110,7 +110,7 @@ class upg_quick_setting
                 ),
                 array(
                     'name'    => 'global_layout',
-                    'label'   => __('Select Gallery/Grid Layout', 'wp-upg'),
+                    'label'   => __('Select Gallery/Grid Template', 'wp-upg'),
                     'desc'    => __('It is applied if "layout" parameter in shortcode is not specified.', 'wp-upg'),
                     'type'    => 'layout',
                     'param1' => 'grid',
@@ -157,7 +157,7 @@ class upg_quick_setting
                 
                 array(
                     'name'    => 'global_form_layout',
-                    'label'   => __('Select Form Layout [upg-post]', 'wp-upg'),
+                    'label'   => __('Select Form Template [upg-post]', 'wp-upg'),
                     'desc'    => __('It is applied if "layout" parameter in shortcode is not specified.', 'wp-upg'),
                     'type'    => 'layout',
                     'param1' => 'form',
@@ -174,7 +174,7 @@ class upg_quick_setting
                 ),
                 array(
                     'name'    => 'global_media_layout',
-                    'label'   => __('Select Preview/Media Layout', 'wp-upg'),
+                    'label'   => __('Select Preview/Media Template', 'wp-upg'),
                     'desc'    => __('If lightbox/popup is enabled, this layout has no use. It is applied only to newly submitted post.', 'wp-upg'),
                     'type'    => 'layout',
                     'param1' => 'media',
