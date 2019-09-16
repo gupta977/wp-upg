@@ -33,7 +33,7 @@
 
 	</div>
    
-    <div class="footer" style="text-align:center">
+    <div class="upg_basic_footer" style="text-align:center">
 
 	<?php echo $thetitle; ?>
 

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-09-07 15:29+0545\n"
+"POT-Creation-Date: 2019-09-12 18:08+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -114,7 +114,7 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:113
-msgid "Select Gallery/Grid Layout"
+msgid "Select Gallery/Grid Template"
 msgstr ""
 
 #: classes/quick_mode_setting.php:114 classes/quick_mode_setting.php:161
@@ -156,7 +156,7 @@ msgid "Page must contain [upg-edit] shortcode."
 msgstr ""
 
 #: classes/quick_mode_setting.php:160
-msgid "Select Form Layout [upg-post]"
+msgid "Select Form Template [upg-post]"
 msgstr ""
 
 #: classes/quick_mode_setting.php:170
@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:177
-msgid "Select Preview/Media Layout"
+msgid "Select Preview/Media Template"
 msgstr ""
 
 #: classes/quick_mode_setting.php:178
@@ -239,7 +239,7 @@ msgstr ""
 #: layout/form/basic/basic_post_youtube.php:24
 #: layout/form/photo/photo_post_form.php:6
 #: layout/form/simple/simple_edit_form.php:6
-#: layout/form/simple/simple_post_form.php:35 libs/custom_column.php:9
+#: layout/form/simple/simple_post_form.php:35 libs/custom_column.php:55
 msgid "Title"
 msgstr ""
 
@@ -379,13 +379,13 @@ msgid "My Gallery"
 msgstr ""
 
 #: layout/form/magic_form.php:75 layout/form/post_image.php:96
-#: layout/form/post_youtube.php:137 libs/functions.php:1007
-#: libs/functions.php:1093
+#: layout/form/post_youtube.php:137 libs/functions.php:1011
+#: libs/functions.php:1097
 msgid "Successfully posted."
 msgstr ""
 
 #: layout/form/magic_form.php:84 layout/form/post_image.php:105
-#: libs/functions.php:1012 libs/functions.php:1098 libs/functions.php:1191
+#: libs/functions.php:1016 libs/functions.php:1102 libs/functions.php:1195
 msgid "Your submission is under review."
 msgstr ""
 
@@ -458,33 +458,33 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: libs/custom_column.php:10
+#: libs/custom_column.php:16 libs/custom_column.php:59 libs/metabox.php:10
+msgid "Preview template"
+msgstr ""
+
+#: libs/custom_column.php:56
 msgid "Author"
 msgstr ""
 
-#: libs/custom_column.php:11
+#: libs/custom_column.php:57
 msgid "Albums"
 msgstr ""
 
-#: libs/custom_column.php:12
+#: libs/custom_column.php:58
 msgid "Tags"
 msgstr ""
 
-#: libs/custom_column.php:13 libs/metabox.php:10
-msgid "Preview Layout"
-msgstr ""
-
-#: libs/custom_column.php:14
+#: libs/custom_column.php:60
 msgid "Thumbnail"
 msgstr ""
 
-#: libs/custom_column.php:15
+#: libs/custom_column.php:61
 msgid ""
 "<span class=\"vers\"><div title=\"Comments\" class=\"comment-grey-bubble"
 "\">Comments</div></span>"
 msgstr ""
 
-#: libs/custom_column.php:16
+#: libs/custom_column.php:62
 msgid "Date"
 msgstr ""
 
@@ -492,33 +492,33 @@ msgstr ""
 msgid "Login Please !"
 msgstr ""
 
-#: libs/functions.php:1030 libs/functions.php:1117 libs/functions.php:1206
+#: libs/functions.php:1034 libs/functions.php:1121 libs/functions.php:1210
 msgid "Category is not specified."
 msgstr ""
 
-#: libs/functions.php:1030 libs/functions.php:1032 libs/functions.php:1115
-#: libs/functions.php:1117 libs/functions.php:1119 libs/functions.php:1204
-#: libs/functions.php:1206 libs/functions.php:1208
+#: libs/functions.php:1034 libs/functions.php:1036 libs/functions.php:1119
+#: libs/functions.php:1121 libs/functions.php:1123 libs/functions.php:1208
+#: libs/functions.php:1210 libs/functions.php:1212
 msgid "Submission failed"
 msgstr ""
 
-#: libs/functions.php:1032 libs/functions.php:1119 libs/functions.php:1208
+#: libs/functions.php:1036 libs/functions.php:1123 libs/functions.php:1212
 msgid "Error message: "
 msgstr ""
 
-#: libs/functions.php:1115 libs/functions.php:1204
+#: libs/functions.php:1119 libs/functions.php:1208
 msgid "Check your file type."
 msgstr ""
 
-#: libs/functions.php:1186
+#: libs/functions.php:1190
 msgid "Successfully posted"
 msgstr ""
 
-#: libs/functions.php:1987
+#: libs/functions.php:1993
 msgid "Show All"
 msgstr ""
 
-#: libs/functions.php:2012
+#: libs/functions.php:2018
 msgid "Loading"
 msgstr ""
 
@@ -667,7 +667,7 @@ msgid "Extra Settings"
 msgstr ""
 
 #: setting.php:26
-msgid "Grid/Gallery Layout Settings"
+msgid "Grid/Gallery template settings"
 msgstr ""
 
 #: setting.php:34
@@ -675,7 +675,7 @@ msgid "Submission form Settings"
 msgstr ""
 
 #: setting.php:43
-msgid "Media/Preview Layout Settings"
+msgid "Media/Preview Template Settings"
 msgstr ""
 
 #: setting.php:60

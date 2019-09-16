@@ -1,10 +1,31 @@
+/* DIV divider */
+.upg_divider {
+  position: relative;
+  height: 1px;
+}
+.upg_div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(207, 213, 224),
+    transparent
+  );
+}
+
 /* Progress Bar */
 .upg_progress-bar {
   width: 100%;
   background-color: #e0e0e0;
   padding: 3px;
   border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .upg_progress-bar-load {
@@ -17,183 +38,224 @@
 .upg_progress-bar-process {
   display: block;
   height: 22px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border-radius: 3px;
   transition: width 500ms ease-in-out;
 }
 
-
 /* Multi file drag drop */
-.upg_drag_file{
+.upg_drag_file {
   background: #eaefee;
   border: 4px dashed #fff;
   width: 100%;
   height: 150px;
-  }
-  
-  .upg_drag_file p{
+}
+
+.upg_drag_file p {
   width: 100%;
-   height: 100%;
-   text-align: center;
-   line-height: 170px;
-  }
-  .upg_drag_file_hide{
+  height: 100%;
+  text-align: center;
+  line-height: 170px;
+}
+.upg_drag_file_hide {
   position: absolute;
-   outline: none;
-   opacity: 0;
-   width: 90%;
-   height: 130px;
-  }
+  outline: none;
+  opacity: 0;
+  width: 90%;
+  height: 130px;
+}
 
 /* Album list */
 
 .upg_album_container {
-  float:left; /* important */
-  position:relative; /* important(so we can absolutely position the description div */
+  float: left; /* important */
+  position: relative; /* important(so we can absolutely position the description div */
   margin: 5px;
 }
 
 .upg_album_container_levelA {
   border-radius: 10px 10px 0px 0px;
-  position:absolute; /* absolute position (so we can position it where we want)*/
-	bottom:0px; /* position will be on bottom */
-	left:0px;
-	width:100%;
-	/* styling bellow */
-	background-color:black;
-	color:white;
-	opacity:0.8; /* transparency */
-	filter:alpha(opacity=60); /* IE transparency */
-  
+  position: absolute; /* absolute position (so we can position it where we want)*/
+  bottom: 0px; /* position will be on bottom */
+  left: 0px;
+  width: 100%;
+  /* styling bellow */
+  background-color: black;
+  color: white;
+  opacity: 0.8; /* transparency */
+  filter: alpha(opacity=60); /* IE transparency */
 }
-p.upg_album_container_levelB{
-	padding:5px;
-	margin:0px;
-	font-size: 20px;
+p.upg_album_container_levelB {
+  padding: 5px;
+  margin: 0px;
+  font-size: 20px;
 }
-
-
-
 
 /* TAGS input */
-div.tagsinput { border:1px solid #CCC; background: #FFF; padding:5px; width:300px; height:100px; overflow-y: auto;}
-div.tagsinput span.tag { border: 1px solid #a5d24a; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; display: block; float: left; padding: 5px; text-decoration:none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom:5px;font-family: helvetica;  font-size:13px;}
-div.tagsinput span.tag a { font-weight: bold; color: #82ad2b; text-decoration:none; font-size: 11px;  } 
-div.tagsinput input { width:80px; margin:0px; font-family: helvetica; font-size: 13px; border:1px solid transparent; padding:5px; background: transparent; color: #000; outline:0px;  margin-right:5px; margin-bottom:5px; }
-div.tagsinput div { display:block; float: left; } 
-.tags_clear { clear: both; width: 100%; height: 0px; }
-.not_valid {background: #FBD8DB !important; color: #90111A !important;}
+div.tagsinput {
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 5px;
+  width: 300px;
+  height: 100px;
+  overflow-y: auto;
+}
+div.tagsinput span.tag {
+  border: 1px solid #a5d24a;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  display: block;
+  float: left;
+  padding: 5px;
+  text-decoration: none;
+  background: #cde69c;
+  color: #638421;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-family: helvetica;
+  font-size: 13px;
+}
+div.tagsinput span.tag a {
+  font-weight: bold;
+  color: #82ad2b;
+  text-decoration: none;
+  font-size: 11px;
+}
+div.tagsinput input {
+  width: 80px;
+  margin: 0px;
+  font-family: helvetica;
+  font-size: 13px;
+  border: 1px solid transparent;
+  padding: 5px;
+  background: transparent;
+  color: #000;
+  outline: 0px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+div.tagsinput div {
+  display: block;
+  float: left;
+}
+.tags_clear {
+  clear: both;
+  width: 100%;
+  height: 0px;
+}
+.not_valid {
+  background: #fbd8db !important;
+  color: #90111a !important;
+}
 
 /* TAGS links */
 
-.upg_tags{
-  margin-top:5px;
-	margin-bottom:30px;
-	padding-bottom: 0px;
-	list-style:none;
+.upg_tags {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding-bottom: 0px;
+  list-style: none;
 }
 
 .upg_tags ul {
   list-style: none;
 }
 
-.upg_tags li, .upg_tags a{
-	float:left;
-	height:24px;
-	line-height:24px;
-	position:relative;
-	font-size:11px;
+.upg_tags li,
+.upg_tags a {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+  font-size: 11px;
 }
 
-.upg_tags a{
+.upg_tags a {
   font-family: "Open Sans", sans-serif;
-	margin-left:20px;
-	padding:0 10px 0 12px;
-	background:#0089e0;
-	color:#fff;
-	text-decoration:none;
-	-moz-border-radius-bottomright:4px;
-	-webkit-border-bottom-right-radius:4px;	
-	border-bottom-right-radius:4px;
-	-moz-border-radius-topright:4px;
-	-webkit-border-top-right-radius:4px;	
-	border-top-right-radius:4px;	
+  margin-left: 20px;
+  padding: 0 10px 0 12px;
+  background: #0089e0;
+  color: #fff;
+  text-decoration: none;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.upg_tags a:before{
-	content:"";
-	float:left;
-	position:absolute;
-	top:0;
-	left:-12px;
-	width:0;
-	height:0;
-	border-color:transparent #0089e0 transparent transparent;
-	border-style:solid;
-	border-width:12px 12px 12px 0;		
+.upg_tags a:before {
+  content: "";
+  float: left;
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 0;
+  height: 0;
+  border-color: transparent #0089e0 transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
 }
 
-.upg_tags a:after{
-	content:"";
-	position:absolute;
-	top:10px;
-	left:0;
-	float:left;
-	width:4px;
-	height:4px;
-	-moz-border-radius:2px;
-	-webkit-border-radius:2px;
-	border-radius:2px;
-	background:#fff;
-	-moz-box-shadow:-1px -1px 2px #004977;
-	-webkit-box-shadow:-1px -1px 2px #004977;
-	box-shadow:-1px -1px 2px #004977;
+.upg_tags a:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  float: left;
+  width: 4px;
+  height: 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  -moz-box-shadow: -1px -1px 2px #004977;
+  -webkit-box-shadow: -1px -1px 2px #004977;
+  box-shadow: -1px -1px 2px #004977;
 }
-
 
 .upg_tags a:hover {
-  background:#555;
-  color:#fff;
+  background: #555;
+  color: #fff;
 }
 
 .upg_tags a:hover:before {
-	border-color:transparent #555 transparent transparent;
+  border-color: transparent #555 transparent transparent;
 }
 
 .upg_tags a.active {
-  background:#555;
-  color:#fff;
+  background: #555;
+  color: #fff;
 }
 .upg_tags a.active:before {
-  border-color:transparent #555 transparent transparent;
+  border-color: transparent #555 transparent transparent;
 }
-
-
 
 /* Text over image*/
 
 .upg_image_container {
-    position: relative;
-    text-align: center;
-    color: red;
+  position: relative;
+  text-align: center;
+  color: red;
 }
 
 .upg_image_centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 
 /* badge */
 .upg_badge {
   box-sizing: border-box;
   margin: 1px 1px;
-  padding-top: .3em;
-  padding-right: .4em;
-  padding-left: .4em;
-  padding-bottom: .2em;
+  padding-top: 0.3em;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+  padding-bottom: 0.2em;
   min-width: 1.5em; /* 1em + padding-top + padding-bottom */
   min-height: 1em;
   line-height: 1em;
@@ -205,108 +267,124 @@ div.tagsinput div { display:block; float: left; }
 }
 
 /* Ribbon */
-	
-	.upg_box {
 
-   position:relative;
-   
+.upg_box {
+  position: relative;
 }
 
-
-	.upg_ribbon {
-   position: absolute;
-   right: -5px; top: -5px;
-   z-index: 1;
-   overflow: hidden;
-   width: 75px; height: 75px; 
-   text-align: right;
+.upg_ribbon {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
 }
 .upg_ribbon span {
-   font-size: 10px;
-   color: #fff; 
-   text-transform: uppercase; 
-   text-align: center;
-   font-weight: bold; line-height: 20px;
-   transform: rotate(45deg);
-   width: 100px; display: block;
-   background: #79A70A;
-   background: linear-gradient(#9BC90D 0%, #79A70A 100%);
-   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-   position: absolute;
-   top: 19px; right: -21px;
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  transform: rotate(45deg);
+  width: 100px;
+  display: block;
+  background: #79a70a;
+  background: linear-gradient(#9bc90d 0%, #79a70a 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  right: -21px;
 }
 .upg_ribbon span::before {
-   content: '';
-   position: absolute; 
-   left: 0px; top: 100%;
-   z-index: -1;
-   border-left: 3px solid #79A70A;
-   border-right: 3px solid transparent;
-   border-bottom: 3px solid transparent;
-   border-top: 3px solid #79A70A;
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #79a70a;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79a70a;
 }
 .upg_ribbon span::after {
-   content: '';
-   position: absolute; 
-   right: 0%; top: 100%;
-   z-index: -1;
-   border-right: 3px solid #79A70A;
-   border-left: 3px solid transparent;
-   border-bottom: 3px solid transparent;
-   border-top: 3px solid #79A70A;
+  content: "";
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  z-index: -1;
+  border-right: 3px solid #79a70a;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #79a70a;
 }
-.upg_red span {background: linear-gradient(#F70505 0%, #8F0808 100%);}
-.upg_red span::before {border-left-color: #8F0808; border-top-color: #8F0808;}
-.upg_red span::after {border-right-color: #8F0808; border-top-color: #8F0808;}
+.upg_red span {
+  background: linear-gradient(#f70505 0%, #8f0808 100%);
+}
+.upg_red span::before {
+  border-left-color: #8f0808;
+  border-top-color: #8f0808;
+}
+.upg_red span::after {
+  border-right-color: #8f0808;
+  border-top-color: #8f0808;
+}
 
-.upg_blue span {background: linear-gradient(#2989d8 0%, #1e5799 100%);}
-.upg_blue span::before {border-left-color: #1e5799; border-top-color: #1e5799;}
-.upg_blue span::after {border-right-color: #1e5799; border-top-color: #1e5799;}
+.upg_blue span {
+  background: linear-gradient(#2989d8 0%, #1e5799 100%);
+}
+.upg_blue span::before {
+  border-left-color: #1e5799;
+  border-top-color: #1e5799;
+}
+.upg_blue span::after {
+  border-right-color: #1e5799;
+  border-top-color: #1e5799;
+}
 
 /* Tooltip container */
 .upg_tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
 /* Tooltip text */
 .upg_tooltip .upg_tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 1px 0;
-    border-radius: 6px;
-	width: 120px;
-    bottom: 100%;
-    left: 50%; 
-    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
- 
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 1px 0;
+  border-radius: 6px;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .upg_tooltip:hover .upg_tooltiptext {
-    visibility: visible;
+  visibility: visible;
 }
 
-.upg_button_contain
-{
-	margin: 1px;
+.upg_button_contain {
+  margin: 1px;
 }
-.obox_basic 
-{
-	margin: 1px;
-    padding: .1em .11em;
-    border: 1px solid #e2d8d8;
-   text-decoration: none;
-    border-radius: 3px;
-  
-
+.obox_basic {
+  margin: 1px;
+  padding: 0.1em 0.11em;
+  border: 1px solid #e2d8d8;
+  text-decoration: none;
+  border-radius: 3px;
 }
 .obox {
   border: 1px solid #ddd;
@@ -318,7 +396,7 @@ div.tagsinput div { display:block; float: left; }
   margin: 0px 5px 5px 0px;
 }
 .obox:hover {
-  border: 1px solid #5890FF;
+  border: 1px solid #5890ff;
   padding: 10px 12px;
   margin-bottom: 15px;
   background: #fff;
@@ -327,9 +405,9 @@ div.tagsinput div { display:block; float: left; }
   margin: 0px 5px 5px 0px;
 }
 .obox.blue {
-  border: 1px solid #5890FF;
+  border: 1px solid #5890ff;
 }
-.obox .header {
+.obox .upg_basic_header {
   position: relative;
   color: #9197a3;
   font-size: 12px;
@@ -338,70 +416,65 @@ div.tagsinput div { display:block; float: left; }
   margin-bottom: 8px;
   border-bottom: 1px solid #ddd;
 }
-.obox .header a {
+.obox .upg_basic_header a {
   font-weight: bold;
 }
-.obox .header .date {
+.obox .upg_basic_header .upg_basic_date {
   position: absolute;
   right: 0;
   top: 0;
 }
-.obox .links {
+.obox .upg_basic_links {
   margin-top: 8px;
   font-size: 12px;
   line-height: 1.38;
 }
-.obox .links a {
-  color: #5890FF;
+.obox .upg_basic_links a {
+  color: #5890ff;
   text-decoration: none;
 }
-.obox .links a:hover {
+.obox .upg_basic_links a:hover {
   text-decoration: underline;
 }
-.obox .footer {
+.obox .upg_basic_footer {
   color: #444;
   font-size: 12px;
   line-height: 1.38;
   border-top: 1px solid #ddd;
-  background: #F6F7F8;
+  background: #f6f7f8;
   padding: 5px 12px;
   margin: 8px -12px -10px -12px;
 }
 
 .margin-box {
-            padding: 0.1em;
-        }
-
-		div.odude_img {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+  padding: 0.1em;
 }
 
-
-
+div.odude_img {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
 
 div.odude_img:hover {
-    border: 1px solid #777;
+  border: 1px solid #777;
 }
 
 div.odude_img img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 div.odude_desc {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
-
 
 /* Text over Image */
 
 .upg_text_over_image {
   position: relative;
-
 }
 
 .upg_text_over_image p {
@@ -415,46 +488,44 @@ div.odude_desc {
   position: absolute;
 }
 
-.upg_headline
-{
-color: #444;
- margin: 0;
- padding: 0px 0px 6px 0px;
- font-size: 20px;
- line-height: 16px;
- font-weight: bold;
+.upg_headline {
+  color: #444;
+  margin: 0;
+  padding: 0px 0px 6px 0px;
+  font-size: 20px;
+  line-height: 16px;
+  font-weight: bold;
 }
 
 .upg_error {
   background-color: #ffdddd;
   border-left: 6px solid #f44336;
   margin-bottom: 15px;
-    padding: 4px 12px;
+  padding: 4px 12px;
 }
 
 .upg_success {
   background-color: #ddffdd;
-  border-left: 6px solid #4CAF50;
+  border-left: 6px solid #4caf50;
   margin-bottom: 15px;
-    padding: 4px 12px;
+  padding: 4px 12px;
 }
-
 
 .upg_warning {
   background-color: #ffffcc;
   border-left: 6px solid #ffeb3b;
   margin-bottom: 15px;
-    padding: 4px 12px;
+  padding: 4px 12px;
 }
 
 /* Image Frame */
-.upg_image-frame{
-  position:relative;
-  z-index:1;
-  display:inline-block;
+.upg_image-frame {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
   text-decoration: none;
 }
-.upg_image-frame img{
+.upg_image-frame img {
   padding: 4px;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -462,34 +533,32 @@ color: #444;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  
 }
-.upg_image-frame:before, .upg_image-frame::after{
+.upg_image-frame:before,
+.upg_image-frame::after {
   -webkit-box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
-box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
-content: " ";
-display: table;
-width: 49%;
-height: 0;
-position: absolute;
-bottom: 6px;
-z-index: -2;
-
+  box-shadow: 0 0 7px 4px rgba(104, 104, 104, 0.5);
+  content: " ";
+  display: table;
+  width: 49%;
+  height: 0;
+  position: absolute;
+  bottom: 6px;
+  z-index: -2;
 }
 .upg_image-frame:before {
-left: 4px;
--webkit-transform: rotate(-3deg);
--moz-transform: rotate(-3deg);
--o-transform: rotate(-3deg);
--ms-transform: rotate(-3deg);
-transform: rotate(-3deg);
+  left: 4px;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
 .upg_image-frame:after {
-right: 4px;
--webkit-transform: rotate(3deg);
--moz-transform: rotate(3deg);
--o-transform: rotate(3deg);
--ms-transform: rotate(3deg);
-transform: rotate(3deg);
-
+  right: 4px;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
 }
