@@ -244,8 +244,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 == Changelog ==
 = 2.1 =
-* Added options in 'bulk edit' upg post to change 'preview layout'
+* Added 'bulk edit' options in upg post to change 'preview layout'
 * 'Layout' is renamed as 'Template'
+* Added 'filter layout' in Gallery Template
+* Updated 'list layout' of Gallery Template
 
 = 2.0 =
 * Added upload & progress bar on ajax form submission

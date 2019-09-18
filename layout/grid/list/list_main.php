@@ -1,38 +1,58 @@
-<li class="upg_list_cards__item upg_gallery_child" id="upg_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
-    <div class="upg_list_card">
+<div class="pure-u-1 pure-u-md-1-<?php echo $perrow; ?> upg_gallery_child" id="upg_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
+	<div class="obox">
+		<div class="pure-g">
+			<div class="pure-u-1 pure-u-md-1-5" style="text-align:center;">
 
-	<?php
-	if($post_status=="draft")
-		$permalink=0;
-	
-				
-			if($permalink=="0")
-			{
-			//echo '<img src="'.$image.'" class="pure-img">';
-			echo '<a href="'.$permalink.'" border="0"><div class="upg_list_card__image" style="background-image: url('.$image.');"></div><span class="upg_tooltiptext">'. __("Under review","wp-upg").'</span></a>';
-			}
-		else
-		{
-			if($popup=="on")
-			{
-			
-			echo '<a data-fancybox="'.$preview_type.'" '.$extra_param.' href="'.$preview_large.'" data-caption="'.$thetitle.'" title="'.$thetitle.'" border=0><div class="upg_list_card__image" style="background-image: url('.$image.');"></div></a>';
-			}
-			else
-			{
-			echo '<a href="'.$permalink.'" border="0"><div class="upg_list_card__image" style="background-image: url('.$image.');"></div></a>';
-			}
-		}
-		
+				<?php
+
+				if ($permalink == "0") {
+					echo '<img src="' . $image . '" class="pure-img">';
+				} else {
+					if ($popup == "on") {
+
+						echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" title="' . $thetitle . '" data-caption="' . $thetitle . '" border="0" ><img src="' . $image . '" style="margin:auto;"></a>';
+					} else {
+						echo '<a href="' . $permalink . '" border=0><img src="' . $image . '" ></a>';
+					}
+				}
+
+				if ($post_status == "draft")
+					echo '<div class="upg_tooltip"><i class="fas fa-eye-slash"></i><span class="upg_tooltiptext">' . __("Under review", "wp-upg") . '</span></div>';
 				?>
 
-      <div class="upg_list_card__content">
-        <div class="upg_list_card__title"><?php echo $thetitle; ?></div>
-        <p class="upg_list_card__text">
-		<?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?>
-		<div style="width:240px"></div>
-		</p>
-        <?php echo upg_show_icon_grid(); ?>
-      </div>
-    </div>
-  </li>
+			</div>
+			<div class="pure-u-1 pure-u-md-4-5 " style="vertical-align: text-top">
+				<div style="padding: 0.3em; height: 150px;">
+					<div style="height:25%">
+
+						<h2>
+							<?php
+
+							if ($permalink == "0") {
+								echo $thetitle;
+							} else {
+								if ($popup == "on") {
+									//	echo '<a href="'.$preview_large.'" title="'.$thetitle.'" class="'.$preview_type.'" border=0>'.$thetitle.'</a>';
+									echo $thetitle;
+								} else {
+									echo '<a href="' . $permalink . '" border=0>' . $thetitle . '</a>';
+								}
+							}
+
+							?>
+						</h2>
+					</div>
+
+
+					<div style="height:65%">
+						<div style='clear:both;'></div>
+						<?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?>
+					</div>
+					<div style="height:10%;text-align:center"><?php echo upg_show_icon_grid(); ?></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>

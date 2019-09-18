@@ -1,181 +1,179 @@
- /* upg_album_stacks CSS  */
+/* upg_album_stacks CSS  */
 
-    /* Layout */
-    .upg_album_stack {
-      float: left;
-      margin: 0 15% 15% 0;
-      position: relative;
-      z-index: 10;
-  }
+/* Layout */
+.upg_album_stack {
+  float: left;
+  margin: 0 15% 15% 0;
+  position: relative;
+  z-index: 10;
+}
 
-  /* Image styles */
-  .upg_album_stack img {
-      max-width: 100%;
-      height: auto;
-      vertical-align: bottom;
-      border: 10px solid #fff;
-      border-radius: 3px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  }
+/* Image styles */
+.upg_album_stack img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border: 10px solid #fff;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
 
-  .upg_album_stack:last-of-type {
-      margin-right: 30px;
-  }
+.upg_album_stack:last-of-type {
+  margin-right: 30px;
+}
 
-  /* upg_album_stacks created by the use of generated content */
-  .upg_album_stack:before,
-  .upg_album_stack:after {
-      content: "";
-      border-radius: 3px;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      border: 10px solid #fff;
-      left: 0;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      -webkit-transition: 0.3s all ease-out;
-      -moz-transition: 0.3s all ease-out;
-      transition: 0.3s all ease-out;
-  }
+/* upg_album_stacks created by the use of generated content */
+.upg_album_stack:before,
+.upg_album_stack:after {
+  content: "";
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 10px solid #fff;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.3s all ease-out;
+  -moz-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
+}
 
-  .upg_album_stack:before {
-      top: 4px;
-      z-index: -10;
-  }
+.upg_album_stack:before {
+  top: 4px;
+  z-index: -10;
+}
 
-  /* 1st element in upg_album_stack (behind image) */
-  .upg_album_stack:after {
-      top: 8px;
-      z-index: -20;
-  }
+/* 1st element in upg_album_stack (behind image) */
+.upg_album_stack:after {
+  top: 8px;
+  z-index: -20;
+}
 
-  /* 2nd element in upg_album_stack (behind image) */
+/* 2nd element in upg_album_stack (behind image) */
 
-  /* Second upg_album_stack example (rotated to the right from the bottom left) */
-  .upg_album_stack.rotated:before {
-      -webkit-transform-origin: left bottom left;
-      -moz-transform-origin: left bottom left;
-      transform-origin: left bottom left;
-      -webkit-transform: rotate(6deg);
-      -moz-transform: rotate(6deg);
-      transform: rotate(6deg);
-  }
+/* Second upg_album_stack example (rotated to the right from the bottom left) */
+.upg_album_stack.rotated:before {
+  -webkit-transform-origin: left bottom left;
+  -moz-transform-origin: left bottom left;
+  transform-origin: left bottom left;
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
 
-  .upg_album_stack.rotated:after {
-      -webkit-transform-origin: left bottom left;
-      -moz-transform-origin: left bottom left;
-      transform-origin: left bottom left;
-      -webkit-transform: rotate(12deg);
-      -moz-transform: rotate(12deg);
-      transform: rotate(12deg);
-  }
+.upg_album_stack.rotated:after {
+  -webkit-transform-origin: left bottom left;
+  -moz-transform-origin: left bottom left;
+  transform-origin: left bottom left;
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  transform: rotate(12deg);
+}
 
-  /* Third upg_album_stack example (One upg_album_stack element rotated in the opposite direction) */
-  .upg_album_stack.twisted:before {
-      -webkit-transform: rotate(10deg);
-      -moz-transform: rotate(10deg);
-      transform: rotate(10deg);
-  }
+/* Third upg_album_stack example (One upg_album_stack element rotated in the opposite direction) */
+.upg_album_stack.twisted:before {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
 
-  .upg_album_stack.twisted:after {
-      -webkit-transform: rotate(-10deg);
-      -moz-transform: rotate(-10deg);
-      transform: rotate(-10deg);
-  }
+.upg_album_stack.twisted:after {
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
 
-  /* Fourth upg_album_stack example (Similar to the second but rotated left) */
-  .upg_album_stack.rotated-left:before {
-      -webkit-transform-origin: bottom left;
-      -moz-transform-origin: bottom left;
-      transform-origin: bottom left;
-      -webkit-transform: rotate(-4deg);
-      -moz-transform: rotate(-4deg);
-      transform: rotate(-4deg);
-  }
+/* Fourth upg_album_stack example (Similar to the second but rotated left) */
+.upg_album_stack.rotated-left:before {
+  -webkit-transform-origin: bottom left;
+  -moz-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
 
-  .upg_album_stack.rotated-left:after {
-      -webkit-transform-origin: bottom left;
-      -moz-transform-origin: bottom left;
-      transform-origin: bottom left;
-      -webkit-transform: rotate(-8deg);
-      -moz-transform: rotate(-8deg);
-      transform: rotate(-8deg);
-  }
+.upg_album_stack.rotated-left:after {
+  -webkit-transform-origin: bottom left;
+  -moz-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
 
-  /* Second upg_album_stack example (Similar to the second but rotated right) */
-  .upg_album_stack.rotated-right:before {
-      -webkit-transform-origin: bottom right;
-      -moz-transform-origin: bottom right;
-      transform-origin: bottom right;
-      -webkit-transform: rotate(4deg);
-      -moz-transform: rotate(4deg);
-      transform: rotate(4deg);
-  }
+/* Second upg_album_stack example (Similar to the second but rotated right) */
+.upg_album_stack.rotated-right:before {
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
 
-  .upg_album_stack.rotated-right:after {
-      -webkit-transform-origin: bottom right;
-      -moz-transform-origin: bottom right;
-      transform-origin: bottom right;
-      -webkit-transform: rotate(8deg);
-      -moz-transform: rotate(8deg);
-      transform: rotate(8deg);
-  }
+.upg_album_stack.rotated-right:after {
+  -webkit-transform-origin: bottom right;
+  -moz-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  transform: rotate(8deg);
+}
 
-  /* Reset all rotations on hover */
-  .upg_album_stack:hover:before,
-  .upg_album_stack:hover:after {
-      -webkit-transform: rotate(0deg);
-      -moz-transform: rotate(0deg);
-      transform: rotate(0deg);
-  }
+/* Reset all rotations on hover */
+.upg_album_stack:hover:before,
+.upg_album_stack:hover:after {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
 
-  .upg_text_centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      letter-spacing: normal;
-      font-weight: bold;
-      background: rgb(0, 0, 0);
-      /* Fallback color */
-      background: rgba(0, 0, 0, 0.5);
-      /* Black background with 0.5 opacity */
-      color: white;
-      width: 75%;
-      text-align: center;
-      /* Full width */
-  }
+.upg_text_centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: normal;
+  font-weight: bold;
+  background: rgb(0, 0, 0);
+  /* Fallback color */
+  background: rgba(0, 0, 0, 0.5);
+  /* Black background with 0.5 opacity */
+  color: white;
+  width: 75%;
+  text-align: center;
+  /* Full width */
+}
 
-  /*
+/*
 iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
-      .upg_album_stack {
-          float: none;
-          width: 100px;
-          margin-bottom: 35px;
-      }
-
-
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .upg_album_stack {
+    float: none;
+    width: 100px;
+    margin-bottom: 35px;
   }
+}
 
-  /*iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */
-  @media only screen and (min-width: 768px) and (max-width: 1024px) {
-      .upg_album_stack {
-          float: none;
-          width: 160px;
-          margin-bottom: 35px;
-      }
+/*iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .upg_album_stack {
+    float: none;
+    width: 160px;
+    margin-bottom: 35px;
   }
+}
 
 /* DIV divider */
 .upg_divider {
@@ -567,7 +565,7 @@ div.tagsinput div {
 }
 .obox {
   border: 1px solid #ddd;
-  padding: 10px 12px;
+  padding: 5px 6px;
   margin-bottom: 15px;
   background: #fff;
   border-radius: 3px;
@@ -576,7 +574,7 @@ div.tagsinput div {
 }
 .obox:hover {
   border: 1px solid #5890ff;
-  padding: 10px 12px;
+  padding: 5px 6px;
   margin-bottom: 15px;
   background: #fff;
   border-radius: 3px;

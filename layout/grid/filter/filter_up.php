@@ -95,10 +95,10 @@
 							<i class="fa fa-search  jplist-icon"></i>
 
 							<!--[if lt IE 10]>
-			<div class="jplist-label">Filter by Title:</div>
+			<div class="jplist-label"><?php echo __('Filter by Title', 'wp-upg'); ?>:</div>
 			<![endif]-->
 
-							<input data-path=".title" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter">
+							<input data-path=".title" type="text" value="" placeholder="<?php echo __('Filter by Title', 'wp-upg'); ?>" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter">
 						</div>
 
 						<!-- filter by description -->
@@ -107,10 +107,10 @@
 							<i class="fa fa-search  jplist-icon"></i>
 
 							<!--[if lt IE 10]>
-			<div class="jplist-label">Filter by Description:</div>
+			<div class="jplist-label"><?php echo __('Filter by Description', 'wp-upg'); ?></div>
 			<![endif]-->
 
-							<input data-path=".desc" type="text" value="" placeholder="Filter by Description" data-control-type="textbox" data-control-name="desc-filter" data-control-action="filter">
+							<input data-path=".desc" type="text" value="" placeholder="<?php echo __('Filter by Description', 'wp-upg'); ?>" data-control-type="textbox" data-control-name="desc-filter" data-control-action="filter">
 						</div>
 
 						<!-- views -->

@@ -8,10 +8,7 @@
 
 
 		if ($permalink == "0") {
-			//echo '<img src="'.$image.'" class="pure-img">';
-			echo '<div class="upg_image_container"><img src="' . $image . '" data-original="' . $image . '" alt="" title="" style="display: inline;"><div class="upg_image_centered">';
-			echo '<div class="upg_tooltip"><i class="fas fa-eye-slash fa-2x fa-border"></i><span class="upg_tooltiptext">' . __("Under review", "wp-upg") . '</span></div>';
-			echo '</div></div>';
+			echo '<img src="' . $image . '" data-original="' . $image . '" alt="" title="" style="display: inline;">';
 		} else {
 			if ($popup == "on") {
 
@@ -31,7 +28,14 @@
 	<div class="block right">
 		<p class="date"><?php echo get_the_date(); ?></p>
 		<p class="title"><?php echo $thetitle; ?></p>
-		<p class="desc"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></p>
+		<p class="desc"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?>
+
+			<?php
+			if ($permalink == "0") {
+				echo '<div class="upg_tooltip"><i class="fas fa-eye-slash fa-2x fa-border"></i><span class="upg_tooltiptext">' . __("Under review", "wp-upg") . '</span></div>';
+			}
+			?>
+		</p>
 		<p class="like"><?php echo upg_show_icon_grid(); ?></p>
 	</div>
 	<div class="upg_divider upg_div-transparent"></div>
