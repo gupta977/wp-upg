@@ -32,7 +32,7 @@
 								echo $thetitle;
 							} else {
 								if ($popup == "on") {
-									//	echo '<a href="'.$preview_large.'" title="'.$thetitle.'" class="'.$preview_type.'" border=0>'.$thetitle.'</a>';
+						
 									echo $thetitle;
 								} else {
 									echo '<a href="' . $permalink . '" border=0>' . $thetitle . '</a>';

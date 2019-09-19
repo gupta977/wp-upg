@@ -655,6 +655,7 @@ function upg_author($author,$redirect=true)
 //Icon container. Eg. Author icon, Delete icon, Edit icon
 function upg_show_icon_grid()
 {
+	global $post; 
 	$icon = array();
 	
 
@@ -665,7 +666,7 @@ function upg_show_icon_grid()
 	}
  
 if(count($icon)>0)
-	$list .= '<div class="upg_button_contain">';
+	$list .= '<div class="upg_button_contain" id="upg_'.get_the_ID().'">';
 
  for($r=0;$r<count($icon);$r++)
 {
