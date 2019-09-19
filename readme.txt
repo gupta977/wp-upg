@@ -248,6 +248,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * 'Layout' is renamed as 'Template'
 * Added 'filter layout' in Gallery Template
 * Updated 'list layout' of Gallery Template
+* [upg-datatable] started - beta version
 
 = 2.0 =
 * Added upload & progress bar on ajax form submission
