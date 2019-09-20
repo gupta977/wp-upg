@@ -818,66 +818,51 @@ function upg_datatable()
 {
 	global $post;
 	global $wp_query;
+	$options = get_option('upg_settings', '');
 	header("Content-Type: application/json");
 	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
 
-
 	$request = $_GET;
-
-	$columns = array(
-		0 => 'post_title',
-		1 => 'year',
-		2 => 'rating'
-	);
-
-
 	$args = array(
 		'post_type' => 'upg',
 		'post_status' => 'publish',
 		'posts_per_page' => $request['length'],
 		'offset' => $request['start'],
 		'order' => $request['order'][0]['dir'],
-		's' => $request['search']['value']
+		'_meta_or_title' => $request['search']['value'] //action hook is used to replace 's'
 	);
 
-
-
-	//$request['search']['value'] <= Value from search
-
 	if (!empty($request['search']['value'])) { // When datatables search is used
-		/*
+
 		$args['meta_query'] = array(
 			'relation' => 'OR',
 			array(
-				'key' => 'post_title',
-				'value' => sanitize_text_field($request['search']['value']),
-				'compare' => 'LIKE'
-			)
-			
-			,
-			array(
-				'key' => 'year',
+				'key' => 'upg_custom_field_1',
 				'value' => sanitize_text_field($request['search']['value']),
 				'compare' => 'LIKE'
 			),
 			array(
-				'key' => 'rating',
+				'key' => 'upg_custom_field_2',
+				'value' => sanitize_text_field($request['search']['value']),
+				'compare' => 'LIKE'
+			),
+			array(
+				'key' => 'upg_custom_field_3',
 				'value' => sanitize_text_field($request['search']['value']),
 				'compare' => 'LIKE'
 			)
-			*/
-		//);
 
+		);
 	}
 
-	$movie_query = new WP_Query($args);
-	$totalData = $movie_query->found_posts;
+	$data_query = new WP_Query($args);
+	$totalData = $data_query->found_posts;
 
-	if ($movie_query->have_posts()) {
+	if ($data_query->have_posts()) {
 
-		while ($movie_query->have_posts()) {
+		while ($data_query->have_posts()) {
 
-			$movie_query->the_post();
+			$data_query->the_post();
 			$permalink = get_permalink();
 			$thetitle = get_the_title();
 			$theauthor = get_the_author();
@@ -929,11 +914,17 @@ function upg_datatable()
 				$nestedData[] = $thetitle;
 			} else {
 				$nestedData[] = '<a href="' . $permalink . '" border="0"><img src="' . $image . '" width="75px"></a>';
-				$nestedData[] = '<a href="' . $permalink . '" border="0">'.$thetitle.'</a>';
+				$nestedData[] = '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
 			}
 
-			$nestedData[] = get_the_date();
-			$nestedData[] = upg_show_icon_grid();
+			for ($x = 1; $x <= 5; $x++) {
+				if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+
+
+					$nestedData[] = upg_get_value('upg_custom_field_' . $x);
+				}
+			}
+
 
 			$data[] = $nestedData;
 		}
@@ -962,4 +953,26 @@ function upg_datatable()
 	wp_reset_query();
 	wp_die();
 }
+
+// To search title along with meta query, replace the “s” parameter in your custom query with a “_meta_or_title” parameter.
+add_action('pre_get_posts', function ($q) {
+	if ($title = $q->get('_meta_or_title')) {
+		add_filter('get_meta_sql', function ($sql) use ($title) {
+			global $wpdb;
+
+			// Only run once:
+			static $nr = 0;
+			if (0 != $nr++) return $sql;
+
+			// Modified WHERE
+			$sql['where'] = sprintf(
+				" AND ( %s OR %s ) ",
+				$wpdb->prepare("{$wpdb->posts}.post_title like '%%%s%%'", $title),
+				mb_substr($sql['where'], 5, mb_strlen($sql['where']))
+			);
+
+			return $sql;
+		});
+	}
+});
 ?>

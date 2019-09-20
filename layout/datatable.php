@@ -27,8 +27,17 @@ if (is_single() || is_page()) {
             <tr>
                 <th class="no-sort">Picture</th>
                 <th>Title</th>
-                <th>Date</th>
-                <th class="no-sort">Action</th>
+                <?php
+                    for ($x = 1; $x <= 5; $x++) {
+                        if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+
+                            ?>
+                        <th><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?></th>
+
+                <?php
+                        }
+                    }
+                    ?>
             </tr>
         </thead>
 
