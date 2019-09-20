@@ -834,26 +834,35 @@ function upg_datatable()
 
 	if (!empty($request['search']['value'])) { // When datatables search is used
 
+
+
 		$args['meta_query'] = array(
 			'relation' => 'OR',
 			array(
-				'key' => 'upg_custom_field_1',
-				'value' => sanitize_text_field($request['search']['value']),
-				'compare' => 'LIKE'
-			),
-			array(
-				'key' => 'upg_custom_field_2',
-				'value' => sanitize_text_field($request['search']['value']),
-				'compare' => 'LIKE'
-			),
-			array(
-				'key' => 'upg_custom_field_3',
+				'key' => 'xxxx',
 				'value' => sanitize_text_field($request['search']['value']),
 				'compare' => 'LIKE'
 			)
-
 		);
+
+
+
+		for ($x = 1; $x <= 5; $x++) {
+			if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+				$abc = array(
+					'relation' => 'OR',
+					array(
+						'key' => 'upg_custom_field_' . $x,
+						'value' => sanitize_text_field($request['search']['value']),
+						'compare' => 'LIKE'
+					)
+				);
+
+				$args['meta_query'] = array_merge($args['meta_query'], $abc);
+			}
+		}
 	}
+	//print_r($args);
 
 	$data_query = new WP_Query($args);
 	$totalData = $data_query->found_posts;
