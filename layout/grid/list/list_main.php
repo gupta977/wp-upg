@@ -1,6 +1,7 @@
 <div class="pure-u-1 pure-u-md-1-<?php echo $perrow; ?> upg_gallery_child" id="upg_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
 	<div class="obox_basic">
 		<div class="pure-g">
+
 			<div class="pure-u-1 pure-u-md-1-5" style="text-align:center;">
 				<div class="upg_image-frame">
 					<?php
@@ -21,7 +22,7 @@
 					?>
 				</div>
 			</div>
-			<div class="pure-u-1 pure-u-md-4-5 " style="vertical-align: text-top">
+			<div class="pure-u-1 pure-u-md-4-5 upg_hover_content" style="vertical-align: text-top">
 				<div style="padding: 0.3em; height: 150px;">
 					<div style="height:25%;text-align:center;">
 
@@ -44,9 +45,36 @@
 					</div>
 
 
-					<div style="height:65%;text-align:center;">
+					<div style="height:65%;">
 						<div style='clear:both;'></div>
-						<?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?>
+
+						<?php
+						//Display 5 custom fields loop
+						for ($x = 1; $x <= 5; $x++) {
+							if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+
+								?>
+								<b><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> </b>: <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
+
+						<?php
+
+							}
+						}
+
+						?>
+						<?php
+						//Display description only if available. 
+						if ($text != '') {
+							?>
+							<div class="upg_hover_content-overlay"></div>
+							<div class="upg_hover_content-details upg_hover_fadeIn-right">
+
+								<p class="upg_hover_content-text"> <?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></p>
+							</div>
+						<?php
+						}
+						?>
+
 					</div>
 					<div style="height:10%;text-align:center"><?php echo upg_show_icon_grid(); ?></div>
 				</div>

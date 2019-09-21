@@ -24,7 +24,22 @@
 		<div class="upg_list_card__content">
 			<div class="upg_list_card__title"><?php echo $thetitle; ?></div>
 			<p class="upg_list_card__text">
-				<?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?>
+
+				<?php
+				//Display 5 custom fields loop
+				for ($x = 1; $x <= 5; $x++) {
+					if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+
+						?>
+						<?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> : <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
+
+				<?php
+
+					}
+				}
+
+				?>
+
 				<div style="width:240px"></div>
 			</p>
 			<?php echo upg_show_icon_grid(); ?>
