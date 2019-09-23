@@ -249,7 +249,8 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Added 'filter layout' in Gallery Template
 * Updated 'list layout' of Gallery Template
 * Updated 'classic layout' of Gallery Template
-* [upg-datatable] started - beta version
+* upg-bread-crumb shortcode is not more upg-pro
+* Shortcode upg-breadcrumb renamed as upg-bread-crumb
 
 = 2.0 =
 * Added upload & progress bar on ajax form submission
