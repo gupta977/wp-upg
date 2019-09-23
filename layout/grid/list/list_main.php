@@ -26,7 +26,7 @@
 				<div style="padding: 0.3em; height: 150px;">
 					<div style="height:25%;text-align:center;">
 
-						<h3>
+						<div class="upg_list_title">
 							<?php
 
 							if ($permalink == "0") {
@@ -41,39 +41,30 @@
 							}
 
 							?>
-						</h3>
+						</div>
 					</div>
 
 
 					<div style="height:65%;">
 						<div style='clear:both;'></div>
+						<div class="pure-g">
 
-						<?php
-						//Display 5 custom fields loop
-						for ($x = 1; $x <= 5; $x++) {
-							if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+							<div class="pure-u-1 pure-u-md-2-5"><?php
+																//Display 5 custom fields loop
+																for ($x = 1; $x <= 5; $x++) {
+																	if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
 
-								?>
-								<b><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> </b>: <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
+																		?>
+										<b><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> </b>: <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
 
-						<?php
+								<?php
 
-							}
-						}
+									}
+								}
 
-						?>
-						<?php
-						//Display description only if available. 
-						if ($text != '') {
-							?>
-							<div class="upg_hover_content-overlay"></div>
-							<div class="upg_hover_content-details upg_hover_fadeIn-right">
-
-								<p class="upg_hover_content-text"> <?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></p>
-							</div>
-						<?php
-						}
-						?>
+								?></div>
+							<div class="pure-u-1 pure-u-md-3-5"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></div>
+						</div>
 
 					</div>
 					<div style="height:10%;text-align:center"><?php echo upg_show_icon_grid(); ?></div>
