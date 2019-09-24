@@ -49,7 +49,7 @@ function upg_breadcrumb($args = array())
       'upg_breadcrumb_defaults',
       array(
         'delimiter'   => '&nbsp;&#47;&nbsp;',
-        'wrap_before' => '<nav class="upg-bread-crumb">',
+        'wrap_before' => '<nav class="upg-breadcrumb">',
         'wrap_after'  => '</nav>',
         'before'      => '',
         'after'       => '',

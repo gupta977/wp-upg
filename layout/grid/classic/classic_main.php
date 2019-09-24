@@ -29,12 +29,12 @@
 				//Display 5 custom fields loop
 				for ($x = 1; $x <= 5; $x++) {
 					if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
-
-						?>
-						<?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> : <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
+						if (upg_get_value('upg_custom_field_' . $x) != '') {
+							?>
+							<?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> : <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
 
 				<?php
-
+						}
 					}
 				}
 

@@ -144,12 +144,14 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 
 = Gallery / Grid Demo =
 * Photo or masonry layout  <a href="https://odude.com/demo/gallery/" target="_blank">Demo</a>
-* Flat layout  <a href="https://odude.com/demo/wp-upg/sample-page/flat-layout/" target="_blank">Demo</a>
-* List layout  <a href="https://odude.com/demo/wp-upg/sample-page/list-layout/" target="_blank">Demo</a>
-* Slide layout  <a href="https://odude.com/demo/wp-upg/sample-page/slide-layout/" target="_blank">Demo</a>
-* Shop , FAQ, Personal, Ecard, layouts available.
-* Single-Page Attach gallery with Load-More buttons [upg-attach] <a href="https://odude.com/demo/wp-upg/hello-world-2/" target="_blank">Demo</a>
-* Create your own gallery layout with 'personal layout'
+* Filter layout  <a href="https://odude.com/demo/albums/filter-layout/" target="_blank">Demo</a>
+* Classic layout  <a href="https://odude.com/demo/albums/classic-layout/" target="_blank">Demo</a>
+* Flat layout  <a href="https://odude.com/demo/albums/flat-layout/" target="_blank">Demo</a>
+* List layout  <a href="https://odude.com/demo/albums/list-layout/" target="_blank">Demo</a>
+* Slide layout  <a href="https://odude.com/demo/albums/slide-layout/" target="_blank">Demo</a>
+* Shop , FAQ, Personal, Basic, Ecard, layouts available.
+* Single-Page Attach gallery with Load-More buttons [upg-attach] <a href="https://odude.com/demo/albums/upg-attach/" target="_blank">Demo</a>
+* Create your own gallery layout with 'personal layout'. (PHP & CSS)
 
 = Preview / Media Demo =
 * Ecard or Greetings Card layout (upg ecard) <a href="https://odude.com/demo/ecard/upg/happy-birthday/" target="_blank">Demo</a>
@@ -244,13 +246,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 == Changelog ==
 = 2.1 =
-* Added 'bulk edit' options in upg post to change 'preview layout'
-* 'Layout' is renamed as 'Template'
+* 'bulk update' UPG post 'preview layout'
+* 'Layout' is renamed as 'Template' in settings
 * Added 'filter layout' in Gallery Template
 * Updated 'list layout' of Gallery Template
 * Updated 'classic layout' of Gallery Template
-* upg-bread-crumb shortcode is not more upg-pro
-* Shortcode upg-breadcrumb renamed as upg-bread-crumb
 
 = 2.0 =
 * Added upload & progress bar on ajax form submission

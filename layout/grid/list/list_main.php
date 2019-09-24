@@ -48,22 +48,31 @@
 					<div style="height:65%;">
 						<div style='clear:both;'></div>
 						<div class="pure-g">
+							<?php
+							//Display 5 custom fields loop
+							$str = '';
+							for ($x = 1; $x <= 5; $x++) {
+								if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
 
-							<div class="pure-u-1 pure-u-md-2-5"><?php
-																//Display 5 custom fields loop
-																for ($x = 1; $x <= 5; $x++) {
-																	if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
-
-																		?>
-										<b><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> </b>: <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
-
-								<?php
-
+									if (upg_get_value('upg_custom_field_' . $x) != '') {
+										$str .= "<b>" . upg_get_filed_label('upg_custom_field_' . $x) . "</b>: " . upg_get_value('upg_custom_field_' . $x) . "<br>";
 									}
 								}
+							}
+							if ($str != '') {
+								?>
 
-								?></div>
-							<div class="pure-u-1 pure-u-md-3-5"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></div>
+								<div class="pure-u-1 pure-u-md-2-5"><?php echo $str; ?></div>
+								<div class="pure-u-1 pure-u-md-3-5"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></div>
+							<?php
+							} else {
+								?>
+
+								<div class="pure-u-1 pure-u-md-1-1"><?php echo upg_breakLongText($text, $length = 200, $maxLength = 250); ?></div>
+
+							<?php
+							}
+							?>
 						</div>
 
 					</div>

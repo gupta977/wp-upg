@@ -28,7 +28,7 @@ function upg_addon_page()
         <div class="upg_module upg_red">
           <h2> <?php _e('Breadcrumb', 'wp-upg'); ?> <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
           <div class="cnt">
-            <p>You can include breadcrumb navigation bar above gallery using shortcode. <br>Use shortcode as [upg-bread-crumb] just above [upg-list] of main upg page.<br>It will will automatically appear above gallery.<br>
+            <p>You can include breadcrumb navigation bar above gallery using shortcode. <br>Use shortcode as [upg-breadcrumb] just above [upg-list] of main upg page.<br>It will will automatically appear above gallery.<br>
               <br><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/breadcrumb.png"> '; ?>
 
             </p>

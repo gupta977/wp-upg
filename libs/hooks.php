@@ -9,11 +9,8 @@ add_shortcode("upg-attach", "upg_attach");
 if (is_upg_pro()) {
 	add_shortcode("upg-datatable", "upg_datatable_shortcode");
 }
+//List Albums
 add_shortcode("upg-album", "upg_album");
-//Register breadcrumb shortcode
-add_shortcode("upg-bread-crumb", "upg_breadcrumb");
-//add_shortcode("upg-breadcrumb", "upg_breadcrumb"); Issues : No parent page displayed in page attributes. 
-
 //Shortocde for magic form
 add_shortcode("upg-form", "upg_magic_form");
 add_shortcode("upg-form-tag", "upg_magic_form_tag");

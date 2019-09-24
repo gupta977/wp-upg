@@ -28,7 +28,7 @@ function upg_shortcode()
                 <li><a href="#tab-6"><?php echo __("[upg-pick]", "wp-upg"); ?></a></li>
                 <li><a href="#tab-7"><?php echo __("[upg-search]", "wp-upg"); ?></a></li>
                 <li><a href="#tab-8"><?php echo __("[upg-album]", "wp-upg"); ?></a></li>
-                <li><a href="#tab-9"><?php echo __("[upg-bread-crumb]", "wp-upg"); ?></a></li>
+                <li><a href="#tab-9"><?php echo __("[upg-breadcrumb]", "wp-upg"); ?></a></li>
             </ul>
 
             <div id="tab-1">
@@ -235,6 +235,7 @@ function upg_shortcode()
                 <hr>
                 <b>Notes:</b>
                 <ol>
+                    <li><b>It is available only to UPG-PRO version.</b></li>
                     <li>It is only accessible to loggedin users.</li>
                     <li>If in settings, edit button is enabled, user can edit the post.</li>
                     <li>Ajax modification is not available on this form.</li>
@@ -330,10 +331,11 @@ function upg_shortcode()
             </div>
             <div id="tab-9">
                 <h3>Display breadcrumb navigation at UPG page</h3>
-                <h4> [upg-bread-crumb]</h4>
+                <h4> [upg-breadcrumb]</h4>
                 With this shortcode, user can see breadcrumb navigation above gallery <br><br>
                 <b>Notes:</b>
                 <ol>
+                    <li><b>It is available only to UPG-PRO version.</b></li>
                     <li>It will not work for <code>[upg-list]</code> page.</li>
                     <li>UPG main page is used as primary.</li>
                     <li>Redesign search bar is not available yet. </li>
@@ -343,7 +345,7 @@ function upg_shortcode()
                 <hr>
                 <h4>Scenario 1 – Display navigation bar above gallery</h4>
                 Just insert a shortcode before gallery shortcode.<br>
-                <div class="update-nag"><code>[upg-bread-crumb]<br>[upg-list]</code></div>
+                <div class="update-nag"><code>[upg-breadcrumb]<br>[upg-list]</code></div>
             </div>
 
         </div>
