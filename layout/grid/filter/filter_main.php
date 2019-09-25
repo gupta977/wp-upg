@@ -23,7 +23,8 @@
 		?>
 
 	</td>
-	<td><?php echo $thetitle; ?></td>
+	<td><?php echo $thetitle; ?>
+		<br><?php echo upg_show_icon_grid(); ?></td>
 	<?php
 
 	for ($x = 1; $x <= 5; $x++) {
@@ -36,5 +37,5 @@
 	?>
 
 	<td><?php echo get_the_date(); ?></td>
-	<td><?php echo upg_show_icon_grid(); ?></td>
+
 </tr>

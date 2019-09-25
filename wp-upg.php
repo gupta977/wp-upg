@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 2.00
+Version: 2.01
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
 */
 
-define('UPG_PLUGIN_VERSION', '2.00');
+define('UPG_PLUGIN_VERSION', '2.01');
 define('upg_ROOT_URL', plugin_dir_url(__FILE__));
 define('upg_FOLDER', dirname(plugin_basename(__FILE__)));
 define('upg_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . upg_FOLDER . '/');
@@ -135,9 +135,13 @@ function upg_enqueue_scripts()
 	wp_enqueue_script('upg_load_more', plugins_url() . '/' . upg_FOLDER . '/js/upg_load_more.js', '', UPG_PLUGIN_VERSION, '');
 	wp_enqueue_script('upg_ajax_post', plugins_url() . '/' . upg_FOLDER . '/js/upg_ajax_post.js', '', UPG_PLUGIN_VERSION, '');
 
-	//wp_localize_script('upg_delete', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
-	//wp_localize_script('upg_oembed', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
-	wp_localize_script('upg_load_more', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
+	// Localize the script with new data
+	$translation_array = array(
+		'delete_string' => __('Are you sure you want to delete?', 'wp-upg'),
+		'ajaxurl' => admin_url('admin-ajax.php')
+	);
+
+	wp_localize_script('upg_load_more', 'myAjax', $translation_array);
 	wp_localize_script('upg_common', 'myAjax_datatable', array('ajaxurl' => admin_url('admin-ajax.php?action=upg_datatable')));
 }
 function upg_admin_enqueue_scripts()

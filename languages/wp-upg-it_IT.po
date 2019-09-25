@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-09-07 15:32+0545\n"
-"PO-Revision-Date: 2019-09-07 15:33+0545\n"
+"POT-Creation-Date: 2019-09-25 13:33+0545\n"
+"PO-Revision-Date: 2019-09-25 13:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: it\n"
@@ -114,7 +114,9 @@ msgid ""
 msgstr ""
 
 #: classes/quick_mode_setting.php:113
-msgid "Select Gallery/Grid Layout"
+#, fuzzy
+#| msgid "Select Gallery/Grid Layout"
+msgid "Select Gallery/Grid Template"
 msgstr "Seleziona Galleria / Layout griglia"
 
 #: classes/quick_mode_setting.php:114 classes/quick_mode_setting.php:161
@@ -156,7 +158,9 @@ msgid "Page must contain [upg-edit] shortcode."
 msgstr ""
 
 #: classes/quick_mode_setting.php:160
-msgid "Select Form Layout [upg-post]"
+#, fuzzy
+#| msgid "Select Form Layout [upg-post]"
+msgid "Select Form Template [upg-post]"
 msgstr "Seleziona layout modulo [upg-post]"
 
 #: classes/quick_mode_setting.php:170
@@ -172,7 +176,9 @@ msgstr ""
 "nella pagina, quindi non viene utilizzato il layout di anteprima."
 
 #: classes/quick_mode_setting.php:177
-msgid "Select Preview/Media Layout"
+#, fuzzy
+#| msgid "Select Preview/Media Layout"
+msgid "Select Preview/Media Template"
 msgstr "Seleziona Anteprima / Layout multimediale"
 
 #: classes/quick_mode_setting.php:178
@@ -199,7 +205,7 @@ msgstr "Shortcode Posizione 2nd"
 msgid "Shortcode Eg. social share, buttons, notices"
 msgstr "Shortcode Ad es. condivisione sociale, pulsanti, avvisi"
 
-#: classes/quick_mode_setting.php:219 wp-upg.php:826
+#: classes/quick_mode_setting.php:219 wp-upg.php:773
 msgid "Basic Settings"
 msgstr "Impostazioni di base"
 
@@ -213,7 +219,7 @@ msgid "Maximum upload file size limit:"
 msgstr "Il limite massimo di dimensioni del file di upload è:"
 
 #: layout/attach.php:101 layout/catalog.php:346 layout/form/post_image.php:194
-#: layout/form/post_youtube.php:75
+#: layout/form/post_youtube.php:56
 msgid "Layout Not Found. Check settings."
 msgstr "Layout non trovato. Controlla le impostazioni."
 
@@ -230,7 +236,7 @@ msgstr "in lavorazione"
 #: layout/attach.php:160 layout/form/basic/basic_post_form.php:164
 #: layout/form/photo/photo_post_form.php:73
 #: layout/form/simple/simple_edit_form.php:77
-#: layout/form/simple/simple_post_form.php:113 libs/install.php:183
+#: layout/form/simple/simple_post_form.php:113 libs/install.php:157
 msgid "Post"
 msgstr "Inviare"
 
@@ -243,7 +249,8 @@ msgstr "Questo pulsante post è visibile solo a te."
 #: layout/form/basic/basic_post_youtube.php:24
 #: layout/form/photo/photo_post_form.php:6
 #: layout/form/simple/simple_edit_form.php:6
-#: layout/form/simple/simple_post_form.php:35 libs/custom_column.php:9
+#: layout/form/simple/simple_post_form.php:35
+#: layout/grid/filter/filter_up.php:31 libs/custom_column.php:55
 msgid "Title"
 msgstr "Titolo"
 
@@ -383,13 +390,13 @@ msgid "My Gallery"
 msgstr "La mia galleria"
 
 #: layout/form/magic_form.php:75 layout/form/post_image.php:96
-#: layout/form/post_youtube.php:137 libs/functions.php:1007
-#: libs/functions.php:1093
+#: layout/form/post_youtube.php:115 libs/functions.php:891
+#: libs/functions.php:952
 msgid "Successfully posted."
 msgstr "Pubblicato con successo."
 
 #: layout/form/magic_form.php:84 layout/form/post_image.php:105
-#: libs/functions.php:1012 libs/functions.php:1098 libs/functions.php:1191
+#: libs/functions.php:893 libs/functions.php:955 libs/functions.php:1032
 msgid "Your submission is under review."
 msgstr "La tua presentazione è in corso di revisione."
 
@@ -406,7 +413,7 @@ msgid "Post again"
 msgstr "Pubblica di nuovo"
 
 #: layout/form/post_edit_image.php:25 layout/form/post_edit_youtube.php:28
-#: layout/form/post_image.php:167 layout/form/post_youtube.php:52
+#: layout/form/post_image.php:167 layout/form/post_youtube.php:42
 msgid "Refresh Page"
 msgstr "Aggiorna pagina"
 
@@ -430,7 +437,7 @@ msgstr "Modifica"
 msgid "Error in oEmbed URL"
 msgstr "Errore nell'URL oEmbed"
 
-#: layout/form/post_youtube.php:144
+#: layout/form/post_youtube.php:119
 msgid "Your video is under review"
 msgstr "Il tuo video è in fase di revisione"
 
@@ -438,17 +445,21 @@ msgstr "Il tuo video è in fase di revisione"
 msgid "Only URL from YouTube & Vimeo is allowed"
 msgstr ""
 
-#: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:3
+#: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:4
 #: layout/grid/flat/flat_down.php:3 layout/grid/list/list_down.php:3
 #: layout/grid/photo/photo_down.php:3 layout/grid/slide/slide_down.php:3
 msgid "No records"
 msgstr "Nessun record"
 
-#: layout/grid/basic/basic_main.php:14 layout/grid/classic/classic_main.php:13
-#: layout/grid/flat/flat_main.php:30 layout/grid/list/list_main.php:31
-#: layout/media/basic/content.php:11
+#: layout/grid/basic/basic_main.php:13 layout/grid/classic/classic_main.php:11
+#: layout/grid/filter/filter_main.php:12 layout/grid/flat/flat_main.php:24
+#: layout/grid/list/list_main.php:21 layout/media/basic/content.php:11
 msgid "Under review"
 msgstr "In corso di revisione"
+
+#: layout/grid/filter/filter_up.php:43 libs/custom_column.php:62
+msgid "Date"
+msgstr "Data"
 
 #: layout/pick.php:49
 msgid "Pick Layout Not Found."
@@ -458,163 +469,161 @@ msgstr "Scegli layout non funzionante."
 msgid "Not found"
 msgstr "Post non trovato"
 
-#: libs/breadcrumb.php:43 libs/breadcrumb.php:47
+#: libs/breadcrumb.php:35 libs/breadcrumb.php:37
 msgid "Home"
 msgstr ""
 
-#: libs/custom_column.php:10
+#: libs/custom_column.php:16 libs/custom_column.php:59 libs/metabox.php:10
+#, fuzzy
+#| msgid "Preview File"
+msgid "Preview template"
+msgstr "Anteprima del file"
+
+#: libs/custom_column.php:56
 msgid "Author"
 msgstr "Autore"
 
-#: libs/custom_column.php:11
+#: libs/custom_column.php:57
 msgid "Albums"
 msgstr "Albums"
 
-#: libs/custom_column.php:12
+#: libs/custom_column.php:58
 msgid "Tags"
 msgstr "Tags"
 
-#: libs/custom_column.php:13 libs/metabox.php:10
-msgid "Preview Layout"
-msgstr "Anteprima layout"
-
-#: libs/custom_column.php:14
+#: libs/custom_column.php:60
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: libs/custom_column.php:15
+#: libs/custom_column.php:61
 msgid ""
 "<span class=\"vers\"><div title=\"Comments\" class=\"comment-grey-bubble"
 "\">Comments</div></span>"
 msgstr ""
 
-#: libs/custom_column.php:16
-msgid "Date"
-msgstr "Data"
-
-#: libs/functions.php:107 libs/functions.php:111
+#: libs/functions.php:100 libs/functions.php:102
 msgid "Login Please !"
 msgstr "Accedi per favore!"
 
-#: libs/functions.php:1030 libs/functions.php:1117 libs/functions.php:1206
+#: libs/functions.php:903 libs/functions.php:970 libs/functions.php:1043
 msgid "Category is not specified."
 msgstr "Categoria non specificata."
 
-#: libs/functions.php:1030 libs/functions.php:1032 libs/functions.php:1115
-#: libs/functions.php:1117 libs/functions.php:1119 libs/functions.php:1204
-#: libs/functions.php:1206 libs/functions.php:1208
+#: libs/functions.php:903 libs/functions.php:905 libs/functions.php:968
+#: libs/functions.php:970 libs/functions.php:972 libs/functions.php:1041
+#: libs/functions.php:1043 libs/functions.php:1045
 msgid "Submission failed"
 msgstr "Invio non riuscito"
 
-#: libs/functions.php:1032 libs/functions.php:1119 libs/functions.php:1208
+#: libs/functions.php:905 libs/functions.php:972 libs/functions.php:1045
 msgid "Error message: "
 msgstr "Messaggio di errore: "
 
-#: libs/functions.php:1115 libs/functions.php:1204
+#: libs/functions.php:968 libs/functions.php:1041
 msgid "Check your file type."
 msgstr "Controlla il tuo tipo di file."
 
-#: libs/functions.php:1186
+#: libs/functions.php:1029
 msgid "Successfully posted"
 msgstr "Inserito correttamente"
 
-#: libs/functions.php:1987
+#: libs/functions.php:1727
 msgid "Show All"
 msgstr ""
 
-#: libs/functions.php:2012
+#: libs/functions.php:1750
 msgid "Loading"
 msgstr ""
 
-#: libs/install.php:182
+#: libs/install.php:156
 msgid "User Post Gallery"
 msgstr "User Post Gallery"
 
-#: libs/install.php:184
+#: libs/install.php:158
 msgid "Add "
 msgstr "Aggiungi "
 
-#: libs/install.php:185 libs/install.php:236 libs/install.php:261
+#: libs/install.php:159 libs/install.php:207 libs/install.php:232
 msgid "Add New "
 msgstr "Aggiungi Nuovo "
 
-#: libs/install.php:186 libs/install.php:234
+#: libs/install.php:160 libs/install.php:205
 msgid "Edit "
 msgstr "Modifica "
 
-#: libs/install.php:187 libs/install.php:237
+#: libs/install.php:161 libs/install.php:208
 msgid "New "
 msgstr "Nuovo "
 
-#: libs/install.php:188
+#: libs/install.php:162
 msgid "View "
 msgstr "Vedi "
 
-#: libs/install.php:189 libs/install.php:230
+#: libs/install.php:163 libs/install.php:201
 msgid "Search "
 msgstr "Cerca "
 
-#: libs/install.php:190 libs/install.php:191
+#: libs/install.php:164 libs/install.php:165
 msgid "No "
 msgstr "No "
 
-#: libs/install.php:193
+#: libs/install.php:167
 msgid "Featured image"
 msgstr "Immagine in primo piano"
 
-#: libs/install.php:194
+#: libs/install.php:168
 msgid "Set featured image"
 msgstr "Imposta l'immagine in primo piano"
 
-#: libs/install.php:195
+#: libs/install.php:169
 msgid "Remove featured Image"
 msgstr "Rimuovi immagine in primo piano"
 
-#: libs/install.php:228 libs/install.php:238
+#: libs/install.php:199 libs/install.php:209
 msgid " Albums"
 msgstr " Albums"
 
-#: libs/install.php:229
+#: libs/install.php:200
 msgid " Album"
 msgstr " Album"
 
-#: libs/install.php:231
+#: libs/install.php:202
 msgid "All "
 msgstr "Tutti "
 
-#: libs/install.php:232 libs/install.php:233
+#: libs/install.php:203 libs/install.php:204
 msgid "Parent "
 msgstr "Genitore "
 
-#: libs/install.php:235
+#: libs/install.php:206
 msgid "Update "
 msgstr "Aggiornamento "
 
-#: libs/install.php:253 libs/install.php:255 libs/install.php:263
+#: libs/install.php:224 libs/install.php:226 libs/install.php:234
 msgid " Tags"
 msgstr " Tag"
 
-#: libs/install.php:254
+#: libs/install.php:225
 msgid " Tag"
 msgstr " Tag"
 
-#: libs/install.php:256
+#: libs/install.php:227
 msgid " All Tags"
 msgstr " Tutti i marcatori"
 
-#: libs/install.php:257 libs/install.php:258
+#: libs/install.php:228 libs/install.php:229
 msgid "Parent Tag"
 msgstr "Pagina genitore"
 
-#: libs/install.php:259
+#: libs/install.php:230
 msgid "Edit Tag"
 msgstr "Modifica tag"
 
-#: libs/install.php:260
+#: libs/install.php:231
 msgid "Update Tag"
 msgstr "Aggiorna tag"
 
-#: libs/install.php:262
+#: libs/install.php:233
 msgid "New Tag Name"
 msgstr "Nuovo nome tag"
 
@@ -671,7 +680,9 @@ msgid "Extra Settings"
 msgstr "Impostazioni extra"
 
 #: setting.php:26
-msgid "Grid/Gallery Layout Settings"
+#, fuzzy
+#| msgid "Grid/Gallery Layout Settings"
+msgid "Grid/Gallery template settings"
 msgstr "Impostazioni layout griglia / galleria"
 
 #: setting.php:34
@@ -679,7 +690,9 @@ msgid "Submission form Settings"
 msgstr "Impostazioni del modulo di invio"
 
 #: setting.php:43
-msgid "Media/Preview Layout Settings"
+#, fuzzy
+#| msgid "Media/Preview Layout Settings"
+msgid "Media/Preview Template Settings"
 msgstr "Impostazioni layout media / anteprima"
 
 #: setting.php:60
@@ -702,7 +715,7 @@ msgstr "Impostazioni del profilo social"
 msgid "Member Profile Tab"
 msgstr "Scheda Profilo membro"
 
-#: setting.php:116 setting.php:683
+#: setting.php:116 setting.php:667
 msgid "Media Settings"
 msgstr "Impostazioni multimediali"
 
@@ -710,31 +723,31 @@ msgstr "Impostazioni multimediali"
 msgid "Images sizes & Settings"
 msgstr "Dimensioni e impostazioni delle immagini"
 
-#: setting.php:265
+#: setting.php:252
 msgid "UPG Media Settings"
 msgstr "Layout non trovato. Controllare le impostazioni UPG"
 
-#: setting.php:395
+#: setting.php:383
 msgid "Display Image Upload Button: "
 msgstr "Carica imagine "
 
-#: setting.php:405
+#: setting.php:393
 msgid "Display Embed URL Button: "
 msgstr "Visualizza pulsante URL incorporamento: "
 
-#: setting.php:671 wp-upg.php:709 wp-upg.php:827
+#: setting.php:655 wp-upg.php:665 wp-upg.php:774
 msgid "Advance Settings"
 msgstr "Impostazioni avanzate"
 
-#: setting.php:677
+#: setting.php:661
 msgid "Common Settings"
 msgstr "Impostazioni comuni"
 
-#: setting.php:680
+#: setting.php:664
 msgid "Form Fields"
 msgstr "I campi del modulo"
 
-#: setting.php:682
+#: setting.php:666
 msgid "Social Profile"
 msgstr "Profilo social"
 
@@ -814,21 +827,28 @@ msgstr "Seleziona il layout del modulo"
 msgid "Select preview layout"
 msgstr "Seleziona il layout di anteprima"
 
-#: wp-upg.php:708
+#: wp-upg.php:140
+msgid "Are you sure you want to delete?"
+msgstr ""
+
+#: wp-upg.php:664
 msgid "Quick Settings"
 msgstr "Impostazioni rapide"
 
-#: wp-upg.php:726
+#: wp-upg.php:681
 msgid "Version"
 msgstr "Versione"
 
-#: wp-upg.php:726
+#: wp-upg.php:681
 msgid "Documentation"
 msgstr "Aiuto"
 
-#: wp-upg.php:727
+#: wp-upg.php:682
 msgid "Rate the plugin"
 msgstr "Valuta il plug-in"
+
+#~ msgid "Preview Layout"
+#~ msgstr "Anteprima layout"
 
 #~ msgid "  Albums"
 #~ msgstr "Album"
@@ -1055,9 +1075,6 @@ msgstr "Valuta il plug-in"
 
 #~ msgid "Grid File"
 #~ msgstr "griglia dei file"
-
-#~ msgid "Preview File"
-#~ msgstr "Anteprima del file"
 
 #~ msgid "Pick File"
 #~ msgstr "Scegli file"
