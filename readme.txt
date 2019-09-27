@@ -9,7 +9,7 @@ Stable tag: trunk
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Visitor & admin can create gallery of images, videos, products, oEmbed urls into dynamic layouts.
+Visitors submitted images, video, woocommerce, embed, post gallery. Generate own core layouts. 
 
 == Description ==
 = UPG - User Post Gallery =

@@ -72,7 +72,7 @@ jQuery(document).ready(function($){
 	<ul>
 		
        
-	<li><a href="#tab-6"><?php echo "UPG Layouts";?></a></li>
+	
 		<li><a href="#tab-2"><?php echo "Grid File";?></a></li>
 		 <li><a href="#tab-1"><?php echo "Preview File";?></a></li>
 		<li><a href="#tab-3"><?php echo "Pick File";?></a></li>
@@ -584,140 +584,6 @@ for (var i=0, len=sz.length; i<len; i++) {
 	
 	
 	   </div>
-
-		 <div  id="tab-6" >
-
-		 <div class="upg_module upg_green">
-  <h2>Slide Layout <a href="https://odude.com/demo/faq/upg/theme-slide-layout/">Details</a></h2>
-  <div class="cnt">
-    <p>Slides/carousels horizontal post with [upg-list] shortcode.  
-	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/slide/screenshot.png" width="250px"> '; ?>  
-
-	<br>
-	<a href="https://odude.com/demo/wp-upg/slide-layout/" target="_blank" class="install-now button">Demo</a>
-  <a href="https://odude.com/demo/faq/upg/theme-slide-layout/" target="_blank" class="install-now button">Setup Docs</a>
-	</p>
-  </div>
-</div>
-
-
-		 <div class="upg_module upg_green">
-  <h2>Photo Layout <a href="http://odude.com/demo/faq/upg/theme-photo-layout/">Details</a></h2>
-  <div class="cnt">
-    <p>Best suited for photographers. Masonry grid view and preview page with uploaded picture auto extracted exif information.  
-	<br>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/photo/screenshot.png" width="250px"> '; ?>  
-
-	<br>
-	<a href="https://odude.com/demo/photo/users-post-gallery/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/theme-photo-layout/" target="_blank" class="install-now button">Setup Docs</a>
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_green">
-  <h2>Shop Layout <a href="http://odude.com/demo/faq/upg/shop-layout/">Details</a></h2>
-  <div class="cnt">
-    <p>UPG can be customized for the product catalog and can be used as a framework of ecommerce site.  
-	 
-	<br>
-
-  <a href="http://odude.com/demo/shop/users-post-gallery/" target="_blank" class="install-now button">Demo</a>
-	<a href="http://odude.com/demo/faq/upg/shop-layout/" target="_blank" class="install-now button">Setup Guide</a>
-	
-	<a href="https://odude.com/update/wordpress/upg_shop_184.zip" class="install-now button">Download Shop Layout</a>
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_green">
-  <h2>FAQ Layout <a href="http://odude.com/demo/faq/upg/theme-faq-layout/">Details</a></h2>
-  <div class="cnt">
-    <p>
-	
-  
-	<br>UPG Post contents with tabular format.
-	<br>
-	<a href="http://odude.com/demo/faq/users-post-gallery/gallery/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/theme-faq-layout/" target="_blank" class="install-now button">Setup Guide</a>
-	<a href="https://odude.com/update/wordpress/upg_faq_184.zip" class="install-now button">Download FAQ Layout</a>
-
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_green">
-  <h2>Basic Layout <a href="http://odude.com/demo/faq/upg/basic-layout-for-gallery/">Details</a></h2>
-  <?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/basic/screenshot.png" width="250px"> '; ?>
-	<br>
-	<div class="cnt">
-    <p>UPG Post with basic grid layout.
-	<br>
- 
-	<a href="https://odude.com/demo/wp-upg/sample-page/basic-layout/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/basic-layout-for-gallery/" target="_blank" class="install-now button">Setup Guide</a>
-	</p>
-  </div>
-</div>
-
-
-<div class="upg_module upg_green">
-  <h2>Flat Layout <a href="http://odude.com/demo/faq/upg/theme-flat-layout/">Details</a></h2>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/flat/screenshot.png" width="250px"> '; ?>
-	<br>
-  <div class="cnt">
-    <p>UPG Post withtout title. Shows title on hover of image.
-	<br>
- 
-	<a href="https://odude.com/demo/wp-upg/sample-page/flat-layout/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/theme-flat-layout/" target="_blank" class="install-now button">Setup Guide</a>
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_green">
-  <h2>List Layout <a href="http://odude.com/demo/faq/upg/theme-list-layout/">Details</a></h2>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/grid/list/screenshot.png" width="250px"> '; ?>
-	<br>
-  <div class="cnt">
-    <p>UPG Post with title and short description.
-	<br>
- 
-	<a href="https://odude.com/demo/wp-upg/sample-page/list-layout/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/theme-list-layout/" target="_blank" class="install-now button">Setup Guide</a>
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_blue">
-  <h2>Ecard Layout <a href="http://odude.com/demo/faq/upg/install-odude-ecard/">Details</a></h2>
-	<?php echo '<img src="'.upg_PLUGIN_URL.'/layout/media/ecard/screenshot.png" width="250px"> '; ?>
-	<br>
-  <div class="cnt">
-    <p>All UPG post can be converted into ecard system. Changing is media preview layout.
-	<br>
- 
-	<a href="https://odude.com/demo/ecard/users-post-gallery/" target="_blank" class="install-now button">Demo</a>
-  <a href="http://odude.com/demo/faq/upg/install-odude-ecard/" target="_blank" class="install-now button">Setup Guide</a>
-	</p>
-  </div>
-</div>
-
-<div class="upg_module upg_red">
-  <h2>Personal Layout <a href="http://odude.com/demo/faq/upg/personal-layout/">Details</a></h2>
-  <div class="cnt">
-    <p>This layout is designed by you at layout editor
-	<br>
- 
-
-  <a href="http://odude.com/demo/faq/upg/personal-layout/" target="_blank" class="install-now button">Setup Guide</a>
-	</p>
-  </div>
-</div>
-
-
-		 </div>
 	 
 	 	</div>
 	 </div>

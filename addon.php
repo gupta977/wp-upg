@@ -20,108 +20,181 @@ function upg_addon_page()
 
 
 
-        <li><a href="#tab-1"><?php echo __("UPG Plugins", "wp-upg"); ?></a></li>
-        <li><a href="#tab-2"><?php echo __("UPG Help", "wp-upg"); ?></a></li>
+        <li><a href="#tab-1">UPG <?php echo __("Addons", "wp-upg"); ?></a></li>
+        <li><a href="#tab-2">UPG <?php echo __("Help", "wp-upg"); ?></a></li>
       </ul>
       <div id="tab-1">
 
-        <div class="upg_module upg_red">
-          <h2> <?php _e('Breadcrumb', 'wp-upg'); ?> <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
-          <div class="cnt">
-            <p>You can include breadcrumb navigation bar above gallery using shortcode. <br>Use shortcode as [upg-breadcrumb] just above [upg-list] of main upg page.<br>It will will automatically appear above gallery.<br>
-              <br><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/breadcrumb.png"> '; ?>
 
-            </p>
-          </div>
-        </div>
-        <div class="upg_module upg_red">
-          <h2> <?php _e('Search', 'wp-upg'); ?> <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
-          <div class="cnt">
-            <p>You can include search bar above gallery using shortcode. <br>Use shortcode as [upg-search] at widgets or anywhere.<br>It will serach and search bar will automatically appear above gallery.<br>
-              <br><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/search.png"> '; ?>
-            </p>
-          </div>
-        </div>
+        <link href="<?php echo plugins_url() . '/' . upg_FOLDER . '/css/datatables.min.css'; ?>" rel="stylesheet" type="text/css">
+        <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js'; ?>"></script>
+        <style>
+          .upg_hover-zoom {
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+          }
 
-        <div class="upg_module upg_green">
-          <h2>Popup Form Button <a href="<?php echo admin_url("plugin-install.php?tab=plugin-information&plugin=listpress"); ?>">ListPress</a></h2>
-          <div class="cnt">
-            <p>Dynamically place popup form button at preview page. <br>It can be used for several proposes. Eg. Report Spam, Make Inquiry, Send Feedback buttons.<br>
-              It also has option to send message to post's author.
-              <br>
-              <br>
-              <a href="https://wordpress.org/plugins/listpress/" target="_blank" class="install-now button">View Details</a>
-            </p>
-          </div>
-        </div>
+          .upg_hover-zoom:hover {
+            -moz-transform: scale(3.5);
+            -webkit-transform: scale(3.5);
+            transform: scale(3.5);
+            border: 0;
+          }
+        </style>
+        <script>
+          jQuery(document).ready(function() {
+            jQuery('#table_id').DataTable({
+              "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+              }],
+            });
+          });
+        </script>
+        <table id="table_id" class="display">
+          <thead>
+            <tr>
+
+              <th><?php echo __('Title', 'wp-upg'); ?></th>
+              <th class="no-sort"><?php echo __('Description', 'wp-upg'); ?></th>
+              <th>Type</th>
+              <th class="no-sort">Links</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Filter Layout</td>
+              <td>Data Table based on UPG post. Ability to show custom fields.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/filter-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/filter/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Classic Layout</td>
+              <td>Responsive 3 column gallery with custom fields.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/classic-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/classic/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Slide Layout</td>
+              <td>Slides/carousels horizontal post with [upg-list] shortcode.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/slide-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/slide/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Photo Layout</td>
+              <td>Best suited for photographers.<br>Masonry grid view and preview page with uploaded picture auto extracted exif information.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/gallery/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/photo/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
 
-        <div class="upg_module upg_red">
-          <h2>Page Redirect <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
-          <div class="cnt">
-            <p>Page can be redirect to the desired page after the form is submitted by user.
-              <br> <br>
-              <?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/redirect.png" width="500"> '; ?>
+            <tr>
+              <td>Basic Layout</td>
+              <td>UPG Post with basic grid layout.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/basic-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/basic/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
-            </p>
-          </div>
-        </div>
+            <tr>
+              <td>Flat Layout</td>
+              <td>UPG Post without title. Shows title on hover of image.</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/flat-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/flat/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
-        <div class="upg_module upg_red">
-          <h2> Bulk Image Post <a href="http://odude.com/product/wp-upg-pro/">UPG PRO </a></h2>
-          <div class="cnt">
-            <p>Multiple images can be submitted at same time from the front end. <br> It can also restrict number of images to be uploaded at once.
-              <br> <br>
-              <br>
-              <a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a>
-            </p>
-          </div>
-        </div>
+            <tr>
+              <td>List Layout</td>
+              <td>UPG Post with title and short description. Options to display custom fields</td>
+              <td>Gallery Template</td>
+              <td><a href="https://odude.com/demo/albums/list-layout/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/list/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
-        <div class="upg_module upg_blue">
-          <h2>UPG Album List <a href="<?php echo admin_url("widgets.php"); ?>">Widgets Installed </a></h2>
-          <div class="cnt">
-            <p>This will list Album/categories of UPG (User Post Gallery).<br>
-              The album marked hidden will not be listed.
-              <br> <br>
-            </p>
-          </div>
-        </div>
+            <tr>
+              <td>Ecard Layout - Preview</td>
+              <td>All UPG post can be converted into ecard system. Requires UPG Ecard Plugin.</td>
+              <td>Preview Template</td>
+              <td><a href="https://odude.com/demo/ecard/users-post-gallery/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/media/ecard/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
-        <div class="upg_module upg_green">
-          <h2>Page Navigation <a href="<?php echo admin_url("plugin-install.php?tab=plugin-information&plugin=wp-pagenavi"); ?>">WP-PageNavi</a></h2>
-          <div class="cnt">
-            <p>Page navigation for Image, Youtube, Vimeo, Post Gallery. It is displayed if the number of images per-page is exceeded.
-              <br> <br>
-              <?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/pagenavi.png" width="500"> '; ?>
-              <br>
-              <a href="<?php echo "https://wordpress.org/plugins/wp-pagenavi/"; ?>" target="_blank" class="install-now button">View Details</a></p>
-          </div>
-        </div>
-        <hr>
-        <div class="upg_module upg_red">
-          <h2>Captcha security <a href="http://odude.com/product/wp-upg-pro/">UPG PRO</a></h2>
-          <div class="cnt">
-            <p>
+            <tr>
+              <td>Personal Layout</td>
+              <td>This layout is designed by you at layout editor</td>
+              <td>All Template</td>
+              <td><a href="http://odude.com/demo/faq/upg/personal-layout/" class="install-now button">More Info</a></td>
+            </tr>
 
-              Captcha: <b>Google reCaptcha V2 </b> so that spammers need to pass security check before posting images & Videos to wp-upg plugins.
-              <br> <br>
-              <?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/captcha.png" > '; ?>
-              <br><br>
-              <a href="http://odude.com/product/wp-upg-pro/" target="_blank" class="install-now button">View Details</a></p>
-          </div>
-        </div>
-        <hr>
-        <div class="upg_module upg_red">
-          <h2>Email notification <a href="http://odude.com/product/wp-upg-pro/">UPG PRO</a></h2>
-          <div class="cnt">
-            <p>
-              Enables Email notification when content,image,youtube,vimeo video is uploaded
+            <tr>
+              <td>Breadcrumb Navigation</td>
+              <td>You can include breadcrumb navigation bar above gallery using shortcode. <br>Use shortcode as [upg-breadcrumb] just above [upg-list] of main upg page.<br>It will will automatically appear above gallery.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/" class="install-now button"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/breadcrumb.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
 
-              <br>
-              <?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/email_notify.png" > '; ?>
-          </div>
-        </div>
+            <tr>
+              <td>Search UPG</td>
+              <td>You can include search bar above gallery using shortcode. <br>Use shortcode as [upg-search] at widgets or anywhere.<br>It will search and search bar will automatically appear above gallery.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/search.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Popup Form Button</td>
+              <td>Dynamically place popup form button at preview page. <br>It can be used for several proposes. Eg. Report Spam, Make Inquiry, Send Feedback buttons.<br>
+                It also has option to send message to post's author.</td>
+              <td>ListPress Plugin</td>
+              <td><a href="https://wordpress.org/plugins/listpress/" class="install-now button">View Details</a></td>
+            </tr>
+
+            <tr>
+              <td>Page Redirect</td>
+              <td>Page can be redirect to the desired page after the form is submitted by user.<br>Works only if ajax is turned off.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/redirect.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Bulk Image Post</td>
+              <td>Multiple images can be submitted at same time from the front end. <br> It can also restrict number of images to be uploaded at once.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/" class="install-now button">Buy Now</a></td>
+            </tr>
+
+            <tr>
+              <td>Album List Widgets</td>
+              <td>This will list Album/categories of UPG (User Post Gallery).<br>
+                The album marked hidden will not be listed.</td>
+              <td>Inbuilt</td>
+              <td><a href="<?php echo admin_url("widgets.php"); ?>" class="install-now button">Widgets Installed</a></td>
+            </tr>
+
+            <tr>
+              <td>Page Navigation</td>
+              <td>Page navigation for [upg-list]. It is displayed, if the number of images per-page is exceeded.</td>
+              <td>WP-PageNavi Plugin</td>
+              <td><a href="https://wordpress.org/plugins/wp-pagenavi/" class="install-now button"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/pagenavi.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Captcha security</td>
+              <td> Captcha: <b>Google reCaptcha V2 </b> so that spammers need to pass security check before form submission.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/captcha.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+            <tr>
+              <td>Email notification</td>
+              <td>Email notification when new upg post is submitted by visitors.</td>
+              <td>UPG-PRO</td>
+              <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/email_notify.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+
+          </tbody>
+        </table>
 
 
       </div>
