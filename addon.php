@@ -88,7 +88,7 @@ function upg_addon_page()
             <tr>
               <td>Photo Layout</td>
               <td>Best suited for photographers.<br>Masonry grid view and preview page with uploaded picture auto extracted exif information.</td>
-              <td>Gallery Template</td>
+              <td>Gallery/Preview Template</td>
               <td><a href="https://odude.com/demo/albums/gallery/"><?php echo '<img src="' . upg_PLUGIN_URL . '/layout/grid/photo/screenshot.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
             </tr>
 
@@ -142,13 +142,7 @@ function upg_addon_page()
               <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/search.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
             </tr>
 
-            <tr>
-              <td>Popup Form Button</td>
-              <td>Dynamically place popup form button at preview page. <br>It can be used for several proposes. Eg. Report Spam, Make Inquiry, Send Feedback buttons.<br>
-                It also has option to send message to post's author.</td>
-              <td>ListPress Plugin</td>
-              <td><a href="https://wordpress.org/plugins/listpress/" class="install-now button">View Details</a></td>
-            </tr>
+
 
             <tr>
               <td>Page Redirect</td>
@@ -172,12 +166,7 @@ function upg_addon_page()
               <td><a href="<?php echo admin_url("widgets.php"); ?>" class="install-now button">Widgets Installed</a></td>
             </tr>
 
-            <tr>
-              <td>Page Navigation</td>
-              <td>Page navigation for [upg-list]. It is displayed, if the number of images per-page is exceeded.</td>
-              <td>WP-PageNavi Plugin</td>
-              <td><a href="https://wordpress.org/plugins/wp-pagenavi/" class="install-now button"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/pagenavi.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
-            </tr>
+
 
             <tr>
               <td>Captcha security</td>
@@ -193,9 +182,46 @@ function upg_addon_page()
               <td><a href="http://odude.com/product/wp-upg-pro/"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/email_notify.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
             </tr>
 
+            <tr>
+              <td>BuddyPress</td>
+              <td>Displays tab on user profile page of BuddyPress plugin.<br>
+                User avatar displayed on preview layout.<br>
+                Link to login & profile page.</td>
+              <td>Plugin</td>
+              <td><a href="https://wordpress.org/plugins/buddypress/" class="install-now button">Check Details</a></td>
+            </tr>
+            <tr>
+              <td>Ultimate-Member</td>
+              <td>Displays tab on user profile page of BuddyPress plugin.<br>
+                Restrict form & galleries for specified members.<br>
+                User avatar displayed on preview layout.<br>
+                Link to login & profile page.</td>
+              <td>Plugin</td>
+              <td><a href="https://wordpress.org/plugins/ultimate-member/" class="install-now button">Check Details</a></td>
+            </tr>
+            <tr>
+              <td>Page Navigation</td>
+              <td>Page navigation for [upg-list]. It is displayed, if the number of images per-page is exceeded.</td>
+              <td>WP-PageNavi Plugin</td>
+              <td><a href="https://wordpress.org/plugins/wp-pagenavi/" class="install-now button"><?php echo '<img src="' . upg_PLUGIN_URL . '/images/extra/pagenavi.png" width="100px" class="upg_hover-zoom"> '; ?></a></td>
+            </tr>
+            <tr>
+              <td>Contact Button</td>
+              <td>Dynamically place popup form button at preview page. <br> Eg. Report Spam, Make Inquiry, Send Feedback buttons.<br>
+                It also has option to send message to post's author.</td>
+              <td>ListPress Plugin</td>
+              <td><a href="https://wordpress.org/plugins/listpress/" class="install-now button">Check Details</a></td>
+            </tr>
+            <tr>
+              <td>Regenerate Thumbnails</td>
+              <td>allows you to regenerate all thumbnail sizes for one or more images that have been uploaded.<br>Specially required if you change media sizes.</td>
+              <td>Plugin</td>
+              <td><a href="https://wordpress.org/plugins/regenerate-thumbnails/" class="install-now button">Check Details</a></td>
+            </tr>
           </tbody>
         </table>
-
+        <hr>
+        If you have designed your own UPG layout, functions, plugins which supports UPG. Mail me at navneet@odude.com. After review it will be listed here.
 
       </div>
       <div id="tab-2">

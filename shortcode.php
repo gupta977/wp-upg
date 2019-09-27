@@ -121,6 +121,7 @@ function upg_shortcode()
                         <li> <code>type="embed"</code> - It will display form to submit youtube, vimeo, facebook, dailymotion and other URL.</li>
                         <li> <code>layout</code> = "Form template name" - Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
                         <li> <code>preview</code> = "Preview template name " - When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
+                        <li> <code>button</code> = "on | off" - When off, post button is displayed only to user with editing rights.</li>
                     </ul>
                 </div>
             </div>

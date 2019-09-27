@@ -245,7 +245,13 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
-= 2.1 =
+= 2.02 = 
+* Removed 'photo form layout'
+* Re-arranged Addon UPG settings.
+* [upg-attach] new button parameters
+
+
+= 2.01 =
 * 'bulk update' UPG post 'preview layout'
 * 'Layout' is renamed as 'Template' in settings
 * Added 'filter layout' in Gallery Template
@@ -287,31 +293,6 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * Uploaded images are also assigned as featured image.
 * Removed auto generated title from preview page. It now used them default. 
 * Media is also deleted permanently if deleted from frontend
-
-= 1.94 =
-* Video submission is changed to embed url
-* Supports instagram, vimeo, youtube, facebook, twitter and many more 
-* Tag will display, only if tags count more then one.
-* Colorbox popup is replaced with fancyapp javascript
-* Update issue in tags, has been fixed
-* At album, video is renamed to embed. Update album/categories if selected for video.
-* Added version information at plugin list
-
-= 1.93 =
-* Fixed video submit form layout
-* Fixed issues with tags javascript
-
-= 1.92 =
-* Added magic form layout, now you can use [upg-form] inside form layout
-* Layout out selection settings now as basic settings.
-* removed several unused codes
-
-= 1.91 =
-* Full of tags in form, gallery & preview pages.
-* updated [upg-form] to support woocommerce products
-
-= 1.90 =
-* [upg-form] shortcode is in action.
 
 == Upgrade Notice ==
 Backup your personal layout code before you upgrade. It may overwrite your layout with new one. If you got blank page, go to layout editor and choose layout to update automatically.
