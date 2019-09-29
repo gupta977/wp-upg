@@ -248,7 +248,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 = 2.02 = 
 * Removed 'photo form layout'
 * Re-arranged Addon UPG settings.
-* [upg-attach] new button parameters
+* [upg-attach] new parameters added
+* [upg-attach] 'layout' parameter renamed as 'form_layout'
+* [upg-attach] assign 'gallery_layout'
+* [upg-attach] assign 'popup'
+* [upg-attach] Option to hide from [upg-list]
 
 
 = 2.01 =

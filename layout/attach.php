@@ -13,10 +13,15 @@ if (is_single() || is_page()) {
 	if (isset($params['button'])) $show_button = $params['button'];
 
 
-	if (isset($params['layout']))
-		$form_layout  = $params['layout'];
+	if (isset($params['form_layout']))
+		$form_layout  = $params['form_layout'];
 	else
-		$form_layout = upg_get_option('global_form_layout', 'upg_form', 'basic');
+		$form_layout = upg_get_option('global_form_layout', 'upg_form', 'simple');
+
+	if (isset($params['popup']))
+		$popup  = $params['popup'];
+	else
+		$popup = upg_get_option('global_popup', 'upg_preview', 'on');
 
 
 	if (isset($params['preview']))
@@ -33,6 +38,11 @@ if (is_single() || is_page()) {
 		$list_name = $params['list_name'];
 	else
 		$list_name = "";
+
+	if (isset($params['private']) && $params['private'] == 'false')
+		$media_private = "false";
+	else
+		$media_private = "true";
 
 	$perrow = $options['global_perrow'];
 	if (isset($params['perrow']) && $params['perrow'] > 0) $perrow = $params['perrow'];
@@ -68,15 +78,24 @@ if (is_single() || is_page()) {
 	wp_reset_query();
 	//	echo get_the_ID();		
 	$put = "";
-	$layout = upg_get_option('global_layout', 'upg_gallery', 'photo');
+
+	if (isset($params['gallery_layout']))
+		$gallery_layout = $params['gallery_layout'];
+	else
+		$gallery_layout = upg_get_option('global_layout', 'upg_gallery', 'flat');
+
+
+
 	ob_start();
 
-	if (file_exists(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_config.php"))
-		include(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_config.php");
+	if (file_exists(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_config.php"))
+		include(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_config.php");
 
-	if ($layout == "personal") {
-		if (file_exists(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . get_current_blog_id() . "_" . $layout . "_up.php")) {
-			include(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . get_current_blog_id() . "_" . $layout . "_up.php");
+
+
+	if ($gallery_layout == "personal") {
+		if (file_exists(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . get_current_blog_id() . "_" . $gallery_layout . "_up.php")) {
+			include(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . get_current_blog_id() . "_" . $gallery_layout . "_up.php");
 		} else {
 			echo "Updating personal grid file. Refresh page.<br>";
 			//create this file
@@ -85,10 +104,10 @@ if (is_single() || is_page()) {
 			upg_auto_create_file('personal', 'grid', 'personal_pick');
 		}
 	} else {
-		if (file_exists(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_up.php"))
-			include(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_up.php");
+		if (file_exists(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_up.php"))
+			include(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_up.php");
 		else
-			echo __('Layout Not Found. Check settings.', 'wp-upg') . ": " . $layout;
+			echo __('Layout Not Found. Check settings.', 'wp-upg') . ": " . $gallery_layout;
 	}
 
 	//The main container loop area
@@ -110,9 +129,9 @@ if (is_single() || is_page()) {
 	</div>
 
 	<?php
-		if ($layout == "personal") {
-			if (file_exists(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . get_current_blog_id() . "_" . $layout . "_down.php")) {
-				include(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . get_current_blog_id() . "_" . $layout . "_down.php");
+		if ($gallery_layout == "personal") {
+			if (file_exists(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . get_current_blog_id() . "_" . $gallery_layout . "_down.php")) {
+				include(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . get_current_blog_id() . "_" . $gallery_layout . "_down.php");
 			} else {
 				upg_auto_create_file('personal', 'grid', 'personal_down');
 				upg_auto_create_file('personal', 'grid', 'personal_main');
@@ -120,14 +139,14 @@ if (is_single() || is_page()) {
 		} else {
 
 
-			if (file_exists(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_down.php"))
-				include(upg_BASE_DIR . "/layout/grid/" . $layout . "/" . $layout . "_down.php");
+			if (file_exists(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_down.php"))
+				include(upg_BASE_DIR . "/layout/grid/" . $gallery_layout . "/" . $gallery_layout . "_down.php");
 		}
 
 		//if condition not required as ajax in clicking on link as soon as page loaded
 		//if (  $query->max_num_pages > 1 )
-		echo "<div id='upg_load_more' style='text-align:center'><a id='load_more_link' class='upg_load_more pure-button pure-button-primary' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='false'>Load More</a></div>";
-		echo "<a id='load_more_reset' class='upg_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true'></a>";
+		echo "<div id='upg_load_more' style='text-align:center'><a id='load_more_link' class='upg_load_more pure-button pure-button-primary' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='false' gallery_layout='" . $gallery_layout . "' popup='" . $popup . "'>Load More</a></div>";
+		echo "<a id='load_more_reset' class='upg_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true' gallery_layout='" . $gallery_layout . "' popup='" . $popup . "'></a>";
 
 		?>
 	<script>
@@ -159,7 +178,7 @@ if (is_single() || is_page()) {
 
 
 	echo "<div id='upg_toggle_form' style='display: none;'>";
-	echo do_shortcode('[upg-post type="' . $type . '" layout="' . $form_layout . '" preview="' . $preview_layout . '" attach="true" ajax="true"] ');
+	echo do_shortcode('[upg-post type="' . $type . '" layout="' . $form_layout . '" preview="' . $preview_layout . '" private="' . $media_private . '" attach="true" ajax="true"] ');
 	echo "</div>";
 
 	$put = ob_get_clean();

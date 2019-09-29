@@ -1,0 +1,48 @@
+<li class="upg_list_cards__item upg_gallery_child" id="upg_<?php echo get_the_ID(); ?>" data-tags="<?php echo $tags; ?>">
+	<div class="upg_list_card">
+
+		<?php
+		if ($post_status == "draft")
+			$permalink = 0;
+
+
+		if ($permalink == "0") {
+			echo '<div class="upg_image_container"><img src="' . $image . '"> <div class="upg_image_centered">';
+			echo '<div class="upg_tooltip"><i class="fas fa-eye-slash fa-2x fa-border"></i><span class="upg_tooltiptext">' . __("Under review", "wp-upg") . '</span></div>';
+			echo '</div></div>';
+		} else {
+			if ($popup == "on") {
+
+				echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><div class="upg_list_card__image" style="background-image: url(' . $image . ');"></div></a>';
+			} else {
+				echo '<a href="' . $permalink . '" border="0"><div class="upg_list_card__image" style="background-image: url(' . $image . ');"></div></a>';
+			}
+		}
+
+		?>
+
+		<div class="upg_list_card__content">
+			<div class="upg_list_card__title"><?php echo $thetitle; ?></div>
+			<p class="upg_list_card__text">
+
+				<?php
+				//Display 5 custom fields loop
+				for ($x = 1; $x <= 5; $x++) {
+					if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+						if (upg_get_value('upg_custom_field_' . $x) != '') {
+							?>
+							<?php echo upg_get_filed_label('upg_custom_field_' . $x); ?> : <?php echo upg_get_value('upg_custom_field_' . $x); ?><br>
+
+				<?php
+						}
+					}
+				}
+
+				?>
+
+				<div style="width:240px"></div>
+			</p>
+			<?php echo upg_show_icon_grid(); ?>
+		</div>
+	</div>
+</li>

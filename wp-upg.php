@@ -420,6 +420,12 @@ function upg_admin_footer_hook()
 						else
 							$form_name = "";
 
+						if (isset($params['private']) && $params['private'] == 'true')
+							$media_private = "true";
+						else
+							$media_private = "false";
+
+
 						if (isset($params['attach']) && $params['attach'] == 'true' && $upg_ajax)
 							$form_attach_id = get_the_ID();
 						else

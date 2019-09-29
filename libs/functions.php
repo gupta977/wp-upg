@@ -874,6 +874,7 @@ function upg_ajax_post()
 			//Attach post id if the gallery is attached to specific post.
 			if (isset($_POST['form_attach'])) {
 				add_post_meta($post_id, 'form_attach', $_POST['form_attach']);
+				add_post_meta($post_id, 'media_private', $_POST['media_private']);
 				//$response['srv_attach']="Media attached to "+$_POST['form_attach'];
 			}
 
@@ -935,6 +936,7 @@ function upg_ajax_post()
 			//Attach post id if the gallery is attached to specific post.
 			if (isset($_POST['form_attach'])) {
 				add_post_meta($post_id, 'form_attach', $_POST['form_attach']);
+				add_post_meta($post_id, 'media_private', $_POST['media_private']);
 				//$response['srv_attach']="Media attached to "+$_POST['form_attach'];
 			}
 
