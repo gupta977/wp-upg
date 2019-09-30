@@ -512,8 +512,8 @@ msgid "Loading"
 msgstr "Wird geladen"
 
 #: libs/install.php:156
-msgid "User Post Gallery"
-msgstr "User Post Gallery"
+msgid "User Photo Gallery"
+msgstr "User Photo Gallery"
 
 #: libs/install.php:158
 msgid "Add "
@@ -1034,7 +1034,7 @@ msgstr "Betygsätt tillägget"
 #~ "Förhandsgranska bilden ovan<br><b>Ansra position</b>=Förhandsgranska "
 #~ "bilden nedan.<br>"
 
-#~ msgid "UPG - User Post Gallery"
+#~ msgid "UPG - User Photo Gallery"
 #~ msgstr "UPG- Användar-galleri"
 
 #~ msgid "Other's Plugin Shortcode"

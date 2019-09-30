@@ -119,9 +119,13 @@ function upg_shortcode()
                     <ul>
                         <li> <code>type="image"</code> - image is default type & it will display submission form for image only.</li>
                         <li> <code>type="embed"</code> - It will display form to submit youtube, vimeo, facebook, dailymotion and other URL.</li>
-                        <li> <code>layout</code> = "Form template name" - Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
+                        <li> <code>form_layout</code> = "Form template name" - Here layout is only used for submission form. <br>It will not have any affect on gallery layout. <br>You can find available layouts at 'layout editor'</li>
                         <li> <code>preview</code> = "Preview template name " - When form is submitted, it will assign a 'preview layout' to the post. <br>If not specified it will use default UPG settings. <br> If lightbox is enabled, the preview page is not required. <br>You can find available layouts at 'layout editor' </li>
                         <li> <code>button</code> = "on | off" - When off, post button is displayed only to user with editing rights.</li>
+                        <li> <code>gallery_layout</code> = "Gallery template name" - Each gallery can have their own type of layout.</li>
+                        <li> <code>popup</code> = "on | off" - The post when clicked will have a popup box instead going to another page.</li>
+                        <li><code>private</code>="on | off" - If 'on', the submitted post will not be visible at [upg-list]. Visible only in attached page/post.</li>
+
                     </ul>
                 </div>
             </div>

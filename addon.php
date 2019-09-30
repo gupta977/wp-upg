@@ -8,7 +8,7 @@ function upg_addon_page()
     <?php
       do_action("upg_admin_top_menu");
       ?>
-    <h2>UPG (User Post Gallery) Free & Premium Extensions</h2>
+    <h2>UPG (User Photo Gallery) Free & Premium Extensions</h2>
 
     <script>
       jQuery(document).ready(function($) {
@@ -160,7 +160,7 @@ function upg_addon_page()
 
             <tr>
               <td>Album List Widgets</td>
-              <td>This will list Album/categories of UPG (User Post Gallery).<br>
+              <td>This will list Album/categories of UPG (User Photo Gallery).<br>
                 The album marked hidden will not be listed.</td>
               <td>Inbuilt</td>
               <td><a href="<?php echo admin_url("widgets.php"); ?>" class="install-now button">Widgets Installed</a></td>

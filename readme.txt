@@ -1,4 +1,4 @@
-=== User Post Gallery - UPG ===
+=== User Photo Gallery - UPG ===
 Contributors: odude
 Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Visitors submitted images, video, woocommerce, embed, post gallery. Generate own core layouts. 
 
 == Description ==
-= UPG - User Post Gallery =
+= UPG - User Photo Gallery =
 
 UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
@@ -30,8 +30,8 @@ Power of <a href="https://odude.com/upg-user-post-gallery/upg-layouts/">layouts<
 == Gallery ==
 There are 2 types of UPG Gallery. 
 
-= 1. Embed Gallery =
-Embed gallery for WordPress post uses shortcode [upg-attach] into the content area where ever required.
+= 1. Attach Gallery =
+Attach gallery for WordPress post uses shortcode [upg-attach] into the content area where ever required.
 The image/video url posted on this post will not be visible on other places.
 It is full of ajax, hence no page refresh occurred during submission and page navigation.
 'Lazy Load more' button is available and images can be previewed in lightbox/popup 
@@ -40,9 +40,12 @@ Optimized for pre loading of images
 = 2. Primary Gallery =
 It is independent gallery. All the UPG post submitted on different post can be visible at [upg-list].
 It also works as the main page of UPG gallery.
-It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gallery/">shortcode</a> parameters to filter & change layouts.
+It has lots of shortcode parameters to filter & change layouts.
 
-== Submission Form [upg-post] ==
+== Gallery ==
+There are 2 types of Submission Form.
+
+= 1. [upg-post] Form =
 * Registered & visitors can post images/article/youtube video url from the front end.
 * Create own tags from frontend.
 * Ajax powered submission form. Form submitted on same place. No more form redirection. 
@@ -56,18 +59,18 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Options to display submission button only to logged in users.  
 * Separate album selection for images & embed video
 
-== Submission form [upg-form] & [upg-post] ==
-* With this shortcode user can submit content to wordpress post or other custom post types.
+= 2. [upg-form] Form =
+* With this shortcode user can submit content to wordpress post or other custom post types (CPC).
 * It can be used as frontend uploader for other plugins.
 * User can select existing album and generate own tags from frontend.
 * Special shortcode to generate html input fields.
 * Check <a href="https://odude.com/upg-user-post-gallery/upg-form/">this url</a> for detail explanation 
 
 
-== List Album [upg-album] ==
+== List Album/Categories [upg-album] ==
 * List album/folder/categories via shortcode & widgets
-* Album supports personal thumbnail
-* List album filtered by image & embed
+* Album supports own thumbnail
+* List album filtered by images & embed (youtube, vimeo, 30+ sources)
 * options to hide album from visitors
 
 == Admin Post Management ==
@@ -82,10 +85,9 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 * Own media sizes for thumbnail and preview page. 
 
 == User Post Management ==
-* Loggedin users can delete own uploaded post with ajax system.
+* Loggedin users can edit,delete own uploaded post with ajax system.
 * Unlike other plugins, it also deletes all the media file associated with it.
 * 'My Gallery' private page for loggedin users. 
-* User can edit & delete own post.
 * Notification via email when someone submits form. (UPG-PRO)
 
 == Display submitted post ==
@@ -117,7 +119,7 @@ It has lots of <a href="https://odude.com/demo/faq/upg/shortcode-to-display-gall
 
 = <a href="https://wordpress.org/plugins/listpress/">ListPress </a> Plugin =
 * Popup contact/query/feedback button can be placed on preview page
-* Image of UPG post is included in form.
+* Image thumbnail visible in form for users.
 
 = <a href="https://wordpress.org/plugins/odude-ecard/">ODude Ecard</a> Plugin =
 * Submitted post can be sent as ecard.
@@ -252,7 +254,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * [upg-attach] 'layout' parameter renamed as 'form_layout'
 * [upg-attach] assign 'gallery_layout'
 * [upg-attach] assign 'popup'
-* [upg-attach] Option to hide from [upg-list]
+* [upg-attach] Option 'private' to hide from [upg-list]
+* updated 'basic' preview/media layout
+* added new 'icon' gallery layout
+* added new 'pro' gallery layout
+* updated 'classic' gallery layout
 
 
 = 2.01 =

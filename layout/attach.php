@@ -145,6 +145,7 @@ if (is_single() || is_page()) {
 
 		//if condition not required as ajax in clicking on link as soon as page loaded
 		//if (  $query->max_num_pages > 1 )
+		echo "<div style='clear:both;'></div>";
 		echo "<div id='upg_load_more' style='text-align:center'><a id='load_more_link' class='upg_load_more pure-button pure-button-primary' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='false' gallery_layout='" . $gallery_layout . "' popup='" . $popup . "'>Load More</a></div>";
 		echo "<a id='load_more_reset' class='upg_load_more' style='margin:5px; font-size: 80%;' href='admin-ajax.php?action=upg_load_more' data-post_id='" . get_the_ID() . "' data-paged='" . $query->max_num_pages . "' data-reset='true' gallery_layout='" . $gallery_layout . "' popup='" . $popup . "'></a>";
 
@@ -177,7 +178,7 @@ if (is_single() || is_page()) {
 	}
 
 
-	echo "<div id='upg_toggle_form' style='display: none;'>";
+	echo "<div style='clear:both;'></div><div id='upg_toggle_form' style='display: none;'>";
 	echo do_shortcode('[upg-post type="' . $type . '" layout="' . $form_layout . '" preview="' . $preview_layout . '" private="' . $media_private . '" attach="true" ajax="true"] ');
 	echo "</div>";
 

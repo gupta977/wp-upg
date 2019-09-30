@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: User Post Gallery
+Plugin Name: User Photo Gallery
 Plugin URI: http://odude.com/
-Description: UPG - User Post Gallery. User can post content/images from frontend.
+Description: UPG - User Photo Gallery. User can post content/images from frontend.
 Version: 2.01
 Author: ODude Network
 Author URI: http://odude.com/

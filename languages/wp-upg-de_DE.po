@@ -522,7 +522,7 @@ msgid "Loading"
 msgstr "Wird geladen"
 
 #: libs/install.php:156
-msgid "User Post Gallery"
+msgid "User Photo Gallery"
 msgstr "Galerie Benutzerbeitrag"
 
 #: libs/install.php:158
@@ -975,7 +975,7 @@ msgstr "Plugin bewerten"
 #~ "Notizen<br><br><b>1. Stelle</b> = Direkt über dem Bild Vorschau<br><b>2. "
 #~ "Stelle</b>=Direkt unter der Bildvorschau.<br>"
 
-#~ msgid "UPG - User Post Gallery"
+#~ msgid "UPG - User Photo Gallery"
 #~ msgstr "UPG - Benutzerbeitragsgalerie"
 
 #~ msgid "Other's Plugin Shortcode"

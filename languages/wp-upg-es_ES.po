@@ -506,7 +506,7 @@ msgid "Loading"
 msgstr "Descargando"
 
 #: libs/install.php:156
-msgid "User Post Gallery"
+msgid "User Photo Gallery"
 msgstr ""
 
 #: libs/install.php:158

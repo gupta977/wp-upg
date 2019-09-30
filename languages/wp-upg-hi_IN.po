@@ -503,7 +503,7 @@ msgid "Loading"
 msgstr "लोड हो रहा है"
 
 #: libs/install.php:156
-msgid "User Post Gallery"
+msgid "User Photo Gallery"
 msgstr "यूजर पोस्ट गैलरी"
 
 #: libs/install.php:158

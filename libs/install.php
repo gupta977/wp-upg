@@ -153,7 +153,7 @@ function upg_post_types()
 		array(
 
 			'labels' => array(
-				'name' => __('User Post Gallery', 'wp-upg'),
+				'name' => __('User Photo Gallery', 'wp-upg'),
 				'singular_name' => 'UPG ' . __('Post', 'wp-upg'),
 				'add_new' => __('Add ' . $product, 'wp-upg'),
 				'add_new_item' => __('Add New ' . $product, 'wp-upg'),
