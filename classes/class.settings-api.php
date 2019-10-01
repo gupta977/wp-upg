@@ -437,8 +437,7 @@ class upg_admin_Settings_API {
         echo $html;
     }
 
-
-    /**
+     /**
      * Displays a radio select for layouts
      * @param array   $args settings field args
      */

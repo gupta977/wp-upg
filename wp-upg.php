@@ -170,47 +170,6 @@ function upg_admin_enqueue_scripts()
 	wp_enqueue_style('upg-admin', plugins_url() . '/' . upg_FOLDER . '/css/admin.css');
 }
 
-//Save data typed in post type
-function upg_save_meta_data($post_id, $post)
-{
-
-
-	if (!isset($_POST['nonce_name'])) //make sure our custom value is being sent
-		return;
-	if (!wp_verify_nonce($_POST['nonce_name'], 'nonce_action')) //verify intent
-		return;
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) //no auto saving
-		return;
-	if (!current_user_can('edit_post', $post_id)) //verify permissions
-		return;
-	//session_start();
-
-
-	if ($_POST['meta-box-media'] != "pic_name") {
-		$new_value = array_map('intval', $_POST['meta-box-media']); //sanitize
-
-
-		foreach ($new_value as $k => $v) {
-
-			if ($v != '0')
-				update_post_meta($post_id, $k, $v); //save
-			//$_SESSION["favcolor"] .= "green_".$v."<hr>";
-		}
-	}
-
-	update_post_meta($post->ID, "upg_layout", $_POST["upg_layout"]);
-	update_post_meta($post->ID, "youtube_url", sanitize_text_field($_POST["youtube_url"]));
-
-
-
-	for ($x = 1; $x <= 5; $x++) {
-		if (isset($_POST["upg_custom_field_" . $x])) {
-			update_post_meta($post->ID, "upg_custom_field_" . $x, sanitize_text_field($_POST["upg_custom_field_" . $x]));
-		} else {
-			update_post_meta($post->ID, "upg_custom_field_" . $x, '');
-		}
-	}
-}
 
 //Move image meta box-media
 function upg_admin_footer_hook()
@@ -438,34 +397,6 @@ function upg_admin_footer_hook()
 							$abc = include(upg_BASE_DIR . 'layout/form/post_image.php');
 
 						return $abc;
-					}
-
-
-
-					//Detail Layout List
-					function upg_meta_box_layout()
-					{
-						global $post;
-						$all_upg_fields = get_post_custom($post->ID);
-						if (isset($all_upg_fields["upg_layout"][0]))
-							$upg_layout = $all_upg_fields["upg_layout"][0];
-						else
-							$upg_layout = "basic";
-
-						$dir    = upg_BASE_DIR . 'layout/media/';
-						$filelist = "";
-						$files = array_map("htmlspecialchars", scandir($dir));
-
-						foreach ($files as $file) {
-							if ($upg_layout == $file)
-								$checked = 'checked=checked';
-							else
-								$checked = "";
-
-							if (!strpos($file, '.') && $file != "." && $file != "..")
-								$filelist .= sprintf('<input type="radio" ' . $checked . ' name="upg_layout" value="%s"/>%s layout<br>' . PHP_EOL, $file, $file);
-						}
-						echo $filelist;
 					}
 
 
@@ -994,4 +925,30 @@ add_action('pre_get_posts', function ($q) {
 		});
 	}
 });
+
+//Display shortcode or content mentioned at UPG settings after content
+function upg_display_after_content($content)
+{
+	global $post;
+	$all_upg_fields = get_post_custom($post->ID);
+
+	//Skip if in content , UPG settings is 'After Content' set to hide
+	if (isset($all_upg_fields["upg_hide_after_content"][0]) && $all_upg_fields["upg_hide_after_content"][0] == "hide")
+		return $content;
+
+
+	$selected = upg_get_option('after_content_post', 'upg_general', '');
+	//var_dump($selected);
+	//echo get_post_type();
+	if (is_single() || is_page() || !is_main_query() || !in_the_loop()) {
+		if (in_array(get_post_type(), $selected, TRUE)) {
+
+			$after_content = upg_get_option('after_content', 'upg_general', '');
+			$content .= do_shortcode(stripslashes($after_content));
+		}
+	}
+	return $content;
+	//return $selected;
+}
+add_filter("the_content", "upg_display_after_content");
 ?>

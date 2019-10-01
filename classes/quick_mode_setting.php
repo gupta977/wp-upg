@@ -74,6 +74,25 @@ if (!class_exists('upg_quick_setting')) :
          */
         public function get_settings_fields()
         {
+            function custom_post_list()
+            {
+                $args_q = array(
+                    'public'   => true,
+                    '_builtin' => false,
+                    'publicly_queryable' => true
+                );
+
+                $output = 'names'; // names or objects, note names is the default
+                $operator = 'and'; // 'and' or 'or'
+
+                $post_types = get_post_types($args_q, $output, $operator);
+                $a = array('post' => 'post');
+                $b = array('page' => 'page');
+                $post_types = array_merge($post_types, $a);
+                $post_types = array_merge($post_types, $b);
+
+                return $post_types;
+            }
             $settings_fields = array(
                 'upg_general' => array(
 
@@ -82,8 +101,23 @@ if (!class_exists('upg_quick_setting')) :
                         'label'   => __('Select Login page', 'wp-upg'),
                         'desc'    => __('Login page where user enters username & passwords.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('my_login', 'upg_settings', '0'),
-                    )
+                        'default' => upg_get_option('my_login', 'upg_general', '0'),
+                    ),
+                    array(
+                        'name'    => 'after_content',
+                        'label'   => __('After Content Shortcode', 'wp-upg'),
+                        'desc'    => __('Shortcode to display on all custom post. You can hide from specific post by editing.', 'wp-upg'),
+                        'type'    => 'textarea',
+                        'default' => upg_get_option('after_content', 'upg_general', '[upg-attach button="off" form_layout="simple" gallery_layout="photo" popup="on"]'),
+                    ),
+                    array(
+                        'name'    => 'after_content_post',
+                        'label'   => __('Display "After Content" at', 'wp-upg'),
+                        'desc'    => __('Select where you like to show shortcode mentioned in "After Content".', 'wp-upg'),
+                        'type'    => 'multicheck',
+                        'default' => upg_get_option('after_content_post', 'upg_general', ''),
+                        'options' => custom_post_list(),
+                    ),
 
                 ),
                 'upg_gallery' => array(
@@ -92,21 +126,21 @@ if (!class_exists('upg_quick_setting')) :
                         'label'   => 'UPG ' . __('main page', 'wp-upg'),
                         'desc'    => __('Page cannot be static front page and it must include <code>[upg-list]</code> shortcode.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('main_page', 'upg_settings', '0'),
+                        'default' => upg_get_option('main_page', 'upg_gallery', '0'),
                     ),
                     array(
                         'name'    => 'my_gallery',
                         'label'   => __('Members "My Gallery" page', 'wp-upg'),
                         'desc'    => __('Page must contain <code>[upg-list user="show_mine"]</code> shortcode.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('my_gallery', 'upg_settings', '0'),
+                        'default' => upg_get_option('my_gallery', 'upg_gallery', '0'),
                     ),
                     array(
                         'name'  => 'gallery_tags',
                         'label' => __('Gallery Tags', 'wp-upg'),
                         'desc'  => __('Shows tags above the gallery, if few tag presets. <code>[upg-list tag_show="on"]</code>', 'wp-upg'),
                         'type'  => 'checkbox',
-                        'default' => upg_get_option('gallery_tags', 'upg_settings', 'off'),
+                        'default' => upg_get_option('gallery_tags', 'upg_gallery', 'off'),
                     ),
                     array(
                         'name'    => 'global_layout',
@@ -131,28 +165,28 @@ if (!class_exists('upg_quick_setting')) :
                         'label' => __('Auto approve post', 'wp-upg'),
                         'desc'  => __('Automatically publish Post as soon as user submit.', 'wp-upg'),
                         'type'  => 'checkbox',
-                        'default' => upg_get_option('publish', 'upg_settings', 'on'),
+                        'default' => upg_get_option('publish', 'upg_form', 'on'),
                     ),
                     array(
                         'name'    => 'post_image_page',
                         'label'   => __('Select image submission form', 'wp-upg'),
                         'desc'    => __('Page must contain <code>[upg-post type="image"]</code> or full <code>[upg-form]<code> shortcode.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('post_image_page', 'upg_settings', '0'),
+                        'default' => upg_get_option('post_image_page', 'upg_form', '0'),
                     ),
                     array(
                         'name'    => 'post_youtube_page',
                         'label'   => __('Select embed,url submission form', 'wp-upg'),
                         'desc'    => __('Page must contain <code>[upg-post type="embed"]</code> or full <code>[upg-form]</code> shortcode.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('post_youtube_page', 'upg_settings', '0'),
+                        'default' => upg_get_option('post_youtube_page', 'upg_form', '0'),
                     ),
                     array(
                         'name'    => 'edit_upg_page',
                         'label'   => __('Submission form Edit/Modify page', 'wp-upg'),
                         'desc'    => __('Page must contain <code>[upg-edit]</code> shortcode.', 'wp-upg'),
                         'type'    => 'pages',
-                        'default' => upg_get_option('edit_upg_page', 'upg_settings', '0'),
+                        'default' => upg_get_option('edit_upg_page', 'upg_form', '0'),
                     ),
 
                     array(

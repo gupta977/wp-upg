@@ -3,13 +3,14 @@
 function upg_meta_boxes()
 {
 	$prefix = 'upg_';
-
+	$post_type_selected = upg_get_option('after_content_post', 'upg_general', '');
 	$meta_boxes = array(
-		'post_img' => array('id' => $prefix . 'image', 'title' => __('Main media file', 'wp-upg'), 'callback' => 'upg_meta_box_image', 'position' => 'advanced', 'priority' => 'high'),
+		'post_img' => array('id' => $prefix . 'image', 'title' => __('UPG Main media file', 'wp-upg'), 'callback' => 'upg_meta_box_image', 'screen' => 'upg', 'position' => 'advanced', 'priority' => 'high'),
 
-		'upg-layout' => array('title' => __('Preview template', "wp-upg"), 'callback' => 'upg_meta_box_layout', 'position' => 'side', 'priority' => 'core'),
+		'upg-layout' => array('title' => __('UPG Preview template', "wp-upg"), 'callback' => 'upg_meta_box_layout', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
 
-		'upg-extra-fields' => array('title' => __('Extra Form Fields', "wp-upg"), 'callback' => 'upg_meta_box_extra_field', 'position' => 'side', 'priority' => 'core'),
+		'upg-extra-fields' => array('title' => __('UPG Extra Form Fields', "wp-upg"), 'callback' => 'upg_meta_box_extra_field', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
+		'upg-settings' => array('title' => __('UPG Settings', "wp-upg"), 'callback' => 'upg_meta_box_settings', 'screen' => $post_type_selected, 'position' => 'side', 'priority' => 'core'),
 	);
 
 
@@ -18,10 +19,56 @@ function upg_meta_boxes()
 	$meta_boxes = apply_filters("upg_meta_box", $meta_boxes);
 	foreach ($meta_boxes as $id => $meta_box) {
 		extract($meta_box);
-		add_meta_box($id, $title, $callback, 'upg', $position, $priority);
+		add_meta_box($id, $title, $callback, $screen, $position, $priority);
 	}
 }
 
+//Options to remove after content
+function upg_meta_box_settings($post)
+{
+	global $post;
+	$all_upg_fields = get_post_custom($post->ID);
+
+	if (isset($all_upg_fields["upg_hide_after_content"][0]))
+		$upg_hide_after_content = "hide";
+	else
+		$upg_hide_after_content = "";
+
+	if ($upg_hide_after_content == 'hide')
+		$checked = 'checked=checked';
+	else
+		$checked = "";
+	wp_nonce_field('nonce_action', 'nonce_name');
+	$html = __('Remove "After content" for this post.', 'wp-upg');
+	$html .= '<p>Yes: <input type="checkbox" name="upg_hide_after_content" ' . $checked . ' value="hide" >';
+	echo $html;
+}
+
+//Detail Layout List
+function upg_meta_box_layout()
+{
+	global $post;
+	$all_upg_fields = get_post_custom($post->ID);
+	if (isset($all_upg_fields["upg_layout"][0]))
+		$upg_layout = $all_upg_fields["upg_layout"][0];
+	else
+		$upg_layout = "basic";
+
+	$dir    = upg_BASE_DIR . 'layout/media/';
+	$filelist = "";
+	$files = array_map("htmlspecialchars", scandir($dir));
+
+	foreach ($files as $file) {
+		if ($upg_layout == $file)
+			$checked = 'checked=checked';
+		else
+			$checked = "";
+
+		if (!strpos($file, '.') && $file != "." && $file != "..")
+			$filelist .= sprintf('<input type="radio" ' . $checked . ' name="upg_layout" value="%s"/>%s layout<br>' . PHP_EOL, $file, $file);
+	}
+	echo $filelist;
+}
 function upg_meta_box_extra_field($post)
 {
 	$all_upg_extra = get_post_custom($post->ID);
@@ -39,7 +86,7 @@ function upg_meta_box_extra_field($post)
 				?>
 				<?php echo $options['upg_custom_field_' . $x]; ?>:
 				<input type="checkbox" name="upg_custom_field_<?php echo $x; ?>" value="<?php echo 'upg_custom_field_' . $x . '_checked'; ?>" <?php if (!empty($upg_custom_field[$x]) && $upg_custom_field[$x] == $upg_custom_field[$x])
-																																								echo 'checked';	?>>
+																																									echo 'checked';	?>>
 				<hr>
 			<?php
 						} else {
@@ -49,6 +96,49 @@ function upg_meta_box_extra_field($post)
 
 	<?php
 				}
+			}
+		}
+	}
+
+	//Save data typed in post type
+	function upg_save_meta_data($post_id, $post)
+	{
+
+
+		if (!isset($_POST['nonce_name'])) //make sure our custom value is being sent
+			return;
+		if (!wp_verify_nonce($_POST['nonce_name'], 'nonce_action')) //verify intent
+			return;
+		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) //no auto saving
+			return;
+		if (!current_user_can('edit_post', $post_id)) //verify permissions
+			return;
+		//session_start();
+
+
+		if ($_POST['meta-box-media'] != "pic_name") {
+			$new_value = array_map('intval', $_POST['meta-box-media']); //sanitize
+
+
+			foreach ($new_value as $k => $v) {
+
+				if ($v != '0')
+					update_post_meta($post_id, $k, $v); //save
+				//$_SESSION["favcolor"] .= "green_".$v."<hr>";
+			}
+		}
+
+		update_post_meta($post->ID, "upg_layout", $_POST["upg_layout"]);
+		update_post_meta($post->ID, "youtube_url", sanitize_text_field($_POST["youtube_url"]));
+		if (isset($_POST["upg_hide_after_content"]))
+			update_post_meta($post->ID, "upg_hide_after_content", $_POST["upg_hide_after_content"]);
+
+
+		for ($x = 1; $x <= 5; $x++) {
+			if (isset($_POST["upg_custom_field_" . $x])) {
+				update_post_meta($post->ID, "upg_custom_field_" . $x, sanitize_text_field($_POST["upg_custom_field_" . $x]));
+			} else {
+				update_post_meta($post->ID, "upg_custom_field_" . $x, '');
 			}
 		}
 	}

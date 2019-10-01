@@ -14,7 +14,6 @@ add_shortcode("upg-album", "upg_album");
 //Shortocde for magic form
 add_shortcode("upg-form", "upg_magic_form");
 add_shortcode("upg-form-tag", "upg_magic_form_tag");
-
 add_shortcode("upg-post", "upg_user_post_form");
 add_shortcode("upg-edit", "upg_user_edit_form");
 add_shortcode("upg-video", "upg_showyoutube");
@@ -27,6 +26,7 @@ if (is_admin()) {
 
 	//wp_enqueue_script('post_img', upg_PLUGIN_URL.'/js/post_img.js');
 	add_action('admin_init', 'upg_meta_boxes', 0);
+	//Update values in meta box
 	add_action('save_post', 'upg_save_meta_data', 10, 2);
 	add_action('admin_menu', 'upg_add_admin_menu');
 	add_action('plugins_loaded', array('upg_FormEntries', 'init'));

@@ -1687,7 +1687,19 @@ function upg_get_listings_count_by_category($term_id, $pad_counts = true)
 				'terms'            => $term_id,
 				'include_children' => $pad_counts
 			)
-		)
+		),
+		'meta_query'     => array(
+			'relation' => 'OR',
+			array(
+				'key'     => 'media_private',
+				'value'   => 'true',
+				'compare' => '!='
+			),
+			array(
+				'key' => 'media_private',
+				'compare' => 'NOT EXISTS'
+			)
+		),
 	);
 
 	return count(get_posts($args));

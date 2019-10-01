@@ -192,7 +192,19 @@ if (!is_user_logged_in() && $login_check == 'true') {
 					//'terms'    => array( 'mobile', 'sports' ),
 				),
 
-			)
+			),
+			'meta_query'     => array(
+				'relation' => 'OR',
+				array(
+					'key'     => 'media_private',
+					'value'   => 'true',
+					'compare' => '!='
+				),
+				array(
+					'key' => 'media_private',
+					'compare' => 'NOT EXISTS'
+				)
+			),
 		);
 	} else {
 		$args = array(
