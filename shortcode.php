@@ -124,13 +124,11 @@ function upg_shortcode()
                         <li> <code>button</code> = "on | off" - When off, post button is displayed only to user with editing rights.</li>
                         <li> <code>gallery_layout</code> = "Gallery template name" - Each gallery can have their own type of layout.</li>
                         <li> <code>popup</code> = "on | off" - The post when clicked will have a popup box instead going to another page.</li>
-                        <li><code>private</code>="on | off" - If 'on', the submitted post will not be visible at [upg-list]. Visible only in attached page/post.</li>
+                        <li><code>private</code>="on | off" - If 'off', the submitted post will visible at [upg-list].</li>
 
                     </ul>
                 </div>
             </div>
-
-
 
 
 

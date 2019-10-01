@@ -74,6 +74,61 @@ if (!class_exists('upg_quick_setting')) :
          */
         public function get_settings_fields()
         {
+
+            //Link for login page
+            $login_page = upg_get_option('my_login', 'upg_general', '0');
+            if ($login_page != '0') {
+                $linku = get_permalink($login_page);
+                $login_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $login_page = '';
+            }
+
+            //Link for Main UPG page
+            $main_upg_page = upg_get_option('main_page', 'upg_gallery', '0');
+            if ($main_upg_page != '0') {
+                $linku = get_permalink($main_upg_page);
+                $main_upg_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $main_upg_page = '';
+            }
+
+            //Link My Gallery Page
+            $my_gallery_page = upg_get_option('my_gallery', 'upg_gallery', '0');
+            if ($my_gallery_page != '0') {
+                $linku = get_permalink($my_gallery_page);
+                $my_gallery_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $my_gallery_page = '';
+            }
+
+            //Image Submission form
+            $post_image_page = upg_get_option('post_image_page', 'upg_form', '0');
+            if ($post_image_page != '0') {
+                $linku = get_permalink($post_image_page);
+                $post_image_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $post_image_page = '';
+            }
+
+            //URL submission form
+            $post_youtube_page = upg_get_option('post_youtube_page', 'upg_form', '0');
+            if ($post_youtube_page != '0') {
+                $linku = get_permalink($post_youtube_page);
+                $post_youtube_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $post_youtube_page = '';
+            }
+
+            //Edit/Modify page
+            $edit_upg_page = upg_get_option('edit_upg_page', 'upg_form', '0');
+            if ($edit_upg_page != '0') {
+                $linku = get_permalink($edit_upg_page);
+                $edit_upg_page = "<a href='" . $linku . "' target='_blank'>" . __("View Page", "wp-upg") . "</a>";
+            } else {
+                $edit_upg_page = '';
+            }
+
             function custom_post_list()
             {
                 $args_q = array(
@@ -99,14 +154,14 @@ if (!class_exists('upg_quick_setting')) :
                     array(
                         'name'    => 'my_login',
                         'label'   => __('Select Login page', 'wp-upg'),
-                        'desc'    => __('Login page where user enters username & passwords.', 'wp-upg'),
+                        'desc'    => __('Login page where user enters username & passwords.', 'wp-upg') . " " . $login_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('my_login', 'upg_general', '0'),
                     ),
                     array(
                         'name'    => 'after_content',
-                        'label'   => __('After Content Shortcode', 'wp-upg'),
-                        'desc'    => __('Shortcode to display on all custom post. You can hide from specific post by editing.', 'wp-upg'),
+                        'label'   => __('"After Content" Shortcode', 'wp-upg'),
+                        'desc'    => __('Shortcode to display on selected location.<br>Eg. Social Share, Buttons, Attach Gallery', 'wp-upg') . ' <code>[upg-attach button="off" form_layout="simple" gallery_layout="photo" popup="on"]</code><br>' . __('You can hide from specific post by editing.<br><b>Note:</b> Do not use [upg-list] here.', 'wp-upg'),
                         'type'    => 'textarea',
                         'default' => upg_get_option('after_content', 'upg_general', '[upg-attach button="off" form_layout="simple" gallery_layout="photo" popup="on"]'),
                     ),
@@ -124,14 +179,14 @@ if (!class_exists('upg_quick_setting')) :
                     array(
                         'name'    => 'main_page',
                         'label'   => 'UPG ' . __('main page', 'wp-upg'),
-                        'desc'    => __('Page cannot be static front page and it must include <code>[upg-list]</code> shortcode.', 'wp-upg'),
+                        'desc'    => __('Page cannot be static front page and it must include <code>[upg-list]</code> shortcode.', 'wp-upg') . " " . $main_upg_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('main_page', 'upg_gallery', '0'),
                     ),
                     array(
                         'name'    => 'my_gallery',
                         'label'   => __('Members "My Gallery" page', 'wp-upg'),
-                        'desc'    => __('Page must contain <code>[upg-list user="show_mine"]</code> shortcode.', 'wp-upg'),
+                        'desc'    => __('Page must contain <code>[upg-list user="show_mine"]</code> shortcode.', 'wp-upg') . " " . $my_gallery_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('my_gallery', 'upg_gallery', '0'),
                     ),
@@ -170,21 +225,21 @@ if (!class_exists('upg_quick_setting')) :
                     array(
                         'name'    => 'post_image_page',
                         'label'   => __('Select image submission form', 'wp-upg'),
-                        'desc'    => __('Page must contain <code>[upg-post type="image"]</code> or full <code>[upg-form]<code> shortcode.', 'wp-upg'),
+                        'desc'    => __('Page must contain <code>[upg-post type="image"]</code> or full <code>[upg-form]</code> shortcode.', 'wp-upg') . " " . $post_image_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('post_image_page', 'upg_form', '0'),
                     ),
                     array(
                         'name'    => 'post_youtube_page',
                         'label'   => __('Select embed,url submission form', 'wp-upg'),
-                        'desc'    => __('Page must contain <code>[upg-post type="embed"]</code> or full <code>[upg-form]</code> shortcode.', 'wp-upg'),
+                        'desc'    => __('Page must contain <code>[upg-post type="embed"]</code> or full <code>[upg-form]</code> shortcode.', 'wp-upg') . " " . $post_youtube_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('post_youtube_page', 'upg_form', '0'),
                     ),
                     array(
                         'name'    => 'edit_upg_page',
                         'label'   => __('Submission form Edit/Modify page', 'wp-upg'),
-                        'desc'    => __('Page must contain <code>[upg-edit]</code> shortcode.', 'wp-upg'),
+                        'desc'    => __('Page must contain <code>[upg-edit]</code> shortcode.', 'wp-upg') . " " . $edit_upg_page,
                         'type'    => 'pages',
                         'default' => upg_get_option('edit_upg_page', 'upg_form', '0'),
                     ),

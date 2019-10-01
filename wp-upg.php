@@ -715,7 +715,7 @@ function upg_admin_top_menu()
 		if (upg_get_option('main_page', 'upg_gallery', '0') != '0' && upg_get_option('main_page', 'upg_gallery', '0') != 'xxx')
 			$main_page_url = esc_url(get_page_link(upg_get_option('main_page', 'upg_gallery', '0')));
 
-		echo " <a href='" . $main_page_url . "' class='button' target='_blank'>Test UPG Page</a>";
+		//echo " <a href='" . $main_page_url . "' class='button' target='_blank'>Test UPG Page</a>";
 		echo " <a href='" . admin_url('edit.php?post_type=upg&page=wp_upg_layout') . "' class='button " . (($page_name == 'wp_upg_layout') ? 'button-primary' : '') . " '>Layout Editor</a>";
 		echo " <a href='" . admin_url('edit.php?post_type=upg&page=wp_upg_addon') . "' class='button " . (($page_name == 'wp_upg_addon') ? 'button-primary' : '') . " '>Addons & Help</a>";
 		echo " <a href='" . admin_url('edit.php?post_type=upg&page=upg_shortcode') . "' class='button " . (($page_name == 'upg_shortcode') ? 'button-primary' : '') . " '>Shortcode Guide</a>";
