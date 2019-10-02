@@ -318,7 +318,14 @@ function upg_install()
 
 function upg_drop()
 {
-
 	//Function during uninstall
 
+	//Don't delete pages by associated page at UPG settings,
+	// User may be mistakenly assigned wrong UPG page.
+
+
+	//Search for [upg-list] pages, and delete that. 
+	global $wpdb;
+	upg_log($wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list]%'"));
+	upg_log('xxxx');
 }

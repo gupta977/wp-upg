@@ -1,5 +1,5 @@
 <?php
-//Adding meta boxes Main Image
+//Add meta boxes admin
 function upg_meta_boxes()
 {
 	$prefix = 'upg_';
@@ -44,7 +44,7 @@ function upg_meta_box_settings($post)
 	echo $html;
 }
 
-//Detail Layout List
+//Preview Layout List meta box
 function upg_meta_box_layout()
 {
 	global $post;
@@ -113,23 +113,26 @@ function upg_meta_box_extra_field($post)
 			return;
 		if (!current_user_can('edit_post', $post_id)) //verify permissions
 			return;
-		//session_start();
+
+		if (isset($_POST['meta-box-media'])) {
+			if ($_POST['meta-box-media'] != "pic_name") {
+				$new_value = array_map('intval', $_POST['meta-box-media']); //sanitize
 
 
-		if ($_POST['meta-box-media'] != "pic_name") {
-			$new_value = array_map('intval', $_POST['meta-box-media']); //sanitize
+				foreach ($new_value as $k => $v) {
 
-
-			foreach ($new_value as $k => $v) {
-
-				if ($v != '0')
-					update_post_meta($post_id, $k, $v); //save
-				//$_SESSION["favcolor"] .= "green_".$v."<hr>";
+					if ($v != '0')
+						update_post_meta($post_id, $k, $v); //save
+					//$_SESSION["favcolor"] .= "green_".$v."<hr>";
+				}
 			}
 		}
+		if (isset($_POST["upg_layout"]))
+			update_post_meta($post->ID, "upg_layout", $_POST["upg_layout"]);
 
-		update_post_meta($post->ID, "upg_layout", $_POST["upg_layout"]);
-		update_post_meta($post->ID, "youtube_url", sanitize_text_field($_POST["youtube_url"]));
+		if (isset($_POST["youtube_url"]))
+			update_post_meta($post->ID, "youtube_url", sanitize_text_field($_POST["youtube_url"]));
+
 		if (isset($_POST["upg_hide_after_content"]))
 			update_post_meta($post->ID, "upg_hide_after_content", $_POST["upg_hide_after_content"]);
 
@@ -183,8 +186,6 @@ function upg_meta_box_extra_field($post)
 			<?php include(dirname(__FILE__) . '/admin_video_url.php'); ?>
 		</div>
 	</div>
-
-
 
 <?php
 }

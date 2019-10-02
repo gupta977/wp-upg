@@ -60,24 +60,17 @@ function upg_plugin_check_version()
 		//upg_log('I will be executed as soon as version do not match');
 
 		if (get_option('upg_plugin_version') < 1.92) {
-			//upg_log("1.91  Current value: ".upg_get_option( 'global_media_layout','upg_preview', 'basic' ));
 
-			//if(upg_get_option( 'global_form_layout','upg_form', 'basic' )=='basic')
-			//{
 			if (isset($options['global_form_layout'])) {
 				upg_set_option('global_form_layout', 'upg_form', $options['global_form_layout']);
 				upg_set_option('global_layout', 'upg_gallery', $options['global_layout']);
 				upg_set_option('global_media_layout', 'upg_preview', $options['global_media_layout']);
 				//upg_log('Value Updated to : '.$options['global_media_layout']);
 			}
-			//}
-
-			//upg_log("Real value: ".upg_get_option( 'global_form_layout','upg_form', 'basic' ));
 		}
 
 
-		//if(get_option('upg_plugin_version')=='1.12')
-		//{
+
 		//Update Permalinks
 		flush_rewrite_rules();
 		// Copy layouts from media folder to plugin folder
@@ -88,20 +81,8 @@ function upg_plugin_check_version()
 		$copy_file = copy_dir($path, upg_BASE_DIR . "layout/", $skip_list = array());
 
 
-		//}
-
 		update_option('upg_plugin_version', UPG_PLUGIN_VERSION);
-		//upg_log(UPG_PLUGIN_VERSION);
-		//upg_log("old main page ".$options['main_page']);
 	}
-
-	/* 	$file_personal_post_form=upg_BASE_DIR."layout/form/personal/".get_current_blog_id()."_personal_post_form.php";
-			if( ! file_exists( $file_personal_post_form ) )
-			{
-					//Create personal layout files if lost or update
-					upg_update_personal_layout();
-					//echo "Updated personal layout file of UPG.";
-			} */
 }
 
 
@@ -410,12 +391,7 @@ function upg_admin_footer_hook()
 						global $post_type;
 						if ($post_type != 'upg') return;
 
-						// My custom stuff for deleting my custom post type here
-						//upg_log('Post Deleted with images-'.$postid);
 						upg_delete_post_media($postid);
-						//$ii=get_attached_media( 'image', $postid );
-						//upg_log('Attached id.'.$ii);
-						//wp_delete_attachment( 134 );
 					}
 
 					//taxonomy/album will be redirected when category is opened
