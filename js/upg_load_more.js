@@ -48,6 +48,7 @@ jQuery(document).ready(function() {
         // Hide image container
         jQuery("#upg_loader").hide();
         jQuery("#upg_load_more").slideDown();
+        jQuery("#upg_no_record").hide();
         // alert("response complete");
         if (paged > max_paged) jQuery("#upg_load_more").slideUp();
       }

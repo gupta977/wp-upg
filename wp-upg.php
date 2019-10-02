@@ -937,7 +937,7 @@ function upg_display_after_content($content)
 		return $content;
 
 
-	$selected = upg_get_option('after_content_post', 'upg_general', '');
+	$selected = upg_get_option('after_content_post', 'upg_general', array());
 	//var_dump($selected);
 	//echo get_post_type();
 	if (is_single() || is_page() || !is_main_query() || !in_the_loop()) {

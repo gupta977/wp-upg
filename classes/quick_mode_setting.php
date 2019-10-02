@@ -170,7 +170,7 @@ if (!class_exists('upg_quick_setting')) :
                         'label'   => __('Display "After Content" at', 'wp-upg'),
                         'desc'    => __('Select where you like to show shortcode mentioned in "After Content".', 'wp-upg'),
                         'type'    => 'multicheck',
-                        'default' => upg_get_option('after_content_post', 'upg_general', ''),
+                        'default' => upg_get_option('after_content_post', 'upg_general', array()),
                         'options' => custom_post_list(),
                     ),
 
