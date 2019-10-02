@@ -252,7 +252,7 @@ function upg_install()
 
 	global $wpdb;
 
-	if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list]%'")) {
+	if (!$wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list%'")) {
 
 		$aid = wp_insert_post(array('post_title' => 'User\'s Photo Gallery', 'post_content' => '[upg-list]', 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('main_page', 'upg_gallery', $aid);
@@ -324,8 +324,21 @@ function upg_drop()
 	// User may be mistakenly assigned wrong UPG page.
 
 
-	//Search for [upg-list] pages, and delete that. 
+
 	global $wpdb;
-	upg_log($wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list]%'"));
-	upg_log('xxxx');
+	//Search for [upg- pages, and delete that. Check 5 places
+	for ($x = 1; $x <= 5; $x++) {
+		$page_id = $wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list%'");
+		wp_delete_post($page_id);
+
+		//Search for [upg-post pages, and delete that. 
+		$page_id = $wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-post%'");
+		wp_delete_post($page_id);
+		//Search for [upg-edit pages, and delete that. 
+		$page_id = $wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-edit%'");
+		wp_delete_post($page_id);
+		//Search for [upg-form pages, and delete that. 
+		$page_id = $wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[/upg-form]%'");
+		wp_delete_post($page_id);
+	}
 }
