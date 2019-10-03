@@ -603,8 +603,8 @@ function upg_admin_footer_hook()
 					add_filter("{$prefix}plugin_action_links_" . plugin_basename(__FILE__), 'upg_plugin_links');
 
 					//Set custom sizes for media settings. 
-					add_action('after_setup_theme', 'your_theme_setup');
-					function your_theme_setup()
+					add_action('after_setup_theme', 'upg_your_theme_setup');
+					function upg_your_theme_setup()
 					{
 						$options = get_option('upg_settings');
 

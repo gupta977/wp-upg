@@ -258,6 +258,7 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 * updated 'basic' preview/media layout
 * added new 'pro' gallery layout
 * updated 'classic' gallery layout
+* Delete UPG pages after plugin uninstall
 
 
 = 2.01 =

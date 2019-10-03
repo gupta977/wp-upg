@@ -1784,12 +1784,15 @@ add_filter('the_content', 'upg_cleanup_shortcode_fix', 10);
 function upg_remove_post_thumbnail_html($html)
 {
 	global $post;
-	$page_template = get_post_meta($post->ID, '_wp_page_template', true);
-	if ($post->post_type == 'upg' && is_singular()) {
-		return '';
-	} else {
-		return $html;
+	if (has_post_thumbnail()) {
+		$page_template = get_post_meta($post->ID, '_wp_page_template', true);
+		if ($post->post_type == 'upg' && is_singular()) {
+			return '';
+		} else {
+			return $html;
+		}
 	}
+	return $html;
 }
 add_filter('post_thumbnail_html', 'upg_remove_post_thumbnail_html');
 

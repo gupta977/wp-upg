@@ -256,6 +256,7 @@ function upg_install()
 
 		$aid = wp_insert_post(array('post_title' => 'User\'s Photo Gallery', 'post_content' => '[upg-list]', 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('main_page', 'upg_gallery', $aid);
+		update_post_meta($aid, "upg_hide_after_content", "hide");
 
 		$str_post_image = '
 		[upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true"]
@@ -270,6 +271,7 @@ function upg_install()
 
 		$bid = wp_insert_post(array('post_title' => 'Post Image', 'post_content' => $str_post_image, 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('post_image_page', 'upg_form', $bid);
+		update_post_meta($bid, "upg_hide_after_content", "hide");
 
 		$str_post_embed = '
 		[upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" ajax="true" post_type="video_url"] 
@@ -286,12 +288,15 @@ function upg_install()
 
 		$cid = wp_insert_post(array('post_title' => 'oEmbed URL', 'post_content' => $str_post_embed, 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('post_youtube_page', 'upg_form', $cid);
+		update_post_meta($cid, "upg_hide_after_content", "hide");
 
 		$did = wp_insert_post(array('post_title' => 'My Gallery', 'post_content' => '[upg-list user="show_mine" layout="filter" perpage="50"]', 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('my_gallery', 'upg_gallery', $did);
+		update_post_meta($did, "upg_hide_after_content", "hide");
 
 		$eid = wp_insert_post(array('post_title' => 'Edit UPG Post', 'post_content' => '[upg-edit]', 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('edit_upg_page', 'upg_form', $eid);
+		update_post_meta($eid, "upg_hide_after_content", "hide");
 	}
 
 	$parent_term = term_exists('', 'upg_cate'); // array is returned if taxonomy is given
