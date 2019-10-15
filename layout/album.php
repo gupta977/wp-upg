@@ -87,6 +87,10 @@ if ($root == 'show') {
                 } else {
                     echo '<div class="upg_text_centered">' . $term->name . '</div>';
                 }
+            } else {
+                if ($count) {
+                    echo '<div class="upg_text_centered">(' . $count_result . ')</div>';
+                }
             }
 
             echo ' </div></a></div>';

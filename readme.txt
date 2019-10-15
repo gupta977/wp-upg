@@ -248,17 +248,20 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 == Changelog ==
 = 2.02 = 
-* Removed 'photo form layout'
+* Removed 'photo layout' of form
 * Re-arranged Addon UPG settings.
 * [upg-attach] new parameters added
 * [upg-attach] 'layout' parameter renamed as 'form_layout'
 * [upg-attach] assign 'gallery_layout'
 * [upg-attach] assign 'popup'
 * [upg-attach] Option 'private' to hide from [upg-list]
-* updated 'basic' preview/media layout
+* updated 'basic' preview & media layout
 * added new 'pro' gallery layout
 * updated 'classic' gallery layout
 * Delete UPG pages after plugin uninstall
+* Added 'Quick Edit' option at UPG posts admin
+* include_children post for sub albums
+* Show album post counts above thumbnails
 
 
 = 2.01 =

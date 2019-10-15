@@ -244,7 +244,15 @@ function upg_shortcode()
                     <li>Ajax modification is not available on this form.</li>
                     <li>You can have submission form different then edit form. This way you can add/remove some fields.</li>
                 </ol>
-
+                <h4>Available Attributes:</h4>
+                The following attributes are available to use in conjunction with the <code>[upg-edit]</code> shortcode.
+                <br>
+                <div class="update-nag">
+                    <ul>
+                        <li> <code>layout</code> = "Form template name" - It will change the design/layout for the submission form. Use <code>layout="personal"</code> if you have created your own form layout.</li>
+                        <li> <code>preview</code> = "Preview template name" - When image/post/video are clicked, a page is opened which is called 'preview layout'. <br>This layout is not activated if popup is enabled in <code>[upg-list] or [upg-attach]</code>.</li>
+                    </ul>
+                </div>
                 <h4>Scenario 1 – Display 'Edit Form' with 'simple form layout'</h4>
                 <code>[upg-edit layout="simple"]</code>
             </div>

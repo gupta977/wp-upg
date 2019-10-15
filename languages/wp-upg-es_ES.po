@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-09-25 13:32+0545\n"
-"PO-Revision-Date: 2019-09-25 13:33+0545\n"
+"POT-Creation-Date: 2019-10-15 15:31+0545\n"
+"PO-Revision-Date: 2019-10-15 15:32+0545\n"
 "Last-Translator: \n"
 "Language-Team: Navneet\n"
 "Language: es\n"
@@ -19,20 +19,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: addon.php:23
-msgid "UPG Plugins"
-msgstr "UPG Complementos"
+msgid "Addons"
+msgstr "Extensiones"
 
 #: addon.php:24
-msgid "UPG Help"
-msgstr "UPG Ayuda"
+msgid "Help"
+msgstr "ES Help"
 
-#: addon.php:29
-msgid "Breadcrumb"
-msgstr "Migaja de pan"
+#: addon.php:59 layout/form/basic/basic_edit_form.php:4
+#: layout/form/basic/basic_post_form.php:30
+#: layout/form/basic/basic_post_youtube.php:20
+#: layout/form/simple/simple_edit_form.php:6
+#: layout/form/simple/simple_post_form.php:31
+#: layout/grid/filter/filter_up.php:31 libs/custom_column.php:55
+msgid "Title"
+msgstr "Título"
 
-#: addon.php:38
-msgid "Search"
-msgstr "Buscar"
+#: addon.php:60 layout/form/basic/basic_edit_form.php:41
+#: layout/form/basic/basic_post_form.php:62
+#: layout/form/basic/basic_post_youtube.php:54
+msgid "Description"
+msgstr "Descripcion"
 
 #: classes/class.AlbumThumbnail.php:36 classes/class.AlbumThumbnail.php:65
 msgid "Image"
@@ -46,11 +53,11 @@ msgstr "Añadir Imagen"
 msgid "Remove Image"
 msgstr "Quitar Imagen"
 
-#: classes/class.FormEntries.php:247 classes/class.FormEntries.php:248
+#: classes/class.FormEntries.php:257 classes/class.FormEntries.php:258
 msgid "Mark as publish"
 msgstr "Marcar como publicar"
 
-#: classes/class.FormEntries.php:251 classes/class.FormEntries.php:252
+#: classes/class.FormEntries.php:261 classes/class.FormEntries.php:262
 msgid "Mark as draft"
 msgstr "Como borrador"
 
@@ -78,217 +85,232 @@ msgstr "Configuración de formulario"
 msgid "Preview Settings"
 msgstr "Preferencias de previsualizaciÃ³n"
 
-#: classes/quick_mode_setting.php:82
+#: classes/quick_mode_setting.php:82 classes/quick_mode_setting.php:91
+#: classes/quick_mode_setting.php:100 classes/quick_mode_setting.php:109
+#: classes/quick_mode_setting.php:118 classes/quick_mode_setting.php:127
+msgid "View Page"
+msgstr "Obejrzyj stronę"
+
+#: classes/quick_mode_setting.php:156
 msgid "Select Login page"
 msgstr "Seleccione la página de inicio de sesión"
 
-#: classes/quick_mode_setting.php:83
+#: classes/quick_mode_setting.php:157
 msgid "Login page where user enters username & passwords."
 msgstr ""
 
-#: classes/quick_mode_setting.php:92
-msgid "main page"
+#: classes/quick_mode_setting.php:163
+msgid "\"After Content\" Shortcode"
 msgstr ""
 
-#: classes/quick_mode_setting.php:93
+#: classes/quick_mode_setting.php:164
 msgid ""
-"Page cannot be static front page and it must include [upg-list] shortcode."
+"Shortcode to display on selected location.<br>Eg. Social Share, Buttons, "
+"Attach Gallery"
 msgstr ""
 
-#: classes/quick_mode_setting.php:99
-msgid "Members \"My Gallery\" page"
-msgstr ""
-
-#: classes/quick_mode_setting.php:100
-msgid "Page must contain [upg-list user=\"show_mine\"] shortcode."
-msgstr ""
-
-#: classes/quick_mode_setting.php:106
-msgid "Enable Gallery Tags"
-msgstr ""
-
-#: classes/quick_mode_setting.php:107
+#: classes/quick_mode_setting.php:164
 msgid ""
-"Shows tags above the gallery, if few tag presets. [upg-list tag_show=\"on\"]"
+"You can hide from specific post by editing.<br><b>Note:</b> Do not use [upg-"
+"list] here."
 msgstr ""
-
-#: classes/quick_mode_setting.php:113
-msgid "Select Gallery/Grid Template"
-msgstr ""
-
-#: classes/quick_mode_setting.php:114 classes/quick_mode_setting.php:161
-msgid "It is applied if \"layout\" parameter in shortcode is not specified."
-msgstr ""
-
-#: classes/quick_mode_setting.php:131
-msgid "Auto approve post"
-msgstr "Aprobación Automática"
-
-#: classes/quick_mode_setting.php:132
-msgid "Automatically publish Post as soon as user submit."
-msgstr ""
-
-#: classes/quick_mode_setting.php:138
-msgid "Select submission form of Image page"
-msgstr ""
-
-#: classes/quick_mode_setting.php:139
-msgid ""
-"Page must contain [upg-post type=\"image\"] or full [upg-form] shortcode."
-msgstr ""
-
-#: classes/quick_mode_setting.php:145
-msgid "Select submission form for embed page"
-msgstr ""
-
-#: classes/quick_mode_setting.php:146
-msgid ""
-"Page must contain [upg-post type=\"embed\"] or full [upg-form] shortcode."
-msgstr ""
-
-#: classes/quick_mode_setting.php:152
-msgid "Submission form Edit/Modify page"
-msgstr ""
-
-#: classes/quick_mode_setting.php:153
-msgid "Page must contain [upg-edit] shortcode."
-msgstr ""
-
-#: classes/quick_mode_setting.php:160
-#, fuzzy
-#| msgid "Select Form Layout [upg-post]"
-msgid "Select Form Template [upg-post]"
-msgstr "Seleccionar diseño de formulario [upg-post]"
 
 #: classes/quick_mode_setting.php:170
-msgid "Enable Lightbox Popup"
+msgid "Display \"After Content\" at"
 msgstr ""
 
 #: classes/quick_mode_setting.php:171
+msgid "Select where you like to show shortcode mentioned in \"After Content\"."
+msgstr ""
+
+#: classes/quick_mode_setting.php:181
+msgid "main page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:182
+msgid ""
+"Page cannot be static front page and it must include <code>[upg-list]</code> "
+"shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:188
+msgid "Members \"My Gallery\" page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:189
+msgid "Page must contain <code>[upg-list user=\"show_mine\"]</code> shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:195
+#, fuzzy
+#| msgid "Gallery Settings"
+msgid "Gallery Tags"
+msgstr "Ajustes Galería"
+
+#: classes/quick_mode_setting.php:196
+msgid ""
+"Shows tags above the gallery, if few tag presets. <code>[upg-list tag_show="
+"\"on\"]</code>"
+msgstr ""
+
+#: classes/quick_mode_setting.php:202
+msgid "Select Gallery/Grid Template"
+msgstr ""
+
+#: classes/quick_mode_setting.php:203
+msgid "It is applied if \"layout\" parameter in shortcode is not specified."
+msgstr ""
+
+#: classes/quick_mode_setting.php:220
+msgid "Auto approve post"
+msgstr "Aprobación Automática"
+
+#: classes/quick_mode_setting.php:221
+msgid "Automatically publish Post as soon as user submit."
+msgstr ""
+
+#: classes/quick_mode_setting.php:227
+msgid "Select image submission form"
+msgstr ""
+
+#: classes/quick_mode_setting.php:228
+msgid ""
+"Page must contain <code>[upg-post type=\"image\"]</code> or full <code>[upg-"
+"form]</code> shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:234
+msgid "Select embed,url submission form"
+msgstr ""
+
+#: classes/quick_mode_setting.php:235
+msgid ""
+"Page must contain <code>[upg-post type=\"embed\"]</code> or full <code>[upg-"
+"form]</code> shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:241
+msgid "Submission form Edit/Modify page"
+msgstr ""
+
+#: classes/quick_mode_setting.php:242
+msgid "Page must contain <code>[upg-edit]</code> shortcode."
+msgstr ""
+
+#: classes/quick_mode_setting.php:249
+#| msgid "Select Form Layout [upg-post]"
+msgid "Select Form Template"
+msgstr ""
+
+#: classes/quick_mode_setting.php:250
+msgid "Only for <code>[upg-post]</code>"
+msgstr ""
+
+#: classes/quick_mode_setting.php:259
+msgid "Enable Lightbox Popup"
+msgstr ""
+
+#: classes/quick_mode_setting.php:260
 msgid ""
 "Image will get enlarged at same page. There is no change in page hence no "
 "preview layout is used."
 msgstr ""
 
-#: classes/quick_mode_setting.php:177
+#: classes/quick_mode_setting.php:266
 msgid "Select Preview/Media Template"
 msgstr ""
 
-#: classes/quick_mode_setting.php:178
+#: classes/quick_mode_setting.php:267
 msgid ""
 "If lightbox/popup is enabled, this layout has no use. It is applied only to "
 "newly submitted post."
 msgstr ""
 
-#: classes/quick_mode_setting.php:185
+#: classes/quick_mode_setting.php:274
 msgid "Shortcode Position 1st"
 msgstr ""
 
-#: classes/quick_mode_setting.php:186
+#: classes/quick_mode_setting.php:275
 msgid "Insert or copy/paste other plugins shortcode here."
 msgstr ""
 
-#: classes/quick_mode_setting.php:192
+#: classes/quick_mode_setting.php:281
 msgid "Shortcode Position 2nd"
 msgstr ""
 
-#: classes/quick_mode_setting.php:193
+#: classes/quick_mode_setting.php:282
 msgid "Shortcode Eg. social share, buttons, notices"
 msgstr ""
 
-#: classes/quick_mode_setting.php:219 wp-upg.php:773
+#: classes/quick_mode_setting.php:308 wp-upg.php:691
 msgid "Basic Settings"
 msgstr "Ajustes básicos"
 
-#: help.php:26
-msgid "Important settings"
-msgstr "Configuraciones importantes"
-
-#: help.php:86 layout/form/basic/basic_post_form.php:120
+#: help.php:68 layout/form/basic/basic_post_form.php:117
 #: layout/form/simple/simple_edit_form.php:26
 msgid "Maximum upload file size limit:"
 msgstr "Tamaño máximo de carga de archivos:"
 
-#: layout/attach.php:101 layout/catalog.php:346 layout/form/post_image.php:194
+#: layout/attach.php:110 layout/catalog.php:296 layout/form/post_image.php:194
 #: layout/form/post_youtube.php:56
 msgid "Layout Not Found. Check settings."
 msgstr "Diseño no encontrado. Verifique la configuración."
 
-#: layout/attach.php:110 layout/form/basic/basic_post_form.php:6
-#: layout/form/magic_form.php:140 layout/form/simple/simple_post_form.php:6
+#: layout/attach.php:119 layout/form/basic/basic_post_form.php:6
+#: layout/form/magic_form.php:120 layout/form/simple/simple_post_form.php:6
 msgid "Uploading"
 msgstr "Cargando"
 
-#: layout/attach.php:115 layout/form/basic/basic_post_form.php:11
-#: layout/form/magic_form.php:145 layout/form/simple/simple_post_form.php:11
+#: layout/attach.php:124 layout/form/basic/basic_post_form.php:11
+#: layout/form/magic_form.php:125 layout/form/simple/simple_post_form.php:11
 msgid "Processing"
 msgstr "Tratamiento"
 
-#: layout/attach.php:160 libs/install.php:157
+#: layout/attach.php:163 libs/install.php:157
 msgid "Post"
 msgstr "Entrada"
 
-#: layout/attach.php:174
+#: layout/attach.php:171
 msgid "This post button is only visible to you."
 msgstr "Este botón de publicación solo es visible para usted."
 
-#: layout/form/basic/basic_edit_form.php:4
-#: layout/form/basic/basic_post_form.php:30
-#: layout/form/basic/basic_post_youtube.php:24
-#: layout/form/photo/photo_post_form.php:6
-#: layout/form/simple/simple_edit_form.php:6
-#: layout/form/simple/simple_post_form.php:35
-#: layout/grid/filter/filter_up.php:31 libs/custom_column.php:55
-msgid "Title"
-msgstr "Título"
-
 #: layout/form/basic/basic_edit_form.php:5
 #: layout/form/basic/basic_edit_youtube.php:5
-#: layout/form/basic/basic_post_form.php:32
-#: layout/form/basic/basic_post_youtube.php:25
-#: layout/form/bulk/bulk_post_form.php:19
-#: layout/form/photo/photo_post_form.php:7
+#: layout/form/basic/basic_post_form.php:31
+#: layout/form/basic/basic_post_youtube.php:21
+#: layout/form/bulk/bulk_post_form.php:18
 #: layout/form/simple/simple_edit_form.php:7
 #: layout/form/simple/simple_edit_youtube.php:7
-#: layout/form/simple/simple_post_form.php:36
-#: layout/form/simple/simple_post_youtube.php:25
+#: layout/form/simple/simple_post_form.php:32
+#: layout/form/simple/simple_post_youtube.php:21
 msgid "Post Title"
 msgstr "Título de la publicación"
 
-#: layout/form/basic/basic_edit_form.php:41
-#: layout/form/basic/basic_post_form.php:63
-#: layout/form/basic/basic_post_youtube.php:62
-#: layout/form/photo/photo_post_form.php:109
-msgid "Description"
-msgstr "Descripcion"
-
 #: layout/form/basic/basic_edit_form.php:43
 #: layout/form/basic/basic_edit_youtube.php:44
-#: layout/form/basic/basic_post_form.php:66
-#: layout/form/basic/basic_post_youtube.php:64
-#: layout/form/photo/photo_post_form.php:110
+#: layout/form/basic/basic_post_form.php:64
+#: layout/form/basic/basic_post_youtube.php:56
 msgid "Post Content"
 msgstr "Contenido"
 
 #: layout/form/basic/basic_edit_form.php:58
 #: layout/form/basic/basic_edit_youtube.php:59
-#: layout/form/basic/basic_post_form.php:79
-#: layout/form/basic/basic_post_youtube.php:77
-#: layout/form/photo/photo_post_form.php:10
+#: layout/form/basic/basic_post_form.php:77
+#: layout/form/basic/basic_post_youtube.php:67
 msgid "Select Album/Group"
 msgstr "Seleccionar álbum / grupo"
 
 #: layout/form/basic/basic_edit_form.php:64
 #: layout/form/basic/basic_edit_youtube.php:63
-#: layout/form/basic/basic_post_form.php:84
-#: layout/form/basic/basic_post_youtube.php:81
+#: layout/form/basic/basic_post_form.php:82
+#: layout/form/basic/basic_post_youtube.php:71
 msgid "Enter Tags"
 msgstr "Ingresar etiquetas"
 
 #: layout/form/basic/basic_edit_form.php:65
 #: layout/form/basic/basic_edit_youtube.php:64
-#: layout/form/basic/basic_post_form.php:85
-#: layout/form/basic/basic_post_youtube.php:82
+#: layout/form/basic/basic_post_form.php:83
+#: layout/form/basic/basic_post_youtube.php:72
 msgid "Tags separated by commas"
 msgstr ""
 
@@ -298,18 +320,16 @@ msgid "Select new image to replace"
 msgstr ""
 
 #: layout/form/basic/basic_edit_form.php:121
-#: layout/form/photo/photo_post_form.php:36
 msgid "Only picture files are allowed."
 msgstr "Sólo se permiten archivos de imagen."
 
 #: layout/form/basic/basic_edit_form.php:122
-#: layout/form/photo/photo_post_form.php:37
 msgid "Maximum upload file size limit is"
 msgstr ""
 
 #: layout/form/basic/basic_edit_youtube.php:4
 #: layout/form/simple/simple_edit_youtube.php:6
-#: layout/form/simple/simple_post_youtube.php:24
+#: layout/form/simple/simple_post_youtube.php:20
 msgid "Video Title"
 msgstr "Titulo del Video"
 
@@ -319,32 +339,31 @@ msgstr "Descripción del vídeo"
 
 #: layout/form/basic/basic_edit_youtube.php:108
 #: layout/form/simple/simple_edit_youtube.php:17
-#: layout/form/simple/simple_post_youtube.php:35 libs/metabox.php:99
+#: layout/form/simple/simple_post_youtube.php:31 libs/metabox.php:178
 msgid "Embed URL"
 msgstr "URL de incrustación"
 
 #: layout/form/basic/basic_edit_youtube.php:110
 #: layout/form/simple/simple_edit_youtube.php:18
-#: layout/form/simple/simple_post_youtube.php:36
+#: layout/form/simple/simple_post_youtube.php:32
 msgid "copy/paste Video URL"
 msgstr "copiar / pegar URL de video"
 
-#: layout/form/basic/basic_post_form.php:95
-#: layout/form/photo/photo_post_form.php:18
-#: layout/form/simple/simple_post_form.php:49
+#: layout/form/basic/basic_post_form.php:93
+#: layout/form/simple/simple_post_form.php:45
 msgid "Select Image"
 msgstr "Seleccione imagen"
 
-#: layout/form/basic/basic_post_form.php:119
+#: layout/form/basic/basic_post_form.php:116
 #: layout/form/simple/simple_edit_form.php:25
 msgid "Only picture files are allowed"
 msgstr "Sólo se permiten archivos de imagen"
 
-#: layout/form/basic/basic_post_youtube.php:87
+#: layout/form/basic/basic_post_youtube.php:77
 msgid "Embed video, tweets, images, audio URL"
 msgstr ""
 
-#: layout/form/basic/basic_post_youtube.php:88
+#: layout/form/basic/basic_post_youtube.php:78
 msgid "copy/paste public embed URL"
 msgstr "copiar / pegar URL de inserción pública"
 
@@ -353,32 +372,32 @@ msgstr "copiar / pegar URL de inserción pública"
 msgid "Maximum upload file size: %s."
 msgstr "Tamaño máximo permitido: %s."
 
-#: layout/form/bulk/bulk_post_form.php:56 layout/form/magic_form.php:79
-#: layout/form/magic_form.php:162 layout/form/post_edit_image.php:141
+#: layout/form/bulk/bulk_post_form.php:54 layout/form/magic_form.php:78
+#: layout/form/magic_form.php:141 layout/form/post_edit_image.php:141
 #: layout/form/post_edit_youtube.php:90 layout/form/post_image.php:100
 msgid "My Gallery"
 msgstr "Mi galería"
 
 #: layout/form/magic_form.php:75 layout/form/post_image.php:96
-#: layout/form/post_youtube.php:115 libs/functions.php:891
-#: libs/functions.php:952
+#: layout/form/post_youtube.php:115 libs/functions.php:892
+#: libs/functions.php:954
 msgid "Successfully posted."
 msgstr "Publicado con éxito."
 
-#: layout/form/magic_form.php:84 layout/form/post_image.php:105
-#: libs/functions.php:893 libs/functions.php:955 libs/functions.php:1032
+#: layout/form/magic_form.php:81 layout/form/post_image.php:105
+#: libs/functions.php:894 libs/functions.php:957 libs/functions.php:1034
 msgid "Your submission is under review."
 msgstr "Su presentación está bajo revisión."
 
-#: layout/form/magic_form.php:107 layout/form/post_image.php:128
+#: layout/form/magic_form.php:97 layout/form/post_image.php:128
 msgid "Invalid file"
 msgstr "Archivo no válido"
 
-#: layout/form/magic_form.php:111 layout/form/post_image.php:132
+#: layout/form/magic_form.php:99 layout/form/post_image.php:132
 msgid "Error occurred"
 msgstr "Se produjo un error"
 
-#: layout/form/magic_form.php:157
+#: layout/form/magic_form.php:137
 msgid "Post again"
 msgstr "Confirme Palavra-Chave"
 
@@ -417,13 +436,15 @@ msgstr ""
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:4
 #: layout/grid/flat/flat_down.php:3 layout/grid/list/list_down.php:3
-#: layout/grid/photo/photo_down.php:3 layout/grid/slide/slide_down.php:3
+#: layout/grid/photo/photo_down.php:3 layout/grid/pro/pro_down.php:5
+#: layout/grid/slide/slide_down.php:3
 msgid "No records"
 msgstr "No hay registros"
 
 #: layout/grid/basic/basic_main.php:13 layout/grid/classic/classic_main.php:11
 #: layout/grid/filter/filter_main.php:12 layout/grid/flat/flat_main.php:24
-#: layout/grid/list/list_main.php:21 layout/media/basic/content.php:11
+#: layout/grid/list/list_main.php:21 layout/grid/pro/pro_main.php:11
+#: layout/media/basic/content.php:11
 msgid "Under review"
 msgstr "En revisión"
 
@@ -444,10 +465,8 @@ msgid "Home"
 msgstr ""
 
 #: libs/custom_column.php:16 libs/custom_column.php:59 libs/metabox.php:10
-#, fuzzy
-#| msgid "Preview Layout"
 msgid "Preview template"
-msgstr "Previsualizar estructura"
+msgstr "Previsualizar plantilla"
 
 #: libs/custom_column.php:56
 msgid "Author"
@@ -475,33 +494,33 @@ msgstr ""
 msgid "Login Please !"
 msgstr "Ingresa, por favor !"
 
-#: libs/functions.php:903 libs/functions.php:970 libs/functions.php:1043
+#: libs/functions.php:904 libs/functions.php:972 libs/functions.php:1045
 msgid "Category is not specified."
 msgstr ""
 
-#: libs/functions.php:903 libs/functions.php:905 libs/functions.php:968
-#: libs/functions.php:970 libs/functions.php:972 libs/functions.php:1041
-#: libs/functions.php:1043 libs/functions.php:1045
+#: libs/functions.php:904 libs/functions.php:906 libs/functions.php:970
+#: libs/functions.php:972 libs/functions.php:974 libs/functions.php:1043
+#: libs/functions.php:1045 libs/functions.php:1047
 msgid "Submission failed"
 msgstr "Error al enviar"
 
-#: libs/functions.php:905 libs/functions.php:972 libs/functions.php:1045
+#: libs/functions.php:906 libs/functions.php:974 libs/functions.php:1047
 msgid "Error message: "
 msgstr "Mensaje de error: "
 
-#: libs/functions.php:968 libs/functions.php:1041
+#: libs/functions.php:970 libs/functions.php:1043
 msgid "Check your file type."
 msgstr ""
 
-#: libs/functions.php:1029
+#: libs/functions.php:1031
 msgid "Successfully posted"
 msgstr "Publicado con éxito"
 
-#: libs/functions.php:1727
+#: libs/functions.php:1741
 msgid "Show All"
 msgstr "Mostrar Dulces"
 
-#: libs/functions.php:1750
+#: libs/functions.php:1764
 msgid "Loading"
 msgstr "Descargando"
 
@@ -598,22 +617,30 @@ msgid "New Tag Name"
 msgstr ""
 
 #: libs/metabox.php:8
-msgid "Main media file"
-msgstr "Configuración de Multimedia"
+msgid "Media"
+msgstr ""
 
 #: libs/metabox.php:12 setting.php:69
 msgid "Extra Form Fields"
 msgstr "Campos de formulario extra"
 
-#: libs/metabox.php:76 libs/metabox.php:80
-msgid "Attached to: "
+#: libs/metabox.php:13 setting.php:12
+msgid "Settings"
+msgstr "Ajustes"
+
+#: libs/metabox.php:42
+msgid "Remove \"After content\" for this post."
 msgstr ""
 
-#: libs/metabox.php:77
+#: libs/metabox.php:156 libs/metabox.php:159
+msgid "Attached at: "
+msgstr ""
+
+#: libs/metabox.php:157
 msgid "Primary Gallery"
 msgstr "Galería primaria"
 
-#: libs/metabox.php:97
+#: libs/metabox.php:176
 msgid "Upload Image"
 msgstr "Subir una imagen"
 
@@ -621,49 +648,39 @@ msgstr "Subir una imagen"
 msgid "Album for: "
 msgstr ""
 
-#: libs/taxonomy.php:12
-msgid "Hide album from frontend"
-msgstr "Ocultar álbum de la interfaz"
-
-#: libs/taxonomy.php:14 libs/taxonomy.php:35
-msgid "Use album only for administration. Invisible for users."
+#: libs/taxonomy.php:12 libs/taxonomy.php:29
+msgid "Hidden in forms"
 msgstr ""
 
-#: libs/taxonomy.php:29
-msgid "Hide at Front End"
-msgstr "Ocultar en la parte delantera"
+#: libs/taxonomy.php:14 libs/taxonomy.php:35
+msgid "Use album in special case. Eg. featured"
+msgstr ""
 
-#: libs/taxonomy.php:78
+#: libs/taxonomy.php:72
 msgid "Hide"
 msgstr "پنهان کردن"
 
-#: libs/taxonomy.php:79
+#: libs/taxonomy.php:73
 msgid "Album for:"
 msgstr "Álbum para:"
-
-#: setting.php:12
-msgid "Settings"
-msgstr "Ajustes"
 
 #: setting.php:18
 msgid "Extra Settings"
 msgstr "Ajustes extra"
 
 #: setting.php:26
-#, fuzzy
 #| msgid "Gallery Settings"
 msgid "Grid/Gallery template settings"
-msgstr "Ajustes Galería"
+msgstr ""
 
 #: setting.php:34
 msgid "Submission form Settings"
 msgstr "Su presentación está bajo revisión"
 
 #: setting.php:43
-#, fuzzy
 #| msgid "Media/Preview Layout Settings"
 msgid "Media/Preview Template Settings"
-msgstr "Configuración de diseño de medios / vista previa"
+msgstr ""
 
 #: setting.php:60
 msgid "Form Fields & Shortcodes"
@@ -705,7 +722,7 @@ msgstr ""
 msgid "Display Embed URL Button: "
 msgstr ""
 
-#: setting.php:655 wp-upg.php:665 wp-upg.php:774
+#: setting.php:655 wp-upg.php:583 wp-upg.php:692
 msgid "Advance Settings"
 msgstr "Configuraciones avanzadas"
 
@@ -797,25 +814,61 @@ msgstr ""
 msgid "Select preview layout"
 msgstr ""
 
-#: wp-upg.php:140
+#: wp-upg.php:121
 msgid "Are you sure you want to delete?"
 msgstr "¿Estás seguro de que quieres borrar? (Este proceso es irreversible)"
 
-#: wp-upg.php:664
+#: wp-upg.php:295
+msgid "Invalid request"
+msgstr "Enviar solicitud"
+
+#: wp-upg.php:582
 msgid "Quick Settings"
 msgstr "Configuración rápida"
 
-#: wp-upg.php:681
+#: wp-upg.php:599
 msgid "Version"
 msgstr "Versión"
 
-#: wp-upg.php:681
+#: wp-upg.php:599
 msgid "Documentation"
 msgstr "Documentación"
 
-#: wp-upg.php:682
-msgid "Rate the plugin"
-msgstr "Calificar el Plugin"
+#: wp-upg.php:601 wp-upg.php:702
+msgid "Shortcode Guide"
+msgstr ""
+
+#: wp-upg.php:700
+msgid "Layout Editor"
+msgstr ""
+
+#: wp-upg.php:701
+msgid "Addons & Help"
+msgstr ""
+
+#~ msgid "UPG Plugins"
+#~ msgstr "UPG Complementos"
+
+#~ msgid "Breadcrumb"
+#~ msgstr "Migaja de pan"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Important settings"
+#~ msgstr "Configuraciones importantes"
+
+#~ msgid "Main media file"
+#~ msgstr "Configuración de Multimedia"
+
+#~ msgid "Hide album from frontend"
+#~ msgstr "Ocultar álbum de la interfaz"
+
+#~ msgid "Hide at Front End"
+#~ msgstr "Ocultar en la parte delantera"
+
+#~ msgid "Rate the plugin"
+#~ msgstr "Calificar el Plugin"
 
 #~ msgid "  Albums"
 #~ msgstr " Álbums"

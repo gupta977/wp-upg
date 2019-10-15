@@ -5,12 +5,12 @@ function upg_meta_boxes()
 	$prefix = 'upg_';
 	$post_type_selected = upg_get_option('after_content_post', 'upg_general', '');
 	$meta_boxes = array(
-		'post_img' => array('id' => $prefix . 'image', 'title' => __('UPG Main media file', 'wp-upg'), 'callback' => 'upg_meta_box_image', 'screen' => 'upg', 'position' => 'advanced', 'priority' => 'high'),
+		'post_img' => array('id' => $prefix . 'image', 'title' => 'UPG ' .  __('Media', 'wp-upg'), 'callback' => 'upg_meta_box_image', 'screen' => 'upg', 'position' => 'advanced', 'priority' => 'high'),
 
-		'upg-layout' => array('title' => __('UPG Preview template', "wp-upg"), 'callback' => 'upg_meta_box_layout', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
+		'upg-layout' => array('title' => 'UPG ' . __('Preview template', "wp-upg"), 'callback' => 'upg_meta_box_layout', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
 
-		'upg-extra-fields' => array('title' => __('UPG Extra Form Fields', "wp-upg"), 'callback' => 'upg_meta_box_extra_field', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
-		'upg-settings' => array('title' => __('UPG Settings', "wp-upg"), 'callback' => 'upg_meta_box_settings', 'screen' => $post_type_selected, 'position' => 'side', 'priority' => 'core'),
+		'upg-extra-fields' => array('title' => 'UPG ' . __('Extra Form Fields', "wp-upg"), 'callback' => 'upg_meta_box_extra_field', 'screen' => 'upg', 'position' => 'side', 'priority' => 'core'),
+		'upg-settings' => array('title' => 'UPG ' . __('Settings', "wp-upg"), 'callback' => 'upg_meta_box_settings', 'screen' => $post_type_selected, 'position' => 'side', 'priority' => 'core'),
 	);
 
 

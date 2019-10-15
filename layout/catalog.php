@@ -182,7 +182,7 @@ if (!is_user_logged_in() && $login_check == 'true') {
 					'field'    => 'slug',
 					'terms'    => explode(',', $album),
 					//'terms'    => array( 'mobile', 'sports' ),
-					'include_children' => 0 //It will not include post of sub categories
+					//'include_children' => 0 //It will not include post of sub categories
 				),
 
 				array(
