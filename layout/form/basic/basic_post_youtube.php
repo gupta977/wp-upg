@@ -118,7 +118,7 @@
 
 		<div class="pure-controls">
 			<input type="reset">
-			<button type="submit" name="SN" class="pure-button pure-button-primary"><i class="fab fa-youtube"></i> <?php esc_html_e('Submit URL', 'wp-upg'); ?></button>
+			<button type="submit" name="SN" class="pure-button pure-button-primary"><i class="fab fa-youtube"></i> <?php esc_html_e('Update', 'wp-upg'); ?></button>
 			<?php wp_nonce_field('upg-nonce', 'upg-nonce', false); ?>
 			<input type="hidden" name="action" value="upg_ajax_post">
 			<input type="hidden" name="upload_type" value="video_url">

@@ -3,6 +3,18 @@
 //WP-Query is at wp-upg upg_datatable()
 if (is_single() || is_page()) {
 
+    //Thumbnail image to show="on" or hide="off"
+    if (isset($params['image']))
+        $upg_image = $params['image'];
+    else
+        $upg_image = "on";
+
+    //Table ID
+    if (isset($params['name']))
+        $upg_table = $params['name'];
+    else
+        $upg_table = "upg_table_id";
+
     ob_start();
     ?>
 
@@ -10,11 +22,12 @@ if (is_single() || is_page()) {
     <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js'; ?>"></script>
     <script>
         jQuery(document).ready(function() {
-            jQuery('#table_id').DataTable({
+            var datatable_url = myAjax_datatable.ajaxurl + "&upg_image=<?php echo $upg_image; ?>";
+            jQuery('#<?php echo $upg_table; ?>').DataTable({
                 "processing": true,
                 "serverSide": true,
                 rowId: 'id',
-                "ajax": myAjax_datatable.ajaxurl,
+                "ajax": datatable_url,
                 "columnDefs": [{
                     "targets": 'no-sort',
                     "orderable": false,
@@ -22,10 +35,15 @@ if (is_single() || is_page()) {
             });
         });
     </script>
-    <table id="table_id" class="display">
+    <table id="<?php echo $upg_table; ?>" class="display">
         <thead>
             <tr>
-                <th class="no-sort">Picture</th>
+                <?php
+                    if ($upg_image == "on") {
+                        echo '<th class="no-sort">Picture</th>';
+                    }
+
+                    ?>
                 <th>Title</th>
                 <?php
                     for ($x = 1; $x <= 5; $x++) {

@@ -332,7 +332,7 @@ function upg_drop()
 
 	global $wpdb;
 	//Search for [upg- pages, and delete that. Check 5 places
-	for ($x = 1; $x <= 5; $x++) {
+	for ($x = 1; $x <= 3; $x++) {
 		$page_id = $wpdb->get_var("select id from {$wpdb->prefix}posts where post_content like '%[upg-list%'");
 		wp_delete_post($page_id);
 

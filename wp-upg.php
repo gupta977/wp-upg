@@ -732,7 +732,7 @@ add_action('upg_admin_top_menu', 'upg_admin_top_menu', 10, 2);
 add_action( 'update_option_upg_settings', 'upg_hook_advance_options_page_after_save', 10, 2 ) */;
 
 
-//datatable ajax load
+//datatable ajax load [upg-datable]
 add_action("wp_ajax_upg_datatable", "upg_datatable");
 add_action("wp_ajax_nopriv_upg_datatable", "upg_datatable");
 
@@ -745,6 +745,7 @@ function upg_datatable()
 	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
 
 	$request = $_GET;
+	//print_r($request);
 	$args = array(
 		'post_type' => 'upg',
 		'post_status' => 'publish',
@@ -841,11 +842,17 @@ function upg_datatable()
 			$nestedData = array();
 
 			if ($popup == "on") {
-				$nestedData[] = '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" width="75px"></a>';
-				$nestedData[] = $thetitle;
+				if ($request['upg_image'] == "on") {
+					$nestedData[] = '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" width="75px"></a>';
+					$nestedData[] = $thetitle;
+				} else {
+					$nestedData[] = '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0>' . $thetitle . '</a>';
+				}
 			} else {
-				$nestedData[] = '<a href="' . $permalink . '" border="0"><img src="' . $image . '" width="75px"></a>';
-				$nestedData[] = '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
+				if ($request['upg_image'] == "on")
+					$nestedData[] = '<a href="' . $permalink . '" border="0"><img src="' . $image . '" width="75px"></a>';
+
+				$nestedData[] = '<a href="' . $permalink . '" border="0">' . $thetitle . '</a><br>' . upg_show_icon_grid();
 			}
 
 			for ($x = 1; $x <= 5; $x++) {
@@ -919,8 +926,9 @@ function upg_display_after_content($content)
 
 
 	$selected = upg_get_option('after_content_post', 'upg_general', array());
-	//var_dump($selected);
-	//echo get_post_type();
+	if (!is_array($selected))
+		$selected = array();
+
 	if (is_single() || is_page() || !is_main_query() || !in_the_loop()) {
 		if (in_array(get_post_type(), $selected, TRUE)) {
 

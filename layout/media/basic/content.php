@@ -27,6 +27,7 @@
 					if (stripos($image, 'spacer.png') == false) {
 						?>
 						<div class="upg_image-frame"><img src="<?php echo $image; ?>"></div>
+						<?php echo upg_show_icon_grid(); ?>
 				<?php
 					}
 				}
