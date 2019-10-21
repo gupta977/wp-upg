@@ -247,6 +247,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+
+= 2.03 =
+* Interduced new upg-datatable 
+* Added trash,edit,profile button option at preview layout
+
 = 2.02 = 
 * Removed 'photo layout' of form
 * Re-arranged Addon UPG settings.

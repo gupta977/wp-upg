@@ -9,6 +9,12 @@ if (is_single() || is_page()) {
     else
         $upg_image = "on";
 
+    //Display export buttons
+    if (isset($params['export']))
+        $upg_export = $params['export'];
+    else
+        $upg_export = "on";
+
     //Table ID
     if (isset($params['name']))
         $upg_table = $params['name'];
@@ -18,16 +24,28 @@ if (is_single() || is_page()) {
     ob_start();
     ?>
 
-    <link href="<?php echo plugins_url() . '/' . upg_FOLDER . '/css/datatables.min.css'; ?>" rel="stylesheet" type="text/css">
-    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js'; ?>"></script>
+    <link href="<?php echo plugins_url() . '/' . upg_FOLDER . '/css/datatables.min.css?' . UPG_PLUGIN_VERSION; ?>" rel="stylesheet" type="text/css">
+    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js?' . UPG_PLUGIN_VERSION; ?>"></script>
+    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/pdfmake.min.js?' . UPG_PLUGIN_VERSION; ?>"></script>
+    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/vfs_fonts.js?' . UPG_PLUGIN_VERSION; ?>"></script>
     <script>
         jQuery(document).ready(function() {
             var datatable_url = myAjax_datatable.ajaxurl + "&upg_image=<?php echo $upg_image; ?>";
             jQuery('#<?php echo $upg_table; ?>').DataTable({
                 "processing": true,
                 "serverSide": true,
-                rowId: 'id',
+                "responsive": true,
+                "rowId": 'id',
                 "ajax": datatable_url,
+                dom: 'Bflrtip',
+                <?php
+
+                    if ($upg_export == "on") {
+                        echo '"buttons": ["copy", "csv", "pdf", "excel", "print"],';
+                    }
+
+                    ?>
+
                 "columnDefs": [{
                     "targets": 'no-sort',
                     "orderable": false,

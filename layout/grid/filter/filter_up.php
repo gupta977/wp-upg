@@ -1,5 +1,5 @@
-    <link href="<?php echo plugins_url() . '/' . upg_FOLDER . '/css/datatables.min.css'; ?>" rel="stylesheet" type="text/css">
-    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js'; ?>"></script>
+    <link href="<?php echo plugins_url() . '/' . upg_FOLDER . '/css/datatables.min.css?' . UPG_PLUGIN_VERSION; ?>" rel="stylesheet" type="text/css">
+    <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/datatables.min.js?' . UPG_PLUGIN_VERSION; ?>"></script>
     <style>
         .upg_hover-zoom {
             -moz-transition: all 0.5s;
@@ -20,7 +20,7 @@
                 "columnDefs": [{
                     "targets": 'no-sort',
                     "orderable": false,
-                }],
+                }]
             });
         });
     </script>

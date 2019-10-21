@@ -29,6 +29,7 @@ function upg_shortcode()
                 <li><a href="#tab-7"><?php echo __("[upg-search]", "wp-upg"); ?></a></li>
                 <li><a href="#tab-8"><?php echo __("[upg-album]", "wp-upg"); ?></a></li>
                 <li><a href="#tab-9"><?php echo __("[upg-breadcrumb]", "wp-upg"); ?></a></li>
+                <li><a href="#tab-10"><?php echo __("[upg-datatable]", "wp-upg"); ?></a></li>
             </ul>
 
             <div id="tab-1">
@@ -358,6 +359,36 @@ function upg_shortcode()
                 Just insert a shortcode before gallery shortcode.<br>
                 <div class="update-nag"><code>[upg-breadcrumb]<br>[upg-list]</code></div>
             </div>
+            <div id="tab-10">
+                <h3>Display Data in tabular format.</h3>
+                <h4> [upg-datatable image="off"]</h4>
+                With this shortcode, user can see upg post and thumbnails will be hidden. <br><br>
+                <b>Notes:</b>
+                <ol>
+                    <li>Best for huge database. Eg. More then 50,000 records.</li>
+                    <li>Complete ajax powered.</li>
+                    <li>Powered by datatables.net</li>
+                </ol>
+
+                <hr>
+                <div class="update-nag">
+                    <ul style="list-style-type:circle;">
+                        <li> <code>image</code> = "on | off" - It will hide thubnail column</li>
+                        <li> <code>name</code> = "Table ID" - It will assign unique table name. Required if multiple table on same page.</li>
+                        <li> <code>export</code> = "on | off" - It will show export buttons.
+                            <ul style="list-style-type:disc;margin-left: 50px;">
+                                <li> copy: Copy to Clipboard</li>
+                                <li> csv: Save table to a CSV file</li>
+                                <li> excel: Save table to an Excel (.xlsx) file</li>
+                                <li> pdf: Save table to a PDF file</li>
+                                <li> print: Show a Print view and dialog for the table</li>
+
+                        </li>
+                    </ul>
+                    </ul>
+                </div>
+            </div>
+
 
         </div>
     <?php

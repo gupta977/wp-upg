@@ -272,7 +272,7 @@ if (!class_exists('upg_quick_setting')) :
                     array(
                         'name'    => 'global_media_shortcode_1',
                         'label'   => __('Shortcode Position 1st', 'wp-upg'),
-                        'desc'    => __('Insert or copy/paste other plugins shortcode here.', 'wp-upg'),
+                        'desc'    => __('Insert or copy/paste other plugins shortcode here. Eg.', 'wp-upg') . '[upg-breadcrumb]',
                         'type'    => 'textarea',
                         'default' => upg_get_option('global_media_shortcode_1', 'upg_preview', ''),
                     ),
