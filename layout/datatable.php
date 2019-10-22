@@ -4,10 +4,27 @@
 if (is_single() || is_page()) {
 
     //Thumbnail image to show="on" or hide="off"
-    if (isset($params['image']))
-        $upg_image = $params['image'];
+    if (isset($params['field']))
+        $field = $params['field'];
     else
-        $upg_image = "on";
+        $field = "Image:upg_get_thumbnail, Title:upg_get_title, Author:upg_author, Date:get_the_date";
+
+
+
+    //Add values as functions into array
+    //Add values as function into array
+
+    $label = array();
+
+    $values = explode(',', $field);
+    foreach ($values as $option) {
+        $cap = explode(":", $option);
+
+        array_push($label, trim($cap[0]));
+    }
+
+    //print_r($label);
+
 
     //Display export buttons
     if (isset($params['export']))
@@ -30,7 +47,7 @@ if (is_single() || is_page()) {
     <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/vfs_fonts.js?' . UPG_PLUGIN_VERSION; ?>"></script>
     <script>
         jQuery(document).ready(function() {
-            var datatable_url = myAjax_datatable.ajaxurl + "&upg_image=<?php echo $upg_image; ?>";
+            var datatable_url = myAjax_datatable.ajaxurl + "&field=<?php echo $field; ?>";
             jQuery('#<?php echo $upg_table; ?>').DataTable({
                 "processing": true,
                 "serverSide": true,
@@ -56,13 +73,17 @@ if (is_single() || is_page()) {
     <table id="<?php echo $upg_table; ?>" class="display">
         <thead>
             <tr>
-                <?php
-                    if ($upg_image == "on") {
-                        echo '<th class="no-sort">Picture</th>';
-                    }
 
+                <?php
+                    for ($x = 0; $x < count($label); $x++) {
+
+                        ?>
+                    <th><?php echo $label[$x]; ?></th>
+                <?php
+
+                    }
                     ?>
-                <th>Title</th>
+
                 <?php
                     for ($x = 1; $x <= 5; $x++) {
                         if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {

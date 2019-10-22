@@ -742,10 +742,22 @@ function upg_datatable()
 	global $wp_query;
 	$options = get_option('upg_settings', '');
 	header("Content-Type: application/json");
-	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
 
 	$request = $_GET;
 	//print_r($request);
+
+	//Add values as function into array
+	$val = array();
+
+	$values = explode(',', $request['field']);
+	foreach ($values as $option) {
+		$cap = explode(":", $option);
+		array_push($val, $cap[1]);
+	}
+
+	//print_r($val);
+
+
 	$args = array(
 		'post_type' => 'upg',
 		'post_status' => 'publish',
@@ -795,66 +807,20 @@ function upg_datatable()
 		while ($data_query->have_posts()) {
 
 			$data_query->the_post();
-			$permalink = get_permalink();
-			$thetitle = get_the_title();
-			$theauthor = get_the_author();
-			$image = upg_image_src('odude-thumb', $post);
-			$image_large = upg_image_src('odude-large', $post);
-			$image_medium = upg_image_src('odude-medium', $post);
-			$tags = upg_get_taxonony_raw($post->ID, 'upg_tag');
-
-			//Set featured image if not available
-			if (strpos($image_large, 'noimg.png') == false) {
-				upg_set_featured_image($post, $image_large, $post->post_title);
-			}
-
-			$text = wpautop(stripslashes($post->post_content));
-			$text_excerpt = wpautop(stripslashes($post->post_excerpt));
-
-			if (upg_isVideo($post)) {
-				$nonce = wp_create_nonce("upg_oembed");
-				$oembed_url = upg_video_preview_url(upg_isVideo($post), $post);
-				$extra_param = "";
-				$preview_type = '';
-
-				if (strpos($oembed_url, 'vimeo') > 0) {
-					$preview_large = $oembed_url;
-				} else if (strpos($oembed_url, 'yout') > 0) {
-
-					$preview_large = $oembed_url;
-				} else if (strpos($oembed_url, 'facebook') > 0) {
-
-					$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
-
-					$extra_param = 'data-type="iframe"';
-				} else {
-					$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
-					$extra_param = 'data-type="ajax"';
-				}
-			} else {
-				$preview_large = $image_large;
-				$preview_type = 'images';
-				$extra_param = "";
-			}
-
-
-
 			$nestedData = array();
 
-			if ($popup == "on") {
-				if ($request['upg_image'] == "on") {
-					$nestedData[] = '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" width="75px"></a>';
-					$nestedData[] = $thetitle;
-				} else {
-					$nestedData[] = '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0>' . $thetitle . '</a>';
-				}
-			} else {
-				if ($request['upg_image'] == "on")
-					$nestedData[] = '<a href="' . $permalink . '" border="0"><img src="' . $image . '" width="75px"></a>';
+			//Display column based on parameters
+			for ($x = 0; $x < count($val); $x++) {
 
-				$nestedData[] = '<a href="' . $permalink . '" border="0">' . $thetitle . '</a><br>' . upg_show_icon_grid();
+				$func_name = trim($val[$x]);
+
+				if (function_exists($func_name))
+					$nestedData[] = $func_name();
+				else
+					$nestedData[] = $func_name . "() is invalid php function";
 			}
 
+			//Display column of custom fields of UPG settings
 			for ($x = 1; $x <= 5; $x++) {
 				if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
 

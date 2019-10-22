@@ -534,8 +534,11 @@ function upg_submit($title, $files, $content, $category, $preview, $post_type = 
 
 
 //Gets link of post author with it's avatar icon. 
-function upg_author($author, $redirect = true)
+function upg_author($author = '', $redirect = true)
 {
+	if ($author == '') {
+		$author = get_user_by('id', get_the_author_meta('ID'));
+	}
 	$options = get_option('upg_settings');
 	if (upg_get_option('main_page', 'upg_gallery', '0') != '0') {
 		if (isset($options['upg_ultimatemember_enable']) && $options['upg_ultimatemember_enable'] == '1' && function_exists('um_user_profile_url') && $redirect) {
@@ -1827,4 +1830,89 @@ function upg_set_featured_image($post, $image_url, $image_title)
 			set_post_thumbnail($post->ID, $image);
 		}
 	}
+}
+
+//get image thumbnail based on settings
+function upg_get_thumbnail()
+{
+	global $post;
+	$image = upg_image_src('odude-thumb', $post);
+	$image_large = upg_image_src('odude-large', $post);
+	$thetitle = get_the_title();
+	$permalink = get_permalink();
+	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
+
+	if (upg_isVideo($post)) {
+		$nonce = wp_create_nonce("upg_oembed");
+		$oembed_url = upg_video_preview_url(upg_isVideo($post), $post);
+
+		$extra_param = "";
+		$preview_type = '';
+
+		if (strpos($oembed_url, 'vimeo') > 0) {
+			$preview_large = $oembed_url;
+		} else if (strpos($oembed_url, 'yout') > 0) {
+
+			$preview_large = $oembed_url;
+		} else if (strpos($oembed_url, 'facebook') > 0) {
+
+			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+
+			$extra_param = 'data-type="iframe"';
+		} else {
+			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+			$extra_param = 'data-type="ajax"';
+		}
+	} else {
+		$preview_large = $image_large;
+		$preview_type = 'images_group';
+		$extra_param = "";
+	}
+
+	if ($popup == "on")
+		return '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" width="75px"></a>';
+	else
+		return '<a href="' . $permalink . '" border="0"><img src="' . $image . '" width="75px"></a>';
+}
+
+//Get UPG title based on settings
+function upg_get_title()
+{
+	global $post;
+	$thetitle = get_the_title();
+	$permalink = get_permalink();
+	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
+	$image_large = upg_image_src('odude-large', $post);
+
+	if (upg_isVideo($post)) {
+		$nonce = wp_create_nonce("upg_oembed");
+		$oembed_url = upg_video_preview_url(upg_isVideo($post), $post);
+
+		$extra_param = "";
+		$preview_type = '';
+
+		if (strpos($oembed_url, 'vimeo') > 0) {
+			$preview_large = $oembed_url;
+		} else if (strpos($oembed_url, 'yout') > 0) {
+
+			$preview_large = $oembed_url;
+		} else if (strpos($oembed_url, 'facebook') > 0) {
+
+			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+
+			$extra_param = 'data-type="iframe"';
+		} else {
+			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+			$extra_param = 'data-type="ajax"';
+		}
+	} else {
+		$preview_large = $image_large;
+		$preview_type = 'title_group';
+		$extra_param = "";
+	}
+
+	if ($popup == "on")
+		return '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0>' . $thetitle . '</a>';
+	else
+		return '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
 }
