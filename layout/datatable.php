@@ -3,16 +3,13 @@
 //WP-Query is at wp-upg upg_datatable()
 if (is_single() || is_page()) {
 
-    //Thumbnail image to show="on" or hide="off"
+    //Pass table heading with php function name
     if (isset($params['field']))
         $field = $params['field'];
     else
         $field = "Image:upg_get_thumbnail, Title:upg_get_title, Author:upg_author, Date:get_the_date";
 
-
-
-    //Add values as functions into array
-    //Add values as function into array
+    //Add label as function into array
 
     $label = array();
 
@@ -32,11 +29,24 @@ if (is_single() || is_page()) {
     else
         $upg_export = "on";
 
+    //Default post_type
+
+    if (isset($params['post_type']))
+        $post_type = $params['post_type'];
+    else
+        $post_type = "upg";
+
+    //For wordpress posts
+    if ($post_type == 'wp_post')
+        $post_type = '';
+
+
     //Table ID
     if (isset($params['name']))
         $upg_table = $params['name'];
     else
         $upg_table = "upg_table_id";
+
 
     ob_start();
     ?>
@@ -47,7 +57,7 @@ if (is_single() || is_page()) {
     <script src="<?php echo plugins_url() . '/' . upg_FOLDER . '/js/vfs_fonts.js?' . UPG_PLUGIN_VERSION; ?>"></script>
     <script>
         jQuery(document).ready(function() {
-            var datatable_url = myAjax_datatable.ajaxurl + "&field=<?php echo $field; ?>";
+            var datatable_url = myAjax_datatable.ajaxurl + "&field=<?php echo $field; ?>&post_type=<?php echo $post_type; ?>";
             jQuery('#<?php echo $upg_table; ?>').DataTable({
                 "processing": true,
                 "serverSide": true,
@@ -85,13 +95,15 @@ if (is_single() || is_page()) {
                     ?>
 
                 <?php
-                    for ($x = 1; $x <= 5; $x++) {
-                        if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+                    if ($post_type == 'upg') {
+                        for ($x = 1; $x <= 5; $x++) {
+                            if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
 
-                            ?>
-                        <th><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?></th>
+                                ?>
+                            <th><?php echo upg_get_filed_label('upg_custom_field_' . $x); ?></th>
 
                 <?php
+                            }
                         }
                     }
                     ?>

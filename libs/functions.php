@@ -1876,43 +1876,48 @@ function upg_get_thumbnail()
 }
 
 //Get UPG title based on settings
-function upg_get_title()
+function upg_get_title($post_type = 'upg')
 {
+	upg_log($post_type . "---");
 	global $post;
 	$thetitle = get_the_title();
 	$permalink = get_permalink();
-	$popup = upg_get_option('global_popup', 'upg_preview', 'on');
-	$image_large = upg_image_src('odude-large', $post);
+	if ($post_type == 'upg' || $post_type == '') {
+		$popup = upg_get_option('global_popup', 'upg_preview', 'on');
+		$image_large = upg_image_src('odude-large', $post);
 
-	if (upg_isVideo($post)) {
-		$nonce = wp_create_nonce("upg_oembed");
-		$oembed_url = upg_video_preview_url(upg_isVideo($post), $post);
+		if (upg_isVideo($post)) {
+			$nonce = wp_create_nonce("upg_oembed");
+			$oembed_url = upg_video_preview_url(upg_isVideo($post), $post);
 
-		$extra_param = "";
-		$preview_type = '';
+			$extra_param = "";
+			$preview_type = '';
 
-		if (strpos($oembed_url, 'vimeo') > 0) {
-			$preview_large = $oembed_url;
-		} else if (strpos($oembed_url, 'yout') > 0) {
+			if (strpos($oembed_url, 'vimeo') > 0) {
+				$preview_large = $oembed_url;
+			} else if (strpos($oembed_url, 'yout') > 0) {
 
-			$preview_large = $oembed_url;
-		} else if (strpos($oembed_url, 'facebook') > 0) {
+				$preview_large = $oembed_url;
+			} else if (strpos($oembed_url, 'facebook') > 0) {
 
-			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+				$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
 
-			$extra_param = 'data-type="iframe"';
+				$extra_param = 'data-type="iframe"';
+			} else {
+				$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
+				$extra_param = 'data-type="ajax"';
+			}
 		} else {
-			$preview_large = admin_url('admin-ajax.php?action=upg_oembed&oembed_url=' . $oembed_url . '&nonce=' . $nonce);
-			$extra_param = 'data-type="ajax"';
+			$preview_large = $image_large;
+			$preview_type = 'title_group';
+			$extra_param = "";
 		}
-	} else {
-		$preview_large = $image_large;
-		$preview_type = 'title_group';
-		$extra_param = "";
-	}
 
-	if ($popup == "on")
-		return '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0>' . $thetitle . '</a>';
-	else
+		if ($popup == "on")
+			return '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0>' . $thetitle . '</a>';
+		else
+			return '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
+	} else {
 		return '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
+	}
 }

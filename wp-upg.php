@@ -748,18 +748,40 @@ function upg_datatable()
 
 	//Add values as function into array
 	$val = array();
+	$val_param1 = array();
+	$val_param2 = array();
+	$val_param3 = array();
 
 	$values = explode(',', $request['field']);
 	foreach ($values as $option) {
 		$cap = explode(":", $option);
+
+		//$cap[0] Is a column label assigned in datatable.php
+
 		array_push($val, $cap[1]);
+
+		if (isset($cap[2])) {
+			array_push($val_param1, $cap[2]);
+		} else {
+			array_push($val_param1, '');
+		}
+		if (isset($cap[3])) {
+			array_push($val_param2, $cap[3]);
+		} else {
+			array_push($val_param2, '');
+		}
+		if (isset($cap[4])) {
+			array_push($val_param3, $cap[4]);
+		} else {
+			array_push($val_param3, '');
+		}
 	}
 
 	//print_r($val);
 
 
 	$args = array(
-		'post_type' => 'upg',
+		'post_type' => $request['post_type'],
 		'post_status' => 'publish',
 		'posts_per_page' => $request['length'],
 		'offset' => $request['start'],
@@ -781,19 +803,20 @@ function upg_datatable()
 		);
 
 
+		if ($request['post_type'] == 'upg') {
+			for ($x = 1; $x <= 5; $x++) {
+				if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
+					$abc = array(
+						'relation' => 'OR',
+						array(
+							'key' => 'upg_custom_field_' . $x,
+							'value' => sanitize_text_field($request['search']['value']),
+							'compare' => 'LIKE'
+						)
+					);
 
-		for ($x = 1; $x <= 5; $x++) {
-			if ($options['upg_custom_field_' . $x . '_show_front'] == 'on') {
-				$abc = array(
-					'relation' => 'OR',
-					array(
-						'key' => 'upg_custom_field_' . $x,
-						'value' => sanitize_text_field($request['search']['value']),
-						'compare' => 'LIKE'
-					)
-				);
-
-				$args['meta_query'] = array_merge($args['meta_query'], $abc);
+					$args['meta_query'] = array_merge($args['meta_query'], $abc);
+				}
 			}
 		}
 	}
@@ -815,9 +838,9 @@ function upg_datatable()
 				$func_name = trim($val[$x]);
 
 				if (function_exists($func_name))
-					$nestedData[] = $func_name();
+					$nestedData[] = $func_name($val_param1[$x], $val_param2[$x], $val_param3[$x]);
 				else
-					$nestedData[] = $func_name . "() is invalid php function";
+					$nestedData[] = $func_name . "('" . $val_param1[$x] . "','" . $val_param2[$x] . ",'" . $val_param3[$x] . "') is invalid php function";
 			}
 
 			//Display column of custom fields of UPG settings
