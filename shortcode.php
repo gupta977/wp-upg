@@ -361,19 +361,20 @@ function upg_shortcode()
             </div>
             <div id="tab-10">
                 <h3>Display Data in tabular format.</h3>
-                <h4> [upg-datatable image="off"]</h4>
+                <h4> [upg-datatable]</h4>
                 With this shortcode, user can see upg post and thumbnails will be hidden. <br><br>
                 <b>Notes:</b>
                 <ol>
-                    <li>Best for huge database. Eg. More then 50,000 records.</li>
+                    <li>Best for huge database. Eg. More then 50,000+ records.</li>
                     <li>Complete ajax powered.</li>
                     <li>Powered by datatables.net</li>
+                    <li>Ability to show records from custom post type. Eg. For woocommerce use post_type="product"</li>
                 </ol>
 
                 <hr>
                 <div class="update-nag">
                     <ul style="list-style-type:circle;">
-                        <li> <code>image</code> = "on | off" - It will hide thubnail column</li>
+                        <li> <code>post_type</code> = "Custom Post Type" - 'upg' is default. For Wordpress post use 'wp_post'</li>
                         <li> <code>name</code> = "Table ID" - It will assign unique table name. Required if multiple table on same page.</li>
                         <li> <code>export</code> = "on | off" - It will show export buttons.
                             <ul style="list-style-type:disc;margin-left: 50px;">
@@ -382,11 +383,29 @@ function upg_shortcode()
                                 <li> excel: Save table to an Excel (.xlsx) file</li>
                                 <li> pdf: Save table to a PDF file</li>
                                 <li> print: Show a Print view and dialog for the table</li>
-
+                            </ul>
+                        </li>
+                        <li> <code>field</code> = "Label:Function_name:Parameter1:Parameter2:Parameter3" - Use own label and function. Separate with comma for multiple fields.
+                            <ul style="list-style-type:disc;margin-left: 50px;">
+                                <li> Label - Table Column Name</li>
+                                <li> Function_name: Php function name. If not available create your own at theme's function.php</li>
+                                <li> Parameter1: Text parameter function's first attribute</li>
+                                <li> Parameter2: Text parameter function's second attribute</li>
+                                <li> Parameter3: Text parameter function's third attribute</li>
+                            </ul>
                         </li>
                     </ul>
-                    </ul>
+
                 </div>
+                <hr>
+                <h4>Scenario 1 – Display wordpress post</h4>
+                Image, Title, Author, Date column is displayed. Each column have own php functions.<br>
+                <div class="update-nag"><code>[upg-datatable name="wp_post" post_type="wp_post" field="Title: upg_get_title:wp_post , Author:upg_author , Date:get_the_date"]</code></div>
+
+                <hr>
+                <h4>Scenario 2 – Display UPG post</h4>
+                Title & Date column is displayed + UPG custom fields enabled for frontend in settings.<br>
+                <div class="update-nag"><code> [upg-datatable field="Title: upg_get_title, Date:get_the_date "]</code></div>
             </div>
 
 

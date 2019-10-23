@@ -1878,7 +1878,6 @@ function upg_get_thumbnail()
 //Get UPG title based on settings
 function upg_get_title($post_type = 'upg')
 {
-	upg_log($post_type . "---");
 	global $post;
 	$thetitle = get_the_title();
 	$permalink = get_permalink();

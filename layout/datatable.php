@@ -10,7 +10,6 @@ if (is_single() || is_page()) {
         $field = "Image:upg_get_thumbnail, Title:upg_get_title, Author:upg_author, Date:get_the_date";
 
     //Add label as function into array
-
     $label = array();
 
     $values = explode(',', $field);
@@ -68,7 +67,16 @@ if (is_single() || is_page()) {
                 <?php
 
                     if ($upg_export == "on") {
-                        echo '"buttons": ["copy", "csv", "pdf", "excel", "print"],';
+                        echo '"buttons": 
+                        ["copy", "csv", "pdf", "excel", 
+                            {
+                            extend: "print",
+                                exportOptions: 
+                                {
+                                    stripHtml: true
+                                }
+                            }
+                        ],';
                     }
 
                     ?>

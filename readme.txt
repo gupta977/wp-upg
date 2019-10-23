@@ -28,22 +28,28 @@ That's all there is to it! Your site now can accept user generated content. Ever
 Power of <a href="https://odude.com/upg-user-post-gallery/upg-layouts/">layouts</a> will let you to design/work of your choice. 
 
 == Gallery ==
-There are 2 types of UPG Gallery. 
+There are 3 types of UPG Gallery. 
 
-= 1. Attach Gallery =
-Attach gallery for WordPress post uses shortcode [upg-attach] into the content area where ever required.
-The image/video url posted on this post will not be visible on other places.
-It is full of ajax, hence no page refresh occurred during submission and page navigation.
-'Lazy Load more' button is available and images can be previewed in lightbox/popup 
-Optimized for pre loading of images
+= 1. Attach Gallery [upg-attach] =
+* The image/video url posted on this post will not be visible on other places.
+* It is full of ajax, hence no page refresh occurred during submission and page navigation.
+* 'Lazy Load more' button is available and images can be previewed in lightbox/popup 
+* Optimized for pre loading of images
 
-= 2. Primary Gallery =
-It is independent gallery. All the UPG post submitted on different post can be visible at [upg-list].
-It also works as the main page of UPG gallery.
-It has lots of shortcode parameters to filter & change layouts.
+= 2. Primary Gallery [upg-list] =
+* It is independent gallery. All the UPG post submitted on different post can be visible at [upg-list].
+* It also works as the main page of UPG gallery.
+* It has lots of shortcode parameters to filter & change layouts.
 
-== Gallery ==
-There are 2 types of Submission Form.
+= 3. Data Table Gallery [upg-datatable] =
+* This will display UPG post and other custom post type (CPT) in tabular format and is powered by datatables.net.
+* Used for huge sets of records and full of ajax. Search between the rows for title and UPG custom fields. 
+* Ability to export records in CSV, Excel, PDF format in one click.
+* Sorting of column and option to display records per page. 
+* Primary designed for developer so that php function can be included in own table column. 
+
+== Frontend Submission Forms ==
+There are 2 types of form.
 
 = 1. [upg-post] Form =
 * Registered & visitors can post images/article/youtube video url from the front end.
@@ -152,6 +158,7 @@ There are 2 types of Submission Form.
 * List layout  <a href="https://odude.com/demo/albums/list-layout/" target="_blank">Demo</a>
 * Slide layout  <a href="https://odude.com/demo/albums/slide-layout/" target="_blank">Demo</a>
 * Shop , FAQ, Personal, Basic, Ecard, layouts available.
+* Data Table  <a href="https://odude.com/demo/albums/data-table/" target="_blank">Demo</a>
 * Single-Page Attach gallery with Load-More buttons [upg-attach] <a href="https://odude.com/demo/albums/upg-attach/" target="_blank">Demo</a>
 * Create your own gallery layout with 'personal layout'. (PHP & CSS)
 

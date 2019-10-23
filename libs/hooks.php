@@ -6,9 +6,8 @@ add_filter("the_content", "upg_the_content");
 add_shortcode("upg-pick", "upg_pick");
 add_shortcode("upg-list", "upg_list");
 add_shortcode("upg-attach", "upg_attach");
-if (is_upg_pro()) {
-	add_shortcode("upg-datatable", "upg_datatable_shortcode");
-}
+add_shortcode("upg-datatable", "upg_datatable_shortcode");
+
 //List Albums
 add_shortcode("upg-album", "upg_album");
 //Shortocde for magic form
