@@ -15,7 +15,8 @@
 			} else {
 				if ($popup == "on") {
 
-					echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" style="margin:auto;"></a>';
+					echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '" data-caption="' . $thetitle . '" title="' . $thetitle . '" border=0><img src="' . $image . '" style="margin:auto;">';
+					echo ' <upg_figcaption><b>' . $thetitle . '</b><br>' . upg_breakLongText($text, $length = 200, $maxLength = 250) . '</upg_figcaption></a>';
 				} else {
 					echo '<a href="' . $permalink . '" border="0"><img src="' . $image . '" style="margin:auto;"></a>';
 				}

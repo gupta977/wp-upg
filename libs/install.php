@@ -286,7 +286,7 @@ function upg_install()
 
 
 
-		$cid = wp_insert_post(array('post_title' => 'oEmbed URL', 'post_content' => $str_post_embed, 'post_type' => 'page', 'post_status' => 'publish'));
+		$cid = wp_insert_post(array('post_title' => 'Post Video URL', 'post_content' => $str_post_embed, 'post_type' => 'page', 'post_status' => 'publish'));
 		upg_set_option('post_youtube_page', 'upg_form', $cid);
 		update_post_meta($cid, "upg_hide_after_content", "hide");
 

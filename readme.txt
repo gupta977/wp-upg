@@ -255,6 +255,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 
 == Changelog ==
 
+= 2.04 =
+* Updated preview basic layout with full width content
+* Updated basic,photo,pro gallery layout, popup with title & description
+* Updated post video icon
+
 = 2.03 =
 * Interduced new upg-datatable 
 * Added trash,edit,profile button option at preview layout

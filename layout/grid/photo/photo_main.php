@@ -6,7 +6,8 @@
 	} else {
 		if ($popup == "on") {
 
-			echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' href="' . $preview_large . '"  border=0><img src="' . $image_medium . '" class="upg_hover-zoom"></a>';
+			echo '<a data-fancybox="' . $preview_type . '" ' . $extra_param . ' data-caption="' . $thetitle . '" href="' . $preview_large . '"  border=0><img src="' . $image_medium . '" class="upg_hover-zoom">';
+			echo ' <upg_figcaption><b>' . $thetitle . '</b><br>' . upg_breakLongText($text, $length = 200, $maxLength = 250) . '</upg_figcaption></a>';
 		} else {
 			echo '<a href="' . $permalink . '" border=0><img src="' . $image_medium . '"  class="upg_hover-zoom"></a>';
 		}

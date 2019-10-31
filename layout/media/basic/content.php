@@ -39,13 +39,17 @@
 
 	</div>
 
-	<div class="pure-u-1 pure-u-md-3-5">
+	<div class="pure-u-1">
 		<div class="margin-box">
 
 
 			<div class="upg-desp"> <?php echo $text; ?> </div>
 
 		</div>
+	</div>
+
+	<div class="pure-u-1">
+		<?php echo upg_position2(); ?>
 	</div>
 	<div class="pure-u-1 pure-u-md-2-5">
 		<div class="margin-box">
@@ -65,12 +69,8 @@
 
 			?>
 		</div>
-
 	</div>
-	<div class="pure-u-1">
-		<?php echo upg_position2(); ?>
-	</div>
-	<div class="pure-u-1 pure-u-md-4-5">
+	<div class="pure-u-1 pure-u-md-2-5">
 
 		<?php upg_list_tags($post); ?> <br>
 		<?php do_action("upg_layout_down"); ?>

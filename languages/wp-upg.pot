@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2019-10-15 15:28+0545\n"
+"POT-Creation-Date: 2019-10-31 18:25+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -230,7 +230,7 @@ msgid "Shortcode Position 1st"
 msgstr ""
 
 #: classes/quick_mode_setting.php:275
-msgid "Insert or copy/paste other plugins shortcode here."
+msgid "Insert or copy/paste other plugins shortcode here. Eg."
 msgstr ""
 
 #: classes/quick_mode_setting.php:281
@@ -250,6 +250,14 @@ msgstr ""
 msgid "Maximum upload file size limit:"
 msgstr ""
 
+#: js/pdfmake.min.js:2
+msgid "entries"
+msgstr ""
+
+#: js/pdfmake.min.js:2
+msgid "keys"
+msgstr ""
+
 #: layout/attach.php:110 layout/catalog.php:296
 #: layout/form/post_image.php:194 layout/form/post_youtube.php:56
 msgid "Layout Not Found. Check settings."
@@ -266,6 +274,7 @@ msgid "Processing"
 msgstr ""
 
 #: layout/attach.php:163 layout/form/basic/basic_post_form.php:160
+#: layout/form/basic/basic_post_youtube.php:121
 #: layout/form/simple/simple_edit_form.php:77
 #: layout/form/simple/simple_post_form.php:102 libs/install.php:157
 msgid "Post"
@@ -288,28 +297,28 @@ msgid "Post Title"
 msgstr ""
 
 #: layout/form/basic/basic_edit_form.php:43
-#: layout/form/basic/basic_edit_youtube.php:44
+#: layout/form/basic/basic_edit_youtube.php:40
 #: layout/form/basic/basic_post_form.php:64
 #: layout/form/basic/basic_post_youtube.php:56
 msgid "Post Content"
 msgstr ""
 
 #: layout/form/basic/basic_edit_form.php:58
-#: layout/form/basic/basic_edit_youtube.php:59
+#: layout/form/basic/basic_edit_youtube.php:53
 #: layout/form/basic/basic_post_form.php:77
 #: layout/form/basic/basic_post_youtube.php:67
 msgid "Select Album/Group"
 msgstr ""
 
 #: layout/form/basic/basic_edit_form.php:64
-#: layout/form/basic/basic_edit_youtube.php:63
+#: layout/form/basic/basic_edit_youtube.php:57
 #: layout/form/basic/basic_post_form.php:82
 #: layout/form/basic/basic_post_youtube.php:71
 msgid "Enter Tags"
 msgstr ""
 
 #: layout/form/basic/basic_edit_form.php:65
-#: layout/form/basic/basic_edit_youtube.php:64
+#: layout/form/basic/basic_edit_youtube.php:58
 #: layout/form/basic/basic_post_form.php:83
 #: layout/form/basic/basic_post_youtube.php:72
 msgid "Tags separated by commas"
@@ -338,27 +347,25 @@ msgstr ""
 msgid "Video Title"
 msgstr ""
 
-#: layout/form/basic/basic_edit_youtube.php:42
+#: layout/form/basic/basic_edit_youtube.php:38
 msgid "Video Description"
 msgstr ""
 
-#: layout/form/basic/basic_edit_youtube.php:108
+#: layout/form/basic/basic_edit_youtube.php:95
 #: layout/form/simple/simple_edit_youtube.php:17
 #: layout/form/simple/simple_post_youtube.php:31 libs/metabox.php:178
 msgid "Embed URL"
 msgstr ""
 
-#: layout/form/basic/basic_edit_youtube.php:110
+#: layout/form/basic/basic_edit_youtube.php:97
 #: layout/form/simple/simple_edit_youtube.php:18
 #: layout/form/simple/simple_post_youtube.php:32
 msgid "copy/paste Video URL"
 msgstr ""
 
-#: layout/form/basic/basic_edit_youtube.php:131
-#: layout/form/basic/basic_post_youtube.php:121
-#: layout/form/simple/simple_edit_youtube.php:72
-#: layout/form/simple/simple_post_youtube.php:76
-msgid "Submit URL"
+#: layout/form/basic/basic_edit_youtube.php:118
+#: layout/form/simple/simple_edit_youtube.php:65
+msgid "Update"
 msgstr ""
 
 #: layout/form/basic/basic_post_form.php:93
@@ -397,13 +404,13 @@ msgid "My Gallery"
 msgstr ""
 
 #: layout/form/magic_form.php:75 layout/form/post_image.php:96
-#: layout/form/post_youtube.php:115 libs/functions.php:892
-#: libs/functions.php:954
+#: layout/form/post_youtube.php:115 libs/functions.php:895
+#: libs/functions.php:957
 msgid "Successfully posted."
 msgstr ""
 
 #: layout/form/magic_form.php:81 layout/form/post_image.php:105
-#: libs/functions.php:894 libs/functions.php:957 libs/functions.php:1034
+#: libs/functions.php:897 libs/functions.php:960 libs/functions.php:1037
 msgid "Your submission is under review."
 msgstr ""
 
@@ -450,6 +457,10 @@ msgstr ""
 
 #: layout/form/simple/simple_edit_youtube.php:19
 msgid "Only URL from YouTube & Vimeo is allowed"
+msgstr ""
+
+#: layout/form/simple/simple_post_youtube.php:76
+msgid "Submit URL"
 msgstr ""
 
 #: layout/grid/basic/basic_down.php:3 layout/grid/classic/classic_down.php:4
@@ -513,33 +524,33 @@ msgstr ""
 msgid "Login Please !"
 msgstr ""
 
-#: libs/functions.php:904 libs/functions.php:972 libs/functions.php:1045
+#: libs/functions.php:907 libs/functions.php:975 libs/functions.php:1048
 msgid "Category is not specified."
 msgstr ""
 
-#: libs/functions.php:904 libs/functions.php:906 libs/functions.php:970
-#: libs/functions.php:972 libs/functions.php:974 libs/functions.php:1043
-#: libs/functions.php:1045 libs/functions.php:1047
+#: libs/functions.php:907 libs/functions.php:909 libs/functions.php:973
+#: libs/functions.php:975 libs/functions.php:977 libs/functions.php:1046
+#: libs/functions.php:1048 libs/functions.php:1050
 msgid "Submission failed"
 msgstr ""
 
-#: libs/functions.php:906 libs/functions.php:974 libs/functions.php:1047
+#: libs/functions.php:909 libs/functions.php:977 libs/functions.php:1050
 msgid "Error message: "
 msgstr ""
 
-#: libs/functions.php:970 libs/functions.php:1043
+#: libs/functions.php:973 libs/functions.php:1046
 msgid "Check your file type."
 msgstr ""
 
-#: libs/functions.php:1031
+#: libs/functions.php:1034
 msgid "Successfully posted"
 msgstr ""
 
-#: libs/functions.php:1741
+#: libs/functions.php:1744
 msgid "Show All"
 msgstr ""
 
-#: libs/functions.php:1764
+#: libs/functions.php:1767
 msgid "Loading"
 msgstr ""
 
@@ -789,6 +800,10 @@ msgstr ""
 
 #: shortcode.php:31
 msgid "[upg-breadcrumb]"
+msgstr ""
+
+#: shortcode.php:32
+msgid "[upg-datatable]"
 msgstr ""
 
 #: widgets/categories.php:153 widgets/form.php:54

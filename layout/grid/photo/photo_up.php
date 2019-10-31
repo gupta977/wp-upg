@@ -41,8 +41,20 @@ wp-upg div img:hover {
     transform: scale(0.9);
     border: 0;
   }
-</style>
 
+  upg_figcaption {
+    display: none;
+  }
+</style>
+<script>
+  jQuery(document).ready(function() {
+    jQuery('[data-fancybox]').fancybox({
+      caption: function(instance, item) {
+        return jQuery(this).find('upg_figcaption').html();
+      }
+    });
+  });
+</script>
 <?php
 do_action("upg_grip_top");
 ?>
