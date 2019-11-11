@@ -1,13 +1,67 @@
 <?php
 
-function upg_cate_add_meta_fields($taxonomy)
+//information above CPT
+function upg_cpt_admin_notice()
 {
-    $frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
-    echo $frm->addLabelFor('upg_assign_cate', __('Album for: ', 'wp-upg'));
-    echo $frm->addInput('radio', 'upg_assign_cate', 'all', array('checked' => 'true')) . ' All ';
-    echo $frm->addInput('radio', 'upg_assign_cate', 'image') . ' Images ';
-    echo $frm->addInput('radio', 'upg_assign_cate', 'embed') . ' Embed URL ';
-    ?>
+    $screen = get_current_screen();
+    if (
+        'upg' == $screen->post_type
+        && 'edit' == $screen->base
+    ) {
+
+        ?>
+        <div class="updated">
+            <p><b>Frontend Pages</b>:
+                <?php
+                        $main_upg_page = upg_get_option('main_page', 'upg_gallery', '0');
+                        if ($main_upg_page != '0') {
+                            $linku = get_permalink($main_upg_page);
+                            echo "<a href='" . $linku . "' target='_blank'>" . __("Main Gallery", "wp-upg") . "</a>";
+                        } else {
+                            echo '"Main Gallery" not specified';
+                        }
+                        ?>
+                |
+                <?php
+                        //Image Submission form
+                        $post_image_page = upg_get_option('post_image_page', 'upg_form', '0');
+                        if ($post_image_page != '0') {
+                            $linku = get_permalink($post_image_page);
+                            echo "<a href='" . $linku . "' target='_blank'>" . __("Image Form", "wp-upg") . "</a>";
+                        } else {
+                            echo 'Image Form not Specified';
+                        }
+
+
+                        ?>
+                |
+                <?php
+
+                        $post_youtube_page = upg_get_option('post_youtube_page', 'upg_form', '0');
+                        if ($post_youtube_page != '0') {
+                            $linku = get_permalink($post_youtube_page);
+                            echo "<a href='" . $linku . "' target='_blank'>" . __("Embed/URL Form", "wp-upg") . "</a>";
+                        } else {
+                            echo 'No Embed Form selected';
+                        }
+                        ?>
+
+            </p>
+        </div>
+    <?php
+        }
+    }
+    add_action('admin_notices', 'upg_cpt_admin_notice');
+
+
+    function upg_cate_add_meta_fields($taxonomy)
+    {
+        $frm = new upg_HTML_Form(false); // pass false for html rather than xhtml syntax
+        echo $frm->addLabelFor('upg_assign_cate', __('Album for: ', 'wp-upg'));
+        echo $frm->addInput('radio', 'upg_assign_cate', 'all', array('checked' => 'true')) . ' All ';
+        echo $frm->addInput('radio', 'upg_assign_cate', 'image') . ' Images ';
+        echo $frm->addInput('radio', 'upg_assign_cate', 'embed') . ' Embed URL ';
+        ?>
     <div class="form-field term-group">
         <label for="upg_show_cate"><?php _e('Hidden in forms', 'wp-upg'); ?></label>
         <input type="checkbox" name="upg_show_cate" value="1" id="upg_show_cate">

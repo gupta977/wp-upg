@@ -6,10 +6,11 @@ function upg_add_admin_menu()
 {
 
 	//if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
-	add_submenu_page(null, 'UPG Advance Settings', 'UPG Advance Settings', 'manage_options', 'wp_upg', 'upg_options_page');
-	add_submenu_page(null, 'Edit UPG Layouts', 'Layout Editor', 'manage_options', 'wp_upg_layout', 'upg_layout_page');
-	add_submenu_page(null, 'FREE and Premium plugins', 'UPG Addons / Help', 'manage_options', 'wp_upg_addon', 'upg_addon_page');
-	add_submenu_page(null, 'Shortcode', 'Shortcode', 'manage_options', 'upg_shortcode', 'upg_shortcode');
+	add_submenu_page('edit.php?post_type=upg', __("Advance Settings"), __("Advance Settings"), 'manage_options', 'wp_upg', 'upg_options_page');
+	add_submenu_page('edit.php?post_type=upg', __('Layout Editor'), __('Layout Editor'), 'manage_options', 'wp_upg_layout', 'upg_layout_page');
+	add_submenu_page('edit.php?post_type=upg', __('Addons & Help'), __('Addons & Help'), 'manage_options', 'wp_upg_addon', 'upg_addon_page');
+	add_submenu_page('edit.php?post_type=upg', __('Shortcode Guide'), __('Shortcode Guide'), 'manage_options', 'upg_shortcode', 'upg_shortcode');
+	remove_submenu_page('edit.php?post_type=upg', 'post-new.php?post_type=upg');
 }
 
 /**
