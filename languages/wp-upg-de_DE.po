@@ -1,5 +1,5 @@
-# Copyright (C) 2016 User Photo Gallery
-# This file is distributed under the same license as the User Photo Gallery package.
+# Copyright (C) 2016 User Post Gallery
+# This file is distributed under the same license as the User Post Gallery package.
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
@@ -543,7 +543,7 @@ msgid "Loading"
 msgstr "Wird geladen"
 
 #: libs/install.php:156
-msgid "User Photo Gallery"
+msgid "User Post Gallery"
 msgstr "Galerie Benutzerbeitrag"
 
 #: libs/install.php:158
@@ -1045,7 +1045,7 @@ msgstr "Addons & Hilfe"
 #~ "Notizen<br><br><b>1. Stelle</b> = Direkt über dem Bild Vorschau<br><b>2. "
 #~ "Stelle</b>=Direkt unter der Bildvorschau.<br>"
 
-#~ msgid "UPG - User Photo Gallery"
+#~ msgid "UPG - User Post Gallery"
 #~ msgstr "UPG - Benutzerbeitragsgalerie"
 
 #~ msgid "Ultimate-Member Settings"

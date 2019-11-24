@@ -1,5 +1,5 @@
-# Copyright (C) 2016 User Photo Gallery
-# This file is distributed under the same license as the User Photo Gallery package.
+# Copyright (C) 2016 User Post Gallery
+# This file is distributed under the same license as the User Post Gallery package.
 #, fuzzy
 msgid ""
 msgstr ""
@@ -555,7 +555,7 @@ msgid "Loading"
 msgstr ""
 
 #: libs/install.php:156
-msgid "User Photo Gallery"
+msgid "User Post Gallery"
 msgstr ""
 
 #: libs/install.php:158

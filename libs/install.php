@@ -153,7 +153,7 @@ function upg_post_types()
 		array(
 
 			'labels' => array(
-				'name' => __('User Photo Gallery', 'wp-upg'),
+				'name' => __('User Post Gallery', 'wp-upg'),
 				'singular_name' => 'UPG ' . __('Post', 'wp-upg'),
 				'add_new' => __('Add ' . $product, 'wp-upg'),
 				'add_new_item' => __('Add New ' . $product, 'wp-upg'),
@@ -167,8 +167,11 @@ function upg_post_types()
 				'featured_image'        => __('Featured image', 'wp-upg'),
 				'set_featured_image'    => __('Set featured image', 'wp-upg'),
 				'remove_featured_image' => __('Remove featured Image', 'wp-upg'),
+
 			),
 			'public' => true,
+			'show_in_nav_menus' => false,
+			'show_in_menu' => true, //Hide/show from menu
 			'publicly_queryable' => true,
 			'show_in_rest' => true,
 			'has_archive' => true,

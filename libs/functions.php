@@ -5,7 +5,6 @@ Generate admin pages
 function upg_add_admin_menu()
 {
 
-	//if(upg_get_option( 'show_advance_setting', 'upg_general', '0' )=='1')
 	add_submenu_page('edit.php?post_type=upg', __("Advance Settings"), __("Advance Settings"), 'manage_options', 'wp_upg', 'upg_options_page');
 	add_submenu_page('edit.php?post_type=upg', __('Layout Editor'), __('Layout Editor'), 'manage_options', 'wp_upg_layout', 'upg_layout_page');
 	add_submenu_page('edit.php?post_type=upg', __('Addons & Help'), __('Addons & Help'), 'manage_options', 'wp_upg_addon', 'upg_addon_page');
@@ -1554,11 +1553,13 @@ function upg_getid_video_url($url)
 
 function upg_allowed_embed_url($url)
 {
-	require_once(ABSPATH . 'wp-includes/class-oembed.php');
+	require_once(ABSPATH . 'wp-includes/class-wp-oembed.php');
 	$oembed = new WP_oEmbed;
-	$raw_provider = parse_url($oembed->get_provider($url));
-	if (isset($raw_provider['host'])) {
-		return true;
+	if (wp_http_validate_url($url)) {
+		$raw_provider = parse_url($oembed->get_provider($url));
+		if (isset($raw_provider['host'])) {
+			return true;
+		}
 	}
 	return false;
 }
@@ -1571,8 +1572,12 @@ function upg_getimg_video_url($url, $post = "")
 	if (isset($all_upg_extra["thumbnail_url"][0])) {
 		return $all_upg_extra["thumbnail_url"][0];
 	}
-	require_once(ABSPATH . 'wp-includes/class-oembed.php');
+	require_once(ABSPATH . 'wp-includes/class-wp-oembed.php');
 	$oembed = new WP_oEmbed;
+
+	if (!wp_http_validate_url($url)) {
+		return plugins_url('../images/noimg.png', __FILE__);
+	}
 
 	$raw_provider = parse_url($oembed->get_provider($url));
 	if (isset($raw_provider['host'])) {

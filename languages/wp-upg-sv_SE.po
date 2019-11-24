@@ -1,5 +1,5 @@
-# Copyright (C) 2016 User Photo Gallery
-# This file is distributed under the same license as the User Photo Gallery package.
+# Copyright (C) 2016 User Post Gallery
+# This file is distributed under the same license as the User Post Gallery package.
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
@@ -532,8 +532,8 @@ msgid "Loading"
 msgstr "Wird geladen"
 
 #: libs/install.php:156
-msgid "User Photo Gallery"
-msgstr "User Photo Gallery"
+msgid "User Post Gallery"
+msgstr "User Post Gallery"
 
 #: libs/install.php:158
 msgid "Add "
@@ -1091,7 +1091,7 @@ msgstr ""
 #~ "Förhandsgranska bilden ovan<br><b>Ansra position</b>=Förhandsgranska "
 #~ "bilden nedan.<br>"
 
-#~ msgid "UPG - User Photo Gallery"
+#~ msgid "UPG - User Post Gallery"
 #~ msgstr "UPG- Användar-galleri"
 
 #~ msgid "UPG-Post Gallery"
