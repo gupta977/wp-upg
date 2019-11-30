@@ -1926,3 +1926,35 @@ function upg_get_title($post_type = 'upg')
 		return '<a href="' . $permalink . '" border="0">' . $thetitle . '</a>';
 	}
 }
+//Captcha code
+function upg_verify_captcha()
+{
+	$options = get_option('upg_settings', '');
+
+	if (!isset($options['upg_text_captcha_enable']) || $options['upg_text_captcha_enable'] == "0")
+		return "OK";
+
+	if (isset($_POST['g-recaptcha-response'])) {
+		$options = get_option('upg_settings', '');
+		$recaptcha_secret = $options['upg_text_secret_key'];
+		$response = wp_remote_get("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
+
+		if (is_array($response) && array_key_exists('body', $response)) {
+			$response = json_decode($response["body"], true);
+			if (true == $response["success"]) {
+				//return true;
+				return "OK";
+			} else {
+				//return false;
+				//return "oooo";
+				return __("Please complete the security spam check.", "wp-upg");
+			}
+		} else {
+			return __("Google Server Error", "wp-upg");
+		}
+	} else {
+		//return false;
+		return __("Bots are not allowed. If you are not a bot then please enable JavaScript in browser.", "wp-upg");
+		//return "8888";
+	}
+}
