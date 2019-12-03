@@ -246,8 +246,7 @@ if (!is_user_logged_in() && $login_check == 'true') {
 		);
 	}
 
-	//print_r($args);
-	//var_dump($args);
+
 
 	//Empty array if not logged in
 	if (!is_user_logged_in() & isset($params['user']) && $params['user'] == "show_mine") {
@@ -256,9 +255,12 @@ if (!is_user_logged_in() && $login_check == 'true') {
 		$args = array();
 	}
 
+	//print_r($args);
+	//var_dump($args);
+
 	//Do not run if array is blank
 	if (!empty($args)) {
-
+		//wp_reset_query();
 		$query = new WP_Query($args);
 
 		//Get the tags only

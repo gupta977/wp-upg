@@ -227,6 +227,23 @@ function upg_shortcode()
                     [/upg-form]
                 </code>
 
+                <h4>Scenario 3 - Post YouTube greetings video via 'ODude ECard' plugin</h4>
+                <code>
+                    [upg-form class="pure-form" title="Upload Ecard" name="my_ecard" taxonomy="upg_cate" tag_taxonomy="upg_tag" post_type="video_url" preview="ecard"]
+                    <br>
+                    [upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
+                    <br>
+                    [upg-form-tag type="category" title="Select category" taxonomy="category" ]
+                    <br>
+                    [upg-form-tag type="tag" title="Insert tag"]
+                    <br>
+                    [upg-form-tag type="video_url" title="Insert YouTube URL" placeholder="http://" required="true"]
+                    <br>
+                    [upg-form-tag type="submit" name="submit" value="Submit Ecard"]
+                    <br>
+                    [/upg-form]
+                </code>
+
 
             </div>
 

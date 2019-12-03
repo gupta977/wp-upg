@@ -47,6 +47,7 @@ if (post_type_exists($attr['post_type']) || $attr['post_type'] == "video_url") {
             $content = str_replace("[", "[[", $content);
             $content = str_replace("]", "]]", $content);
 
+            //$result = array();
             $result = upg_submit($title, $files, $content, $category, $preview, 'upg', 'upg_cate', $tags, 'upg_tag');
 
 

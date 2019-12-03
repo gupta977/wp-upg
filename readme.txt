@@ -254,10 +254,13 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.06 =
+* moved verify captcha from upg-pro to upg
+* While uninstall it will delete page with [upg-list] [upg-edit] and others
+
 = 2.05 =
 * Updated admin menus
 * Updated link class-oembed.php to new class
-* moved verify captcha from upg-pro to upg
 
 = 2.04 =
 * Updated preview basic layout with full width content
