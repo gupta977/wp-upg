@@ -163,7 +163,7 @@ There are 2 types of form.
 * Create your own gallery layout with 'personal layout'. (PHP & CSS)
 
 = Preview / Media Demo =
-* Ecard or Greetings Card layout (upg ecard) <a href="https://odude.com/demo/ecard/upg/happy-birthday/" target="_blank">Demo</a>
+* Ecard or Greetings Card layout (upg ecard) <a href="https://odude.com/demo/ecard/" target="_blank">Demo</a>
 * Photo preview layout <a href="https://odude.com/demo/upg/other-flower-2/" target="_blank">Demo</a>
 * Shop Layout <a href="http://odude.com/demo/shop/upg/mens-tshirt/" target="_blank">Demo</a>
 * Basic, FAQ, personal layouts available

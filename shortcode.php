@@ -190,7 +190,7 @@ function upg_shortcode()
                 <h4>Scenario 1 – Form to submit into UPG</h4>
 
                 <code>
-                    [upg-form class="pure-form" title="Submit to UPG" name="my_form" taxonomy="upg_cate" tag_taxonomy="upg_tag"]
+                    [upg-form class="pure-form pure-form-stacked" title="Submit to UPG" name="my_form" taxonomy="upg_cate" tag_taxonomy="upg_tag"]
                     <br>
                     [upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
                     <br>
@@ -229,7 +229,7 @@ function upg_shortcode()
 
                 <h4>Scenario 3 - Post YouTube greetings video via 'ODude ECard' plugin</h4>
                 <code>
-                    [upg-form class="pure-form" title="Upload Ecard" name="my_ecard" taxonomy="upg_cate" tag_taxonomy="upg_tag" post_type="video_url" preview="ecard"]
+                    [upg-form class="pure-form pure-form-stacked" title="Upload Ecard" name="my_ecard" taxonomy="upg_cate" tag_taxonomy="upg_tag" post_type="video_url" preview="ecard"]
                     <br>
                     [upg-form-tag type="post_title" title="Title" value="" placeholder="main title"]
                     <br>
@@ -365,7 +365,6 @@ function upg_shortcode()
                 <b>Notes:</b>
                 <ol>
                     <li><b>It is available only to UPG-PRO version.</b></li>
-                    <li>It will not work for <code>[upg-list]</code> page.</li>
                     <li>UPG main page is used as primary.</li>
                     <li>Redesign search bar is not available yet. </li>
                     <li>Developer can use special upg_show_breadcrumb() and pass css arguments to maintain look and feel.</li>

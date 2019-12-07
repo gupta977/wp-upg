@@ -247,7 +247,7 @@ function register_upg_taxonomies()
 }
 function upg_install()
 {
-	update_option('upg_plugin_version', '2.02');
+	update_option('upg_plugin_version', UPG_PLUGIN_VERSION);
 
 	upg_post_types();
 	register_upg_taxonomies();

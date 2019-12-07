@@ -122,10 +122,14 @@ class upg_FormEntries
     public function displayUnreadState($states)
     {
         global $post;
-        $arg = get_query_var('post_status');
-        if ($arg != 'draft') {
-            if ($post->post_status == 'draft') {
-                return array('draft');
+        global $post_type;
+
+        if ($post_type == 'upg') {
+            $arg = get_query_var('post_status');
+            if ($arg != 'draft') {
+                if ($post->post_status == 'draft') {
+                    return array('draft');
+                }
             }
         }
         return $states;
