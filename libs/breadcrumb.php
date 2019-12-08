@@ -42,6 +42,8 @@ function upg_show_breadcrumb($term_slug, $type, $args = array(), $link = false)
 //Display breadcrumb
 function upg_breadcrumb($args = array())
 {
+  $put = "";
+  ob_start();
   //echo "1ooo";
   $args = wp_parse_args(
     $args,
@@ -85,4 +87,6 @@ function upg_breadcrumb($args = array())
   }
 
   echo $args['wrap_after'];
+  $put = ob_get_clean();
+  return $put;
 }

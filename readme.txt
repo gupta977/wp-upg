@@ -257,6 +257,8 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 = 2.06 =
 * moved verify captcha from upg-pro to upg
 * While uninstall it will delete page with [upg-list] [upg-edit] and others
+* Fixed upg-breadcrumb header sent error
+* Fixed upg-search header sent error
 
 = 2.05 =
 * Updated admin menus
