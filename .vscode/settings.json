@@ -9,5 +9,6 @@
         "woocommerce",
         "wordpress"
     ],
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Kimbie Dark"
 }

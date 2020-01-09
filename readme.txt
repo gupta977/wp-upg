@@ -3,7 +3,7 @@ Contributors: odude
 Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
-Tested up to: 5.3.0
+Tested up to: 5.3.2
 Requires PHP: 5.5
 Stable tag: trunk
 License: GPLv3
@@ -254,6 +254,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.07 =
+* Fixed wp_post post_type not found error
+
 = 2.06 =
 * moved verify captcha from upg-pro to upg
 * While uninstall it will delete page with [upg-list] [upg-edit] and others
