@@ -14,6 +14,8 @@ Visitors & Admin submitted images, video, woocommerce, embed, post gallery. Gene
 == Description ==
 = UPG - User Post Gallery =
 
+> If you need basic easy functionality only with images, try <a href="https://wordpress.org/plugins/flexi/">FLEXI Plugin</a>
+
 UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
 <a href="https://odude.com/upg-user-post-gallery/upg-form/">[upg-form]</a> can be used as frontend uploader for wordpress post and other custom post type. 
@@ -254,6 +256,12 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.09 =
+* Custom field fixed for bulk image upload
+
+= 2.08 =
+* Introduced FLEXI plugin for easy image gallery
+
 = 2.07 =
 * Fixed wp_post post_type not found error
 
