@@ -256,6 +256,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.11 =
+* Video URL submission fixed for older version of wordpress.
+
 
 = 2.10 =
 * Categories sorted by name

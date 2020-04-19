@@ -1631,7 +1631,13 @@ function upg_getid_video_url($url)
 
 function upg_allowed_embed_url($url)
 {
- require_once ABSPATH . 'wp-includes/class-wp-oembed.php';
+ $check_file = ABSPATH . 'wp-includes/class-wp-oembed.php';
+ if (file_exists($check_file)) {
+  require_once ABSPATH . 'wp-includes/class-wp-oembed.php';
+ } else {
+  require_once ABSPATH . 'wp-includes/class-oembed.php';
+ }
+
  $oembed = new WP_oEmbed;
  if (wp_http_validate_url($url)) {
   $raw_provider = parse_url($oembed->get_provider($url));
@@ -1650,7 +1656,12 @@ function upg_getimg_video_url($url, $post = "")
  if (isset($all_upg_extra["thumbnail_url"][0])) {
   return $all_upg_extra["thumbnail_url"][0];
  }
- require_once ABSPATH . 'wp-includes/class-wp-oembed.php';
+ $check_file = ABSPATH . 'wp-includes/class-wp-oembed.php';
+ if (file_exists($check_file)) {
+  require_once ABSPATH . 'wp-includes/class-wp-oembed.php';
+ } else {
+  require_once ABSPATH . 'wp-includes/class-oembed.php';
+ }
  $oembed = new WP_oEmbed;
 
  if (!wp_http_validate_url($url)) {
