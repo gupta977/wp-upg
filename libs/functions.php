@@ -1453,7 +1453,7 @@ function upg_droplist_album($taxonomy = 'upg_cate', $selected_album = "", $skip 
   'show_option_all'   => '',
   'show_option_none'  => '',
   'option_none_value' => '-1',
-  'orderby'           => 'ID',
+  'orderby'           => 'name',
   'order'             => 'ASC',
   'show_count'        => 0,
   'hide_empty'        => 0,

@@ -14,7 +14,7 @@ Visitors & Admin submitted images, video, woocommerce, embed, post gallery. Gene
 == Description ==
 = UPG - User Post Gallery =
 
-> If you need basic easy functionality only with images, try <a href="https://wordpress.org/plugins/flexi/">FLEXI Plugin</a>
+> UPG will continue along with new plugin with similar features :<a href="https://wordpress.org/plugins/flexi/">FLEXI Gallery</a>
 
 UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
@@ -153,7 +153,7 @@ There are 2 types of form.
 * Submit to custom post types
 
 = Gallery / Grid Demo =
-* Photo or masonry layout  <a href="https://odude.com/demo/gallery/" target="_blank">Demo</a>
+* Photo or masonry layout  <a href="https://odude.com/demo/gallery_layout/" target="_blank">Demo</a>
 * Filter layout  <a href="https://odude.com/demo/albums/filter-layout/" target="_blank">Demo</a>
 * Classic layout  <a href="https://odude.com/demo/albums/classic-layout/" target="_blank">Demo</a>
 * Flat layout  <a href="https://odude.com/demo/albums/flat-layout/" target="_blank">Demo</a>
@@ -256,6 +256,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+
+= 2.10 =
+* Categories sorted by name
+* Fixed changing of album type during quick edit.
+
 = 2.09 =
 * Custom field fixed for bulk image upload
 
