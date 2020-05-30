@@ -14,7 +14,7 @@ Visitors & Admin submitted images, video, woocommerce, embed, post gallery. Gene
 == Description ==
 = UPG - User Post Gallery =
 
-> UPG will continue along with new plugin with similar features :<a href="https://wordpress.org/plugins/flexi/">FLEXI Gallery</a>. Supports mp4,mp3,pdf and many more.
+> New plugin with similar features :<a href="https://wordpress.org/plugins/flexi/">FLEXI Gallery</a>. Supports mp4,mp3,pdf and many more.
 
 UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
@@ -256,6 +256,10 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.13 =
+* Fixed export="off" of buttons at DataTable layout
+* Filter layout is now responsive
+
 = 2.12 =
 * Format code and support continues development
 
