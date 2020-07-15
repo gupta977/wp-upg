@@ -3,7 +3,7 @@ Contributors: odude
 Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Requires PHP: 5.5
 Stable tag: trunk
 License: GPLv3
