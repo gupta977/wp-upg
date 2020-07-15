@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wp-upg\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-upg\n"
-"POT-Creation-Date: 2020-04-18 14:22+0545\n"
+"POT-Creation-Date: 2020-07-15 16:27+0545\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: layout/form/basic/basic_post_youtube.php:20
 #: layout/form/simple/simple_edit_form.php:6
 #: layout/form/simple/simple_post_form.php:31
-#: layout/grid/filter/filter_up.php:31 libs/custom_column.php:55
+#: layout/grid/filter/filter_up.php:32 libs/custom_column.php:55
 msgid "Title"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "keys"
 msgstr ""
 
-#: layout/attach.php:110 layout/catalog.php:298
+#: layout/attach.php:110 layout/catalog.php:313
 #: layout/form/post_image.php:194 layout/form/post_youtube.php:56
 msgid "Layout Not Found. Check settings."
 msgstr ""
@@ -472,13 +472,13 @@ msgstr ""
 
 #: layout/grid/basic/basic_main.php:13
 #: layout/grid/classic/classic_main.php:11
-#: layout/grid/filter/filter_main.php:12 layout/grid/flat/flat_main.php:24
+#: layout/grid/filter/filter_main.php:27 layout/grid/flat/flat_main.php:24
 #: layout/grid/list/list_main.php:21 layout/grid/pro/pro_main.php:11
 #: layout/media/basic/content.php:11
 msgid "Under review"
 msgstr ""
 
-#: layout/grid/filter/filter_up.php:43 libs/custom_column.php:62
+#: layout/grid/filter/filter_up.php:44 libs/custom_column.php:62
 msgid "Date"
 msgstr ""
 
@@ -562,23 +562,23 @@ msgstr ""
 msgid "Successfully posted"
 msgstr ""
 
-#: libs/functions.php:1829
+#: libs/functions.php:1840
 msgid "Show All"
 msgstr ""
 
-#: libs/functions.php:1854
+#: libs/functions.php:1865
 msgid "Loading"
 msgstr ""
 
-#: libs/functions.php:2034
+#: libs/functions.php:2045
 msgid "Please complete the security spam check."
 msgstr ""
 
-#: libs/functions.php:2037
+#: libs/functions.php:2048
 msgid "Google Server Error"
 msgstr ""
 
-#: libs/functions.php:2041
+#: libs/functions.php:2052
 msgid ""
 "Bots are not allowed. If you are not a bot then please enable JavaScript "
 "in browser."
