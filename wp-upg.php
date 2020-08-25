@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 2.14
+Version: 2.15
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
  */
 
-define('UPG_PLUGIN_VERSION', '2.14');
+define('UPG_PLUGIN_VERSION', '2.15');
 define('upg_ROOT_URL', plugin_dir_url(__FILE__));
 define('upg_FOLDER', dirname(plugin_basename(__FILE__)));
 define('upg_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . upg_FOLDER . '/');
@@ -149,10 +149,10 @@ function upg_admin_footer_hook()
 {
  global $post;
  if (get_post_type($post) == 'upg') {?> <script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$('#normal-sortables').insertBefore('#postdivrich');
-			});
-		</script> <?php }
+jQuery(document).ready(function($) {
+    $('#normal-sortables').insertBefore('#postdivrich');
+});
+</script> <?php }
 }
 /** Hook into the Admin Footer */add_action('admin_footer', 'upg_admin_footer_hook');
 
@@ -645,24 +645,24 @@ function upg_admin_notice_example_notice()
  /* Check transient, if available display notice */
  if (get_transient('upg-admin-notice-example')) {
   ?>
-		<div class="updated notice is-dismissible">
-			<h3>UPG Notes:</h3>
-			<p>Some pages are auto created. Do not delete them even if not required.</p>
-			<p>Go to UPG Settings and select those pages at appropriate location.</p>
-			<p>It is advisable to update Wordpress "Settings > Permalinks", after page update.</p>
-		</div>
-	<?php
+<div class="updated notice is-dismissible">
+    <h3>UPG Notes:</h3>
+    <p>Some pages are auto created. Do not delete them even if not required.</p>
+    <p>Go to UPG Settings and select those pages at appropriate location.</p>
+    <p>It is advisable to update Wordpress "Settings > Permalinks", after page update.</p>
+</div>
+<?php
 /* Delete transient, only display this notice once. */
   delete_transient('upg-admin-notice-example');
  }
 
  if (upg_get_option('main_page', 'upg_gallery', '0') == '0') {
   ?>
-		<div class="updated notice is-dismissible">
+<div class="updated notice is-dismissible">
 
-			<p>Review the pages selected at UPG settings and save it before continue. All pages must be selected.</p>
+    <p>Review the pages selected at UPG settings and save it before continue. All pages must be selected.</p>
 
-		</div>
+</div>
 <?php
 }
 }
