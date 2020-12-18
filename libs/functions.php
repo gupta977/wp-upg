@@ -1693,8 +1693,8 @@ function get_video_thumbnail($url)
         // $url = http://www.youtube.com/watch?v=dQw4w9WgXcQ
         // $url = http://www.youtube.com/?v=dQw4w9WgXcQ
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
-        return 'https://img.youtube.com/vi/' . $match[1] . '/maxresdefault.jpg';
-
+        //return 'https://img.youtube.com/vi/' . $match[1] . '/maxresdefault.jpg';
+        return 'https://img.youtube.com/vi/' . $match[1] . '/mqdefault.jpg';
         //  $array = explode('&', $image_url['query']);
         //  return 'http://img.youtube.com/vi/'.substr($array[0], 2).'/0.jpg';
     } else if ($image_url['host'] == 'www.vimeo.com' || $image_url['host'] == 'vimeo.com') {
