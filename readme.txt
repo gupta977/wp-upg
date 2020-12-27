@@ -3,7 +3,7 @@ Contributors: odude
 Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.5
 Stable tag: trunk
 License: GPLv3
@@ -256,6 +256,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.16 =
+* Fixed youtube thumbnail during submission & at gallery.
+
 = 2.15 =
 * Tested till wordpress 5.5
 
