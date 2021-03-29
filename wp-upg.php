@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 2.16
+Version: 2.17
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
  */
 
-define('UPG_PLUGIN_VERSION', '2.16');
+define('UPG_PLUGIN_VERSION', '2.17');
 define('upg_ROOT_URL', plugin_dir_url(__FILE__));
 define('upg_FOLDER', dirname(plugin_basename(__FILE__)));
 define('upg_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . upg_FOLDER . '/');

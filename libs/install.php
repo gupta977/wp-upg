@@ -303,7 +303,12 @@ function upg_install()
 	}
 
 	$parent_term = term_exists('', 'upg_cate'); // array is returned if taxonomy is given
-	$parent_term_id = $parent_term['term_id']; // get numeric term id
+	if (isset($parent_term['term_id'])) {
+		$parent_term_id = $parent_term['term_id']; // get numeric term id
+	} else {
+		$parent_term_id = "500";
+	}
+
 	wp_insert_term(
 		'Fruits', // the term 
 		'upg_cate', // the taxonomy

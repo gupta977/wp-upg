@@ -102,7 +102,7 @@ function upg_login_link()
 }
 
 //Imports UPG's layout zip file. This is used at layout editor page. Files are uploaded into wordpress's upload /upg/ folder
-function upg_upload_file($file = array(), $path)
+function upg_upload_file($file = array(), $path = '')
 {
     if (!empty($file)) {
 
