@@ -3,7 +3,7 @@ Contributors: odude
 Tags: user generated, photo gallery, anonymous post, youtube gallery, embed, submit url, video gallery, submit facebook, submit instagram
 Donate link: http://paypal.me/gupta977
 Requires at least: 3.8
-Tested up to: 5.7
+Tested up to: 5.7.2
 Requires PHP: 5.5
 Stable tag: trunk
 License: GPLv3
@@ -12,9 +12,10 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Visitors & Admin submitted images, video, woocommerce, embed, post gallery. Generate own core layouts
 
 == Description ==
-= UPG - User Post Gallery =
+> New <a href="https://wordpress.org/plugins/flexi/">FLEXI Plugin</a>. Supports images, youtube, mp4,mp3,pdf and many more with dynamic animated gif thumbnails.
 
-> <a href="https://wordpress.org/plugins/flexi/">FLEXI- Frontend post</a>. Supports mp4,mp3,pdf and many more with dynamic animated gif thumbnail for video files.
+
+= UPG - User Post Gallery =
 
 UPG is the easy way to allow visitors/guest to post images, article, YouTube, Vimeo, instagram, facebook, twitter, woocommerce product & 30+ urls without registration from the frontend/backend.
 
@@ -256,8 +257,11 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.18 =
+* Tested up to wordpress 5.7.2
+
 = 2.17 =
-* Tested up to wordpress 5.7
+* Tested up to wordpress 5.7.1
 
 = 2.16 =
 * Fixed youtube thumbnail during submission & at gallery.
