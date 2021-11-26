@@ -257,6 +257,9 @@ When plugin is updated, these files are copied at wp-content\plugins\wp-upg\layo
 10. Lightbox/Popup to view image/video.
 
 == Changelog ==
+= 2.19 =
+* Tested up to wordpress 5.8.2
+
 = 2.18 =
 * Tested up to wordpress 5.7.2
 
