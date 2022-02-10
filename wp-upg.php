@@ -3,7 +3,7 @@
 Plugin Name: User Post Gallery
 Plugin URI: http://odude.com/
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 2.19
+Version: 2.19.0
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
