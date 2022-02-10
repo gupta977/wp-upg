@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: User Post Gallery
-Plugin URI: http://odude.com/
+Plugin Name: User Post Gallery - GBEHOA
+Plugin URI: https://github.com/helaili/wp-upg
 Description: UPG - User Post Gallery. User can post content/images from frontend.
-Version: 2.19.0
+Version: 2.19.1
 Author: ODude Network
 Author URI: http://odude.com/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Text Domain: wp-upg
 Domain Path: /languages
  */
 
-define('UPG_PLUGIN_VERSION', '2.19');
+define('UPG_PLUGIN_VERSION', '2.19.1');
 define('upg_ROOT_URL', plugin_dir_url(__FILE__));
 define('upg_FOLDER', dirname(plugin_basename(__FILE__)));
 define('upg_BASE_DIR', WP_CONTENT_DIR . '/plugins/' . upg_FOLDER . '/');
